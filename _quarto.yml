@@ -15,8 +15,10 @@ website:
         text: 블로그
       - href: archive.qmd
         text: 아카이브
+        
 # google-analytics:
 cookie-conset: TRUE
+
 format:
   html:
     toc: true
@@ -34,7 +36,7 @@ format:
         category-id: DIC_kwDOH0qA6s4CReuX
         mapping: pathname
         reactions-enabled: true
-        input-position: bottom
+        input-position: top
         theme: light
-        language: kr
+        language: en
     include-in-header: footer.html

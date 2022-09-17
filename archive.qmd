@@ -6,4 +6,5 @@ listing:
   type: default
   fields: [date, title, description]
   sort: 'date desc'
+comments: false
 ---

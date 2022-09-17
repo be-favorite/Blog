@@ -301,7 +301,17 @@ Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with 
 <li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.↩︎</p></li>
 <li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section></div> ]]></description>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+  author = {Taemo Bang},
+  title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
+  date = {2022-04-07},
+  url = {https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
+Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
+1편.”</span> April 7, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html">https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</a>.
+</div></div></section></div> ]]></description>
   <category>SQL</category>
   <category>R</category>
   <guid>https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</guid>

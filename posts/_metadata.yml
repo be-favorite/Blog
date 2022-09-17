@@ -23,14 +23,17 @@ title-block-banner: false
 
 page-layout: article
 
-comments:
-  giscus:
-    repo: be-favorite/Blog
-    repo-id: R_kgDOH0qA6g
-    category: Comments
-    category-id: DIC_kwDOH0qA6s4CReuX
-    mapping: pathname
-    reactions-enabled: true
-    input-position: top
-    theme: light
-    language: kr
+format:
+  html:
+    comments:
+      giscus:
+        repo: be-favorite/Blog
+        repo-id: R_kgDOH0qA6g
+        category: Comments
+        category-id: DIC_kwDOH0qA6s4CReuX
+        mapping: pathname
+        reactions-enabled: true
+        input-position: bottom
+        theme: light
+        language: kr
+    include-in-header: footer.html

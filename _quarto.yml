@@ -26,7 +26,6 @@ format:
     code-copy: true
     code-overflow: wrap
     css: css/karat.css
-    include-after-body: js.html
     comments:
       giscus:
         repo: be-favorite/Blog
@@ -35,7 +34,7 @@ format:
         category-id: DIC_kwDOH0qA6s4CReuX
         mapping: pathname
         reactions-enabled: true
-        input-position: top
+        input-position: bottom
         theme: light
         language: kr
     include-in-header: footer.html

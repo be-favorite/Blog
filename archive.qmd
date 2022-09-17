@@ -4,6 +4,6 @@ page-layout: full
 listing:
   contents: posts/**/*.qmd
   type: default
-  fields: [date, title]
+  fields: [date, title, description]
   sort: 'date desc'
 ---

@@ -1,0 +1,58 @@
+---
+title: "아카이브"
+description: |
+    블로그 외 활동을 아카이브합니다.
+output: distill::distill_article
+editor_options: 
+  chunk_output_type: console
+execute:
+  echo: false
+comments: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(distilltools)
+library(janitor)
+library(lubridate)
+library(glue)
+library(tidyverse)
+```
+
+```{comment}
+Icon link 양식
+Github: `r icon_link("github", "원하는이름", "https://github.com/사용자명/repo명")`
+Website: `r icon_link("globe", "Website", "https://joelnitta.github.io/canaper/")`
+Zenode: `r icon_link("zenodo", "Zenodo", "https://zenodo.org/record/5599240#.YZNJk1ORVBw")`
+```
+
+## Tistory 블로그
+
+과거 기술블로그입니다.
+
+`r icon_link("globe", "Blog", "https://be-favorite.tistory.com")`
+
+## 슬기로운통계생활 객원칼럼
+
+유튜브 채널 [<슬기로운통계생활>](https://www.youtube.com/c/statisticsplaybook)에서 운영하고 있는 블로그에서 객원 작가로 칼럼을 작성하고 있습니다.
+
+`r icon_link("globe", "Blog", "https://statisticsplaybook.tistory.com/category/객원칼럼/be-favorite")`
+
+## 연구 아카이브
+
+논문과 책, 웹사이트 등을 통해 공부하고 연구한 것들을 아카이브하고 있습니다.
+
+`r icon_link("github", "Archive", "https://github.com/be-favorite/Paper_archive")`
+
+## 발표 아카이브
+
+발표 자료를 아카이브하고 있습니다.
+
+`r icon_link("github", "Archive", "https://github.com/be-favorite/Presentation_archive")`
+
+## 스터디 노트
+
+스터디 노트를 아카이브하고 있습니다.
+
+`r icon_link("github", "Tensorflow", "https://github.com/be-favorite/Study_tf")` `r icon_link("github", "Coding-Test", "https://github.com/be-favorite/Study_coding")` `r icon_link("github", "SQL", "https://github.com/be-favorite/Study_SQL")`

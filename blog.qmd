@@ -3,7 +3,7 @@ title: "포스트"
 # subtitle: A (data science & R-Stats) blog where I chronicle my journey learning new things.
 listing:
   type: grid
-  fields: [image, title, description, date]
+  fields: [image, title, subtitle, reading-time, categories, description, date]
   page-size: 12
   feed: true
   contents: posts

@@ -4,18 +4,21 @@ project:
 website:
   title: "방태모의 블로그"
   favicon: images/favicon.png
-  site-url: https://taemobang.com/
+  # site-url: https://taemobang.com/
   repo-url: https://github.com/be-favorite/Blog
+  description: "방태모의 개인 블로그입니다."
   navbar:
     right:
       - href: index.qmd
         text: 홈
       - href: blog.qmd
         text: 블로그
-      - href: archive.html
+      - href: archive.qmd
         text: 아카이브
       - href: https://taemobang.notion.site
         text: 이력서
+# google-analytics:
+cookie-conset: TRUE
 format:
   html:
     theme: my-litera.scss

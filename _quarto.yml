@@ -3,6 +3,9 @@ project:
 
 website:
   title: "방태모의 블로그"
+  favicon: images/favicon.png
+  base_url: https://taemobang.com/
+  repository_url: https://github.com/be-favorite/Blog
   navbar:
     right:
       - href: index.qmd

@@ -5,7 +5,6 @@ description: |
 date: "2022-04-07"
 draft: FALSE
 preview: preview.jpg
-creative_commons: CC BY-NC
 categories:
     - SQL
     - R
@@ -46,7 +45,7 @@ R을 사용하는 여러분 모두 잘 아시다시피, R에서는 `{dplyr}`[^4]
 
 먼저 필요한 패키지를 불러오죠. `install.packages("패키지명")`을 통해 설치할 수 있습니다.
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, message = FALSE}
 library(DBI)
 library(dbplyr)
 library(dplyr)

@@ -9,9 +9,13 @@ title-block-banner: false
 # Author name of all blog posts
 author: 'Taemo Bang'
 
+# Enable CC licence appendix
+license: "CC BY"
+
 # Table of content settings
 toc: true
 toc-depth: 3
+toc-title: 목차
 toc-location: left
 
 # Enable banner style title blocks

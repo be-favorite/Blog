@@ -17,7 +17,7 @@ about:
       text: Github
       href: https://github.com/be-favorite
     - icon: journal-bookmark-fill
-      text: Résumé
+      text: Resume
       href: https://taemobang.notion.site
 ---
 

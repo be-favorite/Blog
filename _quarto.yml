@@ -20,7 +20,6 @@ cookie-conset: TRUE
 format:
   html:
     toc: true
-    toc-location: left
     theme:
       light: css/karat_quarto.scss
       dark: css/karat_dark.scss
@@ -28,15 +27,15 @@ format:
     code-overflow: wrap
     css: css/karat.css
     include-after-body: js.html
-comments:
-  giscus:
-    repo: be-favorite/Blog
-    repo-id: R_kgDOH0qA6g
-    category: Comments
-    category-id: DIC_kwDOH0qA6s4CReuX
-    mapping: pathname
-    reactions-enabled: true
-    input-position: top
-    theme: light
-    language: kr
-
+    comments:
+      giscus:
+        repo: be-favorite/Blog
+        repo-id: R_kgDOH0qA6g
+        category: Comments
+        category-id: DIC_kwDOH0qA6s4CReuX
+        mapping: pathname
+        reactions-enabled: true
+        input-position: top
+        theme: light
+        language: kr
+    include-in-header: footer.html

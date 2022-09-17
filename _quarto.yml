@@ -2,18 +2,30 @@ project:
   type: website
 
 website:
-  title: "Blog"
+  title: "방태모의 블로그"
   navbar:
     right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - href: index.qmd
+        text: Home
+      - href: blog.qmd
+        text: Blog
 format:
   html:
-    theme: cosmo
+    theme: my-litera.scss
     css: styles.css
+    toc: true
+    # comments:
+    #   giscus:
+    #     repo: joelnitta/joelnitta-home
+    #     repo-id: R_kgDOGZGr3w
+    #     category: Comments
+    #     category-id: DIC_kwDOGZGr384B_-52
+    #     mapping: pathname
+    #     reactions-enabled: True
+    #     input-position: top
+    #     theme: light
+    #     language: en
+    # include-in-header: header.html
 
 editor: visual
 

@@ -1,12 +1,40 @@
 ---
-title: "Blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "방태모"
+image: images/profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/be-favorite
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/TaemoBang
+    - icon: facebook
+      text: Facebook
+      href: https://www.facebook.com/profile.php?id=100070120780059
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/taemo/
 ---
+
+```{r}
+#| label: deps
+#| include: false
+#| message: false
+#| warning: false
+# Include dependencies to track with renv here
+library(fontawesome)
+```
+
+안녕하세요, 제 블로그에 오신 것을 환영합니다.
+
+학부, 석사를 통계학으로 전공하고 현재는 지마켓 AI Product 팀에서 Data Science를 하고있습니다.
+
+데이터로부터 인사이트를 추출하는 것을 좋아합니다. 
+
+인과추론, 시계열 자료분석, 통계적학습과 기계학습에 관심이 많고, 가장 사랑하는 언어는 R입니다.
+
+과거에는 [티스토리 블로그](https://be-favorite.tistory.com)를 운영했었습니다. 
+
+제가 배운 것들을 나누는 것이 누군가에게 도움이 되었으면 합니다.

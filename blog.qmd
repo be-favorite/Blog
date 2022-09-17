@@ -1,0 +1,16 @@
+---
+title: "포스트"
+# subtitle: A (data science & R-Stats) blog where I chronicle my journey learning new things.
+listing:
+  type: grid
+  fields: [image, title, description, date]
+  page-size: 12
+  feed: true
+  contents: posts
+  sort-ui: false
+  filter-ui: false
+  sort: "date desc"
+  categories: true
+page-layout: full
+title-block-banner: true
+---

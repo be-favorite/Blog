@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Blog",
+    "title": "방태모",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 15, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "학부, 석사를 통계학으로 전공하고 현재는 지마켓 AI Product 팀에서 Data Science를 하고있습니다.\n데이터로부터 인사이트를 추출하는 것을 좋아합니다.\n인과추론, 시계열 자료분석, 통계적학습과 기계학습에 관심이 많고, 가장 사랑하는 언어는 R입니다.\n과거에는 티스토리 블로그를 운영했었습니다.\n제가 배운 것들을 나누는 것이 누군가에게 도움이 되었으면 합니다."
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -26,5 +26,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "포스트",
+    "section": "",
+    "text": "Aug 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

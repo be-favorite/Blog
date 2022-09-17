@@ -1,0 +1,34 @@
+/*-- scss:defaults --*/
+
+// use litera as the base
+$theme: "litera" !default;
+
+// import google fonts
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+.nanum { font-family: 'Nanum Barun Gothic'; } 
+
+/*-- scss:rules --*/
+
+// litera is serif by default: revert to san-serif
+p {
+  font-family: 'Nanum Barun Gothic';
+}
+
+// Navs
+
+.navbar-brand {
+  font-family: 'Nanum Barun Gothic', mono;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: black;
+}
+
+// Navbar
+
+.navbar {
+  font-family: 'Nanum Barun Gothic', mono;
+  font-size: 1rem;
+}
+
+$navbar-dark-hover-color:           "#ff6700" !default;
+$navbar-light-hover-color:          "#ff6700" !default;

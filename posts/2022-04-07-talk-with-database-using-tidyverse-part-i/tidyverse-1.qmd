@@ -7,9 +7,7 @@ draft: FALSE
 preview: preview.jpg
 citation:
   url: https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html
-categories:
-    - SQL
-    - R
+categories: [SQL, R]
 bibliography: references.bib
 ---
 
@@ -18,10 +16,9 @@ bibliography: references.bib
 # 본 포스트 한글 제목: tidyverse로 데이터베이스랑 대화하기 - 1편
 # echo - Display code in output document (default = TRUE)
 # eval - Run code in chunk (default = TRUE)
-library(rmarkdown)
 ```
 
-[![Photo by Caspar Camille Rubin on Unsplash](preview.jpg){width="700"}](https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+[![Photo by Caspar Camille Rubin on Unsplash](preview.jpg){width="750"}](https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
 <aside>본 글은 [@naidoo2020]를 기반으로 작성되었습니다.</aside>
 
@@ -208,3 +205,23 @@ dbDisconnect(con) # db 연결 닫기
 
 -   `{DBI}`: R의 데이터베이스 인터페이스에 관한 메인 패키지입니다.
 -   데이터 R로 가져오기
+
+::: {.callout-tip collapse="true"}
+## 세션정보를 보려면 누르세요
+
+```{r, echo = FALSE}
+library(sessioninfo)
+# save the session info as an object
+pkg_sesh <- session_info(pkgs = "attached")
+# get the quarto version
+quarto_version <- system("quarto --version", intern = TRUE)
+# inject the quarto info
+pkg_sesh$platform$quarto <- paste(
+  system("quarto --version", intern = TRUE), 
+  "@", 
+  quarto::quarto_path()
+  )
+# print it out
+pkg_sesh
+```
+:::

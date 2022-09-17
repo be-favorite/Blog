@@ -6,58 +6,326 @@
       version="2.0">
 <channel>
 <title>방태모의 블로그</title>
-<link>https://taemobang.com/blog.html</link>
-<atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
-<description></description>
+<link>https://quarto-taemo.netlify.app/blog.html</link>
+<atom:link href="https://quarto-taemo.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
+<description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.0.38</generator>
-<lastBuildDate>Sun, 14 Aug 2022 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 06 Apr 2022 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://taemobang.com/posts/post-with-code/index.html</link>
+  <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>
+  <dc:creator>Taemo Bang</dc:creator>
+  <link>https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</link>
   <description><![CDATA[ 
 
 
 
-
-<p>This is a post with executable code.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" class="img-fluid figure-img" width="700"></a></p>
+<p></p><figcaption class="figure-caption">Photo by Caspar Camille Rubin on Unsplash</figcaption><p></p>
+</figure>
+</div>
+<aside>
+본 글은 <span class="citation" data-cites="naidoo2020">(Naidoo 2020)</span>를 기반으로 작성되었습니다.
+</aside>
+<p>실무에서는 Data analyst, Data scientist를 가리지 않고 SQL에 관한 능력을 요구합니다. 우리나라의 채용공고를 둘러보면 Data analyst의 경우 특히 SQL 스킬을 중요하게 요구하는 듯 합니다. 방대한 양의 데이터를 저장하고 관리하기 위해 실무에서는 데이터베이스를 사용합니다. 데이터베이스는 종종 관계형 데이터베이스 시스템<sup>1</sup>(이하 RDBMS)이라 불리기도 하죠. 그리고, 우리는 SQL<sup>2</sup> 언어 또는 SQL을 조금 변형한(variant) 언어를 통해 이 데이터베이스에 질의(query)를 합니다. 여기서 변형이라는 말을 사용한 이유는, RDBMS를 제공하는 업체에서 표준화된 SQL을 제공하는 경우도 있지만, 표준화된 SQL을 조금 변형시켜 사용하는 경우도 있기 때문입니다.</p>
+<p>만약 이렇게 특정 업체로부터 제공되는 변형된 RDBMS를 사용해야한다면, 해당 업체에서 사용하는 특정 SQL dialect<sup>3</sup>를 사용해 쿼리를 작성하는 방법을 이해해야 하실겁니다. 변형된 RDBMS를 예로 들어보자면, <a href="https://www.postgresql.org">PostgreSQL</a>, <a href="https://prestodb.io">PrestoDB</a>(<a href="https://aws.amazon.com/ko/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&amp;whats-new-cards.sort-order=desc">AWS의 Athena</a>를 위한) 등이 있습니다. PostgreSQL DB의 JSON 필드는 AWS에서 구조화된 중첩 배열로(array) 수집되므로, 동일한 필드를 쿼리하고자 할 때 다른 쿼리문을 사용합니다.</p>
+<p>R을 사용하는 여러분 모두 잘 아시다시피, R에서는 <code>{dplyr}</code><sup>4</sup> 패키지를 통해 이러한 작업을 데이터에 수행할 수 있습니다. <code>{dplyr}</code>이 <code>select()</code>, <code>group_by()</code>, <code>left_join()</code> 등 SQL 문법을 잘 모방하긴 했지만, SQL 문법과 R 문법 사이를 완벽하게 왔다갔다 하기는 어렵습니다. 예를 들자면, <code>{dplyr}</code>의 <code>filter()</code>를 이용해 특정 행을 뽑아올 때, 우리는 R 문법을 따라야하므로 조건문에 <code>=</code>이 아닌 <code>==</code>을 사용하죠. 이는 SQL 문법과는 완벽히 다른 부분입니다.</p>
+<p>자, 여기서 이러한 상황을 타개할 방법은 무엇일까요. 엄청난 용량의 데이터베이스를 R로 가져올 수는 없습니다. 메모리 베이스인 R에 이 짓을 햇다가는요? 생각도 하기 싫습니다.😰 그럼, RDBMS 환경에서 이러한 무거운 작업을(e.g.&nbsp;computation) 수행하고 필요로 될 때에만 R에다가 가져오면 되지 않을까요? 예를 들면, 집계된 데이터를 가져와서 보고서용 그림을 그린다든지. 이를 가능하게끔 해주는 패키지에 대해 배워보려고 합니다.</p>
+<p>본 튜토리얼에서는 <code>{dplyr}</code>의 데이터베이스 백엔드 버전이라 할 수 있는 <code>{dbplyr}</code> 패키지에 대해 배울거에요. <code>{dbplyr}</code>은 당신의 RDBMS에 R의 tidyverse 문법을 사용한 쿼리문을 직접적으로 사용할 수 있게끔 해줄겁니다.😀</p>
+<section id="db-연결하기" class="level2">
+<h2 class="anchored" data-anchor-id="db-연결하기">1 DB 연결하기</h2>
+<p>먼저 필요한 패키지를 불러오죠. <code>install.packages("패키지명")</code>을 통해 설치할 수 있습니다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;">1</span> <span class="sc" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(DBI)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(dbplyr)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(dplyr)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dbplyr':
+
+    ident, sql</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;">library</span>(RSQLite)</span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;">library</span>(odbc)</span></code></pre></div>
+</div>
+<ul>
+<li><code>{DBI}</code>: R의 데이터베이스 인터페이스에 관한 메인 패키지입니다.</li>
+<li><code>{dbplyr}</code>: <code>{dplyr}</code> 문법을 사용하여 데이터베이스에 질의를 할 수 있게끔 해줍니다.</li>
+<li><code>{dplyr}</code>: 데이터베이스에 질의할 때 사용할 패키지입니다.</li>
+<li><code>{RSQLite}</code>: 가벼운 단일 유저용 데이터베이스 SQLite DB에 연결할 수 있게끔 해주는 DBI<sup>5</sup> 호환 패키지입니다. R-SQLite로 이해하시면 편합니다.</li>
+<li>다른 DBI 용 호환 패키지가 필요할 수도 있습니다. 예를 들어, <code>{RPostgres}</code>는 PostgreSQL RDBMS와 연결을 해주는 패키지입니다.<sup>6</sup></li>
+<li><code>{odbc}</code>: odbc 드라이버를 사용해 RDBMS 인터페이스에 인터페이스할 수 있도록 해주는 DBI 호환 인터페이스입니다.<sup>7</sup></li>
+</ul>
+<section id="예제용-토이-db" class="level3">
+<h3 class="anchored" data-anchor-id="예제용-토이-db">예제용 토이 DB</h3>
+<p><a href="https://www.apreshill.com">Alison Hill</a>이 <a href="https://github.com/apreshill/bakeoff">The Great British Bake off</a>에서 만든 데이터를 사용하려고 합니다. 본 예제에서 다룰 데이터베이스는 <a href="https://github.com/be-favorite/Distill/blob/master/_posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db">여기서</a> 내려받으세요. <code>{bakeoff}</code> 패키지의 데이터를 이용해 연습에 사용할 SQLite DB를 만들었습니다. 이 튜토리얼의 원 저자 <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">Vebash Naidoo</a>님께 감사의 말을 전합니다.</p>
+</section>
+<section id="sqlite-db-연결하기" class="level3">
+<h3 class="anchored" data-anchor-id="sqlite-db-연결하기">SQLite DB 연결하기</h3>
+<p>이제 DB를 SQLite DB에 연결해봅시다. DB와 대화를 나누기 위해서, 우선 연결(connection)을 해줘야합니다. 다음의 작업을 해줄겁니다.</p>
+<ul>
+<li><p>DBI 패키지 로딩: <code>library(DBI)</code></p></li>
+<li><p>연결하기: <code>con &lt;- dbConnect(RSQLite::SQLite(), "내려받은 db 경로")</code></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;">library</span>(DBI) <span class="co" style="color: #5E5E5E;"># main DB interface</span></span>
+<span id="cb7-2"><span class="fu" style="color: #4758AB;">library</span>(dplyr) </span>
+<span id="cb7-3"><span class="fu" style="color: #4758AB;">library</span>(dbplyr) <span class="co" style="color: #5E5E5E;"># dplyr back-end for DBs</span></span>
+<span id="cb7-4"></span>
+<span id="cb7-5">con <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dbConnect</span>(<span class="at" style="color: #657422;">drv =</span> RSQLite<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">SQLite</span>(), <span class="co" style="color: #5E5E5E;"># give me a SQLite connection</span></span>
+<span id="cb7-6">        <span class="at" style="color: #657422;">dbname =</span> <span class="st" style="color: #20794D;">"data/great_brit_bakeoff.db"</span>)</span>
+<span id="cb7-7"><span class="fu" style="color: #4758AB;">summary</span>(con) <span class="co" style="color: #5E5E5E;"># What do we have?</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>          Length            Class             Mode 
+               1 SQLiteConnection               S4 </code></pre>
 </div>
 </div>
+<p>위와 같은 명령어가 출력되면 DB에 성공적으로 연결된 것입니다.</p>
+</section>
+</section>
+<section id="db-둘러보고-다뤄보기" class="level2">
+<h2 class="anchored" data-anchor-id="db-둘러보고-다뤄보기">2 DB 둘러보고 다뤄보기</h2>
+<p>자, DB 연결도 했으니 이제 몇 가지 DBI 함수를 이용해 연결한 DB를 둘러보고 다뤄봅시다.</p>
+<section id="dbi-함수" class="level3">
+<h3 class="anchored" data-anchor-id="dbi-함수">DBI 함수</h3>
+<p>DBI 함수들의 이름은 꽤 직관적입니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;">dbListTables</span>(con) <span class="co" style="color: #5E5E5E;"># 연결된 테이블 리스트를 보여줘!</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "baker_results"     "bakers"            "bakes"            
+ [4] "challenge_results" "challenges"        "episode_results"  
+ [7] "episodes"          "ratings"           "ratings_seasons"  
+[10] "results"           "seasons"           "series"           </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">dbListFields</span>(con, <span class="co" style="color: #5E5E5E;"># 연결한 DB로 가서</span></span>
+<span id="cb11-2">      <span class="st" style="color: #20794D;">"bakers"</span>)   <span class="co" style="color: #5E5E5E;"># bakes 테이블에 어떤 필드가 있는지 알려줘!</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "series"     "baker_full" "age"        "occupation" "hometown"  </code></pre>
+</div>
+</div>
+<p>DB에 질의는 다음과 같이 수행할 수 있어요.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">res <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dbSendQuery</span>(con, <span class="st" style="color: #20794D;">"SELECT * FROM bakers LIMIT 3"</span>) <span class="co" style="color: #5E5E5E;"># 쿼리문 실행</span></span>
+<span id="cb13-2"><span class="co" style="color: #5E5E5E;"># bakers 테이블에 모든 필드를 가져오는데, 관측치 3개까지만 가져와봐!</span></span>
+<span id="cb13-3"><span class="fu" style="color: #4758AB;">dbFetch</span>(res) <span class="co" style="color: #5E5E5E;"># 결과 출력해줘</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  series          baker_full age                        occupation
+1      1       Annetha Mills  30                           Midwife
+2      1      David Chambers  31                      Entrepreneur
+3      1 Edward "Edd" Kimber  24 Debt collector for Yorkshire Bank
+       hometown
+1         Essex
+2 Milton Keynes
+3      Bradford</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="fu" style="color: #4758AB;">dbClearResult</span>(res) <span class="co" style="color: #5E5E5E;"># 결과 지우기</span></span></code></pre></div>
+</div>
+</section>
+<section id="dplyr-함수" class="level3">
+<h3 class="anchored" data-anchor-id="dplyr-함수">dplyr 함수</h3>
+<p>이제, 우리가 잘하는 <code>{dplyr}</code>의 함수들을 이용해 마음껏 DB와 이야기해보죠.</p>
+<ul>
+<li><code>dplyr::tbl(con, "테이블명")</code>: 연결한 DB(<code>con</code>)으로 가서 <code>SELECT * FROM 테이블명</code> 실행해줘.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"bakers"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   table&lt;bakers&gt; [?? x 5]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+   series baker_full                age occupation                       homet…¹
+    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                            &lt;chr&gt;  
+ 1      1 "Annetha Mills"            30 Midwife                          Essex  
+ 2      1 "David Chambers"           31 Entrepreneur                     Milton…
+ 3      1 "Edward \"Edd\" Kimber"    24 Debt collector for Yorkshire Ba… Bradfo…
+ 4      1 "Jasminder Randhawa"       45 Assistant Credit Control Manager Birmin…
+ 5      1 "Jonathan Shepherd"        25 Research Analyst                 St Alb…
+ 6      1 "Lea Harris"               51 Retired                          Midlot…
+ 7      1 "Louise Brimelow"          44 Police Officer                   Manche…
+ 8      1 "Mark Whithers"            48 Bus Driver                       South …
+ 9      1 "Miranda Gore Browne"      37 Food buyer for Marks &amp; Spencer   Midhur…
+10      1 "Ruth Clemens"             31 Retail manager/Housewife         Poynto…
+# … with more rows, and abbreviated variable name ¹​hometown
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"bakers"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb18-2">    <span class="fu" style="color: #4758AB;">head</span>(<span class="dv" style="color: #AD0000;">3</span>) <span class="co" style="color: #5E5E5E;"># "SELECT * FROM bakers LIMIT 3"와 동일</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [3 x 5]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+  series baker_full                age occupation                        homet…¹
+   &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                             &lt;chr&gt;  
+1      1 "Annetha Mills"            30 Midwife                           Essex  
+2      1 "David Chambers"           31 Entrepreneur                      Milton…
+3      1 "Edward \"Edd\" Kimber"    24 Debt collector for Yorkshire Bank Bradfo…
+# … with abbreviated variable name ¹​hometown</code></pre>
+</div>
+</div>
+<p>데이터베이스와 대화를 나눌 때 마다 초기에 연결해둔 <code>con</code>을 사용한다는 점을 유념해주세요. 초기에 불러왔던 <code>con</code>은 아까처럼 일반적인 SQL 쿼리문을 이용해 질의를 할 때 뿐만이 아닌 <code>{dplyr}</code>을 통해 타이디한 파이프라인으로 원하는 테이블을 가져올 때도 사용됩니다.</p>
+<p>자 이제 예시 상황을 하나 들어서 <code>{dplyr}</code>로 원하는 테이블을 가져와보겠습니다. <code>baker_results</code> 테이블에는 각 제빵 대회에 참가한 제빵사(baker)의 세부 정보 필드가 담겨있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><span class="fu" style="color: #4758AB;">dbListFields</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "series"                    "baker_full"               
+ [3] "baker"                     "age"                      
+ [5] "occupation"                "hometown"                 
+ [7] "baker_last"                "baker_first"              
+ [9] "star_baker"                "technical_winner"         
+[11] "technical_top3"            "technical_bottom"         
+[13] "technical_highest"         "technical_lowest"         
+[15] "technical_median"          "series_winner"            
+[17] "series_runner_up"          "total_episodes_appeared"  
+[19] "first_date_appeared"       "last_date_appeared"       
+[21] "first_date_us"             "last_date_us"             
+[23] "percent_episodes_appeared" "percent_technical_top3"   </code></pre>
+</div>
+</div>
+<p>각 제빵대회 우승자의 출신이 영국의 일부 지역에서 나왔는지, 아니면 다양한 지역으로부터 우상자가 배출되었는지 알고싶은 상황이라고 해봅시다. 우선 다음과 같이 관심있는 필드만 불러와주겠습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb22-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 4]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+   series baker     hometown              series_winner
+    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                         &lt;int&gt;
+ 1      1 Annetha   Essex                             0
+ 2      1 David     Milton Keynes                     0
+ 3      1 Edd       Bradford                          1
+ 4      1 Jasminder Birmingham                        0
+ 5      1 Jonathan  St Albans                         0
+ 6      1 Lea       Midlothian, Scotland              0
+ 7      1 Louise    Manchester                        0
+ 8      1 Mark      South Wales                       0
+ 9      1 Miranda   Midhurst, West Sussex             0
+10      1 Ruth      Poynton, Cheshire                 0
+# … with more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
+</div>
+</div>
+<p>24개 열 중 관심있는 4개 열만 불러왔습니다. 이제 제빵대회에 우승한 사람만 골라낸 뒤(<code>filter()</code>) 우승자들이 영국의 어떤 지역으로 부터 왔는지 지역별로 인원을 구하고(<code>count()</code>) 내림차순 정렬(<code>sort()</code>)을 해보죠.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb24-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb24-3">  <span class="fu" style="color: #4758AB;">filter</span>(series_winner <span class="sc" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">1</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span></span>
+<span id="cb24-4">  <span class="fu" style="color: #4758AB;">count</span>(hometown, <span class="at" style="color: #657422;">sort =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:     SQL [8 x 2]
+# Database:   sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+# Ordered by: desc(n)
+  hometown                              n
+  &lt;chr&gt;                             &lt;int&gt;
+1 Wigan                                 1
+2 West Molesey, Surrey                  1
+3 Ongar, Essex                          1
+4 Market Harborough, Leicestershire     1
+5 Leeds / Luton                         1
+6 Bradford                              1
+7 Barton-Upon-Humber, Lincolnshire      1
+8 Barton-Le-Clay, Bedfordshire          1</code></pre>
+</div>
+</div>
+<p>이 결과에 따르면, 제빵대회 우승자들의 출신 지역은 각기 다르다고 결론을 내릴 수 있겠네요.</p>
+</section>
+<section id="dplyr-문법을-sql-쿼리문으로" class="level3">
+<h3 class="anchored" data-anchor-id="dplyr-문법을-sql-쿼리문으로">dplyr 문법을 SQL 쿼리문으로</h3>
+<p>앞서 <code>{dplyr}</code>을 이용해 수행한 질의를 SQL 쿼리문으로는 어떻게 작성할까요? 코드 한 줄이면 손쉽게 알 수 있습니다.😀</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb26-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb26-3">  <span class="fu" style="color: #4758AB;">filter</span>(series_winner <span class="sc" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">1</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb26-4">  <span class="fu" style="color: #4758AB;">count</span>(hometown, <span class="at" style="color: #657422;">sort =</span> <span class="cn" style="color: #8f5902;">TRUE</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
+<span id="cb26-5">  <span class="fu" style="color: #4758AB;">show_query</span>()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `hometown`, COUNT(*) AS `n`
+FROM (
+  SELECT `series`, `baker`, `hometown`, `series_winner`
+  FROM `baker_results`
+)
+WHERE (`series_winner` = 1.0)
+GROUP BY `hometown`
+ORDER BY `n` DESC</code></pre>
+</div>
+</div>
+<p>멋지지 않습니까? 이제 제가 왜 이 글의 맨 위 요약을 “R을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!”라고 적은 지 아시겠나요? <code>{dplyr}</code>로 작업을 수행하고, SQL 쿼리문으로 변환을 수행해보는 작업은 SQL을 배우는 과정에 꽤 큰 도움이 될겁니다. 직장 또는 기관에서 DB를 관리할 때 모두 같은 업체의 SQL DB를 사용하는 건 아니므로, 이렇게 광범위한 업체들로부터 공급되는 SQL을 알고, 읽는 것은 언제나 중요하기 때문입니다.</p>
+</section>
+<section id="출력문의-lazy-query-의-의미" class="level3">
+<h3 class="anchored" data-anchor-id="출력문의-lazy-query-의-의미">출력문의 <code>lazy query / ??</code>의 의미</h3>
+<p>앞서 테이블, 쿼리를 작성하며 출력물에서 <code>Source: table [?? x 5]</code> 또는 <code>Source: lazy query [?? x 4]</code>와 같은 문장을 확인하실 수 있었을 겁니다.</p>
+<section id="이런-문장이-출력물에-포함되는-이유" class="level4">
+<h4 class="anchored" data-anchor-id="이런-문장이-출력물에-포함되는-이유">이런 문장이 출력물에 포함되는 이유</h4>
+<ul>
+<li><p>먼저, 우리가 직접적인 RDBMS 상에서가 아닌 R이라는 공간을 빌려 뒤에서(behind the scenes) 작성한 <code>dplyr</code>코드는 우리가 연결하려는 DB의 SQL에 해당하는 dialect로 변환됩니다.</p></li>
+<li><p>즉, SQL은 DB에 직접적으로 실행됩니다. 즉, 데이터를 먼저 R로 가져와서 조작하는 것이 아닌 쿼리 자체를 DB에 보내고 DB에서 계산(computation)이 수행됩니다.</p></li>
+<li><p>정리하면, <code>dplyr</code> 파이프라인을 사용해 DB에서 쿼리를 실행하면, DB에서 계산을 수행하고 실행된 최종 결과의 전체가 아닌 일부를 R에서 보여주는 식입니다.</p></li>
+<li><p>이러한 이유들을 들여다보면 우리는 <code>??</code>를 이해할 수 있습니다.</p></li>
+<li><p><code>??</code>는 “연결 DB <code>con</code>에서 이 쿼리(파이프라인을 SQL로 변환시킨 것)를 실행했고, 여기 R에서 출력물을 스니펫(snippet)으로만 가져왔는데, 얼마나 많은 수의 행이 있는지에 관한 메타 정보까진 캐치하진 못했어. 그저 출력물에 몇 개의 열이 있다는 것 정도만 캐치했어”라고 이해할 수 있습니다.</p></li>
+<li><p>이 튜토리얼은 파트 1 입니다. 다음 파트에서 가져온 테이블에 얼마나 많은 행들이 존재하는 지와 같은 메타 정보들을 R로 어떻게 가져오는지에 대해 알아볼 예정입니다.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="db-연결-해제하기" class="level2">
+<h2 class="anchored" data-anchor-id="db-연결-해제하기">3 DB 연결 해제하기</h2>
+<p>작업이 끝나면 연결을 해제하는 것을 잊지마세요!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><span class="fu" style="color: #4758AB;">dbDisconnect</span>(con) <span class="co" style="color: #5E5E5E;"># db 연결 닫기</span></span></code></pre></div>
+</div>
+<p>연결 해제가 체크는 <code>dbListTable(con)</code>을 실행해보시면 됩니다. 연결해제가 잘 되었다면 에러문이 출력될겁니다.</p>
+<section id="다음-파트에서-배울-내용" class="level3">
+<h3 class="anchored" data-anchor-id="다음-파트에서-배울-내용">다음 파트에서 배울 내용</h3>
+<ul>
+<li><p><code>dplyr</code>에 관해 좀 더 깊게(e.g.&nbsp;테이블 조인하기)</p></li>
+<li><p>데이터 R로 가져오기</p></li>
+</ul>
 
 
 
- ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <guid>https://taemobang.com/posts/post-with-code/index.html</guid>
-  <pubDate>Sun, 14 Aug 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O'Malley</dc:creator>
-  <link>https://taemobang.com/posts/welcome/index.html</link>
-  <description><![CDATA[ 
+</section>
+</section>
 
 
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-naidoo2020" class="csl-entry">
+Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with Databases - Part i,”</span> December. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
+</div>
+</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://taemobang.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
- ]]></description>
-  <category>news</category>
-  <guid>https://taemobang.com/posts/welcome/index.html</guid>
-  <pubDate>Thu, 11 Aug 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/welcome/thumbnail.jpg" medium="image" type="image/jpeg"/>
+<ol>
+<li id="fn1"><p>relational database management system, or RDBMS↩︎</p></li>
+<li id="fn2"><p>Structured Query Language↩︎</p></li>
+<li id="fn3"><p>공급업체마다 SQL 쿼리문에 조금씩 차이가 있는 부분을 방언의 의미를 갖는 dialect로 표현한 것 같습니다.↩︎</p></li>
+<li id="fn4"><p>명확하게 정해진 바는 없어보이나, d-plier라고 흔히 읽는 듯 합니다. 패키지의 스티커 이미지를 보면 플라이어가 그려져 있습니다.↩︎</p></li>
+<li id="fn5"><p>DataBase Interface, 데이터베이스 인터페이스의 약어↩︎</p></li>
+<li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.↩︎</p></li>
+<li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>SQL</category>
+  <category>R</category>
+  <guid>https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</guid>
+  <pubDate>Wed, 06 Apr 2022 15:00:00 GMT</pubDate>
+  <media:content url="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

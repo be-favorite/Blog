@@ -1,1 +1,1 @@
-Sitemap: https://taemobang.com/sitemap.xml
+Sitemap: https://quarto-taemo.netlify.app/sitemap.xml

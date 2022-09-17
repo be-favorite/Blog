@@ -1,8 +1,32 @@
-# options specified here will apply to all posts in this folder
+# Options specified here will apply to all posts in this folder
 
 # freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
 # Enable banner style title blocks
-title-block-banner: true
+title-block-banner: false
+
+# Author name of all blog posts
+author: 'Taemo Bang'
+
+# Table of content settings
+toc: true
+toc-depth: 3
+toc-location: left
+
+# Enable banner style title blocks
+title-block-banner: false
+
+page-layout: article
+
+comments:
+  giscus:
+    repo: be-favorite/Blog
+    repo-id: R_kgDOH0qA6g
+    category: Comments
+    category-id: DIC_kwDOH0qA6s4CReuX
+    mapping: pathname
+    reactions-enabled: true
+    input-position: top
+    theme: light
+    language: kr

@@ -4,7 +4,7 @@ project:
 website:
   title: "방태모의 블로그"
   favicon: images/favicon.png
-  # site-url: https://taemobang.com/
+  site-url: https://quarto-taemo.netlify.app
   repo-url: https://github.com/be-favorite/Blog
   description: "방태모의 개인 블로그입니다."
   navbar:
@@ -15,27 +15,28 @@ website:
         text: 블로그
       - href: archive.qmd
         text: 아카이브
-      - href: https://taemobang.notion.site
-        text: 이력서
 # google-analytics:
 cookie-conset: TRUE
 format:
   html:
-    theme: my-litera.scss
-    css: styles.css
     toc: true
-    # comments:
-    #   giscus:
-    #     repo: joelnitta/joelnitta-home
-    #     repo-id: R_kgDOGZGr3w
-    #     category: Comments
-    #     category-id: DIC_kwDOGZGr384B_-52
-    #     mapping: pathname
-    #     reactions-enabled: True
-    #     input-position: top
-    #     theme: light
-    #     language: en
-    # include-in-header: header.html
-
-editor: visual
+    toc-location: left
+    theme:
+      light: css/karat_quarto.scss
+      dark: css/karat_dark.scss
+    code-copy: true
+    code-overflow: wrap
+    css: css/karat.css
+    include-after-body: js.html
+comments:
+  giscus:
+    repo: be-favorite/Blog
+    repo-id: R_kgDOH0qA6g
+    category: Comments
+    category-id: DIC_kwDOH0qA6s4CReuX
+    mapping: pathname
+    reactions-enabled: true
+    input-position: top
+    theme: light
+    language: kr
 

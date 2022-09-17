@@ -1,0 +1,164 @@
+/*-- scss:defaults --*/
+
+// use litera as the base
+$theme: "litera" !default;
+
+// import google fonts
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+p {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: black;
+  line-height: 1.65;
+  font-size: 1.025em;
+  letter-spacing: 0.6px;
+}
+
+.category {
+  font-family: "Abel", sans-serif;
+  color: black;
+  line-height: 1.65;
+  letter-spacing: 0.7px;
+  font-size: 1.05em;
+}
+
+.navbar-title,
+.nav-link,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Abel", sans-serif;
+  color: black;
+}
+
+.navbar-title {
+  font-weight: 550;
+  font-size: 1.2em;
+}
+
+.nav-link {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.element.style {
+  width: 10cm;
+  height: 10cm;
+}
+
+$link-color: #7c0000;
+$toc-font-size: 12px;
+$font-size-root: 16px;
+$input-border-radius: 20px;
+// Default is 50 for navbar
+$navbar-height: 40px;
+
+$h1-font-family: "Abel", sans-serif;
+
+// about me formatting
+
+.section {
+  padding: 50px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  margin: 0 0 15px;
+  border-left: 5px solid #7c0000;
+  padding-left: 15px;
+}
+.section-title {
+  padding-bottom: 45px;
+}
+.section-title p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Resume Box
+---------------------*/
+.resume-box {
+  background: #ffffff;
+  border-radius: 20px;
+}
+.resume-box ul {
+  margin: 0;
+  padding: 30px 20px;
+  list-style: none;
+}
+.resume-box li {
+  position: relative;
+  padding: 0 20px 0 60px;
+  margin: 0 0 30px;
+}
+.resume-box li:last-child {
+  margin-bottom: 0;
+}
+.resume-box li:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  border-left: 1px dashed #7c0000;
+  bottom: 0;
+}
+.resume-box .icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #7c0000;
+  line-height: 40px;
+  background: #ffffff;
+  text-align: center;
+  z-index: 1;
+  border: 1px dashed;
+  border-radius: 50%;
+}
+.resume-box .time {
+  background: #7c0000;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 2px 10px;
+  display: inline-block;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.resume-box h5 {
+  font-weight: 700;
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.resume-box p {
+  margin: 0;
+}
+
+.resume-box li:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  border-left: 1px dashed #7c0000;
+  bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.btn-dark {
+  background-color: #b5b5b5;
+  border-color: #b5b5b5;
+  margin: 5px;
+}
+
+// about me formatting ends

@@ -1,6 +1,5 @@
 ---
 title: "포스트"
-# subtitle: A (data science & R-Stats) blog where I chronicle my journey learning new things.
 listing:
   contents: posts/**/*.qmd
   type: grid
@@ -17,21 +16,20 @@ title-block-banner: false
 comments: false
 ---
 
-
-
-
 :::: {.columns}
 
 ::: {.column width="50%"}
-포스팅을 독려해주실 수 있어요.
 
-<a href="https://www.buymeacoffee.com/taemobang" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="30"></a>
-:::
-
-::: {.column width="50%"}
 새 글이 발행되면 알려드려요.
 
 <iframe src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+:::
+
+::: {.column width="50%"}
+
+포스팅을 독려해주실 수 있어요.
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="taemobang" data-color="#06436e" data-emoji="☕"  data-font="Lato" data-text="Support me" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" data-height="40px" ></script>
 :::
 
 :::: 

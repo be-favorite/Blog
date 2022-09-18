@@ -39,4 +39,3 @@ format:
         input-position: top
         theme: light
         language: en
-    include-in-header: footer.html

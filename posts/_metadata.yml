@@ -18,6 +18,11 @@ toc-depth: 3
 toc-title: 목차
 toc-location: left
 
+# Add footer
+format:
+  html:
+    include-after-body: ../footer.html
+
 # Enable banner style title blocks
 title-block-banner: false
 

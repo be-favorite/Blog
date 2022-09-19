@@ -18,7 +18,7 @@ bibliography: references.bib
 # eval - Run code in chunk (default = TRUE)
 ```
 
-[![Photo by Caspar Camille Rubin on Unsplash](preview.jpg){width="750"}](https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+[![Photo by Caspar Camille Rubin on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
 <aside>본 글은 [@naidoo2020]를 기반으로 작성되었습니다.</aside>
 

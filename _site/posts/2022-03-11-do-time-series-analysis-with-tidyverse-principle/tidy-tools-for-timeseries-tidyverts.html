@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Taemo Bang">
+<meta name="dcterms.date" content="2022-03-11">
+<meta name="description" content="tidyverts ecosystem 소개">
+
+<title>방태모의 블로그 - tidyverse principle로 시계열 자료 분석하기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../css/karat.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">방태모의 블로그</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">홈</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">블로그</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../archive.html">아카이브</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">리소스</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">연구 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentation.html">
+ <span class="dropdown-text">발표 아카이브</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#tsibble" id="toc-tsibble" class="nav-link active" data-scroll-target="#tsibble"><strong>1 tsibble</strong></a>
+  <ul class="collapse">
+  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">1.1 Get Started</a></li>
+  <li><a href="#turn-impicit-missing-values-into-explicit-missing-values" id="toc-turn-impicit-missing-values-into-explicit-missing-values" class="nav-link" data-scroll-target="#turn-impicit-missing-values-into-explicit-missing-values">1.2 Turn impicit missing values into explicit missing values</a></li>
+  <li><a href="#anchor2" id="toc-anchor2" class="nav-link" data-scroll-target="#anchor2">1.3 Aggregate over calendar periods</a></li>
+  </ul></li>
+  <li><a href="#tsibbledata" id="toc-tsibbledata" class="nav-link" data-scroll-target="#tsibbledata">2 tsibbledata</a></li>
+  <li><a href="#feasts" id="toc-feasts" class="nav-link" data-scroll-target="#feasts">3 feasts</a>
+  <ul class="collapse">
+  <li><a href="#graphics" id="toc-graphics" class="nav-link" data-scroll-target="#graphics">3.1 Graphics</a></li>
+  <li><a href="#decompositions" id="toc-decompositions" class="nav-link" data-scroll-target="#decompositions">3.2 Decompositions</a></li>
+  <li><a href="#feature-extraction-and-statistics" id="toc-feature-extraction-and-statistics" class="nav-link" data-scroll-target="#feature-extraction-and-statistics">3.3 Feature extraction and statistics</a></li>
+  </ul></li>
+  <li><a href="#fable" id="toc-fable" class="nav-link" data-scroll-target="#fable">4 fable</a></li>
+  <li><a href="#fable.prophet" id="toc-fable.prophet" class="nav-link" data-scroll-target="#fable.prophet">5 fable.prophet</a></li>
+  <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">tidyverse principle로 시계열 자료 분석하기</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>tidyverts ecosystem 소개</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Taemo Bang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 11, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://unsplash.com/photos/rBPOfVqROzY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p></p><figcaption class="figure-caption">Photo by Agê Barros on Unsplash</figcaption><p></p>
+</figure>
+</div>
+<aside>
+본 글은 <span class="citation" data-cites="tidyvert">(<a href="#ref-tidyvert" role="doc-biblioref"><span>“Tidyverts,”</span> n.d.</a>)</span>을 기반으로 작성되었습니다.
+</aside>
+<p>tidyverts ecosystem은 시계열 자료에 관한 분석을 tidyverse principle로 수행할 수 있게끔 해주는 패키지 묶음입니다. 전처리, 시각화부터 모델링, 예측까지 모든 과정을 “tidy” framework로 진행하게 해주죠. tidyverse priciple이 데이터 전처리에 있어서 얼마나 많은 업무 생산성을 가져다 주는지 우리는 이미 알고있습니다. 시계열 자료를 자주 다루는 사람이라면 꼭 배워둘 만한 패키지죠.😄 tidyverts ecosystem을 이루는 대부분의 패키지들은 <code>{fpp3}</code>으로 불러올 수 있습니다. <code>{tsibbletalk}</code>은 <code>{shiny}</code>와 함께 동작하는 반응형 그래픽을 제공하는 패키지로 본 튜토리얼에서는 생략하겠습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fpp3)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fable.prophet)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13) <span class="co"># for nycflights13 data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr) <span class="co"># for map()</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>())</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>loaded_package <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"fpp3"</span>, <span class="st">"fable.prophet"</span>, <span class="st">"nycflights13"</span>, <span class="st">"purrr"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>.version <span class="ot">&lt;-</span> <span class="fu">map</span>(loaded_package, packageVersion)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(.version) <span class="ot">&lt;-</span> loaded_package</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>.version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fpp3
+[1] '0.4.0'
+
+$fable.prophet
+[1] '0.1.0'
+
+$nycflights13
+[1] '1.0.2'
+
+$purrr
+[1] '0.3.4'</code></pre>
+</div>
+</div>
+<p>위 패키지들이 설치되어 있지 않은 분들은 튜토리얼의 본격적인 시작전에, <code>install.packages("패키지명")</code>을 통해 설치해주시기 바랍니다. 개발 버전을 설치하고 싶으신 분이 있다면 다음의 코드를 이용하세요:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"tidyverts/tsibble"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="tsibble" class="level2">
+<h2 class="anchored" data-anchor-id="tsibble"><strong>1 tsibble</strong></h2>
+<section id="get-started" class="level3">
+<h3 class="anchored" data-anchor-id="get-started">1.1 Get Started</h3>
+<p><code>{tsibble}</code>은 일반적인 시계열 자료를 <code>tibble</code> 형태로 표현할 수 있게해줍니다. 우리는 <code>tsibble()</code>을 통해 <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidy한 자료</a>에 대해 수행해왔던 {tidyverse}를 이용한 wrangling을 수행할 수 있습니다. 즉, tidyverse ecosystem이 tibble 객체를 기반으로 동작하듯이, tidyverts ecosytem은 tsibble 객체를 기반으로 동작합니다. tsibble 객체가 갖는 기본적인 원칙은 다음과 같습니다:</p>
+<ul>
+<li><code>index</code>: 과거부터 현재까지 순서화된 자료값의 관측 시간</li>
+<li><code>key</code>: 시간에 따른 관측 단위를 정의하는 변수의 집합</li>
+<li>각 관측치는 <code>index</code>와 <code>key</code>를 통해 유일하게(uniquely) 식별되어야만 함</li>
+<li>각 관측치는 등간격으로 관측된 자료여야만 함</li>
+</ul>
+<p>즉, 티블(데이터프레임)을 <code>tsibble</code>로 변환하기(coerce) 위해서는 <code>key</code>와 <code>index</code>를 명시해주어야 합니다. 예를 들어, 다음과 같은 <code>{nycflights13}</code> 패키지의 <code>weather</code> 자료를 이용해보겠습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>weather_simple <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>weather <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(origin, time_hour, temp, humid, precip)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>weather_simple</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["origin"],"name":[1],"type":["chr"],"align":["left"]},{"label":["time_hour"],"name":[2],"type":["dttm"],"align":["right"]},{"label":["temp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["humid"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["precip"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"EWR","2":"2013-01-01 01:00:00","3":"39.02","4":"59.37","5":"0"},{"1":"EWR","2":"2013-01-01 02:00:00","3":"39.02","4":"61.63","5":"0"},{"1":"EWR","2":"2013-01-01 03:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 04:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 05:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 06:00:00","3":"37.94","4":"67.21","5":"0"},{"1":"EWR","2":"2013-01-01 07:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 08:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 09:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 10:00:00","3":"41.00","4":"59.65","5":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>origin</code>을 <code>key</code>로 <code>index</code>를 <code>time_hour</code>로 해주면 될 것 같습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_tsbl <span class="ot">&lt;-</span> <span class="fu">as_tsibble</span>(weather_simple, <span class="at">key =</span> origin, <span class="at">index =</span> time_hour)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>weather_tsbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["origin"],"name":[1],"type":["chr"],"align":["left"]},{"label":["time_hour"],"name":[2],"type":["dttm"],"align":["right"]},{"label":["temp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["humid"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["precip"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"EWR","2":"2013-01-01 01:00:00","3":"39.02","4":"59.37","5":"0"},{"1":"EWR","2":"2013-01-01 02:00:00","3":"39.02","4":"61.63","5":"0"},{"1":"EWR","2":"2013-01-01 03:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 04:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 05:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 06:00:00","3":"37.94","4":"67.21","5":"0"},{"1":"EWR","2":"2013-01-01 07:00:00","3":"39.02","4":"64.43","5":"0"},{"1":"EWR","2":"2013-01-01 08:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 09:00:00","3":"39.92","4":"62.21","5":"0"},{"1":"EWR","2":"2013-01-01 10:00:00","3":"41.00","4":"59.65","5":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>여기서는 자료 자체가 출발지(<code>origin</code>) 별로 기록된 다중(multiple) 시계열에 해당하므로, <code>key</code>를 <code>origin</code>으로 잡아줬지만, 만약 자료가 단일(univariate) 시계열에 해당한다면 해당 key는 설정을 하지 않으면 됩니다(see <code>package?tsibble</code> and <code>vignette("intro-tsibble")</code> for details). 그리고, 사실 <code>tsibble()</code>은 irregular time interval을 갖는 자료에 대해서도 적용이 가능합니다. as_tsibble은 <code>regular = TRUE</code> 옵션이 default로 설정되는데, 이를 <code>FALSE</code>로 바꿔주면 되며, 이러한 irregular time interval을 갖는 tsibble 객체의 경우는 <code>[!]</code> 표시를 통해 확인할 수 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nycflights13<span class="sc">::</span>flights <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">sched_dep_datetime =</span> <span class="fu">make_datetime</span>(year, month, day, hour, minute, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">tz =</span> <span class="st">"America/New_York"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tsibble</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">key =</span> <span class="fu">c</span>(carrier, flight), </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">index =</span> sched_dep_datetime, </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">regular =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["int"],"align":["right"]},{"label":["month"],"name":[2],"type":["int"],"align":["right"]},{"label":["day"],"name":[3],"type":["int"],"align":["right"]},{"label":["dep_time"],"name":[4],"type":["int"],"align":["right"]},{"label":["sched_dep_time"],"name":[5],"type":["int"],"align":["right"]},{"label":["dep_delay"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["arr_time"],"name":[7],"type":["int"],"align":["right"]},{"label":["sched_arr_time"],"name":[8],"type":["int"],"align":["right"]},{"label":["arr_delay"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["carrier"],"name":[10],"type":["chr"],"align":["left"]},{"label":["flight"],"name":[11],"type":["int"],"align":["right"]},{"label":["tailnum"],"name":[12],"type":["chr"],"align":["left"]},{"label":["origin"],"name":[13],"type":["chr"],"align":["left"]},{"label":["dest"],"name":[14],"type":["chr"],"align":["left"]},{"label":["air_time"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["distance"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["hour"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["minute"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["time_hour"],"name":[19],"type":["dttm"],"align":["right"]},{"label":["sched_dep_datetime"],"name":[20],"type":["dttm"],"align":["right"]}],"data":[{"1":"2013","2":"11","3":"3","4":"1531","5":"1540","6":"-9","7":"1653","8":"1725","9":"-32","10":"9E","11":"2900","12":"N600LR","13":"JFK","14":"BNA","15":"113","16":"765","17":"15","18":"40","19":"2013-11-03 15:00:00","20":"2013-11-03 15:40:00"},{"1":"2013","2":"11","3":"4","4":"1539","5":"1540","6":"-1","7":"1712","8":"1725","9":"-13","10":"9E","11":"2900","12":"N903XJ","13":"JFK","14":"BNA","15":"117","16":"765","17":"15","18":"40","19":"2013-11-04 15:00:00","20":"2013-11-04 15:40:00"},{"1":"2013","2":"11","3":"5","4":"1548","5":"1540","6":"8","7":"1708","8":"1725","9":"-17","10":"9E","11":"2900","12":"N602LR","13":"JFK","14":"BNA","15":"120","16":"765","17":"15","18":"40","19":"2013-11-05 15:00:00","20":"2013-11-05 15:40:00"},{"1":"2013","2":"11","3":"6","4":"1535","5":"1540","6":"-5","7":"1657","8":"1725","9":"-28","10":"9E","11":"2900","12":"N928XJ","13":"JFK","14":"BNA","15":"118","16":"765","17":"15","18":"40","19":"2013-11-06 15:00:00","20":"2013-11-06 15:40:00"},{"1":"2013","2":"11","3":"7","4":"1549","5":"1540","6":"9","7":"1733","8":"1725","9":"8","10":"9E","11":"2900","12":"N914XJ","13":"JFK","14":"BNA","15":"131","16":"765","17":"15","18":"40","19":"2013-11-07 15:00:00","20":"2013-11-07 15:40:00"},{"1":"2013","2":"11","3":"8","4":"1539","5":"1540","6":"-1","7":"1706","8":"1725","9":"-19","10":"9E","11":"2900","12":"N905XJ","13":"JFK","14":"BNA","15":"114","16":"765","17":"15","18":"40","19":"2013-11-08 15:00:00","20":"2013-11-08 15:40:00"},{"1":"2013","2":"11","3":"9","4":"1535","5":"1540","6":"-5","7":"1714","8":"1723","9":"-9","10":"9E","11":"2900","12":"N929XJ","13":"JFK","14":"BNA","15":"121","16":"765","17":"15","18":"40","19":"2013-11-09 15:00:00","20":"2013-11-09 15:40:00"},{"1":"2013","2":"11","3":"10","4":"1538","5":"1540","6":"-2","7":"1718","8":"1725","9":"-7","10":"9E","11":"2900","12":"N279PQ","13":"JFK","14":"BNA","15":"115","16":"765","17":"15","18":"40","19":"2013-11-10 15:00:00","20":"2013-11-10 15:40:00"},{"1":"2013","2":"11","3":"11","4":"1527","5":"1540","6":"-13","7":"1710","8":"1725","9":"-15","10":"9E","11":"2900","12":"N908XJ","13":"JFK","14":"BNA","15":"119","16":"765","17":"15","18":"40","19":"2013-11-11 15:00:00","20":"2013-11-11 15:40:00"},{"1":"2013","2":"11","3":"12","4":"1535","5":"1540","6":"-5","7":"1709","8":"1725","9":"-16","10":"9E","11":"2900","12":"N927XJ","13":"JFK","14":"BNA","15":"118","16":"765","17":"15","18":"40","19":"2013-11-12 15:00:00","20":"2013-11-12 15:40:00"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="turn-impicit-missing-values-into-explicit-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="turn-impicit-missing-values-into-explicit-missing-values">1.2 Turn impicit missing values into explicit missing values</h3>
+<p>간혹 시계열 자료에는 암묵적 결측치(implicit missing values)가 존재하는 경우가 있습니다. 암묵적 결측치가 존재하는 시계열 자료가 일정한 시간 간격으로 수집되었을 경우, 우리는 <code>fill_gaps()</code>를 이용해 암묵적 결측을 명시적으로(explicit) 바꿀 수 있어요. 4년간 수집된 연도별 키위, 체리의 수확량(단위: kg)에 관한 자료를 직접 만들어서 <code>fill_gaps()</code>의 쓰임에 대해 알아봅시다. 본 자료에는 암묵적 결측이 존재합니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="ot">&lt;-</span> <span class="fu">tsibble</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2013</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2014</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fruit =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"kiwi"</span>, <span class="st">"cherry"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">kilo =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size =</span> <span class="dv">6</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> fruit, <span class="at">index =</span> year</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>harvest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>암묵적 결측이란, 예를 들어 위 자료처럼 체리 생산량이 2010년에는 기록되지 않았음에도 불구하고 행이 생략되어있는 것을 말합니다. <code>NA</code>로 명시는 다음과 같이 손쉽게 가능합니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fill_gaps</span>(harvest, <span class="at">.full =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"2"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>다음의 각각 시작점, 끝점에 대해서만 결측치를 명시할 수도 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at the same starting point across units</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fill_gaps</span>(harvest, <span class="at">.full =</span> <span class="fu">start</span>())</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># at the same end point across units</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fill_gaps</span>(harvest, <span class="at">.full =</span> <span class="fu">end</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"2"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>.full = FALSE</code>를 설정할 경우(<code>fill_gaps()</code>의 default 옵션에 해당), 각 key 내의 period에서 발생한 결측에 대해서만 명시가 이루어집니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fill_gaps</span>(harvest, <span class="at">.full =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>특정값으로의 명시도 손쉽게 수행이 가능해요.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>(<span class="at">kilo =</span> 0L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>변수에 대해 함수를 적용하여 명시도 가능합니다. <code>sum()</code>을 이용하여 합으로 명시해보았습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>(<span class="at">kilo =</span> <span class="fu">sum</span>(kilo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"29"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"29"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>key</code>에 대해 <code>group_by</code>를 통해 각 그룹에 대해 함수를 적용할 수도 있죠. 이번에는 <code>median()</code>을 통해 중위수로 명시해보았습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by_key</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>(<span class="at">kilo =</span> <span class="fu">median</span>(kilo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"2"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>원 자료 자체에 <code>NA</code>가 존재하는 경우, 적용하고자 하는 함수에 <code>na.rm = TRUE</code>을 설정해주면 됩니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>harvest[<span class="dv">2</span>, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by_key</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>(<span class="at">kilo =</span> <span class="fu">median</span>(kilo, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"8"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"2"},{"1":"2013","2":"kiwi","3":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>마지막으로, <code>fill_gaps()</code>아 <code>tidyr::fill()</code>을 함께 이용하면 암묵적 결측치를 이전 시점의 결측치로 대치할 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="ot">&lt;-</span> <span class="fu">tsibble</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2013</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2014</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fruit =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"kiwi"</span>, <span class="st">"cherry"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">kilo =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size =</span> <span class="dv">6</span>),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> fruit, <span class="at">index =</span> year</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by_key</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">fill</span>(kilo, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"4"},{"1":"2014","2":"cherry","3":"1"},{"1":"2010","2":"kiwi","3":"5"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"2"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>반대로, 한 시점 미래의 값으로 대치도 가능합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>harvest <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by_key</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fill_gaps</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">fill</span>(kilo, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"4"},{"1":"2013","2":"cherry","3":"1"},{"1":"2014","2":"cherry","3":"1"},{"1":"2010","2":"kiwi","3":"5"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"6"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="anchor2" class="level3">
+<h3 class="anchored" data-anchor-id="anchor2">1.3 Aggregate over calendar periods</h3>
+<p><code>index_by()</code>와 <code>summarise()</code>를 이용하면 관심있는 변수에 대해 특정 시간 주기(e.g.&nbsp;monthly)에 대해 함수(e.g.&nbsp;합계: <code>sum()</code>, 평균: <code>mean()</code>)를 적용할 수 있어요. <code>index_by</code>는 <code>as.Date()</code>, <code>tsibble::yearweek()</code>, <code>tsibble::yearmonth()</code>, <code>tsibble::yearquarter()</code>, 뿐만 아니라 {lubridate} 계열의 함수와 함께 사용됩니다. 예를 들어, <code>weather</code> 자료의 월별 평균 기온, 총 강수량은 다음과 같이 <code>yearmonth()</code>에 <code>index</code> 변수를 <code>.</code>으로 나타내어 계산할 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>weather_tsbl <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by_key</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">index_by</span>(<span class="at">year_month =</span> <span class="sc">~</span><span class="fu">yearmonth</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">avg_temp =</span> <span class="fu">mean</span>(temp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">total_precip =</span> <span class="fu">sum</span>(precip, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["origin"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year_month"],"name":[2],"type":["mth"],"align":["right"]},{"label":["avg_temp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["total_precip"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"EWR","2":"2013 Jan","3":"35.56216","4":"3.53"},{"1":"EWR","2":"2013 Feb","3":"34.26332","4":"3.83"},{"1":"EWR","2":"2013 Mar","3":"40.11865","4":"3.00"},{"1":"EWR","2":"2013 Apr","3":"52.97750","4":"1.47"},{"1":"EWR","2":"2013 May","3":"63.32024","4":"5.44"},{"1":"EWR","2":"2013 Jun","3":"73.26725","4":"8.73"},{"1":"EWR","2":"2013 Jul","3":"80.70300","4":"3.74"},{"1":"EWR","2":"2013 Aug","3":"74.53748","4":"4.57"},{"1":"EWR","2":"2013 Sep","3":"67.30478","4":"1.54"},{"1":"EWR","2":"2013 Oct","3":"59.77821","4":"0.50"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>index_by()</code>+<code>summarise()</code>는 irregular time interval을 갖는 tsibble에 대해서도 수행이 가능합니다.</p>
+<!-- <a href='https://tsibbledata.tidyverts.org/'><img src='logo_tsibbledata.png' align="right" height="138.5" /></a> -->
+</section>
+</section>
+<section id="tsibbledata" class="level2">
+<h2 class="anchored" data-anchor-id="tsibbledata">2 tsibbledata</h2>
+<p>{tsibbledata}는 tsibble 형태의 다양한 예제 자료를 제공해줍니다. 어떤 패키지에 대한 튜토리얼을 진행할 때, 적절한 자료들이 필요로 되는데, 이렇게 예제 자료를 직접적으로 제공해준다는 점에서 R 유저들에 대한 배려가 담겨있다는 생각이 드네요. 예를 들어, 다음의 <code>olympic_running</code>은 4년 주기로 수집된 올림픽 달리기 종목의 성별 최고기록에 관한 자료입니다(see <code>?olympic_running</code> for details).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>olympic_running</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["int"],"align":["right"]},{"label":["Length"],"name":[2],"type":["int"],"align":["right"]},{"label":["Sex"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Time"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1896","2":"100","3":"men","4":"12.0"},{"1":"1900","2":"100","3":"men","4":"11.0"},{"1":"1904","2":"100","3":"men","4":"11.0"},{"1":"1908","2":"100","3":"men","4":"10.8"},{"1":"1912","2":"100","3":"men","4":"10.8"},{"1":"1916","2":"100","3":"men","4":"NA"},{"1":"1920","2":"100","3":"men","4":"10.8"},{"1":"1924","2":"100","3":"men","4":"10.6"},{"1":"1928","2":"100","3":"men","4":"10.8"},{"1":"1932","2":"100","3":"men","4":"10.3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>이 자료를 이용하여 달리기 종목별 최고 기록에 대한 시도표를 성별로 나누어서 그려보았습니다. 참고로, 1916, 1940, 1944년의 경우 세계대전으로 인해 결측 처리되었습니다.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(olympic_running, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Time, <span class="at">colour =</span> Sex)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Length, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Running time (seconds)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/olympic-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- <a href='https://feasts.tidyverts.org'><img src='logo_feasts.png' align="right" height="138.5" /></a> -->
+</section>
+<section id="feasts" class="level2">
+<h2 class="anchored" data-anchor-id="feasts">3 feasts</h2>
+<p>{feasts}는 Feature Extraction And Statistics for Time Series의 약자로, 시계열 자료분석에 쓰이는 여러가지 툴을 제공해줍니다. tsibble 객체와 함께 동작하며, 시계열의 분해, feature 추출(e.g.&nbsp;추세, 계절성), 시각화 등을 수행할 때 쓰입니다. 아울러, {feasts}를 통한 시계열 자료분석은 다음 섹션에서 소개할 tidyverts ecosystem의 예측 모델링 부분을 담당하는 {fable} 패키지와 긴밀하게 결합하여 사용됩니다.</p>
+<section id="graphics" class="level3">
+<h3 class="anchored" data-anchor-id="graphics">3.1 Graphics</h3>
+<p>시각화는 주로 시계열 자료의 패턴을 이해하기 위한 첫 단계에 많이 이루어집니다. {feasts}는 시계열의 패턴을 {ggplot2}를 사용해 자유롭게 커스텀할 수 있는 그래픽을 제공합니다. 첫 번째로는 <code>gg_season</code>을 이용한 계절성(seasonality) 시각화입니다. 시각화에 사용된 자료 <code>tsibbledata::aus_production</code>은 호주의 맥주, 담배 등의 품목에 관한 분기별 생산지표 추정치에 관한 자료입니다. 맥주의 분기별 생산지표에 관한 계절성 시각화를 수행해보았습니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>aus_production <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_season</span>(Beer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/season-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>다음으로 <code>gg_subseries()</code>를 이용하면 시계열의 각 season별로 시각화가 가능합니다. 예를 들어, <code>aus_production</code>과 같은 분기별 자료의 경우 분기별 패턴에 대한 시각화를 쉽게 수행할 수 있습니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>aus_production <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_subseries</span>(Beer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/subseries-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>gg_lag()</code>를 이용하면 원자료와 시차(lag)의 산점도를 season별로 나누어 그릴 수 있습니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>aus_production <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Quarter) <span class="sc">&gt;</span> <span class="dv">1991</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_lag</span>(Beer, <span class="at">geom =</span> <span class="st">"point"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/lag-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>분기별 자료의 특성상, lag 4와 8 그림을 보면 각 season별로 원자료와의 관계가 <span class="math inline">\(y=x\)</span> 직선에 잘 놓여있는 것을 캐치할 수 있죠. 마지막으로 ACF 그림도 손쉽게 그릴 수 있습니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>aus_production <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ACF</span>(Beer) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/acf-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="decompositions" class="level3">
+<h3 class="anchored" data-anchor-id="decompositions">3.2 Decompositions</h3>
+<p>시계열 분해(decomposition)는 시계열 자료분석에서 흔히 수행되는 작업 중 하나이며, 이는 시계열에 대한 패턴을 이해하는데에 큰 도움을 줍니다. 그리고, 추후 예측 모델링을 정교하게 하는 것에도 상당한 도움을 준다. 즉, 시계열 분해는 본인이 분석하고자 하는 시계열의 패턴을 좀 더 정교하게 캐치하고 예측 성능을 향상시키기 위한 목적으로 꼭 필요로 되는 사전 작업이라고 할 수 있습니다. 본 튜토리얼에서는 {feasts}에서 제공하고 있는 2가지 시계열 분해 방법에 대해 소개하려고 합니다.</p>
+<section id="classical-decompostion" class="level4">
+<h4 class="anchored" data-anchor-id="classical-decompostion">3.2.1 Classical decompostion</h4>
+<p>classical decompostion은 1920년대에 고안된 방법입니다. 오래된 방법론인 만큼 요즘 쓰이는 시계열 분해 방법들의 초석이 되는 방법이라고 할 수 있으며, 다른 방법들에 비해 상대적으로 간단하다는 장점이 있습니다. classical decompostion은 가법 분해와 승법 분해가 있습니다. 두 방법은 계절성의 반영 방식에 따라 나뉩니다(e.g.&nbsp;분기별 자료 <span class="math inline">\(m = 4\)</span>, 월별 자료 <span class="math inline">\(m = 12\)</span>, 일별 자료 <span class="math inline">\(m = 7\)</span>). 보통 가법 classical decompostion의 경우 계절성이 추세에 따라 무관하게 일정한 크기를 유지할 때 사용하며, 반대로 계절성의 크기가 추세의 크기에 따라 변화하는 경우에는 승법 classical decompostion을 사용합니다. 승법 계절성 classical decompostion는 계절 성분이 연도에 따라 상수라고 가정한채로 진행되며, 승법 계절성에서 계절 성분을 형성하는 <span class="math inline">\(m\)</span>은 계절 지수(seasonal indices)라 불리기도 합니다.</p>
+<p>classical decompostion의 자세한 분해 과정은 <a href="https://otexts.com/fpp3/classical-decomposition.html">여기</a>를 참고해주시기 바랍니다. 여기서는 바로 R을 이용한 튜토리얼을 진행하겠습니다. 앞서 사용했던 자료의 맥주 생산지표를 가법 classical decomposition을 통해 분해해보겠습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dcmp <span class="ot">&lt;-</span> aus_production <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">model</span>(<span class="fu">classical_decomposition</span>(Beer, <span class="at">type =</span> <span class="st">"additive"</span>))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(dcmp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[".model"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[2],"type":["qtr"],"align":["right"]},{"label":["Beer"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["trend"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["seasonal"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["random"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["season_adjust"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1956 Q1","3":"284","4":"NA","5":"2.131016","6":"NA","7":"281.8690"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1956 Q2","3":"213","4":"NA","5":"-42.519927","6":"NA","7":"255.5199"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1956 Q3","3":"227","4":"255.250","5":"-28.505776","6":"0.2557761","7":"255.5058"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1956 Q4","3":"308","4":"254.375","5":"68.894687","6":"-15.2696868","7":"239.1053"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1957 Q1","3":"262","4":"257.375","5":"2.131016","6":"2.4939837","7":"259.8690"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1957 Q2","3":"228","4":"260.000","5":"-42.519927","6":"10.5199271","7":"270.5199"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1957 Q3","3":"236","4":"262.750","5":"-28.505776","6":"1.7557761","7":"264.5058"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1957 Q4","3":"320","4":"264.625","5":"68.894687","6":"-13.5196868","7":"251.1053"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1958 Q1","3":"272","4":"265.375","5":"2.131016","6":"4.4939837","7":"269.8690"},{"1":"classical_decomposition(Beer, type = \"additive\")","2":"1958 Q2","3":"233","4":"264.625","5":"-42.519927","6":"10.8949271","7":"275.5199"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>먼저, 분해된 시계열의 요소들은 <code>componenets()</code>로 불러올 수 있습니다. 그리고, 이 <code>components()</code>에 대해 <code>autoplot()</code>을 수행해주면 다음과 같이 시각화를 수행할 수 있습니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>dcmp <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">components</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">autoplot</span>() <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Classical additive decomposition of Quarterly production of beer in Australia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/classical-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="stl-decomposition" class="level4">
+<h4 class="anchored" data-anchor-id="stl-decomposition">3.2.2 STL decomposition</h4>
+<p>STL은 “Seasonal and Trend decomposition using Loess”의 준말로 다재다능(versatile)하고 로버스트한 시계열 분해 방법에 해당합니다. 그리고, 여기서 loess란 <a href="https://be-favorite.tistory.com/58?category=923110">Local regression</a>의 준말로 자료를 비선형으로 추정하는 방법 중 하나에 해당합니다. STL은 앞서 소개한 classical decomposition, 그리고 {feasts}에서 제공하는 또 다른 시계열 분해 방법 <a href="https://otexts.com/fpp3/methods-used-by-official-statistics-agencies.html">SEATS, X-11</a>과 비교하여 몇몇 이점을 갖는다. 자세한 사항은 <a href="https://otexts.com/fpp3/stl.html">여기</a>를 참고해주세요. 본 글은 tidyverts ecosystem에 대한 소개 이므로, deep한 이론 정리는 추후에 fpp3 책을 공부하면서 하나하나 정리해나가겠습니다. 일단 바로 실습으로 넘어가겠습니다.😊 다음은 STL decomposition을 이용하여 시계열의 추세 요소는 <code>window = 7</code>을 통해 좀 더 flexible하게 추정하고, 계절 패턴의 경우는 <code>window = "periodic"</code>으로 하여 고정(fixed)되도록 하였습니다(see <code>?STL</code> for details). 여기서. <code>window</code>란, 창을 말하며 자료를 여러 창으로 잘게 쪼갤수록 더 flexible하고 복잡한 함수를 추정하게 됩니다. <a href="https://be-favorite.tistory.com/56?category=923110">splines</a>에 지식이 있는 분들은 이해하기 쉬울거라고 생각합니다.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>aus_production <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">STL</span>(Beer <span class="sc">~</span> <span class="fu">trend</span>(<span class="at">window =</span> <span class="dv">7</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="at">window =</span> <span class="st">"periodic"</span>),</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">robust =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">components</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/STL-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="feature-extraction-and-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="feature-extraction-and-statistics">3.3 Feature extraction and statistics</h3>
+<p>{feast}에서 소개할 마지막 기능은 시계열의 feature(e.g.&nbsp;ACF)와 통계량(e.g.&nbsp;평균)을 뽑아내는 것입니다. {feast}에서는 <code>feature()</code> 함수를 통해 많은 종류의 features들에 대한 정보를 제공합니다만, 본 튜토리얼에서는 시계열의 평균, 분위수, ACF를 뽑아내는 방법에 대해서만 소개하겠습니다(see <code>?feature</code> for details). 그 외 다른 features들에 관심이 있으시다면, <a href="https://otexts.com/fpp3/some-simple-statistics.html">여기</a>를 참고해주세요.</p>
+<section id="some-simple-statistics" class="level4">
+<h4 class="anchored" data-anchor-id="some-simple-statistics">3.3.1 Some simple statistics</h4>
+<p>먼저, 시계열의 평균과 분위수를 뽑는 방법에 대해 소개하겠습니다. 평균, 분위수 등 시계열의 기본적인 통계량은 <code>feature()</code>와 R의 기본 함수(e.g.&nbsp;<code>mean()</code>, <code>median()</code>)들을 이용해 간편하게 계산할 수 있습니다. 여기서 이용할 자료 <code>tourism()</code>은 지역, 주, 목적별로 나눠진 1998-2016년 분기별 호주 여행객수에 관한 자료로, 지역, 주, 여행 목적별 여행객 수의 전체 평균과 분위수를 계산해봤습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tourism <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">features</span>(Trips, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">list</span>(<span class="at">mean =</span> mean, quantile))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":["mean"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["0%"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["25%"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["50%"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["75%"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["100%"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelaide","2":"South Australia","3":"Business","4":"155.527910","5":"68.7253928","6":"133.893462","7":"152.5766183","8":"176.935536","9":"242.494368"},{"1":"Adelaide","2":"South Australia","3":"Holiday","4":"156.543437","5":"108.0330401","6":"134.626822","7":"153.9450073","8":"172.256676","9":"223.557406"},{"1":"Adelaide","2":"South Australia","3":"Other","4":"56.563450","5":"25.9018459","6":"43.865901","7":"53.8094631","8":"62.523135","9":"107.494657"},{"1":"Adelaide","2":"South Australia","3":"Visiting","4":"205.193667","5":"136.6111544","6":"178.915998","7":"205.5817356","8":"229.299111","9":"269.535618"},{"1":"Adelaide Hills","2":"South Australia","3":"Business","4":"2.664236","5":"0.0000000","6":"0.000000","7":"1.2554337","8":"3.920368","9":"28.601515"},{"1":"Adelaide Hills","2":"South Australia","3":"Holiday","4":"10.467276","5":"0.0000000","6":"5.767673","7":"8.5159661","8":"14.059997","9":"35.751337"},{"1":"Adelaide Hills","2":"South Australia","3":"Other","4":"1.404931","5":"0.0000000","6":"0.000000","7":"0.9075955","8":"2.093167","9":"8.953163"},{"1":"Adelaide Hills","2":"South Australia","3":"Visiting","4":"14.202530","5":"0.7776381","6":"8.907923","7":"12.2066190","8":"16.806339","9":"81.102109"},{"1":"Alice Springs","2":"Northern Territory","3":"Business","4":"14.570929","5":"1.0084255","6":"9.133369","7":"13.3241614","8":"18.456365","9":"34.077065"},{"1":"Alice Springs","2":"Northern Territory","3":"Holiday","4":"31.887332","5":"2.8085551","6":"16.850803","7":"31.5237822","8":"44.784402","9":"76.541382"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="acf-features" class="level4">
+<h4 class="anchored" data-anchor-id="acf-features">3.3.2 ACF features</h4>
+<p>ACF에 관한 정보는 <code>feat_acf()</code>를 이용하면 됩니다. <code>feat_acf()</code>는 기본적으로 ACF와 관련한 6가지 또는 최대 7가지의 features를 제공해줍니다(see <code>?feat_acf()</code> for details):</p>
+<ul>
+<li>원 계열의 1차 자기상관계수</li>
+<li>원 계열의 1차-10차 자기상관계수의 제곱합</li>
+<li>1차 차분 계열의 1차 자기상관계수</li>
+<li>1차 차분 계열의 1차-10차 자기상관계수의 제곱합</li>
+<li>2차 차분 계열의 1차 자기상관계수</li>
+<li>2차 차분 계열의 1차-10차 자기상관계수의 제곱합</li>
+<li>(계절 시계열에 대해) 첫번째 계절 시차(seasonal lag)에서의 자기상관계수</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tourism <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(Trips, feat_acf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":["acf1"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["acf10"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["diff1_acf1"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["diff1_acf10"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["diff2_acf1"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["diff2_acf10"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["season_acf1"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelaide","2":"South Australia","3":"Business","4":"0.033270698","5":"0.1306455","6":"-0.5196224","7":"0.4625367","8":"-0.6764291","9":"0.7413571","10":"0.20087547"},{"1":"Adelaide","2":"South Australia","3":"Holiday","4":"0.045569980","5":"0.3718981","6":"-0.3426251","7":"0.6143649","8":"-0.4868330","9":"0.5582436","10":"0.35115135"},{"1":"Adelaide","2":"South Australia","3":"Other","4":"0.516805734","5":"1.1535975","6":"-0.4086204","7":"0.3828913","8":"-0.6751196","9":"0.7923533","10":"0.34178065"},{"1":"Adelaide","2":"South Australia","3":"Visiting","4":"0.068365364","5":"0.2942366","6":"-0.3936543","7":"0.4522912","8":"-0.5179591","9":"0.4472958","10":"0.34493047"},{"1":"Adelaide Hills","2":"South Australia","3":"Business","4":"0.070914982","5":"0.1344731","6":"-0.5795037","7":"0.4145373","8":"-0.7504035","9":"0.7460039","10":"-0.06280837"},{"1":"Adelaide Hills","2":"South Australia","3":"Holiday","4":"0.131319990","5":"0.3127099","6":"-0.5361535","7":"0.5002113","8":"-0.7163426","9":"0.9063143","10":"0.20804204"},{"1":"Adelaide Hills","2":"South Australia","3":"Other","4":"0.261142556","5":"0.3301688","6":"-0.2532267","7":"0.3170873","8":"-0.4574704","9":"0.3922350","10":"0.07453409"},{"1":"Adelaide Hills","2":"South Australia","3":"Visiting","4":"0.139166739","5":"0.1167866","6":"-0.4720059","7":"0.2386155","8":"-0.6255751","9":"0.4077128","10":"0.16977219"},{"1":"Alice Springs","2":"Northern Territory","3":"Business","4":"0.217424370","5":"0.3666344","6":"-0.4995855","7":"0.3805574","8":"-0.6579956","9":"0.5870383","10":"0.31531357"},{"1":"Alice Springs","2":"Northern Territory","3":"Holiday","4":"-0.006604511","5":"2.1133742","6":"-0.1527905","7":"2.1134358","8":"-0.2742857","9":"1.5507370","10":"0.72858887"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>맨 마지막 열이 첫번째 계절 시차에서의 자기상관계수를 나타내는데, 본 자료의 경우 분기별 자료에 해당하므로 계절 주기는 4에 해당합니다. 즉, 본 자료에서 첫번째 계절 시차에서의 자기상관계수는 원 계열의 시차 4에서의 ACF 값을 나타낸다고 할 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tourism <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(Trips, feat_acf) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region<span class="sc">:</span>Purpose, season_acf1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":["season_acf1"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelaide","2":"South Australia","3":"Business","4":"0.20087547"},{"1":"Adelaide","2":"South Australia","3":"Holiday","4":"0.35115135"},{"1":"Adelaide","2":"South Australia","3":"Other","4":"0.34178065"},{"1":"Adelaide","2":"South Australia","3":"Visiting","4":"0.34493047"},{"1":"Adelaide Hills","2":"South Australia","3":"Business","4":"-0.06280837"},{"1":"Adelaide Hills","2":"South Australia","3":"Holiday","4":"0.20804204"},{"1":"Adelaide Hills","2":"South Australia","3":"Other","4":"0.07453409"},{"1":"Adelaide Hills","2":"South Australia","3":"Visiting","4":"0.16977219"},{"1":"Alice Springs","2":"Northern Territory","3":"Business","4":"0.31531357"},{"1":"Alice Springs","2":"Northern Territory","3":"Holiday","4":"0.72858887"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>원자료에 대한 ACF를 구해보면 다음과 같이 시차 4에서의 자기상관계수와 동일한 값을 가짐을 알 수 있죠:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tourism <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ACF</span>(Trips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":["lag"],"name":[4],"type":["lag"],"align":["right"]},{"label":["acf"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Adelaide","2":"South Australia","3":"Business","4":"1Q","5":"0.03327070"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"2Q","5":"0.05904106"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"3Q","5":"0.05356339"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"4Q","5":"0.20087547"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"5Q","5":"0.06449064"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"6Q","5":"0.10372714"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"7Q","5":"-0.05562396"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"8Q","5":"0.22744461"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"9Q","5":"0.01284716"},{"1":"Adelaide","2":"South Australia","3":"Business","4":"10Q","5":"-0.11368503"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>본 튜토리얼에서는 소개하지 않았지만, <code>feature()</code>를 이용한 시계열 feature extraction과 연계하여 다양한 시각화도 수행할 수 있습니다. 꼭 참고해보시기 바랍니다: <a href="https://otexts.com/fpp3/stlfeatures.html" class="uri">https://otexts.com/fpp3/stlfeatures.html</a></p>
+<!-- <a href='https://fable.tidyverts.org'><img src='logo_fable.png' align="right" height="138.5" /></a> -->
+</section>
+</section>
+</section>
+<section id="fable" class="level2">
+<h2 class="anchored" data-anchor-id="fable">4 fable</h2>
+<p>{fable} 패키지는 tsibble 객체와 함께 tidy한 format으로 시계열 예측 모델링을 수행할 수 있게해줍니다. <a href="https://github.com/be-favorite/Tutorial_tidymodels">{tidymodels}</a> 패키지에 대한 이해가 있으신 분들이라면 어렵지 않으실거라 생각합니다. {tidymodels}과 마찬가지로 {fable}은 여러 시계열에 대해 여러 시계열 모형에 대한 추정, 비교, 결합, 예측 등을 가능하게해줍니다.</p>
+<p>본격적인 튜토리얼 시작에 앞서, <code>tourism()</code> 자료를 이용할 것이며, 4가지 여행 목적(“business”, “holiday”, “visiting friends and relatives”, “other reasons”)으로 분해할 수 있는 호주 멜버른(Melbourne)의 일별 여행객 수를 예측하는 것에 관심이 있다고 가정합니다. 각 계열의 첫 번째 관측값은 다음과 같습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>tourism_melb <span class="ot">&lt;-</span> tourism <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Melbourne"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>tourism_melb <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Purpose) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Quarter"],"name":[1],"type":["qtr"],"align":["right"]},{"label":["Region"],"name":[2],"type":["chr"],"align":["left"]},{"label":["State"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Trips"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"1998 Q1","2":"Melbourne","3":"Victoria","4":"Business","5":"405.24297"},{"1":"1998 Q1","2":"Melbourne","3":"Victoria","4":"Holiday","5":"427.82780"},{"1":"1998 Q1","2":"Melbourne","3":"Victoria","4":"Other","5":"79.90985"},{"1":"1998 Q1","2":"Melbourne","3":"Victoria","4":"Visiting","5":"665.56779"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>우리가 추정하고자 하는 변수는 <code>Trips</code>(일별 여행객 수, 단위: 천)입니다. 해당 계열들의 시도표를 보면, 추세와 약한 계절성이 명확하게 존재함을 알 수 있습니다.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>tourism_melb <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(Trips)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/melbourne-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>{fable} 패키지에서 폭넓게 쓰이는 시계열 예측 모형은 ETS와 ARIMA 모형입니다. 먼저, ETS 모형은 추세 요소와 계절 요소를 가법, 승법, 감쇠효과 등을 반영하여 시계열을 모델링하는 지수평활법(exponential smoothing)을 통계적 모형으로 확장시킨 것에 해당합니다. 통계적 모형으로의 확장은 오차항 <span class="math inline">\(\epsilon_t\)</span>에 대해 통계적 분포라 할 수 있는, 평균이 0이고 분산이 <span class="math inline">\(\sigma^2\)</span>인 가우스 백색잡음 과정(gaussian white noise process)을 가정함으로써 이루어집니다. 즉, ETS 모형의 알파벳 각각은 E(error, 오차), T(trend, 추세), S(seasonal, 계절성)을 나타내며, 각 요소들을 모델링하는 방식(가법, 승법, 가법감쇠(damped), 승법감쇠)에 따라 ETS 모형의 종류가 나뉘어집니다. 아울러, 각 모델은 관측된 자료를 설명하는 측정식(measurement equations)과 시간에 따라 변화하는 관측되지 않은 요소(level, trend, seasonal)들을 설명하는 상태식(state equations)으로 구성되는데, 이러한 이유에서 우리는 ETS 모형을 혁신상태공간모형을 이루는 지수평활법(innovations state space models for exponential smoothing)이라고 표현하기도 합니다(See <a href="https://otexts.com/fpp3/ets.html">here</a> for detail). 두 번째로, ARIMA 모형은 시계열의 현재값을 과거값과 과거 예측 오차로 설명하는 대표적인 통계적 시계열 예측모형으로, 자세한 설명은 생략하겠습니다. ARIMA 모형에 대한 개념이 없으신 분들은 <a href="https://be-favorite.tistory.com/63?category=928223">여기</a>를 참고해주시기 바랍니다.</p>
+<p>두 모형에 대한 간략한 개념 설명은 이쯤에서 마치기로 하고, 이제 이 모형들을 {fable} 패키지를 이용해 어떻게 적합을 수행하면 되는지 보겠습니다. {fable}을 이용한 모형 적합은 <code>model()</code>을 통해 이루어집니다. <code>model()</code>을 통한 적합 과정은 <a href="https://github.com/be-favorite/Tutorial_tidymodels">{tidymodels}</a>와 유사하게 상당히 직관적인 이름의 함수들로 이루어집니다. 먼저, <code>ETS()</code>의 경우는 R에서 일반적으로 사용하는 모형식의 specification를 따라서 각 요소를 반영할 수 있게 해주며, 본 예제에서는 추세 요소만 가법적으로 설정해주고 나머지 요소는 자동으로 선택되도록 하였습니다(AICC를 기준으로, see <code>?ETS</code> for details). 그리고, ARIMA 모형은 <code>ARIMA()</code> 함수로 적합할 수 있으며, 해당 함수는 {forecast} 패키지의 <code>auto.arima</code>와 유사하게 default 옵션으로 AICC 값을 기준으로 최적의 모형을 선택해 줍니다(see <code>?ARIMA</code>). <code>model()</code>을 통해 적합이 이루어진 모형 객체는 tidy한 포맥의 모형 테이블로 결과를 반환해줍니다. 이를 이제부터 mable(model table) 객체라 칭하겠습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> tourism_melb <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">ets =</span> <span class="fu">ETS</span>(Trips <span class="sc">~</span> <span class="fu">trend</span>(<span class="st">"A"</span>)),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">arima =</span> <span class="fu">ARIMA</span>(Trips)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":["ets"],"name":[4],"type":["lst_mdl"],"align":["right"]},{"label":["arima"],"name":[5],"type":["lst_mdl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"<lst_mdl>","5":"<lst_mdl>"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"<lst_mdl>","5":"<lst_mdl>"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"<lst_mdl>","5":"<lst_mdl>"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"<lst_mdl>","5":"<lst_mdl>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>mable 객체의 행은 각 시계열로 이루어져있으며, 열은 각 모형의 specification을 나타냅니다. <code>fit</code>이 반환하는 결과를 보면 알 수 있듯이, 적합된 ETS 모형의 추세 요소는 모두 가법적으로 고려되었으며, 나머지 요소들은 각 시계열에 따라서 최적의 성분이 자동으로 선택되었습니다. ARIMA 모형 또한 AICC 값을 기준으로 한 최적의 차수들이 반영되어 모형 적합이 잘 이루어진 것으로 보입니다. 이 mable 객체로 우리는 모델 적합 단계에서 필요한 모든 작업을 tidy한 포맷으로 수행할 수 있습니다.</p>
+<p>먼저, <code>coef()</code> 또는 <code>tidy()</code>를 통해 모형으로부터 추정된 계수들을 추출할 수 있습니다. 아울러, 사전에 <code>select()</code> 함수를 통해 특정 모형에 대한 계수 값만을 뽑을 수도 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Region, State, Purpose, arima) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coef</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["term"],"name":[5],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"ma1","6":"-0.5550787","7":"0.12978931","8":"-4.2767679","9":"5.264967e-05"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"ma2","6":"-0.2335105","7":"0.12925315","8":"-1.8066134","9":"7.463048e-02"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"sar1","6":"0.9461540","7":"0.06358434","8":"14.8802991","9":"1.264465e-24"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"sma1","6":"-0.7717918","7":"0.14496638","8":"-5.3239364","9":"9.280014e-07"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"constant","6":"0.1930140","7":"0.21351305","8":"0.9039915","9":"3.687484e-01"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"arima","5":"ma1","6":"-0.9309040","7":"0.08513995","8":"-10.9338093","9":"1.774207e-17"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"arima","5":"constant","6":"3.6493015","7":"0.57089401","8":"6.3922575","9":"1.057092e-08"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"arima","5":"ma1","6":"-0.7495227","7":"0.07080228","8":"-10.5861391","9":"8.192162e-17"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"arima","5":"constant","6":"1.2363219","7":"0.63994797","8":"1.9319100","9":"5.695604e-02"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"arima","5":"ma1","6":"-0.8376624","7":"0.06524840","8":"-12.8380524","9":"5.030275e-21"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>tidy</code>로 수행해도 결과는 같습니다. 다음으로 <code>glance()</code>를 이용하면 모형의 적합 결과를 정보 기준(e.g.&nbsp;AIC, BIC)과 잔차의 분산 등으로 요약해줍니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">glance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["sigma2"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["log_lik"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AICc"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["MSE"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["AMSE"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["MAE"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["ar_roots"],"name":[13],"type":["list"],"align":["right"]},{"label":["ma_roots"],"name":[14],"type":["list"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"3.533069e+03","6":"-497.8635","7":"1013.7271","8":"1016.2985","9":"1035.1653","10":"3179.7624","11":"3519.8450","12":"42.85576504","13":"<NULL>","14":"<NULL>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"3.668008e+03","6":"-435.0687","7":"882.1375","8":"883.3042","9":"896.3542","10":"NA","11":"NA","12":"NA","13":"<cpl [4]>","14":"<cpl [6]>"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"ets","5":"1.100600e-02","6":"-486.8653","7":"991.7305","8":"994.3020","9":"1013.1688","10":"2547.7000","11":"2573.8279","12":"0.07443346","13":"<NULL>","14":"<NULL>"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"arima","5":"3.068849e+03","6":"-429.2382","7":"864.4763","8":"864.7963","9":"871.5847","10":"NA","11":"NA","12":"NA","13":"<cpl [0]>","14":"<cpl [1]>"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"ets","5":"4.967764e+02","6":"-421.5549","7":"853.1099","8":"853.9207","9":"865.0200","10":"471.9375","11":"511.9163","12":"17.04202574","13":"<NULL>","14":"<NULL>"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"arima","5":"4.889575e+02","6":"-356.0907","7":"718.1813","8":"718.5013","9":"725.2897","10":"NA","11":"NA","12":"NA","13":"<cpl [0]>","14":"<cpl [1]>"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"ets","5":"1.089051e-02","6":"-502.9317","7":"1023.8634","8":"1026.4348","9":"1045.3016","10":"3714.0018","11":"3860.2038","12":"0.08428978","13":"<NULL>","14":"<NULL>"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"arima","5":"4.241162e+03","6":"-441.5481","7":"893.0963","8":"893.9182","9":"904.9435","10":"NA","11":"NA","12":"NA","13":"<cpl [4]>","14":"<cpl [9]>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>만약 하나의 모형으로만 시계열 예측 모델링을 수행하고 있다면, <code>report()</code> 함수를 이용하면 됩니다. 이는 하나의 시계열 예측 모형의 평가를 상당히 만족스러운 포맷으로 제공해줍니다.😊 여행 목적이 “Holiday”일 때 ETS 모형을 적합한 결과 대한 요약을 <code>report()</code>를 통해 진행해봤습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Purpose <span class="sc">==</span> <span class="st">"Holiday"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(ets) <span class="sc">%&gt;%</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">report</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: Trips 
+Model: ETS(M,A,A) 
+  Smoothing parameters:
+    alpha = 0.03084501 
+    beta  = 0.03084499 
+    gamma = 0.0001000967 
+
+  Initial states:
+     l[0]      b[0]     s[0]    s[-1]     s[-2]    s[-3]
+ 424.0777 -2.535481 -26.7441 4.256618 -10.10668 32.59417
+
+  sigma^2:  0.011
+
+      AIC      AICc       BIC 
+ 991.7305  994.3020 1013.1688 </code></pre>
+</div>
+</div>
+<p>아울러, 모형으로부터의 적합값과 잔차는 <code>fitted()</code>, <code>residuals()</code> 각각을 이용해 얻을 수 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fitted</span>()</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">residuals</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[5],"type":["qtr"],"align":["right"]},{"label":[".fitted"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q1","6":"395.7035"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q2","6":"482.7697"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q3","6":"487.1224"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q4","6":"454.4149"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q1","6":"391.1064"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q2","6":"465.8753"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q3","6":"491.6959"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q4","6":"424.2785"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q1","6":"364.0546"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q2","6":"476.9459"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[5],"type":["qtr"],"align":["right"]},{"label":[".resid"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q1","6":"9.539479"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q2","6":"-75.134444"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q3","6":"-1.133207"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q4","6":"-25.215441"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q1","6":"-30.273756"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q2","6":"19.875959"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q3","6":"-133.012530"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q4","6":"1.491767"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q1","6":"130.451762"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q2","6":"22.038062"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>적합값과 잔차를 함께 얻고 싶다면 <code>augment()</code>를 사용하세요:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">augment</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[5],"type":["qtr"],"align":["right"]},{"label":["Trips"],"name":[6],"type":["dbl"],"align":["right"]},{"label":[".fitted"],"name":[7],"type":["dbl"],"align":["right"]},{"label":[".resid"],"name":[8],"type":["dbl"],"align":["right"]},{"label":[".innov"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q1","6":"405.2430","7":"395.7035","8":"9.539479","9":"9.539479"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q2","6":"407.6352","7":"482.7697","8":"-75.134444","9":"-75.134444"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q3","6":"485.9892","7":"487.1224","8":"-1.133207","9":"-1.133207"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1998 Q4","6":"429.1995","7":"454.4149","8":"-25.215441","9":"-25.215441"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q1","6":"360.8326","7":"391.1064","8":"-30.273756","9":"-30.273756"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q2","6":"485.7513","7":"465.8753","8":"19.875959","9":"19.875959"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q3","6":"358.6833","7":"491.6959","8":"-133.012530","9":"-133.012530"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"1999 Q4","6":"425.7702","7":"424.2785","8":"1.491767","9":"1.491767"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q1","6":"494.5063","7":"364.0546","8":"130.451762","9":"130.451762"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2000 Q2","6":"498.9839","7":"476.9459","8":"22.038062","9":"22.038062"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>모형간 예측 정확도의 비교는 <code>accuracy()</code>를 이용하면 됩니다. 여러 예측 평가 측도를 제공해줍니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">accuracy</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(MASE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":[".type"],"name":[5],"type":["chr"],"align":["left"]},{"label":["ME"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["RMSE"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["MAE"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["MPE"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["MAPE"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["MASE"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["RMSSE"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["ACF1"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"ets","5":"Training","6":"4.6685812","7":"50.47475","8":"37.21943","9":"0.2171840","10":"7.286626","11":"0.6752829","12":"0.6972556","13":"0.006245583"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"Training","6":"3.3061791","7":"56.38938","8":"42.85577","9":"-0.7534998","10":"9.314320","11":"0.6910741","12":"0.7402536","13":"0.152561519"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"arima","5":"Training","6":"2.5298686","7":"58.24867","8":"45.95808","9":"-1.1704366","10":"10.123450","11":"0.7411008","12":"0.7646615","13":"-0.041537973"},{"1":"Melbourne","2":"Victoria","3":"Holiday","4":"arima","5":"Training","6":"-4.6389201","7":"54.34857","8":"41.43945","9":"-2.4387791","10":"8.456079","11":"0.7518479","12":"0.7507684","13":"-0.112851983"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"arima","5":"Training","6":"-0.3435639","7":"21.69381","8":"16.97031","9":"-6.1610021","10":"19.494106","11":"0.7633891","12":"0.7720351","13":"0.080830958"},{"1":"Melbourne","2":"Victoria","3":"Other","4":"ets","5":"Training","6":"-0.1415391","7":"21.72412","8":"17.04203","9":"-5.9743933","10":"19.579269","11":"0.7666153","12":"0.7731138","13":"0.082340436"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"ets","5":"Training","6":"8.1656867","7":"60.94261","8":"51.39776","9":"0.4326661","10":"8.281368","11":"0.8194654","12":"0.7816176","13":"-0.058701318"},{"1":"Melbourne","2":"Victoria","3":"Visiting","4":"arima","5":"Training","6":"6.8854402","7":"63.05624","8":"51.71665","9":"0.1060524","10":"8.436977","11":"0.8245497","12":"0.8087259","13":"-0.101529827"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>참고로, 여기서는 훈련 자료(training data)에 대한 예측 성능에 해당합니다. 본 호주 일별 여행객수에 대한 자료에서는 예측 성능 평가 측도를 MASE로 할 경우, ETS 모형이 여행 목적이 “Other”인 경우를 제외하고는 훨씬 더 좋은 성능을 보이고 있습니다. 향후 시점의 예측은 <code>forecast()</code>로 추가적인 자료에 대한 정보 없이 바로 수행을 할 수 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>fc <span class="ot">&lt;-</span> fit <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forecast</span>(<span class="at">h =</span> <span class="st">"5 years"</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>fc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[5],"type":["qtr"],"align":["right"]},{"label":["Trips"],"name":[6],"type":["dist"],"align":["right"]},{"label":[".mean"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q1","6":"<dist>","7":"618.5614"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q2","6":"<dist>","7":"709.0934"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q3","6":"<dist>","7":"738.4658"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q4","6":"<dist>","7":"713.4445"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q1","6":"<dist>","7":"664.0338"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q2","6":"<dist>","7":"754.5658"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q3","6":"<dist>","7":"783.9382"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q4","6":"<dist>","7":"758.9169"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2020 Q1","6":"<dist>","7":"709.5062"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2020 Q2","6":"<dist>","7":"800.0383"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>향후 시점의 예측 결과는 fable(forecast table)로 요약되며, fable은 예측값의 점 추정치와 예측값의 분포에 대한 정보까지 포함하여 제공해줍니다. 예를 들어, 첫 번째 행의 시계열의 예측값의 분포는 평균이 619, 분산이 3533인 정규분포에 해당합니다. 정규분포를 따르는 이유는, 앞서 ETS의 간략한 소개에서 설명했듯이 오차항에 대해 가우스 백색잡음 과정을 가정했기 때문입니다. 그렇다면, 이러한 예측값의 분포에 따른 구간 추정은 어떤 함수로 수행할 수 있을까요? 예측값의 신뢰구간은 <code>hilo()</code>를 이용하면 됩니다. <code>hilo()</code> 함수는 fable 객체와 함께 동작하며, 원하는 신뢰수준을 반영할 수 있게 해줍니다. 다음은 80%, 95% 각각의 신뢰수준에 대한 구간을 추정한 것입니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fc <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hilo</span>(<span class="at">level =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Region"],"name":[1],"type":["chr"],"align":["left"]},{"label":["State"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Purpose"],"name":[3],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Quarter"],"name":[5],"type":["qtr"],"align":["right"]},{"label":["Trips"],"name":[6],"type":["dist"],"align":["right"]},{"label":[".mean"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["80%"],"name":[8],"type":["hilo"],"align":["right"]},{"label":["95%"],"name":[9],"type":["hilo"],"align":["right"]}],"data":[{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q1","6":"<dist>","7":"618.5614","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q2","6":"<dist>","7":"709.0934","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q3","6":"<dist>","7":"738.4658","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2018 Q4","6":"<dist>","7":"713.4445","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q1","6":"<dist>","7":"664.0338","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q2","6":"<dist>","7":"754.5658","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q3","6":"<dist>","7":"783.9382","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2019 Q4","6":"<dist>","7":"758.9169","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2020 Q1","6":"<dist>","7":"709.5062","8":"<hilo>","9":"<hilo>"},{"1":"Melbourne","2":"Victoria","3":"Business","4":"ets","5":"2020 Q2","6":"<dist>","7":"800.0383","8":"<hilo>","9":"<hilo>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>마지막으로, 예측값에 대한 시각화는 fable 객체에 대해 <code>autoplot()</code>을 적용해주면 됩니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>fc <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(tourism_melb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>본 튜토리얼에서 소개한 함수들 외에도 {fable}의 특정 모형 객체들과 함께 동작하는 여러 함수들이 있습니다(e.g.&nbsp;<code>refit()</code>, <code>interpolate()</code>, <code>components()</code>, etc). 튜토리얼에서 소개한 내용외에 자세한 내용이 궁금하시다면 <a href="https://otexts.com/fpp3/toolbox.html">Forecasting: Principles and Practices (3rd Ed.)</a>를 참고해주세요.</p>
+</section>
+<section id="fable.prophet" class="level2">
+<h2 class="anchored" data-anchor-id="fable.prophet">5 fable.prophet</h2>
+<p>{fable.prophet}은 facebook에서 제안한 단일 시계열 예측모형에 대한 적합 또한 tidy한 인터페이스로 제공해줍니다. prophet은 시계열의 시간 종속적인 특성을 고려하는 기존의 시계열 모형(e.g.&nbsp;지수평활법, ARIMA 모형)과 달리 curve-fitting(e.g.&nbsp;<a href="https://be-favorite.tistory.com/56?category=923110">splines</a>)으로 모형을 적합하며, 시계열을 다음과 같이 세 가지 요소로 분해하고 각 요소를 시간의 함수로 가법적으로 모형화합니다.</p>
+<p><span class="math display">\[
+y(t) = g(t) + s(t) + h(t) + \epsilon_t
+\]</span></p>
+<p>여기서 <span class="math inline">\(g(t)\)</span>는 비주기적 변화를 모형화하는 추세 함수, <span class="math inline">\(s(t)\)</span>는 주별 또는 연별 계절성과 같은 주기적 변화를 반영하며, <span class="math inline">\(h(t)\)</span>는 불규칙하게 발생할 가능성이 있는 휴일효과(holidays and events effects)를 모형화합니다. 세 요소 중에서도 휴일효과에 대한 반영이 prophet의 상당히 특징적인 부분이라 할 수 있겠으며, 모형에서 조절할 수 있는 모수들이 상당히 많아서 아주 유연하고 디테일하게 모델링이 가능합니다. 도메인 지식이 풍부할수록 prophet을 통한 성능 개선의 가능성은 무궁무진합니다. 본 튜토리얼에서 prophet에 대한 개념 설명은 이쯤에서 간략하게 마치겠습니다. prophet을 이번에 처음 접하시는 분들은 <a href="https://github.com/be-favorite/Tutorial_prophet">여기</a>를 참고해주시기 바랍니다. 개념 정리와 R을 이용한 튜토리얼 과정을 정리해놓았는데, 여기서 소개할 tidy한 인터페이스의 이해를 위해서 꼭 필요로 될겁니다.</p>
+<p>본 튜토리얼에서 prophet을 이용한 예측 모델링에 이용할 자료는 호주의 카페, 레스토랑 및 케이터링 서비스에 관한 월 매출액 자료(단위: milions $AUD)입니다:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>cafe <span class="ot">&lt;-</span> tsibbledata<span class="sc">::</span>aus_retail <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Industry <span class="sc">==</span> <span class="st">"Cafes, restaurants and catering services"</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(cafe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Plot variable not specified, automatically selected `.vars = Turnover`</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>주별로 나뉜 해당 자료의 각 계열은 증가하는 추세와 그에 따른 연별 계절 패턴이 눈에 보입니다. 또한, 계절 패턴의 경우 계열의 수준(level)에 비례하는 형태를 보이고 있으므로, 계절성을 승법적으로 고려해야할 것입니다. 아울러, 월별 자료의 경우는 휴일 효과의 경우 계절 요소를 통해 모형화가 가능합니다. 휴일효과에 대한 반영은 이번에 진행하지 않을 예정입니다(기존의 prophet 인터페이스에서 수행했던 것과 같이 간단하게 반영, see <a href="https://github.com/mitchelloharawild/fable.prophet/issues/17">here</a> for details). 본 자료에 대해 추세 요소는 선형으로 하여(default), 연별 계절성을 승법으로 고려하여 prophet을 적합해보았습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> cafe <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">prophet =</span> <span class="fu">prophet</span>(Turnover <span class="sc">~</span> <span class="fu">season</span>(<span class="st">"year"</span>, <span class="dv">4</span>, <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["State"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Industry"],"name":[2],"type":["chr"],"align":["left"]},{"label":["prophet"],"name":[3],"type":["lst_mdl"],"align":["right"]}],"data":[{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"New South Wales","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"Northern Territory","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"Queensland","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"South Australia","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"Tasmania","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"Victoria","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"},{"1":"Western Australia","2":"Cafes, restaurants and catering services","3":"<lst_mdl>"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>각 계열에 대해 prophet이 잘 적합된 것을 확인할 수 있습니다. 적합된 모형의 각 요소들은 <code>components()</code>로 추출할수 있습니다:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-max.print="10">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["State"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Industry"],"name":[2],"type":["chr"],"align":["left"]},{"label":[".model"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Month"],"name":[4],"type":["mth"],"align":["right"]},{"label":["Turnover"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["additive_terms"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["multiplicative_terms"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["trend"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["year"],"name":[9],"type":["dbl"],"align":["right"]},{"label":[".resid"],"name":[10],"type":["dbl"],"align":["right"]}],"data":[{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Apr","5":"4.4","6":"0","7":"0.014816749","8":"4.554849","9":"0.014816749","10":"-0.2223369"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 May","5":"3.4","6":"0","7":"-0.013208131","8":"4.614014","9":"-0.013208131","10":"-1.1530718"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Jun","5":"3.6","6":"0","7":"0.010381269","8":"4.675152","9":"0.010381269","10":"-1.1236859"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Jul","5":"4.0","6":"0","7":"-0.013184764","8":"4.734317","9":"-0.013184764","10":"-0.6718964"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Aug","5":"3.6","6":"0","7":"0.009921116","8":"4.795455","9":"0.009921116","10":"-1.2430311"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Sep","5":"4.2","6":"0","7":"0.028663448","8":"4.856592","9":"0.028663448","10":"-0.7957990"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Oct","5":"4.8","6":"0","7":"0.001200633","8":"4.915758","9":"0.001200633","10":"-0.1216598"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Nov","5":"5.4","6":"0","7":"0.048288332","8":"4.976895","9":"0.048288332","10":"0.1827787"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1982 Dec","5":"6.9","6":"0","7":"0.024145094","8":"5.036061","9":"0.024145094","10":"1.7423431"},{"1":"Australian Capital Territory","2":"Cafes, restaurants and catering services","3":"prophet","4":"1983 Jan","5":"3.8","6":"0","7":"-0.106559303","8":"5.097198","9":"-0.106559303","10":"-0.7540444"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><code>components()</code>를 통해 주어지는 객체 자체에 <code>autoplot()</code>을 수행하면 모든 요소에 대한 시각화가 한꺼번에 가능하지만, 추세와 월별 계절 패턴에 대해서만 시각화해보겠습니다.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(fit) <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> trend, <span class="at">colour =</span> State)) <span class="sc">+</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_trend-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(fit) <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">month</span>(Month), <span class="at">y =</span> year, </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> State, <span class="at">group =</span> <span class="fu">interaction</span>(<span class="fu">year</span>(Month), State))) <span class="sc">+</span> </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">labels =</span> month.abb) <span class="sc">+</span> </span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Month"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_seasonal-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>연별 계절패턴의 경우 주별로 대개 비슷하나, 북방 지역(the Northern Territory)의 경우 다른 주들과는 크게 다른 계쩔 패턴을 보여주고 있습니다. 마지막으로, prophet의 예측도 <code>forecast()</code>를 이용해 쉽게 수행할 수 있습니다. 향후 2년에 대해 예측해보았습니다:</p>
+<div class="cell" data-layout-align="center" data-hash="tidy-tools-for-timeseries-tidyverts_cache/html/forecast_prophet_a4de5ea269e7a57186e7a3499e7ce2dd">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>fc <span class="ot">&lt;-</span> fit <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">24</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>cafe <span class="sc">%&gt;%</span> </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Turnover, <span class="at">colour =</span> State)) <span class="sc">+</span> </span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autolayer</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast_prophet-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://otexts.com/fpp3/">Forecasting: Principles and Practices (3rd Ed.)</a>에서는 prophet외에도, 벡터 자기회귀모형, 인공신경망 기반의 시계열 예측모형, 붓스트랩 및 배깅 기법을 활용한 시계열 예측 모형 등의 고급 시계열 예측 모형도 제공해줍니다. 관심있으신 분들은 fpp3을 참고해보시기 바랍니다.</p>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>tidyverts ecosystem이 전반적으로 작동하는 과정을 소개해 보았습니다. 그러나, 시계열 자료의 예측 모델링 대한 이해와 더불어 tidyverts를 좀 더 디테일하게 활용하기 위해서는, <a href="https://otexts.com/fpp3/">Forecasting: Principles and Practices (3rd Ed.)</a>을 참고하시는게 좋을 것이라 생각합니다. tidyverse와 <a href="https://github.com/be-favorite/Tutorial_tidymodels">tidymodels</a>를 통해 데이터를 전처리, 예측모형 개발, 개선 등의 과정에 걸리는 시간을 크게 단축시켰듯이, fpp3을 잘 익혀두면 시계열 예측 모델링에 전반적인 과정에 드는 시간을 상당히 단축시킬 수 있을 겁니다.😊</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-tidyvert" class="csl-entry" role="doc-biblioentry">
+<span>“Tidyverts.”</span> n.d. <a href="https://tidyverts.org">https://tidyverts.org</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+  author = {Taemo Bang},
+  editor = {},
+  title = {tidyverse principle로 시계열 자료 분석하기},
+  date = {2022-03-11},
+  url = {https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html},
+  langid = {kr}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Taemo Bang. 2022. <span>“tidyverse principle로 시계열 자료
+분석하기.”</span> March 11, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html">https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+<div>
+<hr>
+
+<p> 새 글이 발행되면 알려드려요.  </p>
+
+<iframe id="beehiiv-form" src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; height: 55px;"></iframe>
+
+<p> 포스팅을 독려해주실 수 있어요.  </p>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="taemobang" data-color="#06436e" data-emoji="☕" data-font="Lato" data-text="Support me" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" data-height="40px"></script>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

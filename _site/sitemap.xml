@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quarto-taemo.netlify.app/archive.html</loc>
-    <lastmod>2022-09-19T07:28:35.040Z</lastmod>
+    <lastmod>2022-09-19T08:24:16.790Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/blog.html</loc>
-    <lastmod>2022-09-19T07:13:38.240Z</lastmod>
+    <lastmod>2022-09-19T08:24:15.950Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/index.html</loc>
-    <lastmod>2022-09-19T06:27:21.170Z</lastmod>
+    <lastmod>2022-09-19T08:24:14.900Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/posts/post-with-code/index.html</loc>
@@ -27,5 +27,9 @@
   <url>
     <loc>https://quarto-taemo.netlify.app/presentation.html</loc>
     <lastmod>2022-09-19T07:51:02.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</loc>
+    <lastmod>2022-09-19T08:24:13.990Z</lastmod>
   </url>
 </urlset>

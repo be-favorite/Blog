@@ -10,7 +10,7 @@ title-block-banner: false
 author: 'Taemo Bang'
 
 # Enable CC licence appendix
-license: "CC BY"
+license: 'CC BY'
 
 # Table of content settings
 toc: true

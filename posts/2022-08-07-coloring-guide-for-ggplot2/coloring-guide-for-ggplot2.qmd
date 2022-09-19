@@ -6,11 +6,7 @@ date: "2022-08-14"
 draft: FALSE
 preview: preview.jpg
 citation:
-  url: https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html
-aliases: 
-  # Move from post's directory to root via ../../../
-  # Then add structure from old blog
-  - https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/
+  url: https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/
 categories: [Visualization, R]
 bibliography: references.bib
 ---

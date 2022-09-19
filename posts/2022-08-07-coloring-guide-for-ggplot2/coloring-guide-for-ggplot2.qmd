@@ -15,6 +15,7 @@ bibliography: references.bib
 # echo - Display code in output document (default = TRUE)
 # eval - Run code in chunk (default = TRUE)
 library(rmarkdown)
+long_slug <- "2022-08-07-coloring-guide-for-ggplot2"
 ```
 
 [![Photo by David Pisnoy on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/46juD4zY1XA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)

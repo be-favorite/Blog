@@ -6,7 +6,7 @@ date: 2022-03-11
 draft: FALSE
 preview: preview.jpg
 citation:
-  url: https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html
+  url: https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle
 categories: [Time Series, R]
 bibliography: references.bib
 ---

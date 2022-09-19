@@ -6,22 +6,22 @@
       version="2.0">
 <channel>
 <title>방태모의 블로그</title>
-<link>https://quarto-taemo.netlify.app/blog.html</link>
-<atom:link href="https://quarto-taemo.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://taemobang.com/blog.html</link>
+<atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.0.38</generator>
 <lastBuildDate>Mon, 12 Sep 2022 15:00:00 GMT</lastBuildDate>
 <item>
   <title>슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/sxQz2VfoFBE?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/sxQz2VfoFBE?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Christian Erfurt on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -31,7 +31,7 @@
 </aside>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.sheffield.ac.uk/about"><img src="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/img-1.jpg" class="img-fluid figure-img" width="700"></a></p>
+<p><a href="https://www.sheffield.ac.uk/about"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-1.jpg" class="img-fluid figure-img" width="700"></a></p>
 <p></p><figcaption class="figure-caption">The University of Sheffield</figcaption><p></p>
 </figure>
 </div>
@@ -50,7 +50,7 @@
 <p>2016년 구글 딥마인드 팀이 개발한 바둑 AI 알파고가 이세돌과의 바둑 대국에서 압도적으로 승리를 거두며, 수십 년에 걸쳐 발전해온 <a href="https://be-favorite.tistory.com/8?category=897337">딥러닝이라는 기술</a>은 마치 최근 개발된 혁신적인 신기술인냥 세상의 주목을 받게 되었습니다. 매스컴의 주목에 따라 뉴스에서 종종 등장하던 두 단어 “머신러닝”과 “딥러닝”은 제게 또다른 호기심을 심어주었습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.cyberoro.com/news/news_view.oro?num=521488"><img src="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/img-2.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="https://www.cyberoro.com/news/news_view.oro?num=521488"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-2.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">알파고와 대결한 이세돌 9단</figcaption><p></p>
 </figure>
 </div>
@@ -58,7 +58,7 @@
 <p>대학원 진학이라는 길이 머릿속을 떠나지 않았습니다. 그래서, 4학년 2학기 딱 한 학기만 학부 졸업 예정자로서 취업 준비를 하며 제가 다니던 본교의 통계학 대학원 진학 준비를 병행해서 해보기로 했습니다. 당연히 취업 준비 결과는 참담했습니다:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/img-3.PNG" class="img-fluid figure-img" width="400"></p>
+<p><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-3.PNG" class="img-fluid figure-img" width="400"></p>
 <p></p><figcaption class="figure-caption">(학부 4학년 2학기) 2018년 하반기 채용 지원 결과</figcaption><p></p>
 </figure>
 </div>
@@ -122,21 +122,21 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 진로 고민.”</span> September 13, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html">https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</a>.
 </div></div></section></div> ]]></description>
   <category>Statistics Playbook</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</guid>
+  <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</guid>
   <pubDate>Mon, 12 Sep 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>ggplot2 컬러링 가이드</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/46juD4zY1XA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/46juD4zY1XA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by David Pisnoy on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -185,7 +185,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -219,7 +219,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -249,7 +249,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -268,7 +268,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -296,7 +296,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -345,7 +345,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -365,7 +365,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -386,7 +386,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -417,7 +417,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -454,7 +454,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -489,7 +489,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -520,7 +520,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -624,7 +624,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -662,21 +662,21 @@ Taemo Bang. 2022. <span>“ggplot2 컬러링 가이드.”</span> August 14, 202
 </div></div></section></div> ]]></description>
   <category>Visualization</category>
   <category>R</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</guid>
+  <guid>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</guid>
   <pubDate>Sat, 13 Aug 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>월간 회고록: 2022년 4월</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/memory-202204.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-06-08-monthly-memory-202204/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Fredy Jacob on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -754,14 +754,14 @@ Taemo Bang. 2022. <span>“월간 회고록: 2022년 4월.”</span> June 8, 202
 <a href="https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html">https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html</guid>
+  <guid>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/memory-202204.html</guid>
   <pubDate>Tue, 07 Jun 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-06-08-monthly-memory-202204/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>논문 요약 - Simões et al (2022)</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</link>
   <description><![CDATA[ 
 
 
@@ -771,7 +771,7 @@ Taemo Bang. 2022. <span>“월간 회고록: 2022년 4월.”</span> June 8, 202
 </aside>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Ella Ivanescu on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -860,21 +860,21 @@ Taemo Bang. 2022. <span>“논문 요약 - Simões et al (2022).”</span> May
 </div></div></section></div> ]]></description>
   <category>Time Series</category>
   <category>Paper</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</guid>
+  <guid>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</guid>
   <pubDate>Mon, 23 May 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>관심 논문 읽고 요약하기</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/CKlHKtCJZKk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/CKlHKtCJZKk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Aaron Burden on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -971,21 +971,21 @@ Taemo Bang. 2022. <span>“관심 논문 읽고 요약하기.”</span> May 13, 
 <a href="https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html">https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</a>.
 </div></div></section></div> ]]></description>
   <category>Paper</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</guid>
+  <guid>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</guid>
   <pubDate>Thu, 12 May 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Caspar Camille Rubin on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -1323,21 +1323,21 @@ Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
 </div></div></section></div> ]]></description>
   <category>SQL</category>
   <category>R</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</guid>
+  <guid>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</guid>
   <pubDate>Wed, 06 Apr 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyvese principle로 머신러닝 하기</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/f57lx37DCM4?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/f57lx37DCM4?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Makcus Wincler on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -1408,7 +1408,7 @@ $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1445,7 +1445,7 @@ the number of observations in the test set is 48547.</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1660,7 +1660,7 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2007,7 +2007,7 @@ Attaching package: 'future'</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2218,21 +2218,21 @@ April 4, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-04-04-do-mac
 </div></div></section></div> ]]></description>
   <category>Statistical/Machine Learning</category>
   <category>R</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</guid>
+  <guid>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</guid>
   <pubDate>Sun, 03 Apr 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyverse principle로 시계열 자료 분석하기</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</link>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/rBPOfVqROzY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p><a href="https://unsplash.com/photos/rBPOfVqROzY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
 <p></p><figcaption class="figure-caption">Photo by Agê Barros on Unsplash</figcaption><p></p>
 </figure>
 </div>
@@ -2351,7 +2351,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2365,7 +2365,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2382,7 +2382,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2390,7 +2390,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2404,7 +2404,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2419,7 +2419,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2434,7 +2434,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"32"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"32"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"40"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"40"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2450,7 +2450,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"8"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2467,7 +2467,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"6"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2490,7 +2490,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"4"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"3"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"1"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"1"},{"1":"2013","2":"cherry","3":"1"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"10"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2507,7 +2507,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"4"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"3"},{"1":"2014","2":"cherry","3":"3"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"1"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"1"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"6"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2568,7 +2568,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/olympic-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/olympic-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2587,7 +2587,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/season-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/season-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2599,7 +2599,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/subseries-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/subseries-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2612,7 +2612,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/lag-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/lag-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2625,7 +2625,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/acf-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/acf-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2662,7 +2662,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/classical-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/classical-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2681,7 +2681,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/STL-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/STL-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2800,7 +2800,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/melbourne-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/melbourne-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2975,7 +2975,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2998,7 +2998,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3043,7 +3043,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_trend-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_trend-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -3058,7 +3058,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_seasonal-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_seasonal-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -3074,7 +3074,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast_prophet-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast_prophet-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -3149,22 +3149,22 @@ Model: ETS(M,A,A)
 <div id="ref-tidyvert" class="csl-entry">
 <span>“Tidyverts”</span>. 일자 없음. <a href="https://tidyverts.org">https://tidyverts.org</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {tidyverse principle로 시계열 자료 분석하기},
   date = {2022-03-11},
-  url = {https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html},
+  url = {https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“tidyverse principle로 시계열 자료
-분석하기.”</span> March 11, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html">https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“tidyverse principle로 시계열 자료 분석하기.”</span>
+March 11, 2022. <a href="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle">https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle</a>.
 </div></div></section></div> ]]></description>
   <category>Time Series</category>
   <category>R</category>
-  <guid>https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</guid>
+  <guid>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</guid>
   <pubDate>Thu, 10 Mar 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

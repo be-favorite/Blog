@@ -1,11 +1,15 @@
 project:
   type: website
-
+  output-dir: _site
+  preview:
+    port: 5902
+    browser: false
+    
 website:
   title: "방태모의 블로그"
   description: "방태모의 개인 블로그입니다."
   favicon: images/favicon.png
-  site-url: https://quarto-taemo.netlify.app
+  site-url: https://taemobang.com
   repo-url: https://github.com/be-favorite/Blog
   repo-actions: [issue]
   navbar:
@@ -23,7 +27,7 @@ website:
           - text: 발표 아카이브
             href: presentation.qmd
         
-# google-analytics:
+google_analytics: "G-1QHE9697JG"
 cookie-consent: TRUE
 
 format:

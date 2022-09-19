@@ -11,7 +11,7 @@ categories: [Statistical/Machine Learning, R]
 bibliography: references.bib
 ---
 
-```{r distill-setup, include = FALSE}
+```{r quarto-blog-setup, include = FALSE}
 # 본 포스트 영어 제목: Do machine learning with tidyverse principle
 # 본 포스트 한글 제목: tidyvese principle로 머신러닝 하기
 # echo - Display code in output document (default = TRUE)

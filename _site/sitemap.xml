@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quarto-taemo.netlify.app/archive.html</loc>
-    <lastmod>2022-09-19T11:13:54.830Z</lastmod>
+    <lastmod>2022-09-19T11:29:47.110Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/blog.html</loc>
-    <lastmod>2022-09-19T11:13:54.030Z</lastmod>
+    <lastmod>2022-09-19T11:29:43.790Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/index.html</loc>
-    <lastmod>2022-09-19T11:13:52.950Z</lastmod>
+    <lastmod>2022-09-19T11:29:42.760Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/posts/post-with-code/index.html</loc>
@@ -34,6 +34,14 @@
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</loc>
-    <lastmod>2022-09-19T11:13:52.350Z</lastmod>
+    <lastmod>2022-09-19T11:19:51.450Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</loc>
+    <lastmod>2022-09-19T11:26:20.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</loc>
+    <lastmod>2022-09-19T11:29:42.270Z</lastmod>
   </url>
 </urlset>

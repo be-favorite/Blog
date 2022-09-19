@@ -10,7 +10,7 @@ citation:
 aliases: 
   # Move from post's directory to root via ../../../
   # Then add structure from old blog
-  - ../../../post/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html
+  - https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/
 categories: [Visualization, R]
 bibliography: references.bib
 ---

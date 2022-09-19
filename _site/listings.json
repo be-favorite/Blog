@@ -9,6 +9,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html",
+      "/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html",
+      "/posts/2022-06-08-monthly-memory-202204/memory-202204.html",
       "/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html",
       "/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html",
       "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",
@@ -19,6 +22,9 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html",
+      "/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html",
+      "/posts/2022-06-08-monthly-memory-202204/memory-202204.html",
       "/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html",
       "/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html",
       "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",

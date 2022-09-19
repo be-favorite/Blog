@@ -23,7 +23,7 @@ Prerequisite: [논문 요약 방식](https://www.taemobang.com/posts/2022-05-13-
 
 </aside>
 
-[![Photo by Ella Ivanescu on Unsplash](preview.jpg){width="700"}](https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+[![Photo by Ella Ivanescu on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
 ## 1st read
 

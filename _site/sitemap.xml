@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quarto-taemo.netlify.app/archive.html</loc>
-    <lastmod>2022-09-19T11:29:47.110Z</lastmod>
+    <lastmod>2022-09-19T11:44:58.030Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/blog.html</loc>
-    <lastmod>2022-09-19T11:29:43.790Z</lastmod>
+    <lastmod>2022-09-19T11:44:57.310Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/index.html</loc>
-    <lastmod>2022-09-19T11:29:42.760Z</lastmod>
+    <lastmod>2022-09-19T11:44:56.150Z</lastmod>
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/posts/post-with-code/index.html</loc>
@@ -42,6 +42,18 @@
   </url>
   <url>
     <loc>https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</loc>
-    <lastmod>2022-09-19T11:29:42.270Z</lastmod>
+    <lastmod>2022-09-19T11:38:20.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html</loc>
+    <lastmod>2022-09-19T11:38:42.090Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
+    <lastmod>2022-09-19T11:42:41.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</loc>
+    <lastmod>2022-09-19T11:44:55.420Z</lastmod>
   </url>
 </urlset>

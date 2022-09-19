@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Taemo Bang">
-<meta name="description" content="프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약">
+<meta name="description" content="실무에서 1년간 메인 연구과제를 수행하며 겪은 크고 작은 난관들">
 
-<title>방태모의 블로그 - 논문 요약 - Simões et al (2022)</title>
+<title>방태모의 블로그 - 월간 회고록: 2022년 5월</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,25 +17,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -136,16 +117,16 @@ div.csl-indent {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#st-read" id="toc-st-read" class="nav-link active" data-scroll-target="#st-read">1st read</a>
+  <li><a href="#sas를-다시-손에-잡다" id="toc-sas를-다시-손에-잡다" class="nav-link active" data-scroll-target="#sas를-다시-손에-잡다">1 SAS를 다시 손에 잡다</a></li>
+  <li><a href="#다중공선성-문제" id="toc-다중공선성-문제" class="nav-link" data-scroll-target="#다중공선성-문제">2 다중공선성 문제</a></li>
+  <li><a href="#모형-최적화-문제" id="toc-모형-최적화-문제" class="nav-link" data-scroll-target="#모형-최적화-문제">3 모형 최적화 문제</a>
   <ul class="collapse">
-  <li><a href="#category" id="toc-category" class="nav-link" data-scroll-target="#category">Category</a></li>
-  <li><a href="#main-topic" id="toc-main-topic" class="nav-link" data-scroll-target="#main-topic">Main Topic</a></li>
-  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
-  <li><a href="#correctness" id="toc-correctness" class="nav-link" data-scroll-target="#correctness">Correctness</a></li>
-  <li><a href="#contributions" id="toc-contributions" class="nav-link" data-scroll-target="#contributions">Contributions</a></li>
-  <li><a href="#clarity" id="toc-clarity" class="nav-link" data-scroll-target="#clarity">Clarity</a></li>
+  <li><a href="#지역별-분석" id="toc-지역별-분석" class="nav-link" data-scroll-target="#지역별-분석">지역별 분석</a></li>
   </ul></li>
-  <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
+  <li><a href="#지역별-분석-결과를-하나의-분석-결과로" id="toc-지역별-분석-결과를-하나의-분석-결과로" class="nav-link" data-scroll-target="#지역별-분석-결과를-하나의-분석-결과로">4 지역별 분석 결과를 하나의 분석 결과로</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
@@ -153,20 +134,19 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">논문 요약 - Simões et al (2022)</h1>
+<h1 class="title">월간 회고록: 2022년 5월</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Time Series</div>
-    <div class="quarto-category">Paper</div>
+    <div class="quarto-category">Memory</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    <p>프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약</p>
+    <p>실무에서 1년간 메인 연구과제를 수행하며 겪은 크고 작은 난관들</p>
   </div>
 </div>
 
@@ -183,7 +163,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022년 5월 24일</p>
+      <p class="date">2022년 9월 19일</p>
     </div>
   </div>
     
@@ -192,97 +172,57 @@ div.csl-indent {
 
 </header>
 
-<aside>
-<p>Prerequisite: <a href="https://www.taemobang.com/posts/2022-05-13-how-to-review-a-paper/">논문 요약 방식</a></p>
-</aside>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Ella Ivanescu on Unsplash</figcaption><p></p>
+<p><a href="https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p></p><figcaption class="figure-caption">Photo by Fredy Jacob on Unsplash</figcaption><p></p>
 </figure>
 </div>
-<section id="st-read" class="level2">
-<h2 class="anchored" data-anchor-id="st-read">1st read</h2>
-<section id="category" class="level3">
-<h3 class="anchored" data-anchor-id="category">Category</h3>
-<ul>
-<li>Research paper</li>
-</ul>
+<p>5월은 재직 중인 연구센터에서 맡고 있는 메인 연구과제 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;에서 메타분석을 수행하는데에 가장 많은 시간을 할애했습니다. 5월 뿐만이 아니라 실무에서 가장 많은 시간을 할애한 과제이기도 합니다. 작년부터 수행해 온 해당 과제에 관한 분석이 얼추 모두 마무리가 되어갑니다. 대학원을 졸업하고 실무에 나와 처음으로 맡은 프로젝트이기도 했고, 데이터 수집, 데이터 마트 구축 부터 분석, 보고서 작성까지 처음부터 끝까지 맡아 진행한 과제였어서 그런지 정도 많이 가지만, 데이터 분석의 end-to-end를 모두 혼자 처리했어야 했기에… 솔직히 이제 그만하고 싶은 마음도 듭니다. 가장 중요한 논문 작업 단계가 남아있는데, 이런 마음이 드는게 정상인지 모르겠네요.😂 그만큼 정말 많은 양의 일을 저 혼자 처리했어야하기도 했고.. 중간중간에 여러 난관에 봉착하기도 했으며 그것을 해결해나면서 쾌감을 느끼기도 했습니다. 이번 월간 회고에서는 제가 겪은 크고 작은 난관들에 대해 이야기해보려고 합니다.</p>
+<section id="sas를-다시-손에-잡다" class="level2">
+<h2 class="anchored" data-anchor-id="sas를-다시-손에-잡다">1 SAS를 다시 손에 잡다</h2>
+<p>본 연구과제는 건강보험공단 빅데이터 맞춤형 연구DB로 진행됩니다. 자료의 특성 상 데이터 프라이버시때문에 건강보험공단에서 운영 중인 분석센터에 직접 가야지만 데이터를 열람하고 처리할 수 있습니다. 연구DB 신청 당시 분석 툴에 SAS + R을 선택할 수 있길래 당연히 데이터를 확인하고 처리하는 것도 R로 가능할 것이라 생각 했는데, 구축된 데이터는 SAS 서버 상에 놓여져있더군요. 데이터 특성상 보통 수십기가는 넘기때문에 분석센터의 로컬컴퓨터에서 제공되는 R로는 구축한 원 자료를 핸들링하는 것은 불가능합니다..즉, SAS로 원 자료를 랭글링<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>해야만 하는 상황이였습니다.</p>
+<p>사실 좀 당황스러웠습니다. 하하.. SAS는 학부생 때 2년정도 배우고 손을 뗀 상태였기 때문이죠. 제가 원하는 데이터 마트를 원활하게 구축하기 위해서는 SAS에서 SQL과 Macro<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>의 적절한 활용이 필요했습니다. 다행히, 학부생때 공부했던 기억이 남아있었죠. 그러나, 약 3년의 시간이 흘렀기에 복습이 필요했고 위키독스의 <a href="https://wikidocs.net/book/2678"><strong>SAS로 하는 기초 데이터 전처리, 핸들링(Data handling)</strong></a> 를 활용해 기본기를 다시 다진 후에 본격적인 랭글링 작업에 들어갔습니다. 분석센터로 출장을 가기 전 데이터 구조를 떠올리며 미리 코드를 작성하고, 현장에서 발생하는 오류가 있다면 필요한 디버깅만을 해주는 식으로 효율적으로 작업을 진행해 나갔습니다.</p>
+<p>이러한 작업을 반복하다보니 SAS SQL, Macro가 손에 익었고 제가 필요로 하는 데이터 마트를 수월하게 구축하고 추출해낼 수 있었습니다. 분석센터로 출장을 간 첫 날 데이터 마트 구축에 R은 이용할 수 없다는 사실을 깨달았던 때가 아직 생생하네요.</p>
 </section>
-<section id="main-topic" class="level3">
-<h3 class="anchored" data-anchor-id="main-topic">Main Topic</h3>
-<section id="제목" class="level4">
-<h4 class="anchored" data-anchor-id="제목">제목</h4>
-<ul>
-<li>Cardiac dyspnea risk zones in the South of France identified by geo-pollution trends study - <span class="citation" data-cites="simões2022b">(<a href="#ref-simões2022b" role="doc-biblioref">Simões 기타 2022</a>)</span></li>
-</ul>
+<section id="다중공선성-문제" class="level2">
+<h2 class="anchored" data-anchor-id="다중공선성-문제">2 다중공선성 문제</h2>
+<p>본 과제 이름은 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;이긴 하나, 6종의 대기오염원(<span class="math inline">\({\rm{PM}}_{10}\)</span>, <span class="math inline">\({\rm{PM}}_{2.5}\)</span>, <span class="math inline">\({\rm{NO}}_{2}\)</span>, <span class="math inline">\({\rm{SO}}_{2}\)</span>, <span class="math inline">\({\rm{O}}_{3}\)</span>, <span class="math inline">\({\rm{CO}}\)</span>)에 관해 모두 평가를 실시했어야 했습니다. 그래서, 이 “건강영향평가”는 어떻게 실시하냐? 질병의 일 발생/입원 건수를 <span class="math inline">\(Y\)</span>로 잡고, 일 대기오염원 농도를 <span class="math inline">\(X\)</span>로 잡아서 시계열 회귀모델링을 실시하는 것이죠. 대기오염원들이 특정 질병에 미치는 건강영향을 평가하는 것입니다. 여기서, 대기오염원이 미치는 효과는 비선형(non-linear)의 형태를 띠고, 지연 효과(lag effect)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>까지 고려해주어야 했죠. Distributed lag non-linear model<span class="citation" data-cites="gasparrini2010">[@gasparrini2010]</span> (이하, DLNM)은 둘을 동시에(simultaneously) 모델링 하게끔 해줍니다. 환경적 요인들로 Outcome을 모델링하는 생태학적 연구분야에서는 DLNM이 최신 시계열 회귀모형이라고 보시면 될 것 같습니다. 본 분야의 모델링 쪽은 Gasparrini 교수가 주도하고 있구요.</p>
+<p>대학원에서 가장 많이 시간을 할애했던 연구 분야는 시계열 자료분석이었는데, 다행히 이때 시계열을 회귀적으로 모델링하는 접근과 Distributed lag model에 대해 공부했던 경험이 있어 DLNM으로의 확장은 크게 어렵지 않았습니다.😀</p>
 </section>
-<section id="주제" class="level4">
-<h4 class="anchored" data-anchor-id="주제">주제</h4>
-<ul>
-<li>프랑스 남부 지역의 Cardiac dyspnea(CD, 이하 심호흡곤란) 발생에 미치는 대기오염원(<span class="math inline">\(\rm{PM}_{10}\)</span>, <span class="math inline">\(\rm{NO}_{2}\)</span>, <span class="math inline">\(\rm{O}_{3}\)</span>) 영향 평가</li>
-</ul>
+<section id="모형-최적화-문제" class="level2">
+<h2 class="anchored" data-anchor-id="모형-최적화-문제">3 모형 최적화 문제</h2>
+<section id="지역별-분석" class="level3">
+<h3 class="anchored" data-anchor-id="지역별-분석">지역별 분석</h3>
 </section>
 </section>
-<section id="context" class="level3">
-<h3 class="anchored" data-anchor-id="context">Context</h3>
-<ul>
-<li><p>선행 연구들에서 대기오염원에 관한 단기 노출이 심근경색(myocardial infarction), 울혈성심부전(congestive heart failure)과 같은 몇몇 심혈관 병리(cardiovascular pathologies)들에 미치는 영향을 평가하긴 했으나, 심호흡곤란의 경우 이러한 관계를 아직 완전히 입증하지 못함</p></li>
-<li><p>따라서, 본 연구의 목적은 대기오염원, 기상요인, 심호흡곤란 입원 데이터를 활용해 심호흡곤란 입원 발생 원인에 관한 메커니즘을 알아보고, 이를 예방하기 위한 정책을 개발하는 것에 있음</p></li>
-<li><p>본 연구의 주요 방법론은 <a href="https://be-favorite.tistory.com/80?category=1019644">Distributed lag non linear model</a>(이하, DLNM)과 메타분석(Meta analysis)에 해당함</p></li>
-</ul>
-</section>
-<section id="correctness" class="level3">
-<h3 class="anchored" data-anchor-id="correctness">Correctness</h3>
-<ul>
-<li><p>기상요인(meteorological factors)들을 공변량(coviariates)으로 활용하는데, 다중공선성(multicollinearity)을 피하기 위해 상관이 존재할만한 두 변수 중 하나의 변수만 모형에 포함시킴</p></li>
-<li><p>최대 지연 효과(maximum lag days)는 14일까지 고려하였으나, 이에 관한 합리적 근거는 없다고 보여짐</p></li>
-</ul>
-</section>
-<section id="contributions" class="level3">
-<h3 class="anchored" data-anchor-id="contributions">Contributions</h3>
-<ul>
-<li><p>프랑스 남부 전체 지역의 심호흡곤란 입원 발생에 관한 대기오염원의 영향을 평가한 첫 번째 연구</p></li>
-<li><p><span class="math inline">\(\rm{NO}_2\)</span>, <span class="math inline">\(\rm{O}_3\)</span>, <span class="math inline">\(\rm{PM}_{10}\)</span>에 단기 노출이 심호흡곤란으로 인한 응급실 방문을 증가시킨다는 것에 관한 유의한 증거 제시</p></li>
-<li><p>본 논문의 접근 방식은 공중 보건 정책에 관한 예측 도구로서 대기오염원 모니터링을 효과적으로 제안함</p></li>
-</ul>
-</section>
-<section id="clarity" class="level3">
-<h3 class="anchored" data-anchor-id="clarity">Clarity</h3>
-<ul>
-<li>지금까지 읽어본 바로는 명료하게 잘 쓰인 논문이라 생각됨</li>
-</ul>
-</section>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>본 논문을 통해 실제 각 도시별 DLNM을 이용한 대기오염원 건강영향평가 수행 후, 메타분석으로 오버롤한 결과를 제시할 수 있음을 확인했습니다. 메타분석을 어떻게 진행하였는지에 관한 이론적 부분은 자세하게 기술되어 있지 않아서 두 번째 읽기는 진행하지 않았으나, 도시별 분석 결과를 메타분석을 통해 종합할 수 있다는 것을 확인하는 것으로는 첫 번째 읽기로도 충분했습니다.</p>
-<p>본 논문에 쓰인 메타분석은 일반적으로 임상연구에서 수행하는 메타분석을 다양한 상황에 쓸 수 있도록 일반화하여 확장시킨 형태의 메타분석 방법론이라고 보시면 됩니다. 해당 방법론을 깊이있게 이해하기 위해서는 <span class="citation" data-cites="sera2019">(<a href="#ref-sera2019" role="doc-biblioref">Sera 기타 2019</a>)</span>을 참고하시면 됩니다. 해당 논문의 예제 R 소스코드는 <a href="https://github.com/gasparrini/2019_sera_StatMed_Rcode">여기</a>를 참고하시면 됩니다. 다양한 형태의 분석을 수행한 뒤에 <code>library(mixmeta)</code>를 통해 메타분석을 수행하여 결과를 종합하는 과정을 보여준다는 점에서 큰 의미가 있습니다. 그러나, 정작 제가 필요로하는 DLNM으로 건강영향평가를 도시별로 수행한 뒤에 메타분석을 하는 소스코드는 없다는 점이 조금 아쉬웠습니다.😂 그래서, 추가적으로 <span class="citation" data-cites="gasparrini2012a">(<a href="#ref-gasparrini2012a" role="doc-biblioref">Gasparrini, Armstrong, 와/과 Kenward 2012</a>)</span>에서 제공하는 <a href="https://github.com/gasparrini/2012_gasparrini_StatMed_Rcodedata">R 예제 소스코드</a>를 함께 참고했습니다. 확장된 형태의 메타분석인 <span class="citation" data-cites="sera2019">(<a href="#ref-sera2019" role="doc-biblioref">Sera 기타 2019</a>)</span>가 나오기 전이라 <code>library(mvmeta)</code>를 통해 분석이 진행되긴 합니다만, <code>library(mixmeta)</code>와 똑같은 로직으로 분석이 진행되기 때문에 해당 소스코드를 함께 참고하시면 도시별 DLNM 분석 결과를 메타분석하는 것을 어렵지 않게 구현하실 수 있을겁니다.</p>
-
+<section id="지역별-분석-결과를-하나의-분석-결과로" class="level2">
+<h2 class="anchored" data-anchor-id="지역별-분석-결과를-하나의-분석-결과로">4 지역별 분석 결과를 하나의 분석 결과로</h2>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-gasparrini2012a" class="csl-entry" role="doc-biblioentry">
-Gasparrini, A., B. Armstrong, 와/과 M. G. Kenward. 2012. <span>“Multivariate Meta-Analysis for Non-Linear and Other Multi-Parameter Associations”</span>. <em>Statistics in Medicine</em> 31 (29): 3821–39. <a href="https://doi.org/10.1002/sim.5471">https://doi.org/10.1002/sim.5471</a>.
-</div>
-<div id="ref-sera2019" class="csl-entry" role="doc-biblioentry">
-Sera, Francesco, Benedict Armstrong, Marta Blangiardo, 와/과 Antonio Gasparrini. 2019. <span>“An extended mixed-effects framework for meta-analysis”</span>. <em>Statistics in Medicine</em> 38 (29): 5429–44. <a href="https://doi.org/10.1002/sim.8362">https://doi.org/10.1002/sim.8362</a>.
-</div>
-<div id="ref-simões2022b" class="csl-entry" role="doc-biblioentry">
-Simões, Fanny, Charles Bouveyron, Damien Piga, Damien Borel, Stéphane Descombes, Véronique Paquis-Flucklinger, Jaques Levraut, Pierre Gibelin, 와/과 Silvia Bottini. 2022. <span>“Cardiac dyspnea risk zones in the South of France identified by geo-pollution trends study”</span>. <em>Scientific Reports</em> 12 (2월). <a href="https://doi.org/10.1038/s41598-022-05827-2">https://doi.org/10.1038/s41598-022-05827-2</a>.
-</div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+
+<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p><strong>데이터 랭글링</strong>(Data Wrangling) 혹은 데이터 먼징(Data Munging)이라고 불리는 이것은 원자료(raw data)를 보다 쉽게 접근하고 분석할 수 있도록 데이터를 정리하고 통합하는 과정. <a href="https://ko.wikipedia.org/wiki/데이터_랭글링">🔗Source</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>일반적인 프로그래밍 언어의 함수(function)와 같은 기능을 한다고 보시면 됩니다<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>예를 들자면, 5일 전에 마신 고농도의 초미세먼지가 질병 발생에 영향을 미치는 것<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
-  title = {논문 요약 - Simões et al (2022)},
-  date = {2022-05-24},
-  url = {https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html},
+  title = {월간 회고록: 2022년 5월},
+  date = {2022-09-19},
+  url = {https://quarto-taemo.netlify.app/posts/2022-09-19-monthly-memory-202205/monthly-memory-202205.html},
   langid = {ko}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Taemo Bang. 2022. <span>“논문 요약 - Simões et al (2022).”</span> May
-24, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html">https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</a>.
+Taemo Bang. 2022. <span>“월간 회고록: 2022년 5월.”</span> September 19,
+2022. <a href="https://quarto-taemo.netlify.app/posts/2022-09-19-monthly-memory-202205/monthly-memory-202205.html">https://quarto-taemo.netlify.app/posts/2022-09-19-monthly-memory-202205/monthly-memory-202205.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     

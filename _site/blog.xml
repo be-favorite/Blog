@@ -377,7 +377,7 @@ Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
 </figure>
 </div>
 <aside>
-본 글은 <span class="citation" data-cites="tidyvert">(<span>“Tidyverts”</span>, 일자 없음)</span>을 기반으로 작성되었습니다.
+본 글은 <span class="citation" data-cites="tidyvert">[@tidyvert]</span>을 기반으로 작성되었습니다.
 </aside>
 <p>tidyverts ecosystem은 시계열 자료에 관한 분석을 tidyverse principle로 수행할 수 있게끔 해주는 패키지 묶음입니다. 전처리, 시각화부터 모델링, 예측까지 모든 과정을 “tidy” framework로 진행하게 해주죠. tidyverse priciple이 데이터 전처리에 있어서 얼마나 많은 업무 생산성을 가져다 주는지 우리는 이미 알고있습니다. 시계열 자료를 자주 다루는 사람이라면 꼭 배워둘 만한 패키지죠.😄 tidyverts ecosystem을 이루는 대부분의 패키지들은 <code>{fpp3}</code>으로 불러올 수 있습니다. <code>{tsibbletalk}</code>은 <code>{shiny}</code>와 함께 동작하는 반응형 그래픽을 제공하는 패키지로 본 튜토리얼에서는 생략하겠습니다:</p>
 <div class="cell">
@@ -491,7 +491,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -505,7 +505,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -522,7 +522,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -530,7 +530,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -544,7 +544,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -559,7 +559,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -574,7 +574,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"37"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"37"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"28"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"28"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -590,7 +590,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"2"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -607,7 +607,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"6"},{"1":"2014","2":"cherry","3":"2"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"4"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1.0"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"1.5"},{"1":"2014","2":"cherry","3":"2.0"},{"1":"2010","2":"kiwi","3":"7.0"},{"1":"2011","2":"kiwi","3":"4.0"},{"1":"2012","2":"kiwi","3":"5.0"},{"1":"2013","2":"kiwi","3":"5.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -630,7 +630,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"6"},{"1":"2012","2":"kiwi","3":"6"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"5"},{"1":"2012","2":"cherry","3":"3"},{"1":"2013","2":"cherry","3":"3"},{"1":"2014","2":"cherry","3":"4"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"7"},{"1":"2012","2":"kiwi","3":"7"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -647,7 +647,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"6"},{"1":"2012","2":"kiwi","3":"7"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"5"},{"1":"2012","2":"cherry","3":"3"},{"1":"2013","2":"cherry","3":"4"},{"1":"2014","2":"cherry","3":"4"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"7"},{"1":"2012","2":"kiwi","3":"9"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -1282,14 +1282,9 @@ Model: ETS(M,A,A)
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-tidyvert" class="csl-entry">
-<span>“Tidyverts”</span>. 일자 없음. <a href="https://tidyverts.org">https://tidyverts.org</a>.
-</div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
   editor = {},
   title = {tidyverse principle로 시계열 자료 분석하기},

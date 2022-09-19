@@ -29,16 +29,3 @@ title-block-banner: false
 page-layout: article
 
 lang: ko
-
-website:
-  page-footer: 
-    left: "Copyright 2022, Taemo Bang" 
-    right: 
-      - icon: linkedin
-        href: https://www.linkedin.com/in/taemo/
-      - icon: facebook
-        href: https://www.facebook.com/profile.php?id=100070120780059
-      - icon: twitter
-        href: https://twitter.com/TaemoBang
-      - icon: github
-        href: https://github.com/be-favorite

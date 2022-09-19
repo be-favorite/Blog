@@ -8,7 +8,7 @@ preview: preview.jpg
 citation:
   url: https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html
 categories: [Time Series, R]
-bibliography: references.bib
+# bibliography: references.bib
 ---
 
 

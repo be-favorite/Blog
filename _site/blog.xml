@@ -129,7 +129,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <item>
   <title>ggplot2 컬러링 가이드</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</link>
+  <link>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index.html</link>
   <description><![CDATA[ 
 
 
@@ -185,7 +185,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -219,7 +219,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -249,7 +249,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -268,7 +268,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -296,7 +296,7 @@ Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/mpg5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -345,7 +345,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -365,7 +365,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -386,7 +386,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -417,7 +417,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -454,7 +454,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -489,7 +489,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -520,7 +520,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -624,7 +624,7 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2_files/figure-html/spend_label4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -661,7 +661,7 @@ Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently”<
 </div></div></section></div> ]]></description>
   <category>Visualization</category>
   <category>R</category>
-  <guid>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</guid>
+  <guid>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index.html</guid>
   <pubDate>Sat, 13 Aug 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" medium="image" type="image/jpeg"/>
 </item>

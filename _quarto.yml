@@ -15,6 +15,12 @@ website:
         text: 블로그
       - href: archive.qmd
         text: 아카이브
+      - text: 리소스
+        menu: 
+          - text: 연구 아카이브
+            href: research.qmd
+          # - text: 발표 아카이브
+          #   href: https://yards.albert-rapp.de/
         
 # google-analytics:
 cookie-conset: TRUE

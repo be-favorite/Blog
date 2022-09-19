@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>방태모의 블로그 - 연구 아카이브</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="css/karat.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">방태모의 블로그</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">홈</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html">블로그</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./archive.html">아카이브</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">리소스</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./research.html">
+ <span class="dropdown-text">연구 아카이브</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link active" data-scroll-target="#time-series">Time Series</a>
+  <ul class="collapse">
+  <li><a href="#추론-모델링-regression" id="toc-추론-모델링-regression" class="nav-link" data-scroll-target="#추론-모델링-regression">1 추론 모델링 · Regression</a></li>
+  <li><a href="#예측모델링-forecasting" id="toc-예측모델링-forecasting" class="nav-link" data-scroll-target="#예측모델링-forecasting">2 예측모델링 · Forecasting</a></li>
+  <li><a href="#other-techniques" id="toc-other-techniques" class="nav-link" data-scroll-target="#other-techniques">3 Other techniques</a></li>
+  </ul></li>
+  <li><a href="#machine-learning-and-statistical-learning" id="toc-machine-learning-and-statistical-learning" class="nav-link" data-scroll-target="#machine-learning-and-statistical-learning">Machine Learning and Statistical Learning</a>
+  <ul class="collapse">
+  <li><a href="#prerequisite" id="toc-prerequisite" class="nav-link" data-scroll-target="#prerequisite">Prerequisite</a></li>
+  <li><a href="#ensemble-methods" id="toc-ensemble-methods" class="nav-link" data-scroll-target="#ensemble-methods">Ensemble methods</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic regression</a></li>
+  <li><a href="#generalized-linear-model-glm-and-generalized-additive-model-gam" id="toc-generalized-linear-model-glm-and-generalized-additive-model-gam" class="nav-link" data-scroll-target="#generalized-linear-model-glm-and-generalized-additive-model-gam">Generalized Linear Model (GLM) and Generalized Additive Model (GAM)</a></li>
+  </ul></li>
+  <li><a href="#deep-learning" id="toc-deep-learning" class="nav-link" data-scroll-target="#deep-learning">Deep Learning</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#high-dimensional-data-analysis" id="toc-high-dimensional-data-analysis" class="nav-link" data-scroll-target="#high-dimensional-data-analysis">High-Dimensional Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#고차원-자료에-관한-예측-모델링" id="toc-고차원-자료에-관한-예측-모델링" class="nav-link" data-scroll-target="#고차원-자료에-관한-예측-모델링">1 고차원 자료에 관한 예측 모델링</a></li>
+  <li><a href="#통계적-가설검정-관점의-고차원-문제" id="toc-통계적-가설검정-관점의-고차원-문제" class="nav-link" data-scroll-target="#통계적-가설검정-관점의-고차원-문제">2 통계적 가설검정 관점의 고차원 문제</a></li>
+  </ul></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a>
+  <ul class="collapse">
+  <li><a href="#구간추정의-해석에-대한-고전적-관점frequentist과-베이지안-관점" id="toc-구간추정의-해석에-대한-고전적-관점frequentist과-베이지안-관점" class="nav-link" data-scroll-target="#구간추정의-해석에-대한-고전적-관점frequentist과-베이지안-관점">구간추정의 해석에 대한 고전적 관점(Frequentist)과 베이지안 관점</a></li>
+  <li><a href="#검정력power과-검정력-함수에-대해" id="toc-검정력power과-검정력-함수에-대해" class="nav-link" data-scroll-target="#검정력power과-검정력-함수에-대해">검정력(power)과 검정력 함수에 대해</a></li>
+  <li><a href="#자유도degrees-of-freedom" id="toc-자유도degrees-of-freedom" class="nav-link" data-scroll-target="#자유도degrees-of-freedom">자유도(Degrees of Freedom)</a></li>
+  <li><a href="#표준편차와-표준오차" id="toc-표준편차와-표준오차" class="nav-link" data-scroll-target="#표준편차와-표준오차">표준편차와 표준오차</a></li>
+  <li><a href="#대립가설이-옳다.라는-식의-주장을-지양해야하는-이유" id="toc-대립가설이-옳다.라는-식의-주장을-지양해야하는-이유" class="nav-link" data-scroll-target="#대립가설이-옳다.라는-식의-주장을-지양해야하는-이유">“대립가설이 옳다.”라는 식의 주장을 지양해야하는 이유</a></li>
+  <li><a href="#중심극한정리의-의미" id="toc-중심극한정리의-의미" class="nav-link" data-scroll-target="#중심극한정리의-의미">중심극한정리의 의미</a></li>
+  <li><a href="#fixed-effect와-random-effect" id="toc-fixed-effect와-random-effect" class="nav-link" data-scroll-target="#fixed-effect와-random-effect">Fixed effect와 random effect</a></li>
+  </ul></li>
+  <li><a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous">Miscellaneous</a>
+  <ul class="collapse">
+  <li><a href="#결정론적-sir-모형을-이용한-감염병-유행-모델링" id="toc-결정론적-sir-모형을-이용한-감염병-유행-모델링" class="nav-link" data-scroll-target="#결정론적-sir-모형을-이용한-감염병-유행-모델링">결정론적 SIR 모형을 이용한 감염병 유행 모델링</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">연구 아카이브</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>논문과 책, 웹사이트 등을 통해 공부하고 연구한 것들을 아카이브합니다.</p>
+<p>그리고, 그 외 Data Science를 할 때 알아두면 좋다고 생각되는 것들도 아카이브합니다.</p>
+<p>참고 문헌과 스터디 노트, 그리고 가능하다면 재현가능한 코드 또는 재현가능한 간략한 튜토리얼을 함께 제공하고자 합니다.</p>
+<section id="time-series" class="level2">
+<h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
+<section id="추론-모델링-regression" class="level3">
+<h3 class="anchored" data-anchor-id="추론-모델링-regression">1 추론 모델링 · Regression</h3>
+<section id="spurious-regression" class="level4">
+<h4 class="anchored" data-anchor-id="spurious-regression">Spurious regression</h4>
+<ul>
+<li>나종화. R 응용 시계열분석. 자유아카데미. 2020.</li>
+<li>여러 시계열로 회귀를 수행할 때, 꼭 주의해야 할 알아두어야할 사항</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/76?category=1019644">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Multiple_timeseries/CCF%20analysis%20and%20DLM/Tutorials_DLM.html">R 튜토리얼</a>: CCF 분석의 허구적 상관 확인 과정 참고</li>
+</ul>
+</section>
+<section id="regression-with-arima-errors" class="level4">
+<h4 class="anchored" data-anchor-id="regression-with-arima-errors">Regression with ARIMA errors</h4>
+<ul>
+<li>나종화. R 응용 시계열분석. 자유아카데미. 2020.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/74?category=1019644">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Multiple_timeseries/CCF%20analysis%20and%20DLM/Tutorials_DLM.html">R 튜토리얼</a></li>
+</ul>
+</section>
+<section id="distributed-lag-model" class="level4">
+<h4 class="anchored" data-anchor-id="distributed-lag-model">Distributed lag model</h4>
+<ul>
+<li>나종화. R 응용 시계열분석. 자유아카데미. 2020.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/75?category=1019644">스터디 노트</a></li>
+</ul>
+</section>
+<section id="distributed-lag-non-linear-model" class="level4">
+<h4 class="anchored" data-anchor-id="distributed-lag-non-linear-model">Distributed lag non-linear model</h4>
+<ul>
+<li>Gasparrini, Antonio, Benedict Armstrong, and M.G. Kenward. “Distributed Lag Non-Linear Models.” Statistics in Medicine 29 (September 20, 2010): 2224–34. https://doi.org/10.1002/sim.3940.</li>
+<li>Gasparrini, Antonio. “Distributed Lag Linear and Non-Linear Models in R: The Package Dlnm.” Journal of Statistical Software 43 (July 1, 2011): 1–20. https://doi.org/10.18637/jss.v043.i08.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/80">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Presentation_archive/DLM%2C%20DLNM/Introduction_dlm%2Cdlnm.html#6">PPT</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Multiple_timeseries/DLNMs/Tutorials_DLNMs.html">R 튜토리얼</a></li>
+</ul>
+</section>
+</section>
+<section id="예측모델링-forecasting" class="level3">
+<h3 class="anchored" data-anchor-id="예측모델링-forecasting">2 예측모델링 · Forecasting</h3>
+<section id="exponential-smoothing" class="level4">
+<h4 class="anchored" data-anchor-id="exponential-smoothing">Exponential Smoothing</h4>
+<ul>
+<li>나종화. R 응용 시계열분석. 자유아카데미. 2020.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/62?category=928223">스터디 노트</a></li>
+<li>🔗 <a href="https://www.taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/">R 튜토리얼: tidyverse principle로 시계열 자료분석하기</a></li>
+</ul>
+</section>
+<section id="arima-model" class="level4">
+<h4 class="anchored" data-anchor-id="arima-model">ARIMA model</h4>
+<ul>
+<li>나종화. R 응용 시계열분석. 자유아카데미. 2020.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/63?category=928223">스터디 노트</a></li>
+</ul>
+</section>
+<section id="prophet" class="level4">
+<h4 class="anchored" data-anchor-id="prophet">Prophet</h4>
+<ul>
+<li>Taylor, Sean, and Benjamin Letham. Forecasting at Scale, 2017. https://doi.org/10.7287/peerj.preprints.3190v2.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/64">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Tutorial_prophet/Report.html">R 튜토리얼</a></li>
+</ul>
+</section>
+<section id="hierarchical-time-series-forecasting" class="level4">
+<h4 class="anchored" data-anchor-id="hierarchical-time-series-forecasting">Hierarchical Time Series Forecasting</h4>
+<ul>
+<li>Athanasopoulos, George, Roman A. Ahmed, and Rob J. Hyndman. “Hierarchical Forecasts for Australian Domestic Tourism.” International Journal of Forecasting 25, no. 1 (January 1, 2009): 146–66. https://doi.org/10.1016/j.ijforecast.2008.07.004.</li>
+<li>Athanasopoulos, George, Rob Hyndman, Roman Ahmed, and Han Lin Shang. “Optimal Combination Forecasts for Hierarchical.” Computational Statistics &amp; Data Analysis 55 (September 1, 2011): 2579–89. https://doi.org/10.1016/j.csda.2011.03.006.</li>
+<li>Hyndman, Rob J, George Athanasopoulos, and Han Lin Shang. “Hts: An R Package for Forecasting Hierarchical or Grouped Time Series,” n.d., 12.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/60?category=928223">스터디 노트</a></li>
+<li>🔗 <a href="https://otexts.com/fpp3/hts.html">R 튜토리얼</a></li>
+</ul>
+</section>
+</section>
+<section id="other-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="other-techniques">3 Other techniques</h3>
+<section id="intervention-analysis-interrupted-time-series" class="level4">
+<h4 class="anchored" data-anchor-id="intervention-analysis-interrupted-time-series">Intervention analysis (Interrupted Time Series)</h4>
+<ul>
+<li>Slides. “Intervention Analysis.” Accessed April 17, 2022. https://slides.com/tonyg/intervention-analysis.</li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_source.pdf">참고 자료</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_rcode.R">R 코드</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_arimax()_rcode.R">R 코드: arimax() 튜토리얼</a></li>
+</ul>
+</section>
+<section id="dynamic-time-warping-dtw" class="level4">
+<h4 class="anchored" data-anchor-id="dynamic-time-warping-dtw">Dynamic Time Warping (DTW)</h4>
+<ul>
+<li>Berndt, Donald J., and James Clifford. “Using Dynamic Time Warping to Find Patterns in Time Series.” In Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, 359–70. AAAIWS’94. Seattle, WA: AAAI Press, 1994.</li>
+<li>선행 또는 후행하는 시계열, 시차가 존재하나 유사한 패턴이 존재하는 두 시계열을 잡아낼 수 있게끔 해주는 비유사성 측도(거리 측도) 알고리즘</li>
+<li>DTW distance를 이용해 계층적 군집 분석 수행 가능</li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dtw/DTW_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dtw/DTW_tutorial.pdf">R 튜토리얼</a></li>
+</ul>
+</section>
+<section id="discrete-wavelet-transform-dwt" class="level4">
+<h4 class="anchored" data-anchor-id="discrete-wavelet-transform-dwt">Discrete Wavelet Transform (DWT)</h4>
+<ul>
+<li>Graps, Amara. “An Introduction to Wavelets.” IEEE Comp. Sci. Engi. 2 (February 1, 1995): 50–61. https://doi.org/10.1109/99.388960.</li>
+<li>Li, Daoyuan, Tegawendé F. Bissyandé, Jacques Klein, and Y. L. Traon. “Time Series Classification with Discrete Wavelet Transformed Data: Insights from an Empirical Study.” In SEKE, 2016. https://doi.org/10.18293/SEKE2016-067.</li>
+<li>시계열들을 데이터의 열로 나열하여 classification을 수행할 때, 효과적인 차원 감소 방법</li>
+<li>일종의 시계열 Feature engineering 기법에 해당</li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dwt/DWT_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dwt/DWT_tutorial.pdf">R 튜토리얼</a></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="machine-learning-and-statistical-learning" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-and-statistical-learning">Machine Learning and Statistical Learning</h2>
+<section id="prerequisite" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisite">Prerequisite</h3>
+<ul>
+<li>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/30?category=894492">스터디 노트: Prerequisite 1 머신러닝 용어 정리</a></li>
+</ul>
+</section>
+<section id="ensemble-methods" class="level3">
+<h3 class="anchored" data-anchor-id="ensemble-methods">Ensemble methods</h3>
+<ul>
+<li>Chen, Tianqi, and Carlos Guestrin. “XGBoost: A Scalable Tree Boosting System.” Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, August 13, 2016, 785–94. https://doi.org/10.1145/2939672.2939785.</li>
+<li>Chen, Lilly. “Basic Ensemble Learning (Random Forest, AdaBoost, Gradient Boosting)- Step by Step Explained.” Medium, January 2, 2019. https://towardsdatascience.com/basic-ensemble-learning-random-forest-adaboost-gradient-boosting-step-by-step-explained-95d49d1e2725.</li>
+<li>Morde, Vishal. “XGBoost Algorithm: Long May She Reign!” Medium, April 8, 2019. https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d.</li>
+<li>“Light GBM vs XGBOOST: Which Algorithm Takes the Crown.” Accessed April 17, 2022. https://www.analyticsvidhya.com/blog/2017/06/which-algorithm-takes-the-crown-light-gbm-vs-xgboost/.</li>
+<li><strong>Random Forest</strong>, <strong>AdaBoost</strong>, <strong>Gradient Boosting</strong>, <strong>XGBoost</strong>, <strong>Light GBM</strong></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/2">스터디 노트</a></li>
+<li>🔗 <a href="https://www.taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/">R 튜토리얼: tidyverse principle로 머신러닝하기</a></li>
+</ul>
+</section>
+<section id="logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression">Logistic regression</h3>
+<ul>
+<li>James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. “An Introduction to Statistical Learning.” An Introduction to Statistical Learning. Accessed April 17, 2022. https://www.statlearning.com.</li>
+<li>Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. The Elements of Statistical Learning: Data Mining, Inference and Prediction. 2nd ed.&nbsp;Springer, 2009. http://www-stat.stanford.edu/~tibs/ElemStatLearn/.</li>
+<li>StatQuest with Josh Starmer. Logistic Regression Details Pt 2: Maximum Likelihood, 2018. https://www.youtube.com/watch?v=BfKanl1aSG0.</li>
+<li>Chatterjee, Samprit, and Ali S. Hadi. “Regression Analysis by Example, Fifth Edition.”</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/47">스터디 노트</a></li>
+</ul>
+</section>
+<section id="generalized-linear-model-glm-and-generalized-additive-model-gam" class="level3">
+<h3 class="anchored" data-anchor-id="generalized-linear-model-glm-and-generalized-additive-model-gam">Generalized Linear Model (GLM) and Generalized Additive Model (GAM)</h3>
+<ul>
+<li>Hayes, Genevieve. “Beyond Linear Regression: An Introduction to GLMs.” Medium, December 24, 2019. https://towardsdatascience.com/beyond-linear-regression-an-introduction-to-glms-7ae64a8fad9c.</li>
+<li>James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. “An Introduction to Statistical Learning.” An Introduction to Statistical Learning. Accessed April 17, 2022. https://www.statlearning.com.</li>
+<li><strong>GLM</strong>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/52">스터디 노트</a></li>
+</ul></li>
+<li><strong>GAM</strong>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/53?category=923110">스터디 노트: Prerequisite 1 선형모형의 한계</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/54?category=923110">스터디 노트: Prerequisite 2 다항 회귀와 계단 함수</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/56?category=923110">스터디 노트: Prerequisite 3 Regression splines</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/57?category=923110">스터디 노트: Prerequisite 4 Smoothing splines</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/58?category=923110">스터디 노트: Prerequisite 5 Local regressions</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/59?category=923110">스터디 노트: GAMs</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="deep-learning">Deep Learning</h2>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016.</li>
+<li>🔗 <a href="https://be-favorite.tistory.com/8?category=897337">스터디 노트: Prerequisite 1 딥러닝의 모티베이션과 역사</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/33?category=909652">스터디 노트: Prerequisite 2 선형대수의 여러 객체 소개</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/32?category=909652">스터디 노트: Prerequisite 3 행렬의 전치와 브로드캐스팅</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/34?category=909652">스터디 노트: Prerequisite 4 행렬과 벡터의 곱연산</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/35?category=909652">스터디 노트: Prerequisite 5 선형방정식과 선형종속,span</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/36?category=909652">스터디 노트: Prerequisite 6 norms</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/37?category=909652">스터디 노트: Prerequisite 7 특별한 종류의 행렬과 벡터</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/38?category=909652">스터디 노트: Prerequisite 8 고윳값 분해</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/39?category=909652">스터디 노트: Prerequisite 9 특잇값 분해와 일반화 역행렬</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/40?category=909652">스터디 노트: Prerequisite 10 Trace 연산자와 행렬식</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/41">스터디 노트: Prerequisite 11 선형대수를 이용한 주성분 유도</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/30?category=894492">스터디 노트: Prerequisite 12 머신러닝 용어 정리</a></li>
+</ul>
+</section>
+</section>
+<section id="high-dimensional-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="high-dimensional-data-analysis">High-Dimensional Data Analysis</h2>
+<ul>
+<li>Breheny, Patrick. High-Dimensional Data Analysis. The University of Iowa, 2016. https://myweb.uiowa.edu/pbreheny/7600/s16/index.html.
+<ul>
+<li>R 소스코드 및 예제 Dataset 제공</li>
+</ul></li>
+<li>일반적인 기계학습 기반의 예측 모델링으로 접근하기 어려운 n -&gt; p 또는 n &lt; p 인 자료의 예측 모델링에 관한 방법론(여기서 n은 관측치의 수, p는 예측변수의 수)</li>
+<li>꼭 고차원 자료가 아닌, 회귀모형의 예측 성능을 높이기 위해서도 사용되는 방법론들에 해당</li>
+<li>통계적 가설검정 관점에서 가설 검정시 발생하는 고차원 문제에 관한 솔루션 또한 제공함</li>
+</ul>
+<section id="고차원-자료에-관한-예측-모델링" class="level3">
+<h3 class="anchored" data-anchor-id="고차원-자료에-관한-예측-모델링">1 고차원 자료에 관한 예측 모델링</h3>
+<section id="prerequisites-1" class="level4">
+<h4 class="anchored" data-anchor-id="prerequisites-1">Prerequisites</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/28?category=908019">스터디 노트: Prerequisite 고차원 자료에 대한 고전적인 회귀분석의 문제점</a></li>
+</ul>
+</section>
+<section id="ridge-regression" class="level4">
+<h4 class="anchored" data-anchor-id="ridge-regression">Ridge regression</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/29?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="lasso-regression" class="level4">
+<h4 class="anchored" data-anchor-id="lasso-regression">Lasso regression</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/46?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="bias-reduction-of-lasso-estimator" class="level4">
+<h4 class="anchored" data-anchor-id="bias-reduction-of-lasso-estimator">Bias reduction of Lasso estimator</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/48?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="variance-reduction-of-lasso-eistimator" class="level4">
+<h4 class="anchored" data-anchor-id="variance-reduction-of-lasso-eistimator">Variance reduction of Lasso eistimator</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/49?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="penalized-logistic-regression" class="level4">
+<h4 class="anchored" data-anchor-id="penalized-logistic-regression">Penalized logistic regression</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/50?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="penalized-robust-regression" class="level4">
+<h4 class="anchored" data-anchor-id="penalized-robust-regression">Penalized robust regression</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/51?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+</section>
+<section id="통계적-가설검정-관점의-고차원-문제" class="level3">
+<h3 class="anchored" data-anchor-id="통계적-가설검정-관점의-고차원-문제">2 통계적 가설검정 관점의 고차원 문제</h3>
+<section id="prerequisites-2" class="level4">
+<h4 class="anchored" data-anchor-id="prerequisites-2">Prerequisites</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/21?category=894492">스터디 노트: Prerequisite 1 통계적 가설검정의 원리</a></li>
+<li>🔗 <a href="https://be-favorite.tistory.com/20">스터디 노트: Prerequisite 2 다중 검정</a></li>
+</ul>
+</section>
+<section id="family-wise-error-rates-fwer" class="level4">
+<h4 class="anchored" data-anchor-id="family-wise-error-rates-fwer">Family-Wise Error Rates (FWER)</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/25?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+<section id="false-discovery-rates-fdr" class="level4">
+<h4 class="anchored" data-anchor-id="false-discovery-rates-fdr">False Discovery Rates (FDR)</h4>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/26?category=908019">스터디 노트</a></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<ul>
+<li>통계학, 통계적 가설검정과 관련한 것들을 아카이브 합니다.</li>
+</ul>
+<section id="구간추정의-해석에-대한-고전적-관점frequentist과-베이지안-관점" class="level3">
+<h3 class="anchored" data-anchor-id="구간추정의-해석에-대한-고전적-관점frequentist과-베이지안-관점">구간추정의 해석에 대한 고전적 관점(Frequentist)과 베이지안 관점</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/27?category=894492">스터디 노트</a></li>
+</ul>
+</section>
+<section id="검정력power과-검정력-함수에-대해" class="level3">
+<h3 class="anchored" data-anchor-id="검정력power과-검정력-함수에-대해">검정력(power)과 검정력 함수에 대해</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/22?category=894489">스터디 노트</a></li>
+</ul>
+</section>
+<section id="자유도degrees-of-freedom" class="level3">
+<h3 class="anchored" data-anchor-id="자유도degrees-of-freedom">자유도(Degrees of Freedom)</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/44?category=894492">스터디 노트</a></li>
+</ul>
+</section>
+<section id="표준편차와-표준오차" class="level3">
+<h3 class="anchored" data-anchor-id="표준편차와-표준오차">표준편차와 표준오차</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/45?category=894492">스터디 노트</a></li>
+</ul>
+</section>
+<section id="대립가설이-옳다.라는-식의-주장을-지양해야하는-이유" class="level3">
+<h3 class="anchored" data-anchor-id="대립가설이-옳다.라는-식의-주장을-지양해야하는-이유">“대립가설이 옳다.”라는 식의 주장을 지양해야하는 이유</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/66?category=894492">스터디 노트</a></li>
+</ul>
+</section>
+<section id="중심극한정리의-의미" class="level3">
+<h3 class="anchored" data-anchor-id="중심극한정리의-의미">중심극한정리의 의미</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/70?category=894492">스터디 노트</a></li>
+<li>🔗 <a href="https://statisticsplaybook.tistory.com/67?category=924794">스터디 노트: 중심극한정리에 관한 고찰</a></li>
+</ul>
+</section>
+<section id="fixed-effect와-random-effect" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-effect와-random-effect">Fixed effect와 random effect</h3>
+<ul>
+<li>🔗 <a href="https://be-favorite.tistory.com/19?category=904635">스터디 노트</a></li>
+</ul>
+</section>
+</section>
+<section id="miscellaneous" class="level2">
+<h2 class="anchored" data-anchor-id="miscellaneous">Miscellaneous</h2>
+<section id="결정론적-sir-모형을-이용한-감염병-유행-모델링" class="level3">
+<h3 class="anchored" data-anchor-id="결정론적-sir-모형을-이용한-감염병-유행-모델링">결정론적 SIR 모형을 이용한 감염병 유행 모델링</h3>
+<ul>
+<li>🔗 <a href="https://github.com/be-favorite/Tutorials_SIR-models">스터디 노트와 R 튜토리얼</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

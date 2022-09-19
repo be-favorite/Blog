@@ -1,0 +1,207 @@
+---
+title: "연구 아카이브"
+page-layout: full
+comments: false
+---
+
+논문과 책, 웹사이트 등을 통해 공부하고 연구한 것들을 아카이브합니다. 
+
+그리고, 그 외 Data Science를 할 때 알아두면 좋다고 생각되는 것들도 아카이브합니다.
+
+참고 문헌과 스터디 노트, 그리고 가능하다면 재현가능한 코드 또는 재현가능한 간략한 튜토리얼을 함께 제공하고자 합니다.
+
+## Time Series
+
+### 1 추론 모델링 · Regression
+
+#### Spurious regression
+- 나종화. R 응용 시계열분석. 자유아카데미. 2020.
+- 여러 시계열로 회귀를 수행할 때, 꼭 주의해야 할 알아두어야할 사항
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/76?category=1019644)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Multiple_timeseries/CCF%20analysis%20and%20DLM/Tutorials_DLM.html): CCF 분석의 허구적 상관 확인 과정 참고
+
+#### Regression with ARIMA errors
+- 나종화. R 응용 시계열분석. 자유아카데미. 2020.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/74?category=1019644)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Multiple_timeseries/CCF%20analysis%20and%20DLM/Tutorials_DLM.html)
+
+#### Distributed lag model
+- 나종화. R 응용 시계열분석. 자유아카데미. 2020.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/75?category=1019644)
+
+#### Distributed lag non-linear model
+- Gasparrini, Antonio, Benedict Armstrong, and M.G. Kenward. “Distributed Lag Non-Linear Models.” Statistics in Medicine 29 (September 20, 2010): 2224–34. https://doi.org/10.1002/sim.3940.
+- Gasparrini, Antonio. “Distributed Lag Linear and Non-Linear Models in R: The Package Dlnm.” Journal of Statistical Software 43 (July 1, 2011): 1–20. https://doi.org/10.18637/jss.v043.i08.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/80)
+- 🔗 [PPT](https://be-favorite.github.io/Presentation_archive/DLM%2C%20DLNM/Introduction_dlm%2Cdlnm.html#6)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Multiple_timeseries/DLNMs/Tutorials_DLNMs.html)
+
+### 2 예측모델링 · Forecasting
+
+#### Exponential Smoothing
+- 나종화. R 응용 시계열분석. 자유아카데미. 2020.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/62?category=928223)
+- 🔗 [R 튜토리얼: tidyverse principle로 시계열 자료분석하기](https://www.taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/)
+
+#### ARIMA model
+- 나종화. R 응용 시계열분석. 자유아카데미. 2020.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/63?category=928223)
+
+#### Prophet
+- Taylor, Sean, and Benjamin Letham. Forecasting at Scale, 2017. https://doi.org/10.7287/peerj.preprints.3190v2.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/64)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Tutorial_prophet/Report.html)
+
+#### Hierarchical Time Series Forecasting
+- Athanasopoulos, George, Roman A. Ahmed, and Rob J. Hyndman. “Hierarchical Forecasts for Australian Domestic Tourism.” International Journal of Forecasting 25, no. 1 (January 1, 2009): 146–66. https://doi.org/10.1016/j.ijforecast.2008.07.004.
+- Athanasopoulos, George, Rob Hyndman, Roman Ahmed, and Han Lin Shang. “Optimal Combination Forecasts for Hierarchical.” Computational Statistics & Data Analysis 55 (September 1, 2011): 2579–89. https://doi.org/10.1016/j.csda.2011.03.006.
+- Hyndman, Rob J, George Athanasopoulos, and Han Lin Shang. “Hts: An R Package for Forecasting Hierarchical or Grouped Time Series,” n.d., 12.
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/60?category=928223)
+- 🔗 [R 튜토리얼](https://otexts.com/fpp3/hts.html)
+
+### 3 Other techniques
+
+#### Intervention analysis (Interrupted Time Series)
+- Slides. “Intervention Analysis.” Accessed April 17, 2022. https://slides.com/tonyg/intervention-analysis.
+- 🔗 [참고 자료](https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_source.pdf)
+- 🔗 [스터디 노트](https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_note.pdf)
+- 🔗 [R 코드](https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_rcode.R)
+- 🔗 [R 코드: arimax() 튜토리얼](https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_arimax()_rcode.R)
+
+#### Dynamic Time Warping (DTW)
+- Berndt, Donald J., and James Clifford. “Using Dynamic Time Warping to Find Patterns in Time Series.” In Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, 359–70. AAAIWS’94. Seattle, WA: AAAI Press, 1994.
+- 선행 또는 후행하는 시계열, 시차가 존재하나 유사한 패턴이 존재하는 두 시계열을 잡아낼 수 있게끔 해주는 비유사성 측도(거리 측도) 알고리즘
+- DTW distance를 이용해 계층적 군집 분석 수행 가능
+- 🔗 [스터디 노트](https://be-favorite.github.io/Research_archive/archive/dtw/DTW_note.pdf)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Research_archive/archive/dtw/DTW_tutorial.pdf)
+
+#### Discrete Wavelet Transform (DWT)
+- Graps, Amara. “An Introduction to Wavelets.” IEEE Comp. Sci. Engi. 2 (February 1, 1995): 50–61. https://doi.org/10.1109/99.388960.
+- Li, Daoyuan, Tegawendé F. Bissyandé, Jacques Klein, and Y. L. Traon. “Time Series Classification with Discrete Wavelet Transformed Data: Insights from an Empirical Study.” In SEKE, 2016. https://doi.org/10.18293/SEKE2016-067.
+- 시계열들을 데이터의 열로 나열하여 classification을 수행할 때, 효과적인 차원 감소 방법
+- 일종의 시계열 Feature engineering 기법에 해당
+- 🔗 [스터디 노트](https://be-favorite.github.io/Research_archive/archive/dwt/DWT_note.pdf)
+- 🔗 [R 튜토리얼](https://be-favorite.github.io/Research_archive/archive/dwt/DWT_tutorial.pdf)
+
+## Machine Learning and Statistical Learning
+### Prerequisite
+- Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016.
+- 🔗 [스터디 노트: Prerequisite 1 머신러닝 용어 정리](https://be-favorite.tistory.com/30?category=894492)
+
+### Ensemble methods
+- Chen, Tianqi, and Carlos Guestrin. “XGBoost: A Scalable Tree Boosting System.” Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, August 13, 2016, 785–94. https://doi.org/10.1145/2939672.2939785.
+- Chen, Lilly. “Basic Ensemble Learning (Random Forest, AdaBoost, Gradient Boosting)- Step by Step Explained.” Medium, January 2, 2019. https://towardsdatascience.com/basic-ensemble-learning-random-forest-adaboost-gradient-boosting-step-by-step-explained-95d49d1e2725.
+- Morde, Vishal. “XGBoost Algorithm: Long May She Reign!” Medium, April 8, 2019. https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d.
+- “Light GBM vs XGBOOST: Which Algorithm Takes the Crown.” Accessed April 17, 2022. https://www.analyticsvidhya.com/blog/2017/06/which-algorithm-takes-the-crown-light-gbm-vs-xgboost/.
+- **Random Forest**, **AdaBoost**, **Gradient Boosting**, **XGBoost**, **Light GBM**
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/2)
+- 🔗 [R 튜토리얼: tidyverse principle로 머신러닝하기](https://www.taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/)
+
+### Logistic regression
+- James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. “An Introduction to Statistical Learning.” An Introduction to Statistical Learning. Accessed April 17, 2022. https://www.statlearning.com.
+- Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. The Elements of Statistical Learning: Data Mining, Inference and Prediction. 2nd ed. Springer, 2009. http://www-stat.stanford.edu/~tibs/ElemStatLearn/.
+- StatQuest with Josh Starmer. Logistic Regression Details Pt 2: Maximum Likelihood, 2018. https://www.youtube.com/watch?v=BfKanl1aSG0.
+- Chatterjee, Samprit, and Ali S. Hadi. “Regression Analysis by Example, Fifth Edition.”
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/47)
+
+### Generalized Linear Model (GLM) and Generalized Additive Model (GAM)
+- Hayes, Genevieve. “Beyond Linear Regression: An Introduction to GLMs.” Medium, December 24, 2019. https://towardsdatascience.com/beyond-linear-regression-an-introduction-to-glms-7ae64a8fad9c.
+- James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. “An Introduction to Statistical Learning.” An Introduction to Statistical Learning. Accessed April 17, 2022. https://www.statlearning.com.
+- **GLM**
+  - 🔗 [스터디 노트](https://be-favorite.tistory.com/52)
+- **GAM**
+  - 🔗 [스터디 노트: Prerequisite 1 선형모형의 한계](https://be-favorite.tistory.com/53?category=923110)
+  - 🔗 [스터디 노트: Prerequisite 2 다항 회귀와 계단 함수](https://be-favorite.tistory.com/54?category=923110)
+  - 🔗 [스터디 노트: Prerequisite 3 Regression splines](https://be-favorite.tistory.com/56?category=923110)
+  - 🔗 [스터디 노트: Prerequisite 4 Smoothing splines](https://be-favorite.tistory.com/57?category=923110)
+  - 🔗 [스터디 노트: Prerequisite 5 Local regressions](https://be-favorite.tistory.com/58?category=923110)
+  - 🔗 [스터디 노트: GAMs](https://be-favorite.tistory.com/59?category=923110)
+
+## Deep Learning
+
+### Prerequisites
+- Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016.
+- 🔗 [스터디 노트: Prerequisite 1 딥러닝의 모티베이션과 역사](https://be-favorite.tistory.com/8?category=897337)
+- 🔗 [스터디 노트: Prerequisite 2 선형대수의 여러 객체 소개](https://be-favorite.tistory.com/33?category=909652)
+- 🔗 [스터디 노트: Prerequisite 3 행렬의 전치와 브로드캐스팅](https://be-favorite.tistory.com/32?category=909652)
+- 🔗 [스터디 노트: Prerequisite 4 행렬과 벡터의 곱연산](https://be-favorite.tistory.com/34?category=909652)
+- 🔗 [스터디 노트: Prerequisite 5 선형방정식과 선형종속,span](https://be-favorite.tistory.com/35?category=909652)
+- 🔗 [스터디 노트: Prerequisite 6 norms](https://be-favorite.tistory.com/36?category=909652)
+- 🔗 [스터디 노트: Prerequisite 7 특별한 종류의 행렬과 벡터](https://be-favorite.tistory.com/37?category=909652)
+- 🔗 [스터디 노트: Prerequisite 8 고윳값 분해](https://be-favorite.tistory.com/38?category=909652)
+- 🔗 [스터디 노트: Prerequisite 9 특잇값 분해와 일반화 역행렬](https://be-favorite.tistory.com/39?category=909652)
+- 🔗 [스터디 노트: Prerequisite 10 Trace 연산자와 행렬식](https://be-favorite.tistory.com/40?category=909652)
+- 🔗 [스터디 노트: Prerequisite 11 선형대수를 이용한 주성분 유도](https://be-favorite.tistory.com/41)
+- 🔗 [스터디 노트: Prerequisite 12 머신러닝 용어 정리](https://be-favorite.tistory.com/30?category=894492)
+
+## High-Dimensional Data Analysis
+- Breheny, Patrick. High-Dimensional Data Analysis. The University of Iowa, 2016. https://myweb.uiowa.edu/pbreheny/7600/s16/index.html.
+  - R 소스코드 및 예제 Dataset 제공
+- 일반적인 기계학습 기반의 예측 모델링으로 접근하기 어려운 n -> p 또는 n < p 인 자료의 예측 모델링에 관한 방법론(여기서 n은 관측치의 수, p는 예측변수의 수)
+- 꼭 고차원 자료가 아닌, 회귀모형의 예측 성능을 높이기 위해서도 사용되는 방법론들에 해당
+- 통계적 가설검정 관점에서 가설 검정시 발생하는 고차원 문제에 관한 솔루션 또한 제공함
+
+### 1 고차원 자료에 관한 예측 모델링
+
+#### Prerequisites
+- 🔗 [스터디 노트: Prerequisite 고차원 자료에 대한 고전적인 회귀분석의 문제점](https://be-favorite.tistory.com/28?category=908019)
+
+#### Ridge regression
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/29?category=908019)
+
+#### Lasso regression
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/46?category=908019)
+
+#### Bias reduction of Lasso estimator
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/48?category=908019)
+
+#### Variance reduction of Lasso eistimator
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/49?category=908019)
+
+#### Penalized logistic regression
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/50?category=908019)
+
+#### Penalized robust regression
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/51?category=908019)
+
+### 2 통계적 가설검정 관점의 고차원 문제
+
+#### Prerequisites
+- 🔗 [스터디 노트: Prerequisite 1 통계적 가설검정의 원리](https://be-favorite.tistory.com/21?category=894492)
+- 🔗 [스터디 노트: Prerequisite 2 다중 검정](https://be-favorite.tistory.com/20)
+
+#### Family-Wise Error Rates (FWER)
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/25?category=908019)
+
+#### False Discovery Rates (FDR)
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/26?category=908019)
+
+## Statistics
+- 통계학, 통계적 가설검정과 관련한 것들을 아카이브 합니다.
+
+### 구간추정의 해석에 대한 고전적 관점(Frequentist)과 베이지안 관점
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/27?category=894492)
+
+### 검정력(power)과 검정력 함수에 대해
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/22?category=894489)
+
+### 자유도(Degrees of Freedom)
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/44?category=894492)
+
+### 표준편차와 표준오차
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/45?category=894492)
+
+### "대립가설이 옳다."라는 식의 주장을 지양해야하는 이유
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/66?category=894492)
+
+### 중심극한정리의 의미
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/70?category=894492)
+- 🔗 [스터디 노트: 중심극한정리에 관한 고찰](https://statisticsplaybook.tistory.com/67?category=924794)
+
+### Fixed effect와 random effect
+- 🔗 [스터디 노트](https://be-favorite.tistory.com/19?category=904635)
+
+## Miscellaneous
+
+### 결정론적 SIR 모형을 이용한 감염병 유행 모델링
+- 🔗 [스터디 노트와 R 튜토리얼](https://github.com/be-favorite/Tutorials_SIR-models)

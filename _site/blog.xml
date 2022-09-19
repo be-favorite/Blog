@@ -649,16 +649,15 @@ Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently”<
 <ol>
 <li id="fn1"><p>🔗<a href="http://aispiration.com/viz/viz-ggplot2-practice.html">그래프 문법이란?</a>↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {ggplot2 컬러링 가이드},
   date = {2022-08-14},
-  url = {https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html},
+  url = {https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“ggplot2 컬러링 가이드.”</span> August 14, 2022.
-<a href="https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html">https://quarto-taemo.netlify.app/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“ggplot2 컬러링 가이드.”</span> August 14, 2022. <a href="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html">https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</a>.
 </div></div></section></div> ]]></description>
   <category>Visualization</category>
   <category>R</category>

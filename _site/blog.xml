@@ -9,7 +9,7 @@
 <link>https://quarto-taemo.netlify.app/blog.html</link>
 <atom:link href="https://quarto-taemo.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
-<generator>quarto-1.0.38</generator>
+<generator>quarto-1.1.251</generator>
 <lastBuildDate>Wed, 06 Apr 2022 15:00:00 GMT</lastBuildDate>
 <item>
   <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>

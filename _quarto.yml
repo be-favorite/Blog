@@ -3,10 +3,23 @@ project:
 
 website:
   title: "방태모의 블로그"
+  description: "방태모의 개인 블로그입니다."
   favicon: images/favicon.png
   site-url: https://quarto-taemo.netlify.app
   repo-url: https://github.com/be-favorite/Blog
-  description: "방태모의 개인 블로그입니다."
+  repo-actions: [issue]
+  reader-mode: true
+  page-footer: 
+    left: "Copyright 2022, Taemo Bang" 
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/taemo/
+      - icon: facebook
+        href: https://www.facebook.com/profile.php?id=100070120780059
+      - icon: twitter
+        href: https://twitter.com/TaemoBang
+      - icon: github
+        href: https://github.com/be-favorite
   navbar:
     right:
       - href: index.qmd
@@ -23,7 +36,7 @@ website:
             href: presentation.qmd
         
 # google-analytics:
-cookie-conset: TRUE
+cookie-consent: TRUE
 
 format:
   html:
@@ -44,4 +57,4 @@ format:
         reactions-enabled: true
         input-position: top
         theme: light
-        language: en
+        language: ko

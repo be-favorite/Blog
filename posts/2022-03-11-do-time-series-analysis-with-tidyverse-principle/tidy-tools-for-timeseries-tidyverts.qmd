@@ -744,3 +744,23 @@ cafe %>%
 ## 맺음말
 
 tidyverts ecosystem이 전반적으로 작동하는 과정을 소개해 보았습니다. 그러나, 시계열 자료의 예측 모델링 대한 이해와 더불어 tidyverts를 좀 더 디테일하게 활용하기 위해서는, [Forecasting: Principles and Practices (3rd Ed.)](https://otexts.com/fpp3/)을 참고하시는게 좋을 것이라 생각합니다. tidyverse와 [tidymodels](https://github.com/be-favorite/Tutorial_tidymodels)를 통해 데이터를 전처리, 예측모형 개발, 개선 등의 과정에 걸리는 시간을 크게 단축시켰듯이, fpp3을 잘 익혀두면 시계열 예측 모델링에 전반적인 과정에 드는 시간을 상당히 단축시킬 수 있을 겁니다.`r emo::ji("blush")`
+
+::: {.callout-tip collapse="true"}
+## 세션정보를 보려면 누르세요
+
+```{r, echo = FALSE}
+library(sessioninfo)
+# save the session info as an object
+pkg_sesh <- session_info(pkgs = "attached")
+# get the quarto version
+quarto_version <- system("quarto --version", intern = TRUE)
+# inject the quarto info
+pkg_sesh$platform$quarto <- paste(
+  system("quarto --version", intern = TRUE), 
+  "@", 
+  quarto::quarto_path()
+  )
+# print it out
+pkg_sesh
+```
+:::

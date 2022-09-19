@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.251">
@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Taemo Bang">
-<meta name="dcterms.date" content="2022-04-07">
 <meta name="description" content="R을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!">
 
 <title>방태모의 블로그 - tidyverse로 데이터베이스랑 대화하기 - 1편</title>
@@ -192,6 +191,11 @@ div.csl-indent {
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -223,7 +227,7 @@ div.csl-indent {
   <li><a href="#다음-파트에서-배울-내용" id="toc-다음-파트에서-배울-내용" class="nav-link" data-scroll-target="#다음-파트에서-배울-내용">다음 파트에서 배울 내용</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -259,7 +263,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 7, 2022</p>
+      <p class="date">2022년 4월 7일</p>
     </div>
   </div>
     
@@ -580,7 +584,7 @@ ORDER BY `n` DESC</code></pre>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-naidoo2020" class="csl-entry" role="doc-biblioentry">
-Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with Databases - Part i,”</span> December. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
+Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the tidyverse with Databases - Part I”</span>, 12월. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
@@ -593,13 +597,13 @@ Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with 
 <li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
   editor = {},
   title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
   date = {2022-04-07},
   url = {https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html},
-  langid = {kr}
+  langid = {ko}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
@@ -830,9 +834,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="ko" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Taemo Bang</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/taemo/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/profile.php?id=100070120780059">
+      <i class="bi bi-facebook" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/TaemoBang">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/be-favorite">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

@@ -331,7 +331,7 @@ ORDER BY `n` DESC</code></pre>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-naidoo2020" class="csl-entry">
-Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with Databases - Part i,”</span> December. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
+Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the tidyverse with Databases - Part I”</span>, 12월. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
@@ -344,13 +344,13 @@ Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with 
 <li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.↩︎</p></li>
 <li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
   editor = {},
   title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
   date = {2022-04-07},
   url = {https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html},
-  langid = {kr}
+  langid = {ko}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
 Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
@@ -377,7 +377,7 @@ Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
 </figure>
 </div>
 <aside>
-본 글은 <span class="citation" data-cites="tidyvert">(<span>“Tidyverts,”</span> n.d.)</span>을 기반으로 작성되었습니다.
+본 글은 <span class="citation" data-cites="tidyvert">(<span>“Tidyverts”</span>, 일자 없음)</span>을 기반으로 작성되었습니다.
 </aside>
 <p>tidyverts ecosystem은 시계열 자료에 관한 분석을 tidyverse principle로 수행할 수 있게끔 해주는 패키지 묶음입니다. 전처리, 시각화부터 모델링, 예측까지 모든 과정을 “tidy” framework로 진행하게 해주죠. tidyverse priciple이 데이터 전처리에 있어서 얼마나 많은 업무 생산성을 가져다 주는지 우리는 이미 알고있습니다. 시계열 자료를 자주 다루는 사람이라면 꼭 배워둘 만한 패키지죠.😄 tidyverts ecosystem을 이루는 대부분의 패키지들은 <code>{fpp3}</code>으로 불러올 수 있습니다. <code>{tsibbletalk}</code>은 <code>{shiny}</code>와 함께 동작하는 반응형 그래픽을 제공하는 패키지로 본 튜토리얼에서는 생략하겠습니다:</p>
 <div class="cell">
@@ -491,7 +491,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -505,7 +505,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"4"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"7"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -522,7 +522,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -530,7 +530,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"4"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"7"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -544,7 +544,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -559,7 +559,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -574,7 +574,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"36"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"36"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"34"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"34"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -590,7 +590,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"8"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"9"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -607,7 +607,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"10"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"2"},{"1":"2011","2":"kiwi","3":"5"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1.0"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"5.5"},{"1":"2014","2":"cherry","3":"10.0"},{"1":"2010","2":"kiwi","3":"2.0"},{"1":"2011","2":"kiwi","3":"5.0"},{"1":"2012","2":"kiwi","3":"5.0"},{"1":"2013","2":"kiwi","3":"7.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -630,7 +630,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"5"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"10"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"5"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"10"},{"1":"2011","2":"kiwi","3":"3"},{"1":"2012","2":"kiwi","3":"3"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -647,7 +647,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"9"},{"1":"2012","2":"cherry","3":"5"},{"1":"2013","2":"cherry","3":"8"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"7"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"5"},{"1":"2013","2":"cherry","3":"8"},{"1":"2014","2":"cherry","3":"8"},{"1":"2010","2":"kiwi","3":"10"},{"1":"2011","2":"kiwi","3":"3"},{"1":"2012","2":"kiwi","3":"7"},{"1":"2013","2":"kiwi","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -1224,6 +1224,62 @@ Model: ETS(M,A,A)
 <section id="맺음말" class="level2">
 <h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
 <p>tidyverts ecosystem이 전반적으로 작동하는 과정을 소개해 보았습니다. 그러나, 시계열 자료의 예측 모델링 대한 이해와 더불어 tidyverts를 좀 더 디테일하게 활용하기 위해서는, <a href="https://otexts.com/fpp3/">Forecasting: Principles and Practices (3rd Ed.)</a>을 참고하시는게 좋을 것이라 생각합니다. tidyverse와 <a href="https://github.com/be-favorite/Tutorial_tidymodels">tidymodels</a>를 통해 데이터를 전처리, 예측모형 개발, 개선 등의 과정에 걸리는 시간을 크게 단축시켰듯이, fpp3을 잘 익혀두면 시계열 예측 모델링에 전반적인 과정에 드는 시간을 상당히 단축시킬 수 있을 겁니다.😊</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+세션정보를 보려면 누르세요
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       macOS Monterey 12.6
+ system   aarch64, darwin20
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       Asia/Seoul
+ date     2022-09-19
+ pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+ quarto   1.1.251 @ /Users/taemobang/Applications/quarto/bin/quarto
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package       * version date (UTC) lib source
+ dplyr         * 1.0.10  2022-09-01 [1] CRAN (R 4.2.0)
+ fable         * 0.3.2   2022-09-01 [1] CRAN (R 4.2.0)
+ fable.prophet * 0.1.0   2020-08-20 [1] CRAN (R 4.2.0)
+ fabletools    * 0.3.2   2021-11-29 [1] CRAN (R 4.2.0)
+ feasts        * 0.3.0   2022-09-01 [1] CRAN (R 4.2.0)
+ fpp3          * 0.4.0   2021-02-06 [1] CRAN (R 4.2.0)
+ ggplot2       * 3.3.6   2022-05-03 [1] CRAN (R 4.2.0)
+ lubridate     * 1.8.0   2021-10-07 [1] CRAN (R 4.2.0)
+ nycflights13  * 1.0.2   2021-04-12 [1] CRAN (R 4.2.0)
+ purrr         * 0.3.4   2020-04-17 [1] CRAN (R 4.2.0)
+ Rcpp          * 1.0.9   2022-07-08 [1] CRAN (R 4.2.0)
+ rmarkdown     * 2.16    2022-08-24 [1] CRAN (R 4.2.0)
+ sessioninfo   * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
+ tibble        * 3.1.8   2022-07-22 [1] CRAN (R 4.2.0)
+ tidyr         * 1.2.1   2022-09-08 [1] CRAN (R 4.2.0)
+ tsibble       * 1.1.2   2022-08-21 [1] CRAN (R 4.2.0)
+ tsibbledata   * 0.4.1   2022-09-01 [1] CRAN (R 4.2.0)
+
+ [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -1231,15 +1287,15 @@ Model: ETS(M,A,A)
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-tidyvert" class="csl-entry">
-<span>“Tidyverts.”</span> n.d. <a href="https://tidyverts.org">https://tidyverts.org</a>.
+<span>“Tidyverts”</span>. 일자 없음. <a href="https://tidyverts.org">https://tidyverts.org</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
   editor = {},
   title = {tidyverse principle로 시계열 자료 분석하기},
   date = {2022-03-11},
   url = {https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html},
-  langid = {kr}
+  langid = {ko}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
 Taemo Bang. 2022. <span>“tidyverse principle로 시계열 자료

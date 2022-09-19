@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>ggplot2 컬러링 가이드</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="방태모" />
+    <meta name="date" content="2022-08-12" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="css/statisticsplaybook.css" type="text/css" />
+    <link rel="stylesheet" href="css/statisticsplaybook-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom
+
+# ggplot2 컬러링 가이드
+----
+## **서울 R 미트업**
+### 방태모
+### 2022-08-12
+
+---
+
+## .brand-blue[준비하기]
+
+
+
+```r
+library(tidyverse)
+library(showtext)
+font_add_google("Fira Sans", "firasans")
+showtext_auto()
+
+theme_customs &lt;- theme(
+  text = element_text(family = 'firasans', size = 16),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[6],
+    margin = margin(t = 2, r = 0, b = 7, l = 0, unit = "mm")
+  )
+)
+
+theme_set(theme_minimal() + theme_customs)
+```
+
+---
+
+class: inverse, middle, center
+
+# 음영을 활용하자
+
+---
+
+## .brand-blue[막대그래프 예제]
+
+- 1998년과 2008년 인기 차량 모델 38개에 관한 연비 데이터 `mpg` 이용
+
+- 연도별(`year`) 7개 차종(`class`)의 빈도는 어떻게 되는가?
+
+
+```r
+mpg |&gt; 
+    select(manufacturer:model, year, class) |&gt; 
+    str()
+```
+
+```
+## tibble [234 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ manufacturer: chr [1:234] "audi" "audi" "audi" "audi" ...
+##  $ model       : chr [1:234] "a4" "a4" "a4" "a4" ...
+##  $ year        : int [1:234] 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...
+##  $ class       : chr [1:234] "compact" "compact" "compact" "compact" ...
+```
+
+
+---
+
+## .brand-blue[흔히들 하는 시각화]
+
+.pull-left[
+
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg1-1.png" alt="그림 1.1" width="504" /&gt;
+&lt;p class="caption"&gt;그림 1.1&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+mpg %&gt;% 
+  ggplot(aes(x = factor(year), 
+             fill = class)) +
+  geom_bar() +
+  labs(x = "year")
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 I - Preprocessing]
+
+.left-column[
+]
+.right-column[
+
+
+```r
+# Group classes into three groups (to reduce colors to 3)
+dat &lt;- mpg %&gt;% 
+  mutate(
+    year = factor(year),
+    class_group = case_when(
+      class %in% c('2seater', 'compact', 'midsize') ~ "grp1",
+      class == 'minivan' ~ "grp2",
+      T ~ "grp3"
+    )
+  )
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 I - Visualization]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg2-1.png" alt="그림 1.2" width="504" /&gt;
+&lt;p class="caption"&gt;그림 1.2&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+shades_plt &lt;- dat %&gt;% 
+  ggplot(aes(x = year, 
+*            fill = class_group,
+*            alpha = class)) +
+  geom_bar() +
+  labs(
+    x = 'Year',
+    y = 'Counts',
+    alpha = 'Class',
+    title = 'Show shades, not hues'
+  )
+shades_plt 
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 II - Adjusting]
+
+.left-column[
+]
+.right-column[
+
+
+```r
+# Color-blind safe colors
+colors &lt;-  thematic::okabe_ito(3)
+# Possible levels of transparency (one for each class)
+alpha_max &lt;- 1
+alpha_min &lt;- 0.7
+alpha_vals &lt;- c(
+  seq(alpha_max, alpha_min, length.out = 4), 
+  seq(alpha_min, alpha_max, length.out = 4)[-1]
+)
+alpha_vals
+```
+
+```
+## [1] 1.0 0.9 0.8 0.7 0.8 0.9 1.0
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 II - Visualization]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg3-1.png" alt="그림 1.3" width="504" /&gt;
+&lt;p class="caption"&gt;그림 1.3&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+# Tweak previous plot
+shades_plt &lt;- shades_plt +
+* scale_fill_manual(values = colors) +
+* scale_alpha_manual(values = alpha_vals)
+shades_plt
+```
+
+]
+
+---
+
+
+## .brand-blue[음영 활용하기 III - Adjusting and visualization]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg4-1.png" alt="그림 1.4" width="504" /&gt;
+&lt;p class="caption"&gt;그림 1.4&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+- `guides()` 이용
+
+
+```r
+shades_plt &lt;- shades_plt +
+* guides(
+*   fill = guide_none(),
+*   alpha = guide_legend(
+*     override.aes =
+*         list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)])
+*   )
+* )
+shades_plt
+```
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 음영만으로는 부족해
+
+---
+
+## .brand-blue[컬러블록에 줄 추가하기]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg5-1.png" alt="그림 1.5" width="504" /&gt;
+&lt;p class="caption"&gt;그림 1.5&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+dat %&gt;% 
+  ggplot(aes(x = year, fill = class_group, alpha = class)) +
+* geom_bar(col = 'white') +
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(override.aes = list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)]))
+  ) +
+  labs(
+    x = 'Year', y = 'Counts', alpha = 'Class',
+    title = 'Group categories together by color, \nbut keep showing them'
+  )
+```
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 전달하고 싶은 내용만 강조하자
+
+---
+
+## .brand-blue[스파게티 플롯 예제]
+
+- [Our World in Data](https://ourworldindata.org/time-with-others-lifetime)의 미국인 설문조사 자료 이용
+
+- 우리는 일생동안 누구(`person`)와 시간(`minutes`)을 보내는가?
+
+.pull-left[
+
+```r
+time_data &lt;- read_csv("./time-spent-with-relationships-by-age-us.csv") %&gt;% 
+  rename_with(
+    ~c('Entitity', 'Code', 'Age', 
+       'alone', 'friends', 'children', 
+       'parents', 'partner', 'coworkers')
+  ) %&gt;% 
+  pivot_longer(
+    cols = alone:coworkers, names_to = 'person',
+    values_to = 'minutes'
+  ) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  filter(age &lt;= 80)
+```
+]
+
+.pull-right[
+
+```r
+str(time_data)
+```
+
+```
+## tibble [396 × 5] (S3: tbl_df/tbl/data.frame)
+##  $ entitity: chr [1:396] "United States" "United States" "United States" "United States" ...
+##  $ code    : chr [1:396] "USA" "USA" "USA" "USA" ...
+##  $ age     : num [1:396] 15 15 15 15 15 15 16 16 16 16 ...
+##  $ person  : chr [1:396] "alone" "friends" "children" "parents" ...
+##  $ minutes : num [1:396] 193.3 109.4 23.5 267.1 0 ...
+```
+
+]
+
+---
+## .brand-blue[흔히들 하는 시각화]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend1-1.png" alt="그림 2.1" width="504" /&gt;
+&lt;p class="caption"&gt;그림 2.1&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+# Color-blind safe colors
+colors &lt;- thematic::okabe_ito(7)[-6]
+
+# Line plot
+p &lt;- time_data %&gt;% 
+  ggplot(aes(x = age, y = minutes, col = person)) +
+  geom_line(size = 1.5) +
+  scale_color_manual(values = colors) +
+  coord_cartesian(xlim = c(15, 81), expand = F) +
+  scale_y_continuous(minor_breaks = NULL) +
+  labs(x = 'Age (in years)', y = 'Minutes', col = 'Time spent')
+p
+```
+
+]
+---
+## .brand-blue[전달력 높이기 I]
+
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend2-1.png" alt="그림 2.2" width="504" /&gt;
+&lt;p class="caption"&gt;그림 2.2&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+- `gghighlight()` 이용
+
+
+```r
+library(gghighlight)
+alone_plt &lt;- p + 
+* gghighlight(person == 'alone',
+*             use_direct_label = F) +
+  labs(title = 'Emphasize just one or a few categories')
+alone_plt
+```
+
+]
+
+---
+
+## .brand-blue[전달력 높이기 II]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend_add-1.png" alt="그림 2.3" width="504" /&gt;
+&lt;p class="caption"&gt;그림 2.3&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+alone_plt +
+  annotate(
+    'text',
+    x = 15,
+    y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0,
+    vjust = 0,
+    family = 'firasans',
+    size = 7
+  )
+```
+
+]
+
+---
+
+## .brand-blue[전달력 높이기 III]
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend3-1.png" alt="그림 2.4" width="504" /&gt;
+&lt;p class="caption"&gt;그림 2.4&lt;/p&gt;
+&lt;/div&gt;
+
+---
+## .brand-blue[전달력 높이기 III]
+
+- `ggphighlight()`를 이용해 다중 하이라이팅
+
+
+```r
+age_40_plt &lt;- p + 
+* gghighlight(person %in% c('alone', 'children'), age &gt;= 38,  use_direct_label = F) +
+  geom_segment(x = 38, xend = 38, y = -Inf, yend = 300, linetype = 2, col = 'grey20') +
+  labs(title = 'Emphasize just one or a few categories') 
+
+age_40_plt +
+  annotate(
+    'text', x = 15, y = 403,
+    label = 'Around the age of 40, we spend \nless time with children and \nmore time alone.',
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 0.85,
+    size = 5.5
+  )
+```
+
+---
+
+class: inverse, middle, center
+
+# 라벨링 활용하기
+
+---
+
+## .brand-blue[라벨링 활용하기 I]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend4-1.png" alt="그림 3.1" width="504" /&gt;
+&lt;p class="caption"&gt;그림 3.1&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+alone_plt +
+  annotate(
+    'text', x = 15, y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 7) +
+* annotate(
+*   'text',  x = 70,  y = 420,
+*   label = 'alone',
+*   hjust = 0, vjust = 0, size = 7,
+*   family = 'firasans', color = colors[1]) +
+  labs(title = 'Label directly') +
+* theme(legend.position = 'none')
+```
+
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Adjusting]
+
+- `ggtext` 패키지를 통해 richtext로 변환 및 HTML 문법 활용
+
+
+```r
+library(ggtext)
+color_alone &lt;- glue::glue(
+* "We spend a lot of time &lt;span style = 'color:{colors[1]};'&gt;alone&lt;/span&gt;..."
+)
+color_alone
+```
+
+```
+## We spend a lot of time &lt;span style = 'color:#E69F00;'&gt;alone&lt;/span&gt;...
+```
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Visualization]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend5-1.png" alt="그림 3.1" width="504" /&gt;
+&lt;p class="caption"&gt;그림 3.1&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+alone_plt +
+  labs(title = 'Label directly') +
+  annotate(
+*   'richtext',
+    x = 15,
+    y = 400,
+*   label = color_alone,
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 6,
+*   label.color = NA
+  ) +
+* theme(legend.position = 'none')
+```
+
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Adjusting]
+
+
+```r
+age_40_text &lt;- glue::glue(
+  "Around the age of 40, we spent &lt;br&gt; less time 
+  with &lt;span style = 'color:{colors[2]};'&gt;children&lt;/span&gt; 
+  and &lt;br&gt; more time &lt;span style = 'color:{colors[1]};'&gt;alone&lt;/span&gt;."
+)
+age_40_text
+```
+
+```
+## Around the age of 40, we spent &lt;br&gt; less time 
+## with &lt;span style = 'color:#009E73;'&gt;children&lt;/span&gt; 
+## and &lt;br&gt; more time &lt;span style = 'color:#E69F00;'&gt;alone&lt;/span&gt;.
+```
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Visualization]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/spend6-1.png" alt="그림 3.2" width="504" /&gt;
+&lt;p class="caption"&gt;그림 3.2&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+--
+
+.pull-right[
+  
+
+```r
+age_40_plt +
+  labs(title = 'Label directly') +
+  annotate(
+*   'richtext',
+    x = 15, y = 350, 
+*   label = age_40_text,
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 1.25,
+    size = 5,
+*   label.color = NA
+  ) +
+* theme(legend.position = 'none')
+```
+  
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Preprocessing]
+
+- 빈도 계산
+
+.pull-left[
+
+```r
+manual_counts &lt;- mpg %&gt;% 
+  count(year, class) %&gt;% 
+  mutate(
+    year = factor(year),
+    class_group = case_when(
+      class %in% c('2seater', 'compact', 'midsize') ~ "grp1",
+      class == 'minivan' ~ "grp2",
+      T ~ "grp3"
+    )
+  ) 
+head(manual_counts)
+```
+]
+
+.pull-right[
+
+```
+## # A tibble: 6 × 4
+##   year  class          n class_group
+##   &lt;fct&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;      
+## 1 1999  2seater        2 grp1       
+## 2 1999  compact       25 grp1       
+## 3 1999  midsize       20 grp1       
+## 4 1999  minivan        6 grp2       
+## 5 1999  pickup        16 grp3       
+## 6 1999  subcompact    19 grp3
+```
+]
+
+---
+
+
+## .brand-blue[라벨링 활용하기 III - Preprocessing]
+
+- 레이블 높이 계산
+
+.pull-left[
+
+```r
+labels &lt;- manual_counts %&gt;% 
+  mutate(class = factor(class)) %&gt;%  
+  group_by(year) %&gt;% 
+  arrange(year, desc(class)) %&gt;% 
+  mutate(
+*   csum = cumsum(n),
+*   n = (lag(csum, default = 0) + csum) / 2
+  )
+head(labels)
+```
+]
+
+.pull-right[
+
+```
+## # A tibble: 6 × 5
+## # Groups:   year [1]
+##   year  class          n class_group  csum
+##   &lt;fct&gt; &lt;fct&gt;      &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;
+## 1 1999  suv         14.5 grp3           29
+## 2 1999  subcompact  38.5 grp3           48
+## 3 1999  pickup      56   grp3           64
+## 4 1999  minivan     67   grp2           70
+## 5 1999  midsize     80   grp1           90
+## 6 1999  compact    102.  grp1          115
+```
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+.pull-left[
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg-add-1.png" alt="그림 3.3" width="504" /&gt;
+&lt;p class="caption"&gt;그림 3.3&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+
+```r
+*shades_plt2 &lt;- manual_counts %&gt;%
+  ggplot(aes(x = year, y = n, fill = class_group)) +
+* geom_col(aes(alpha = class), col = 'white') +
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  labs(
+    x = 'Year', y = 'Counts',
+    alpha = 'Class', title = 'Label directly'
+  )
+shades_plt2
+```
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+&lt;div class="figure"&gt;
+&lt;img src="coloring_guide_files/figure-html/mpg6-1.png" alt="그림 3.4" width="504" /&gt;
+&lt;p class="caption"&gt;그림 3.4&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+
+
+```r
+shades_plt2 +
+  # Add all but one label
+  geom_text(
+*   data = labels %&gt;% filter(class != '2seater'), aes(label = class),
+    col = 'white', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  # Add 2seater label
+  geom_text(
+*   data = labels %&gt;% filter(class == '2seater'), aes(y = n + 3, label = class),
+    col = 'black', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  theme(legend.position = 'none')
+```
+
+---
+
+## .brand-blue[Before &amp; After - Bar chart]
+
+.pull-left[
+&lt;img src="coloring_guide_files/figure-html/before-1-1.png" width="504" /&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="coloring_guide_files/figure-html/after-1-1.png" width="504" /&gt;
+]
+
+---
+
+## .brand-blue[Before &amp; After - Spaghetti plot]
+
+.pull-left[
+&lt;img src="coloring_guide_files/figure-html/before-2-1.png" width="504" /&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="coloring_guide_files/figure-html/after-2-1.png" width="504" /&gt;
+]
+
+
+---
+
+## .brand-blue[Before &amp; After - Spaghetti plot]
+
+.pull-left[
+&lt;img src="coloring_guide_files/figure-html/before-3-1.png" width="504" /&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="coloring_guide_files/figure-html/after-3-1.png" width="504" /&gt;
+]
+
+---
+class: inverse, middle, center
+
+# References
+
+---
+
+## .brand-blue[References]
+
+[1] Rapp, Albert. “4 Ways to Use Colors in Ggplot More Efficiently.” Blog. Albert Rapp, February 19, 2022. https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html.
+
+### .brand-blue[Theme and CSS in xaringan slides]
+
+- https://github.com/statisticsplaybook/statisticsplaybook
+
+- https://github.com/garthtarr/sydney_xaringan
+
+---
+
+class: inverse
+
+# Thanks!
+
+.pull-right[.pull-down[
+
+&lt;a href="mailto:favorite@kakao.com"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"&gt;&lt;/path&gt;&lt;/svg&gt; favorite@kakao.com]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/be-favorite"&gt;
+.white[&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @be-favorite]
+&lt;/a&gt;
+
+&lt;a href="https://twitter.com/TaemoBang"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @TaemoBang]
+&lt;/a&gt;
+
+&lt;a href="https://www.taemobang.com"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; Blog]
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+]]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

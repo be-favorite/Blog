@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>통계실습 I. 회귀분석, ARIMA 모형</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="방태모" />
+    <meta name="date" content="2022-06-14" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="css/statisticsplaybook.css" type="text/css" />
+    <link rel="stylesheet" href="css/statisticsplaybook-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom
+
+# 통계실습 I. 회귀분석, ARIMA 모형
+----
+## **가천대 길병원 고급통계교육**
+### 방태모
+### 2022-06-14
+
+---
+
+# .brand-red[목차]
+
+.left-column[
+]
+.right-column[
+
+.pull-left[
+
+.font100[.content-box-red[1 회귀분석]]
+  
+  - 방법론 소개
+  
+  - 단순회귀모형
+  
+  - 실습: 단순회귀모형
+  
+  - 다중회귀모형
+  
+  - 실습: 다중회귀모형
+
+
+      
+]
+
+.pull-right[
+
+.font100[.content-box-red[2 ARIMA 모형: 실제 사례 중심]]
+ 
+ - 준비
+ 
+ - 결측치 처리
+ 
+ - 시계열 자료 다루기
+ 
+ - 모형 적합
+ 
+ - 예측
+ 
+]
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 1 회귀분석
+
+---
+
+# .brand-red[방법론 소개]
+
+- 데이터로부터 독립변수(또는 예측변수, `\(x\)`)들의 함수를 다음과 같이 추정하여 종속변수(또는 반응변수, `\(y\)`)를 예측하는 방법:
+
+\begin{align} 
+\hat{y} = f(x_1, x_2, \cdots, x_p). 
+\end{align}
+
+- 여기서 `\(x = (x_1, x_2, \cdots, x_p)^{T}\)`는 주어지는 값
+
+- `\(y\)`는 주어진 `\(x\)`에서 측정되는 값으로 벡터로 주어질 수 있음
+
+---
+
+# .brand-red[단순회귀모형]
+
+- 단순선형회귀(simple linear regression)는 예측변수와 종속변수가 모두 1개인 경우에 해당:
+
+\begin{align} 
+y = \beta_0 + \beta_1 x + \epsilon, \epsilon \sim N(0, \sigma^2). 
+\end{align}
+
+- 오차항 `\(\epsilon_i \sim i.i.d \ N(0, \sigma^2)\)` 에 관한 가정
+
+  - 정규성(Normality)
+  
+  - 독립성(Independent): `\({\rm{Cov}}(\epsilon_{i}, \epsilon_{j}) = 0 (i \neq j)\)`
+  
+  - 등분산성(Homoscedasticity): `\({\rm{Var}}(\epsilon_{i}) = \sigma^2\)`
+
+---
+
+# .brand-red[단순회귀모형]
+
+.pull-left[
+
+&lt;div class="figure"&gt;
+&lt;img src="./fig/data.png" alt="fig 1. Data" width="300" height="350" /&gt;
+&lt;p class="caption"&gt;fig 1. Data&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+
+&lt;div class="figure"&gt;
+&lt;img src="./fig/simple.png" alt="fig 2. Simple linear regression" width="550" height="350" /&gt;
+&lt;p class="caption"&gt;fig 2. Simple linear regression&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+\begin{align} 
+\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x 
+\end{align}
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 준비하기
+
+- 패키지 설치
+
+
+```r
+install.packages("MASS")
+install.packages("car")
+install.packages("dplyr")
+```
+
+- 패키지 로딩
+
+
+```r
+library(MASS)
+library(car)
+library(dplyr)
+```
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 데이터 소개
+
+.pull-left[
+ -   고양이들의 성별, 몸무게(Bwt), 심장몸무게(Hwt)에 관한
+    자료 `cats` 이용
+
+
+```r
+head(cats, 4)
+```
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Sex &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Bwt &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Hwt &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right[
+-   데이터 구조 확인
+
+```r
+glimpse(cats)
+```
+
+```
+## Rows: 144
+## Columns: 3
+## $ Sex &lt;fct&gt; F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, …
+## $ Bwt &lt;dbl&gt; 2.0, 2.0, 2.0, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.2, 2…
+## $ Hwt &lt;dbl&gt; 7.0, 7.4, 9.5, 7.2, 7.3, 7.6, 8.1, 8.2, 8.3, 8.5, 8.7, 9.8, 7.1, 8…
+```
+]
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 모형 적합
+
+.scroll-box-20[
+
+- {stats} 패키지의 `lm()`을 이용해 단순회귀모형 적합
+
+
+```r
+lm_mod &lt;- lm(Hwt ~ Bwt, data = cats)
+summary(lm_mod)
+```
+
+```
+## 
+## Call:
+## lm(formula = Hwt ~ Bwt, data = cats)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.5694 -0.9634 -0.0921  1.0426  5.1238 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -0.3567     0.6923  -0.515    0.607    
+## Bwt           4.0341     0.2503  16.119   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1.452 on 142 degrees of freedom
+## Multiple R-squared:  0.6466,	Adjusted R-squared:  0.6441 
+## F-statistic: 259.8 on 1 and 142 DF,  p-value: &lt; 2.2e-16
+```
+
+]
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 회귀선 시각화
+
+
+```r
+plot(cats$Hwt ~ cats$Bwt, pch = 19, col = "darkgray")
+abline(lm_mod, lwd = 2)
+```
+
+&lt;img src="1_regression_arima_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /&gt;
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 잔차분석: 등분산성, 정규성
+
+- `\(y\)`와 `\(x\)` 간의 relationship에 관한 분석을 목적으로 선형회귀모형을 적합할 때는 잔차분석 필수
+
+
+```r
+par(mfrow = c(1, 2))
+plot(lm_mod, 1)
+plot(lm_mod, 2)
+```
+
+&lt;img src="1_regression_arima_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /&gt;
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 잔차분석: 이상점 체크
+
+- 144번 자료에 대한 정보 확인
+
+.pull-left[
+
+```r
+cats[144, ]
+```
+
+```
+##     Sex Bwt  Hwt
+## 144   M 3.9 20.5
+```
+]
+
+.pull-right[
+
+```r
+lm_mod$fitted[144]
+```
+
+```
+##      144 
+## 15.37618
+```
+
+```r
+lm_mod$residuals[144]
+```
+
+```
+##      144 
+## 5.123818
+```
+]
+
+---
+
+# .brand-red[실습: 단순회귀모형]
+
+## 잔차분석: 독립성 검정
+
+- Durbin-Watson Test를 이용한 잔차의 독립성 검정
+  - 더빈-왓슨 테스트 통계량( `\(d\)` )는 `\(0 &lt; d &lt; 4\)` 사이의 값을 가짐
+  - `\(d \rightarrow 2\)`: 자기상관이 존재하지 않음
+  - `\(d \rightarrow 0\)` or `\(d \rightarrow 4\)`: 자기상관이 존재함
+
+- {car} 패키지의 `durbinWatsonTest()`를 이용해 잔차에 대해 독립성 검정 수행
+
+
+```r
+residuals(lm_mod) |&gt; 
+    durbinWatsonTest()
+```
+
+```
+## [1] 1.579896
+```
+
+---
+
+# .brand-red[다중회귀모형]
+
+- 다중선형회귀(multiple linear regression)는 단순선형회귀의 확장으로 독립변수의 수가 여러개인 경우에 해당:
+
+\begin{align} 
+y = \alpha + \beta_{1} x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon, \epsilon \sim N(0, \sigma^2) 
+\end{align}
+
+- 오차항에 대한 가정은 단순선형회귀의 경우와 같음
+
+---
+
+# .brand-red[다중회귀모형]
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./fig/multiple.jpg" alt="fig 3. Multilple linear regression" width="500" height="350" /&gt;
+&lt;p class="caption"&gt;fig 3. Multilple linear regression&lt;/p&gt;
+&lt;/div&gt;
+
+\begin{align} 
+\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 
+\end{align}
+
+---
+
+# .brand-red[다중회귀모형]
+
+\begin{align} 
+\boldsymbol{\beta} = (X^TX)^{-1}X^Ty 
+\end{align}
+
+- 다중공선성 문제
+  - 다중선형회귀에서는 자료의 수( `\(n\)` )가 모수의 수( `\(p\)` )보다 필히 많아야 함( `\(n \geq p+1\)` )
+  - `\(p \geq n\)` 인 경우 또는 다중공선성이 심한 경우 `\((X^TX)\)`의 역행렬의 계산이 불가능해 짐 
+  - 결과적으로 `\(\boldsymbol{\beta}\)` 추정량의 분산이 매우 커짐
+  - 즉, 추정된 회귀계수를 신뢰하기 어려움
+
+- 다중공선성의 징후
+  - `\(X\)`들 간에 높은 상관계수가 존재할 때
+  - 이론적으로 반응변수와 상관이 높을것으로 생각되는 변수임에도 회귀계수가 유의하지 않음
+  - 이론적으로 `\(X\)`에 따라 반응변수가 증가해야 함에도 회귀계수가 음의 값을 가짐
+  - 특정 변수 `\(X\)`를 추가하거나 제외하였을 때, 회귀계수의 변화가 크게 일어남
+
+---
+
+# .brand-red[다중회귀모형]
+
+- 다중공선성 문제 해결 방법
+
+  - 상관된 예측변수 제거: 상관성이 높은 변수를 제거해 나가되, `\(R^2\)`가 높은 모형 선택
+  
+      - Variable selection: Forward Selection, Backward elimination, Stepwise selection
+      
+      - Best subset regression
+      
+  - 벌점회귀(Penalized regression) 이용
+  
+      - Lasso regression
+      
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+## 데이터 소개
+
+ -   미국 50개 주에서 여러 변수값(인구, 수입, 문맹비율, 기대수명, 살인율, 고졸비율, 연평균영하기온일수, 면적)을 측정한 자료
+ 
+ - 이 중 기대수명(`Life exp`)을 반응변수로 다중회귀분석 실시
+
+
+```r
+head(state.x77, 3)
+```
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Population &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Income &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Illiteracy &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Life Exp &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Murder &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; HS Grad &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Frost &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Area &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alabama &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3615 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3624 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50708 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alaska &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 365 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69.31 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 152 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 566432 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arizona &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2212 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4530 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70.55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 113417 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+## 데이터 소개
+
+.scroll-box-14[
+
+-   데이터 구조 확인
+
+```r
+glimpse(state.x77)
+```
+
+```
+##  num [1:50, 1:8] 3615 365 2212 2110 21198 ...
+##  - attr(*, "dimnames")=List of 2
+##   ..$ : chr [1:50] "Alabama" "Alaska" "Arizona" "Arkansas" ...
+##   ..$ : chr [1:8] "Population" "Income" "Illiteracy" "Life Exp" ...
+```
+
+- 데이터프레임으로 변환 후, 변수명 빈칸 제외
+
+```r
+# install.packages("janitor")
+state &lt;- as.data.frame(state.x77) |&gt; 
+    janitor::clean_names()
+glimpse(state)
+```
+
+```
+## Rows: 50
+## Columns: 8
+## $ population &lt;dbl&gt; 3615, 365, 2212, 2110, 21198, 2541, 3100, 579, 8277, 4931, …
+## $ income     &lt;dbl&gt; 3624, 6315, 4530, 3378, 5114, 4884, 5348, 4809, 4815, 4091,…
+## $ illiteracy &lt;dbl&gt; 2.1, 1.5, 1.8, 1.9, 1.1, 0.7, 1.1, 0.9, 1.3, 2.0, 1.9, 0.6,…
+## $ life_exp   &lt;dbl&gt; 69.05, 69.31, 70.55, 70.66, 71.71, 72.06, 72.48, 70.06, 70.…
+## $ murder     &lt;dbl&gt; 15.1, 11.3, 7.8, 10.1, 10.3, 6.8, 3.1, 6.2, 10.7, 13.9, 6.2…
+## $ hs_grad    &lt;dbl&gt; 41.3, 66.7, 58.1, 39.9, 62.6, 63.9, 56.0, 54.6, 52.6, 40.6,…
+## $ frost      &lt;dbl&gt; 20, 152, 15, 65, 20, 166, 139, 103, 11, 60, 0, 126, 127, 12…
+## $ area       &lt;dbl&gt; 50708, 566432, 113417, 51945, 156361, 103766, 4862, 1982, 5…
+```
+
+]
+
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+## 모형 적합
+
+.scroll-box-20[
+
+
+```r
+lm_mod2 &lt;- lm(life_exp ~ ., data = state)
+summary(lm_mod2)
+```
+
+```
+## 
+## Call:
+## lm(formula = life_exp ~ ., data = state)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.48895 -0.51232 -0.02747  0.57002  1.49447 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.094e+01  1.748e+00  40.586  &lt; 2e-16 ***
+## population   5.180e-05  2.919e-05   1.775   0.0832 .  
+## income      -2.180e-05  2.444e-04  -0.089   0.9293    
+## illiteracy   3.382e-02  3.663e-01   0.092   0.9269    
+## murder      -3.011e-01  4.662e-02  -6.459 8.68e-08 ***
+## hs_grad      4.893e-02  2.332e-02   2.098   0.0420 *  
+## frost       -5.735e-03  3.143e-03  -1.825   0.0752 .  
+## area        -7.383e-08  1.668e-06  -0.044   0.9649    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.7448 on 42 degrees of freedom
+## Multiple R-squared:  0.7362,	Adjusted R-squared:  0.6922 
+## F-statistic: 16.74 on 7 and 42 DF,  p-value: 2.534e-10
+```
+
+]
+
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+## 다중공선성 검토: 분산팽창요인(VIF, Variance Inflation factor)
+
+\begin{align} 
+{\rm{VIF}}_j = \frac{1}{1-R_j^2}
+\end{align}
+
+.pull-left[
+
+ - `\(R_j^2\)`는 `\(j\)`-번째 예측변수( `\(x_j\)` )를 나머지 ( `\(p-1\)` )개의 예측변수로 회귀를 수행하여 구해지는 결정계수
+
+- 10보다 큰 경우 다중공선성을 야기하는 변수로 간주
+
+
+]
+
+.pull-right[
+
+- {car} 패키지의 `vif()`를 이용해 구할 수 있음
+
+```r
+vif(lm_mod2)
+```
+
+```
+## population     income illiteracy     murder    hs_grad      frost       area 
+##   1.499915   1.992680   4.403151   2.616472   3.134887   2.358206   1.789764
+```
+
+]
+
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+.scroll-output[
+
+- Variable selection: Backward eliination
+  
+  - `step()` 이용
+  
+
+```r
+lm_mod3 &lt;- step(lm_mod2, direction = "backward", trace = FALSE)
+summary(lm_mod3)
+```
+
+```
+## 
+## Call:
+## lm(formula = life_exp ~ population + murder + hs_grad + frost, 
+##     data = state)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.47095 -0.53464 -0.03701  0.57621  1.50683 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.103e+01  9.529e-01  74.542  &lt; 2e-16 ***
+## population   5.014e-05  2.512e-05   1.996  0.05201 .  
+## murder      -3.001e-01  3.661e-02  -8.199 1.77e-10 ***
+## hs_grad      4.658e-02  1.483e-02   3.142  0.00297 ** 
+## frost       -5.943e-03  2.421e-03  -2.455  0.01802 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.7197 on 45 degrees of freedom
+## Multiple R-squared:  0.736,	Adjusted R-squared:  0.7126 
+## F-statistic: 31.37 on 4 and 45 DF,  p-value: 1.696e-12
+```
+
+]
+
+---
+
+# .brand-red[실습: 다중회귀모형]
+
+.scroll-output[
+
+- 신뢰구간 구하기
+
+```r
+confint(lm_mod3)
+```
+
+```
+##                     2.5 %        97.5 %
+## (Intercept)  6.910798e+01 72.9462729104
+## population  -4.543308e-07  0.0001007343
+## murder      -3.738840e-01 -0.2264135705
+## hs_grad      1.671901e-02  0.0764454870
+## frost       -1.081918e-02 -0.0010673977
+```
+
+- 주어진 자료에 대한 예측값 구하기
+
+```r
+predict(lm_mod3, list(population = 4000, murder = 10.5, hs_grad = 48, frost = 100))
+```
+
+```
+##        1 
+## 69.71774
+```
+
+]
+---
+class: inverse, middle, center
+
+# 2 ARIMA 모형: 실제 사례 중심
+
+---
+
+# .brand-red[준비]
+
+.scroll-box-20[
+
+- 패키지 설치
+
+```r
+install.packages("fpp3")
+install.packages("readr")
+install.packages("showtext")
+install.packages("ggplot2")
+install.packages("conflicted")
+```
+
+- 패키지 불러오기
+
+```r
+library(fpp3)
+library(readr)
+library(showtext)
+library(ggplot2)
+library(ggh4x)
+font_add_google(name = "Nanum Gothic", family = "nanum")
+showtext_auto(enable = TRUE)
+conflicted::conflict_prefer("select", "dplyr")
+ggplot2::theme_set(theme_bw())
+```
+
+]
+
+
+---
+
+# .brand-red[준비]
+
+.scroll-output[
+
+.pull-left[
+ - 2010년 1월 - 2021년 9월 월별 익명의 질환 발생 건수에 관한 자료
+
+
+```r
+disease &lt;- read_csv("./data/example.csv")
+disease
+```
+
+```
+## # A tibble: 1,128 × 4
+##    Sex    Group   Date         N
+##    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;
+##  1 Female 10_14세 2010 Jan   114
+##  2 Female 10_14세 2010 Feb   121
+##  3 Female 10_14세 2010 Mar   106
+##  4 Female 10_14세 2010 Apr   120
+##  5 Female 10_14세 2010 May   112
+##  6 Female 10_14세 2010 Jun   122
+##  7 Female 10_14세 2010 Jul   116
+##  8 Female 10_14세 2010 Aug   138
+##  9 Female 10_14세 2010 Sep   122
+## 10 Female 10_14세 2010 Oct   112
+## # … with 1,118 more rows
+```
+]
+
+.pull-right[
+
+- 8개 그룹에 대해 모델링 필요
+
+
+```r
+disease |&gt; 
+    select(-Date, -N) |&gt; 
+    distinct()
+```
+
+```
+## # A tibble: 8 × 2
+##   Sex    Group  
+##   &lt;chr&gt;  &lt;chr&gt;  
+## 1 Female 10_14세
+## 2 Female 15_19세
+## 3 Female 5_9세  
+## 4 Female 5세미만
+## 5 Male   10_14세
+## 6 Male   15_19세
+## 7 Male   5_9세  
+## 8 Male   5세미만
+```
+  
+]
+
+]
+
+---
+
+## 결측치 처리
+
+.scroll-output[
+
+- 결측이 존재하지 않는 데이터이지만 임의로 결측 처리(원자료 값 121)
+
+```r
+disease2 &lt;- disease |&gt; 
+    slice(-2)
+disease2
+```
+
+```
+## # A tibble: 1,127 × 4
+##    Sex    Group   Date         N
+##    &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;
+##  1 Female 10_14세 2010 Jan   114
+##  2 Female 10_14세 2010 Mar   106
+##  3 Female 10_14세 2010 Apr   120
+##  4 Female 10_14세 2010 May   112
+##  5 Female 10_14세 2010 Jun   122
+##  6 Female 10_14세 2010 Jul   116
+##  7 Female 10_14세 2010 Aug   138
+##  8 Female 10_14세 2010 Sep   122
+##  9 Female 10_14세 2010 Oct   112
+## 10 Female 10_14세 2010 Nov   104
+## # … with 1,117 more rows
+```
+
+]
+
+---
+
+# .brand-red[시계열 자료 다루기]
+
+.scroll-output[
+
+- R에게 우리가 모델링할 시계열이 총 8개임을 알려줘야함
+
+- `as_tsibble()`을 이용할 수 있음
+
+
+```r
+disease3 &lt;- disease2 |&gt; 
+    mutate(Date = yearmonth(Date)) |&gt; 
+    as_tsibble(key = c(Sex, Group), index = Date)
+disease3
+```
+
+```
+## # A tsibble: 1,127 x 4 [1M]
+## # Key:       Sex, Group [8]
+##    Sex    Group       Date     N
+##    &lt;chr&gt;  &lt;chr&gt;      &lt;mth&gt; &lt;dbl&gt;
+##  1 Female 10_14세 2010 Jan   114
+##  2 Female 10_14세 2010 Mar   106
+##  3 Female 10_14세 2010 Apr   120
+##  4 Female 10_14세 2010 May   112
+##  5 Female 10_14세 2010 Jun   122
+##  6 Female 10_14세 2010 Jul   116
+##  7 Female 10_14세 2010 Aug   138
+##  8 Female 10_14세 2010 Sep   122
+##  9 Female 10_14세 2010 Oct   112
+## 10 Female 10_14세 2010 Nov   104
+## # … with 1,117 more rows
+```
+
+]
+
+---
+
+# .brand-red[시계열 자료 다루기]
+
+.scroll-output[
+
+- `fill_gaps()` 이용 결측치 대치
+
+
+```r
+disease4 &lt;- disease3 |&gt; 
+    fill_gaps(N = 121L, .full = TRUE)
+disease4
+```
+
+```
+## # A tsibble: 1,128 x 4 [1M]
+## # Key:       Sex, Group [8]
+##    Sex    Group       Date     N
+##    &lt;chr&gt;  &lt;chr&gt;      &lt;mth&gt; &lt;dbl&gt;
+##  1 Female 10_14세 2010 Jan   114
+##  2 Female 10_14세 2010 Feb   121
+##  3 Female 10_14세 2010 Mar   106
+##  4 Female 10_14세 2010 Apr   120
+##  5 Female 10_14세 2010 May   112
+##  6 Female 10_14세 2010 Jun   122
+##  7 Female 10_14세 2010 Jul   116
+##  8 Female 10_14세 2010 Aug   138
+##  9 Female 10_14세 2010 Sep   122
+## 10 Female 10_14세 2010 Oct   112
+## # … with 1,118 more rows
+```
+
+]
+
+
+
+---
+
+# .brand-red[모형 적합]
+
+.scroll-output[
+
+- AICc를 기반으로 최적의 ARIMA 모형 적합
+
+
+```r
+mod &lt;- disease4 |&gt; 
+    model(arima = ARIMA(N))
+mod
+```
+
+```
+## # A mable: 8 x 3
+## # Key:     Sex, Group [8]
+##   Sex    Group            arima
+##   &lt;chr&gt;  &lt;chr&gt;          &lt;model&gt;
+## 1 Female 10_14세 &lt;ARIMA(0,1,1)&gt;
+## 2 Female 15_19세 &lt;ARIMA(1,1,1)&gt;
+## 3 Female 5_9세   &lt;ARIMA(0,1,1)&gt;
+## 4 Female 5세미만 &lt;ARIMA(0,1,1)&gt;
+## 5 Male   10_14세 &lt;ARIMA(0,1,1)&gt;
+## 6 Male   15_19세 &lt;ARIMA(0,1,1)&gt;
+## 7 Male   5_9세   &lt;ARIMA(0,1,1)&gt;
+## 8 Male   5세미만 &lt;ARIMA(1,1,1)&gt;
+```
+
+]
+
+---
+
+# .brand-red[예측]
+
+.scroll-output[
+
+- 향후 15개월 예측 후, 80% 및 95% 신뢰구간 추출
+
+
+```r
+f &lt;- mod %&gt;% 
+    forecast(h = "15 months") %&gt;% 
+    hilo(level = c(80, 95)) %&gt;% 
+    unpack_hilo(c("80%", "95%"))   # 신뢰구간 값 열로 추출
+head(f, 3)
+```
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Group &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; .model &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Date &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; N &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; .mean &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 80%_lower &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 80%_upper &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 95%_lower &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 95%_upper &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10_14세 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; arima &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021 Oct &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N(99, 133) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 99.20714 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.43298 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 113.9813 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.61202 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 121.8023 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10_14세 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; arima &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021 Nov &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N(99, 133) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 99.20714 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.40289 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 114.0114 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.56600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 121.8483 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10_14세 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; arima &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021 Dec &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; N(99, 134) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 99.20714 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 84.37286 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 114.0414 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.52007 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 121.8942 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+# .brand-red[시각화]
+
+- 과거 시점(2010년 1월 - 2021년 9월)의 자료 만들기
+
+
+```r
+historic &lt;- bind_rows(
+    disease4 %&gt;% 
+        mutate(Type = "과거 실제값") %&gt;%
+        as_tibble(),
+    mod %&gt;% 
+        fitted %&gt;%  
+        mutate(Type = "모형 적합값") %&gt;% 
+        as_tibble %&gt;% 
+        rename(N = .fitted) %&gt;% 
+        select(Date, Sex, Group, N, Type)
+)
+```
+
+---
+
+# .brand-red[시각화]
+
+- 미래 시점(2021년 10월 - 2022년 12월)의 자료 만들기
+
+
+```r
+fore &lt;- f %&gt;% 
+    mutate(Type = "모형 예측값", N = .mean) %&gt;% 
+    as_tibble %&gt;% 
+    select(Date, Sex, Group, N, Type)
+```
+
+---
+
+# .brand-red[시각화]
+
+.scroll-output[
+
+- `{ggplot2}` 이용
+
+
+```r
+ggplot() +
+    geom_line(data = historic,
+              aes(x = Date, y = N, col = Type)) + # 과거 실제값, 모형 적합값
+    geom_line(data = fore,
+              aes(x = Date, y = N, col = Type)) + # 모형 예측값
+    geom_ribbon(data = f, # 80% 신뢰구간
+                aes(x = Date, ymin = `80%_lower`, ymax = `80%_upper`),
+                fill = "skyblue", alpha = 0.25) +
+    geom_ribbon(data = f, # 95% 신뢰구간
+                aes(x = Date, ymin = `95%_lower`, ymax = `95%_upper`),
+                fill = "skyblue", alpha = 0.25/2) +
+    scale_color_manual(values = c("tomato", "blue", "paleturquoise3"), name = "") +
+    theme(
+        text = element_text(family = "nanum", size = 12),
+        legend.position = "bottom") +
+    labs(x = " ",
+         y = "N") +
+    facet_nested_wrap(vars(Sex, Group), scales = "free",
+                      ncol = 4)
+```
+
+]
+
+---
+
+# .brand-red[시각화]
+
+&lt;img src="1_regression_arima_files/figure-html/unnamed-chunk-37-1.png" width="1008" style="display: block; margin: auto;" /&gt;
+
+---
+
+# .brand-red[책 추천]
+
+## R 기본기
+
+- 🔗[R for Data Science](https://bookdown.org/sulgi/r4ds/)
+
+- 🔗[Do it! 쉽게 배우는 R 데이터 분석](http://www.yes24.com/Product/Goods/43868089)
+
+## 회귀분석
+
+- 🔗[예제를 통한 회귀분석 5판](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9791158080105)
+
+- 🔗[An Introduction to Statistical Learning, 2nd Edition](https://www.statlearning.com)
+
+## 시계열 자료분석
+
+- 🔗[Forecasting: principles and practice, 3rd edition](https://otexts.com/fpp3/)
+
+---
+class: inverse, middle, center
+
+# References
+
+---
+
+## .brand-red[References]
+
+[1] 나, 종화. R 시각화와 통계자료분석 2. 자유아카데미, 2016. http://www.yes24.com/Product/Goods/29643662.
+
+[2] Breheny, Patrick. “High-Dimensional Data Analysis (BIOS 7600),” 2016. https://myweb.uiowa.edu/pbreheny/7600/s16/index.html.
+
+---
+
+class: inverse
+
+# Thanks!
+
+.pull-right[.pull-down[
+
+&lt;a href="mailto:favorite@kakao.com"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"&gt;&lt;/path&gt;&lt;/svg&gt; favorite@kakao.com]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/be-favorite"&gt;
+.white[&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @be-favorite]
+&lt;/a&gt;
+
+&lt;a href="https://twitter.com/TaemoBang"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @TaemoBang]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/be-favorite/Presentation_archive"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; Presentation archive]
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+]]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

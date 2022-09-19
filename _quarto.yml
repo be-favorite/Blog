@@ -19,8 +19,8 @@ website:
         menu: 
           - text: 연구 아카이브
             href: research.qmd
-          # - text: 발표 아카이브
-          #   href: https://yards.albert-rapp.de/
+          - text: 발표 아카이브
+            href: presentation.qmd
         
 # google-analytics:
 cookie-conset: TRUE

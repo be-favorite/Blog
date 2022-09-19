@@ -1,0 +1,998 @@
+---
+title: "ggplot2 컬러링 가이드"
+subtitle: "서울 R 미트업"
+author: "방태모"
+institute: "가천대 길병원 인공지능빅데이터융합센터"
+date: "2022-08-12"
+output:
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/statisticsplaybook.css
+      - css/statisticsplaybook-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+          scroll: false # disable slide transitions by scrolling
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+      after_body: [css/insert-logo.html]
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(rmarkdown)
+xaringanExtra::use_panelset()
+xaringanExtra::use_clipboard()
+# set default options
+# opts_chunk$set(dpi = 300)
+```
+
+class: title-slide, left, bottom
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+
+## .brand-blue[준비하기]
+
+
+```{r, message = FALSE, warning=FALSE}
+library(tidyverse)
+library(showtext)
+font_add_google("Fira Sans", "firasans")
+showtext_auto()
+
+theme_customs <- theme(
+  text = element_text(family = 'firasans', size = 16),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[6],
+    margin = margin(t = 2, r = 0, b = 7, l = 0, unit = "mm")
+  )
+)
+
+theme_set(theme_minimal() + theme_customs)
+```
+
+---
+
+class: inverse, middle, center
+
+# 음영을 활용하자
+
+---
+
+## .brand-blue[막대그래프 예제]
+
+- 1998년과 2008년 인기 차량 모델 38개에 관한 연비 데이터 `mpg` 이용
+
+- 연도별(`year`) 7개 차종(`class`)의 빈도는 어떻게 되는가?
+
+```{r}
+mpg |> 
+    select(manufacturer:model, year, class) |> 
+    str()
+```
+
+
+---
+
+## .brand-blue[흔히들 하는 시각화]
+
+.pull-left[
+
+
+```{r mpg1, warning = FALSE, fig.height = 6.5, fig.retina = 2, fig.cap = "그림 1.1", echo = FALSE}
+mpg %>% 
+  ggplot(aes(x = factor(year), fill = class)) +
+  geom_bar() +
+  labs(x = "year")
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+mpg %>% 
+  ggplot(aes(x = factor(year), 
+             fill = class)) +
+  geom_bar() +
+  labs(x = "year")
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 I - Preprocessing]
+
+.left-column[
+]
+.right-column[
+
+```{r}
+# Group classes into three groups (to reduce colors to 3)
+dat <- mpg %>% 
+  mutate(
+    year = factor(year),
+    class_group = case_when(
+      class %in% c('2seater', 'compact', 'midsize') ~ "grp1",
+      class == 'minivan' ~ "grp2",
+      T ~ "grp3"
+    )
+  )
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 I - Visualization]
+
+.pull-left[
+
+```{r mpg2, warning = FALSE, fig.height=6.5, fig.retina = 2, fig.cap = "그림 1.2", echo = FALSE}
+shades_plt <- dat %>% 
+  ggplot(aes(x = year, 
+             fill = class_group, 
+             alpha = class)) +
+  geom_bar() +
+  labs(
+    x = 'Year',
+    y = 'Counts',
+    alpha = 'Class',
+    title = 'Show shades, not hues'
+  )
+shades_plt 
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+shades_plt <- dat %>% 
+  ggplot(aes(x = year, 
+             fill = class_group, #<<
+             alpha = class)) + #<<
+  geom_bar() +
+  labs(
+    x = 'Year',
+    y = 'Counts',
+    alpha = 'Class',
+    title = 'Show shades, not hues'
+  )
+shades_plt 
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 II - Adjusting]
+
+.left-column[
+]
+.right-column[
+
+```{r}
+# Color-blind safe colors
+colors <-  thematic::okabe_ito(3)
+# Possible levels of transparency (one for each class)
+alpha_max <- 1
+alpha_min <- 0.7
+alpha_vals <- c(
+  seq(alpha_max, alpha_min, length.out = 4), 
+  seq(alpha_min, alpha_max, length.out = 4)[-1]
+)
+alpha_vals
+```
+
+]
+
+---
+
+## .brand-blue[음영 활용하기 II - Visualization]
+
+.pull-left[
+
+```{r mpg3, warning = FALSE, fig.height=6.5, fig.retina = 2, fig.cap = "그림 1.3", echo = FALSE}
+# Tweak previous plot
+shades_plt <- shades_plt +
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals)
+shades_plt
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+# Tweak previous plot
+shades_plt <- shades_plt +
+  scale_fill_manual(values = colors) + #<<
+  scale_alpha_manual(values = alpha_vals) #<<
+shades_plt
+```
+
+]
+
+---
+
+
+## .brand-blue[음영 활용하기 III - Adjusting and visualization]
+
+.pull-left[
+
+```{r mpg4, warning = FALSE, fig.height=6.5, fig.retina = 2, fig.cap = "그림 1.4", echo = FALSE}
+# Tweak previous plot
+shades_plt <- shades_plt +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(
+      override.aes = list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)]
+      )
+    )
+  ) 
+shades_plt
+```
+
+]
+
+--
+
+.pull-right[
+
+- `guides()` 이용
+
+```{r, eval = FALSE}
+shades_plt <- shades_plt +
+  guides( #<<
+    fill = guide_none(), #<<
+    alpha = guide_legend( #<<
+      override.aes = #<<
+          list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)]) #<<
+    ) #<<
+  ) #<<
+shades_plt
+```
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 음영만으로는 부족해
+
+---
+
+## .brand-blue[컬러블록에 줄 추가하기]
+
+.pull-left[
+
+```{r mpg5, warning = FALSE, fig.height=6.5, fig.retina = 2, fig.cap = "그림 1.5", echo = FALSE}
+dat %>% 
+  ggplot(aes(x = year, fill = class_group, alpha = class)) +
+  geom_bar(col = 'white') + # Add lines for distinction
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(override.aes = list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)]))
+  ) +
+  labs(
+    x = 'Year',
+    y = 'Counts',
+    alpha = 'Class',
+    title = 'Group categories together by color, \nbut keep showing them'
+  )
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+dat %>% 
+  ggplot(aes(x = year, fill = class_group, alpha = class)) +
+  geom_bar(col = 'white') + #<<
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(override.aes = list(fill = colors[c(1, 1, 1, 2, 3, 3, 3)]))
+  ) +
+  labs(
+    x = 'Year', y = 'Counts', alpha = 'Class',
+    title = 'Group categories together by color, \nbut keep showing them'
+  )
+```
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 전달하고 싶은 내용만 강조하자
+
+---
+
+## .brand-blue[스파게티 플롯 예제]
+
+- [Our World in Data](https://ourworldindata.org/time-with-others-lifetime)의 미국인 설문조사 자료 이용
+
+- 우리는 일생동안 누구(`person`)와 시간(`minutes`)을 보내는가?
+
+.pull-left[
+```{r,  message = FALSE}
+time_data <- read_csv("./time-spent-with-relationships-by-age-us.csv") %>% 
+  rename_with(
+    ~c('Entitity', 'Code', 'Age', 
+       'alone', 'friends', 'children', 
+       'parents', 'partner', 'coworkers')
+  ) %>% 
+  pivot_longer(
+    cols = alone:coworkers, names_to = 'person',
+    values_to = 'minutes'
+  ) %>% 
+  janitor::clean_names() %>% 
+  filter(age <= 80)
+```
+]
+
+.pull-right[
+```{r}
+str(time_data)
+```
+
+]
+
+---
+## .brand-blue[흔히들 하는 시각화]
+
+.pull-left[
+
+```{r spend1, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 2.1", echo = FALSE}
+# Color-blind safe colors
+colors <- thematic::okabe_ito(7)[-6]
+
+# Line plot
+p <- time_data %>% 
+  ggplot(aes(x = age, y = minutes, col = person)) +
+  geom_line(size = 1.5) +
+  scale_color_manual(values = colors) +
+  coord_cartesian(xlim = c(15, 81), expand = F) +
+  scale_y_continuous(minor_breaks = NULL) +
+  labs(x = 'Age (in years)', y = 'Minutes', col = 'Time spent')
+p
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+# Color-blind safe colors
+colors <- thematic::okabe_ito(7)[-6]
+
+# Line plot
+p <- time_data %>% 
+  ggplot(aes(x = age, y = minutes, col = person)) +
+  geom_line(size = 1.5) +
+  scale_color_manual(values = colors) +
+  coord_cartesian(xlim = c(15, 81), expand = F) +
+  scale_y_continuous(minor_breaks = NULL) +
+  labs(x = 'Age (in years)', y = 'Minutes', col = 'Time spent')
+p
+```
+
+]
+---
+## .brand-blue[전달력 높이기 I]
+
+
+.pull-left[
+
+```{r spend2, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 2.2", echo = FALSE}
+library(gghighlight)
+alone_plt <- p + 
+  gghighlight(person == 'alone', use_direct_label = F) +
+  labs(title = 'Emphasize just one or a few categories')
+alone_plt
+```
+
+]
+
+--
+
+.pull-right[
+
+- `gghighlight()` 이용
+
+```{r, eval = FALSE}
+library(gghighlight)
+alone_plt <- p + 
+  gghighlight(person == 'alone', #<<
+              use_direct_label = F) + #<<
+  labs(title = 'Emphasize just one or a few categories')
+alone_plt
+```
+
+]
+
+---
+
+## .brand-blue[전달력 높이기 II]
+
+.pull-left[
+
+```{r spend_add, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 2.3", echo = FALSE}
+alone_plt +
+  annotate(
+    'text',
+    x = 15,
+    y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0,
+    vjust = 0,
+    family = 'firasans',
+    size = 7
+  )
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+alone_plt +
+  annotate(
+    'text',
+    x = 15,
+    y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0,
+    vjust = 0,
+    family = 'firasans',
+    size = 7
+  )
+```
+
+]
+
+---
+
+## .brand-blue[전달력 높이기 III]
+
+```{r spend3, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 2.4", echo = FALSE}
+age_40_plt <- p + 
+  gghighlight(
+    person %in% c('alone', 'children'), 
+    age >= 38, 
+    use_direct_label = F
+  ) +
+  geom_segment(x = 38, xend = 38, y = -Inf, yend = 300, linetype = 2, col = 'grey20') +
+  labs(title = 'Emphasize just one or a few categories') 
+
+age_40_plt +
+  annotate(
+    'text',
+    x = 15,
+    y = 403,
+    label = 'Around the age of 40, we spend \nless time with children and \nmore time alone.',
+    hjust = 0,
+    vjust = 0,
+    family = 'firasans',
+    lineheight = 0.85,
+    size = 5.5
+  )
+```
+
+---
+## .brand-blue[전달력 높이기 III]
+
+- `ggphighlight()`를 이용해 다중 하이라이팅
+
+```{r, eval = FALSE}
+age_40_plt <- p + 
+  gghighlight(person %in% c('alone', 'children'), age >= 38,  use_direct_label = F) + #<<
+  geom_segment(x = 38, xend = 38, y = -Inf, yend = 300, linetype = 2, col = 'grey20') +
+  labs(title = 'Emphasize just one or a few categories') 
+
+age_40_plt +
+  annotate(
+    'text', x = 15, y = 403,
+    label = 'Around the age of 40, we spend \nless time with children and \nmore time alone.',
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 0.85,
+    size = 5.5
+  )
+```
+
+---
+
+class: inverse, middle, center
+
+# 라벨링 활용하기
+
+---
+
+## .brand-blue[라벨링 활용하기 I]
+
+.pull-left[
+
+```{r spend4, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.1", echo = FALSE}
+alone_plt +
+  annotate(
+    'text', x = 15, y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 7) +
+  annotate(
+    'text',  x = 70,  y = 420, 
+    label = 'alone',
+    hjust = 0, vjust = 0, size = 7,
+    family = 'firasans', color = colors[1]) +
+  labs(title = 'Label directly') +
+  theme(legend.position = 'none')
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+alone_plt +
+  annotate(
+    'text', x = 15, y = 455,
+    label = 'We spend a lot of time alone...',
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 7) +
+  annotate( #<<
+    'text',  x = 70,  y = 420, #<<
+    label = 'alone', #<<
+    hjust = 0, vjust = 0, size = 7, #<<
+    family = 'firasans', color = colors[1]) + #<<
+  labs(title = 'Label directly') +
+  theme(legend.position = 'none') #<<
+```
+
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Adjusting]
+
+- `ggtext` 패키지를 통해 richtext로 변환 및 HTML 문법 활용
+
+```{r}
+library(ggtext)
+color_alone <- glue::glue(
+  "We spend a lot of time <span style = 'color:{colors[1]};'>alone</span>..." #<<
+)
+color_alone
+```
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Visualization]
+
+.pull-left[
+
+```{r spend5, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.1", echo = FALSE}
+alone_plt +
+  labs(title = 'Label directly') +
+  annotate(
+    'richtext',
+    x = 15,
+    y = 400,
+    label = color_alone,
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 6,
+    label.color = NA
+  ) +
+  theme(legend.position = 'none')
+```   
+
+]
+
+--
+
+.pull-right[
+
+```{r, eval = FALSE}
+alone_plt +
+  labs(title = 'Label directly') +
+  annotate(
+    'richtext', #<<
+    x = 15,
+    y = 400,
+    label = color_alone, #<<
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 6,
+    label.color = NA #<<
+  ) +
+  theme(legend.position = 'none') #<<
+```
+
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Adjusting]
+
+```{r}
+age_40_text <- glue::glue(
+  "Around the age of 40, we spent <br> less time 
+  with <span style = 'color:{colors[2]};'>children</span> 
+  and <br> more time <span style = 'color:{colors[1]};'>alone</span>."
+)
+age_40_text
+```
+
+---
+
+## .brand-blue[라벨링 활용하기 II - Visualization]
+
+.pull-left[
+
+```{r spend6, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.2", echo = FALSE}
+age_40_plt +
+  labs(title = 'Label directly') +
+  annotate(
+    'richtext',
+    x = 15, y = 350, 
+    label = age_40_text,
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 1.25,
+    size = 5,
+    label.color = NA
+  ) +
+  theme(legend.position = 'none')
+``` 
+
+]
+
+--
+
+.pull-right[
+  
+```{r, eval = FALSE}
+age_40_plt +
+  labs(title = 'Label directly') +
+  annotate(
+    'richtext', #<<
+    x = 15, y = 350, 
+    label = age_40_text, #<<
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 1.25,
+    size = 5,
+    label.color = NA #<<
+  ) +
+  theme(legend.position = 'none') #<<
+```
+  
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Preprocessing]
+
+- 빈도 계산
+
+.pull-left[
+```{r, eval = FALSE}
+manual_counts <- mpg %>% 
+  count(year, class) %>% 
+  mutate(
+    year = factor(year),
+    class_group = case_when(
+      class %in% c('2seater', 'compact', 'midsize') ~ "grp1",
+      class == 'minivan' ~ "grp2",
+      T ~ "grp3"
+    )
+  ) 
+head(manual_counts)
+```
+]
+
+.pull-right[
+```{r, echo = FALSE}
+manual_counts <- mpg %>% 
+  count(year, class) %>% 
+  mutate(
+    year = factor(year),
+    class_group = case_when(
+      class %in% c('2seater', 'compact', 'midsize') ~ "grp1",
+      class == 'minivan' ~ "grp2",
+      T ~ "grp3"
+    )
+  ) 
+head(manual_counts)
+```  
+]
+
+---
+
+
+## .brand-blue[라벨링 활용하기 III - Preprocessing]
+
+- 레이블 높이 계산
+
+.pull-left[
+```{r, eval = FALSE}
+labels <- manual_counts %>% 
+  mutate(class = factor(class)) %>%  
+  group_by(year) %>% 
+  arrange(year, desc(class)) %>% 
+  mutate(
+    csum = cumsum(n),  #<<
+    n = (lag(csum, default = 0) + csum) / 2 #<<
+  )
+head(labels)
+```
+]
+
+.pull-right[
+```{r, echo = FALSE}
+labels <- manual_counts %>% 
+  mutate(class = factor(class)) %>%  
+  group_by(year) %>% 
+  arrange(year, desc(class)) %>% 
+  mutate(
+    csum = cumsum(n), 
+    n = (lag(csum, default = 0) + csum) / 2
+  )
+head(labels)
+```  
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+.pull-left[
+```{r mpg-add, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.3", echo = FALSE}
+shades_plt2 <- manual_counts %>%
+  ggplot(aes(x = year, y = n, fill = class_group)) +
+  geom_col(aes(alpha = class), col = 'white') + #<<
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  labs(
+    x = 'Year', y = 'Counts',
+    alpha = 'Class', title = 'Label directly'
+  )
+shades_plt2
+```
+]
+
+.pull-right[
+```{r, eval = FALSE}
+shades_plt2 <- manual_counts %>% #<<
+  ggplot(aes(x = year, y = n, fill = class_group)) +
+  geom_col(aes(alpha = class), col = 'white') + #<<
+  scale_fill_manual(values = colors) +
+  scale_alpha_manual(values = alpha_vals) +
+  labs(
+    x = 'Year', y = 'Counts',
+    alpha = 'Class', title = 'Label directly'
+  )
+shades_plt2
+```
+]
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+```{r mpg6, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.4", echo = FALSE}
+shades_plt2 +
+  # Add all but one label
+  geom_text(
+    data = labels %>% filter(class != '2seater'), aes(label = class), #<<
+    col = 'white', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  # Add 2seater label
+  geom_text(
+    data = labels %>% filter(class == '2seater'), aes(y = n + 3, label = class), #<<
+    col = 'black', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  theme(legend.position = 'none')
+```
+
+---
+
+## .brand-blue[라벨링 활용하기 III - Visualization]
+
+
+```{r, warning = FALSE, fig.height = 6, fig.retina = 2, fig.cap = "그림 3.2", eval = FALSE}
+shades_plt2 +
+  # Add all but one label
+  geom_text(
+    data = labels %>% filter(class != '2seater'), aes(label = class), #<<
+    col = 'white', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  # Add 2seater label
+  geom_text(
+    data = labels %>% filter(class == '2seater'), aes(y = n + 3, label = class), #<<
+    col = 'black', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  theme(legend.position = 'none')
+```
+
+---
+
+## .brand-blue[Before & After - Bar chart]
+
+.pull-left[
+```{r before-1, warning = FALSE, fig.height=6.5, fig.retina = 2, echo = FALSE}
+mpg %>% 
+  ggplot(aes(x = factor(year), 
+             fill = class)) +
+  geom_bar() +
+  labs(x = "year")
+```
+]
+
+--
+
+.pull-right[
+```{r after-1, warning = FALSE, fig.height = 6.5, fig.retina = 2, echo = FALSE}
+shades_plt2 +
+  # Add all but one label
+  geom_text(
+    data = labels %>% filter(class != '2seater'), aes(label = class), #<<
+    col = 'white', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  # Add 2seater label
+  geom_text(
+    data = labels %>% filter(class == '2seater'), aes(y = n + 3, label = class), #<<
+    col = 'black', family = 'firasans', size = 5, fontface = 'bold'
+  ) +
+  theme(legend.position = 'none') +
+  labs(title = "")
+``` 
+]
+
+---
+
+## .brand-blue[Before & After - Spaghetti plot]
+
+.pull-left[
+```{r before-2, warning = FALSE, fig.height = 6, fig.retina = 2, echo = FALSE}
+p
+```
+]
+
+--
+
+.pull-right[
+```{r after-2, warning = FALSE, fig.height = 6, fig.retina = 2, echo = FALSE}
+alone_plt +
+  annotate(
+    'richtext', #<<
+    x = 15,
+    y = 400,
+    label = color_alone, #<<
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    size = 6,
+    label.color = NA #<<
+  ) +
+  theme(legend.position = 'none') + #<<
+  labs(title = "")
+``` 
+]
+
+
+---
+
+## .brand-blue[Before & After - Spaghetti plot]
+
+.pull-left[
+```{r before-3, warning = FALSE, fig.height = 6, fig.retina = 2, echo = FALSE}
+p
+```
+]
+
+--
+
+.pull-right[
+```{r after-3, warning = FALSE, fig.height = 6, fig.retina = 2, echo = FALSE}
+age_40_plt +
+  annotate(
+    'richtext', #<<
+    x = 15, y = 350, 
+    label = age_40_text, #<<
+    hjust = 0, vjust = 0,
+    family = 'firasans',
+    lineheight = 1.25,
+    size = 5,
+    label.color = NA #<<
+  ) +
+  theme(legend.position = 'none') +
+  labs(title = "")
+``` 
+]
+
+---
+class: inverse, middle, center
+
+# References
+
+---
+
+## .brand-blue[References]
+
+[1] Rapp, Albert. “4 Ways to Use Colors in Ggplot More Efficiently.” Blog. Albert Rapp, February 19, 2022. https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html.
+
+### .brand-blue[Theme and CSS in xaringan slides]
+
+- https://github.com/statisticsplaybook/statisticsplaybook
+
+- https://github.com/garthtarr/sydney_xaringan
+
+---
+
+class: inverse
+
+# Thanks!
+
+.pull-right[.pull-down[
+
+<a href="mailto:favorite@kakao.com">
+.white[`r icons::fontawesome("paper-plane")` favorite@kakao.com]
+</a>
+
+<a href="https://github.com/be-favorite">
+.white[`r icons::fontawesome("github")` @be-favorite]
+</a>
+
+<a href="https://twitter.com/TaemoBang">
+.white[`r icons::fontawesome("twitter")` @TaemoBang]
+</a>
+
+<a href="https://www.taemobang.com">
+.white[`r icons::fontawesome("link")` Blog]
+</a>
+
+<br><br><br>
+
+]]

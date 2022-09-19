@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>통계실습 III. 매칭</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="방태모" />
+    <meta name="date" content="2022-06-28" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="css/statisticsplaybook.css" type="text/css" />
+    <link rel="stylesheet" href="css/statisticsplaybook-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom
+
+# 통계실습 III. 매칭
+----
+## **가천대 길병원 고급통계교육**
+### 방태모
+### 2022-06-28
+
+---
+
+# .brand-blue[목차]
+
+.pull-left[
+ - .content-box-blue[서론]
+ 
+   - 상관관계와 인과관계
+   
+   - 인과추론의 조건
+   
+   - RCT와 RWE
+   
+   - 혼란변수를 통제하는 방법
+   
+  
+  - .content-box-blue[Propensity score]
+  
+]
+
+.pull-right[
+
+ - .content-box-blue[PS matching method]
+   
+   - Nearest neighbor matching
+   
+   - Optimal matching
+    
+   - Full matching
+ 
+ 
+ - .content-box-blue[Weighting]
+ 
+   - IPTW
+ 
+   - Matching과 Weighting
+ 
+ 
+- .content-box-blue[Balance diagnostics]
+ 
+ 
+ - .content-box-blue[실습]
+
+]
+ 
+---
+
+class: inverse, middle, center
+
+# 서론
+
+---
+
+## .brand-blue[상관관계와 인과관계]
+
+- 상관(Correlation): 둘 이상의 변인 간의 관련
+
+  - 아이스크림 판매량과 익사 사고 건수 간에는 상관이 존재
+  
+  - 즉, 아이스크림 판매량( `\(x\)` )이 익사 사고 건수( `\(y\)` )의 예측에 유용할 순 있음을 뜻함
+  
+  - 다만, `\(x\)`가 `\(y\)`의 원인이 된다는 것은 아님
+  
+  - 그렇다면 이러한 상관이 존재하는 원인은?
+  
+  - 혼란변수(Confounder)의 존재: 반응변수와 적어도 하나 이상의 예측변수에 영향을 미침
+
+- 인과(Causation): 원인과 결과
+
+  - 비 예보가 있는 경우, 아침에 자전거를 타는 사람들이 줄어듦
+  
+  - 즉, 강우( `\(x\)`, 원인)가 자전거 타는 사람( `\(y\)`, 결과)에 영향을 미침
+  
+  - 인과관계를 통해 보다 더 나은 모델을 만들 수 있음
+
+---
+
+## .brand-blue[인과추론의 조건]
+
+### .black[1 시간적 우선성]
+
+- 원인이 결과보다 시간상으로 먼저 발생해야 함
+
+### .black[2 공변성(상관관계)]
+
+- 원인이 변화하면 결과도 항상 같이 변화해야 함
+
+### .black[3 통제성]
+
+- 원인과 결과가 제 3의 변수(혼란변수, Confounder)에 영향을 받아서는 안됨
+
+&lt;br&gt;
+
+
+&lt;center&gt;
+
+&lt;blockquote&gt; .black[_무작위배정을 거치지 않는 관측연구는 "통제성"을 만족시키기 어려움_] &lt;/blockquote&gt;
+
+&lt;/center&gt;
+
+---
+
+## .brand-blue[RCT와 RWE]
+
+.pull-left[
+
+- RCT 연구
+
+  - 모집단(왼쪽)에서 랜덤으로 각 군에 10명씩 할당
+  
+  - 일정 연구 기간이 지난 후 독감 발생률 계산
+
+- 목적: 백신과 독감 발생의 관계 확인
+
+- 군간 독감 발생률 차이 = 0.4
+
+]
+
+.pull-right[
+&lt;div class="figure"&gt;
+&lt;img src="./fig/RCT.png" alt="fig 1. RCT (Linewalk's Blog)" width="512" height="300" /&gt;
+&lt;p class="caption"&gt;fig 1. RCT (Linewalk's Blog)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+
+## .brand-blue[RCT와 RWE]
+
+.pull-left[
+
+- RWE(Real world evidence): 관찰 데이터를 이용한 후향적 연구
+
+  - 백신 투여 군과 비 투여군을 실험군, 대조군 각 군으로 나눔 
+  
+  - 각 군에서 독감 발생률 계산
+
+- 군간 독감 발생률 차이 = 0.12
+
+- 선택 편의(selection bias) 발생
+  
+  - 노령층과 영유아층의 백신 투여율이 높음
+  
+  - 성별과 나이가 혼란변수가 됨
+  
+  - 무작위 배정에 의하지 않기 때문에 어떤 현상의 원인 추론이 불가능
+
+]
+
+.pull-right[
+
+&lt;div class="figure"&gt;
+&lt;img src="./fig/RWE.png" alt="fig 2. RWE (Linewalk's Blog)" width="512" height="300" /&gt;
+&lt;p class="caption"&gt;fig 2. RWE (Linewalk's Blog)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+
+## .brand-blue[혼란변수를 통제하는 방법]
+
+.left-column[
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./fig/confounder.png" alt="fig 3. Confounder (Linewalk's Blog)" width="132" height="200" /&gt;
+&lt;p class="caption"&gt;fig 3. Confounder (Linewalk's Blog)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+.right-column[
+
+ - Causal effect 
+ 
+ \begin{align}
+  E(Y(1)) - E(Y(0)) = E(Y|T = 1) - E(Y|T=0)
+ \end{align}
+ 
+ 
+ - 관찰연구에서는 혼란변수( `\(X\)` )에 의해 위 등식이 성립하지 않음
+ 
+   - `\(T=0\)`일때 `\(X\)`의 분포와 `\(T=1\)`일때 `\(X\)`의 분포가 다르기 때문
+ 
+ - Matching, Weighting을 통해 해결 가능
+ 
+   - 관찰연구에서 선택편향을 감소시키는 방법론
+   
+   - How? 실험군과 대조군이 동일한 `\(X\)`의 분포를 갖게끔 함으로써
+   
+  - 그러나, 많은 문제에서 변수를 직접 매칭하는 것은 어려움 (특히 연속형 변수)
+  
+      - Propensity score로 매칭하는 것으로 충분 (Rosenbaum and Rubin, 1983) 
+
+]
+
+---
+
+class: inverse, middle, center
+
+# Propensity score
+
+---
+## .brand.blue[Propensity score]
+
+- 고전적인 매칭 방법이 갖는 단점을 극복하고 선택편향을 최소화하기 위해 사용되는 측도
+
+- 로지스틱 회귀모형을 통해 추정
+
+`\begin{align}
+\pi = {\rm{Pr}}(Y = 1 | X = x) = \frac{e^{\beta_0 + \beta_1x}}{1 + e^{\beta_0 + \beta_1x}}
+\end{align}`
+
+- 여기서 `\(Y\)`는 처리(treatment), `\(X\)`는 혼란변수가 됨
+
+- 즉, propensity score는 연구 대상이 혼란변수에 의해 실험군에 포함될 확률을 의미
+
+- Matching:PS(propensity score)가 같은 혹은 유사한 대상끼리 짝을 맞추어 자료 선정
+
+  - .blue[Key idea]: PS의 차이가 작은 대상들끼리 매칭
+
+  - 짝을 이루지 못하면 제외
+  
+- Weighting: PS가 작은 대상에 대해 역가중(IPTW)을 줌으로써 두 군간 혼란변수의 분포를 맞춰줌
+
+---
+
+class: inverse, middle, center
+
+# Propensity score matching method
+
+---
+## .brand.blue[Nearest neighbor]
+
+.pull-left[
+ - 하나의 실험군 대상과 대조군의 모든 대상 간 PS의 차이가 작은 순으로 매칭
+
+- 가장 많이 활용되는 매칭 방법
+
+- Greedy matching 방법론 중 하나에 해당
+
+  - 순간에 최적이라고 생각되는 것을 선택해 나가는 방식
+  
+  - 실험군 중 어떤 대상부터 매칭을 시작하느냐에 따라 매칭의 질이 조금 달라질 수 있음
+]
+
+.pull-right[
+ - 주요 옵션
+
+  - 반복 매칭: 대조군의 표본 수가 작은 경우 여러 실험군과 중복하여 매칭되는 대조군 허용
+  
+  - 정확 매칭: 일부 설명 변수에 대해 정확 매칭을 먼저 시행한 후, 선택된 대상들 사이에서 nearest matching 시행
+  
+  &lt;!-- 예를 들면 인종과 같이 정확히 매칭해야하는 변수 --&gt;
+  
+  - 캘리퍼: 추정된 PS의 표준오차의 `\(k\)`배 범위에 존재하는 대상만 매칭에 고려
+  
+  - 대조/실험군 비: 대조군이 실험군에 비해 많은 경우 1:N 매칭을 통해 전체 표본 수를 증가시킬 수 있음
+
+&lt;!-- 1:N은 하나의 실험군을 비슷한 성향을 가진 여러개의 대조군과 매칭 -&gt; 대조군 표본이 많은 경우가 --&gt;
+
+]
+
+---
+## .brand.blue[Optimal matching]
+
+- 모든 매칭된 짝의 거리가 최소가 되도록 매칭
+
+- Non-greedy matching 방법론 중 하나
+
+- 1:N 매칭 가능
+
+## .brand.blue[Full matching]
+
+- N:N 매칭
+
+- 1:N과 N:1 모두 사용하여 매칭 셋을 만듦
+
+- Non-greedy matching 방법론 중 하나
+
+---
+
+class: inverse, middle, center
+
+# Weighting
+
+---
+
+## .brand.blue[IPTW: Inverse Probability of Treatment Weighting]
+
+.pull-left[
+- Weighting: 혼란변수의 효과를 통제할 수 있는 또 하나의 방법
+  
+- IPTW는 추정된 PS의 역수를 가중치로 부여하여 혼란변수의 영향을 최소화함
+
+- 다음의 그림은 IPTW의 아이디어를 가장 간단하고 직관적으로 설명해 줌
+
+  - 각 군에 성인남성이 Unbalanced하게 존재
+  
+  - 추정된 PS의 역수를 이용해 가중된 샘플을 생성
+  
+  - 이 가중된 샘플을 Pseudo-population(가상의 모집단)이라하며, 이를 통해 분석을 진행함
+
+]
+
+.pull-right[
+&lt;div class="figure"&gt;
+&lt;img src="./fig/iptw.jpeg" alt="fig 7. IPTW (Ehud Karavani)" width="448" height="500" /&gt;
+&lt;p class="caption"&gt;fig 7. IPTW (Ehud Karavani)&lt;/p&gt;
+&lt;/div&gt;
+]
+
+---
+
+## .brand.blue[매칭과 Weighting]
+
+.pull-left[
+
+### .black[매칭]
+
+- 장점
+
+  - 직관적
+  
+  - balanced check가 어렵지 않음
+  
+- 단점
+
+  - 매칭되지 않은 표본은 버리게되어 표본 수가 줄어듦
+  
+  - 이에따라, 원자료와 Matched sample에서 특성이 크게 달라지면, 원자료의 처리효과와 Matched sample의 처리효과가 달라질 수 있음
+
+]
+
+.pull-right[
+
+### .black[Weighting]
+
+- 장점 
+
+  - 가중치를 줘서 Pseudo-population을 통해 분석을 진행하기 때문에 원 자료를 모두 활용할 수 있음
+
+  - balaced check가 어렵지 않음
+  
+- 단점
+
+  - PSM 또한 추정된 PS의 정확성에 민감하나, Weighting은 매칭에 비해 PS의 추정의 정확성에 훨씬 민감함
+  
+  - 따라서, PS 추정의 정확성에 확신이 없으면 선택해서는 안되는 방법
+
+&lt;!-- 그래서, 일반적으로 매칭을 가장 첫 번째로 고려할 수 있고 그 다음으로 고려하는 것이 Weighting --&gt;
+
+]
+
+
+---
+
+class: inverse, middle, center
+
+# Balance diagnostics
+
+---
+
+.pull-left[
+
+## .brand.blue[SMD]
+
+- SMD: Standardized mean difference
+
+- 각 혼란변수에서 두 집단 간 차이가 존재하는가?
+
+`\begin{align}
+d_{continuous} = \frac{\bar{x}_{trt} - \bar{x}_{con}}{\sqrt{\frac{s^2_{trt} + s^2_{con}}{2}}}
+\end{align}`
+`\begin{align}
+d_{categorical} = \frac{\hat{p}_{trt} - \hat{p}_{con}}{\sqrt{\frac{s^2_{trt} + s^2_{con}}{2}}}
+\end{align}`
+
+- 매칭 전과 매칭 후 SMD 비교
+
+- 매칭 후 SMD가 0.1 이하이면 보통 매칭이 잘 이루어졌다고 판단
+
+]
+
+.pull-right[
+ 
+## .brand.blue[QQplot]
+
+- 각 혼란변수별 QQplot을 통해 balance를 체크할 수 있음
+
+- `\(x\)`축은 대조군의 혼란변수 분포, `\(y\)` 축은 실험군의 혼란변수 분포가 됨
+
+- 직선에 잘 나열되어 있을수록 매칭이 잘 이루어졌다고 판단
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./fig/qqplot.jpg" alt="fig 4. QQplot (Zhang, 2017)" width="205" height="200" /&gt;
+&lt;p class="caption"&gt;fig 4. QQplot (Zhang, 2017)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+
+.pull-left[
+
+## .brand.blue[Jitter plot]
+
+- `\(x\)`축을 추정된 PS로 하는 그림
+
+- 매칭 과정에서 버려진 샘플들 파악 가능
+
+- 즉, 매칭된 샘플의 대표성을 가늠해볼 수 있음
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./fig/jitter.jpg" alt="fig 5. Jitter plot (Zhang, 2017)" width="205" height="250" /&gt;
+&lt;p class="caption"&gt;fig 5. Jitter plot (Zhang, 2017)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+ 
+## .brand.blue[Histogram]
+
+- `\(x\)`축을 추정된 PS로 하는 그림
+
+- 매칭된 샘플에서의 각 군의 PS 분포가 비슷한지 확인할 수 있음
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./fig/hist.jpg" alt="fig 6. Histogram (Zhang, 2017)" width="205" height="350" /&gt;
+&lt;p class="caption"&gt;fig 6. Histogram (Zhang, 2017)&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+
+class: inverse, middle, center
+
+# 실습
+
+---
+
+## .brand.blue[웹에서 하는 R을 활용한 PSM]
+
+- 🔗[http://web-r.org/lesson](http://web-r.org/lesson)
+
+  - 사전에 🔗[http://web-r.org](http://web-r.org/) 회원가입 필요
+
+  - 3번 항목 propensity score matching 클릭
+  
+  - 🔗[유튜브 강의](https://www.youtube.com/watch?v=MjzX-DLB0jc&amp;t=4s)
+
+---
+
+## .brand.blue[IPTW]
+
+- 간암 환자 1128명을 대상으로 새로운 치료법(PBT)과 기존 치료법(TACE)이 사망율 및 병원 내 사망여부에 미치는 영향 평가
+
+- Confounding factor 보정을 위해 IPTW 수행
+
+- 패키지 설치
+
+
+```r
+install.packages(c("tidyverse", "WeightIt", "survival", "cobalt"))
+```
+
+- 패키지 로딩
+
+
+```r
+library(tidyverse)
+library(WeightIt)
+library(survival)
+library(cobalt)
+```
+
+---
+
+## .brand.blue[IPTW]
+
+.scroll-box-20[
+
+- 데이터 불러오기
+
+
+```r
+dat.t &lt;- read_csv("./data/ps_matching_dat2.csv") |&gt; 
+    janitor::clean_names()
+```
+
+```
+## Rows: 1128 Columns: 16
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## dbl (16): gr, age, male, dm, ht, ctp_score, log_dna, log_alt, plt, alb, tbil...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```r
+glimpse(dat.t)
+```
+
+```
+## Rows: 1,128
+## Columns: 16
+## $ gr                    &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, …
+## $ age                   &lt;dbl&gt; 64, 55, 49, 42, 39, 43, 53, 43, 57, 34, 63, 52, …
+## $ male                  &lt;dbl&gt; 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, …
+## $ dm                    &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, …
+## $ ht                    &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ ctp_score             &lt;dbl&gt; 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, …
+## $ log_dna               &lt;dbl&gt; 7.69, 0.00, 5.04, 6.86, 1.88, 3.77, 2.92, 8.43, …
+## $ log_alt               &lt;dbl&gt; 2.16, 1.41, 1.64, 1.93, 1.45, 1.20, 1.11, 1.36, …
+## $ plt                   &lt;dbl&gt; 231, 178, 159, 156, 213, 149, 233, 207, 168, 193…
+## $ alb                   &lt;dbl&gt; 4.2, 4.7, 4.1, 4.7, 4.3, 4.3, 4.1, 4.3, 4.2, 4.5…
+## $ tbil                  &lt;dbl&gt; 0.9, 0.6, 0.8, 0.7, 1.0, 0.7, 1.0, 1.2, 0.6, 0.7…
+## $ inr                   &lt;dbl&gt; 0.89, 0.95, 1.02, 0.94, 0.99, 1.10, 0.93, 0.87, …
+## $ cr                    &lt;dbl&gt; 0.65, 0.93, 0.63, 1.05, 0.96, 0.59, 0.68, 0.62, …
+## $ in_hospital_mortality &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, …
+## $ death                 &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ death_yrs             &lt;dbl&gt; 5.57, 5.26, 5.42, 4.04, 5.36, 5.49, 5.38, 5.26, …
+```
+
+- Treatment: `gr`(1 = PBT, 0 = TACE)
+
+- Response variables
+
+  - 생존 자료: `death`(1 = 사망, 0 = 생존), `death_yrs`(생존시간)
+  - 이진형 자료: `in_hospital_mortality`(1 = 사망, 0 = 생존)
+  
+- Covariates: 그외 변수들
+
+]
+
+---
+
+## .brand.blue[IPTW]
+
+- IPTW 수행
+
+
+```r
+W1 &lt;- weightit(gr ~ . -death-death_yrs-in_hospital_mortality, data = dat.t,
+               method = "ps", estimand = "ATE",stabilize = TRUE)
+dat.t$iptw2 &lt;- W1$weights
+W1
+```
+
+```
+## A weightit object
+##  - method: "ps" (propensity score weighting)
+##  - number of obs.: 1128
+##  - sampling weights: none
+##  - treatment: 2-category
+##  - estimand: ATE
+##  - covariates: age, male, dm, ht, ctp_score, log_dna, log_alt, plt, alb, tbil, inr, cr
+```
+
+&lt;!-- ATE(Average treatement effect): A 군에 대응되는 population이 A를 받았을 때의 효과와 A 군에 대응되는 population이 B를 받았을 때의 효과 차이 --&gt;
+
+&lt;!-- ATT(Average treatment effect on treated): 전체 population (A+B)이 A를 받았을 때의 효과와 전체 population (A+B)이 B를 받았을 때의 효과 차이 --&gt;
+
+&lt;!-- 매칭은 ATT를 통해 추정하고, Weighting은 계산 방식에 따라 ATE, ATT를 추정할 수 있음. 기본은 ATE임 --&gt;
+
+---
+
+## .brand.blue[IPTW]
+
+.scroll-output[
+
+- Cox ph model 적합: 새로운 치료법이 사망에 미치는 영향 평가
+
+
+```r
+f1 &lt;- coxph(Surv(death_yrs,death)~gr, weight=iptw2, data=dat.t)
+summary(f1)
+```
+
+```
+## Call:
+## coxph(formula = Surv(death_yrs, death) ~ gr, data = dat.t, weights = iptw2)
+## 
+##   n= 1128, number of events= 23 
+## 
+##       coef exp(coef) se(coef) robust se      z Pr(&gt;|z|)
+## gr -0.4485    0.6386   0.5262    0.5297 -0.847    0.397
+## 
+##    exp(coef) exp(-coef) lower .95 upper .95
+## gr    0.6386      1.566    0.2261     1.803
+## 
+## Concordance= 0.54  (se = 0.042 )
+## Likelihood ratio test= 0.79  on 1 df,   p=0.4
+## Wald test            = 0.72  on 1 df,   p=0.4
+## Score (logrank) test = 0.74  on 1 df,   p=0.4,   Robust = 0.87  p=0.4
+## 
+##   (Note: the likelihood ratio and score tests assume independence of
+##      observations within a cluster, the Wald and robust score tests do not).
+```
+
+- 새로운 치료법이 사망 위험을 줄여주긴하나, 통계적으로 유의하다고 하긴 어려움( `\(p = 0.397\)` )
+
+]
+
+---
+
+## .brand.blue[IPTW]
+
+.scroll-output[
+
+- Logistic regression model 적합: 새로운 치료법이 병원내 사망여부에 미치는 영향 평가
+
+
+```r
+f2 &lt;- glm(in_hospital_mortality ~ gr,weight=iptw2,data=dat.t,family=binomial)
+summary(f2)
+```
+
+```
+## 
+## Call:
+## glm(formula = in_hospital_mortality ~ gr, family = binomial, 
+##     data = dat.t, weights = iptw2)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -0.5952  -0.3604  -0.3376  -0.3200   3.6030  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)  -2.7345     0.1460 -18.723   &lt;2e-16 ***
+## gr           -0.1070     0.2901  -0.369    0.712    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 506.63  on 1127  degrees of freedom
+## Residual deviance: 506.50  on 1126  degrees of freedom
+## AIC: 534.64
+## 
+## Number of Fisher Scoring iterations: 5
+```
+
+- 새로운 치료법이 병원내 사망에 관한 상대 위험을 줄여주긴하나( `\({\rm{exp}}(-0.107) = 0.899\)` ), 통계적으로 유의하다고 하긴 어려움( `\(p = 0.712\)` )
+
+]
+
+---
+
+## .brand.blue[IPTW]
+
+.scroll-output[
+
+- Balance check
+
+
+```r
+bal.fit &lt;- bal.tab(W1,stats="mean.diffs", un = TRUE, m.threshold = .2)
+bal.fit
+```
+
+```
+## Call
+##  weightit(formula = gr ~ . - death - death_yrs - in_hospital_mortality, 
+##     data = dat.t, method = "ps", estimand = "ATE", stabilize = TRUE)
+## 
+## Balance Measures
+##                Type Diff.Un Diff.Adj    M.Threshold
+## prop.score Distance  0.6963   0.0226 Balanced, &lt;0.2
+## age         Contin.  0.0798  -0.0060 Balanced, &lt;0.2
+## male         Binary  0.0320   0.0079 Balanced, &lt;0.2
+## dm           Binary  0.0276   0.0014 Balanced, &lt;0.2
+## ht           Binary  0.0184  -0.0031 Balanced, &lt;0.2
+## ctp_score   Contin.  0.0390  -0.0320 Balanced, &lt;0.2
+## log_dna     Contin.  0.7025   0.0493 Balanced, &lt;0.2
+## log_alt     Contin.  0.3041  -0.0090 Balanced, &lt;0.2
+## plt         Contin. -0.1288   0.0096 Balanced, &lt;0.2
+## alb         Contin. -0.0380   0.0268 Balanced, &lt;0.2
+## tbil        Contin.  0.0774  -0.0135 Balanced, &lt;0.2
+## inr         Contin.  0.1232  -0.0111 Balanced, &lt;0.2
+## cr          Contin.  0.0066   0.0461 Balanced, &lt;0.2
+## 
+## Balance tally for mean differences
+##                    count
+## Balanced, &lt;0.2        13
+## Not Balanced, &gt;0.2     0
+## 
+## Variable with the greatest mean difference
+##  Variable Diff.Adj    M.Threshold
+##   log_dna   0.0493 Balanced, &lt;0.2
+## 
+## Effective sample sizes
+##            Control Treated
+## Unadjusted  816.    312.  
+## Adjusted    771.34  251.25
+```
+
+- 밸런싱이 잘 이루어짐
+
+]
+
+---
+
+## .brand.blue[IPTW]
+
+.scroll-output[
+
+.pull-left[
+ - Balance check 시각화 1
+
+
+```r
+unadj.bal &lt;- bal.fit$Balance[2:12, 2]
+adj.bal &lt;- bal.fit$Balance[2:12, 3]
+plot(c(1,2),c(-1,1),type='n',xlab='',ylab='Standardized Mean Difference',
+     main='Covariate Balance',xaxt='n')
+pp &lt;- length(unadj.bal)
+points(rep(1.2,pp),unadj.bal)
+points(rep(1.8,pp),adj.bal)
+for ( jj in 1:pp) {
+    lines(c(1.2,1.8),c(unadj.bal[jj],adj.bal[jj]),type='l')
+}
+abline(h=0.2,col=2,lty=2)
+abline(h=-0.2,col=2,lty=2)
+axis(1, at=c(1.2,1.8), labels=c('Unweighted','Weighted'))
+```
+
+]
+
+.pull-right[
+&lt;img src="3_matching_files/figure-html/balance-1.png" width="2100" style="display: block; margin: auto;" /&gt;
+]
+
+]
+
+---
+
+## .brand.blue[IPTW]
+
+.pull-left[
+ - Balance check 시각화 (`age`)
+
+&lt;img src="3_matching_files/figure-html/balance2-1.png" width="2100" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+ - Balance check 시각화 (`dm`: 당뇨 유무)
+
+&lt;img src="3_matching_files/figure-html/balance3-1.png" width="2100" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+
+## .brand.blue[책 추천]
+
+- 🔗[R 기반 성향점수분석](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788955662450)
+
+- 🔗[통계적 인과 추론(개정판)](https://www.kyowoo.co.kr/02_sub/view.php?p_idx=1640&amp;cate=0014_0019_)
+
+---
+class: inverse, middle, center
+
+# References
+
+---
+
+## .brand.blue[References]
+
+.scroll-output[
+
+[1] Karavani, Ehud. “Solving Simpson’s Paradox with Inverse Probability Weighting.” Medium, September 12, 2020. https://towardsdatascience.com/solving-simpsons-paradox-with-inverse-probability-weighting-79dbb1395597.
+
+[2] Kim, Jinsil. “RWE 연구에서 인과추론.” Linewalks Blog (blog), February 2, 2021. https://blog.linewalks.com/archives/7335.
+
+[3] Lee, Dong Kyu. “An Introduction to Propensity Score Matching Methods.” Anesthesia and Pain Medicine 11, no. 2 (April 30, 2016): 130–48. https://doi.org/10.17085/apm.2016.11.2.130.
+
+[4] web-r. WebrPSM, 2021. https://www.youtube.com/watch?v=MjzX-DLB0jc.
+
+[5] Zhang, Zhongheng. “Propensity Score Method: A Non-Parametric Technique to Reduce Model Dependence.” Annals of Translational Medicine 5 (January 1, 2017): 7–7. https://doi.org/10.21037/atm.2016.08.57.
+
+[6] 인과추론의 데이터과학. [Bootcamp 2-4] 매칭과 역확률가중치, 2022. https://www.youtube.com/watch?v=BVBUQz3Ix8w.
+
+]
+
+---
+
+class: inverse
+
+# Thanks!
+
+.pull-right[.pull-down[
+
+&lt;a href="mailto:favorite@kakao.com"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"&gt;&lt;/path&gt;&lt;/svg&gt; favorite@kakao.com]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/be-favorite"&gt;
+.white[&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @be-favorite]
+&lt;/a&gt;
+
+&lt;a href="https://twitter.com/TaemoBang"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @TaemoBang]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/be-favorite/Presentation_archive"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; Presentation archive]
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+]]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

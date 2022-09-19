@@ -7,9 +7,10 @@ draft: FALSE
 preview: preview.jpg
 citation:
   url: https://quarto-taemo.netlify.app/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html
-categories: [SQL, R]
+categories: [Time Series, R]
 bibliography: references.bib
 ---
+
 
 ```{r quarto-blog-setup, include = FALSE}
 # 본 포스트 영어 제목: Talk with Database using tidyverse - Part I

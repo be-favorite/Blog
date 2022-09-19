@@ -1,4 +1,5 @@
 # Options specified here will apply to all posts in this folder
+editor: visual
 
 # freeze computational output
 freeze: true

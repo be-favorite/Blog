@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -67,9 +72,11 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">방태모의 블로그</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -107,7 +114,7 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -117,7 +124,7 @@ ul.task-list{list-style: none;}
   <li><a href="#예측모델링-forecasting" id="toc-예측모델링-forecasting" class="nav-link" data-scroll-target="#예측모델링-forecasting">2 예측모델링 · Forecasting</a></li>
   <li><a href="#other-techniques" id="toc-other-techniques" class="nav-link" data-scroll-target="#other-techniques">3 Other techniques</a></li>
   </ul></li>
-  <li><a href="#machine-learning-and-statistical-learning" id="toc-machine-learning-and-statistical-learning" class="nav-link" data-scroll-target="#machine-learning-and-statistical-learning">Machine Learning and Statistical Learning</a>
+  <li><a href="#statisticalmachine-learning" id="toc-statisticalmachine-learning" class="nav-link" data-scroll-target="#statisticalmachine-learning">Statistical/Machine Learning</a>
   <ul class="collapse">
   <li><a href="#prerequisite" id="toc-prerequisite" class="nav-link" data-scroll-target="#prerequisite">Prerequisite</a></li>
   <li><a href="#ensemble-methods" id="toc-ensemble-methods" class="nav-link" data-scroll-target="#ensemble-methods">Ensemble methods</a></li>
@@ -170,8 +177,7 @@ ul.task-list{list-style: none;}
 </header>
 
 <p>논문과 책, 웹사이트 등을 통해 공부하고 연구한 것들을 아카이브합니다.</p>
-<p>그리고, 그 외 Data Science를 할 때 알아두면 좋다고 생각되는 것들도 아카이브합니다.</p>
-<p>참고 문헌과 스터디 노트, 그리고 가능하다면 재현가능한 코드 또는 재현가능한 간략한 튜토리얼을 함께 제공하고자 합니다.</p>
+<p>참고 문헌과 스터디 노트, 그리고 재현가능한 소스코드를 함께 제공하고자 합니다.</p>
 <section id="time-series" class="level2">
 <h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
 <section id="추론-모델링-regression" class="level3">
@@ -253,10 +259,10 @@ ul.task-list{list-style: none;}
 <h4 class="anchored" data-anchor-id="intervention-analysis-interrupted-time-series">Intervention analysis (Interrupted Time Series)</h4>
 <ul>
 <li>Slides. “Intervention Analysis.” Accessed April 17, 2022. https://slides.com/tonyg/intervention-analysis.</li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_source.pdf">참고 자료</a></li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_note.pdf">스터디 노트</a></li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_rcode.R">R 코드</a></li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/intervention_analysis/ITS_arimax()_rcode.R">R 코드: arimax() 튜토리얼</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/intervention_analysis/ITS_source.pdf">참고 자료</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/intervention_analysis/ITS_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/intervention_analysis/ITS_rcode.R">R 코드</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/intervention_analysis/ITS_arimax()_rcode.R">R 코드: arimax() 튜토리얼</a></li>
 </ul>
 </section>
 <section id="dynamic-time-warping-dtw" class="level4">
@@ -265,8 +271,8 @@ ul.task-list{list-style: none;}
 <li>Berndt, Donald J., and James Clifford. “Using Dynamic Time Warping to Find Patterns in Time Series.” In Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, 359–70. AAAIWS’94. Seattle, WA: AAAI Press, 1994.</li>
 <li>선행 또는 후행하는 시계열, 시차가 존재하나 유사한 패턴이 존재하는 두 시계열을 잡아낼 수 있게끔 해주는 비유사성 측도(거리 측도) 알고리즘</li>
 <li>DTW distance를 이용해 계층적 군집 분석 수행 가능</li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dtw/DTW_note.pdf">스터디 노트</a></li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dtw/DTW_tutorial.pdf">R 튜토리얼</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/dtw/DTW_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/dtw/DTW_tutorial.pdf">R 튜토리얼</a></li>
 </ul>
 </section>
 <section id="discrete-wavelet-transform-dwt" class="level4">
@@ -276,14 +282,14 @@ ul.task-list{list-style: none;}
 <li>Li, Daoyuan, Tegawendé F. Bissyandé, Jacques Klein, and Y. L. Traon. “Time Series Classification with Discrete Wavelet Transformed Data: Insights from an Empirical Study.” In SEKE, 2016. https://doi.org/10.18293/SEKE2016-067.</li>
 <li>시계열들을 데이터의 열로 나열하여 classification을 수행할 때, 효과적인 차원 감소 방법</li>
 <li>일종의 시계열 Feature engineering 기법에 해당</li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dwt/DWT_note.pdf">스터디 노트</a></li>
-<li>🔗 <a href="https://be-favorite.github.io/Research_archive/archive/dwt/DWT_tutorial.pdf">R 튜토리얼</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/dwt/DWT_note.pdf">스터디 노트</a></li>
+<li>🔗 <a href="https://be-favorite.github.io/Blog/resources/research/dwt/DWT_tutorial.pdf">R 튜토리얼</a></li>
 </ul>
 </section>
 </section>
 </section>
-<section id="machine-learning-and-statistical-learning" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-and-statistical-learning">Machine Learning and Statistical Learning</h2>
+<section id="statisticalmachine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="statisticalmachine-learning">Statistical/Machine Learning</h2>
 <section id="prerequisite" class="level3">
 <h3 class="anchored" data-anchor-id="prerequisite">Prerequisite</h3>
 <ul>
@@ -360,7 +366,7 @@ ul.task-list{list-style: none;}
 <ul>
 <li>Breheny, Patrick. High-Dimensional Data Analysis. The University of Iowa, 2016. https://myweb.uiowa.edu/pbreheny/7600/s16/index.html.
 <ul>
-<li>R 소스코드 및 예제 Dataset 제공</li>
+<li>🔗 <a href="https://myweb.uiowa.edu/pbreheny/7600/s16/index.html">R 소스코드 및 예제 Dataset 제공</a></li>
 </ul></li>
 <li>일반적인 기계학습 기반의 예측 모델링으로 접근하기 어려운 n -&gt; p 또는 n &lt; p 인 자료의 예측 모델링에 관한 방법론(여기서 n은 관측치의 수, p는 예측변수의 수)</li>
 <li>꼭 고차원 자료가 아닌, 회귀모형의 예측 성능을 높이기 위해서도 사용되는 방법론들에 해당</li>
@@ -567,6 +573,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       }
     }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
   }
   const isFileUrl = () => { 
     return window.location.protocol === 'file:';
@@ -668,7 +684,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

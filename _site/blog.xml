@@ -9,7 +9,7 @@
 <link>https://quarto-taemo.netlify.app/blog.html</link>
 <atom:link href="https://quarto-taemo.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
-<generator>quarto-1.1.251</generator>
+<generator>quarto-1.0.38</generator>
 <lastBuildDate>Wed, 06 Apr 2022 15:00:00 GMT</lastBuildDate>
 <item>
   <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>
@@ -130,7 +130,7 @@
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"bakers"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   table&lt;bakers&gt; [?? x 5]
-# Database: sqlite 3.39.3 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
    series baker_full                age occupation                       homet…¹
     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                            &lt;chr&gt;  
  1      1 "Annetha Mills"            30 Midwife                          Essex  
@@ -143,7 +143,8 @@
  8      1 "Mark Whithers"            48 Bus Driver                       South …
  9      1 "Miranda Gore Browne"      37 Food buyer for Marks &amp; Spencer   Midhur…
 10      1 "Ruth Clemens"             31 Retail manager/Housewife         Poynto…
-# … with more rows, and abbreviated variable name ¹​hometown</code></pre>
+# … with more rows, and abbreviated variable name ¹​hometown
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -151,7 +152,7 @@
 <span id="cb13-2">    <span class="fu" style="color: #4758AB;">head</span>(<span class="dv" style="color: #AD0000;">3</span>) <span class="co" style="color: #5E5E5E;"># "SELECT * FROM bakers LIMIT 3"와 동일</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   SQL [3 x 5]
-# Database: sqlite 3.39.3 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
   series baker_full                age occupation                        homet…¹
    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                             &lt;chr&gt;  
 1      1 "Annetha Mills"            30 Midwife                           Essex  
@@ -185,7 +186,7 @@
 <span id="cb17-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   SQL [?? x 4]
-# Database: sqlite 3.39.3 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
    series baker     hometown              series_winner
     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                         &lt;int&gt;
  1      1 Annetha   Essex                             0
@@ -198,7 +199,8 @@
  8      1 Mark      South Wales                       0
  9      1 Miranda   Midhurst, West Sussex             0
 10      1 Ruth      Poynton, Cheshire                 0
-# … with more rows</code></pre>
+# … with more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 <p>24개 열 중 관심있는 4개 열만 불러왔습니다. 이제 제빵대회에 우승한 사람만 골라낸 뒤(<code>filter()</code>) 우승자들이 영국의 어떤 지역으로 부터 왔는지 지역별로 인원을 구하고(<code>count()</code>) 내림차순 정렬(<code>sort()</code>)을 해보죠.</p>
@@ -209,7 +211,7 @@
 <span id="cb19-4">  <span class="fu" style="color: #4758AB;">count</span>(hometown, <span class="at" style="color: #657422;">sort =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:     SQL [8 x 2]
-# Database:   sqlite 3.39.3 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
+# Database:   sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
 # Ordered by: desc(n)
   hometown                              n
   &lt;chr&gt;                             &lt;int&gt;
@@ -303,15 +305,15 @@ ORDER BY `n` DESC</code></pre>
  tz       Asia/Seoul
  date     2022-09-19
  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
- quarto   1.1.251 @ /Users/taemobang/Applications/quarto/bin/quarto
+ quarto   1.0.38 @ /usr/local/bin/quarto
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version date (UTC) lib source
  DBI         * 1.1.3   2022-06-18 [1] CRAN (R 4.2.0)
  dbplyr      * 2.2.1   2022-06-27 [1] CRAN (R 4.2.0)
- dplyr       * 1.0.10  2022-09-01 [1] CRAN (R 4.2.0)
+ dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.2.0)
  odbc        * 1.3.3   2021-11-30 [1] CRAN (R 4.2.0)
- RSQLite     * 2.2.17  2022-09-10 [1] CRAN (R 4.2.0)
+ RSQLite     * 2.2.15  2022-07-17 [1] CRAN (R 4.2.0)
  sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
 
  [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
@@ -333,7 +335,7 @@ ORDER BY `n` DESC</code></pre>
 <div id="ref-naidoo2020" class="csl-entry">
 Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the tidyverse with Databases - Part I”</span>, 12월. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>relational database management system, or RDBMS↩︎</p></li>
@@ -346,7 +348,6 @@ Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the tidyverse with 
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Taemo Bang},
-  editor = {},
   title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
   date = {2022-04-07},
   url = {https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html},

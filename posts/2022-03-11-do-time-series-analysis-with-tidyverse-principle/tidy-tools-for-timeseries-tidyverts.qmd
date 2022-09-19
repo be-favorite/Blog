@@ -11,7 +11,6 @@ categories: [Time Series, R]
 bibliography: references.bib
 ---
 
-
 ```{r quarto-blog-setup, include = FALSE}
 # 본 포스트 영어 제목: Talk with Database using tidyverse - Part I
 # 본 포스트 한글 제목: tidyverse로 데이터베이스랑 대화하기 - 1편

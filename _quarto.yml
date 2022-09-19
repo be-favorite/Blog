@@ -8,18 +8,6 @@ website:
   site-url: https://quarto-taemo.netlify.app
   repo-url: https://github.com/be-favorite/Blog
   repo-actions: [issue]
-  reader-mode: true
-  page-footer: 
-    left: "Copyright 2022, Taemo Bang" 
-    right: 
-      - icon: linkedin
-        href: https://www.linkedin.com/in/taemo/
-      - icon: facebook
-        href: https://www.facebook.com/profile.php?id=100070120780059
-      - icon: twitter
-        href: https://twitter.com/TaemoBang
-      - icon: github
-        href: https://github.com/be-favorite
   navbar:
     right:
       - href: index.qmd

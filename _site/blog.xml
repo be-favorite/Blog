@@ -14,7 +14,7 @@
 <item>
   <title>슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</link>
+  <link>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</link>
   <description><![CDATA[ 
 
 
@@ -110,19 +110,19 @@
 <li id="fn4"><p>여기서 “자신있다”의 의미는 해당 분석 언어와 분석 분야를 다 알고 있다는 것이 아닌, 모르는 것을 마주치더라도 독학하여 다 내 것으로 만들 수 있는 자신이 있다는 것을 의미합니다.↩︎</p></li>
 <li id="fn5"><p>혹시, 통계학 대학원에서 머신러닝 또는 딥러닝에 기반한 예측 모델링 기법을 깊게 연구하는 연구실이 있다면, 댓글로 공유해주시면 많은 분들에게 도움이 될 것 같습니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {슬기로운 통계생활: \#1 통계학 전공자의 대학원 진로 고민},
   date = {2022-09-13},
-  url = {https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html},
+  url = {https://taemobang.com/posts/2022-09-12-statistics-playbook-1/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 대학원
-진로 고민.”</span> September 13, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html">https://quarto-taemo.netlify.app/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 대학원 진로
+고민.”</span> September 13, 2022. <a href="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/">https://taemobang.com/posts/2022-09-12-statistics-playbook-1/</a>.
 </div></div></section></div> ]]></description>
   <category>Statistics Playbook</category>
-  <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html</guid>
+  <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</guid>
   <pubDate>Mon, 12 Sep 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
@@ -668,7 +668,7 @@ Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently”<
 <item>
   <title>월간 회고록: 2022년 4월</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/memory-202204.html</link>
+  <link>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/index.html</link>
   <description><![CDATA[ 
 
 
@@ -741,26 +741,25 @@ Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently”<
 <li id="fn1"><p>반면에, 규모가 조금 작고 지원자가 대기업에 비해 적은 수준에 머무르는 스타트업의 경우는 대개 면접 전형 이전에 서류 전형과 사전 과제 전형을 통해 지원자를 평가합니다.↩︎</p></li>
 <li id="fn2"><p>삼성의 GSAT, 현대의 HMAT과 같은↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {월간 회고록: 2022년 4월},
   date = {2022-06-08},
-  url = {https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html},
+  url = {https://taemobang.com/posts/2022-06-08-monthly-memory-202204/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“월간 회고록: 2022년 4월.”</span> June 8, 2022.
-<a href="https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html">https://quarto-taemo.netlify.app/posts/2022-06-08-monthly-memory-202204/memory-202204.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“월간 회고록: 2022년 4월.”</span> June 8, 2022. <a href="https://taemobang.com/posts/2022-06-08-monthly-memory-202204/">https://taemobang.com/posts/2022-06-08-monthly-memory-202204/</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
-  <guid>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/memory-202204.html</guid>
+  <guid>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/index.html</guid>
   <pubDate>Tue, 07 Jun 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-06-08-monthly-memory-202204/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>논문 요약 - Simões et al (2022)</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</link>
+  <link>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/index.html</link>
   <description><![CDATA[ 
 
 
@@ -846,27 +845,27 @@ Sera, Francesco, Benedict Armstrong, Marta Blangiardo, 와/과 Antonio Gasparrin
 <div id="ref-simões2022b" class="csl-entry">
 Simões, Fanny, Charles Bouveyron, Damien Piga, Damien Borel, Stéphane Descombes, Véronique Paquis-Flucklinger, Jaques Levraut, Pierre Gibelin, 와/과 Silvia Bottini. 2022. <span>“Cardiac dyspnea risk zones in the South of France identified by geo-pollution trends study”</span>. <em>Scientific Reports</em> 12 (2월). <a href="https://doi.org/10.1038/s41598-022-05827-2">https://doi.org/10.1038/s41598-022-05827-2</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {논문 요약 - Simões et al (2022)},
   date = {2022-05-24},
-  url = {https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html},
+  url = {https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“논문 요약 - Simões et al (2022).”</span> May
-24, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html">https://quarto-taemo.netlify.app/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“논문 요약 - Simões et al (2022).”</span> May 24,
+2022. <a href="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/">https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/</a>.
 </div></div></section></div> ]]></description>
   <category>Time Series</category>
   <category>Paper</category>
-  <guid>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html</guid>
+  <guid>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/index.html</guid>
   <pubDate>Mon, 23 May 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>관심 논문 읽고 요약하기</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</link>
+  <link>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/index.html</link>
   <description><![CDATA[ 
 
 
@@ -958,26 +957,25 @@ An, Subin. 2022. <span>“[Paper Review] How to Read a Paper (SIGCOMM 07)”</sp
 <div id="ref-hong2012" class="csl-entry">
 Hong, Seonui. 2012. <span>“02. 논문의 종류”</span>. <a href="http://www.campuskorea.net/bbs/board.php?bo_table=any_tip1&amp;wr_id=30">http://www.campuskorea.net/bbs/board.php?bo_table=any_tip1&amp;wr_id=30</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {관심 논문 읽고 요약하기},
   date = {2022-05-13},
-  url = {https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html},
+  url = {https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“관심 논문 읽고 요약하기.”</span> May 13, 2022.
-<a href="https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html">https://quarto-taemo.netlify.app/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“관심 논문 읽고 요약하기.”</span> May 13, 2022. <a href="https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/">https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/</a>.
 </div></div></section></div> ]]></description>
   <category>Paper</category>
-  <guid>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html</guid>
+  <guid>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/index.html</guid>
   <pubDate>Thu, 12 May 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</link>
+  <link>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html</link>
   <description><![CDATA[ 
 
 
@@ -1309,27 +1307,27 @@ Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the tidyverse with 
 <li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.↩︎</p></li>
 <li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
   date = {2022-04-07},
-  url = {https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html},
+  url = {https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
-1편.”</span> April 7, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html">https://quarto-taemo.netlify.app/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 - 1편.”</span>
+April 7, 2022. <a href="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/">https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/</a>.
 </div></div></section></div> ]]></description>
   <category>SQL</category>
   <category>R</category>
-  <guid>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html</guid>
+  <guid>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html</guid>
   <pubDate>Wed, 06 Apr 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyvese principle로 머신러닝 하기</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</link>
+  <link>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html</link>
   <description><![CDATA[ 
 
 
@@ -1365,7 +1363,7 @@ Taemo Bang. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 -
 ✖ dplyr::filter()  masks stats::filter()
 ✖ dplyr::lag()     masks stats::lag()
 ✖ recipes::step()  masks stats::step()
-• Use suppressPackageStartupMessages() to eliminate package startup messages</code></pre>
+• Learn how to get started at https://www.tidymodels.org/start/</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;">library</span>(ggrepel) <span class="co" style="color: #5E5E5E;"># for geom_label_repel()</span></span>
 <span id="cb5-2"><span class="fu" style="color: #4758AB;">library</span>(corrplot) <span class="co" style="color: #5E5E5E;"># for corrplot()</span></span></code></pre></div>
@@ -1394,7 +1392,7 @@ $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39
 </div>
 </div>
 <p>다음은 우리가 모델링에 사용할 features(<img src="https://latex.codecogs.com/png.latex?X">)들의 상관계수 행렬을 시각화 한 것이며, 상관계수 행렬을 다이아몬드의 가격(price, <img src="https://latex.codecogs.com/png.latex?y">) 열의 상관계수의 절댓값을 기준으로 내림차순 정렬하여 그린 것입니다.</p>
-<div class="cell" data-layout-align="center" data-hash="tidyvese-principle_cache/html/unnamed-chunk-3_4a3f958b3a51b43de300338c2aa84b58">
+<div class="cell" data-layout-align="center" data-hash="index_cache/html/unnamed-chunk-3_faf870d434b48df4b6c9c91a963e85f2">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">1</span>)</span>
 <span id="cb10-2">diamonds <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
 <span id="cb10-3">  <span class="fu" style="color: #4758AB;">sample_n</span>(<span class="dv" style="color: #AD0000;">2000</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
@@ -1407,7 +1405,7 @@ $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1416,7 +1414,7 @@ $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39
 <section id="데이터-분할-rsample" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-분할-rsample">1 데이터 분할: {rsample}</h2>
 <p>tidymodels ecosystem을 구성하는 패키지들 중 가장 먼저 소개할 친구는 데이터 분할에 쓰이는 <code>{rsample}</code>입니다. 본 예제의 마지막 단계에서 시험 자료(test data)를 기반으로 모형의 예측 성능을 평가할 것이기 때문에, 먼저 데이터를 훈련 자료(training data), 시험 자료로 분할해야 합니다. 이번에도 모형 적합 및 교차 검증을 이용한 모수 튜닝 단계에서의 계산 비용 절감을 위해, 훈련 자료의 비율을 10%로 낮게 잡아 데이터를 나눌 것입니다. 다음의 모든 과정은 <code>{rsample}</code> 패키지의 함수들로 진행됩니다. 패키지 또는 함수의 이름이 직관적이고 인간 친화적이면 그 역할을 기억하기 쉬운데, 앞으로 소개할 <code>{tidymodels}</code>를 구성하는 패키지와 패키지를 이루는 함수들의 이름은 대부분 이러한 점을 고려하여 네이밍이 되어있습니다.😊</p>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-4_6dddd2af0aaa91a1ce406765c1a41f24">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-4_6fabe4f1ebbe2d8da3d21cb9f88a023f">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">1</span>)</span>
 <span id="cb11-2">dia_split <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">initial_split</span>(diamonds, <span class="at" style="color: #657422;">prop =</span> .<span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">strata =</span> price)</span>
 <span id="cb11-3">dia_train <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">training</span>(dia_split)</span>
@@ -1436,7 +1434,7 @@ the number of observations in the test set is 48547.</code></pre>
 <section id="데이터-전처리-및-feature-engineering-recipes" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-전처리-및-feature-engineering-recipes">2 데이터 전처리 및 Feature Engineering: {recipes}</h2>
 <p>다음으로는 <code>{recipes}</code>를 이용하여, 데이터 전처리 및 Feature Engineering을 수행한다. recipe는 요리법이라는 뜻뿐만 아니라 특정 결과를 가져올 듯한 방안의 뜻<sup>2</sup>도 갖습니다. 이럴 때마다 영어권의 R 유저들이 부럽습니다. 패키지나 함수 이름을 통해 그 역할을 기억하고 필요할 때 꺼내쓰기가 좀 더 편하지 않을까 하는 생각이 드네요. <code>{recipes}</code>의 <code>step_*()</code> 함수들을 이용해 모델링에 사용할 자료를 준비<sup>3</sup>할 수 있습니다. 다음의 산점도는 다이아몬드의 가격(price)과 carat 사이에 비선형적인 관계가 있음을 암시하며, 이러한 관계는 carat의 다항함수를 변수로 도입하여 모델링에 반영할 수 있습니다.</p>
-<div class="cell" data-layout-align="center" data-hash="tidyvese-principle_cache/html/unnamed-chunk-5_0a7e0f75bd073567717911ef43545c14">
+<div class="cell" data-layout-align="center" data-hash="index_cache/html/unnamed-chunk-5_5d498e95ffa76da10f0229bb268bf343">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;">qplot</span>(carat, price, <span class="at" style="color: #657422;">data =</span> dia_train) <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb13-2">  <span class="fu" style="color: #4758AB;">scale_y_continuous</span>(<span class="at" style="color: #657422;">trans =</span> <span class="fu" style="color: #4758AB;">log_trans</span>(), <span class="at" style="color: #657422;">labels =</span> <span class="cf" style="color: #003B4F;">function</span>(x) <span class="fu" style="color: #4758AB;">round</span>(x, <span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">2</span>)) <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb13-3">  <span class="fu" style="color: #4758AB;">geom_smooth</span>(<span class="at" style="color: #657422;">method =</span> <span class="st" style="color: #20794D;">"lm"</span>, <span class="at" style="color: #657422;">formula =</span> <span class="st" style="color: #20794D;">"y ~ poly(x, 4)"</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
@@ -1444,7 +1442,7 @@ the number of observations in the test set is 48547.</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1575,7 +1573,7 @@ Computational engine: ranger </code></pre>
 </div>
 </div>
 <p>이제 다시 회귀모형으로 돌아오겠습니다. 설정했던 기본적인 회귀모형을 전처리를 완료한 훈련 자료에 적합해 줍니다.</p>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-11_048850c2d175dde9c7b626deceb777d4">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-11_c3a55bb6e772df352c648a4d05970c80">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1">lm_fit1 <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">fit</span>(lm_model, price <span class="sc" style="color: #5E5E5E;">~</span> ., dia_juiced)</span>
 <span id="cb23-2">lm_fit1</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1649,7 +1647,7 @@ Coefficients:
 </div>
 </div>
 <p>앞서 생성한 <code>lm_predicted</code> 객체를 이용해 적합값과 관측값 간의 산점도를 그려보았습니다. 잔차의 크기가 2 이상인 관측치에 대해서는 해당 관측치의 행 번호를 붙여주었으며, 겹치는 점이 있는 경우를 고려하여 점에 투명도를 주었습니다.</p>
-<div class="cell" data-layout-align="center" data-hash="tidyvese-principle_cache/html/unnamed-chunk-18_438e0acdb01ef13ea898e779aed722ab">
+<div class="cell" data-layout-align="center" data-hash="index_cache/html/unnamed-chunk-18_a75faf9ed823103728b92661b887e390">
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><span class="fu" style="color: #4758AB;">ggplot</span>(lm_predicted, <span class="fu" style="color: #4758AB;">aes</span>(.fitted, price)) <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb28-2">  <span class="fu" style="color: #4758AB;">geom_point</span>(<span class="at" style="color: #657422;">alpha =</span> .<span class="dv" style="color: #AD0000;">2</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb28-3">  ggrepel<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">geom_label_repel</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">label =</span> rowid),</span>
@@ -1659,7 +1657,7 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -1709,7 +1707,7 @@ Coefficients:
 </div>
 </div>
 </div>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-23_8f3271ac725856699c6e7060799950fc">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-23_02c1b6bfe28d7f94e1e78ce26e82035c">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1">lm_fit3 <span class="ot" style="color: #003B4F;">&lt;-</span> lm_fit2 <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
 <span id="cb31-2">  <span class="fu" style="color: #4758AB;">mutate</span>(</span>
 <span id="cb31-3">    <span class="at" style="color: #657422;">recipe =</span> <span class="fu" style="color: #4758AB;">map</span>(df_ana, <span class="sc" style="color: #5E5E5E;">~</span><span class="fu" style="color: #4758AB;">prep</span>(dia_rec, <span class="at" style="color: #657422;">training =</span> .x)),</span>
@@ -1768,7 +1766,7 @@ Coefficients:
 </div>
 <p>여기서 계산한 평가 측도의 값은 out-of-sample에 대한 성능이므로 모형 적합값에 대해 평가 측도를 계산한 <code>glance(lm_fit1$fit)</code>의 결과와 비교하여 보면 당연히 조금은 떨어지는 성능을 보입니다. <code>metrics()</code>는 연속형 outcome(<img src="https://latex.codecogs.com/png.latex?y">)에는 위와 같이 RMSE, <img src="https://latex.codecogs.com/png.latex?R%5E2">, MAE를 기본적인 측도로 제공해줍니다. 물론, 범주형 outcome에 대해서도 다른 기본적인 측도를 제공해주죠. 또한, 하나의 측도만으로 비교하길 원한다면 <code>rmse()</code>와 같이 RMSE 값만을 제공해주는 함수도 이용할 수 있으며, <code>metric_set()</code>을 이용하면 원하는 metrics들을 직접 커스텀하여 정의할 수도 있습니다.</p>
 <p>3-fold CV를 통해 훈련 자료를 분할 및 전처리하고 예측값을 구하여 RMSE를 계산하는 과정을 담은 앞선 코드블럭들은 <code>{tidyverse}</code>, <code>{tidymodels}</code>에 익숙한 사람이라면 편하게 읽어나가실 수 있을겁니다. 그러나, 코드가 매우 긴 것도 사실입니다. 사실, 위 코드블럭은 다음 섹션에서 소개할 <code>{tune}</code> 패키지를 이용하면 다음과 같이 단 몇 줄로 간결하게 코딩할 수 있습니다.</p>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-29_3b4996ad4355921372a4c591f40a955a">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-29_2667c4945a600b0f1ff6b5f4d848dc29">
 <div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1">control <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">control_resamples</span>(<span class="at" style="color: #657422;">save_pred =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)</span>
 <span id="cb34-2"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">1</span>)</span>
 <span id="cb34-3">lm_fit4 <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">fit_resamples</span>(lm_model, dia_rec, dia_vfold, <span class="at" style="color: #657422;">control =</span> control)</span>
@@ -1995,7 +1993,7 @@ Attaching package: 'future'</code></pre>
 <span id="cb65-5"><span class="fu" style="color: #4758AB;">plan</span>(future<span class="sc" style="color: #5E5E5E;">::</span>cluster, <span class="at" style="color: #657422;">workers =</span> cl)</span></code></pre></div>
 </div>
 <p>이제 튜닝을 시작합니다.</p>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-40_e41f0987e54e61a3a25269446901f4c8">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-40_b7768e273872a87f59fd7ead0015c724">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><span class="fu" style="color: #4758AB;">options</span>(<span class="at" style="color: #657422;">future.rng.onMisue =</span> <span class="st" style="color: #20794D;">"ignore"</span>)</span>
 <span id="cb66-2">rf_search <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">tune_grid</span>(rf_wflow, <span class="at" style="color: #657422;">grid =</span> rf_grid, <span class="at" style="color: #657422;">resamples =</span> dia_vfold,</span>
 <span id="cb66-3">                       <span class="at" style="color: #657422;">param_info =</span> rf_param)</span></code></pre></div>
@@ -2006,7 +2004,7 @@ Attaching package: 'future'</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2056,7 +2054,7 @@ Attaching package: 'future'</code></pre>
 <section id="선택한-최적의-모형으로-예측-수행" class="level3">
 <h3 class="anchored" data-anchor-id="선택한-최적의-모형으로-예측-수행">6.4 선택한 최적의 모형으로 예측 수행</h3>
 <p>6.3 모든 것을 결합하기: {workflows}에서 carat 변수는 2차항으로도 충분히 설명되고, 매 트리 적합 시 고려할 변수의 수는 5개임을 확인할 수 있었습니다. 이제는 해당 초모수 조합을 이용해 훈련 자료에 모형을 적합하고 최종 예측을 수행하려고 합니다. 이번 예제에서는 설정값이 똑같긴 하지만, <img src="https://latex.codecogs.com/png.latex?%5Cpm%201SE">를 고려한 초모수 조합을 모형 적합에 사용하였습니다.</p>
-<div class="cell" data-hash="tidyvese-principle_cache/html/unnamed-chunk-48_7bdd6805b63687298a9ff6262a3d7cd6">
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-48_176ed1be1ff3cc24fece8102b3b60b86">
 <div class="sourceCode cell-code" id="cb71" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1">rf_param_final <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">select_by_one_std_err</span>(rf_search, mtry, degree, <span class="at" style="color: #657422;">metric =</span> <span class="st" style="color: #20794D;">"rmse"</span>)</span>
 <span id="cb71-2">rf_wflow_final <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">finalize_workflow</span>(rf_wflow, rf_param_final)</span>
 <span id="cb71-3">rf_wflow_final_fit <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">fit</span>(rf_wflow_final, <span class="at" style="color: #657422;">data =</span> dia_train)</span></code></pre></div>
@@ -2204,27 +2202,27 @@ Silge, Max Kuhn, 와/과 Julia. 일자 없음. <em>14 Iterative Search | Tidy Mo
 <li id="fn17"><p>e.g.&nbsp;ensemble, stacking, super learner↩︎</p></li>
 <li id="fn18"><p>관심있는 분들은 see <a href="https://stacks.tidymodels.org/articles/basics.html">here</a>↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
-  author = {Taemo Bang},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
   title = {tidyvese principle로 머신러닝 하기},
   date = {2022-04-04},
-  url = {https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html},
+  url = {https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas">
-Taemo Bang. 2022. <span>“tidyvese principle로 머신러닝 하기.”</span>
-April 4, 2022. <a href="https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html">https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“tidyvese principle로 머신러닝 하기.”</span> April
+4, 2022. <a href="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/">https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/</a>.
 </div></div></section></div> ]]></description>
   <category>Statistical/Machine Learning</category>
   <category>R</category>
-  <guid>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html</guid>
+  <guid>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html</guid>
   <pubDate>Sun, 03 Apr 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>tidyverse principle로 시계열 자료 분석하기</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</link>
+  <link>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html</link>
   <description><![CDATA[ 
 
 
@@ -2350,7 +2348,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2364,7 +2362,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"3"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2381,7 +2379,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2010","2":"cherry","3":"NA"},{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2389,7 +2387,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"3"},{"1":"2014","2":"kiwi","3":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2403,7 +2401,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"NA"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"NA"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2418,7 +2416,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"0"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"0"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2433,7 +2431,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"40"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"40"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"38"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"38"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2449,7 +2447,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"8"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"9"},{"1":"2011","2":"kiwi","3":"8"},{"1":"2012","2":"kiwi","3":"8"},{"1":"2013","2":"kiwi","3":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2466,7 +2464,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"10"},{"1":"2010","2":"kiwi","3":"4"},{"1":"2011","2":"kiwi","3":"2"},{"1":"2012","2":"kiwi","3":"4"},{"1":"2013","2":"kiwi","3":"9"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"1.0"},{"1":"2012","2":"cherry","3":"NA"},{"1":"2013","2":"cherry","3":"5.5"},{"1":"2014","2":"cherry","3":"10.0"},{"1":"2010","2":"kiwi","3":"9.0"},{"1":"2011","2":"kiwi","3":"8.0"},{"1":"2012","2":"kiwi","3":"8.0"},{"1":"2013","2":"kiwi","3":"3.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2489,7 +2487,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"1"},{"1":"2013","2":"cherry","3":"1"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"10"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"7"},{"1":"2014","2":"cherry","3":"9"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"6"},{"1":"2012","2":"kiwi","3":"6"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2506,7 +2504,7 @@ $purrr
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"2"},{"1":"2012","2":"cherry","3":"1"},{"1":"2013","2":"cherry","3":"5"},{"1":"2014","2":"cherry","3":"5"},{"1":"2010","2":"kiwi","3":"7"},{"1":"2011","2":"kiwi","3":"10"},{"1":"2012","2":"kiwi","3":"6"},{"1":"2013","2":"kiwi","3":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["fruit"],"name":[2],"type":["chr"],"align":["left"]},{"label":["kilo"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"2011","2":"cherry","3":"8"},{"1":"2012","2":"cherry","3":"7"},{"1":"2013","2":"cherry","3":"9"},{"1":"2014","2":"cherry","3":"9"},{"1":"2010","2":"kiwi","3":"1"},{"1":"2011","2":"kiwi","3":"6"},{"1":"2012","2":"kiwi","3":"5"},{"1":"2013","2":"kiwi","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -2567,7 +2565,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/olympic-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/olympic-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2586,7 +2584,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/season-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/season-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2598,7 +2596,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/subseries-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/subseries-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2611,7 +2609,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/lag-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/lag-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2624,7 +2622,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/acf-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/acf-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2661,7 +2659,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/classical-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/classical-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2680,7 +2678,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/STL-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/STL-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2799,7 +2797,7 @@ $purrr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/melbourne-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/melbourne-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -2974,7 +2972,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/forecast-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2997,7 +2995,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/cafe-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3042,7 +3040,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_trend-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/cafe_trend-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -3057,13 +3055,13 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/cafe_seasonal-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/cafe_seasonal-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>연별 계절패턴의 경우 주별로 대개 비슷하나, 북방 지역(the Northern Territory)의 경우 다른 주들과는 크게 다른 계쩔 패턴을 보여주고 있습니다. 마지막으로, prophet의 예측도 <code>forecast()</code>를 이용해 쉽게 수행할 수 있습니다. 향후 2년에 대해 예측해보았습니다:</p>
-<div class="cell" data-layout-align="center" data-hash="tidy-tools-for-timeseries-tidyverts_cache/html/forecast_prophet_a4de5ea269e7a57186e7a3499e7ce2dd">
+<div class="cell" data-layout-align="center" data-hash="index_cache/html/forecast_prophet_d23fe18ea969b6f1075c6ebbb64322d2">
 <div class="sourceCode cell-code" id="cb50" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1">fc <span class="ot" style="color: #003B4F;">&lt;-</span> fit <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
 <span id="cb50-2">  <span class="fu" style="color: #4758AB;">forecast</span>(<span class="at" style="color: #657422;">h =</span> <span class="dv" style="color: #AD0000;">24</span>)</span>
 <span id="cb50-3">cafe <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
@@ -3073,7 +3071,7 @@ Model: ETS(M,A,A)
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts_files/figure-html/forecast_prophet-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index_files/figure-html/forecast_prophet-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -3152,16 +3150,16 @@ Model: ETS(M,A,A)
   author = {방태모},
   title = {tidyverse principle로 시계열 자료 분석하기},
   date = {2022-03-11},
-  url = {https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle},
+  url = {https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/},
   langid = {ko}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
 방태모. 2022. <span>“tidyverse principle로 시계열 자료 분석하기.”</span>
-March 11, 2022. <a href="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle">https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle</a>.
+March 11, 2022. <a href="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/">https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/</a>.
 </div></div></section></div> ]]></description>
   <category>Time Series</category>
   <category>R</category>
-  <guid>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html</guid>
+  <guid>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html</guid>
   <pubDate>Thu, 10 Mar 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" medium="image" type="image/jpeg"/>
 </item>

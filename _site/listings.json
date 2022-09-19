@@ -9,27 +9,27 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html",
+      "/posts/2022-09-12-statistics-playbook-1/index.html",
       "/posts/2022-08-07-coloring-guide-for-ggplot2/index.html",
-      "/posts/2022-06-08-monthly-memory-202204/memory-202204.html",
-      "/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html",
-      "/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html",
-      "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",
-      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html",
-      "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html"
+      "/posts/2022-06-08-monthly-memory-202204/index.html",
+      "/posts/2022-05-24-paper-review-simes-et-al-2022/index.html",
+      "/posts/2022-05-13-how-to-review-a-paper/index.html",
+      "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html",
+      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html",
+      "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html"
     ]
   },
   {
     "listing": "/archive.html",
     "items": [
-      "/posts/2022-09-12-statistics-playbook-1/statistics-playbook-1.html",
+      "/posts/2022-09-12-statistics-playbook-1/index.html",
       "/posts/2022-08-07-coloring-guide-for-ggplot2/index.html",
-      "/posts/2022-06-08-monthly-memory-202204/memory-202204.html",
-      "/posts/2022-05-24-paper-review-simes-et-al-2022/paper-review-simes-et-al-2022.html",
-      "/posts/2022-05-13-how-to-review-a-paper/how-to-review-a-paper.html",
-      "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",
-      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html",
-      "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html"
+      "/posts/2022-06-08-monthly-memory-202204/index.html",
+      "/posts/2022-05-24-paper-review-simes-et-al-2022/index.html",
+      "/posts/2022-05-13-how-to-review-a-paper/index.html",
+      "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html",
+      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html",
+      "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html"
     ]
   }
 ]

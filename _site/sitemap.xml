@@ -62,15 +62,15 @@
   </url>
   <url>
     <loc>https://taemobang.com/index.html</loc>
-    <lastmod>2022-09-19T12:53:15.000Z</lastmod>
+    <lastmod>2022-09-19T13:20:05.980Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/blog.html</loc>
-    <lastmod>2022-09-19T12:53:16.940Z</lastmod>
+    <lastmod>2022-09-19T13:20:07.950Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/archive.html</loc>
-    <lastmod>2022-09-19T12:53:25.050Z</lastmod>
+    <lastmod>2022-09-19T13:20:08.660Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
@@ -78,6 +78,34 @@
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index.html</loc>
-    <lastmod>2022-09-19T12:53:14.470Z</lastmod>
+    <lastmod>2022-09-19T13:19:16.840Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html</loc>
+    <lastmod>2022-09-19T12:59:30.100Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html</loc>
+    <lastmod>2022-09-19T13:08:07.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html</loc>
+    <lastmod>2022-09-19T13:17:27.800Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/index.html</loc>
+    <lastmod>2022-09-19T13:18:01.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/index.html</loc>
+    <lastmod>2022-09-19T13:18:19.740Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/index.html</loc>
+    <lastmod>2022-09-19T13:18:42.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</loc>
+    <lastmod>2022-09-19T13:19:43.220Z</lastmod>
   </url>
 </urlset>

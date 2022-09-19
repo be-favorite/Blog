@@ -17,6 +17,7 @@ comments: false
 
 ```{r write-redirects}
 #| echo: false
+#| warning: false
 # list names of post folders, 
 # adapted from Dr. Danielle Navarro,
 # a legit Data Witch

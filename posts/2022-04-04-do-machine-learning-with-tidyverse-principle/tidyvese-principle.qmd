@@ -1,0 +1,572 @@
+---
+title: "tidyvese principle로 머신러닝 하기"
+description: |
+  tidymodels ecosystem 소개
+date: "2022-04-04"
+draft: FALSE
+preview: preview.jpg
+citation:
+  url: https://quarto-taemo.netlify.app/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html
+categories: [Statistical/Machine Learning, R]
+bibliography: references.bib
+---
+
+```{r distill-setup, include = FALSE}
+# 본 포스트 영어 제목: Do machine learning with tidyverse principle
+# 본 포스트 한글 제목: tidyvese principle로 머신러닝 하기
+# echo - Display code in output document (default = TRUE)
+# eval - Run code in chunk (default = TRUE)
+library(rmarkdown)
+library(rmdformats)
+library(tweetrmd)
+```
+
+[![Photo by Makcus Wincler on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/f57lx37DCM4?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
+<aside>
+
+본 글은 [@plieningera]를 기반으로 작성되었습니다.
+
+</aside>
+
+tidymodels ecosystem은 R에서 머신러닝을 tidyverse principle로 수행할 수 있게끔 해주는 패키지 묶음입니다. 전처리, 시각화부터 모델링, 예측까지 모든 과정을 "tidy" framework로 진행하게 해주죠. tidymodels은 `{caret}`[^1]을 완벽하게 대체하며, 더 빠르게 그리고 더 직관적인 코드로 모델링을 수행할 수 있습니다. `{tidymodels}`는 모델링에 필요한 패키지들의 묶음이라고 보면 됩니다. `{tidyverse}`처럼 `{tidymodels}`를 로딩하면 모델링에 쓰이는 여러 패키지의 묶음을 불러와줍니다. 그중에는 {ggplot2}와 {dplyr} 같은 {tidyverse}에 포함되는 패키지들도 있습니다. 본격적으로 튜토리얼을 시작하기 전에 필요한 패키지와 데이터를 먼저 불러오겠습니다.
+
+[^1]: R에서 머신러닝을 수행할 때 주로 사용되었던 패키지
+
+```{r, warning = FALSE}
+library(tidymodels)
+library(ggrepel) # for geom_label_repel()
+library(corrplot) # for corrplot()
+ggplot2::theme_set(theme_light())
+```
+
+본 튜토리얼에서 이용할 toy data는 ``` diamonds{ggplo2}``r emo::ji("gem") ```입니다. 해당 데이터는 다이아몬드의 등급과 크기 및 가격에 관한 정보를 갖습니다:
+
+```{r}
+data(diamonds)
+glimpse(diamonds)
+```
+
+다음은 우리가 모델링에 사용할 features($X$)들의 상관계수 행렬을 시각화 한 것이며, 상관계수 행렬을 다이아몬드의 가격(price, $y$) 열의 상관계수의 절댓값을 기준으로 내림차순 정렬하여 그린 것입니다.
+
+```{r, fig.align = "center", out.width = "80%", cache = TRUE}
+set.seed(1)
+diamonds %>% 
+  sample_n(2000) %>% 
+  mutate_if(is.factor, as.numeric) %>%
+  cor %>% 
+  {.[order(abs(.[, "price"]), decreasing = TRUE),
+     order(abs(.[, "price"]), decreasing = TRUE)]} %>% 
+  corrplot(method = "number", type = "upper", 
+           mar = c(0, 0, 1.5, 0), tl.col = "black")
+```
+
+toy data를 이용해 `{tidymodels}`의 전반적인 진행 과정을 보여주는 예제이기 때문에, 상관계수 행렬 그림은 전체 데이터가 아닌 2,000개만을 샘플링하여 그렸습니다.
+
+## 1 데이터 분할: {rsample}
+
+tidymodels ecosystem을 구성하는 패키지들 중 가장 먼저 소개할 친구는 데이터 분할에 쓰이는 `{rsample}`입니다. 본 예제의 마지막 단계에서 시험 자료(test data)를 기반으로 모형의 예측 성능을 평가할 것이기 때문에, 먼저 데이터를 훈련 자료(training data), 시험 자료로 분할해야 합니다. 이번에도 모형 적합 및 교차 검증을 이용한 모수 튜닝 단계에서의 계산 비용 절감을 위해, 훈련 자료의 비율을 10%로 낮게 잡아 데이터를 나눌 것입니다. 다음의 모든 과정은 `{rsample}` 패키지의 함수들로 진행됩니다. 패키지 또는 함수의 이름이 직관적이고 인간 친화적이면 그 역할을 기억하기 쉬운데, 앞으로 소개할 `{tidymodels}`를 구성하는 패키지와 패키지를 이루는 함수들의 이름은 대부분 이러한 점을 고려하여 네이밍이 되어있습니다.`r emo::ji("blush")`
+
+```{r, cache = TRUE}
+set.seed(1)
+dia_split <- initial_split(diamonds, prop = .1, strata = price)
+dia_train <- training(dia_split)
+dia_test <- testing(dia_split)
+cat("the number of observations in the training set is ", 
+    nrow(dia_train), 
+    ".\n",
+     "the number of observations in the test set is ", 
+    nrow(dia_test), ".", 
+    sep = "")
+```
+
+## 2 데이터 전처리 및 Feature Engineering: {recipes} {#데이터-전처리-및-feature-engineering-recipes}
+
+다음으로는 `{recipes}`를 이용하여, 데이터 전처리 및 Feature Engineering을 수행한다. recipe는 요리법이라는 뜻뿐만 아니라 특정 결과를 가져올 듯한 방안의 뜻[^2]도 갖습니다. 이럴 때마다 영어권의 R 유저들이 부럽습니다. 패키지나 함수 이름을 통해 그 역할을 기억하고 필요할 때 꺼내쓰기가 좀 더 편하지 않을까 하는 생각이 드네요. `{recipes}`의 `step_*()` 함수들을 이용해 모델링에 사용할 자료를 준비[^3]할 수 있습니다. 다음의 산점도는 다이아몬드의 가격(price)과 carat 사이에 비선형적인 관계가 있음을 암시하며, 이러한 관계는 carat의 다항함수를 변수로 도입하여 모델링에 반영할 수 있습니다.
+
+[^2]: a method or an idea that seems likely to have a particular result
+
+[^3]: 이른바, "전처리"(preprocessing)라고 표현하기도 합니다.
+
+```{r, fig.align = "center", out.width = "80%", cache = TRUE}
+qplot(carat, price, data = dia_train) +
+  scale_y_continuous(trans = log_trans(), labels = function(x) round(x, -2)) +
+  geom_smooth(method = "lm", formula = "y ~ poly(x, 4)") +
+  labs(title = "The degree of the polynomial is a potential tuning parameter")
+```
+
+`recipe()`는 자료와 모형식을 인수로 하며, `step_*()` 함수들을 이용하여 step by step`r emo::ji("mans_shoe")`으로 다양한 전처리를 수행할 수 있게끔 해줍니다.[^4] 여기서는 $y$에 로그 변환(`step_log()`)을 수행하고, 연속형 예측변수[^5]에 표준화(중심화 및 척도화, `step_normalize()`), 범주형 예측변수는 더미 변수화(`step_dummy()`)를 수행합니다. 그리고, `step_poly()`를 이용해 carat의 2차 효과를 반영해주었습니다. 준비가 끝난 recipe 객체는 `prep()` 함수를 통해 자료에 수행된 전처리들을 확인할 수 있다.
+
+[^4]: see, e.g. \`vignette("Simple_Example", package = "recipes")\`
+
+[^5]: 예측변수는 predictor를 말하며, features와 동의어라 볼 수 있음
+
+```{r}
+dia_rec <- recipe(price ~ ., data = dia_train) %>% 
+  step_log(all_outcomes()) %>% 
+  step_normalize(all_predictors(), -all_nominal()) %>% 
+  step_dummy(all_nominal()) %>% 
+  step_poly(carat, degree = 2)
+prep(dia_rec)
+```
+
+recipe 객체에 `prep()`를 적용한 것에 `juice()`를 수행하면 전처리가 수행된 자료를 추출할 수 있죠.
+
+```{r}
+dia_juiced <- juice(prep(dia_rec))
+glimpse(dia_juiced)
+```
+
+또한, recipe 객체에 `prep()`를 적용한 것에 `juice()`가 아닌 `bake()`를 수행하면 새로운 자료에 recipe 객체에 수행했던 것과 같은 전처리를 수행할 수 있습니다. 예를 들어, 다음은 시험 자료에 대해 훈련 자료에 수행한 전처리를 수행한 뒤에 해당 자료를 추출하라는 것과 같죠. 시험 자료의 예측을 통한 모형의 성능평가에는 사전에 훈련자료와 동일한 전처리가 필요로되는데, `bake()`는 이러한 시간을 크게 단축시켜줍니다.
+
+```{r}
+glimpse(
+  bake(prep(dia_rec), dia_test)
+)
+```
+
+## 3 모형 정의 및 적합: {parsnip}
+
+이제 훈련 자료에 대한 기본적인 전처리가 끝났으므로, `{parsnip}`을 이용하여 모형을 정의하고 적합하려고 합니다. `{parsnip}`은 우리나라 말로 연노란색의 긴 뿌리채소를 뜻하는데, 왜 이렇게 네이밍이 된 지는 아직 잘 모르겠습니다. 영어권의 원어민들은 어떻게 생각할지 궁금하네요. `{parsnip}`은 인기 있는 수많은 머신러닝 알고리즘[^6]을 제공해줍니다. 그리고, 최대 장점은 단일화된 인터페이스로 여러 모형을 적합할 수 있다는 점이죠. 예를 들어, 랜덤포레스트를 제공하는 두 패키지 `{ranger}`와 `{randomForest}`에는 고려할 트리의 개수를 지정하는 모수가 존재하는데 해당 옵션의 이름이 각각 `ntree`, `num.trees`로 다릅니다. 이는 사용자들에게 꽤 불편한 점일 수 있는데, `{parsnip}`은 이러한 문제를 해결해줌으로써 두 인터페이스를 모두 기억할 필요가 없게끔 해줍니다.
+
+[^6]: see, [For a list of models available via parsnip](https://tidymodels.github.io/parsnip/articles/articles/Models.html)
+
+`{parsnip}`에서는 먼저 특정 함수를 통해 모형을 정의하고[^7], `set_mode()`로 어떤 문제[^8]를 해결할 것인지 설정한 뒤에, 마지막으로 어떤 시스템 또는 패키지를 이용하여 해당 모형을 적합할지를 `set_engine()`으로 설정합니다. 여기서는 먼저 `stats::lm()` 엔진을 이용하여 기본적인 회귀모형으로 적합을 시작해 보겠습니다.
+
+[^7]: e.g. `linear_reg()`, `rand_forest()`
+
+[^8]: regression 또는 classification
+
+```{r}
+lm_model <- linear_reg() %>% 
+  set_mode("regression") %>% 
+  set_engine("lm")
+```
+
+본격적인 모형 적합 전에, 앞서 언급했던 `{parsnip}`의 장점을 확인해보기 위해 랜덤포레스트를 예로 들어보겠습니다. 랜덤포레스트 모형의 적합에는 `{ranger}` 또는 `{randomForest}`를 이용할 수 있는데, 서로 조금 다른 인터페이스를 지닌다고 했었습니다. `{parsnip}`은 다음과 같이 엔진 설정 전에 `{parsnip}`만의 함수로 먼저 모형을 정의하고 해당 함수에서 모수를 설정함으로써 서로 다른 인터페이스를 통합하여줍니다.
+
+```{r}
+rand_forest(mtry = 3, trees = 500, min_n = 5) %>% 
+  set_mode("regression") %>% 
+  set_engine("ranger", importance = "impurity_corrected")
+```
+
+이제 다시 회귀모형으로 돌아오겠습니다. 설정했던 기본적인 회귀모형을 전처리를 완료한 훈련 자료에 적합해 줍니다.
+
+```{r, cache = TRUE}
+lm_fit1 <- fit(lm_model, price ~ ., dia_juiced)
+lm_fit1
+```
+
+예제에서 사용되진 않았지만, `step_rm()`을 이용하여 사전에 모델링에 필요 없는 변수는 제거할 수도 있습니다.
+
+## 4 적합된 모형 요약: {broom}
+
+R에서 여러 모형 객체들의 요약은 `summary()` 또는 `coef()`와 같은 함수로 이루어집니다. 그러나, 이러한 함수들의 출력물은 [타이디한 포맷](https://tidyr.tidyverse.org/articles/tidy-data.html)[^9]으로 주어지지 않습니다. `{broom}` 패키지는 적합 된 모형의 요약을 타이디한 포맷으로 제공해줍니다. broom은 빗자루와 같은 브러쉬를 의미하는 명사인데, 적합한 모형을 깨끗하게 쓸어 담는 패키지라고 생각하면 기억하기 쉽지 않을까 싶습니다. 이와 같이 패키지 이름, 함수 이름 하나하나를 신중하게 네이밍하는 일관성은 {tidyverse}, {tidymodels}에 포함되는 패키지들의 공통된 좋은 특징이라 할 수 있다. 실제로 [R4DS](https://bookdown.org/sulgi/r4ds/)[^10] 책에서도 Hadley Wickham은 객체의 이름이나 함수의 이름을 설정하는 것에 있어서 어느정도의 시간을 투자하는 것은 전혀 아깝지 않다고 말하기도 했습니다.
+
+[^9]: 일반적으로는 행이 관측치 열이 변수인 포맷을 말하나, 이러한 형식이 데이터를 다루는 것에 있어서 항상 정답이라는 것은 아님
+
+[^10]: [원서](https://r4ds.had.co.nz)
+
+`{broom}` 패키지를 구성하는 첫 번째 함수로 `glance()`를 소개합니다. glance는 힐끗 본다는 뜻을 갖는다는 점에서 추측할 수 있듯이, 적합된 모형의 전체적인 정보를 간략히 제공해줍니다.
+
+```{r, eval = FALSE}
+glance(lm_fit1$fit)
+```
+
+```{r, echo = FALSE}
+paged_table(glance(lm_fit1$fit))
+```
+
+적합된 모형의 수정된 $R^2$ 값(`adj.r.squared`)은 약 98.27%로 상당히 높은 설명력을 보여줍니다. RMSE는 `sigma` 열에서 확인할 수 있습니다. 다음으로 `tidy()`는 추정된 모수에 대한 정보를 제공합니다. 다음의 결과에서 우리는 `carat`의 2차 효과가 유의하게 존재함을 알 수 있습니다. 통계량의 크기를 기준으로 내림차순으로 정렬하여 표시하였습니다.
+
+```{r, eval = FALSE}
+tidy(lm_fit1) %>% 
+    arrange(desc(abs(statistic)))
+```
+
+```{r, echo = FALSE}
+tidy(lm_fit1) %>% 
+    arrange(desc(abs(statistic))) %>% 
+    paged_table()
+```
+
+마지막으로 `augment()`는 모형의 예측값, 적합값 등을 반환해줍니다. augment는 우리나라 말로 어떤 것의 양 또는 값, 크기 등을 늘리는 것[^11]을 뜻하는 동사로, 해당 함수도 이름을 통해 어느정도 그 역할을 가늠할 수 있죠.
+
+[^11]: to increase the amount, value, size, etc. of something
+
+```{r, eval = FALSE}
+lm_predicted <- augment(lm_fit1$fit, data = dia_juiced) %>% 
+  rowid_to_column()
+select(lm_predicted, rowid, price, .fitted:.std.resid)
+```
+
+```{r, echo = FALSE}
+lm_predicted <- augment(lm_fit1$fit, data = dia_juiced) %>% 
+  rowid_to_column()
+select(lm_predicted, rowid, price, .fitted:.std.resid) %>% 
+    paged_table()
+```
+
+앞서 생성한 `lm_predicted` 객체를 이용해 적합값과 관측값 간의 산점도를 그려보았습니다. 잔차의 크기가 2 이상인 관측치에 대해서는 해당 관측치의 행 번호를 붙여주었으며, 겹치는 점이 있는 경우를 고려하여 점에 투명도를 주었습니다.
+
+```{r, fig.align = "center", out.width = "80%", cache = TRUE}
+ggplot(lm_predicted, aes(.fitted, price)) +
+  geom_point(alpha = .2) +
+  ggrepel::geom_label_repel(aes(label = rowid),
+                            data = lm_predicted %>% filter(abs(.resid) > 2)) +
+  labs(x = "fitted values",
+       y = "observed values")
+```
+
+원자료의 각 행을 의미하는 두 단어 관측값(observed values)과 실제값(actual values)은 서로 통용되니 어떤 용어를 써도 문제가 없습니다. 특히, 머신러닝에서는 이를 데이터포인트(data point)라고 표현하기도 합니다. 3가지 용어 모두 통용되는 말이니 몰랐다면 알아둡시다. 모든 학문에서 그렇겠지만 통계학에서는 특히 정확한 용어 정의가 중요하므로, 비슷한 용어 또는 비슷한 듯 다른 용어들이 있다면 틈틈이 정리하는 습관을 갖는 것이 좋다.
+
+## 5 모형 성능 평가: {yardstick}
+
+위에서 `glance()`를 통해 적합된 모형의 성능을 RMSE, $R^2$를 통해 힐끗 확인할 수 있었습니다. `{yardstick}`은 모형의 성능에 대한 여러 측도를 계산하기 위한 패키지입니다. 물론, $y$가 연속형이든 범주형이든 문제없으며 교차 검증(Cross Validation, CV)에서 생산되는 그룹화된 예측값들과도 매끄럽게 잘 작동한다. yardstick은 기준, 척도를 뜻하는 명사에 해당하므로, 기억하기도 쉬울 것이라 생각합니다. 이제는 `{rsample}`, `{parsnip}`, `{yardstick}`으로 교차 검증을 수행하여 좀 더 정확한 RMSE를 추정해봅시다.
+
+다음 코드 블럭들에서 나타날 긴 파이프라인(pipeline, `%>%`)들을 정리해서 간략히 나타내면 다음과 같습니다. 천천히 음미해보시기 바랍니다:
+
+-   `rsample::vfold_cv()`를 훈련용 자료를 3-fold CV를 수행할 수 있도록 분할
+-   `rsample::analysis()`와 `rsample::assessment()`를 이용해 각 분할에서 모형 훈련용, 평가용 자료를 불러옴
+-   앞서 만든 모형 적합 전 전처리가 완료된 recipe 객체 `dia_rec`을 각 fold의 모형 훈련용 자료에 `prep`ped 시킴
+-   `prep`ed한 훈련용 자료를 `recipes::juice()`로 불러오고, `recipes::bake()`를 이용해 훈련용 자료에 처리한 것과 같은 처리를 평가용 자료에 수행
+-   `parsnip::fit()`으로 3개의 모형 적합용(analysis) 자료 각각에 모형을 적합(훈련)
+-   `predicted()`로 훈련시킨 각 모형으로 평가용(assessment) 자료를 예측
+
+```{r, eval = FALSE}
+set.seed(1)
+dia_vfold <- vfold_cv(dia_train, v = 3, strata = price)
+dia_vfold
+```
+
+```{r, echo = FALSE}
+set.seed(1)
+dia_vfold <- vfold_cv(dia_train, v = 3, strata = price)
+dia_vfold %>% 
+    paged_table()
+```
+
+```{r, eval = FALSE}
+lm_fit2 <- mutate(dia_vfold,
+                  df_ana = map(splits, analysis),
+                  df_ass = map(splits, assessment))
+lm_fit2
+```
+
+```{r, echo = FALSE}
+lm_fit2 <- mutate(dia_vfold,
+                  df_ana = map(splits, analysis),
+                  df_ass = map(splits, assessment))
+lm_fit2 %>% 
+    paged_table()
+```
+
+```{r, eval = FALSE, cache = TRUE}
+lm_fit3 <- lm_fit2 %>% 
+  mutate(
+    recipe = map(df_ana, ~prep(dia_rec, training = .x)),
+    df_ana = map(recipe, juice),
+    df_ass = map2(recipe,
+                  df_ass, ~bake(.x, new_data = .y))) %>% 
+  mutate(
+    model_fit = map(df_ana, ~fit(lm_model, price ~ ., data = .x))) %>% 
+  mutate(
+    model_pred = map2(model_fit, df_ass, ~predict(.x, new_data = .y)))
+select(lm_fit3, id, recipe:model_pred)
+```
+
+```{r, echo = FALSE}
+lm_fit3 <- lm_fit2 %>% 
+  mutate(
+    recipe = map(df_ana, ~prep(dia_rec, training = .x)),
+    df_ana = map(recipe, juice),
+    df_ass = map2(recipe,
+                  df_ass, ~bake(.x, new_data = .y))) %>% 
+  mutate(
+    model_fit = map(df_ana, ~fit(lm_model, price ~ ., data = .x))) %>% 
+  mutate(
+    model_pred = map2(model_fit, df_ass, ~predict(.x, new_data = .y)))
+select(lm_fit3, id, recipe:model_pred) %>% 
+    paged_table()
+```
+
+여기서 tidymodels ecosystem의 마법을 확인할 수 있습니다. 위 과정에서 확인했다시피, 꽤 복잡한 과정들이 단 하나의 티블 객체 `lm_fit2`에서 이루어졌습니다. 이렇게 복잡한 작업이 단 하나의 티블 객체만으로 이루어질 수 있었던 이유는, 티블은 리스트-열(list-column)을 가질 수 있기 때문이죠. 덕분에 우리는 R에서 연산이 느린 반복문(e.g. `for()`, `while()`)을 사용하지 않고, `purrr::map()`을 loop로 이용하여 반복문을 통한 지루하고 느린 모델링 작업을 완벽한 함수형 프로그래밍으로 수행할 수 있게 되었습니다. R 사용자라면 어디서 한번 쯤은 반복문의 사용은 지양하고, 함수형 프로그래밍을 해야 한다고 들어봤을 것입니다. `{tidymodels}`이 모델링 과정을 `{tidyverse}`와 함께 작동할 수 있게 해줌으로써, 한 자료에 대해서 여러 가지 모형의 적합, 교차검증을 통한 모수 튜닝, 예측 성능평가 등의 작업을 통해 경험적으로(empirically) 최적의 모형을 선택하는 수고가 필요한 머신러닝에 드는 시간을 상당히 줄여줬다고 할 수 있습니다.
+
+이쯤 되면 제가 왜 `{tidyverse}`를 좋아하고, `{tidymodels}`의 튜토리얼을 이렇게 상세하게 기술하는지 이해하실 거라고 생각합니다. 이제 평가용 자료로부터 실제 관측값(`price`)을 추출하여 예측값(`.pred`)과 비교한 뒤, `yardstick::metrics()`를 이용해 여러 평가 측도를 계산해보려고 합니다.
+
+```{r, eval = FALSE}
+lm_preds <- lm_fit3 %>% 
+  mutate(res = map2(df_ass, model_pred, ~data.frame(price = .x$price, 
+                                                    .pred = .y$.pred))) %>% 
+  select(id, res) %>% 
+  tidyr::unnest(res) %>% 
+  group_by(id)
+lm_preds
+```
+
+```{r, echo = FALSE}
+lm_preds <- lm_fit3 %>% 
+  mutate(res = map2(df_ass, model_pred, ~data.frame(price = .x$price, 
+                                                    .pred = .y$.pred))) %>% 
+  select(id, res) %>% 
+  tidyr::unnest(res) %>% 
+  group_by(id)
+lm_preds %>% 
+    paged_table()
+```
+
+```{r, eval = FALSE}
+metrics(lm_preds, truth = price, estimate = .pred)
+```
+
+```{r, echo = FALSE}
+metrics(lm_preds, truth = price, estimate = .pred) %>% 
+    paged_table()
+```
+
+여기서 계산한 평가 측도의 값은 out-of-sample에 대한 성능이므로 모형 적합값에 대해 평가 측도를 계산한 `glance(lm_fit1$fit)`의 결과와 비교하여 보면 당연히 조금은 떨어지는 성능을 보입니다. `metrics()`는 연속형 outcome($y$)에는 위와 같이 RMSE, $R^2$, MAE를 기본적인 측도로 제공해줍니다. 물론, 범주형 outcome에 대해서도 다른 기본적인 측도를 제공해주죠. 또한, 하나의 측도만으로 비교하길 원한다면 `rmse()`와 같이 RMSE 값만을 제공해주는 함수도 이용할 수 있으며, `metric_set()`을 이용하면 원하는 metrics들을 직접 커스텀하여 정의할 수도 있습니다.
+
+3-fold CV를 통해 훈련 자료를 분할 및 전처리하고 예측값을 구하여 RMSE를 계산하는 과정을 담은 앞선 코드블럭들은 `{tidyverse}`, `{tidymodels}`에 익숙한 사람이라면 편하게 읽어나가실 수 있을겁니다. 그러나, 코드가 매우 긴 것도 사실입니다. 사실, 위 코드블럭은 다음 섹션에서 소개할 `{tune}` 패키지를 이용하면 다음과 같이 단 몇 줄로 간결하게 코딩할 수 있습니다.
+
+```{r, eval = FALSE, cache = TRUE}
+control <- control_resamples(save_pred = TRUE)
+set.seed(1)
+lm_fit4 <- fit_resamples(lm_model, dia_rec, dia_vfold, control = control)
+lm_fit4 %>% 
+    pull(.metrics)
+```
+
+```{r, echo = FALSE}
+control <- control_resamples(save_pred = TRUE)
+set.seed(1)
+lm_fit4 <- fit_resamples(lm_model, dia_rec, dia_vfold, control = control)
+lm_fit4 %>% 
+    pull(.metrics)
+```
+
+## 6 모형의 모수 튜닝: {tune}, {dials}
+
+tune은 조정하다[^12] 라는 뜻을 갖는 동사이며, 말 그대로 `{tune}` 패키지는 모수를 튜닝(조율)하는(e.g. via grid search) 함수들을 제공합니다. 그리고, 어떤 것을 조정하는 다이얼[^13]을 의미하는 이름을 갖는 `{dials}` 패키지는 `{tune}`을 통해 튜닝할 모수들을 정하는 역할을 합니다. 즉, `{tune}`과 `{dials}`는 대개 함께 쓰이는 패키지라고 보면 됩니다. 본 예제에서는 랜덤포레스트 모형을 튜닝하는 과정을 보여줄 것입니다.
+
+[^12]: to make changes to an engine so that it runs smoothly and as well as possible
+
+[^13]: the round control on a radio, cooker, etc. that you turn in order to change something
+
+### 6.1 튜닝을 위한 {parsnip} 모형 객체 준비 {#튜닝을-위한-parsnip-모형-객체-준비}
+
+첫 번째로, 랜덤포레스트 모형을 형성할 때 매 트리 적합시 고려할 변수들의 개수를 조정하는 `mtry` 모수를 조율해줍니다. `tune()`을 placeholder로 하여 후에 교차검증을 통해 최적의 `mtry`를 선정할 입니다.
+
+다음 코드블럭의 출력물은 `mtry`의 기본 최솟값은 1이고 최댓값은 자료에 의존함을 의미합니다. 어떤 자료를 다루느냐에 따라 feature의 수는 다르므로, 따로 지정하지 않는한 `mtry`의 최댓값은 자료에 의존하게 됩니다.
+
+```{r}
+rf_model <- rand_forest(mtry = tune()) %>% 
+  set_mode("regression") %>% 
+  set_engine("ranger")
+parameters(rf_model)
+mtry()
+```
+
+아직 랜덤포레스트 모형의 적합에 쓰이는 모수 값을 결정하지 않았으므로 모형을 훈련 자료에 적합할 준비가 된 상태가 아니라고 할 수 있습니다. 그리고, `mtry`의 최댓값은 `update()`를 사용해 원하는 값을 명시할 수도 있고, 또는 `finalize()`를 사용해 해당 자료가 갖는 예측변수의 수로 지정할 수도 있죠.
+
+```{r}
+rf_model %>% 
+  parameters() %>% 
+  update(mtry = mtry(c(1L, 5L)))
+```
+
+```{r}
+rf_model %>% 
+  parameters() %>% 
+  finalize(x = juice(prep(dia_rec)) %>% select(-price)) %>% 
+  pull("object")
+```
+
+### 6.2 튜닝을 위한 자료 준비: {recipes} {#튜닝을-위한-자료-준비-recipes}
+
+두 번째로 튜닝하고 싶은 것은 `carat`의 다항식 차수입니다. [2 데이터 전처리 및 Feature Engineering: {recipes}](#데이터-전처리-및-feature-engineering-recipes)의 그림에서 확인했듯이, 최대 4차까지의 다항식이 자료에 잘 적합 될 수 있음을 알 수 있습니다. 그러나, 우리는 모수 절약의 원칙(priciplt of parsimony)[^14]을 생각할 필요가 있고, 그에 따라 더 간단한 모형도 자료에 잘 적합 될 수 있다는 가능성을 배제해서는 안됩니다. 그래서, `carat`의 다항식 차수 또한 교차 검증을 통해 최대한 간단하면서 좋은 성능을 내는 `carat`의 차수를 찾을 것입니다.
+
+[^14]: 또는 Occam's razor
+
+모형의 적합에서 각 모형이 갖는 고유한 초모수[^15]와 달리 예측변수 `carat`의 차수는 `{recipe}`를 통해 새로운 레시피 객체를 만들어 튜닝이 진행됩니다. 그 과정은 초모수를 튜닝했던 과정과 유사합니다. 다음과 같이 `step_poly()`에 `tune()`을 사용하여 훈련 자료(`dia_train()`)에 대한 2번째 레시피 객체를 만들어 줍니다.
+
+[^15]: 모수라는 뜻을 갖는 parameters보다는 모형 적합 사전에 미리 설정이 필요로 되는 모수를 뜻하는 초모수의 뜻을 갖는 hyperparameters라는 용어가 더 정확할 것이다
+
+```{r}
+dia_rec2 <- recipe(price ~ ., data = dia_train) %>% 
+  step_log(all_outcomes()) %>% 
+  step_normalize(all_predictors(), -all_nominal()) %>% 
+  step_dummy(all_nominal()) %>% 
+  step_poly(carat, degree = tune())
+
+dia_rec2 %>% 
+  parameters() %>% 
+  pull("object")
+```
+
+고려하는 다항식의 차수 범위가 기본값으로 설정하여 [1, 3]으로 되어있는데, 이 부분은 다음 섹션에서 `{workflows}` 패키지를 소개하며 개선할 부분이니 신경 쓰지 않으셔도 됩니다.
+
+### 6.3 모든 것을 결합하기: {workflows} {#모든-것을-결합하기-workflows}
+
+workflow를 직역하면 어떤 작업의 흐름을 뜻하듯이, `{workflows}` 패키지는 `recipe`나 `model` 객체와 같은 머신러닝 파이프라인의 다른 부분이라 할 수 있는 것들을 한 번에 묶어주는 역할을 합니다.
+
+이를 위해서는 먼저 `workflow()`를 선언하여 객체를 만들고, [6.2 튜닝을 위한 자료 준비: {recipes}](#튜닝을-위한-자료-준비-recipes)에서 만든 `recipe` 객체와 [6.1 튜닝을 위한 {parsnip} 모형 객체 준비](#튜닝을-위한-parsnip-모형-객체-준비)에서 만든 랜덤포레스트 모형 객체를 `add_*()`로 결합해줍니다.
+
+```{r}
+rf_wflow <- workflow() %>% 
+  add_model(rf_model) %>% 
+  add_recipe(dia_rec2)
+rf_wflow
+```
+
+아직 `mtry`의 최댓값이 알려져있지 않고 `degree`의 최댓값이 기본 설정인 3으로 설정되어 있으므로, 두 번째로는 `rf_wflow` 객체의 모수 설정을 `update()`로 갱신할 것입니다.
+
+```{r}
+rf_param <- rf_wflow %>% 
+  parameters() %>% 
+  update(mtry = mtry(range = c(3L, 5L)),
+         degree = degree_int(range = c(2L, 4L)))
+rf_param %>% pull("object")
+```
+
+앞서 말했듯이 교차검증을 통해 튜닝을 수행할 것이기 때문에, 세 번째로는 설정한 모수들의 조합을 만들어야 합니다. 복잡한 튜닝 문제에는 `tune_bayes()`를 통한 [베이지안 최적화(Bayesian optimization)](https://www.tmwr.org/iterative-search.html#bayesian-optimization)[@silge]가 추천되지만, 해당 예제에서 고려하는 초모수들의 조합 정도는 grid search로도 충분해 보입니다. 다음과 같이 필요로 되는 모든 모수 조합의 grid를 만듭니다.
+
+```{r, eval = FALSE}
+rf_grid <- grid_regular(rf_param, levels = 3)
+rf_grid
+```
+
+```{r}
+rf_grid <- grid_regular(rf_param, levels = 3)
+rf_grid %>% 
+    paged_table()
+```
+
+여기서 levels는 grid를 만드는 데 사용되는 각 모수의 수에 대한 정숫값을 조정하는 옵션입니다. default 값이 levels = 3이므로 해당 옵션은 생략해도 문제없을 것입니다. 교차 검증을 통한 모수 튜닝에는 수많은 모형을 적합해야 하는데, 이 예제에서는 9개의 모수 집합과 3개의 folds를 사용하므로 총 $3 \times 9 = 27$개의 모형을 적합해야 한다. 27개의 모형을 빠르게 적합하기 위해 [병렬처리](https://www.tmwr.org/grid-search.html#parallel-processing)를 수행하려고 합니다. 이는 `{tune}` 패키지에서 직접적으로 지원받을 수 있습니다.
+
+```{r}
+library(doFuture)
+all_cores <- parallel::detectCores(logical = FALSE) - 1
+
+registerDoFuture()
+cl <- parallel::makeCluster(all_cores)
+plan(future::cluster, workers = cl)
+```
+
+이제 튜닝을 시작합니다.
+
+```{r, warning = FALSE, cache = TRUE}
+options(future.rng.onMisue = "ignore")
+rf_search <- tune_grid(rf_wflow, grid = rf_grid, resamples = dia_vfold,
+                       param_info = rf_param)
+```
+
+튜닝 결과는 `autoplot()`과 `show_best()`로 검토할 수 있습니다:
+
+```{r, fig.align = "center", out.width = "80%"}
+autoplot(rf_search, metric = "rmse")
+```
+
+$x$ 축은 `mtry`를 나타내며, 각 선의 색상은 고려한 다항식 차수를 나타냅니다. `mtry`는 5와 carat의 2차항까지 고려한 초모수 조합이 최적임을 알 수 있습니다. `show_best()`로도 확인할 수 있습니다:
+
+```{r, eval = FALSE}
+show_best(rf_search, "rmse", n = 9)
+```
+
+```{r, echo = FALSE}
+show_best(rf_search, "rmse", n = 9) %>% 
+    paged_table()
+```
+
+```{r, eval = FALSE}
+select_best(rf_search, metric = "rmse")
+```
+
+```{r, echo = FALSE}
+select_best(rf_search, metric = "rmse") %>% 
+    paged_table()
+```
+
+그리고, `select_by_one_std_err()`을 이용하면 원하는 metric 값의 $\pm 1SE$를 고려한 최적의 초모수 조합을 얻을 수도 있죠.
+
+```{r, eval = FALSE}
+select_by_one_std_err(rf_search, mtry, degree, metric = "rmse")
+```
+
+```{r, echo = FALSE}
+select_by_one_std_err(rf_search, mtry, degree, metric = "rmse") %>% 
+    paged_table()
+```
+
+### 6.4 선택한 최적의 모형으로 예측 수행
+
+[6.3 모든 것을 결합하기: {workflows}](#모든-것을-결합하기-workflows)에서 carat 변수는 2차항으로도 충분히 설명되고, 매 트리 적합 시 고려할 변수의 수는 5개임을 확인할 수 있었습니다. 이제는 해당 초모수 조합을 이용해 훈련 자료에 모형을 적합하고 최종 예측을 수행하려고 합니다. 이번 예제에서는 설정값이 똑같긴 하지만, $\pm 1SE$를 고려한 초모수 조합을 모형 적합에 사용하였습니다.
+
+```{r, warning = FALSE, cache = TRUE}
+rf_param_final <- select_by_one_std_err(rf_search, mtry, degree, metric = "rmse")
+rf_wflow_final <- finalize_workflow(rf_wflow, rf_param_final)
+rf_wflow_final_fit <- fit(rf_wflow_final, data = dia_train)
+```
+
+이제 적합된 모형객체 `rf_wflow_final_fit`으로 원하는 unobserved 자료[^16]를 `predict()`로 예측할 수 있다. 우리에게는 미리 나눠둔 시험 자료 `dia_test`가 있습니다. 다만, `dia_test`의 $y$는 로그변환이 취해지지 않았으므로, `predict(rf_wflow_final_fit, new_data = dia_test)`가 아닌 `{recipe}`로 `step_log()`를 취해주어야 합니다. 여기서는 workflow로부터 추출한 `prep`ped된 recipe 객체를 이용해 시험 자료에 대하여 `bake()`를 취할 것입니다. 그리고, baked된 시험 자료를 적합한 최종 모형을 통해 예측할하면 되죠. `bake()`가 이렇게나 편합니다:
+
+[^16]: 모형 적합에 쓰이지 않은 자료
+
+```{r, eval = FALSE}
+dia_rec3 <- pull_workflow_prepped_recipe(rf_wflow_final_fit)
+rf_final_fit <- pull_workflow_fit(rf_wflow_final_fit)
+
+dia_test$.pred <- predict(rf_final_fit,
+                          new_data = bake(dia_rec3, dia_test)) %>% pull(.pred)
+dia_test$logprice <- log(dia_test$price)
+
+metrics(dia_test, truth = logprice, estimate = .pred)
+```
+
+```{r, echo = FALSE}
+dia_rec3 <- pull_workflow_prepped_recipe(rf_wflow_final_fit)
+rf_final_fit <- pull_workflow_fit(rf_wflow_final_fit)
+
+dia_test$.pred <- predict(rf_final_fit,
+                          new_data = bake(dia_rec3, dia_test)) %>% pull(.pred)
+dia_test$logprice <- log(dia_test$price)
+
+metrics(dia_test, truth = logprice, estimate = .pred) %>% 
+    paged_table()
+```
+
+시험 자료에 대한 RMSE는 약 0.11로 교차 검증에서 계산된 RMSE보다는 조금 더 나은 성능을 보여줍니다.
+
+## 맺음말
+
+`{tidymodels}`의 ecosystem은 머신러닝 문제를 풀기 위해 필요한 첫 단계부터 끝까지 함께 작동하는 패키지들의 집합을 한대 묶어 제공해줍니다. 또한, `{tidyverse}`를 통한 data-wrangling 기능과 훌륭한 시각화 패키지 `{ggplot2}`와도 함께 작동하는 `{tidymodels}`은 R을 사용하는 데이터 사이언티스트들에게는 더없이 풍부한 toolbox라 할 수 있을 것 같습니다. 아울러, 해당 튜토리얼에서는 예측 모형들을 결합해주는[^17] 기능을 갖는 패키지 `{stacks}`에 대한 내용을 다루지 않았는데[^18], `{tidymodels}`을 불러올 때 로딩이 되는 패키지는 아니지만, `{stacks}` 또한 {tidymodels}의 한 부분으로 소개되는 패키지에 해당합니다. 그리고, tidymodels ecosystem을 "머신러닝"에만 국한시키기에는 너무나도 많은 기능들이 업데이트되고 있습니다. 최근엔 반복측정자료분석에 자주 쓰이는 모형 중 하나인 혼합효과모형(linear mixed model)까지 지원하기 시작했습니다:
+
+[^17]: e.g. ensemble, stacking, super learner
+
+[^18]: 관심있는 분들은 see [here](https://stacks.tidymodels.org/articles/basics.html)
+
+```{r, echo = FALSE}
+tweet_embed(tweet_url("topepos", "1507109429652725766"))
+```
+
+[tidyverse 블로그](https://www.tidyverse.org/blog/)를 꼭 팔로우업하세요. 본 튜토리얼은 20년 2월에 작성된 글을 기반으로 쓰여졌기 때문에 최신이라고 하긴 어렵습니다.😂 그러나, tidymodels ecosystem의 기본기를 익히기에는 충분할 겁니다. 이 튜토리얼이 `{tidymodels}`을 배우길 원하는, R로 머신러닝을 수행하길 원하는 우리나라 R 유저들에게 조금이나마 도움이 됐으면 좋겠습니다.
+
+::: {.callout-tip collapse="true"}
+## 세션정보를 보려면 누르세요
+
+```{r, echo = FALSE}
+library(sessioninfo)
+# save the session info as an object
+pkg_sesh <- session_info(pkgs = "attached")
+# get the quarto version
+quarto_version <- system("quarto --version", intern = TRUE)
+# inject the quarto info
+pkg_sesh$platform$quarto <- paste(
+  system("quarto --version", intern = TRUE), 
+  "@", 
+  quarto::quarto_path()
+  )
+# print it out
+pkg_sesh
+```
+:::

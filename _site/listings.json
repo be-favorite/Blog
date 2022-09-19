@@ -10,6 +10,7 @@
     "listing": "/blog.html",
     "items": [
       "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",
+      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html",
       "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html"
     ]
   },
@@ -17,6 +18,7 @@
     "listing": "/archive.html",
     "items": [
       "/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/tidyverse-1.html",
+      "/posts/2022-04-04-do-machine-learning-with-tidyverse-principle/tidyvese-principle.html",
       "/posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/tidy-tools-for-timeseries-tidyverts.html"
     ]
   }

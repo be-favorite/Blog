@@ -203,7 +203,7 @@ div.csl-indent {
   <li><a href="#음영만으로는-부족해" id="toc-음영만으로는-부족해" class="nav-link" data-scroll-target="#음영만으로는-부족해">음영만으로는 부족해</a></li>
   <li><a href="#전달하고-싶은-내용만-강조하자" id="toc-전달하고-싶은-내용만-강조하자" class="nav-link" data-scroll-target="#전달하고-싶은-내용만-강조하자">전달하고 싶은 내용만 강조하자</a></li>
   <li><a href="#라벨링-활용하기" id="toc-라벨링-활용하기" class="nav-link" data-scroll-target="#라벨링-활용하기">라벨링 활용하기</a></li>
-  <li><a href="#맺음-말" id="toc-맺음-말" class="nav-link" data-scroll-target="#맺음-말">맺음 말</a></li>
+  <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
@@ -746,10 +746,65 @@ dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
 </div>
 </div>
 </section>
-<section id="맺음-말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음-말">맺음 말</h2>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
 <p>분석을 시작하며 혼자 가볍게 EDA를 하는 단계에서 본 예제와 같이 시각화를 개선해나가는 작업은 필요로 되지 않을겁니다. 오히려 시간 낭비일수도 있구요. 그러나, 내가 얻은 인사이트를 전달하는 자리 또는 데이터를 기반으로 누군가를 설득해야하는 자리에서는 이 글에서 제공하는 몇 가지 방법이 꽤나 도움이 될 것이라고 생각합니다. 물론, 전달하고자 하는 내용이 한 눈에 들어도록 시각화를 수행하는 작업은 의외로 쉬울 때도 있지만, 꽤나 까다로운 과정을 거쳐야하는 상황도 존재합니다. 실무에서는 이와는 또다른 예상치 못한 까다로운 문제들을 겪는 상황들이 있을 수도 있구요. 다만, 본 글에서 그림의 퀄리티를 단계단계 개선해나간 바와 같이 전달하고자 하는 내용을 명확히하고 충분한 시간을 숙고해 그림을 개선해 나간다면, 뭐든 해결할 수 있을 것이라고 봅니다. 하고자 하는 시각화를 구현하지 못해낸다고 하더라도 그 과정 속에서 배우는 것은 분명히 존재할 것입니다. 처음부터 완벽하게 아름다운 시각화를 해낼 수 있는 사람은 없다는 것을 기억하셨으면 합니다.😁</p>
 <p>이번 포스팅을 준비하며 참고했던 글은 올해 봤던 데이터 시각화 관련 아티클 중 제게 가장 큰 임팩트를 주는 글이었습니다. 누구나 하는 평범한 시각화를 비범하게 만들어주는 글이라고 표현하면 적절할까요? 많은 사람들이 알았으면 하는 내용이라, 8월 서울 R 미트업에서 본 내용을 주제로 <a href="https://be-favorite.github.io/Presentation_archive/coloring_guide/coloring_guide.html?fbclid=IwAR25qqDhVFzBVsp8u9PaV93pbzxA03wE8paPF0-u7oBVKFMT5gZtPCupono#1">발표</a>를 하기도 했습니다. 지금 이 글을 읽고 계신 여러분들에게도 좋은 인사이트를 줄 수 있는 글이 되었으면 합니다.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+세션정보를 보려면 누르세요
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-fig.showtext="true">
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       macOS Monterey 12.6
+ system   aarch64, darwin20
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       Asia/Seoul
+ date     2022-09-20
+ pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+ quarto   1.0.38 @ /usr/local/bin/quarto
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version date (UTC) lib source
+ dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.2.0)
+ forcats     * 0.5.1   2021-01-27 [1] CRAN (R 4.2.0)
+ gghighlight * 0.3.3   2022-06-06 [1] CRAN (R 4.2.0)
+ ggplot2     * 3.3.6   2022-05-03 [1] CRAN (R 4.2.0)
+ ggtext      * 0.1.1   2020-12-17 [1] CRAN (R 4.2.0)
+ purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.2.0)
+ readr       * 2.1.2   2022-01-30 [1] CRAN (R 4.2.0)
+ rmarkdown   * 2.14    2022-04-25 [1] CRAN (R 4.2.0)
+ sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
+ showtext    * 0.9-5   2022-02-09 [1] CRAN (R 4.2.0)
+ showtextdb  * 3.0     2020-06-04 [1] CRAN (R 4.2.0)
+ stringr     * 1.4.0   2019-02-10 [1] CRAN (R 4.2.0)
+ sysfonts    * 0.8.8   2022-03-13 [1] CRAN (R 4.2.0)
+ tibble      * 3.1.8   2022-07-22 [1] CRAN (R 4.2.0)
+ tidyr       * 1.2.0   2022-02-01 [1] CRAN (R 4.2.0)
+ tidyverse   * 1.3.2   2022-07-18 [1] CRAN (R 4.2.0)
+
+ [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 

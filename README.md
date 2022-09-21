@@ -1,7 +1,7 @@
 # Personal blog
 Source code for [personal website of Taemo Bang](https://taemobang.com).
 
-Created with [Quarto](https://github.com/quarto-dev/quarto-cli/) in [R](https://www.r-project.org/).
+Built by [Quarto](https://github.com/quarto-dev/quarto-cli/).
 
 Site deployed by [Netlify](https://www.netlify.com/).
 

@@ -138,8 +138,8 @@ div.csl-indent {
   <ul>
   <li><a href="#sas를-다시-손에-잡다" id="toc-sas를-다시-손에-잡다" class="nav-link active" data-scroll-target="#sas를-다시-손에-잡다">SAS를 다시 손에 잡다</a></li>
   <li><a href="#풀고자-했던-문제" id="toc-풀고자-했던-문제" class="nav-link" data-scroll-target="#풀고자-했던-문제">풀고자 했던 문제</a></li>
-  <li><a href="#모형-최적화" id="toc-모형-최적화" class="nav-link" data-scroll-target="#모형-최적화">3 모형 최적화</a></li>
-  <li><a href="#지역별-분석-결과를-하나의-분석-결과로" id="toc-지역별-분석-결과를-하나의-분석-결과로" class="nav-link" data-scroll-target="#지역별-분석-결과를-하나의-분석-결과로">4 지역별 분석 결과를 하나의 분석 결과로</a></li>
+  <li><a href="#모형-최적화" id="toc-모형-최적화" class="nav-link" data-scroll-target="#모형-최적화">모형 최적화</a></li>
+  <li><a href="#지역별-분석-결과를-하나의-분석-결과로" id="toc-지역별-분석-결과를-하나의-분석-결과로" class="nav-link" data-scroll-target="#지역별-분석-결과를-하나의-분석-결과로">지역별 분석 결과를 하나의 분석 결과로</a></li>
   <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -205,7 +205,7 @@ div.csl-indent {
 <p>대학원에서 가장 많이 시간을 할애했던 연구 분야는 시계열 자료분석이었고, 이때 시계열을 회귀적으로 모델링하는 접근과 Distributed lag model에 대해 공부했던 경험이 있어 DLNM으로의 확장은 크게 어렵지 않았습니다.</p>
 </section>
 <section id="모형-최적화" class="level2">
-<h2 class="anchored" data-anchor-id="모형-최적화">3 모형 최적화</h2>
+<h2 class="anchored" data-anchor-id="모형-최적화">모형 최적화</h2>
 <p>DLNM은 <span class="math inline">\(X\)</span> 의 비선형 효과와 지연 효과까지 모델링하기 때문에, 튜닝해야하는 초모수(Hyperparameter)가 참 많은데요. 문제는 앞서 말씀드렸다시피 봐야할 질환들이 굉장히 많았다는 것이죠. 신경과 질환 6개, 정신과 질환 3개, 호흡기 질환 8개, 안과 질환 21개 총 38개 질환을 봐야했습니다. 여기서 문제는 2가지가 더 있었어요.</p>
 <ul>
 <li><p>6종의 대기오염원 각각에 대해 모델링</p>
@@ -222,7 +222,7 @@ div.csl-indent {
 <p>선형회귀분석에서 변수 선택을 할 때 쓰는 일반적인 알고리즘 중 하나인 best subset selection과 초모수 탐색 기법 중 가장 기본이라 할 수 있는 grid search를 결합하여 알고리즘을 만들어냈습니다. 이 알고리즘을 R로 구현하고 병렬처리까지 도입하여 1,368개의 모형에 대한 최적화를 해낼 수 있었습니다.</p>
 </section>
 <section id="지역별-분석-결과를-하나의-분석-결과로" class="level2">
-<h2 class="anchored" data-anchor-id="지역별-분석-결과를-하나의-분석-결과로">4 지역별 분석 결과를 하나의 분석 결과로</h2>
+<h2 class="anchored" data-anchor-id="지역별-분석-결과를-하나의-분석-결과로">지역별 분석 결과를 하나의 분석 결과로</h2>
 <p>분석을 완료하고 분석 결과를 요약해서 각 과 교수님들께 송부했으나, 문제가 하나 있었습니다. 6개 대도시 별 결과가 조금 상이한 질환들이 있었는데, 이것들을 어떤 합리적인 근거로 설명을 하느냐 였죠. 그래서, 나왔던 한 가지 해결책이 6개 지역별 분석 결과를 하나의 분석 결과로 요약하는 것이었습니다. 이를 위해서는, Gasparrini 교수가 제안한 다변량 메타분석(mutivariate meta-analysis, <span class="citation" data-cites="gasparrini2012">(<a href="#ref-gasparrini2012" role="doc-biblioref">A. Gasparrini, Armstrong, 와/과 Kenward 2012</a>)</span>) 방법론을 이용해야했습니다. 몇 가지 상황에 사용할 수 있는 여러 다변량 메타분석 방법론을 제시하고 있으니, 관심있으신 분들은 한번 쯤 들여다보셔도 좋을 것 같습니다. 최적화 해둔 모형들에 대해 다변량 메타분석을 수행하며, Reference로 참고할만한 R 코드들이 없어서 Github를 뒤지는데에 꽤 시간을 썼습니다. 그렇게 찾아낸 괜찮은 Reference를 바탕으로 다변량 메타분석을 R 상에서 수행하는 로직을 이해하고, 확장하여 적용할 수 있었습니다. 다변량 메타분석으로 지역별 분석 결과를 요약하는 것을 끝으로, 더이상의 추가적인 모델링은 없었습니다. 분석 결과를 요약하는 시각화를 꾸준하게 개선해나갔고, 동시에 본격적인 논문화 작업을 시작했습니다.</p>
 </section>
 <section id="맺음말" class="level2">

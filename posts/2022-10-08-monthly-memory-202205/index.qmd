@@ -6,7 +6,7 @@ date: "2022-10-08"
 draft: FALSE
 preview: preview.jpg
 citation:
-  url: https://taemobang.com/posts/2022-09-19-monthly-memory-202205/
+  url: https://taemobang.com/posts/2022-10-08-monthly-memory-202205/
 categories: [Memory]
 bibliography: references.bib
 ---

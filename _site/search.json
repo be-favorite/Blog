@@ -32,14 +32,14 @@
     "href": "blog.html",
     "title": "포스트",
     "section": "",
-    "text": "새 글이 발행되면 알려드려요.\n\n\n\n포스팅을 독려해주실 수 있어요.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민\n\n\n7 min\n\n\n\nStatistics Playbook\n\n\n\n취업 준비와 대학원 진학의 기로에서 고민하고 깨달은 것들\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 컬러링 가이드\n\n\n13 min\n\n\n\nVisualization\n\n\nR\n\n\n\n더 적은 수의 컬러로 직관적인 시각화를 수행하는 방법\n\n\n\nAug 14, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n월간 회고록: 2022년 4월\n\n\n5 min\n\n\n\nMemory\n\n\n\n새로운 스터디, 이력서와 포트폴리오 제작기\n\n\n\nJun 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n논문 요약 - Simões et al (2022)\n\n\n1 min\n\n\n\nTime Series\n\n\nPaper\n\n\n\n프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약\n\n\n\nMay 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n관심 논문 읽고 요약하기\n\n\n4 min\n\n\n\nPaper\n\n\n\n논문을 읽고 요약하는 나만의 방식\n\n\n\nMay 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverse로 데이터베이스랑 대화하기 - 1편\n\n\n5 min\n\n\n\nSQL\n\n\nR\n\n\n\nR을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!\n\n\n\nApr 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyvese principle로 머신러닝 하기\n\n\n18 min\n\n\n\nStatistical/Machine Learning\n\n\nR\n\n\n\ntidymodels ecosystem 소개\n\n\n\nApr 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverse principle로 시계열 자료 분석하기\n\n\n22 min\n\n\n\nTime Series\n\n\nR\n\n\n\ntidyverts ecosystem 소개\n\n\n\nMar 11, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "새 글이 발행되면 알려드려요.\n\n\n\n포스팅을 독려해주실 수 있어요.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n월간 회고록: 2022년 5월\n\n\n5 min\n\n\n\nMemory\n\n\n\n실무에서 1년반 동안 연구과제를 수행하며 겪은 크고 작은 난관들\n\n\n\nOct 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민\n\n\n7 min\n\n\n\nStatistics Playbook\n\n\n\n취업 준비와 대학원 진학의 기로에서 고민하고 깨달은 것들\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 컬러링 가이드\n\n\n13 min\n\n\n\nVisualization\n\n\nR\n\n\n\n더 적은 수의 컬러로 직관적인 시각화를 수행하는 방법\n\n\n\nAug 14, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n월간 회고록: 2022년 4월\n\n\n5 min\n\n\n\nMemory\n\n\n\n새로운 스터디, 이력서와 포트폴리오 제작기\n\n\n\nJun 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n논문 요약 - Simões et al (2022)\n\n\n1 min\n\n\n\nTime Series\n\n\nPaper\n\n\n\n프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약\n\n\n\nMay 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n관심 논문 읽고 요약하기\n\n\n4 min\n\n\n\nPaper\n\n\n\n논문을 읽고 요약하는 나만의 방식\n\n\n\nMay 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverse로 데이터베이스랑 대화하기 - 1편\n\n\n5 min\n\n\n\nSQL\n\n\nR\n\n\n\nR을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!\n\n\n\nApr 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyvese principle로 머신러닝 하기\n\n\n18 min\n\n\n\nStatistical/Machine Learning\n\n\nR\n\n\n\ntidymodels ecosystem 소개\n\n\n\nApr 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverse principle로 시계열 자료 분석하기\n\n\n22 min\n\n\n\nTime Series\n\n\nR\n\n\n\ntidyverts ecosystem 소개\n\n\n\nMar 11, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "archive.html",
     "href": "archive.html",
     "title": "아카이브",
     "section": "",
-    "text": "취업 준비와 대학원 진학의 기로에서 고민하고 깨달은 것들\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n더 적은 수의 컬러로 직관적인 시각화를 수행하는 방법\n\n\n\n\n\n\nAug 14, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n새로운 스터디, 이력서와 포트폴리오 제작기\n\n\n\n\n\n\nJun 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약\n\n\n\n\n\n\nMay 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n논문을 읽고 요약하는 나만의 방식\n\n\n\n\n\n\nMay 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nR을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!\n\n\n\n\n\n\nApr 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\ntidymodels ecosystem 소개\n\n\n\n\n\n\nApr 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverts ecosystem 소개\n\n\n\n\n\n\nMar 11, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "실무에서 1년반 동안 연구과제를 수행하며 겪은 크고 작은 난관들\n\n\n\n\n\n\nOct 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n취업 준비와 대학원 진학의 기로에서 고민하고 깨달은 것들\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n더 적은 수의 컬러로 직관적인 시각화를 수행하는 방법\n\n\n\n\n\n\nAug 14, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n새로운 스터디, 이력서와 포트폴리오 제작기\n\n\n\n\n\n\nJun 8, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n프랑스 남부 지역의 심호흡곤란 입원 발생에 관한 대기오염원 영향 평가 논문 요약\n\n\n\n\n\n\nMay 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n논문을 읽고 요약하는 나만의 방식\n\n\n\n\n\n\nMay 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nR을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!\n\n\n\n\n\n\nApr 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\ntidymodels ecosystem 소개\n\n\n\n\n\n\nApr 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\ntidyverts ecosystem 소개\n\n\n\n\n\n\nMar 11, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "archive.html#슬기로운통계생활-객원칼럼",
@@ -740,5 +740,47 @@
     "title": "ggplot2 컬러링 가이드",
     "section": "맺음말",
     "text": "맺음말\n분석을 시작하며 혼자 가볍게 EDA를 하는 단계에서 본 예제와 같이 시각화를 개선해나가는 작업은 필요로 되지 않을겁니다. 오히려 시간 낭비일수도 있구요. 그러나, 내가 얻은 인사이트를 전달하는 자리 또는 데이터를 기반으로 누군가를 설득해야하는 자리에서는 이 글에서 제공하는 몇 가지 방법이 꽤나 도움이 될 것이라고 생각합니다. 물론, 전달하고자 하는 내용이 한 눈에 들어도록 시각화를 수행하는 작업은 의외로 쉬울 때도 있지만, 꽤나 까다로운 과정을 거쳐야하는 상황도 존재합니다. 실무에서는 이와는 또다른 예상치 못한 까다로운 문제들을 겪는 상황들이 있을 수도 있구요. 다만, 본 글에서 그림의 퀄리티를 단계단계 개선해나간 바와 같이 전달하고자 하는 내용을 명확히하고 충분한 시간을 숙고해 그림을 개선해 나간다면, 뭐든 해결할 수 있을 것이라고 봅니다. 하고자 하는 시각화를 구현하지 못해낸다고 하더라도 그 과정 속에서 배우는 것은 분명히 존재할 것입니다. 처음부터 완벽하게 아름다운 시각화를 해낼 수 있는 사람은 없다는 것을 기억하셨으면 합니다.😁\n이번 포스팅을 준비하며 참고했던 글은 올해 봤던 데이터 시각화 관련 아티클 중 제게 가장 큰 임팩트를 주는 글이었습니다. 누구나 하는 평범한 시각화를 비범하게 만들어주는 글이라고 표현하면 적절할까요? 많은 사람들이 알았으면 하는 내용이라, 8월 서울 R 미트업에서 본 내용을 주제로 발표를 하기도 했습니다. 지금 이 글을 읽고 계신 여러분들에게도 좋은 인사이트를 줄 수 있는 글이 되었으면 합니다.\n\n\n\n\n\n\n세션정보를 보려면 누르세요\n\n\n\n\n\n\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.2.1 (2022-06-23)\n os       macOS Monterey 12.6\n system   aarch64, darwin20\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Asia/Seoul\n date     2022-09-20\n pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)\n quarto   1.0.38 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.2.0)\n forcats     * 0.5.1   2021-01-27 [1] CRAN (R 4.2.0)\n gghighlight * 0.3.3   2022-06-06 [1] CRAN (R 4.2.0)\n ggplot2     * 3.3.6   2022-05-03 [1] CRAN (R 4.2.0)\n ggtext      * 0.1.1   2020-12-17 [1] CRAN (R 4.2.0)\n purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.2.0)\n readr       * 2.1.2   2022-01-30 [1] CRAN (R 4.2.0)\n rmarkdown   * 2.14    2022-04-25 [1] CRAN (R 4.2.0)\n sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)\n showtext    * 0.9-5   2022-02-09 [1] CRAN (R 4.2.0)\n showtextdb  * 3.0     2020-06-04 [1] CRAN (R 4.2.0)\n stringr     * 1.4.0   2019-02-10 [1] CRAN (R 4.2.0)\n sysfonts    * 0.8.8   2022-03-13 [1] CRAN (R 4.2.0)\n tibble      * 3.1.8   2022-07-22 [1] CRAN (R 4.2.0)\n tidyr       * 1.2.0   2022-02-01 [1] CRAN (R 4.2.0)\n tidyverse   * 1.3.2   2022-07-18 [1] CRAN (R 4.2.0)\n\n [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library\n\n──────────────────────────────────────────────────────────────────────────────"
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "",
+    "text": "Photo by Fredy Jacob on Unsplash\n이직 준비하랴, 논문 작업하랴 미루고 미뤘던 월간 회고록들을 이제야 다시 적습니다. 5월 회고록을 작성하고 있는 이 시점은 어느덧 10월이군요. 부끄럽네요. 다행히 글감은 다 정해놨습니다. 하하. 지난 5월은 당시 재직 중인 연구센터에서 맡고 있는 학술연구과제 <빅데이터를 이용한 미세먼지 건강영향평가>에서 다변량 메타분석을 수행하는데에 가장 많은 시간을 할애했습니다. 1년반을 재직했던 직장에서 가장 많은 시간을 할애한 연구과제이기도 합니다. 분석해야할 질환들의 양이 정말 방대했거든요.🤯 대학원을 졸업하고 실무에 나와 처음으로 맡은 프로젝트인데, 데이터 수집, 데이터 마트 구축 부터 분석, 보고서 작성까지.. 정말 많은 양의 일을 혼자 처리했어야 했죠. 중간중간에 여러 난관에 봉착했고, 이 난관들을 하나하나 해결하면서 쾌감을 느끼기도 했습니다. 이번 월간 회고에서는 제가 겪은 크고 작은 난관들에 대해 이야기해보려고 합니다."
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html#sas를-다시-손에-잡다",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html#sas를-다시-손에-잡다",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "SAS를 다시 손에 잡다",
+    "text": "SAS를 다시 손에 잡다\n본 연구과제는 건강보험공단 빅데이터 맞춤형 연구DB를 기반으로 진행되는데요. 자료의 특성 상 데이터 프라이버시때문에 건강보험공단에서 운영 중인 분석센터에 직접 가야지만 데이터를 열람하고 처리할 수 있습니다. 연구DB 신청 당시 분석 툴에 SAS + R을 선택할 수 있길래 당연히 데이터를 확인하고 처리하는 것도 R로 가능할 것이라 생각 했는데, 구축된 데이터는 SAS 서버 상에 놓여져있더군요. 보통 수십기가가 넘는 데이터를 처리해야하기 때문에, 분석센터의 데스크탑 로컬에 구축된 R로 원 자료를 핸들링하는 것은 어려웠습니다. 그래서, SAS로 원 자료를 랭글링\u001c1해야만 하는 상황이였습니다.\n좀 당황스러웠습니다. 하하.. SAS는 학부생 때 2년정도 배우고 손을 뗀 상태였기 때문이죠. 제가 원하는 데이터 마트를 원활하게 구축하기 위해서는 SAS에서 SQL과 Macro2의 적절한 활용이 필요했습니다. 다행히, 학부생때 공부했던 기억이 남아있었죠. 그러나, 약 3년의 시간이 흘렀기에 복습이 필요했고 위키독스의 SAS로 하는 기초 데이터 전처리, 핸들링(Data handling) 를 활용해 기본기를 다시 다진 후에 본격적인 랭글링 작업에 들어갔습니다. 분석센터로 출장을 가기 전 데이터 구조를 떠올리며 미리 코드를 작성하고, 현장에서 발생하는 오류가 있다면 디버깅만을 해주는 식으로 효율적으로 작업을 진행해 나갔습니다.\n이러한 작업을 반복하다보니 SAS SQL, Macro가 손에 익었고 제가 필요로 하는 데이터 마트를 수월하게 구축하고 추출해낼 수 있었습니다."
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html#풀고자-했던-문제",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html#풀고자-했던-문제",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "풀고자 했던 문제",
+    "text": "풀고자 했던 문제\n본 과제 이름은 <빅데이터를 이용한 미세먼지 건강영향평가>이긴 하나, 6종의 대기오염원(\\({\\rm{PM}}_{10}\\), \\({\\rm{PM}}_{2.5}\\), \\({\\rm{NO}}_{2}\\), \\({\\rm{SO}}_{2}\\), \\({\\rm{O}}_{3}\\), \\({\\rm{CO}}\\))에 관해 모두 평가를 실시했어야 했습니다. 말이 거창해서 건강영향평가이지만, 기본적인 로직은 간단합니다. 질병의 일 발생/입원 건수를 \\(Y\\)로 잡고, 일 대기오염원 농도를 \\(X\\)로 잡아서 시계열 회귀 모델링을 하는 것이죠. 이를 통해 대기오염원들이 특정 질병의 발생/입원에 미치는 건강영향을 평가하는 것입니다. 여기서, 대기오염원이 미치는 효과는 비선형(non-linear)의 형태를 띤다는 점과 지연 효과(lag effect)3를 갖는다는 점까지 모형에서 고려해주어야 했죠. Distributed lag non-linear model(Antonio Gasparrini, Armstrong, 와/과 Kenward 2010) (이하, DLNM)은 이 둘을 동시에(simultaneously) 모델링 하게끔 해줍니다. 크게 봤을 때는 시계열 회귀모형의 일종이죠. 환경적 요인들로 Outcome을 모델링하는 생태학적 연구분야에서는 DLNM이 최신 시계열 회귀모형이라고 보시면 될 것 같습니다. 본 분야의 모델링 쪽 연구는 Gasparrini 교수가 주도하고 있구요.\n대학원에서 가장 많이 시간을 할애했던 연구 분야는 시계열 자료분석이었고, 이때 시계열을 회귀적으로 모델링하는 접근과 Distributed lag model에 대해 공부했던 경험이 있어 DLNM으로의 확장은 크게 어렵지 않았습니다."
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html#모형-최적화",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html#모형-최적화",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "3 모형 최적화",
+    "text": "3 모형 최적화\nDLNM은 \\(X\\) 의 비선형 효과와 지연 효과까지 모델링하기 때문에, 튜닝해야하는 초모수(Hyperparameter)가 참 많은데요. 문제는 앞서 말씀드렸다시피 봐야할 질환들이 굉장히 많았다는 것이죠. 신경과 질환 6개, 정신과 질환 3개, 호흡기 질환 8개, 안과 질환 21개 총 38개 질환을 봐야했습니다. 여기서 문제는 2가지가 더 있었어요.\n\n6종의 대기오염원 각각에 대해 모델링\n\n여러개 대기오염원을 고려하는 경우, 다중공선성 이슈로 인해 회귀계수 추정량의 표준오차가 굉장히 커지는 문제가 있었습니다. 이 문제를 겪고 다시 조사했던 선행연구들을 들여다보니 모두 대기오염원 1개씩만 모형에 포함시켜 모델링했더군요.\n\n우리나라 6개 대도시 지역 각각에 대해 모델링\n\n지역마다 질환 발생 패턴은 비슷하나, 대기오염원의 농도가 지리적 환경에 따라 다르기 때문에 좀 더 정교한 모델링을 위해서는 각 지역마다 모델링이 필요했습니다.\n\n\n그럼 제가 최적화해야 했던 모델은 총 몇개였을까요? \\(38\\times6\\times6=1,368\\)개의 모형을 최적화해야 했습니다. 정녕 이것이 혼자 할 수 있는 양이였을까요?.. 참고로, 튜닝해야할 초모수가 하나가 아니라 3가지정도 됐었습니다. 이 사실을 깨닫고 한동안 꽤나 막막했습니다. 선행 연구 사례들을 살펴봐도, 논문 하나에 실리는 대부분의 연구는 일반적으로 특정 하나의 지역 및 질환에 국한하여 수행된 대기오염원 건강영향평가였죠.\n아시다시피, \\(Y\\)와 \\(X\\)간의 relationship에 관한 모델링이 주 목적인 회귀 모델링에서는 그 과정에서 분석자의 세심한 검토(e.g. 잔차분석)가 필요합니다. 그러나, 1,368개의 모형을 최적화해야하는 제게, 모형 하나하나를 세심하게 살펴서 모델링하기란 불가능했습니다. 그래서, 모형에 들어갈 공변량4에 대한 variable selection과 모형 최적화를 위해 몇 가지 초모수들을 튜닝하는, 추후에 논문을 평가할 리뷰어들이 납득이 가능한 하나의 획일화된 알고리즘을 만들 필요성을 느꼈습니다. 그 속에는 계산양이 적지않기 때문에 병렬처리 또한 구현을 해야 했고요. 선행연구들을 살펴봤으나 대개 이쪽 연구는 환경역학 쪽 학술지에 게재되서인지, 모델링 과정에 있어서 어떤 식으로 초모수 튜닝을 수행했고, 변수 선택은 어떻게 했고에 대한 것들이 매우 러프하게 기술되어 있었습니다. 그래서, 제가 알고리즘을 직접 짜봐야했죠.\n선형회귀분석에서 변수 선택을 할 때 쓰는 일반적인 알고리즘 중 하나인 best subset selection과 초모수 탐색 기법 중 가장 기본이라 할 수 있는 grid search를 결합하여 알고리즘을 만들어냈습니다. 이 알고리즘을 R로 구현하고 병렬처리까지 도입하여 1,368개의 모형에 대한 최적화를 해낼 수 있었습니다."
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html#지역별-분석-결과를-하나의-분석-결과로",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html#지역별-분석-결과를-하나의-분석-결과로",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "4 지역별 분석 결과를 하나의 분석 결과로",
+    "text": "4 지역별 분석 결과를 하나의 분석 결과로\n분석을 완료하고 분석 결과를 요약해서 각 과 교수님들께 송부했으나, 문제가 하나 있었습니다. 6개 대도시 별 결과가 조금 상이한 질환들이 있었는데, 이것들을 어떤 합리적인 근거로 설명을 하느냐 였죠. 그래서, 나왔던 한 가지 해결책이 6개 지역별 분석 결과를 하나의 분석 결과로 요약하는 것이었습니다. 이를 위해서는, Gasparrini 교수가 제안한 다변량 메타분석(mutivariate meta-analysis, (A. Gasparrini, Armstrong, 와/과 Kenward 2012)) 방법론을 이용해야했습니다. 몇 가지 상황에 사용할 수 있는 여러 다변량 메타분석 방법론을 제시하고 있으니, 관심있으신 분들은 한번 쯤 들여다보셔도 좋을 것 같습니다. 최적화 해둔 모형들에 대해 다변량 메타분석을 수행하며, Reference로 참고할만한 R 코드들이 없어서 Github를 뒤지는데에 꽤 시간을 썼습니다. 그렇게 찾아낸 괜찮은 Reference를 바탕으로 다변량 메타분석을 R 상에서 수행하는 로직을 이해하고, 확장하여 적용할 수 있었습니다. 다변량 메타분석으로 지역별 분석 결과를 요약하는 것을 끝으로, 더이상의 추가적인 모델링은 없었습니다. 분석 결과를 요약하는 시각화를 꾸준하게 개선해나갔고, 동시에 본격적인 논문화 작업을 시작했습니다."
+  },
+  {
+    "objectID": "posts/2022-09-19-monthly-memory-202205/index.html#맺음말",
+    "href": "posts/2022-09-19-monthly-memory-202205/index.html#맺음말",
+    "title": "월간 회고록: 2022년 5월",
+    "section": "맺음말",
+    "text": "맺음말\n이번 5월 회고록에서는 제 첫 직장이였던 곳에서 연구과제를 수행하며 겪었던 난관들에 대해서 이야기해봤는데요. 회고를 하며 그때 겪었던 감정들이 다시 새록새록 떠올랐습니다. 막막해보이는 것들도 충분한 시간을 할애하고 노력하면 결국 해결할 수 있는 것이라는 큰 교훈도 다시 한 번 얻을 수 있었고요. 회고라고 했지만, 어찌보면 나 이만큼 힘들었다고 푸념을 적어 놓은 것 같기도하네요.😂 실무에 계신 분들이든, 학업에 계신 분들이든 다 각자가 겪고 있는 난관이 있을텐데요. 쉽게 포기하는 마음보다는, “이 문제를 어떻게 해결할 수 있을까?”에 충분한 시간을 할애해보시기를 권해봅니다. 오늘도 이러한 난관을 헤쳐나가기 위해 고민하고, 노력하고 계신 분들께 응원의 말씀을 올리며 글을 마칩니다."
   }
 ]

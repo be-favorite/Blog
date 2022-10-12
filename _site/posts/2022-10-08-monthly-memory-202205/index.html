@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -89,9 +94,11 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">방태모의 블로그</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -132,7 +139,7 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
   <ul>
@@ -195,7 +202,7 @@ div.csl-indent {
 <p>이직 준비하랴, 논문 작업하랴 미루고 미뤘던 월간 회고록들을 이제야 다시 적습니다. 5월 회고록을 작성하고 있는 이 시점은 어느덧 10월이군요. 부끄럽네요. 다행히 글감은 다 정해놨습니다. 하하. 지난 5월은 당시 재직 중인 연구센터에서 맡고 있는 학술연구과제 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;에서 다변량 메타분석을 수행하는데에 가장 많은 시간을 할애했습니다. 1년반을 재직했던 직장에서 가장 많은 시간을 할애한 연구과제이기도 합니다. 분석해야할 질환들의 양이 정말 방대했거든요.🤯 대학원을 졸업하고 실무에 나와 처음으로 맡은 프로젝트인데, 데이터 수집, 데이터 마트 구축 부터 분석, 보고서 작성까지.. 정말 많은 양의 일을 혼자 처리했어야 했죠. 중간중간에 여러 난관에 봉착했고, 이 난관들을 하나하나 해결하면서 쾌감을 느끼기도 했습니다. 이번 월간 회고에서는 제가 겪은 크고 작은 난관들에 대해 이야기해보려고 합니다.</p>
 <section id="sas를-다시-손에-잡다" class="level2">
 <h2 class="anchored" data-anchor-id="sas를-다시-손에-잡다">SAS를 다시 손에 잡다</h2>
-<p>본 연구과제는 건강보험공단 빅데이터 맞춤형 연구DB를 기반으로 진행되는데요. 자료의 특성 상 데이터 프라이버시때문에 건강보험공단에서 운영 중인 분석센터에 직접 가야지만 데이터를 열람하고 처리할 수 있습니다. 연구DB 신청 당시 분석 툴에 SAS + R을 선택할 수 있길래 당연히 데이터를 확인하고 처리하는 것도 R로 가능할 것이라 생각 했는데, 구축된 데이터는 SAS 서버 상에 놓여져있더군요. 보통 수십기가가 넘는 데이터를 처리해야하기 때문에, 분석센터의 데스크탑 로컬에 구축된 R로 원 자료를 핸들링하는 것은 어려웠습니다. 그래서, SAS로 원 자료를 랭글링<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>해야만 하는 상황이였습니다.</p>
+<p>본 연구과제는 건강보험공단 빅데이터 맞춤형 연구DB를 기반으로 진행되는데요. 자료의 특성 상 데이터 프라이버시때문에 건강보험공단에서 운영 중인 분석센터에 직접 가야지만 데이터를 열람하고 처리할 수 있습니다. 연구DB 신청 당시 분석 툴에 SAS + R을 선택할 수 있길래 당연히 데이터를 확인하고 처리하는 것도 R로 가능할 것이라 생각 했는데, 구축된 데이터는 SAS 서버 상에 놓여져있더군요. 보통 수십기가가 넘는 데이터를 처리해야하기 때문에, 분석센터의 데스크탑 로컬에 구축된 R로 원 자료를 핸들링하는 것은 어려웠습니다. 그래서, SAS로 원 자료를 랭글링<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>해야만 하는 상황이였습니다.</p>
 <p>좀 당황스러웠습니다. 하하.. SAS는 학부생 때 2년정도 배우고 손을 뗀 상태였기 때문이죠. 제가 원하는 데이터 마트를 원활하게 구축하기 위해서는 SAS에서 SQL과 Macro<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>의 적절한 활용이 필요했습니다. 다행히, 학부생때 공부했던 기억이 남아있었죠. 그러나, 약 3년의 시간이 흘렀기에 복습이 필요했고 위키독스의 <a href="https://wikidocs.net/book/2678"><strong>SAS로 하는 기초 데이터 전처리, 핸들링(Data handling)</strong></a> 를 활용해 기본기를 다시 다진 후에 본격적인 랭글링 작업에 들어갔습니다. 분석센터로 출장을 가기 전 데이터 구조를 떠올리며 미리 코드를 작성하고, 현장에서 발생하는 오류가 있다면 디버깅만을 해주는 식으로 효율적으로 작업을 진행해 나갔습니다.</p>
 <p>이러한 작업을 반복하다보니 SAS SQL, Macro가 손에 익었고 제가 필요로 하는 데이터 마트를 수월하게 구축하고 추출해낼 수 있었습니다.</p>
 </section>
@@ -241,16 +248,17 @@ Gasparrini, A., B. Armstrong, 와/과 M. G. Kenward. 2012. <span>“Multivariate
 <div id="ref-gasparrini2010" class="csl-entry" role="doc-biblioentry">
 Gasparrini, Antonio, Benedict Armstrong, 와/과 M. G. Kenward. 2010. <span>“Distributed lag non-linear models”</span>. <em>Statistics in medicine</em> 29 (9월): 2224–34. <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a>.
 </div>
-</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1" role="doc-endnote"><p><strong>데이터 랭글링</strong>(Data Wrangling) 혹은 데이터 먼징(Data Munging)이라고 불리는 이것은 원자료(raw data)를 보다 쉽게 접근하고 분석할 수 있도록 데이터를 정리하고 통합하는 과정. <a href="https://ko.wikipedia.org/wiki/데이터_랭글링">🔗Source</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>일반적인 프로그래밍 언어의 함수(function)와 같은 기능을 한다고 보시면 됩니다<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>예를 들자면, 5일 전에 마신 고농도의 초미세먼지가 질병 발생에 영향을 미치는 것<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>covariates. 몇 가지 기상요인들을 공변량으로 고려.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><strong>데이터 랭글링</strong>(Data Wrangling) 혹은 데이터 먼징(Data Munging)이라고 불리는 이것은 원자료(raw data)를 보다 쉽게 접근하고 분석할 수 있도록 데이터를 정리하고 통합하는 과정. <a href="https://ko.wikipedia.org/wiki/데이터_랭글링">🔗Source</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>일반적인 프로그래밍 언어의 함수(function)와 같은 기능을 한다고 보시면 됩니다<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>예를 들자면, 5일 전에 마신 고농도의 초미세먼지가 질병 발생에 영향을 미치는 것<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>covariates. 몇 가지 기상요인들을 공변량으로 고려.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
   author = {방태모},
+  editor = {},
   title = {월간 회고록: 2022년 5월},
   date = {2022-10-08},
   url = {https://taemobang.com/posts/2022-10-08-monthly-memory-202205/},
@@ -344,6 +352,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           toggle.classList.remove("alternate");
         }
       }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
     }
   }
   const isFileUrl = () => { 
@@ -446,7 +464,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

@@ -90,10 +90,7 @@
 <ol>
 <li id="fn1"><p>그래봤자, 간략한 구글링 방법에 대해 소개했을 뿐이다. 그렇지만, 이게 다다. 구글 꺼놓고 코딩하라 하면 제대로 할 수 있는 사람이 한 명은 있을까?↩︎</p></li>
 <li id="fn2"><p><code>help()</code>를 자세히 살펴 해당 함수에 대해 파악하고자 할 때, 직관적으로 이해가 잘 안가는 상황이 있을 수 있다. 이때는 함수의 인수 옵션들을 이것저것 입맛 대로 바꿔나가며 일종의 A/B testing을 통해, 함수의 각 인수를 파악하는 것이 더 직관적이고 빠를 수 있다. 디버깅 또한 이런 로직으로 해결을 해보자.↩︎</p></li>
-<li id="fn3"><ul>
-<li><code>{purrr}</code>이 꼭 필요로 될 것이다: 🔗<a href="https://purrr.tidyverse.org">Link</a></li>
-</ul>
-↩︎</li>
+<li id="fn3"><p><code>{purrr}</code>이 꼭 필요로 될 것이다: 🔗<a href="https://purrr.tidyverse.org">Link</a>↩︎</p></li>
 <li id="fn4"><p>사전 설문조사를 통해 파악할 수 있었다.↩︎</p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,

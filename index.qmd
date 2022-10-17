@@ -24,10 +24,18 @@ comments: false
 
 안녕하세요, 제 블로그에 오신 것을 환영합니다.
 
-학부, 석사를 통계학으로 전공했습니다. 현재는 G마켓 AI Product팀에서 Data Science를 하고 있습니다.
+학부, 석사를 통계학으로 전공했습니다.
 
-팀에서 Quarto를 이용한 A/B testing 성과분석 자동화, Shiny for Python을 이용한 대시보드 개발을 시도해보고 있습니다.
+현재는 G마켓 AI Product팀에서 Data Science를 하고 있습니다.
 
-Causal Inference와 A/B tesing에 관심을 두고 있습니다. 새로운 도구로는 Shiny for Python을 익히고 있습니다.
+팀에서 Quarto를 이용한 A/B testing 성과분석 자동화,
 
-새로운 것을 배우고 도전하는 것을 좋아합니다. 이 열정을 잃지 않고 끊임없이 새로운 것을 배우고 나누는 것이 제 목표입니다.
+Shiny for Python을 이용한 대시보드 개발을 시도해보고 있습니다.
+
+Causal Inference와 A/B tesing에 관심을 두고 있습니다.
+
+새로운 도구로는 Shiny for Python을 익히고 있습니다.
+
+새로운 것을 배우고 도전하는 것을 좋아합니다.
+
+이 열정을 잃지 않고 끊임없이 새로운 것을 배우고 나누는 것이 제 목표입니다.

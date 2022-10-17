@@ -26,6 +26,8 @@ website:
             href: research.qmd
           - text: 발표 아카이브
             href: presentation.qmd
+          - text: 과거 기술블로그
+            href: 'https://be-favorite.tistory.com/'
         
 google_analytics: "G-1QHE9697JG"
 cookie-consent: TRUE

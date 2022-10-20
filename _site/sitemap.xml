@@ -62,15 +62,15 @@
   </url>
   <url>
     <loc>https://taemobang.com/index.html</loc>
-    <lastmod>2022-10-17T15:21:14.500Z</lastmod>
+    <lastmod>2022-10-20T12:29:53.700Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/blog.html</loc>
-    <lastmod>2022-10-17T15:13:35.350Z</lastmod>
+    <lastmod>2022-10-20T12:30:07.370Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/archive.html</loc>
-    <lastmod>2022-10-17T15:13:36.170Z</lastmod>
+    <lastmod>2022-10-20T12:30:08.740Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
@@ -127,5 +127,9 @@
   <url>
     <loc>https://taemobang.com/posts/2022-10-12-about-data-science/index.html</loc>
     <lastmod>2022-10-12T14:38:42.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</loc>
+    <lastmod>2022-10-20T12:29:52.850Z</lastmod>
   </url>
 </urlset>

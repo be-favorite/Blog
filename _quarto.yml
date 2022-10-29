@@ -12,6 +12,8 @@ website:
   site-url: https://taemobang.com
   repo-url: https://github.com/be-favorite/Blog
   repo-actions: [issue]
+  google-analytics: "G-1QHE9697JG"
+  cookie-consent: true
   navbar:
     right:
       - href: index.qmd
@@ -28,9 +30,6 @@ website:
             href: presentation.qmd
           - text: 과거 기술블로그
             href: 'https://be-favorite.tistory.com/'
-        
-google_analytics: "G-1QHE9697JG"
-cookie-consent: TRUE
 
 format:
   html:

@@ -7,7 +7,7 @@ draft: FALSE
 preview: preview.jpg
 citation:
   url: "https://taemobang.com/posts/2022-10-20-abtest-terms/"
-categories: [A/B test]
+categories: [A/B test, Trustworthy Online Controlled Experiments]
 bibliography: references.bib
 ---
 

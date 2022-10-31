@@ -2,12 +2,12 @@
 title: "A/B 테스트 용어 사전"
 description: |
   A/B 테스트를 공부할 때 알아두면 좋은 용어들
-date: "2022-04-07"
+date: "2022-10-31"
 draft: FALSE
 preview: preview.jpg
 citation:
-  url: "https://taemobang.com/posts/2022-10-20-abtest-terms/"
-categories: [A/B test, Trustworthy Online Controlled Experiments]
+  url: "https://taemobang.com/posts/2022-10-31-abtest-terms/"
+categories: [A/B test]
 bibliography: references.bib
 ---
 

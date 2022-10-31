@@ -62,15 +62,15 @@
   </url>
   <url>
     <loc>https://taemobang.com/index.html</loc>
-    <lastmod>2022-10-29T07:07:21.360Z</lastmod>
+    <lastmod>2022-10-31T12:29:51.170Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/blog.html</loc>
-    <lastmod>2022-10-29T07:07:23.010Z</lastmod>
+    <lastmod>2022-10-31T12:29:53.130Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/archive.html</loc>
-    <lastmod>2022-10-29T07:07:23.600Z</lastmod>
+    <lastmod>2022-10-31T12:29:54.020Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
@@ -139,5 +139,9 @@
   <url>
     <loc>https://taemobang.com/research.html</loc>
     <lastmod>2022-10-29T07:05:38.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2022-10-31-abtest-terms/index.html</loc>
+    <lastmod>2022-10-31T12:29:50.530Z</lastmod>
   </url>
 </urlset>

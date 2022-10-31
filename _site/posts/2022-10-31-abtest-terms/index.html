@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="방태모">
+<meta name="description" content="A/B 테스트를 공부할 때 알아두면 좋은 용어들">
+
+<title>방태모의 블로그 - A/B 테스트 용어 사전</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1QHE9697JG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../css/karat.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">방태모의 블로그</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">홈</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">블로그</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../archive.html">아카이브</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">리소스</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">연구 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentation.html">
+ <span class="dropdown-text">발표 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+ <span class="dropdown-text">과거 기술블로그</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#ab-테스트" id="toc-ab-테스트" class="nav-link active" data-scroll-target="#ab-테스트">A/B 테스트</a></li>
+  <li><a href="#oec" id="toc-oec" class="nav-link" data-scroll-target="#oec">OEC</a></li>
+  <li><a href="#파라미터" id="toc-파라미터" class="nav-link" data-scroll-target="#파라미터">파라미터</a></li>
+  <li><a href="#변형군" id="toc-변형군" class="nav-link" data-scroll-target="#변형군">변형군</a></li>
+  <li><a href="#가드레일-지표" id="toc-가드레일-지표" class="nav-link" data-scroll-target="#가드레일-지표">가드레일 지표</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A/B 테스트 용어 사전</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">A/B test</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>A/B 테스트를 공부할 때 알아두면 좋은 용어들</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>방태모 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2022년 4월 7일</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://unsplash.com/photos/ywqa9IZB-dU?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="preview.jpg" class="img-fluid figure-img" width="800"></a></p>
+<p></p><figcaption class="figure-caption">Photo by Romain Vignes on Unsplash</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+서문: 이 글은 시리즈 물입니다!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
+<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
+<p>저와 같은 A/B 테스트 초심자들에게는 단비같은 책이라고 할 수 있을 것 같습니다. 본 책을 공부하며 깨달은 내용들을 본 시리즈 물에서 저만의 언어로 최대한 요약해보고자 합니다. 통계학 전공자라 학부와 석사 때 실험설계를 공부하긴 했지만, 온라인 서비스 영역에서의 실험설계라 할 수 있는 온라인 종합 대조 실험에는 무지한 상태입니다. 잘못 생각하고 있는 부분이 있다면 가감없이 댓글로 지적해주시면 감사하겠습니다.😀 책의 서문에서 강조하고 바를 되새겨보면서</p>
+<blockquote class="blockquote">
+<p>흥미로워 보이거나 다르게 보이는 어떤 수치는 대체로 틀린다 - Twyman</p>
+<p>숫자를 얻는 것은 쉽지만, 믿을 수 있는 숫자를 얻는 것은 어렵다.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>A/B test, 더 넓게는 온라인 종합 대조 실험(online controlled experiment)의 이해에 필요한 용어들을 간략하게 정리해보고자 합니다. 용어들은 앞으로 꾸준하게 추가될 예정입니다. 새로운 분야에 대한 공부를 시작할 때, 새롭게 알게 된 용어에 대한 확실한 정의는 매우 중요하니까요.</p>
+<section id="ab-테스트" class="level2">
+<h2 class="anchored" data-anchor-id="ab-테스트">A/B 테스트</h2>
+<p>다 아시겠지만 한 번 정의하고 넘어가려고 합니다. A/B 테스트는 두 개의 변형(variant) A와 B를 사용하는 온라인 종합 대조 실험의 가장 간단한 형태라고 할 수 있습니다. 여기서 대조군에는 기존의 기능, 프로덕트 또는 알고리즘<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>을 부여받은 사용자들이 랜덤하게(randomized) 배치되고, 실험군은 핵심 지표(metrics) 개선을 기대하며 도입하는 새로운 어떤 것을 부여받은 사용자들이 랜덤하게 배치될 겁니다. 온라인 종합 실험에서 랜덤성(Randomization)은 매우 중요합니다. 어떠한 요인도 사용자들을 각 변형에 배정하는 데에 영향을 주도록 허용해서는 안됩니다. 랜덤성은 “확률에 기초한 의도적 선택”을 의미한다는 점을 기억하시기 바랍니다.</p>
+</section>
+<section id="oec" class="level2">
+<h2 class="anchored" data-anchor-id="oec">OEC</h2>
+<p>OEC는 전체평가기준으로 Overall Evaluation Criterion의 약자입니다. 실험 목적에 해당하는 계량적인 지표를 의미합니다. 통계학에서는 이를 반응변수(reponse variable), 종속변수(dependent variable)라 칭하기도 하죠. 그외 결과(outcome), 평가(evaluation), 적합도 함수(fitness function)을 동의어로 사용하기도 합니다(Quarto-vonTibadar 2006). OEC는 단기적으로는 실험 기간 동안 측정할 수 있어야하며, 동시에 장기적으로는 전사의 전략적 목표와 맞닿아 있어야 합니다. 예를 들어, 특정 온라인 서비스의 OEC는 사용자별 활동 일 수(active days per user)가 될 수 있습니다. 단순하게 매출과 같은 후행지표를 OEC로 선정해서는 안됩니다. 전사적으로 좋은 OEC가 설정되지 않았다는 것은, 리소스를 낭비하고 있다는 뜻일 수 있습니다.</p>
+</section>
+<section id="파라미터" class="level2">
+<h2 class="anchored" data-anchor-id="파라미터">파라미터</h2>
+<p>파라미터(parameter)는 OEC 또는 기타 관심 지표에 영향을 미칠 것으로 간주되는 통제 가능한 실험변수를 뜻합니다. 요인(factors), 변수(variables)라 칭하기도 합니다. 파라미터에는 값이 할당되는데, 이를 수준(level)이라 말하더군요. 통계학에 익숙하신 분들은 범주형 변수를 떠올리시면 될 것 같습니다. 예를 들어, A/B 테스트에서 파라미터는 2개의 수준을 갖는 단일 파라미터에 해당할 것입니다. 온라인 환경에서는 이처럼 여러 개의 수준을 갖는 단일 파라미터 설계를 사용하는 것이 일반적입니다. 여러 파라미터를 사용하는 테스트는 다변수 테스트(MVTs, Mutivariate tests)<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>라 부릅니다. 온라인 환경에서는 글꼴 색상과 크기에 관한 실험을 하며 글꼴 색상과 크기에 관한 최적 조합을 찾고자할 때 사용되곤 합니다.</p>
+</section>
+<section id="변형군" class="level2">
+<h2 class="anchored" data-anchor-id="변형군">변형군</h2>
+<p>변형군(variants)를 파라미터라는 용어를 동원하여 정의하자면, 파라미터에 값을 할당하여 테스트 하는 사용자 그룹이라고 할 수 있습니다. 예를 들어, A/B 테스트에서 A와 B는 대조군(control group), 실험군(treatment group)이라 불리는 변형군이 있습니다. 그냥 편하게 실험을 구성하는 각 그룹을 변형군이라고 칭한다고 보시면 될 것 같습니다. 실험군에 대해서만 변형군이라고 칭하는 일부 문헌도 존재한다고 합니다.</p>
+</section>
+<section id="가드레일-지표" class="level2">
+<h2 class="anchored" data-anchor-id="가드레일-지표">가드레일 지표</h2>
+<p>가드레일 지표(guardrail metrics)란, 조직이 무엇을 변화시키지 않으려 하는지 식별하기 위해 꼭 필요한 지표라고 할 수 있겠습니다. 이름에 가드레일이 들어가는 이유 또한 이와 맞닿아 있습니다. 예를 들어, 바다 위를 떠다니는 유람선에서 승객들에게 제공하는 음식을 개선하기 위한 실험을 생각해봅시다. 이때, 바다 위를 항해하는 유람선에서 승객들의 안전 지표는 다른 어떤 요인들과 비교해도, 더 중요한 지표라고 할 수 있겠죠. 즉, 승객 안전은 이 실험에서 가드레일 지표라 할 수 있습니다. 승객들의 안전만큼은 결코 변화시키지 않고(낮추지 않고), 실험을 진행하겠다는 말입니다. 이를 위해서는 실험에 대한 OEC에 승객들의 안전에 관한 변수의 가중치를 매우 높여주면 됩니다. 안전에 따라 OEC가 민감하게 변화하도록 말이죠. 이 문제를 온라인 환경으로 가져와보면 소프트웨어 충돌을 생각해볼 수 있습니다. 도입한 기능이 제품의 충돌을 증가시키는 경우 유저들의 경험에는 심각한 영향을 끼칠 것입니다.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-kohavi2020" class="csl-entry" role="doc-biblioentry">
+Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>온라인 종합 대조 실험의 형태로는 A/B test, A/A test, A/B/n test가 있다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Highest Paid Person’s Opinion. 최고 보수를 받는 자의 의견. 즉, 최고 경영자의 의견.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Multivariate은 다변량인데, 다변수 테스트라고 번역하는게 맞는지 모르겠습니다. 우선 책에 이렇게 번역이 되어있어 다변수 테스트라 남겨둡니다.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+  author = {방태모},
+  editor = {},
+  title = {A/B 테스트 용어 사전},
+  date = {2022-04-07},
+  url = {https://taemobang.com/posts/2022-10-20-abtest-terms/},
+  langid = {ko}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+방태모. 2022. <span>“A/B 테스트 용어 사전.”</span> April 7, 2022. <a href="https://taemobang.com/posts/2022-10-20-abtest-terms/">https://taemobang.com/posts/2022-10-20-abtest-terms/</a>.
+</div></div></section></div></main> <!-- /main -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+<div>
+<hr>
+
+<p> 새 글이 발행되면 알려드려요.  </p>
+
+<iframe id="beehiiv-form" src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; height: 55px;"></iframe>
+
+<p> 포스팅을 독려해주실 수 있어요.  </p>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="taemobang" data-color="#06436e" data-emoji="☕" data-font="Lato" data-text="Support me" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" data-height="40px"></script>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="ko" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+  </div>
+</footer>
+
+
+
+</body></html>

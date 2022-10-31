@@ -76,7 +76,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-image','listing-title','listing-description','listing-reading-time','listing-categories','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 12,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
@@ -182,7 +183,7 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Memory">Memory <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Paper">Paper <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical/Machine Learning">Statistical/Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics Playbook">Statistics Playbook <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Time Series">Time Series <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="A/B test">A/B test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Memory">Memory <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Paper">Paper <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical/Machine Learning">Statistical/Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics Playbook">Statistics Playbook <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Time Series">Time Series <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -530,7 +531,37 @@ Apr 7, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="Statistical/Machine Learning,R" data-listing-date-sort="1648998000000" data-listing-file-modified-sort="1663592778710" data-listing-reading-time-sort="18.165">
+<div class="g-col-1" data-index="10" data-categories="A/B test" data-listing-date-sort="1649257200000" data-listing-file-modified-sort="1667219386490" data-listing-reading-time-sort="3.855">
+<a href="./posts/2022-10-31-abtest-terms/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2022-10-31-abtest-terms/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+A/B 테스트 용어 사전
+</h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('A/B test'); return false;">
+A/B test
+</div>
+</div>
+<div class="card-text listing-description">
+<p>A/B 테스트를 공부할 때 알아두면 좋은 용어들</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 7, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-categories="Statistical/Machine Learning,R" data-listing-date-sort="1648998000000" data-listing-file-modified-sort="1663592778710" data-listing-reading-time-sort="18.165">
 <a href="./posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -563,11 +594,11 @@ Apr 4, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-categories="Time Series,R" data-listing-date-sort="1646924400000" data-listing-file-modified-sort="1663592331290" data-listing-reading-time-sort="22.14">
+<div class="g-col-1" data-index="12" data-categories="Time Series,R" data-listing-date-sort="1646924400000" data-listing-file-modified-sort="1663592331290" data-listing-reading-time-sort="22.14">
 <a href="./posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img data-src="./posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -600,6 +631,9 @@ Mar 11, 2022
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

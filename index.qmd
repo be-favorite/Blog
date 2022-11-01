@@ -26,7 +26,7 @@ comments: false
 
 학부, 석사를 통계학으로 전공했습니다. 현재는 G마켓 AI Product팀에서 Data Science를 하고 있습니다.
 
-팀에서 Quarto를 이용한 A/B 테스트 성과분석 자동화, Shiny for Python을 이용한 대시보드 개발을 시도해보고 있습니다.
+Quarto를 이용한 A/B 테스트 성과분석 자동화, Shiny for Python을 이용한 대시보드 개발을 시도해보고 있습니다.
 
 Causal Inference와 A/B 테스트, Shiny for Python에 관심을 두고 있습니다.
 

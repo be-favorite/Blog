@@ -1,6 +1,6 @@
 ---
 title: "방태모"
-image: images/profile.jpg
+image: images/notion-avatar.png
 about:
   template: jolla
   links:

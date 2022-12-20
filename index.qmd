@@ -5,24 +5,27 @@ about:
   template: jolla
   links:
     - icon: linkedin
-      text: LinkedIn
+      text: 링크드인
       href: https://www.linkedin.com/in/taemo/
     - icon: facebook
-      text: Facebook
+      text: 페이스북
       href: https://www.facebook.com/profile.php?id=100070120780059
+    - icon: c-circle
+      text: 커리어리
+      href: https://careerly.co.kr/profiles/481629?from=notification&location=gnb
     - icon: twitter
-      text: Twitter
+      text: 트위터
       href: https://twitter.com/TaemoBang
     - icon: github
-      text: Github
+      text: 깃허브
       href: https://github.com/be-favorite
     - icon: file-earmark-person
-      text: Resume
+      text: 이력서
       href: https://taemobang.notion.site
 comments: false
 ---
 
-안녕하세요 **방태모**입니다.
+안녕하세요, 방태모입니다.
 
 현재 G마켓 AI Product팀에서 데이터 분석을 하고 있습니다.
 

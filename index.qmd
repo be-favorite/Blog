@@ -5,22 +5,22 @@ about:
   template: jolla
   links:
     - icon: linkedin
-      text: 링크드인
+      text: Linkedin
       href: https://www.linkedin.com/in/taemo/
     - icon: facebook
-      text: 페이스북
+      text: Facebook
       href: https://www.facebook.com/profile.php?id=100070120780059
-    - icon: c-circle
-      text: 커리어리
-      href: https://careerly.co.kr/profiles/481629?from=notification&location=gnb
     - icon: twitter
-      text: 트위터
+      text: Twitter
       href: https://twitter.com/TaemoBang
     - icon: github
-      text: 깃허브
+      text: Github
       href: https://github.com/be-favorite
+    - icon: globe
+      text: Careerly
+      href: https://careerly.co.kr/profiles/481629?from=notification&location=gnb
     - icon: file-earmark-person
-      text: 이력서
+      text: Resume
       href: https://taemobang.notion.site
 comments: false
 ---

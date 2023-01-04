@@ -3,7 +3,7 @@ title: "월간 회고록: 2022년 8-12월"
 description: |
    몰아서 써보는 네 달간의 월간 회고록
 date: "2022-12-31"
-draft: FALSE
+draft: TRUE
 preview: preview.jpg
 citation:
   url: https://taemobang.com/posts/2022-12-31-monthly-memory-202208/

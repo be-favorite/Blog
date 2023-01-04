@@ -1,0 +1,14 @@
+{
+  "hash": "087f806eb440abb64fb59d88b5aa152f",
+  "result": {
+    "markdown": "---\ntitle: \"월간 회고록: 2022년 8-12월\"\ndescription: |\n   몰아서 써보는 네 달간의 월간 회고록\ndate: \"2022-12-31\"\ndraft: TRUE\npreview: preview.jpg\ncitation:\n  url: https://taemobang.com/posts/2022-12-31-monthly-memory-202208/\ncategories: [Memory]\n---\n\n\n\n\n[![Photo by Fredy Jacob on Unsplash](preview.jpg){width=\"800\"}](https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)\n\n8월의 기억을 더듬어 글을 적어 봅니다.\n\n## 서울 R 미트업\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

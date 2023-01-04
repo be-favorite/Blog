@@ -145,42 +145,6 @@
   <media:content url="https://taemobang.com/posts/2023-01-01-move-to-another-company/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>월간 회고록: 2022년 8-12월</title>
-  <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-12-31-monthly-memory-202208/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-12-31-monthly-memory-202208/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Fredy Jacob on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<p>8월의 기억을 더듬어 글을 적어 봅니다.</p>
-<section id="서울-r-미트업" class="level2">
-<h2 class="anchored" data-anchor-id="서울-r-미트업">서울 R 미트업</h2>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모,
-  author = {방태모},
-  title = {월간 회고록: 2022년 8-12월},
-  date = {},
-  url = {https://taemobang.com/posts/2022-12-31-monthly-memory-202208/},
-  langid = {ko}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모" class="csl-entry quarto-appendix-citeas">
-방태모. n.d. <span>“월간 회고록: 2022년 8-12월.”</span> <a href="https://taemobang.com/posts/2022-12-31-monthly-memory-202208/">https://taemobang.com/posts/2022-12-31-monthly-memory-202208/</a>.
-</div></div></section></div> ]]></description>
-  <category>Memory</category>
-  <guid>https://taemobang.com/posts/2022-12-31-monthly-memory-202208/index.html</guid>
-  <pubDate>Fri, 30 Dec 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-12-31-monthly-memory-202208/preview.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
   <title>A/B 테스트 용어 사전</title>
   <dc:creator>방태모</dc:creator>
   <link>https://taemobang.com/posts/2022-10-31-abtest-terms/index.html</link>
@@ -364,17 +328,15 @@ Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모,
   author = {방태모},
-  editor = {},
   title = {월간 회고록: 2022년 7월},
-  date = {2022-10-20},
+  date = {},
   url = {https://taemobang.com/posts/2022-10-20-monthly-memory-202207/},
   langid = {ko}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“월간 회고록: 2022년 7월.”</span> October 20, 2022.
-<a href="https://taemobang.com/posts/2022-10-20-monthly-memory-202207/">https://taemobang.com/posts/2022-10-20-monthly-memory-202207/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모" class="csl-entry quarto-appendix-citeas">
+방태모. n.d. <span>“월간 회고록: 2022년 7월.”</span> <a href="https://taemobang.com/posts/2022-10-20-monthly-memory-202207/">https://taemobang.com/posts/2022-10-20-monthly-memory-202207/</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</guid>

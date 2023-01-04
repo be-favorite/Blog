@@ -3,9 +3,6 @@
 # freeze computational output
 freeze: true
 
-# Enable banner style title blocks
-title-block-banner: false
-
 # Author name of all blog posts
 author: '방태모'
 

@@ -1,0 +1,14 @@
+{
+  "hash": "40151618696be7538286482b07918f56",
+  "result": {
+    "markdown": "---\ntitle: \"tidyverse로 데이터베이스랑 대화하기 - 2편\"\ndescription: |\n  R을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!\ndate: \"2022-04-19\"\ndraft: TRUE\npreview: preview.jpg\ncitation:\n  url: https://taemobang.com/posts/2022-04-19-talk-with-database-using-tidyverse-part-ii/\ncategories: [SQL, R]\nbibliography: references.bib\n---\n\n\n\n\n![Photo by Vedash Naidoo Rubin on Sciencificity's Blog](preview.png){width=\"800\"}\n\n::: {.callout-tip collapse=\"true\"}\n## 세션정보를 보려면 누르세요\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.2.1 (2022-06-23)\n os       macOS Ventura 13.1\n system   aarch64, darwin20\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Asia/Seoul\n date     2023-01-04\n pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)\n quarto   1.2.280 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n rmarkdown   * 2.14    2022-04-25 [1] CRAN (R 4.2.0)\n sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)\n\n [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library\n\n──────────────────────────────────────────────────────────────────────────────\n```\n:::\n:::\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

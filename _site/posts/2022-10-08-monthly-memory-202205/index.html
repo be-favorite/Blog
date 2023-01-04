@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="방태모">
+<meta name="dcterms.date" content="2022-10-08">
 <meta name="description" content="실무에서 1년반 동안 연구과제를 수행하며 겪은 크고 작은 난관들">
 
 <title>방태모의 블로그 - 월간 회고록: 2022년 5월</title>
@@ -52,6 +53,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,17 +74,42 @@ div.csl-indent {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1QHE9697JG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -105,16 +133,21 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">홈</a>
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">홈</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">블로그</a>
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">블로그</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../archive.html">아카이브</a>
+    <a class="nav-link" href="../../archive.html">
+ <span class="menu-text">아카이브</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">리소스</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">리소스</span>
+    </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
         <li>
     <a class="dropdown-item" href="../../research.html">
@@ -123,6 +156,10 @@ div.csl-indent {
         <li>
     <a class="dropdown-item" href="../../presentation.html">
  <span class="dropdown-text">발표 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+ <span class="dropdown-text">과거 기술블로그</span></a>
   </li>  
     </ul>
   </li>
@@ -149,7 +186,7 @@ div.csl-indent {
   <li><a href="#지역별-분석-결과를-하나의-분석-결과로" id="toc-지역별-분석-결과를-하나의-분석-결과로" class="nav-link" data-scroll-target="#지역별-분석-결과를-하나의-분석-결과로">지역별 분석 결과를 하나의 분석 결과로</a></li>
   <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">이슈 보고</a></p></div></div></nav>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -175,18 +212,19 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">저자</div>
     <div class="quarto-title-meta-contents">
              <p>방태모 </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">공개</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022년 10월 8일</p>
+      <p class="date">October 8, 2022</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -208,7 +246,7 @@ div.csl-indent {
 </section>
 <section id="풀고자-했던-문제" class="level2">
 <h2 class="anchored" data-anchor-id="풀고자-했던-문제">풀고자 했던 문제</h2>
-<p>본 과제 이름은 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;이긴 하나, 6종의 대기오염원(<span class="math inline">\({\rm{PM}}_{10}\)</span>, <span class="math inline">\({\rm{PM}}_{2.5}\)</span>, <span class="math inline">\({\rm{NO}}_{2}\)</span>, <span class="math inline">\({\rm{SO}}_{2}\)</span>, <span class="math inline">\({\rm{O}}_{3}\)</span>, <span class="math inline">\({\rm{CO}}\)</span>)에 관해 모두 평가를 실시했어야 했습니다. 말이 거창해서 건강영향평가이지만, 기본적인 로직은 간단합니다. 질병의 일 발생/입원 건수를 <span class="math inline">\(Y\)</span>로 잡고, 일 대기오염원 농도를 <span class="math inline">\(X\)</span>로 잡아서 시계열 회귀 모델링을 하는 것이죠. 이를 통해 대기오염원들이 특정 질병의 발생/입원에 미치는 건강영향을 평가하는 것입니다. 여기서, 대기오염원이 미치는 효과는 비선형(non-linear)의 형태를 띤다는 점과 지연 효과(lag effect)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>를 갖는다는 점까지 모형에서 고려해주어야 했죠. Distributed lag non-linear model<span class="citation" data-cites="gasparrini2010">(<a href="#ref-gasparrini2010" role="doc-biblioref">Antonio Gasparrini, Armstrong, 와/과 Kenward 2010</a>)</span> (이하, DLNM)은 이 둘을 동시에(simultaneously) 모델링 하게끔 해줍니다. 크게 봤을 때는 시계열 회귀모형의 일종이죠. 환경적 요인들로 Outcome을 모델링하는 생태학적 연구분야에서는 DLNM이 최신 시계열 회귀모형이라고 보시면 될 것 같습니다. 본 분야의 모델링 쪽 연구는 <a href="http://www.ag-myresearch.com">Gasparrini</a> 교수가 주도하고 있구요.</p>
+<p>본 과제 이름은 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;이긴 하나, 6종의 대기오염원(<span class="math inline">\({\rm{PM}}_{10}\)</span>, <span class="math inline">\({\rm{PM}}_{2.5}\)</span>, <span class="math inline">\({\rm{NO}}_{2}\)</span>, <span class="math inline">\({\rm{SO}}_{2}\)</span>, <span class="math inline">\({\rm{O}}_{3}\)</span>, <span class="math inline">\({\rm{CO}}\)</span>)에 관해 모두 평가를 실시했어야 했습니다. 말이 거창해서 건강영향평가이지만, 기본적인 로직은 간단합니다. 질병의 일 발생/입원 건수를 <span class="math inline">\(Y\)</span>로 잡고, 일 대기오염원 농도를 <span class="math inline">\(X\)</span>로 잡아서 시계열 회귀 모델링을 하는 것이죠. 이를 통해 대기오염원들이 특정 질병의 발생/입원에 미치는 건강영향을 평가하는 것입니다. 여기서, 대기오염원이 미치는 효과는 비선형(non-linear)의 형태를 띤다는 점과 지연 효과(lag effect)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>를 갖는다는 점까지 모형에서 고려해주어야 했죠. Distributed lag non-linear model<span class="citation" data-cites="gasparrini2010">(<a href="#ref-gasparrini2010" role="doc-biblioref">Antonio Gasparrini, Armstrong, and Kenward 2010</a>)</span> (이하, DLNM)은 이 둘을 동시에(simultaneously) 모델링 하게끔 해줍니다. 크게 봤을 때는 시계열 회귀모형의 일종이죠. 환경적 요인들로 Outcome을 모델링하는 생태학적 연구분야에서는 DLNM이 최신 시계열 회귀모형이라고 보시면 될 것 같습니다. 본 분야의 모델링 쪽 연구는 <a href="http://www.ag-myresearch.com">Gasparrini</a> 교수가 주도하고 있구요.</p>
 <p>대학원에서 가장 많이 시간을 할애했던 연구 분야는 시계열 자료분석이었고, 이때 시계열을 회귀적으로 모델링하는 접근과 Distributed lag model에 대해 공부했던 경험이 있어 DLNM으로의 확장은 크게 어렵지 않았습니다.</p>
 </section>
 <section id="모형-최적화" class="level2">
@@ -230,7 +268,7 @@ div.csl-indent {
 </section>
 <section id="지역별-분석-결과를-하나의-분석-결과로" class="level2">
 <h2 class="anchored" data-anchor-id="지역별-분석-결과를-하나의-분석-결과로">지역별 분석 결과를 하나의 분석 결과로</h2>
-<p>분석을 완료하고 분석 결과를 요약해서 각 과 교수님들께 송부했으나, 문제가 하나 있었습니다. 6개 대도시 별 결과가 조금 상이한 질환들이 있었는데, 이것들을 어떤 합리적인 근거로 설명을 하느냐 였죠. 그래서, 나왔던 한 가지 해결책이 6개 지역별 분석 결과를 하나의 분석 결과로 요약하는 것이었습니다. 이를 위해서는, Gasparrini 교수가 제안한 다변량 메타분석(mutivariate meta-analysis, <span class="citation" data-cites="gasparrini2012">(<a href="#ref-gasparrini2012" role="doc-biblioref">A. Gasparrini, Armstrong, 와/과 Kenward 2012</a>)</span>) 방법론을 이용해야했습니다. 몇 가지 상황에 사용할 수 있는 여러 다변량 메타분석 방법론을 제시하고 있으니, 관심있으신 분들은 한번 쯤 들여다보셔도 좋을 것 같습니다. 최적화 해둔 모형들에 대해 다변량 메타분석을 수행하며, Reference로 참고할만한 R 코드들이 없어서 Github를 뒤지는데에 꽤 시간을 썼습니다. 그렇게 찾아낸 괜찮은 Reference를 바탕으로 다변량 메타분석을 R 상에서 수행하는 로직을 이해하고, 확장하여 적용할 수 있었습니다. 다변량 메타분석으로 지역별 분석 결과를 요약하는 것을 끝으로, 더이상의 추가적인 모델링은 없었습니다. 분석 결과를 요약하는 시각화를 꾸준하게 개선해나갔고, 동시에 본격적인 논문화 작업을 시작했습니다.</p>
+<p>분석을 완료하고 분석 결과를 요약해서 각 과 교수님들께 송부했으나, 문제가 하나 있었습니다. 6개 대도시 별 결과가 조금 상이한 질환들이 있었는데, 이것들을 어떤 합리적인 근거로 설명을 하느냐 였죠. 그래서, 나왔던 한 가지 해결책이 6개 지역별 분석 결과를 하나의 분석 결과로 요약하는 것이었습니다. 이를 위해서는, Gasparrini 교수가 제안한 다변량 메타분석(mutivariate meta-analysis, <span class="citation" data-cites="gasparrini2012">(<a href="#ref-gasparrini2012" role="doc-biblioref">A. Gasparrini, Armstrong, and Kenward 2012</a>)</span>) 방법론을 이용해야했습니다. 몇 가지 상황에 사용할 수 있는 여러 다변량 메타분석 방법론을 제시하고 있으니, 관심있으신 분들은 한번 쯤 들여다보셔도 좋을 것 같습니다. 최적화 해둔 모형들에 대해 다변량 메타분석을 수행하며, Reference로 참고할만한 R 코드들이 없어서 Github를 뒤지는데에 꽤 시간을 썼습니다. 그렇게 찾아낸 괜찮은 Reference를 바탕으로 다변량 메타분석을 R 상에서 수행하는 로직을 이해하고, 확장하여 적용할 수 있었습니다. 다변량 메타분석으로 지역별 분석 결과를 요약하는 것을 끝으로, 더이상의 추가적인 모델링은 없었습니다. 분석 결과를 요약하는 시각화를 꾸준하게 개선해나갔고, 동시에 본격적인 논문화 작업을 시작했습니다.</p>
 </section>
 <section id="맺음말" class="level2">
 <h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
@@ -241,14 +279,14 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-gasparrini2012" class="csl-entry" role="doc-biblioentry">
-Gasparrini, A., B. Armstrong, 와/과 M. G. Kenward. 2012. <span>“Multivariate Meta-Analysis for Non-Linear and Other Multi-Parameter Associations”</span>. <em>Statistics in Medicine</em> 31 (29): 3821–39. <a href="https://doi.org/10.1002/sim.5471">https://doi.org/10.1002/sim.5471</a>.
+Gasparrini, A., B. Armstrong, and M. G. Kenward. 2012. <span>“Multivariate Meta-Analysis for Non-Linear and Other Multi-Parameter Associations.”</span> <em>Statistics in Medicine</em> 31 (29): 3821–39. <a href="https://doi.org/10.1002/sim.5471">https://doi.org/10.1002/sim.5471</a>.
 </div>
 <div id="ref-gasparrini2010" class="csl-entry" role="doc-biblioentry">
-Gasparrini, Antonio, Benedict Armstrong, 와/과 M. G. Kenward. 2010. <span>“Distributed lag non-linear models”</span>. <em>Statistics in medicine</em> 29 (9월): 2224–34. <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a>.
+Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distributed Lag Non-Linear Models.”</span> <em>Statistics in Medicine</em> 29 (September): 2224–34. <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a>.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
 <li id="fn1"><p><strong>데이터 랭글링</strong>(Data Wrangling) 혹은 데이터 먼징(Data Munging)이라고 불리는 이것은 원자료(raw data)를 보다 쉽게 접근하고 분석할 수 있도록 데이터를 정리하고 통합하는 과정. <a href="https://ko.wikipedia.org/wiki/데이터_랭글링">🔗Source</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -256,15 +294,14 @@ Gasparrini, Antonio, Benedict Armstrong, 와/과 M. G. Kenward. 2010. <span>“D
 <li id="fn3"><p>예를 들자면, 5일 전에 마신 고농도의 초미세먼지가 질병 발생에 영향을 미치는 것<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>covariates. 몇 가지 기상요인들을 공변량으로 고려.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
   author = {방태모},
-  editor = {},
   title = {월간 회고록: 2022년 5월},
   date = {2022-10-08},
   url = {https://taemobang.com/posts/2022-10-08-monthly-memory-202205/},
-  langid = {ko}
+  langid = {kr}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+</code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 방태모. 2022. <span>“월간 회고록: 2022년 5월.”</span> October 8, 2022.
 <a href="https://taemobang.com/posts/2022-10-08-monthly-memory-202205/">https://taemobang.com/posts/2022-10-08-monthly-memory-202205/</a>.
 </div></div></section></div></main> <!-- /main -->
@@ -414,7 +451,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -435,8 +474,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -472,30 +528,53 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
 <script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="ko" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+  </div>
+</footer>
 
 
 

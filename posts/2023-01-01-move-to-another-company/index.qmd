@@ -2,7 +2,7 @@
 title: "2022년 이직 로그"
 description: |
    Data Scientist 이직 로그
-date: "2023-01-01"
+date: 2023-01-01
 draft: FALSE
 preview: preview.jpg
 citation:

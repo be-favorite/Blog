@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="방태모">
+<meta name="dcterms.date" content="2022-10-31">
 <meta name="description" content="A/B 테스트를 공부할 때 알아두면 좋은 용어들">
 
 <title>방태모의 블로그 - A/B 테스트 용어 사전</title>
@@ -73,15 +74,15 @@ div.csl-indent {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
@@ -131,16 +132,21 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">홈</a>
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">홈</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">블로그</a>
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">블로그</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../archive.html">아카이브</a>
+    <a class="nav-link" href="../../archive.html">
+ <span class="menu-text">아카이브</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">리소스</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">리소스</span>
+    </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
         <li>
     <a class="dropdown-item" href="../../research.html">
@@ -179,7 +185,7 @@ cookieconsent.run({
   <li><a href="#변형군" id="toc-변형군" class="nav-link" data-scroll-target="#변형군">변형군</a></li>
   <li><a href="#가드레일-지표" id="toc-가드레일-지표" class="nav-link" data-scroll-target="#가드레일-지표">가드레일 지표</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">이슈 보고</a></p></div></div></nav>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -205,18 +211,19 @@ cookieconsent.run({
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">저자</div>
     <div class="quarto-title-meta-contents">
              <p>방태모 </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">공개</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2022년 10월 31일</p>
+      <p class="date">October 31, 2022</p>
     </div>
   </div>
+  
     
   </div>
   
@@ -241,8 +248,8 @@ cookieconsent.run({
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
-<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, 와/과 Xu 2020</a>)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
+<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
+<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
 <p>저와 같은 A/B 테스트 초심자들에게는 단비같은 책이라고 할 수 있을 것 같습니다. 본 책을 공부하며 깨달은 내용들을 본 시리즈 물에서 저만의 언어로 최대한 요약해보고자 합니다. 통계학 전공자라 학부와 석사 때 실험설계를 공부하긴 했지만, 온라인 서비스 영역에서의 실험설계라 할 수 있는 온라인 종합 대조 실험에는 무지한 상태입니다. 잘못 생각하고 있는 부분이 있다면 가감없이 댓글로 지적해주시면 감사하겠습니다.😀 책의 서문에서 강조하는 바를 되새기며 이만 소개를 마칩니다.</p>
 <blockquote class="blockquote">
 <p>흥미로워 보이거나 다르게 보이는 어떤 수치는 대체로 틀린다 - Twyman</p>
@@ -293,11 +300,11 @@ cookieconsent.run({
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-kohavi2020" class="csl-entry" role="doc-biblioentry">
-Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
 <li id="fn1"><p>온라인 종합 대조 실험의 형태로는 A/B test, A/A test, A/B/n test가 있다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -305,15 +312,14 @@ Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled 
 <li id="fn3"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Multivariate은 다변량인데, 다변수 테스트라고 번역하는게 맞는지 모르겠습니다. 우선 책에 이렇게 번역이 되어있어 다변수 테스트라 남겨둡니다.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
   author = {방태모},
-  editor = {},
   title = {A/B 테스트 용어 사전},
   date = {2022-10-31},
   url = {https://taemobang.com/posts/2022-10-31-abtest-terms/},
-  langid = {ko}
+  langid = {kr}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+</code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 방태모. 2022. <span>“A/B 테스트 용어 사전.”</span> October 31, 2022. <a href="https://taemobang.com/posts/2022-10-31-abtest-terms/">https://taemobang.com/posts/2022-10-31-abtest-terms/</a>.
 </div></div></section></div></main> <!-- /main -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -462,7 +468,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -483,8 +491,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -520,24 +545,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

@@ -121,7 +121,7 @@
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
 <li id="fn1"><p>가천대 길병원 인공지능빅데이터융합센터↩︎</p></li>
@@ -129,15 +129,15 @@
 <li id="fn3"><p>인과추론에 관심을 가지게 된 자세한 이유는 <a href="https://careerly.co.kr/comments/61331?utm_campaign=self-share">커리어리</a>에서 만나보실 수 있습니다.↩︎</p></li>
 <li id="fn4"><p>참고로, 현재는 지마켓 <a href="https://corp.gmarket.com">기업 사이트</a>, <a href="https://careers.gmarket.com">채용 사이트</a> 둘 다 리뉴얼된 상태입니다. 현재 채용은 자유 이력서도 받아주는 것으로 알고 있습니다.😀 관심있으신 분들은 둘러보시기 바랍니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
   author = {방태모},
   title = {2022년 이직 로그},
-  date = {},
+  date = {2023-01-01},
   url = {https://taemobang.com/posts/2023-01-01-move-to-another-company/},
-  langid = {ko}
+  langid = {kr}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모" class="csl-entry quarto-appendix-citeas">
-방태모. n.d. <span>“2022년 이직 로그.”</span> <a href="https://taemobang.com/posts/2023-01-01-move-to-another-company/">https://taemobang.com/posts/2023-01-01-move-to-another-company/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“2022년 이직 로그.”</span> January 1, 2023. <a href="https://taemobang.com/posts/2023-01-01-move-to-another-company/">https://taemobang.com/posts/2023-01-01-move-to-another-company/</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-01-01-move-to-another-company/index.html</guid>
@@ -170,8 +170,8 @@
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="citation" data-cites="kohavi2020">(Kohavi, Tang, 와/과 Xu 2020)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<sup>1</sup>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(Kohavi, Tang, 와/과 Xu 2020)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
-<p><span class="citation" data-cites="kohavi2020">(Kohavi, Tang, 와/과 Xu 2020)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<sup>2</sup>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
+<p><span class="citation" data-cites="kohavi2020">(Kohavi, Tang, and Xu 2020)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<sup>1</sup>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(Kohavi, Tang, and Xu 2020)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
+<p><span class="citation" data-cites="kohavi2020">(Kohavi, Tang, and Xu 2020)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<sup>2</sup>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
 <p>저와 같은 A/B 테스트 초심자들에게는 단비같은 책이라고 할 수 있을 것 같습니다. 본 책을 공부하며 깨달은 내용들을 본 시리즈 물에서 저만의 언어로 최대한 요약해보고자 합니다. 통계학 전공자라 학부와 석사 때 실험설계를 공부하긴 했지만, 온라인 서비스 영역에서의 실험설계라 할 수 있는 온라인 종합 대조 실험에는 무지한 상태입니다. 잘못 생각하고 있는 부분이 있다면 가감없이 댓글로 지적해주시면 감사하겠습니다.😀 책의 서문에서 강조하는 바를 되새기며 이만 소개를 마칩니다.</p>
 <blockquote class="blockquote">
 <p>흥미로워 보이거나 다르게 보이는 어떤 수치는 대체로 틀린다 - Twyman</p>
@@ -222,11 +222,11 @@
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-kohavi2020" class="csl-entry">
-Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
 <li id="fn1"><p>온라인 종합 대조 실험의 형태로는 A/B test, A/A test, A/B/n test가 있다.↩︎</p></li>
@@ -234,15 +234,14 @@ Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled 
 <li id="fn3"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘↩︎</p></li>
 <li id="fn4"><p>Multivariate은 다변량인데, 다변수 테스트라고 번역하는게 맞는지 모르겠습니다. 우선 책에 이렇게 번역이 되어있어 다변수 테스트라 남겨둡니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
   author = {방태모},
-  editor = {},
   title = {A/B 테스트 용어 사전},
   date = {2022-10-31},
   url = {https://taemobang.com/posts/2022-10-31-abtest-terms/},
-  langid = {ko}
+  langid = {kr}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
 방태모. 2022. <span>“A/B 테스트 용어 사전.”</span> October 31, 2022. <a href="https://taemobang.com/posts/2022-10-31-abtest-terms/">https://taemobang.com/posts/2022-10-31-abtest-terms/</a>.
 </div></div></section></div> ]]></description>
   <category>A/B test</category>
@@ -328,15 +327,16 @@ Kohavi, Ron, Diane Tang, 와/과 Ya Xu. 2020. <em>Trustworthy Online Controlled 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ko">https://creativecommons.org/licenses/by/4.0/deed.ko</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
   author = {방태모},
   title = {월간 회고록: 2022년 7월},
-  date = {},
+  date = {2022-10-20},
   url = {https://taemobang.com/posts/2022-10-20-monthly-memory-202207/},
-  langid = {ko}
+  langid = {kr}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-방태모" class="csl-entry quarto-appendix-citeas">
-방태모. n.d. <span>“월간 회고록: 2022년 7월.”</span> <a href="https://taemobang.com/posts/2022-10-20-monthly-memory-202207/">https://taemobang.com/posts/2022-10-20-monthly-memory-202207/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
+방태모. 2022. <span>“월간 회고록: 2022년 7월.”</span> October 20, 2022.
+<a href="https://taemobang.com/posts/2022-10-20-monthly-memory-202207/">https://taemobang.com/posts/2022-10-20-monthly-memory-202207/</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</guid>

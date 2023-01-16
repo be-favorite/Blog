@@ -10,15 +10,9 @@ about:
     - icon: facebook
       text: Facebook
       href: https://www.facebook.com/profile.php?id=100070120780059
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/TaemoBang
     - icon: github
       text: Github
       href: https://github.com/be-favorite
-    - icon: globe
-      text: Careerly
-      href: https://careerly.co.kr/profiles/481629?from=notification&location=gnb
     - icon: file-earmark-person
       text: Resume
       href: https://taemobang.notion.site
@@ -29,7 +23,7 @@ comments: false
 
 현재 G마켓 AI Product팀에서 데이터 분석을 하고 있습니다.
 
-데이터를 통해 유저의 행동을 이해하고 추론하는 것에 관심이 있습니다.
+데이터 분석을 통해 G마켓 고객들의 쇼핑 경험을 더 즐겁게 만들고자 합니다.
 
 새로운 것을 배우고 도전하는 것을 좋아합니다.
 

@@ -41,7 +41,7 @@ library(rmarkdown)
 ```
 100점짜리 하나를 가지고 나가기 위해 노력했기에, 그 외에 영역에는 모르는 부분이 참 많았어요. 이때부터 조금씩 생각을 했습니다. 아.. 100점짜리 하나를 만들어 나가는 것 보다는 80점짜리를 3개 이상 만드는게 더 좋은 결정이었을 수도 있겠구나.
 
-![T자형 인재 (출처:EliceAcademy)](fig2.png){fig-align="center" width="800"}
+![T자형 인재 (출처: EliceAcademy)](fig2.png){fig-align="center" width="800"}
 
 Specialist를 지향해왔던 저는 100점짜리 하나를 만들어서 나가야 한다는 생각에 아래로 뾰족한 '전문 분야에 대한 깊은지식'만을 갖추는 데에 매몰되어있었습니다. 현 사회에서 요구하는 인재의 유형이라 할 수 있는 T자형 인재와는 거리가 꽤 멀었죠. 그리고, 이로 인한 어려움은 산업계로 이직을 하면서 피부로 느낄 수 있었습니다. 이러한 생각을 할때 즈음 신수정 님이 쓰신 \<일의 격\>에 이런 구절이 쓰여져 있더군요.
 
@@ -60,7 +60,7 @@ Specialist를 지향해왔던 저는 100점짜리 하나를 만들어서 나가�
 자, 지겹고 무의미한 논쟁을 한번 꺼내 볼까요? 제가 가장 사랑하는 언어는 여전히 R이지만, 산업계에서 R이 차지하고 있는 파이를 직접 마주하고 나니 많은 생각을 하게 됐어요. R vs Python, 최근에는 Julia 까지 데싸 업계에서는 여전히 가장 감질맛 나는 떡밥이 아닌가 생각합니다
 
 ```{=html}
-<center><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6847186429878108160" width="504" height="585" frameborder="0" allowfullscreen=""></iframe></center>
+<center></center><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6847186429878108160" width="504" height="585" frameborder="0" allowfullscreen=""></iframe></center>
 ```
 R과 Python을 비교하는 글은 언제나 꾸준히 올라왔습니다. 링크드인에도 이 떡밥은 종종 풀렸습니다. 해외에서도 뜨거운 주제였죠. 논쟁의 마무리에서 정답과 같은 중론은 "What's your job?" 이었습니다. 당신이 풀고자 하는 문제가 무엇인지에 따라 두 언어를 선택하면 된다는 이야기죠. 이러한 중론에 저는 100% 동의했습니다. 예컨데, 딥러닝을 포함한 머신러닝을 위시한 예측 모델링에 꿈이 있는 사람이라면, Python을 택하여 공부하는게 아무래도 취업 시장에서 유리한 포지션을 가져갈 수 있겠죠? 저도 학부생, 대학원생 때 이 떡밥에 관심이 많았던 사람이라, 과거에 슬기로운 통계생활 블로그에 이와 관련한 주제로 [글](https://statisticsplaybook.tistory.com/39)을 쓰기도 했어요. 아래 두 글은 꽤 중립적인 입장에서 두 언어를 비교하고 있다고 생각했던 글들이여서 가져와 봤어요.
 

@@ -37,7 +37,7 @@ library(rmarkdown)
 그러나, G마켓으로 이직하면서 이 생각에는 많은 변화가 찾아왔습니다. 일단, 제가 모르는게 너무 많다는 생각을 했어요. 1년반정도 재직을 했던 첫 직장에서는 느껴보지 못한 어려움과 감정을 느꼈습니다. 당시 느꼈던 감정이 잘 녹아있는 페이스북 포스팅입니다.
 
 ```{=html}
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0nLDeuxEGHJvG4Ya9hLRVAo277o4wmhA64iFMkUfvF9cT5G7B3M5hPdQrNY75ZMtTl%26id%3D100070120780059&show_text=true&width=500" width="500" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0nLDeuxEGHJvG4Ya9hLRVAo277o4wmhA64iFMkUfvF9cT5G7B3M5hPdQrNY75ZMtTl%26id%3D100070120780059&show_text=true&width=500" width="500" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
 ```
 100점짜리 하나를 가지고 나가기 위해 노력했기에, 그 외에 영역에는 모르는 부분이 참 많았어요. 이때부터 조금씩 생각을 했습니다. 아.. 100점짜리 하나를 만들어 나가는 것 보다는 80점짜리를 3개 이상 만드는게 더 좋은 결정이었을 수도 있겠구나.
 

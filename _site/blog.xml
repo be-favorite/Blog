@@ -10,7 +10,93 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Tue, 31 Jan 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 06 Feb 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>면접을 앞두고 분석 경험을 회고하는 나만의 방식</title>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2023-02-07-da-my-view/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-02-07-da-my-view/preview.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<p>Data Analyst/Scientist 포지션에 서류, SQL 테스트, 코딩 테스트 등은 패스한 뒤, 1차 면접<sup>1</sup>을 앞두고 있는 상황이라고 가정해보겠습니다. 이때 가장 먼저 신경써야할 부분은 무엇인지 한 번 고민을 해보자고요. 우선, 자기소개서, 포트폴리오를 포함한 이력서에 언급한 것들을 다시 되돌아 보는 것이 가장 먼저겠죠? 그리고, 이것들이 담고있는 내용들 중 가장 중요한 것은 우리가 이제까지 해왔던 분석 경험<sup>2</sup>들을 천천히 회고해보는 것이라고 생각합니다.</p>
+<p>무엇을 어떻게 회고해야 면접에서 좋은 점수를 받을 수 있을까요? 이제부터 하는 말들은 지극히 제 개인적인 의견이니 정답이 아닌, 참고만해주시기 바랍니다.🤗 업계에 몸을 담은지 오래되지 않은 사람의 개인적인 의견이니 가볍게 들어주시면 될 듯합니다. 혹시, 이 글을 읽는 분들 중 시니어 분들이 계시다면 함께 의견 나눠주시면 좋을 것 같습니다. 지금부터 소개드릴 저만의 회고 방식은 “데이터 분석을 대하는 저만의 자세”로도 치환할 수 있을 듯 합니다.</p>
+<section id="회고-방식" class="level1">
+<h1>회고 방식</h1>
+<p>분석 경험을 회고할 때에 제가 가장 많이 신경쓰는 부분은 Why와 How입니다. What은 크게 중요치 않습니다. 분석 경험에 관하여 이거 해봤다, 저거 해봤다 식의 나열하는 정도의 단순한 대답은 면접관에게 점수를 따기 어렵습니다. 내가 어떤 사람인지 디테일하게 드러낼 수 없을 뿐더러, 이런 식의 대답은 재미도 없죠.😀 다음과 같이 Why와 How를 중심으로 회고해볼 것을 제안합니다.</p>
+<section id="why" class="level2">
+<h2 class="anchored" data-anchor-id="why">Why</h2>
+<section id="방법론" class="level3">
+<h3 class="anchored" data-anchor-id="방법론">방법론</h3>
+<p>풀고자 하는 문제와 주어진 데이터 관점에서 항상 어떤 방법론을 사용할 지 깊게 고민한 흔적을 드러낼 수 있어야 합니다. 여기에 한 가지 더 얹자면, 모형의 계산량 대비 효율에 관한 고민까지 했었던 사람이라면 더 좋은 점수를 딸 수 있을 것이라 생각합니다.</p>
+</section>
+<section id="전반적인-분석-과정" class="level3">
+<h3 class="anchored" data-anchor-id="전반적인-분석-과정">전반적인 분석 과정</h3>
+<p>문제 해결을 위해 분석의 각 단계에서 그러한 결정을 한 본인만의 명확한 이유, 고민한 흔적들이 있어야합니다.</p>
+</section>
+</section>
+<section id="how" class="level2">
+<h2 class="anchored" data-anchor-id="how">How</h2>
+<section id="챌린징" class="level3">
+<h3 class="anchored" data-anchor-id="챌린징">챌린징</h3>
+<p>분석 과정 중 챌린징한 상황을 마주했을때, 이를 해결하기 위해 어떤 노력들을 해봤는가에 대해서 생각해보세요. 아무리 풀기 쉬워 보이는 문제라도 어떤 데이터를 마주하느냐, 또는 어떤 세부적인 사항들을 고려해야하는가에 따라서 얼마든지 챌린징한 상황을 마주할 수 있습니다. 그리고, 현업에서 우리는 상대방을 설득할 수 있을만한 합당안 근거로 이 상황들을 해결해나가야 합니다.</p>
+</section>
+<section id="계산량-계산속도" class="level3">
+<h3 class="anchored" data-anchor-id="계산량-계산속도">계산량, 계산속도</h3>
+<p>우리에게 주어져있는 시간, 리소스, 하드웨어, 소프트웨어는 한정적입니다. 모델 적합 또는 수많은 반복 작업이 필요할 때에, 여기에 드는 계산량 및 계산 속도를 개선하기 위해 어떤 노력을 해봤는지 회고해보세요.</p>
+</section>
+<section id="시각화" class="level3">
+<h3 class="anchored" data-anchor-id="시각화">시각화</h3>
+<p>사람들은 텍스트가 아닌 그림을 기억합니다. 그래서, 분석 과정 곳곳에 인사이트를 주기 위해 잘 설계된 시각화 그림을 제공하는 것은 정말 중요합니다. 그림에 들어간 색이 너무 많을때, 이를 줄이기 위한 고민을 해보셨나요? 전달하고 싶은 부분만을 명확하게 전달하기 위해, 시각화를 끊임없이 개선해본 경험이 있으신가요? 얼마나 많은 고민을 녹여내어 어떤 시각화를 수행해오셨나요? 이런 것들에 대한 회고를 해보세요. 남들이 다 하는 수준의 가벼운 시각화 코드를 가져와서, Copy &amp; Paste로 따라하는 데에만 그치지 마셨으면 합니다.</p>
+</section>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>오늘은 면접을 앞두고 분석 경험을 회고하는 제 방식에 대해 공유드려봤습니다. 부제는 데이터 분석을 대하는 저의 자세가 되겠습니다.😀 분석 과정에 있어서 앞서 소개한 측면들에 관한 고민을 하는 습관을 가지고 있지 않다면, 위 질문에 대답하기란 꽤 어려울 수도 있습니다. What은 크게 중요치 않다고 했는데요. 저는 글의 서두에서 당신이 서류는 통과, 기타 테스트는 통과한 1차 면접을 앞두고 있는 사람이라 가정했습니다. 즉, What은 이미 통과되었다고 볼 수 있겠죠. 면접에서 Why와 How를 잘 설명하고, 내가 풀어본 문제가 지원한 회사가 풀고자 하는 What과 어느정도 align이 된다면? 그 면접의 합격은 따놓은 당상입니다.</p>
+<p>자, 이러한 로직을 2차 면접<sup>3</sup>으로 확장해볼까요? 1차 면접에서 보고자하는 결이 “내가 이 사람을 데리고 일을 할 수 있을까”라면, 2차 면접에서 보고자 하는 결은 당신의 포텐셜에 가깝습니다. 내가 이제까지 해온 분석 경험을 내가 이제까지 해온 인생 경험들로 치환해보세요. 그리고, 지금의 나로 성장하기까지 해왔던 수많은 선택들을 회고해보세요. 거기서 다시 Why와 How를 중심으로 깊게 고민해보세요. 그럼, 2차 면접도 어렵지 않으실 겁니다. 면접과 관련한 팁들은 <a href="https://www.taemobang.com/posts/2023-01-01-move-to-another-company/">2022년 이직 로그</a>에서도 이야기를 했었는데, 관심있으신 분들은 참고해보세요.</p>
+<p>이제 글을 마무리 하고자 합니다. 사실, 회고 방식에서 소개한 측면 외에 분석 과정에서 자신에게 끊임없이 던져보아야 할 가장 중요한 질문이 있습니다. 이에 대해 얘기해보면서 글을 마칩니다.</p>
+<ul>
+<li>나는 이 문제를 왜 풀고 있는가?
+<ul>
+<li>분석이 길어지다 보면, 때로는 본질적으로 어떤 문제를 풀었어야했는지 종종 잊을때가 있습니다. 분석 스텝바이스텝에서 이 부분을 끊임없이 상기시키세요.</li>
+<li>위 질문은 “이 문제를 풀어서 실질적으로 어떤 유의미한 것을 얻을 수 있는가?”에 대한 질문으로 치환될 수 있습니다. 이 문제를 풀음으로써 궁극적으로 얻고자 하는 바가 무엇인지에 대해서도 끊임없이 상기시키세요. 분석 퀄리티를 높여나가는 데에 큰 도움이 되실겁니다.</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
+
+<ol>
+<li id="fn1"><p>기술 면접↩︎</p></li>
+<li id="fn2"><p>모델링까지 포함한 넓은 범주로 이해해주세요.↩︎</p></li>
+<li id="fn3"><p>임원 면접↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {면접을 앞두고 분석 경험을 회고하는 나만의 방식},
+  date = {2023-02-07},
+  url = {https://taemobang.com/posts/2023-02-07-da-my-view/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“면접을 앞두고 분석 경험을 회고하는 나만의
+방식.”</span> February 7, 2023. <a href="https://taemobang.com/posts/2023-02-07-da-my-view/">https://taemobang.com/posts/2023-02-07-da-my-view/</a>.
+</div></div></section></div> ]]></description>
+  <category>Column</category>
+  <guid>https://taemobang.com/posts/2023-02-07-da-my-view/index.html</guid>
+  <pubDate>Mon, 06 Feb 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2023-02-07-da-my-view/preview.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>연간 회고록: 2022년</title>
   <dc:creator>방태모</dc:creator>
@@ -919,6 +1005,7 @@ Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distr
 고민.”</span> September 13, 2022. <a href="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/">https://taemobang.com/posts/2022-09-12-statistics-playbook-1/</a>.
 </div></div></section></div> ]]></description>
   <category>Statistics Playbook</category>
+  <category>Column</category>
   <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</guid>
   <pubDate>Mon, 12 Sep 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>

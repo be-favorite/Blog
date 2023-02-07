@@ -16,7 +16,7 @@ categories: [Memory]
 library(rmarkdown)
 ```
 
-[![The illustration by Mary Amato](preview.png)](https://notioly.com)
+[![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)
 
 이직을 결심하고 생각보다 빠른 시기에 결실을 맺을 수 있었습니다. 작년 2월 즈음 이직을 결심하고, 8월 4일 G마켓 Data Scientist 포지션에 최종 합격 통보를 받을 수 있었는데요. 이직을 결심한 구체적인 이유, 나만의 지원 기준 등을 담은 이직 로그와 G마켓으로의 이직 여정에 대해 적어보려고 합니다.
 

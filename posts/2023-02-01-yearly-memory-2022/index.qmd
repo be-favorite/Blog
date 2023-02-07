@@ -18,7 +18,7 @@ categories: [Memory]
 library(rmarkdown)
 ```
 
-[![The illustration by Mary Amato](preview.png)](https://notioly.com)
+[![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)
 
 지난 한 해가 지나간지 얼마 채 되지도 않은 것 같은데, 어느덧 2월에 들어섰네요. 역시 시간은 우리를 기다려주지 않습니다. 이제서야 연간 회고록을 쓰는 저도 참..😂 연간 회고록은 커리어와 개인적인 부분을 나눠서 진행해보려고 해요. 이번 한 해는 제게 참 많은 변화가 있었어요. 기존에 가지고 있던 생각에도 변화가 참 많았습니다. 그 중심에는 학계에서 산업계로의 이직이 큰 몫을 한 것 같아요. 한 해 동안 느꼈던 바들을 한 번 잘 풀어서 써보겠습니다.
 

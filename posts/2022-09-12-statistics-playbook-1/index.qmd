@@ -7,7 +7,7 @@ draft: FALSE
 preview: preview.jpg
 citation:
   url: https://taemobang.com/posts/2022-09-12-statistics-playbook-1/
-categories: [Statistics Playbook]
+categories: [Statistics Playbook, Column]
 ---
 
 [![Photo by Christian Erfurt on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/sxQz2VfoFBE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)

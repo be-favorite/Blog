@@ -2,7 +2,7 @@
 title: "면접을 앞두고 분석 경험을 회고하는 나만의 방식"
 description: |
   부제: 데이터 분석을 대하는 나의 자세 
-date: today
+date: "2023-02-07"
 draft: FALSE
 preview: preview.png
 citation:

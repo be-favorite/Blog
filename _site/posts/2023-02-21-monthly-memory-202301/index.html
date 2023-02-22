@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="방태모">
+<meta name="dcterms.date" content="2023-02-21">
+<meta name="description" content="Streamlit 캐싱, 시계열 자료분석, 글또 8기, 데분생 2기">
+
+<title>방태모의 블로그 - 월간 회고록: 2023년 1월</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1QHE9697JG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../css/karat.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">방태모의 블로그</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">홈</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">블로그</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../archive.html">
+ <span class="menu-text">아카이브</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">리소스</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">연구 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentation.html">
+ <span class="dropdown-text">발표 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+ <span class="dropdown-text">과거 기술블로그</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#일" id="toc-일" class="nav-link active" data-scroll-target="#일">일</a>
+  <ul class="collapse">
+  <li><a href="#streamlit-캐싱" id="toc-streamlit-캐싱" class="nav-link" data-scroll-target="#streamlit-캐싱">Streamlit 캐싱</a></li>
+  <li><a href="#시계열-자료분석" id="toc-시계열-자료분석" class="nav-link" data-scroll-target="#시계열-자료분석">시계열 자료분석</a></li>
+  </ul></li>
+  <li><a href="#개인" id="toc-개인" class="nav-link" data-scroll-target="#개인">개인</a>
+  <ul class="collapse">
+  <li><a href="#글또-8기" id="toc-글또-8기" class="nav-link" data-scroll-target="#글또-8기">글또 8기</a></li>
+  <li><a href="#r-아이돌과의-만남" id="toc-r-아이돌과의-만남" class="nav-link" data-scroll-target="#r-아이돌과의-만남">R 아이돌과의 만남</a></li>
+  </ul></li>
+  <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">이슈 보고</a></p></div></div></nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">월간 회고록: 2023년 1월</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Memory</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Streamlit 캐싱, 시계열 자료분석, 글또 8기, 데분생 2기</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-contents">
+             <p>방태모 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">공개</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 21, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="preview.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<p>새해가 밝은지 얼마 지나지 않은듯 한데, 어느덧 2월도 저물어가고 있네요. 얼른 지난 1월을 회고해보려고 해요. 매주 일요일 적었던 1월의 주간 회고를 돌이켜보니, 1월도 느낀 바가 참 많았던 한 달이었더군요. 산업계로 이직을 하고부터는 매달 새로운 것을 느끼고, 새로운 생각을 하게 되는 것 같아요. 여전히 이 곳은 제게 아주 챌린징한 곳인가 봅니다. 지난 1월의 이야기를 일과 개인적인 부분으로 나눠서 이야기해보겠습니다.</p>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
+<section id="streamlit-캐싱" class="level3">
+<h3 class="anchored" data-anchor-id="streamlit-캐싱">Streamlit 캐싱</h3>
+<p>이직 후 맨 처음 맡았던 업무는 대시보드 개발이었는데요. <a href="https://www.taemobang.com/posts/2023-02-01-yearly-memory-2022/#shiny-streamlit">연간 회고록</a>에서 말씀드렸듯이, 대시보드 개발은 Streamlit으로 진행하고 있습니다. 1월 첫째 주에 우선적으로 올릴 지표들, 제가 필요로 된다고 생각했던 반응형 그래프 기능들을 다 반영해서 팀 내에 첫 공유를 드렸었습니다. 그 중 앱의 로딩 속도가 조금 느린데, 개선이 가능하냐는 피드백이 있었는데요. 저도 이 부분은 공유 세션을 가지기 전에 생각했던 부분이긴 했습니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig1.jpeg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>앱 스크립트를 짤 때 초기에만 1번 Hive를 찔러서 테이블을 가져오는데, 왜 이렇게 앱 로딩 속도가 느릴까? 지나치게 많은 반응형 그래프를 한꺼번에 한 페이지에 로딩을 해서 가져와야하기 때문일까? 이러한 개인적인 추측을 했었죠. 그러나, 원인은 Streamlit이 가진 본질적인 특징에 있었습니다.😀</p>
+<p>그렇다면, Streamlit의 어떤 특징 때문에 앱 로딩 속도가 이렇게 느렸던 걸까요? Streamlit은 앱 사용자가 이것저것 눌러보며 앱의 특정 기능을 실행하면, 스크립트를 처음부터 끝까지 다시 실행시키는 로직을 가지고 있어요. Streamlit으로 대시보드 개발을 손쉽게 만들어주는 데에 이 로직이 큰 역할을 한다고 해요. 문제는 스크립트를 재실행시킬 때마다 함수가 반복적으로 다시 실행되고 객체 또한 반복적으로 다시 불러와지기 때문에, 앱 로딩 속도에 큰 영향을 미친다는 점이죠. 아주 가벼운 형태의 앱이면 문제가 되지 않겠지만요.</p>
+<p>이러한 본질적인 특징때문에 제가 앱 스크립트에 첫 줄에서 딱 한 번만 Hive를 찔러서 가져와도, 제가 만들어둔 반응형 그래프를 유저가 한 번이라도 클릭을 한다면 다시 이 스크립트를 처음부터 다시 실행시키기 때문에 로딩 속도가 느릴 수 밖에 없었던 것입니다. 이 문제는 새로고침을 해도 물론이었으며, 여러 페이지로 구성한 앱 내에서 다른 페이지로 넘어갈 때에도 문제가 됐습니다.</p>
+<p>이는 Streamlit에서 제공하는 캐싱 기능을 통해 아주 손쉽게 해결할 수 있었습니다. 스크립트 초반부에 캐싱 코드 한 줄만 딱 넣어주면, 첫 실행 시 함수 호출 결과와 객체를 저장함으로써 앱 로딩 속도를 대폭 개선해줬죠. 얼마전 <a href="https://discuss.streamlit.io/t/version-1-18-0/37501">Streamlit 1.18.0</a>이 정식 릴리즈되면서, 테스트 중이었던 캐싱 코드도 정식으로 릴리즈되었어요. 관심 있으신 분들은 <a href="https://blog.streamlit.io/introducing-two-new-caching-commands-to-replace-st-cache/">Streamlit의 블로그 포스트</a>와 <a href="https://docs.streamlit.io/library/advanced-features/caching">Documentation</a>을 참고해보시기 바랍니다.</p>
+</section>
+<section id="시계열-자료분석" class="level3">
+<h3 class="anchored" data-anchor-id="시계열-자료분석">시계열 자료분석</h3>
+<p>여기서는 시계열 자료분석을 수행할 일이 없을 줄 알았는데요. 그럴 일이 생겼습니다!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig2.jpeg" class="img-fluid figure-img" width="600"></p>
+</figure>
+</div>
+<p>시계열적으로 접근하는 데이터 분석은 언제나 웰컴이에요. 제게 가장 익숙한 문제의 유형 중 하나이기 때문입니다. 여기서 자세하게 어떤 배경에서 어떤 시계열적 접근이 필요로 됐는지 말씀을 드리진 않겠지만<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, 여기서 또 한번 느낀 바는 역시나 세상에 쓸모없는 배움은 없다는 것입니다.</p>
+<p>여러분들이 지금 배우고 있는 것들이 추후에 업무에서 어떻게 쓰일 지는 아무도 모릅니다. 항상 최선을 다하세요. 그리고, 걱정하지 마세요. 배워두면 좋을 것 같은데? 근데, 좀 우선순위는 아닌거 같은데? 이런 생각이 드는 것들이 많으신가요? 시간이 허락 된다면 주저하지 말고 배워보세요. 주말에 시간을 내서 이틀 정도만 바짝 해보세요. 새로운 도구의 기본적인 것들을 익히는 데에는 생각보다 긴 시간이 걸리지 않습니다.</p>
+<p>언젠가는 내가 가지고 있는 것과 시너지 효과를 내줄 수 있는 날이 올겁니다. 제 경우에는 블로그에 글쓰기가 그랬고, Git이 그랬고, Python이 그랬고, SAS가 그랬어요. 이 외에도 더 많은 경우가 있지만 이만 줄이겠습니다. 시간이 없다는 핑계, 우선순위가 아닌 것 같다는 핑계가 머리 속을 지배하고 있을 때는 잡스 형님이 Connecting the dots이라는 주옥같은 명언을 남긴 스탠포드 대학교 명연설을 한 번 보세요. 떨어져 가는 학습 동기를 채워넣어주는 최고의 동영상 중 하나입니다.</p>
+<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/J2m-fv_wAsY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p>저는 과거에 주저하기만 하고 결국 우선순위가 아니라는 핑계로 새로운 것에 대한 배움을 미뤄왔던 사람이거든요. 여러분들은 그러지 않으셨으면 합니다. 그래서, 요즘 이렇게 배워야할게 산더미인 듯 해요.😭</p>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="글또-8기" class="level3">
+<h3 class="anchored" data-anchor-id="글또-8기">글또 8기</h3>
+<p>지난 1월 말부터 글또<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> 8기에 참가하고 있어요. 글또는 개발자들의 글쓰기 역량을 강화하고 글을 꾸준히 쓸 수 있도록 돕는 커뮤니티인데요. 지난 한해를 회고하면서 글또 다음 기수에는 꼭 참가를 해보고 싶다는 생각을 했었어요. 그 이유에 대해 조금 이야기 해볼게요. 대학원에 진학하며 개인 블로그를 지금까지 꾸준히 운영해오고 있는데요.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> 그런데, 대학원을 졸업하고 글쓰기에는 조금씩 나태해져 가고 있는 제 자신을 발견할 수 있었어요. 업무, 이직, 새로운 산업에 적응 등을 핑계로 말이죠.</p>
+<p>그래서, 새로운 자극이 필요하다고 생각이 들었어요. 넘치는 의욕으로 지난 1차 제출 기간에는 2개의 글을 제출했었어요. 2차 제출 기간의 첫 글은 지금 쓰고있는 이 월간 회고록이 될 듯합니다. 1차 기간에 제출했던 2개의 글도 기술적인 주제의 글은 아니여서, 다음 글은 꼭 기술적인 주제로 써보겠습니다. 블로그를 회고록, 칼럼이 지배해가고 있는데, 이제 기술적인 글을 쓸 때가 되지 않았나 생각하고 있습니다. 아무튼, 글또 8기에 계획된 12번의 글 제출 기간 동안 꾸준하게 글을 써내려가는 모습을 이 블로그를 통해 보여드리겠습니다.😀</p>
+</section>
+<section id="r-아이돌과의-만남" class="level3">
+<h3 class="anchored" data-anchor-id="r-아이돌과의-만남">R 아이돌과의 만남</h3>
+<p>1월 둘째주 토요일에 제가 선망하고 있었던 R 고수.. 진환님과 만남의 시간을 가질 수 있었어요. 만남의 계기는 진환님의 블로그를 보다가 보내게 된 메일 한통이었어요. 전부터 한번 쯤 꼭 만나뵙고 이야기를 나눠보고 싶었어요. 그래서, 메일을 몇 통 주고받다가 제가 마지막에 불쑥 만나볼 수 있냐고 이야기를 드렸어요. 이런 제안을 드리는 것은 처음이라, 썼다 지웠다를 한 10번 정도 반복한 것 같습니다.😂</p>
+<p>다행이 제 제안을 좋게 봐주셨고, 오프라인에서 만나 이야기를 나누면서 정말 시간 가는 줄 모르고 대화를 나눴어요. 그리고, 여기에 자세한 이야기는 적지 않겠지만, 세상이 참 좁다는 것을 한 번 더 느꼈습니다. 기억에 남는 이야기 중 하나를 해보자면, 수면 시간과 관련된 이야기였는데요. 하루에 보통 수면 시간을 얼마나 가져가시는 지 만나서 꼭 여쭤보고 싶었어요.</p>
+<p>제가 받은 대답은 충격이었습니다..</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig3.jpeg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>7-8시간씩 주무신다고 합니다. 저랑 수면 시간이 비슷한데.. <a href="https://jhk0530.medium.com/">진환님</a> 블로그를 들여다보면, 왜 진환님의 하루는 30시간 같죠? 깨어있을 때의 시간이 중요함을 다시 한 번 느꼈습니다. 진환님과의 만남도 제겐 정말 좋은 자극제였습니다. 이런 분들은 평소에 어떤 생각을 하시고, 어떻게 지내시는지 참 궁금했거든요. 다음에 다시 뵐 수 있는 기회가 있었으면 하네요.😀</p>
+</section>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>여러분들의 1월은 어떠셨나요? 저는 여전히 배워야할 게 산더미인 요즘입니다. 그래서, 2023년에는 저를 최대한 바쁘게 만들어보고 있습니다. 퇴근하고 운동을 갔다가, 저녁 식사 후 필요한 공부를 하는 생활이 무의식의 습관으로 자리 잡게되는 한 해가 되길 바라며 글을 마칩니다.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
+
+<ol>
+<li id="fn1"><p>대외비에 문제가 안되는 선에서, 추후 별도의 글로 정리해보겠습니다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>글쓰는 또라이가 세상을 바꾼다!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>네이버 블로그, 티스토리, Rmarkdown 기반 Distill 블로그를 거쳐 지금은 이렇게 Quarto 기반 블로그에 정착을 했습니다.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {월간 회고록: 2023년 1월},
+  date = {2023-02-21},
+  url = {https://taemobang.com/posts/2023-02-21-monthly-memory-202301/},
+  langid = {kr}
+}
+</code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+방태모. 2023. <span>“월간 회고록: 2023년 1월.”</span> February 21, 2023.
+<a href="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/">https://taemobang.com/posts/2023-02-21-monthly-memory-202301/</a>.
+</div></div></section></div></main> <!-- /main -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+<div>
+<hr>
+
+<p> 새 글이 발행되면 알려드려요.  </p>
+
+<iframe id="beehiiv-form" src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; height: 55px;"></iframe>
+
+<p> 포스팅을 독려해주실 수 있어요.  </p>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="taemobang" data-color="#06436e" data-emoji="☕" data-font="Lato" data-text="Support me" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" data-height="40px"></script>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="ko" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+  </div>
+</footer>
+
+
+
+</body></html>

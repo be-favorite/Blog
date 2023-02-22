@@ -30,7 +30,7 @@ categories: [Memory]
 
 이는 Streamlit에서 제공하는 캐싱 기능을 통해 아주 손쉽게 해결할 수 있었습니다. 스크립트 초반부에 캐싱 코드 한 줄만 딱 넣어주면, 첫 실행 시 함수 호출 결과와 객체를 저장함으로써 앱 로딩 속도를 대폭 개선해줬죠. 얼마전 [Streamlit 1.18.0](https://discuss.streamlit.io/t/version-1-18-0/37501)이 정식 릴리즈되면서, 테스트 중이었던 캐싱 코드도 정식으로 릴리즈되었어요. 관심 있으신 분들은 [Streamlit의 블로그 포스트](https://blog.streamlit.io/introducing-two-new-caching-commands-to-replace-st-cache/)와 [Documentation](https://docs.streamlit.io/library/advanced-features/caching)을 참고해보시기 바랍니다.
 
-### 시계열 자료분석
+### 시계열 자료분석 (부제: 세상에 쓸모없는 배움은 없다.)
 
 여기서는 시계열 자료분석을 수행할 일이 없을 줄 알았는데요. 그럴 일이 생겼습니다!
 
@@ -56,7 +56,7 @@ categories: [Memory]
 
 [^2]: 글쓰는 또라이가 세상을 바꾼다!
 
-[^3]: 네이버 블로그, 티스토리, Rmarkdown 기반 Distill 블로그를 거쳐 지금은 이렇게 Quarto 기반 블로그에 정착을 했습니다.
+[^3]: 네이버 블로그, [티스토리](https://be-favorite.tistory.com), Rmarkdown 기반 Distill 블로그를 거쳐 지금은 이렇게 Quarto 기반 블로그에 정착을 했습니다.
 
 그래서, 새로운 자극이 필요하다고 생각이 들었어요. 넘치는 의욕으로 지난 1차 제출 기간에는 2개의 글을 제출했었어요. 2차 제출 기간의 첫 글은 지금 쓰고있는 이 월간 회고록이 될 듯합니다. 1차 기간에 제출했던 2개의 글도 기술적인 주제의 글은 아니여서, 다음 글은 꼭 기술적인 주제로 써보겠습니다. 블로그를 회고록, 칼럼이 지배해가고 있는데, 이제 기술적인 글을 쓸 때가 되지 않았나 생각하고 있습니다. 아무튼, 글또 8기에 계획된 12번의 글 제출 기간 동안 꾸준하게 글을 써내려가는 모습을 이 블로그를 통해 보여드리겠습니다.😀
 

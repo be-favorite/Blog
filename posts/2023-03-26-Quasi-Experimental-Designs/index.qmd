@@ -13,15 +13,15 @@ bibliography: references.bib
 
 [![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)
 
-<aside>본 포스팅은 Korea Summer Workshop on Causal Inference 2022의 [\[Bootcamp 3-1\] 디자인 기반의 인과추론 세션](https://youtu.be/K0huXsARLc4)을 기반으로 작성되었습니다. </aside>
+<aside>본 포스팅은 Korea Summer Workshop on Causal Inference 2022의 [\[Bootcamp 3-1\] 디자인 기반의 인과추론 세션](https://youtu.be/K0huXsARLc4)을 기반으로 작성되었습니다.</aside>
 
-오늘은 Potential Outcome Framework 관점의 인과추론 방법론 중 하나인 준실험설계(Quasi-experimental design)에 대해 소개하고자 합니다. Potential Outcome Framework 관점에서 준실험설계는 RCT(Randomized Clinical Trial)가 불가능한 상황에 고려해볼 수 있는 방법론 중 가장 높은 수준의 인과추론을 수행할 수 있는 방법론입니다. Potential Outcome Framework 하에서 인과추론은 결국 이상적인 Counterfactual[^1]과 가장 가까운, 비교가능한 Control 그룹을 찾아내는 것이라 할 수 있는데요. 이러한 Control 그룹을 구성하는 가장 효과적인 방법은 무작위 할당(Random assignment)라고 할 수 있겠습니다. 이를 저희는 RCT라고 표현을 하고, RCT는 Potential Outcome Framework 하에서 인과 효과를 추정하는 일종의 Gold Standard[^2]이기도 하죠. 온라인 비즈니스모델을 갖는 기업에서 순수한 실험 효과, 처리의 순수한 효과를 보기위해서 수행하는 A/B test도 RCT의 일종이라고 볼 수 있습니다.
+오늘은 Potential Outcome Framework 관점의 인과추론 방법론 중 하나인 준실험설계(Quasi-experimental design)에 대해 소개하고자 합니다. Potential Outcome Framework 관점에서 준실험설계는 RCT(Randomized Controlled Trial)가 불가능한 상황에 고려해볼 수 있는 방법론 중 가장 높은 수준의 인과추론을 수행할 수 있는 방법론입니다. Potential Outcome Framework 하에서 인과추론은 결국 이상적인 Counterfactual[^1]과 가장 가까운, 비교가능한 Control 그룹을 찾아내는 것이라 할 수 있는데요. 이러한 Control 그룹을 구성하는 가장 효과적인 방법은 무작위 할당(Random assignment)라고 할 수 있겠습니다. 이를 저희는 RCT라고 표현을 하고, RCT는 Potential Outcome Framework 하에서 인과 효과를 추정하는 일종의 Gold Standard[^2]이기도 하죠. 온라인 비즈니스모델을 갖는 기업에서 순수한 실험 효과, 처리의 순수한 효과를 보기위해서 수행하는 A/B test도 RCT의 일종이라고 볼 수 있습니다.
 
 [^1]: 처리 그룹이 만약 처리를 받았지 않았으면 발생했을 잠재적 결과(Potential outcome)을 말함. Counterfatual이 존재한다면, 우리는 이를 처리 그룹의 결과와 비교함으로써 처리의 순수한 인과 효과를 알 수 있을 것임. 그러나, Counterfactual은 현실에서 관측이 불가능함. 이를 인과추론의 근본적 문제(Fundamental problem of Causal Inference)라고 표현함.
 
 [^2]: 산업에 있어서 최적의 표준을 이르는 말
 
-이렇게 항상 RCT를 통해 인과적 효과를 추론할 수 있으면 좋겠지만, 상황적, 윤리적 관점에서 바라보았을 때 Context에 따라 RCT가 불가능한 경우는 정말 많이 존재합니다. 이때 우리는 준실험설계를 생각해볼 수 있어요. 준실험설계의 아이디어는 간단합니다. 무작위 할당 없이도 적절한 연구 디자인을 활용한다면, 충분히 비교 가능한 Control 그룹을 구성함으로써 인과추론이 가능해질 것이라는 거죠. 지금은 이 말이 조금 이해가 안되실 수도 있는데요. 준실험설계를 이용해 인과추론을 수행했던 대표적인 사례들을 소개하면서, 이에 대해 자세히 이해해보는 시간을 가져보도록 하겠습니다.
+이렇게 항상 RCT를 통해 인과적 효과를 추론할 수 있으면 좋겠지만, 상황적, 윤리적 관점에서 바라보았을 때 Context에 따라 RCT가 불가능한 경우는 정말 많이 존재합니다. 이때 우리는 준실험설계를 생각해볼 수 있어요. 준실험설계의 아이디어는 간단합니다. 무작위 할당 없이도 적절한 연구 디자인을 활용한다면, 충분히 비교 가능한 Control 그룹을 구성함으로써 인과추론이 가능해질 것이라는 거죠. 지금은 이 말이 조금 이해가 안되실 수도 있는데요. 준실험설계를 이용해 인과추론을 수행했던 대표적인 사례들을 소개하면서, 이에 대해 자세히 이해해보는 시간을 가져보도록 하겠습니다.
 
 ## Potential Outcome Framework 관점의 Causal Hierarchy
 

@@ -13,6 +13,8 @@ bibliography: references.bib
 
 [![The illustration by Mary Amato](preview.png){fig-align="center" width="800"}](https://notioly.com)
 
+<aside>본 포스팅에서 소개하는 방법론들의 설명에는 [@hyndman2021]을 참고하였습니다.</aside>
+
 오늘은 고객들의 관심사를 선제적으로 반영하는 부분에 사용한 시계열 자료분석[^1]의 몇 가지 방법론을 소개해드리려고 합니다. 3가지 방법론에 대해 이야기해 보려고 해요:
 
 [^1]: 시간 순서로 관측된 자료들을 다루는 분야

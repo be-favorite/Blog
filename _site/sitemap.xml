@@ -62,15 +62,15 @@
   </url>
   <url>
     <loc>https://taemobang.com/index.html</loc>
-    <lastmod>2023-04-02T13:17:14.879Z</lastmod>
+    <lastmod>2023-04-03T03:50:46.219Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/blog.html</loc>
-    <lastmod>2023-04-02T13:17:16.751Z</lastmod>
+    <lastmod>2023-04-03T03:50:47.890Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/archive.html</loc>
-    <lastmod>2023-04-02T13:17:17.223Z</lastmod>
+    <lastmod>2023-04-03T03:50:48.377Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
@@ -167,5 +167,9 @@
   <url>
     <loc>https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/index.html</loc>
     <lastmod>2023-03-26T11:24:52.844Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html</loc>
+    <lastmod>2023-04-03T03:50:49.917Z</lastmod>
   </url>
 </urlset>

@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html",
       "/posts/2023-03-26-Quasi-Experimental-Designs/index.html",
       "/posts/2023-03-12-monthly-memory-202302/index.html",
       "/posts/2023-02-21-monthly-memory-202301/index.html",
@@ -33,6 +34,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html",
       "/posts/2023-03-26-Quasi-Experimental-Designs/index.html",
       "/posts/2023-03-12-monthly-memory-202302/index.html",
       "/posts/2023-02-21-monthly-memory-202301/index.html",

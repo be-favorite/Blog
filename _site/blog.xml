@@ -28,7 +28,7 @@
 <aside>
 본 포스팅에서 소개하는 방법론들의 설명에는 <span class="citation" data-cites="hyndman2021">(Hyndman and Athanasopoulos 2021)</span>을 참고하였습니다.
 </aside>
-<p>오늘은 고객들의 관심사를 선제적으로 반영하는 부분에 사용한 시계열 자료분석<sup>1</sup>의 몇 가지 방법론을 소개해드리려고 합니다. 3가지 방법론에 대해 이야기해 보려고 해요:</p>
+<p>오늘은 고객들의 관심사를 선제적으로 반영하기 위해 사용했던 시계열 자료분석<sup>1</sup> 방법론들을 소개하려고 합니다. 3가지 방법론에 관해 이야기해볼 예정입니다:</p>
 <ul>
 <li><p>시계열 분해(Time Series Decomposition)</p></li>
 <li><p>이상점 탐지 및 대치(Outlier Detection and Imputation)</p></li>

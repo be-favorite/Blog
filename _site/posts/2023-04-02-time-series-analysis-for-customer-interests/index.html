@@ -8,7 +8,7 @@
 
 <meta name="author" content="방태모">
 <meta name="dcterms.date" content="2023-04-02">
-<meta name="description" content="시계열 분해, 이상점 탐지 및 대치, 변화점 탐지를 활용해 고객 관심사를 선제적으로 반영할 수 있었어요.">
+<meta name="description" content="특정 시즌에 반복되는 고객들의 주요 관심사를 랭킹 시스템에 선제적으로 반영하기 위해 사용했던 시계열 자료분석 방법론들을 소개합니다.">
 
 <title>방태모의 블로그 - 시계열 자료분석을 활용한 고객 관심사의 선제적 반영</title>
 <style>
@@ -206,7 +206,7 @@ cookieconsent.run({
 
 <div>
   <div class="description">
-    <p>시계열 분해, 이상점 탐지 및 대치, 변화점 탐지를 활용해 고객 관심사를 선제적으로 반영할 수 있었어요.</p>
+    <p>특정 시즌에 반복되는 고객들의 주요 관심사를 랭킹 시스템에 선제적으로 반영하기 위해 사용했던 시계열 자료분석 방법론들을 소개합니다.</p>
   </div>
 </div>
 
@@ -242,15 +242,19 @@ cookieconsent.run({
 <aside>
 본 포스팅에서 소개하는 방법론들의 설명에는 <span class="citation" data-cites="hyndman2021">(<a href="#ref-hyndman2021" role="doc-biblioref">Hyndman and Athanasopoulos 2021</a>)</span>을 참고하였습니다.
 </aside>
-<p>오늘은 고객들의 관심사를 선제적으로 반영하기 위해 사용했던 시계열 자료분석<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 방법론들을 소개하려고 합니다. 3가지 방법론에 관해 이야기해볼 예정입니다:</p>
+<p>시계열 자료분석에 관한 이야기하기를 하기 전에, 먼저 해당 방법론이 필요로 됐던 배경과 목적에 대해 설명을 드리려고 해요. 우리는 What보다 Why가 중요한 사람들이니까요.😀 저희 팀은 요즘 모바일 홈 개인화에 집중하고 있어요. 모바일 홈 개인화는 G마켓 모바일웹/앱의 홈 메인에서 스크롤을 조금 내렸을 때 보이는 슈퍼딜 영역<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>을 개인화하는 프로젝트에요. 여기서 말하는 개인화는 각 고객님들이 남긴 데이터를 바탕으로 관심을 가질만한 상품들을 순차적으로 띄워주는 것을 말해요. 관심 있을만한 상품들을 좋은 가격에 최대한 손쉽게 찾으실 수 있도록 말이죠. 즉, 개인의 관심을 반영한 일종의 모바일 홈 랭킹 시스템을 만드는 것이라고 보면 되어요.</p>
+<p>랭킹 시스템을 고도화하여 고객들에게 더 큰 쇼핑 만족도를 드리기 위해 모든 팀원분들이 정말 많은 노력을 기울이고 있는데요. 저는 다음과 같은 부분을 생각해봤어요:</p>
+<ul>
+<li>당장 관심을 가질만한 상품을 띄워주는 것도 중요하지만, 추후에 맞이할 특정 시즌에 구매 의사가 생길만한 상품들까지 고려하여 랭킹 시스템을 구성한다면 고객들의 쇼핑 만족도를 더욱 높여줄 수 있지 않을까?</li>
+</ul>
+<p>이 부분을 반영하기 위해서는 매년 특정 시기에 반복적으로 관심이 많아지는 상품을 정의하고, 그 “특정 시기”는 언제 시작하고 끝나는지도 알아야 했어요. 그리고, 이 문제를 해결하기 위해서는 시계열적인 접근이 필요했죠.</p>
+<p>이만하면 시계열 자료분석<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>이 필요했던 문제의 배경과 목적이 충분히 이해가 되셨을까요? 이제 방법론 얘기를 해보겠습니다. 본 문제를 해결하는 데에 사용한 방법론은 크게 3가지 입니다:</p>
 <ul>
 <li><p>시계열 분해(Time Series Decomposition)</p></li>
 <li><p>이상점 탐지 및 대치(Outlier Detection and Imputation)</p></li>
 <li><p>변화점 탐지(Change Points Detection)</p></li>
 </ul>
-<p>위 3가지 방법론들을 적절히 활용하여 고객 관심사를 선제적으로 반영해야하는 문제를 해결할 수 있었는데요. 먼저 해당 문제가 등장한 배경에 대해서는 간략하게 말씀을 드려보겠습니다.</p>
-<p>저희 팀에서는 요즘 모바일 홈 개인화에 집중하고 있어요. 모바일 홈 개인화는 G마켓 모바일웹/앱의 홈 메인에서 스크롤을 조금 내렸을 때 보이는 슈퍼딜 영역<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>을 개인화하는 프로젝트에요. 여기서 말하는 개인화는 각 고객님들이 남긴 데이터를 바탕으로 관심을 가질만한 상품들을 순차적으로 띄워주는 것을 말해요. 관심 있을만한 상품들을 좋은 가격에 최대한 손쉽게 찾으실 수 있도록 말이죠. 즉, 개인의 관심을 반영한 일종의 모바일 홈 랭킹 시스템을 만드는 것이라고 보면 되어요.</p>
-<p>이를 위해서는 고객들의 관심사 변화 특성을 잘 분석하여 반영해줄 필요가 있는데요. 그중 매년 특정 시즌에 반복적으로 등장하는 상품들도 이런 특성의 매우 중요한 부분이기에, 이를 랭킹 시스템에 반영하고자 했어요. 당장 관심을 가질만한 상품을 띄워주는 것도 중요하지만, 추후에 맞이할 특정 시즌에 구매 의사가 생길만한 상품들까지 생각해서 미리 띄워준다면 고객들의 쇼핑 만족도를 더욱 높여줄 수 있지 않을까 하고요. 이정도면 문제의 배경에 대해 충분히 설명이 되었을거라 생각합니다.😀 이제 본 문제를 해결하기 위해 사용했던 방법론들을 본격적으로 소개해보겠습니다.</p>
+<p>이제 이 방법론들이 무엇이고, 왜 필요했는지에 대해 본격적으로 이야기해보겠습니다.</p>
 <section id="시계열-분해" class="level2">
 <h2 class="anchored" data-anchor-id="시계열-분해">시계열 분해</h2>
 <p>시계열 분해는 시계열을 몇 가지 요소로 분해해서 보는 것을 말합니다. 실제로 관측되는 시계열 자료들은 정말 다양한 패턴<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>으로 나타나기 때문에, 시계열 분해는 해당 시계열이 갖는 본질적인 특성을 이해<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>하는 데에 정말 많은 도움이 됩니다. 고윳값 분해(eigenvalue decomposition)를 통해 행렬이 갖는 본질적인 특성을 이해할 수 있는 것 처럼 말이죠.</p>
@@ -346,14 +350,14 @@ F_S = {\rm{max}} (0, 1-\frac{{\rm{Var}}(R_t)}{{\rm{Var}}(S_t + R_t)})
 <p></p><figcaption class="figure-caption">그림 7. R의 changepoint 패키지를 활용한 시계열 변화점 탐지의 예</figcaption><p></p>
 </figure>
 </div>
-<p>고객들이 관심있을만한 상품을 선제적으로 파악하는데에는 추세 강도를 정량적으로 측정하는 작업도 필요했지만, 끝으로 이러한 변화점 탐지 작업을 통해 추세가 변화하는 지점들까지 파악할 필요가 있었어요. 변화점 탐지의 경우 방법론적 디테일보다는 <a href="https://github.com/rkillick/changepoint">R의 changepoint 패키지</a>를 중심으로 실무에서 변화점 탐지를 수행해보며 얻은 노하우에 대해 이야기해보려고 합니다.</p>
+<p>고객들이 관심있을만한 상품을 선제적으로 파악하는데에는 추세 강도를 정량적으로 측정하는 작업도 필요했지만, 끝으로 이러한 변화점 탐지 작업을 통해 추세가 변화하는 지점들까지 파악할 필요가 있었어요. 앞서 말씀드렸듯이 관심이 많아지는 특정 시기가 언제 시작하고 언제 끝나는 지에 관한 정보가 필요했으니까요. 변화점 탐지의 경우 방법론적 디테일보다는 <a href="https://github.com/rkillick/changepoint">R의 changepoint 패키지</a>를 중심으로 실무에서 변화점 탐지를 수행해보며 얻은 노하우에 대해 이야기해보려고 합니다.</p>
 <p>해당 패키지는 시계열 자료의 평균, 분산이 크게 변화하는 지점을 탐지할 수 있는 알고리즘을 담고 있는데요. 이진 분할(Binary Segmentation), PELT(Pruned Exact Liner Time) 등의 알고리즘 옵션을 제공하는데, 이진 분할 방법의 경우 변화점의 최대 개수를 조정해줄 수 있습니다. 특정 시계열 자료의 변화점 개수를 도메인 지식을 통해 추정할 수 있다면, 이진 분할 방법은 아주 매력적인 옵션이 될 것입니다.</p>
 <p>주어진 알고리즘 옵션을 통해 시계열의 평균 또는 분산 각각의 변화에 따른 변화점을 탐지할 수 있게 되는데, changepoint 패키지에서는 평균과 분산의 변화를 동시에 고려하여 변화점을 탐지할 수도 있습니다. 평균 변화는 <code>cpt.mean()</code> 함수, 분산 변화는 <code>cpt.var()</code>함수로, 평균과 분산이 변화를 동시에 고려하기 위해서는 <code>cpt.meanvar()</code>함수를 사용하시면 되는데요. 추세에 따라 시계열의 분산이 함께 커지는 시계열에 대해서는 평균과 분산의 변화를 동시에 고려할 필요가 있을겁니다. 그렇지 않으면, 분산이 추세와 함께 커지는 부분을 반영하지 못하여 눈으로 보고 정성적으로 판단했을 때는 변화점이라고 판단하기 어려운 지점을 변화점이라고 탐지를 하는 경우가 생기거든요.</p>
 <p>해당 패키지에 관한 쉽게 쓰여진 예제 코드는 <span class="citation" data-cites="killick2014">(<a href="#ref-killick2014" role="doc-biblioref">Killick and Eckley 2014</a>)</span>에서 제공하고 있습니다. 더 깊은 방법론적 디테일이 궁금하신 분들도 참고하시면 좋을겁니다. 그리고, 본 라이브러리와는 조금 다른 접근으로 베이지안 추론을 활용하여 시계열의 변화점을 탐지해볼 수도 있습니다. 이 부분에 관심이 있으신 분들은 R의 <a href="https://github.com/lindeloev/mcp/">{mcp} 패키지</a>를 참고해보시기 바랍니다.</p>
 </section>
 <section id="맺음말" class="level2">
 <h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>현재는 G마켓에서 추천 서비스를 성장시키기 위한 데이터 분석을 수행하고 있지만, 대학원을 졸업할 무렵 그나마 가장 자신있었던 연구 분야는 시계열 자료분석이었고, 이직을 하기 전에 몸을 담았던 첫 직장에서도 추론 관점<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>의 시계열 모델링을 주 업무로 수행했었습니다. 이직한 뒤에는 시계열적 접근이 필요한 문제를 풀 일이 없을 줄 알았는데, 신기하게도 그럴 일이 생겼네요. 분석 중간 중간 난관에 봉착할 때도 있었지만, 가장 익숙한 분야였던터라 난관을 하나씩 해결해나가는게 꽤나 재밌었습니다. 업무에서 풀어냈던 문제라 자세한 분석 과정은 설명드리지는 못했지만, 각 방법론에서 소개한 아이디어, 노하우들이 여러분들이 실무에서 풀어내실 문제에도 도움이 되는 부분이 있었으면 합니다. 마지막으로 이상점 탐지 및 대치, 변화점 탐지에서 말씀드렸던 <a href="https://github.com/be-favorite/Blog/blob/main/posts/2023-04-02-time-series-analysis-for-customer-interests/Example.R">예제 R 코드</a>를 공유드리면서 글을 마칩니다.</p>
+<p>현재는 G마켓에서 추천 서비스를 성장시키기 위한 데이터 분석을 수행하고 있지만, 대학원을 졸업할 무렵 그나마 가장 자신있었던 연구 분야는 시계열 자료분석이었고, 이직을 하기 전에 몸을 담았던 첫 직장에서도 추론 관점<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>의 시계열 모델링을 주 업무로 수행했었습니다. 이직한 뒤에는 시계열적 접근이 필요한 문제를 풀 일이 없을 줄 알았는데, 신기하게도 그럴 일이 생기더군요. 분석 중간 중간 난관에 봉착할 때도 있었지만, 가장 익숙한 분야였던터라 난관을 하나씩 해결해나가는게 꽤나 재밌었습니다. 업무에서 풀어냈던 문제라 자세한 분석 과정은 설명드리지는 못했지만, 각 방법론에서 소개한 아이디어, 노하우들이 여러분들이 실무에서 풀어내실 문제에도 도움이 되는 부분이 있었으면 합니다. 마지막으로 이상점 탐지 및 대치, 변화점 탐지에서 말씀드렸던 <a href="https://github.com/be-favorite/Blog/blob/main/posts/2023-04-02-time-series-analysis-for-customer-interests/Example.R">예제 R 코드</a>를 공유드리면서 글을 마칩니다.</p>
 
 
 
@@ -373,15 +377,15 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
 
 <ol>
-<li id="fn1"><p>시간 순서로 관측된 자료들을 다루는 분야<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>가격 경쟁력이 있는 선별된 상품들을 판매하는 섹션<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>가격 경쟁력이 있는 선별된 상품들을 판매하는 섹션<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>시간 순서로 관측된 자료들을 다루는 분야<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>추세, 순환성, 계절성<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>시계열이 갖는 본질적 특성을 이해하는 데에 도움이 되는 또다른 방법은 해당 시계열의 ACF와 PACF를 살펴보는 것입니다.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>간략하게 trend라고 표현하기도 합니다.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>이동평균(Moving average)을 활용한 방법, X-11 method, SEATS method, STL decomposition<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn7"><p>국소회귀(Local regression) 방법론으로 비선형 관계를 추정할 수 있는 회귀분석 방법론 중 하나입니다.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>평활도가 작을수록 추세-순환 성분을 복잡하게 추정<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>고객 관심사를 선제적으로 반영하는 일<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>추후에 맞이할 특정 시즌에 구매 의사가 생길만한 상품들을 고려하는 것<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>계절 변동이 추세 변동의 크기에 따라 함께 변한다면 승법적인 분해가 필요로 됩니다. 보통 log transformation을 통해 승법적인(multiplicative) 분해가 가능합니다: <span class="math inline">\(T_t \times S_t \times R_t\)</span><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>예측 문제가 아닌 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span> 간의 Relationship을 추정하는 문제<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>

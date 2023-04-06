@@ -13,7 +13,9 @@ bibliography: references.bib
 
 [![The illustration by Mary Amato](preview.png){fig-align="center" width="800"}](https://notioly.com)
 
-<aside>본 포스팅에서 소개하는 방법론들의 설명에는 [@hyndman2021]을 참고하였습니다.</aside>
+::: {.callout-note}
+본 글은 PAP 3기 퍼블리셔로 활동하며 작성한 글로 [PAP 블로그](https://playinpap.github.io/time-series-analysis-for-customer-interests/)에서도 만나보실 수 있습니다. PAP에서 발행하는 [뉴스레터](https://stibee.com/api/v1.0/emails/share/DkcQQgMscRmb0xSNaJRT74vAnMXpm-4=)도 구독해보세요.
+:::
 
 시계열 자료분석에 관한 이야기하기를 하기 전에, 먼저 해당 방법론이 필요로 됐던 배경과 목적에 대해 설명을 드리려고 해요. 우리는 What보다 Why가 중요한 사람들이니까요.😀 2월말에 [보도자료](https://moneys.mt.co.kr/news/mwView.php?no=2023022708171969210)로도 나간 내용이지만, 저희 팀은 요즘 모바일 홈 개인화에 집중하고 있어요. 모바일 홈 개인화는 G마켓 모바일웹/앱의 홈 메인에서 스크롤을 조금 내렸을 때 보이는 슈퍼딜 영역[^1]을 개인화하는 프로젝트에요. 여기서 말하는 개인화는 각 고객님들이 남긴 데이터를 바탕으로 관심을 가질만한 상품들을 순차적으로 띄워주는 것을 말해요. 관심 있을만한 상품들을 좋은 가격에 최대한 손쉽게 찾으실 수 있도록 말이죠. 즉, 개인의 관심을 반영한 일종의 모바일 홈 랭킹 시스템을 만드는 것이라고 보면 되어요.
 
@@ -36,6 +38,8 @@ bibliography: references.bib
 -   변화점 탐지(Change Points Detection)
 
 이제 이 방법론들이 무엇이고, 왜 필요했는지에 대해 본격적으로 이야기해보겠습니다.
+
+<aside>본 포스팅에서 소개하는 방법론들의 설명에는 [@hyndman2021]을 참고하였습니다.</aside>
 
 ## 시계열 분해
 

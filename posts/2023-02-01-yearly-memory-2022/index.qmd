@@ -1,7 +1,7 @@
 ---
 title: "연간 회고록: 2022년"
 description: |
-   생각의 변화가 많았던 2022년을 회고합니다.
+   많은 변화가 있었던 2022년 회고
 date: "2023-02-01"
 draft: FALSE
 preview: preview.jpg

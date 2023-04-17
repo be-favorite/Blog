@@ -25,7 +25,7 @@
 <p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
 </figure>
 </div>
-<p>지난 월간 회고록들은 경어체(-입니다, -요)로 작성했는데, 이제부터는 평어체로 무심한듯?.. 편하게 작성해보려고 한다. 지난 한달 간 있었던 일들을 스스로 회고해보는 글이라 그런지 평어체가 확실히 글이 잘 적어지는 듯 하다. 사실 다른 기술적인 주제의 글들도 이제는 그냥 평어체로 작성해볼까 생각 중이다. 기업의 기술 블로그나 어디에 기고하는 글도 어니고, 그냥 개인적으로 운영하는 블로그라 뭔가 부담없이 빠르게 글을 쓰기에는 평어체 + (구어체, 문어체 혼용) 조합이 최고인 듯 하다. 말하는 걸 보니 이미 어느정도 결론을 지어놓은 듯 하다.😂 그럼 이제 본론으로 들어가서 지난 3월을 돌아보자.</p>
+<p>지난 월간 회고록들은 경어체로 작성했는데, 이제부터는 평어체로 무심한듯?.. 편하게 작성해보려고 한다. 지난 한달 간 있었던 일들을 스스로 회고해보는 글이라 그런지 평어체가 확실히 글이 잘 적어지는 듯 하다. 사실 다른 기술적인 주제의 글들도 이제는 그냥 평어체로 작성해볼까 생각 중이다. 기업의 기술 블로그나 어디에 기고하는 글도 어니고, 그냥 개인적으로 운영하는 블로그라 뭔가 부담없이 빠르게 글을 쓰기에는 평어체 + (구어체, 문어체 혼용) 조합이 최고인 듯 하다. 말하는 걸 보니 이미 어느정도 결론을 지어놓은 듯 하다.😂 그럼 이제 본론으로 들어가서 지난 3월을 돌아보자.</p>
 <section id="일" class="level2">
 <h2 class="anchored" data-anchor-id="일">일</h2>
 <section id="사내-뉴스룸-인터뷰" class="level3">
@@ -75,14 +75,14 @@
 </section>
 <section id="짤막한-생각" class="level3">
 <h3 class="anchored" data-anchor-id="짤막한-생각">짤막한 생각</h3>
-<p>문득 어떤 계기로 들었던 짤막한 생각들 중에 정리해두고 싶은 것들은 페이스북과 링크드인에 기록을 해두는 편이다. 지난달에는 실무에서 누군가를 리드해야 하는 레벨에 올라있는 사람들이 가지고 있는 공통점을 어느정도 파악하게되어, 이 부분에 대해 정리를 해봤었다:</p>
+<p>문득 어떤 계기로 하게된 짤막한 생각들 중에 정리해두고 싶은 것들은 페이스북과 링크드인에 기록을 해두는 편이다. 지난달에는 실무에서 누군가를 리드해야 하는 레벨에 올라있는 사람들이 가지고 있는 공통점을 어느정도 파악하게되어, 이 부분에 대해 정리를 해봤었다:</p>
 <center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid031AdkynEHaXeckBWTMtVQ9MCdS48vip8HZkjjdmKSV2gxgbX8PyM9w2AuppVmbFnel%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="360" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
 <p>나도 장기적인 관점에서 누군가를 리드하고 그들의 성장을 도울 수 있는 사람이 되고 싶다는 생각이 있는데, 이미 그 레벨에 올라가 있는 사람들이 가지고 있는 능력들을 하나하나 발견하게 될 때마다 자신감이 떨어진다. 해당 레벨에 올라기기 위해 갖추어야 하는 것들을 하나씩 적어보고, 매년 하나씩만 습득한다고 해보면.. 밝은 미래가 기다리고 있을 것이라고 생각해본다.😂</p>
 </section>
 </section>
 <section id="맺음말" class="level2">
 <h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>3월은 특별히 회고할만한게 많지 않아서 금방 적겠지 하고 적었는데 어느덧 2시간이 지났다. 역시 글을 쓰기 시작하기 전까지 소요되는 시간(e.g.&nbsp;글감 생각하기, 책상에 앉아서 Rstudio 키기 등..😂)이 가장 많다. 막상 글쓰기에 몰입하면 길어야 4-5시간이면 초고를 완성하기 때문이다.<sup>1</sup> 나와 같은 게으른 완벽 주의자들은 항상 기억해야 한다.</p>
+<p>개인적인 풍파를 잠깐 겪었던 3월이지만, 특별히 회고할 것은 많지 않아서 금방 적겠지 했는데 어느덧 2시간이 지났다. 역시 글을 쓰기 시작하기 전까지 소요되는 시간(e.g.&nbsp;글감 생각하기, 책상에 앉아서 Rstudio 키기 등..😂)이 가장 많다. 막상 글쓰기에 몰입하면 아무리 길어도 4-5시간이면 초고를 완성하기 때문이다.<sup>1</sup> 나와 같은 게으른 완벽주의자들은 항상 기억해야 한다.</p>
 <blockquote class="blockquote">
 <p>Done is better than perfect.</p>
 </blockquote>

@@ -10,18 +10,18 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Fri, 14 Apr 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 16 Apr 2023 15:00:00 GMT</lastBuildDate>
 <item>
   <title>월간 회고록: 3월</title>
   <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2023-04-15-monthly-memory-202303/index.html</link>
+  <link>https://taemobang.com/posts/2023-04-17-monthly-memory-202303/index.html</link>
   <description><![CDATA[ 
 
 
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-04-15-monthly-memory-202303/preview.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/preview.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
 </figure>
 </div>
@@ -53,7 +53,7 @@
 <p>3월 7일 자정이 가까워 오는 시간에 퍼블리셔에 선정됐다는 메일을 받았는데, 또 그걸 못참고 메일을 보냈었다.😂</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-04-15-monthly-memory-202303/fig1.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/fig1.png" class="img-fluid figure-img" width="600"></p>
 </figure>
 </div>
 <p>꼭 붙었으면 하는 마음에 많이 급했나보다..😅 퍼블리셔 선정 논의가 다소 길어지셔서 메일 안내가 늦어지셨다고 한다. 누가 돈을 주는 것도 아닌데, 업무 외에 개인적으로 시간을 내서 이런 커뮤니티를 운영한다는게.. 정말 대단한 것 같다. PAP에 대해 조금 홍보하자면, 앞서 PAP도 글 쓰는 커뮤니티라고 했는데 그렇게 단순한 목적으로 운영되고 있는 커뮤니티는 아니다. 내가 이런 말을 하는 이유는 PAP의 비전을 읽어보면 쉽게 이해된다:</p>
@@ -67,7 +67,7 @@
 <p>합격 메일을 받고 다음날 초대받은 PAP 슬랙에 들어가 자기소개를 한 것으로 기억한다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-04-15-monthly-memory-202303/fig2.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/fig2.png" class="img-fluid figure-img" width="600"></p>
 </figure>
 </div>
 <p>자기소개 전체를 캡쳐하진 않았는데, 또 투머치토커 특성이 발동되서 주저리주저리 많이도 적었다. PAP 2기 퍼블리셔는 30분 정도였고, 3기는 더 적은 인원인 17명만 선발이 되었다. 올라온 자기소개들을 쭉 보는데 정말 대단한 분들이 많았다. 그 중에는 링크드인에서 종종 봤던 분들도 계셨고. 어떤 글을 기고해야할지.. 급 부담이 됐다. (내가 생각하기에) 대단한 분들이 퍼블리셔에 포진되어 있는 것도 그렇고, 6개월간 활동하며 2주마다 글을 써야하는 글또와 달리 PAP는 2달 간 활동하며 3개의 글을 기고해야하기 때문에 뭐랄까.. 글의 퀄리티가 굉장히 중요하겠다는 생각을 했다. 거기다 글또는 내 개인 블로그에 기고하고 링크를 제출하지만, PAP는 PAP 블로그에 다가 직접적으로 기고를 해야하기 때문에. 결코 PAP 블로그의 퀄리티에 누가 되는 글을 작성할 수 없었다.😂 사실 인과추론에 대한 글을 적고 싶었는데, 아직 PAP에 기고할 수준이 확실히 아닌 걸 알기에 익숙한 주제로 글을 써야겠다고 마음을 먹었다.😭 그렇게 첫 번째 글 주제는 시계열이되었다. 다음 글 주제는 아마 통계학과 관련한 글이 되지 않을까 싶다.</p>
@@ -99,17 +99,17 @@
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
   author = {방태모},
   title = {월간 회고록: 3월},
-  date = {2023-04-15},
-  url = {https://taemobang.com/posts/2023-04-15-monthly-memory-202303/},
+  date = {2023-04-17},
+  url = {https://taemobang.com/posts/2023-04-17-monthly-memory-202303/},
   langid = {kr}
 }
 </code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
-방태모. 2023. <span>“월간 회고록: 3월.”</span> April 15, 2023. <a href="https://taemobang.com/posts/2023-04-15-monthly-memory-202303/">https://taemobang.com/posts/2023-04-15-monthly-memory-202303/</a>.
+방태모. 2023. <span>“월간 회고록: 3월.”</span> April 17, 2023. <a href="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/">https://taemobang.com/posts/2023-04-17-monthly-memory-202303/</a>.
 </div></div></section></div> ]]></description>
   <category>Memory</category>
-  <guid>https://taemobang.com/posts/2023-04-15-monthly-memory-202303/index.html</guid>
-  <pubDate>Fri, 14 Apr 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-04-15-monthly-memory-202303/preview.png" medium="image" type="image/png" height="144" width="144"/>
+  <guid>https://taemobang.com/posts/2023-04-17-monthly-memory-202303/index.html</guid>
+  <pubDate>Sun, 16 Apr 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>시계열 자료분석을 활용한 고객 관심사의 선제적 반영</title>

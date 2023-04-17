@@ -2,11 +2,11 @@
 title: "월간 회고록: 3월"
 description: |
    사내 뉴스룸 인터뷰, PAP 퍼블리셔 3기
-date: "2023-04-15"
+date: "2023-04-17"
 draft: FALSE
 preview: preview.jpg
 citation:
-  url: https://taemobang.com/posts/2023-04-15-monthly-memory-202303/
+  url: https://taemobang.com/posts/2023-04-17-monthly-memory-202303/
 categories: [Memory]
 ---
 

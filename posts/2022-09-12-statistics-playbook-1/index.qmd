@@ -12,9 +12,7 @@ categories: [Statistics Playbook, Column]
 
 [![Photo by Christian Erfurt on Unsplash](preview.jpg){width="800"}](https://unsplash.com/photos/sxQz2VfoFBE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
-[유튜브 채널 슬기로운 통계생활](https://www.youtube.com/c/statisticsplaybook)에서 운영하는 블로그에 기고했던 [칼럼들](https://statisticsplaybook.tistory.com/category/객원칼럼/be-favorite)을 최신화하여 다시 적어보려고 합니다. 첫 번째 칼럼 주제는 **대학원에 대한 고민**입니다. 저는 늘 고민과 생각이 많은 사람인데요.😂 때는 제가 통계학과 학부 4학년이던 2018년으로 거슬러 올라갑니다. 4학년 1학기 때는 학내 교환학생 프로그램에 신청하여 한 학기를 영국의 쉐필드대학(The University of Sheffield)에서 보내게 됩니다.
-
-<aside>🔗[과거에 기고했던 칼럼](https://statisticsplaybook.tistory.com/25?category=924794)</aside>
+[유튜브 채널 슬기로운 통계생활](https://www.youtube.com/c/statisticsplaybook)에서 운영하는 블로그에 기고했던 [칼럼들](https://statisticsplaybook.tistory.com/search/be-favorite)을 최신화하여 다시 적어보려고 합니다. 첫 번째 칼럼 주제는 **대학원에 대한 고민**입니다. 저는 늘 고민과 생각이 많은 사람인데요.😂 때는 제가 통계학과 학부 4학년이던 2018년으로 거슬러 올라갑니다. 4학년 1학기 때는 학내 교환학생 프로그램에 신청하여 한 학기를 영국의 쉐필드대학(The University of Sheffield)에서 보내게 됩니다.
 
 [![The University of Sheffield](img-1.jpg){width="700"}](https://www.sheffield.ac.uk/about)
 

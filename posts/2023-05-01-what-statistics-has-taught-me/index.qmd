@@ -3,7 +3,7 @@ title: 통계학, 그게 왜 중요한데?
 description: |
    한 마디로 잘 요약된 직접적인 답을 드릴 순 없겠지만, 간접적인 답을 드리고자 합니다.
 date: "2023-05-01"
-draft: TRUE
+draft: FALSE
 preview: preview.jpg
 citation:
   url: https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/

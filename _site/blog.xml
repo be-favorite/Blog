@@ -53,7 +53,7 @@
 <p><img src="https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/fig1.jpg" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div>
-<p>이 책은 먼저 신경망 기반 알고리즘이 오랜기간 발전해 온 역사를 설명해주는 긴 Introduction을 한 뒤에, Chapter I에서 딥러닝을 이해하기 위해 갖추어야할 기본기들에 대해 정리해줍니다. Chaper I에서 선형대수, 확률 및 정보이론, 최적화, 머신러닝 기본<sup>2</sup>에 대해 차례대로 이야기해주는데, 이 부분이 무려 130여 페이지를 차지하죠. Introduction부터 Chapter I까지 공부하며 21세기에 딥러닝이 빛을 보기 시작한 이면에는 정말 많은 학문들의 융합이 필요했다는 것을 깨달았습니다. 다음은 Chapter I의 확률과 정보이론 섹션의 Introduction으로부터 일부 발췌한 내용입니다:</p>
+<p>이 책은 먼저 신경망 기반 알고리즘이 오랜기간 발전해 온 역사를 설명해주는 긴 Introduction을 한 뒤에, Chapter I에서 딥러닝을 이해하기 위해 갖추어야할 기본기들에 대해 정리해줍니다. Chapter I에서 선형대수, 확률 및 정보이론, 최적화, 머신러닝 기본<sup>2</sup>에 대해 차례대로 이야기해주는데, 이 부분이 무려 130여 페이지를 차지하죠. Introduction부터 Chapter I까지 공부하며 21세기에 딥러닝이 빛을 보기 시작한 이면에는 정말 많은 학문들의 융합이 필요했다는 것을 깨달았습니다. 다음은 Chapter I의 확률과 정보이론 섹션의 Introduction으로부터 일부 발췌한 내용입니다:</p>
 <ul>
 <li><p>In artificial intelligence applications, we use probability theory in two major ways.</p>
 <ul>
@@ -343,7 +343,7 @@
 <ul>
 <li><p>즉, 위 식은 통계고등학교 학생들의 키의 평균이 170(모평균)이고 분산이 100(모분산)일 때 학생들의 키 값들이(데이터) 관측될 가능성을 나타낸 것에 해당하며, 이러한 예를 두고 우리는 “확률”이라고 표현한다.</p></li>
 <li><p>위 식에 따라 다음과 같이 통계고등학교 학생들의 키가 170보다 클 확률을 구할 수 있다:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%7B%5Crm%7BProbability%7D%7D%20=%20Pr(X%20%3Ex%7C%5Cmu%20=%20170,%20%5Csigma%5E2%20=%20100)%0A"></p></li>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%7B%5Crm%7BProbability%7D%7D%20=%20Pr(X%20%3E170%7C%5Cmu%20=%20170,%20%5Csigma%5E2%20=%20100)%0A"></p></li>
 </ul></li>
 <li><p>가능도 개념의 설명을 위해 통계고등학교의 전교생 중 30명을 확률표본으로 추출하여 관측한 상황이라고 해보자.</p>
 <ul>

@@ -10,7 +10,106 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Sun, 30 Apr 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 14 May 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>월간 회고록: 4월</title>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2023-05-15-monthly_memory-202304/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-05-15-monthly_memory-202304/preview.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<p>회고를 분기 별로 나눠서 하는게 나을지 고민 중이다. 굳이 회고할만한 굵직한 것들이 없는데 매달 회고를 할 필요가 있나 싶기도 해서. 그럼에도 불구하고, 이렇게 결국 월간 회고를 쓰고 있는 이유는 분기 마다 쓰면 너무 거창한 작업이 될까 싶기도 해서이다.😂 월간 회고의 목적은 오로지 지난 한 달을 가볍게 성찰하는 것에 오는 개인적인 재미와 만족감에 있기에.</p>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
+<section id="python-관련-잡설" class="level3">
+<h3 class="anchored" data-anchor-id="python-관련-잡설">Python 관련 잡설</h3>
+<p>R에 익숙하고 tidyverse를 좋아하는 사람에게 Python에서 pandas만을 활용해 Data wrangling을 수행하라는 것은 고문과 같다. pandas가 구리다는 것은 아니고, 나는 tidyverse의 pipe-friendly한 코드를 작성하는 것이 더 익숙하고 편하기 때문이다. 그래서, Python에서 tidyverse style을 구현한 라이브러리를 찾아볼 수 밖에 없었다. 내가 불편해하는 것은 누군가도 불편해했을 것이고, 이에따라 누군가가 구현을 해놓았을 것이기 때문에..😂 다행히 몇 가지 패키지를 발견 했고, 그 중 가장 완성도있고 최근까지 업데이트가 되고있는 라이브러리를 소개해본다.</p>
+<ul>
+<li>datar: <a href="https://github.com/pwwang/datar?fbclid=IwAR2LlLh1XUXs87zYWIVODCMIp34Zoba16LzPeB2EGhJrfcS-L2r-NNA-F3c">https://github.com/pwwang/datar</a></li>
+</ul>
+<p>datar는 Python에서 여러 백엔드로 제공되는 data manipulation을 위한 API를 R의 tidyverse 패키지와 최대한 align되도록 재구상한 라이브러리에 해당한다. 사실 작년 4분기때에 Python 기반 도구인 <a href="https://streamlit.io/">Streamlit</a>으로 대시보드를 개발할 때 siuba라는 라이브러리를 이용해 data wrangling을 수행했었는데, siuba의 경우 pipe-friendly한 코드를 짜기에는 부족한 기능들이 너무나 많았다. 이와 달리, datar은 tidyverse로 데이터를 만질때 종종 사용하는 R Base의 함수들까지 상당수 커버하고 있다. 당연히 R에서 tidyverse로 데이터를 가지고 노는 만큼은 편하지 않지만, 그래도 이정도면 아주 만족스러운 퀄리티다. 레퍼런스도 아주 쉽고 상세하게 제공하고 있다. 앞으로도 해당 패키지를 꾸준히 업데이트를 해나가는 데에 동기부여가 될 수 있도록, 이런 레포에는 꼭 스타를 눌러주자! tidyverse 문법을 선호하는 Python 사용자라면 한 번쯤 사용해보기 바란다.</p>
+</section>
+<section id="고객-관심사의-선제적-반영" class="level3">
+<h3 class="anchored" data-anchor-id="고객-관심사의-선제적-반영">고객 관심사의 선제적 반영</h3>
+<p>전에 말했듯 우리 팀은 요즘 모바일 홈 개인화에 집중을 하고 있는데, 이 부분에 있어서 다음과 같은 부분을 반영해보기 위해 시계열 자료분석을 수행했었다:</p>
+<ul>
+<li>당장 관심을 가질만한 상품을 띄워주는 것도 중요하지만, 추후 맞이할 특정 시즌에 구매 의사가 생길만한 상품글까지 고려하여 랭킹 시스템을 구성한다면 고객들의 쇼핑 만족도를 더욱 높여줄 수 있지 않을까?</li>
+</ul>
+<p>업무와 직접적으로 관련한 방법론들이기에 자세하게 A to Z까지 소개하긴 어렵지만, 해당 문제를 해결하기 위해 사용한 방법론들을 블로그에 소개하기도 했다. 관심있는 사람들은 참고해보기 바란다.</p>
+<p><a href="https://www.taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/">▶️ 글 보러가기</a></p>
+<p>아무튼, 이 프로젝트를 4월 초에 잘 마무리하고 타 팀에 공유세션까지 잘 마칠 수 있었다. 그런데, 가만 생각해보니 나는 강한 가정을 내포한채로 이 문제를 해결한 것이었다:</p>
+<ul>
+<li>과거 1년의 추세는 올해에도 이어질 것이다.</li>
+</ul>
+<p>앞서 제시한 문제를 보면 알겠지만 결국 예측 문제다. 이 방법론을 좀 더 정교하게 개발하고 싶은 마음이 들었다. 사실, 현재는 1년치 시계열 자기자신의 추세, 계절성만으로 해당 문제를 해결하는 매우 간단하게 풀어내는 로직이다. 계산량을 고려해봐야겠지만 3년 내지 4년 규모의 시계열을 고려하여 yearly seasonality까지 캐치할 수 있도록 하고, 모형에 이전 시차의 기온, 습도, 강수량, 휴일 효과 등까지 반영하여 Monthly로 모형을 갱신하여 매달 예측을 수행해 나간다면, 매달 다가오는 시즌의 고객 관심사를 훨씬 더 정교하게 예측할 수 있을 것으로 생각된다.</p>
+<p>물론, 아직 이상적인 상상에 불과하긴하다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-05-15-monthly_memory-202304/fig1.jpeg" class="img-fluid figure-img" width="500"></p>
+<p></p><figcaption class="figure-caption">구상한 방법론을 적용해본 뒤, 실제로 맞닥뜨리는 흔한 상황</figcaption><p></p>
+</figure>
+</div>
+<p>짧은 시간에 끝날만한 수준의 모델링 작업은 아닌 것 같아서, 시도해볼만한 가치가 있는 일인지에 대해 팀 내에 이야기를 해봐야겠다.😀</p>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="pomodoro-out-task-in" class="level3">
+<h3 class="anchored" data-anchor-id="pomodoro-out-task-in">Pomodoro Out, Task In</h3>
+<p>지난 <a href="https://www.taemobang.com/posts/2023-02-01-yearly-memory-2022/#%EB%BD%80%EB%AA%A8%EB%8F%84%EB%A1%9C">연간 회고록</a>에서 뽀모도로로 시간을 관리하고 있다고 했는데, 쓸수록 영.. 별로였다. 뽀모도로를 기반으로 업무와 공부를 하다보니 생기는 부작용은 다음과 같았다:</p>
+<ul>
+<li><p>집중력 하락: 기본적으로 25분 공부 5분 휴식인데, 간혹 회의가 길어져서 1뽀모도로(25분)가 넘어가면 이 뽀모도로로 공부한 시간을 정확히 측정하는 데에 강박이 생겨 일일이 휴식을 Skip하러 가곤 했다. 그리고, 진정한 집중은 “시간이 언제 이만큼 흘렀지?”를 느낄 때라고 할 수 있는데, 뽀모도로 타이머를 기반으로 움직이다보니 오히려 시계를 더 많이 보게 된다.</p></li>
+<li><p>한 주간 해결한 Task의 양과 질이 아닌 집중한 시간에 집착: 나는 월간 회고를 블로그에 올리고 있지만, 개인적으로 주간 회고도 하고 있다. 개인적으로 쌓아둔 주간 회고를 기반으로 월간 회고가 만들어진다고 보면 된다. 맥의 Focus To-Do 앱을 유료 결제하면 매주 뽀모도로를 얼마나 적립했는지 자세한 보고서를 확인할 수 있다. 이 부분이 오히려 내겐 독이 됐다. 돌아보니 올해 생각해 둔 목표의 달성을 위한 Task들을 이번 주에 얼마나 해결했냐를 평가하는 것이 아니라, 그저 집중한 시간이 얼마인지만 늘상 체크하고 있었다.</p></li>
+</ul>
+<p>물론, 늘 그렇듯 뽀모도로 라는 시간 관리법 자체가 구리다는 것이 아니라 그저 나에게는 조금 안맞는 방법이었다는 것이다.😀 사실 그 전부터 뽀모도로에 부작용을 느껴왔지만 선뜻 버리지 못한 근본적인 이유는 올해 설정해둔 목표를 관리하는 방식에 있었다. 나는 Notion에서 내 올해 목표, 오늘 할 일 등을 관리하고 있는데, 올해 목표를 설정만 해두고 해당 목표를 달성하기 위해 수행해야하는 Task들을 구체적으로 정의해놓진 않았다. 연간 목표를 세운게 처음이라 그런지 많이 서툴렀던 것 같다.</p>
+<p>이렇다보니 벌써 2023년의 2분기가 저물어가는데, 해당 목표에 내가 얼마만큼이나 다가갔는지에 대한 정량적인 평가가 불가능했다. 그리고, 이런 평가가 불가능하다보니 거대한 연간 목표의 달성을 위해 내가 열심히 달려가고 있다는 것을 느낄만한 성취감 또한 없었다. 이러한 고민을 안고있었기에 “시간” 중심으로라도 성취감을 느낄 수 있었던 뽀모도로를 버리긴 힘들었다. 그러다가, 이 영상을 마주했다.</p>
+<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/RV-3v95fTgM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p>드림코딩이라는 채널에서 공유해주신 개발자가 사용하는 노션 노트인데, 올해 목표를 설정하고 해당 목표를 달성하기 위한 Task들을 정의하여 이를 중심으로 일정을 관리하고 싶었던 내 니즈에 완벽하게 부합하는 템플릿이였다. 또한, 위 영상을 보며 노션의 데이터베이스 활용법도 터득할 수 있었는데, 내가 여지껏 노션을 참 무식하게 써왔다는 것 또한 깨달을 수 있었다. 아무튼, 이 템플릿 덕분에 기존에 주먹구구 식으로 관리하던 To do list를 연초에 작성해뒀던 연간 목표와 align하고 각 목표 달성을 위한 Task들을 세부적으로 정의함으로써, Task 중심으로 일정을 관리할 수 있게됐다. 확실히 Task 중심의 관리가 목표에 점차 다가가고 있는 나를 가시적으로 볼 수 있있게 해주기에 훨씬 더 많은 성취감을 주는 듯 하다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-05-15-monthly_memory-202304/fig2.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
+<p>해당 템플릿을 따라 목표를 작성하고 완료를 해나가면 위와 같이 Progress 바가 자동으로 채워지는데, 이게 가져다주는 성취감이 크다. 나같이 게으르고 파워 J인 사람들에게는 한 해를 열심히 살아나가기 위해 주기적인 성취감, 자극이 필요로 되기에 이런게 꼭 필요하다.😂</p>
+</section>
+<section id="지치지-않는-나만의-방법" class="level3">
+<h3 class="anchored" data-anchor-id="지치지-않는-나만의-방법">지치지 않는 나만의 방법</h3>
+<p>내가 자꾸 이런 식으로 일정 관리의 루틴화를 시도하는 이유는 사실 지치지 않기 위해서다. 평일에 업무를 마치고 퇴근한 뒤에 운동을 하고 공부를 하는 삶의 반복은 누군가에게 번아웃을 가져다줄 수 있다. 이 부분에 있어서 번아웃을 경험하지 않으려면, 퇴근 뒤에 하는 운동과 공부가 특별한 행위가 아닌 것으로 여겨져야 한다. 우리는 매일 밥을 먹고 양치를 하지만, 매일 밥을 챙겨먹고 양치를 하느라 지쳐서 번아웃이 왔다는 사람은 들어본 적 없을 것이다. 특별한 일을 일상의 일로 만들기 위해서는 루틴이 필요하고, 루틴이 몸에 익으면 우리는 이를 특별한 일이 아닌 일상의 일로 여길 수 있게 된다. 특별할 것이 없는 당연한 생활이라는 말이다. 우리는 이런 행위를 다른 말로는 “습관”이라 표현하기도 한다.</p>
+<p>나는 게으른 사람이긴 하지만, 다행히 이제는 퇴근 후에 공부하고 운동을 하는 삶이 더이상 특별한 일이라 느껴지지 않는다. 그저 내 꿈에 조금 더 빠르게 다가가기 위해 필요한 일상적인 행위에 불과하다. 아직 내가 모자란 점은 주말에 시간을 보낼 때이다. 토요일에 계획해둔 Task를 다 완료하면 마음이 그렇게 들뜬다. 이게 주말은 아직 똑바로 루틴화가 안됐다는 증거다. 뭔가 큰 일을 해낸 것 같고, 일요일은 그저 쉬고싶은 마음이 든다.😂 성취감과는 조금 다르다. 평일에 하는 공부도 일상이긴하나 계획해둔 것을 다했을 때 느껴지는 성취감은 매우 크다. 그러나, 주말에 설정해둔 계획을 완료한 것처럼 내가 막 엄청 기특하고 마음이 들뜨진 않는다. 사실, 아직 마음 한켠에 일주일에 하루 정도는 마음 놓고 쉬고 싶은 생각이 있어서 그런 듯하다. 그게 주말 이틀 중 하루인 것 같고. 뭐가 맞는 지는 잘 모르겠다. 평일, 주말 가리지 않고 평생 지속가능하도록, 무던하게 자기 발전에 시간을 할애할 줄 아는 그런 사람이 되고 싶다.</p>
+</section>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>4월에 가장 뜻깊었던 일은 흐지부지하게 시간 중심으로 목표와 일정을 관리해왔던 것을, 연간 목표와 align한 Task 해결을 중심으로 바꾼 것이라 생각한다. 1분기부터 이렇게 했다면 훨씬 더 많은 성취가 있었지 않았을까 하는 조금 아쉬움도 든다. 아직 2023년 절반도 지나지 않았다. 살면서 처음으로 세워 본 올해 목표들을 꼭 다 달성할 수 있는 한해가 되기를 바래본다.</p>
+<blockquote class="blockquote">
+<p>꾸준함이 모든 것을 이긴다</p>
+</blockquote>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {월간 회고록: 4월},
+  date = {2023-05-15},
+  url = {https://taemobang.com/posts/2023-05-15-monthly-memory-202304/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“월간 회고록: 4월.”</span> May 15, 2023. <a href="https://taemobang.com/posts/2023-05-15-monthly-memory-202304/">https://taemobang.com/posts/2023-05-15-monthly-memory-202304/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2023-05-15-monthly_memory-202304/index.html</guid>
+  <pubDate>Sun, 14 May 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2023-05-15-monthly_memory-202304/preview.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>통계학, 그게 왜 중요한데?</title>
   <dc:creator>방태모</dc:creator>
@@ -2990,358 +3089,6 @@ Hong, Seonui. 2012. <span>“02. 논문의 종류.”</span> <a href="http://www
   <guid>https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/index.html</guid>
   <pubDate>Thu, 12 May 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-05-13-how-to-review-a-paper/preview.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>tidyverse로 데이터베이스랑 대화하기 - 1편</title>
-  <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/fPkvU7RDmCo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Caspar Camille Rubin on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<aside>
-본 글은 <span class="citation" data-cites="naidoo2020">(Naidoo 2020)</span>를 기반으로 작성되었습니다.
-</aside>
-<p>실무에서는 Data analyst, Data scientist를 가리지 않고 SQL에 관한 능력을 요구합니다. 우리나라의 채용공고를 둘러보면 Data analyst의 경우 특히 SQL 스킬을 중요하게 요구하는 듯 합니다. 방대한 양의 데이터를 저장하고 관리하기 위해 실무에서는 데이터베이스를 사용합니다. 데이터베이스는 종종 관계형 데이터베이스 시스템<sup>1</sup>(이하 RDBMS)이라 불리기도 하죠. 그리고, 우리는 SQL<sup>2</sup> 언어 또는 SQL을 조금 변형한(variant) 언어를 통해 이 데이터베이스에 질의(query)를 합니다. 여기서 변형이라는 말을 사용한 이유는, RDBMS를 제공하는 업체에서 표준화된 SQL을 제공하는 경우도 있지만, 표준화된 SQL을 조금 변형시켜 사용하는 경우도 있기 때문입니다.</p>
-<p>만약 이렇게 특정 업체로부터 제공되는 변형된 RDBMS를 사용해야한다면, 해당 업체에서 사용하는 특정 SQL dialect<sup>3</sup>를 사용해 쿼리를 작성하는 방법을 이해해야 하실겁니다. 변형된 RDBMS를 예로 들어보자면, <a href="https://www.postgresql.org">PostgreSQL</a>, <a href="https://prestodb.io">PrestoDB</a>(<a href="https://aws.amazon.com/ko/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&amp;whats-new-cards.sort-order=desc">AWS의 Athena</a>를 위한) 등이 있습니다. PostgreSQL DB의 JSON 필드는 AWS에서 구조화된 중첩 배열로(array) 수집되므로, 동일한 필드를 쿼리하고자 할 때 다른 쿼리문을 사용합니다.</p>
-<p>R을 사용하는 여러분 모두 잘 아시다시피, R에서는 <code>{dplyr}</code><sup>4</sup> 패키지를 통해 이러한 작업을 데이터에 수행할 수 있습니다. <code>{dplyr}</code>이 <code>select()</code>, <code>group_by()</code>, <code>left_join()</code> 등 SQL 문법을 잘 모방하긴 했지만, SQL 문법과 R 문법 사이를 완벽하게 왔다갔다 하기는 어렵습니다. 예를 들자면, <code>{dplyr}</code>의 <code>filter()</code>를 이용해 특정 행을 뽑아올 때, 우리는 R 문법을 따라야하므로 조건문에 <code>=</code>이 아닌 <code>==</code>을 사용하죠. 이는 SQL 문법과는 완벽히 다른 부분입니다.</p>
-<p>자, 여기서 이러한 상황을 타개할 방법은 무엇일까요. 엄청난 용량의 데이터베이스를 R로 가져올 수는 없습니다. 메모리 베이스인 R에 이 짓을 햇다가는요? 생각도 하기 싫습니다.😰 그럼, RDBMS 환경에서 이러한 무거운 작업을(e.g.&nbsp;computation) 수행하고 필요로 될 때에만 R에다가 가져오면 되지 않을까요? 예를 들면, 집계된 데이터를 가져와서 보고서용 그림을 그린다든지. 이를 가능하게끔 해주는 패키지에 대해 배워보려고 합니다.</p>
-<p>본 튜토리얼에서는 <code>{dplyr}</code>의 데이터베이스 백엔드 버전이라 할 수 있는 <code>{dbplyr}</code> 패키지에 대해 배울거에요. <code>{dbplyr}</code>은 당신의 RDBMS에 R의 tidyverse 문법을 사용한 쿼리문을 직접적으로 사용할 수 있게끔 해줄겁니다.😀</p>
-<section id="db-연결하기" class="level2">
-<h2 class="anchored" data-anchor-id="db-연결하기">1 DB 연결하기</h2>
-<p>먼저 필요한 패키지를 불러오죠. <code>install.packages("패키지명")</code>을 통해 설치할 수 있습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(DBI)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(dbplyr)</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(dplyr)</span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;">library</span>(RSQLite)</span>
-<span id="cb1-5"><span class="fu" style="color: #4758AB;">library</span>(odbc)</span></code></pre></div>
-</div>
-<ul>
-<li><code>{DBI}</code>: R의 데이터베이스 인터페이스에 관한 메인 패키지입니다.</li>
-<li><code>{dbplyr}</code>: <code>{dplyr}</code> 문법을 사용하여 데이터베이스에 질의를 할 수 있게끔 해줍니다.</li>
-<li><code>{dplyr}</code>: 데이터베이스에 질의할 때 사용할 패키지입니다.</li>
-<li><code>{RSQLite}</code>: 가벼운 단일 유저용 데이터베이스 SQLite DB에 연결할 수 있게끔 해주는 DBI<sup>5</sup> 호환 패키지입니다. R-SQLite로 이해하시면 편합니다.</li>
-<li>다른 DBI 용 호환 패키지가 필요할 수도 있습니다. 예를 들어, <code>{RPostgres}</code>는 PostgreSQL RDBMS와 연결을 해주는 패키지입니다.<sup>6</sup></li>
-<li><code>{odbc}</code>: odbc 드라이버를 사용해 RDBMS 인터페이스에 인터페이스할 수 있도록 해주는 DBI 호환 인터페이스입니다.<sup>7</sup></li>
-</ul>
-<section id="예제용-토이-db" class="level3">
-<h3 class="anchored" data-anchor-id="예제용-토이-db">예제용 토이 DB</h3>
-<p><a href="https://www.apreshill.com">Alison Hill</a>이 <a href="https://github.com/apreshill/bakeoff">The Great British Bake off</a>에서 만든 데이터를 사용하려고 합니다. 본 예제에서 다룰 데이터베이스는 <a href="https://github.com/be-favorite/Distill/blob/master/_posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db">여기서</a> 내려받으세요. <code>{bakeoff}</code> 패키지의 데이터를 이용해 연습에 사용할 SQLite DB를 만들었습니다. 이 튜토리얼의 원 저자 <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">Vebash Naidoo</a>님께 감사의 말을 전합니다.</p>
-</section>
-<section id="sqlite-db-연결하기" class="level3">
-<h3 class="anchored" data-anchor-id="sqlite-db-연결하기">SQLite DB 연결하기</h3>
-<p>이제 DB를 SQLite DB에 연결해봅시다. DB와 대화를 나누기 위해서, 우선 연결(connection)을 해줘야합니다. 다음의 작업을 해줄겁니다.</p>
-<ul>
-<li><p>DBI 패키지 로딩: <code>library(DBI)</code></p></li>
-<li><p>연결하기: <code>con &lt;- dbConnect(RSQLite::SQLite(), "내려받은 db 경로")</code></p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;">library</span>(DBI) <span class="co" style="color: #5E5E5E;"># main DB interface</span></span>
-<span id="cb2-2"><span class="fu" style="color: #4758AB;">library</span>(dplyr) </span>
-<span id="cb2-3"><span class="fu" style="color: #4758AB;">library</span>(dbplyr) <span class="co" style="color: #5E5E5E;"># dplyr back-end for DBs</span></span>
-<span id="cb2-4"></span>
-<span id="cb2-5">con <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dbConnect</span>(<span class="at" style="color: #657422;">drv =</span> RSQLite<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">SQLite</span>(), <span class="co" style="color: #5E5E5E;"># give me a SQLite connection</span></span>
-<span id="cb2-6">        <span class="at" style="color: #657422;">dbname =</span> <span class="st" style="color: #20794D;">"data/great_brit_bakeoff.db"</span>)</span>
-<span id="cb2-7"><span class="fu" style="color: #4758AB;">summary</span>(con) <span class="co" style="color: #5E5E5E;"># What do we have?</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          Length            Class             Mode 
-               1 SQLiteConnection               S4 </code></pre>
-</div>
-</div>
-<p>위와 같은 명령어가 출력되면 DB에 성공적으로 연결된 것입니다.</p>
-</section>
-</section>
-<section id="db-둘러보고-다뤄보기" class="level2">
-<h2 class="anchored" data-anchor-id="db-둘러보고-다뤄보기">2 DB 둘러보고 다뤄보기</h2>
-<p>자, DB 연결도 했으니 이제 몇 가지 DBI 함수를 이용해 연결한 DB를 둘러보고 다뤄봅시다.</p>
-<section id="dbi-함수" class="level3">
-<h3 class="anchored" data-anchor-id="dbi-함수">DBI 함수</h3>
-<p>DBI 함수들의 이름은 꽤 직관적입니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;">dbListTables</span>(con) <span class="co" style="color: #5E5E5E;"># 연결된 테이블 리스트를 보여줘!</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "baker_results"     "bakers"            "bakes"            
- [4] "challenge_results" "challenges"        "episode_results"  
- [7] "episodes"          "ratings"           "ratings_seasons"  
-[10] "results"           "seasons"           "series"           </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;">dbListFields</span>(con, <span class="co" style="color: #5E5E5E;"># 연결한 DB로 가서</span></span>
-<span id="cb6-2">      <span class="st" style="color: #20794D;">"bakers"</span>)   <span class="co" style="color: #5E5E5E;"># bakes 테이블에 어떤 필드가 있는지 알려줘!</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "series"     "baker_full" "age"        "occupation" "hometown"  </code></pre>
-</div>
-</div>
-<p>DB에 질의는 다음과 같이 수행할 수 있어요.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">res <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">dbSendQuery</span>(con, <span class="st" style="color: #20794D;">"SELECT * FROM bakers LIMIT 3"</span>) <span class="co" style="color: #5E5E5E;"># 쿼리문 실행</span></span>
-<span id="cb8-2"><span class="co" style="color: #5E5E5E;"># bakers 테이블에 모든 필드를 가져오는데, 관측치 3개까지만 가져와봐!</span></span>
-<span id="cb8-3"><span class="fu" style="color: #4758AB;">dbFetch</span>(res) <span class="co" style="color: #5E5E5E;"># 결과 출력해줘</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  series          baker_full age                        occupation
-1      1       Annetha Mills  30                           Midwife
-2      1      David Chambers  31                      Entrepreneur
-3      1 Edward "Edd" Kimber  24 Debt collector for Yorkshire Bank
-       hometown
-1         Essex
-2 Milton Keynes
-3      Bradford</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;">dbClearResult</span>(res) <span class="co" style="color: #5E5E5E;"># 결과 지우기</span></span></code></pre></div>
-</div>
-</section>
-<section id="dplyr-함수" class="level3">
-<h3 class="anchored" data-anchor-id="dplyr-함수">dplyr 함수</h3>
-<p>이제, 우리가 잘하는 <code>{dplyr}</code>의 함수들을 이용해 마음껏 DB와 이야기해보죠.</p>
-<ul>
-<li><code>dplyr::tbl(con, "테이블명")</code>: 연결한 DB(<code>con</code>)으로 가서 <code>SELECT * FROM 테이블명</code> 실행해줘.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"bakers"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Source:   table&lt;bakers&gt; [?? x 5]
-# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
-   series baker_full                age occupation                       homet…¹
-    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                            &lt;chr&gt;  
- 1      1 "Annetha Mills"            30 Midwife                          Essex  
- 2      1 "David Chambers"           31 Entrepreneur                     Milton…
- 3      1 "Edward \"Edd\" Kimber"    24 Debt collector for Yorkshire Ba… Bradfo…
- 4      1 "Jasminder Randhawa"       45 Assistant Credit Control Manager Birmin…
- 5      1 "Jonathan Shepherd"        25 Research Analyst                 St Alb…
- 6      1 "Lea Harris"               51 Retired                          Midlot…
- 7      1 "Louise Brimelow"          44 Police Officer                   Manche…
- 8      1 "Mark Whithers"            48 Bus Driver                       South …
- 9      1 "Miranda Gore Browne"      37 Food buyer for Marks &amp; Spencer   Midhur…
-10      1 "Ruth Clemens"             31 Retail manager/Housewife         Poynto…
-# … with more rows, and abbreviated variable name ¹​hometown
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"bakers"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb13-2">    <span class="fu" style="color: #4758AB;">head</span>(<span class="dv" style="color: #AD0000;">3</span>) <span class="co" style="color: #5E5E5E;"># "SELECT * FROM bakers LIMIT 3"와 동일</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Source:   SQL [3 x 5]
-# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
-  series baker_full                age occupation                        homet…¹
-   &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                             &lt;chr&gt;  
-1      1 "Annetha Mills"            30 Midwife                           Essex  
-2      1 "David Chambers"           31 Entrepreneur                      Milton…
-3      1 "Edward \"Edd\" Kimber"    24 Debt collector for Yorkshire Bank Bradfo…
-# … with abbreviated variable name ¹​hometown</code></pre>
-</div>
-</div>
-<p>데이터베이스와 대화를 나눌 때 마다 초기에 연결해둔 <code>con</code>을 사용한다는 점을 유념해주세요. 초기에 불러왔던 <code>con</code>은 아까처럼 일반적인 SQL 쿼리문을 이용해 질의를 할 때 뿐만이 아닌 <code>{dplyr}</code>을 통해 타이디한 파이프라인으로 원하는 테이블을 가져올 때도 사용됩니다.</p>
-<p>자 이제 예시 상황을 하나 들어서 <code>{dplyr}</code>로 원하는 테이블을 가져와보겠습니다. <code>baker_results</code> 테이블에는 각 제빵 대회에 참가한 제빵사(baker)의 세부 정보 필드가 담겨있습니다:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="fu" style="color: #4758AB;">dbListFields</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "series"                    "baker_full"               
- [3] "baker"                     "age"                      
- [5] "occupation"                "hometown"                 
- [7] "baker_last"                "baker_first"              
- [9] "star_baker"                "technical_winner"         
-[11] "technical_top3"            "technical_bottom"         
-[13] "technical_highest"         "technical_lowest"         
-[15] "technical_median"          "series_winner"            
-[17] "series_runner_up"          "total_episodes_appeared"  
-[19] "first_date_appeared"       "last_date_appeared"       
-[21] "first_date_us"             "last_date_us"             
-[23] "percent_episodes_appeared" "percent_technical_top3"   </code></pre>
-</div>
-</div>
-<p>각 제빵대회 우승자의 출신이 영국의 일부 지역에서 나왔는지, 아니면 다양한 지역으로부터 우상자가 배출되었는지 알고싶은 상황이라고 해봅시다. 우선 다음과 같이 관심있는 필드만 불러와주겠습니다.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb17-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Source:   SQL [?? x 4]
-# Database: sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
-   series baker     hometown              series_winner
-    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                         &lt;int&gt;
- 1      1 Annetha   Essex                             0
- 2      1 David     Milton Keynes                     0
- 3      1 Edd       Bradford                          1
- 4      1 Jasminder Birmingham                        0
- 5      1 Jonathan  St Albans                         0
- 6      1 Lea       Midlothian, Scotland              0
- 7      1 Louise    Manchester                        0
- 8      1 Mark      South Wales                       0
- 9      1 Miranda   Midhurst, West Sussex             0
-10      1 Ruth      Poynton, Cheshire                 0
-# … with more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
-</div>
-</div>
-<p>24개 열 중 관심있는 4개 열만 불러왔습니다. 이제 제빵대회에 우승한 사람만 골라낸 뒤(<code>filter()</code>) 우승자들이 영국의 어떤 지역으로 부터 왔는지 지역별로 인원을 구하고(<code>count()</code>) 내림차순 정렬(<code>sort()</code>)을 해보죠.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb19-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb19-3">  <span class="fu" style="color: #4758AB;">filter</span>(series_winner <span class="sc" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">1</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span></span>
-<span id="cb19-4">  <span class="fu" style="color: #4758AB;">count</span>(hometown, <span class="at" style="color: #657422;">sort =</span> <span class="cn" style="color: #8f5902;">TRUE</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Source:     SQL [8 x 2]
-# Database:   sqlite 3.39.1 [/Volumes/Essential/Study/Private/Writing/Blog/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/data/great_brit_bakeoff.db]
-# Ordered by: desc(n)
-  hometown                              n
-  &lt;chr&gt;                             &lt;int&gt;
-1 Wigan                                 1
-2 West Molesey, Surrey                  1
-3 Ongar, Essex                          1
-4 Market Harborough, Leicestershire     1
-5 Leeds / Luton                         1
-6 Bradford                              1
-7 Barton-Upon-Humber, Lincolnshire      1
-8 Barton-Le-Clay, Bedfordshire          1</code></pre>
-</div>
-</div>
-<p>이 결과에 따르면, 제빵대회 우승자들의 출신 지역은 각기 다르다고 결론을 내릴 수 있겠네요.</p>
-</section>
-<section id="dplyr-문법을-sql-쿼리문으로" class="level3">
-<h3 class="anchored" data-anchor-id="dplyr-문법을-sql-쿼리문으로">dplyr 문법을 SQL 쿼리문으로</h3>
-<p>앞서 <code>{dplyr}</code>을 이용해 수행한 질의를 SQL 쿼리문으로는 어떻게 작성할까요? 코드 한 줄이면 손쉽게 알 수 있습니다.😀</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><span class="fu" style="color: #4758AB;">tbl</span>(con, <span class="st" style="color: #20794D;">"baker_results"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb21-2">  <span class="fu" style="color: #4758AB;">select</span>(series, baker, hometown, series_winner) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb21-3">  <span class="fu" style="color: #4758AB;">filter</span>(series_winner <span class="sc" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">1</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb21-4">  <span class="fu" style="color: #4758AB;">count</span>(hometown, <span class="at" style="color: #657422;">sort =</span> <span class="cn" style="color: #8f5902;">TRUE</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span> </span>
-<span id="cb21-5">  <span class="fu" style="color: #4758AB;">show_query</span>()</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;SQL&gt;
-SELECT `hometown`, COUNT(*) AS `n`
-FROM (
-  SELECT `series`, `baker`, `hometown`, `series_winner`
-  FROM `baker_results`
-)
-WHERE (`series_winner` = 1.0)
-GROUP BY `hometown`
-ORDER BY `n` DESC</code></pre>
-</div>
-</div>
-<p>멋지지 않습니까? 이제 제가 왜 이 글의 맨 위 요약을 “R을 통해 데이터베이스 관련 작업을 한다면, 꼭 SQL 전문가가 될 필요는 없어요!”라고 적은 지 아시겠나요? <code>{dplyr}</code>로 작업을 수행하고, SQL 쿼리문으로 변환을 수행해보는 작업은 SQL을 배우는 과정에 꽤 큰 도움이 될겁니다. 직장 또는 기관에서 DB를 관리할 때 모두 같은 업체의 SQL DB를 사용하는 건 아니므로, 이렇게 광범위한 업체들로부터 공급되는 SQL을 알고, 읽는 것은 언제나 중요하기 때문입니다.</p>
-</section>
-<section id="출력문의-lazy-query-의-의미" class="level3">
-<h3 class="anchored" data-anchor-id="출력문의-lazy-query-의-의미">출력문의 <code>lazy query / ??</code>의 의미</h3>
-<p>앞서 테이블, 쿼리를 작성하며 출력물에서 <code>Source: table [?? x 5]</code> 또는 <code>Source: lazy query [?? x 4]</code>와 같은 문장을 확인하실 수 있었을 겁니다.</p>
-<section id="이런-문장이-출력물에-포함되는-이유" class="level4">
-<h4 class="anchored" data-anchor-id="이런-문장이-출력물에-포함되는-이유">이런 문장이 출력물에 포함되는 이유</h4>
-<ul>
-<li><p>먼저, 우리가 직접적인 RDBMS 상에서가 아닌 R이라는 공간을 빌려 뒤에서(behind the scenes) 작성한 <code>dplyr</code>코드는 우리가 연결하려는 DB의 SQL에 해당하는 dialect로 변환됩니다.</p></li>
-<li><p>즉, SQL은 DB에 직접적으로 실행됩니다. 즉, 데이터를 먼저 R로 가져와서 조작하는 것이 아닌 쿼리 자체를 DB에 보내고 DB에서 계산(computation)이 수행됩니다.</p></li>
-<li><p>정리하면, <code>dplyr</code> 파이프라인을 사용해 DB에서 쿼리를 실행하면, DB에서 계산을 수행하고 실행된 최종 결과의 전체가 아닌 일부를 R에서 보여주는 식입니다.</p></li>
-<li><p>이러한 이유들을 들여다보면 우리는 <code>??</code>를 이해할 수 있습니다.</p></li>
-<li><p><code>??</code>는 “연결 DB <code>con</code>에서 이 쿼리(파이프라인을 SQL로 변환시킨 것)를 실행했고, 여기 R에서 출력물을 스니펫(snippet)으로만 가져왔는데, 얼마나 많은 수의 행이 있는지에 관한 메타 정보까진 캐치하진 못했어. 그저 출력물에 몇 개의 열이 있다는 것 정도만 캐치했어”라고 이해할 수 있습니다.</p></li>
-<li><p>이 튜토리얼은 파트 1 입니다. 다음 파트에서 가져온 테이블에 얼마나 많은 행들이 존재하는 지와 같은 메타 정보들을 R로 어떻게 가져오는지에 대해 알아볼 예정입니다.</p></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="db-연결-해제하기" class="level2">
-<h2 class="anchored" data-anchor-id="db-연결-해제하기">3 DB 연결 해제하기</h2>
-<p>작업이 끝나면 연결을 해제하는 것을 잊지마세요!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><span class="fu" style="color: #4758AB;">dbDisconnect</span>(con) <span class="co" style="color: #5E5E5E;"># db 연결 닫기</span></span></code></pre></div>
-</div>
-<p>연결 해제가 체크는 <code>dbListTable(con)</code>을 실행해보시면 됩니다. 연결해제가 잘 되었다면 에러문이 출력될겁니다.</p>
-<section id="다음-파트에서-배울-내용" class="level3">
-<h3 class="anchored" data-anchor-id="다음-파트에서-배울-내용">다음 파트에서 배울 내용</h3>
-<ul>
-<li><code>{DBI}</code>: R의 데이터베이스 인터페이스에 관한 메인 패키지입니다.</li>
-<li>데이터 R로 가져오기</li>
-</ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-세션정보를 보려면 누르세요
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.2.1 (2022-06-23)
- os       macOS Monterey 12.6
- system   aarch64, darwin20
- ui       X11
- language (EN)
- collate  en_US.UTF-8
- ctype    en_US.UTF-8
- tz       Asia/Seoul
- date     2022-09-19
- pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
- quarto   1.0.38 @ /usr/local/bin/quarto
-
-─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- DBI         * 1.1.3   2022-06-18 [1] CRAN (R 4.2.0)
- dbplyr      * 2.2.1   2022-06-27 [1] CRAN (R 4.2.0)
- dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.2.0)
- odbc        * 1.3.3   2021-11-30 [1] CRAN (R 4.2.0)
- RSQLite     * 2.2.15  2022-07-17 [1] CRAN (R 4.2.0)
- sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
-
- [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-</section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-naidoo2020" class="csl-entry">
-Naidoo, Vebash. 2020. <span>“Sciencificity’s Blog: Using the Tidyverse with Databases - Part i,”</span> December. <a href="https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/">https://sciencificity-blog.netlify.app/posts/2020-12-12-using-the-tidyverse-with-databases/</a>.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>relational database management system, or RDBMS↩︎</p></li>
-<li id="fn2"><p>Structured Query Language↩︎</p></li>
-<li id="fn3"><p>공급업체마다 SQL 쿼리문에 조금씩 차이가 있는 부분을 방언의 의미를 갖는 dialect로 표현한 것 같습니다.↩︎</p></li>
-<li id="fn4"><p>명확하게 정해진 바는 없어보이나, d-plier라고 흔히 읽는 듯 합니다. 패키지의 스티커 이미지를 보면 플라이어가 그려져 있습니다.↩︎</p></li>
-<li id="fn5"><p>DataBase Interface, 데이터베이스 인터페이스의 약어↩︎</p></li>
-<li id="fn6"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 많은 것을 확인할 수 있습니다.↩︎</p></li>
-<li id="fn7"><p>본 예제에서는 다루지 않지만, <a href="https://db.rstudio.com">Rstudio DB</a>에서 확인할 수 있습니다.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {tidyverse로 데이터베이스랑 대화하기 - 1편},
-  date = {2022-04-07},
-  url = {https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“tidyverse로 데이터베이스랑 대화하기 - 1편.”</span>
-April 7, 2022. <a href="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/">https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/</a>.
-</div></div></section></div> ]]></description>
-  <category>SQL</category>
-  <category>R</category>
-  <guid>https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html</guid>
-  <pubDate>Wed, 06 Apr 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

@@ -6,7 +6,7 @@ date: "2023-05-29"
 draft: TRUE
 preview: preview.png
 citation:
-  url: https://taemobang.com/posts/2023-05-29-introduction-to-potential-outcome-framework/
+  url: https://taemobang.com/posts/2023-05-29-introduction-to-causal-inference/
 categories: [Causal Inference]
 bibliography: references.bib
 ---

@@ -1,7 +1,7 @@
 ---
 title: "인과추론 입문하기"
 description: |
-   인과추론의 필요성과 어려움, Potential Outcome Framework 관점에서 수행하는 인과추론에 대한 소개
+   인과추론의 필요성과 어려움, Potential Outcome Framework를 통해 Causation을 추정하는 원리
 date: "2023-05-29"
 draft: TRUE
 preview: preview.png

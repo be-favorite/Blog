@@ -1,5 +1,5 @@
 ---
-title: "인과추론 입문"
+title: "인과추론 입문하기"
 description: |
    인과추론의 필요성과 어려움, Potential Outcome Framework 관점에서 수행하는 인과추론에 대한 소개
 date: "2023-05-29"

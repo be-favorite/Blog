@@ -1,5 +1,5 @@
 ---
-title: "방태모"
+title: "About"
 image: images/notion-avatar.png
 about:
   template: jolla

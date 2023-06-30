@@ -1,0 +1,13 @@
+---
+title: "월간 회고록: 5월"
+description: |
+  문서화의 중요성, 배치 작업, PAP 마무리, 독서
+date: "2023-06-30"
+draft: TRUE
+preview: preview.jpg
+citation:
+  url: https://taemobang.com/posts/2023-06-30-monthly-memory-202305/
+categories: [Memory]
+---
+
+[![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)

@@ -10,7 +10,152 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Sun, 28 May 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 29 Jun 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>월간 회고록: 5월</title>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2023-06-30-monthly-memory-202305/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/preview.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<p>6월 중순에 이사를 하느라 무척이나 바빴다. 이를 핑계삼아 5월의 회고록을 이제서야 작성해본다.</p>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
+<section id="문서화의-중요성" class="level3">
+<h3 class="anchored" data-anchor-id="문서화의-중요성">문서화의 중요성</h3>
+<p>문서화의 중요성은 충분히 인지하고 있던 바이지만, 요즘들어 더욱이 피부로 느낀다. 이직 후 그간 나름 착실히 문서화를 해오며 생각해본 바들을 적어본다:</p>
+<ul>
+<li><p>When &amp; What</p>
+<ul>
+<li><p>성공적으로 끝난 일에 대해서만 문서화를 하고있는가? 삽질, 실패로 끝난 일에 대해서도 문서화는 필요하다.</p></li>
+<li><p>내 능력에 비해 꽤나 어려운 일을 맡고 있는가? 일의 중간중간 문서화를 통한 회고는 많은 도움이 될 수 있다.</p></li>
+<li><p>사람들이 종종 반복적으로 질문을 하는 것들이 있는가? 이는 해당 부분에 대해 문서화가 필요하다는 명확한 증거이다.</p></li>
+<li><p>궁금한 것을 동료를 통해 해소했는가? 때에 따라 이 부분에 대한 문서화를 고려해봐도 좋을 것이다.</p></li>
+</ul></li>
+<li><p>Why</p>
+<ul>
+<li>문서화는 궁극적으로 조직의 생산성 증대와 의사소통에 많은 도움을 준다. 협업이 필연적으로 따르는 일을 하는 사람일수록, 조직이 커질수록, 문서화에 들인 시간 대비 생산성, 의사소통에 대한 리턴값은 지수적으로 커질 것이다.</li>
+</ul></li>
+<li><p>How</p>
+<ul>
+<li><p>Done is better than perfect</p>
+<ul>
+<li>문서화는 꽤 귀찮은 작업이다. 그러므로, 본인이 편한 형식으로 체계를 잡고 쓰자.</li>
+</ul></li>
+<li><p>Hierarchy</p>
+<ul>
+<li>편한 형식으로 쓰되, 혼동을 방지하기 위해 글의 헤더들이나 꼭지들에 대한 Hierarchy는 엄밀하게 지켜주자.</li>
+</ul></li>
+<li><p>Context</p>
+<ul>
+<li>다른 건 잘 모르겠는데, 비즈니스 조직에서 모든 문서의 시작은 그 일을 시작하게 된 Context가 되면 좋은 듯하다. 물론, Context에 관한 설명이 필요없는 단순한 Q&amp;A와 같은 글이라면 생략해도 무방하다.</li>
+</ul></li>
+<li><p>References</p>
+<ul>
+<li>글을 쓰는 데에 참고한 References가 있다면 문서의 마지막에 기록해두자.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="pap-퍼블리셔-3기-후기" class="level3">
+<h3 class="anchored" data-anchor-id="pap-퍼블리셔-3기-후기">PAP 퍼블리셔 3기 후기</h3>
+<p>5월 28일 3차 글 제출을 마지막으로 PAP 퍼블리셔 활동이 끝이났다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/fig1.png" class="img-fluid figure-img" width="500"></p>
+</figure>
+</div>
+<p>4월 1일 첫 글을 시작으로 꽉 채운 2달이 훌쩍 지났구나. 시간 참 빠르다. 그간 봐왔던 PAP 블로그에는 참 좋은 글들이 많아서, 3기 퍼블리셔에 선발되고 난 뒤에 PAP 블로그에 걸맞는 글을 쓸 수 있을까 걱정이 많았는데 나름 잘 마무리한 듯 하다. 나의 아이덴티티를 잘 드러낼 수 있는 글을 쓰고자 했는데 이 또한 달성한 것 같고. 그 증거는 사진 속 내 글을 나타내는 태그 중 Causal Inference를 제외하면 내가 직접 만든 카테고리에 해당한다는 것.😂</p>
+<p>데이터 분석에 열정이 있고, 글쓰기에 취미가 있는 사람이라면 한번 쯤 참가해볼 만한 커뮤니티라고 생각한다. 업계에서 활발하게 활동하고 계신 분들을 만날 기회가 있고, 그들과 이야기를 나누다보면 나도 모르게 얻게되는 인사이트가 분명히 존재한다. 무엇보다 퍼블리셔로서 PAP 블로그에 내 글을 내건다는 부분은 좋은 퀄리티의 글을 쓰고 싶게끔 만드는 큰 동기가 된다. 참 즐거운 경험이었다. 현업에서 일에 몰두를 하고 계심에도, 아무런 금전적인 보상없이 이러한 커뮤니티를 운영하고 계시는 운영진 분들이 참 고맙고 존경스럽다.</p>
+<p>견고하게 형성되어 있는 개발자 커뮤니티에 반해 데이터 분석/데이터 과학 관련한 커뮤니티는 다른 IT 직군에 비해 사회에 등장한 세월이 길지 않기에 찾아보기가 꽤나 어려웠다. 그나마 형성되어있는 생태계 마저도 해외 유저들을 중심으로 형성이 되어있었다. 이러한 갈증을 느끼던 와중에 PAP라는 커뮤니티가 등장했고, 나는 이 커뮤니티를 눈여겨 볼 수 밖에 없었다. PAP는 단순히 글을 쓰고 퍼나르는 커뮤니티가 아니다. 그래서, 나는 이 커뮤니티를 더욱이 애정할 수 밖에 없다. 그들이 추구하는 가치를 읽어보시라.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/fig2.png" class="img-fluid figure-img" width="500"></p>
+<p></p><figcaption class="figure-caption">출처: PAP Official Page</figcaption><p></p>
+</figure>
+</div>
+<p>DA/DS에 몸을 담고 있는, 몸을 담고 싶은 사람이라면 이 커뮤니티를 애정할 수 밖에 없을 것이다.</p>
+<ul>
+<li><p><a href="https://playinpap.oopy.io/">▶️ PAP Official Page</a></p></li>
+<li><p><a href="https://playinpap.github.io/author/taemobang/">▶️ PAP에 기고한 글 보러가기</a></p></li>
+</ul>
+</section>
+<section id="독서" class="level3">
+<h3 class="anchored" data-anchor-id="독서">독서</h3>
+<ul>
+<li><p>일의 격, 신수정 지음</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/fig3.jpeg" class="img-fluid figure-img" width="300"></p>
+<p></p><figcaption class="figure-caption">출처: 교보문고</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>"일"과 "조직", 그리고 "삶"에 대한 의미와 통찰을 알려주는 책</p></li>
+<li><p>바쁜 현대사회에서 자신만의 목표를 설정하고 쫓는 사람들에게는 진심어린 위로를, "조금 늦은 것이 아닌가?"하며 새로운 시작을 주저하고 있는 사람들에게는 용기를 전해주는 책</p></li>
+<li><p>나와는 다른 남들을 이해할 수 있는 관점을 제시해주는 책</p></li>
+<li><p>인생의 너무 늦지 않은 시기에 이런 책을 만난 것은 행운이라 생각한다.</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>빅데이터를 지탱하는 기술, 니시다 케이스케 지음</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/fig4.jpeg" class="img-fluid figure-img" width="300"></p>
+<p></p><figcaption class="figure-caption">출처: 교보문고</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>빅데이터가 세상에 등장할 수 있었던 이유, 그리고 이들을 실제 산업현장에 활용하기 까지 필요했던 기술들에 대해 알 수 있었던 책</p></li>
+<li><p>본 책이 출간된 2018년 기준으로 빅데이터를 지탱하는 기술들의 개략적인 현황은 다음과 같았다:</p>
+<ul>
+<li><p>BI 도구(Tableau) 및 대시보드(Redash, Superse, Kibana)</p></li>
+<li><p>데이터 파이프라인(데이터웨어하우스/마트/레이크)</p></li>
+<li><p>분산처리시스템(Hadoop, Spark)</p></li>
+<li><p>분산 데이터 처리를 위한 아키텍쳐(MPP)</p></li>
+<li><p>데이터 전송 방식 2가지(벌크형, 스트리밍형)</p></li>
+<li><p>워크플로 관리(Airflow)</p></li>
+<li><p>클라우드(AWS, GCP)</p></li>
+</ul></li>
+<li><p>첫 직장인 병원 연구센터를 떠나, 작년 9월부로 산업계에 몸을 담으며 빅데이터를 지탱하고 있는 수많은 기술들을 눈으로 마주하고 난 뒤에 어리버리를 떨고있었던 내게 꼭 필요했던 책이라 할 수 있다.</p></li>
+<li><p>특정 기술을 진정으로 이해하기 위해서는 해당 기술이 등장한 Background, Context에 관한 이해가 선행되어야 한다. 앞서 언급한 빅데이터를 지탱하는 기술들이 등장한 맥락에 관한 이해가 되어있지 않은가? 그렇다면 이 책을 꼭 읽어보기를 권한다.</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>2023년 상반기가 저물어간다. 올해 “독서”라는 습관을 들이는 것이 목표였는데, 미약하지만 조금씩 내 삶에 독서가 들어오고 있는 듯 하다. 눈 앞에 놓인 목표를 달성하는데에 급급하게 살아가고 있는 와중에, 내 삶의 장기적인 목표와 꿈에 대해 자꾸만 고민이 든다. 나는 인생에 어떤 “목표”를 갖고 이를 통해 어떤 것을 실현하고 싶은 꿈이 있는가? 삶을 살아가는 데에 꼭 답해야만 하는 질문인가에 대해 묻는다면 의문 부호가 있지만, 나는 저 질문에 명확하게 답을 할 줄 아는 사람이 되고 싶다. 인생 참 어렵다.😂</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {월간 회고록: 5월},
+  date = {2023-06-30},
+  url = {https://taemobang.com/posts/2023-06-30-monthly-memory-202305/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“월간 회고록: 5월.”</span> June 30, 2023. <a href="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/">https://taemobang.com/posts/2023-06-30-monthly-memory-202305/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2023-06-30-monthly-memory-202305/index.html</guid>
+  <pubDate>Thu, 29 Jun 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/preview.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>인과추론 입문하기</title>
   <dc:creator>방태모</dc:creator>
@@ -3038,112 +3183,6 @@ Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently.”
   <guid>https://taemobang.com/posts/2022-06-08-monthly-memory-202204/index.html</guid>
   <pubDate>Tue, 07 Jun 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-06-08-monthly-memory-202204/preview.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>논문 요약 - Simões et al (2022)</title>
-  <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<aside>
-<p>Prerequisite: <a href="https://www.taemobang.com/posts/2022-05-13-how-to-review-a-paper/">논문 요약 방식</a></p>
-</aside>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/JbfhNrpQ_dw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Ella Ivanescu on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<section id="st-read" class="level2">
-<h2 class="anchored" data-anchor-id="st-read">1st read</h2>
-<section id="category" class="level3">
-<h3 class="anchored" data-anchor-id="category">Category</h3>
-<ul>
-<li>Research paper</li>
-</ul>
-</section>
-<section id="main-topic" class="level3">
-<h3 class="anchored" data-anchor-id="main-topic">Main Topic</h3>
-<section id="제목" class="level4">
-<h4 class="anchored" data-anchor-id="제목">제목</h4>
-<ul>
-<li>Cardiac dyspnea risk zones in the South of France identified by geo-pollution trends study - <span class="citation" data-cites="simões2022b">(Simões et al. 2022)</span></li>
-</ul>
-</section>
-<section id="주제" class="level4">
-<h4 class="anchored" data-anchor-id="주제">주제</h4>
-<ul>
-<li>프랑스 남부 지역의 Cardiac dyspnea(CD, 이하 심호흡곤란) 발생에 미치는 대기오염원(<img src="https://latex.codecogs.com/png.latex?%5Crm%7BPM%7D_%7B10%7D">, <img src="https://latex.codecogs.com/png.latex?%5Crm%7BNO%7D_%7B2%7D">, <img src="https://latex.codecogs.com/png.latex?%5Crm%7BO%7D_%7B3%7D">) 영향 평가</li>
-</ul>
-</section>
-</section>
-<section id="context" class="level3">
-<h3 class="anchored" data-anchor-id="context">Context</h3>
-<ul>
-<li><p>선행 연구들에서 대기오염원에 관한 단기 노출이 심근경색(myocardial infarction), 울혈성심부전(congestive heart failure)과 같은 몇몇 심혈관 병리(cardiovascular pathologies)들에 미치는 영향을 평가하긴 했으나, 심호흡곤란의 경우 이러한 관계를 아직 완전히 입증하지 못함</p></li>
-<li><p>따라서, 본 연구의 목적은 대기오염원, 기상요인, 심호흡곤란 입원 데이터를 활용해 심호흡곤란 입원 발생 원인에 관한 메커니즘을 알아보고, 이를 예방하기 위한 정책을 개발하는 것에 있음</p></li>
-<li><p>본 연구의 주요 방법론은 <a href="https://be-favorite.tistory.com/80?category=1019644">Distributed lag non linear model</a>(이하, DLNM)과 메타분석(Meta analysis)에 해당함</p></li>
-</ul>
-</section>
-<section id="correctness" class="level3">
-<h3 class="anchored" data-anchor-id="correctness">Correctness</h3>
-<ul>
-<li><p>기상요인(meteorological factors)들을 공변량(coviariates)으로 활용하는데, 다중공선성(multicollinearity)을 피하기 위해 상관이 존재할만한 두 변수 중 하나의 변수만 모형에 포함시킴</p></li>
-<li><p>최대 지연 효과(maximum lag days)는 14일까지 고려하였으나, 이에 관한 합리적 근거는 없다고 보여짐</p></li>
-</ul>
-</section>
-<section id="contributions" class="level3">
-<h3 class="anchored" data-anchor-id="contributions">Contributions</h3>
-<ul>
-<li><p>프랑스 남부 전체 지역의 심호흡곤란 입원 발생에 관한 대기오염원의 영향을 평가한 첫 번째 연구</p></li>
-<li><p><img src="https://latex.codecogs.com/png.latex?%5Crm%7BNO%7D_2">, <img src="https://latex.codecogs.com/png.latex?%5Crm%7BO%7D_3">, <img src="https://latex.codecogs.com/png.latex?%5Crm%7BPM%7D_%7B10%7D">에 단기 노출이 심호흡곤란으로 인한 응급실 방문을 증가시킨다는 것에 관한 유의한 증거 제시</p></li>
-<li><p>본 논문의 접근 방식은 공중 보건 정책에 관한 예측 도구로서 대기오염원 모니터링을 효과적으로 제안함</p></li>
-</ul>
-</section>
-<section id="clarity" class="level3">
-<h3 class="anchored" data-anchor-id="clarity">Clarity</h3>
-<ul>
-<li>지금까지 읽어본 바로는 명료하게 잘 쓰인 논문이라 생각됨</li>
-</ul>
-</section>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>본 논문을 통해 실제 각 도시별 DLNM을 이용한 대기오염원 건강영향평가 수행 후, 메타분석으로 오버롤한 결과를 제시할 수 있음을 확인했습니다. 메타분석을 어떻게 진행하였는지에 관한 이론적 부분은 자세하게 기술되어 있지 않아서 두 번째 읽기는 진행하지 않았으나, 도시별 분석 결과를 메타분석을 통해 종합할 수 있다는 것을 확인하는 것으로는 첫 번째 읽기로도 충분했습니다.</p>
-<p>본 논문에 쓰인 메타분석은 일반적으로 임상연구에서 수행하는 메타분석을 다양한 상황에 쓸 수 있도록 일반화하여 확장시킨 형태의 메타분석 방법론이라고 보시면 됩니다. 해당 방법론을 깊이있게 이해하기 위해서는 <span class="citation" data-cites="sera2019">(Sera et al. 2019)</span>을 참고하시면 됩니다. 해당 논문의 예제 R 소스코드는 <a href="https://github.com/gasparrini/2019_sera_StatMed_Rcode">여기</a>를 참고하시면 됩니다. 다양한 형태의 분석을 수행한 뒤에 <code>library(mixmeta)</code>를 통해 메타분석을 수행하여 결과를 종합하는 과정을 보여준다는 점에서 큰 의미가 있습니다. 그러나, 정작 제가 필요로하는 DLNM으로 건강영향평가를 도시별로 수행한 뒤에 메타분석을 하는 소스코드는 없다는 점이 조금 아쉬웠습니다.😂 그래서, 추가적으로 <span class="citation" data-cites="gasparrini2012a">(Gasparrini, Armstrong, and Kenward 2012)</span>에서 제공하는 <a href="https://github.com/gasparrini/2012_gasparrini_StatMed_Rcodedata">R 예제 소스코드</a>를 함께 참고했습니다. 확장된 형태의 메타분석인 <span class="citation" data-cites="sera2019">(Sera et al. 2019)</span>가 나오기 전이라 <code>library(mvmeta)</code>를 통해 분석이 진행되긴 합니다만, <code>library(mixmeta)</code>와 똑같은 로직으로 분석이 진행되기 때문에 해당 소스코드를 함께 참고하시면 도시별 DLNM 분석 결과를 메타분석하는 것을 어렵지 않게 구현하실 수 있을겁니다.</p>
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-gasparrini2012a" class="csl-entry">
-Gasparrini, A., B. Armstrong, and M. G. Kenward. 2012. <span>“Multivariate Meta-Analysis for Non-Linear and Other Multi-Parameter Associations.”</span> <em>Statistics in Medicine</em> 31 (29): 3821–39. <a href="https://doi.org/10.1002/sim.5471">https://doi.org/10.1002/sim.5471</a>.
-</div>
-<div id="ref-sera2019" class="csl-entry">
-Sera, Francesco, Benedict Armstrong, Marta Blangiardo, and Antonio Gasparrini. 2019. <span>“An extended mixed-effects framework for meta-analysis.”</span> <em>Statistics in Medicine</em> 38 (29): 5429–44. <a href="https://doi.org/10.1002/sim.8362">https://doi.org/10.1002/sim.8362</a>.
-</div>
-<div id="ref-simões2022b" class="csl-entry">
-Simões, Fanny, Charles Bouveyron, Damien Piga, Damien Borel, Stéphane Descombes, Véronique Paquis-Flucklinger, Jaques Levraut, Pierre Gibelin, and Silvia Bottini. 2022. <span>“Cardiac Dyspnea Risk Zones in the South of France Identified by Geo-Pollution Trends Study.”</span> <em>Scientific Reports</em> 12 (February). <a href="https://doi.org/10.1038/s41598-022-05827-2">https://doi.org/10.1038/s41598-022-05827-2</a>.
-</div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {논문 요약 - Simões et al (2022)},
-  date = {2022-05-24},
-  url = {https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“논문 요약 - Simões et al (2022).”</span> May 24,
-2022. <a href="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/">https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/</a>.
-</div></div></section></div> ]]></description>
-  <category>Time Series</category>
-  <category>Paper</category>
-  <guid>https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/index.html</guid>
-  <pubDate>Mon, 23 May 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-07-15-geultto-memory/index.html",
       "/posts/2023-06-30-monthly-memory-202305/index.html",
       "/posts/2023-05-29-Introduction-to-causal-inference/index.html",
       "/posts/2023-05-15-monthly-memory-202304/index.html",
@@ -39,6 +40,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2023-07-15-geultto-memory/index.html",
       "/posts/2023-06-30-monthly-memory-202305/index.html",
       "/posts/2023-05-29-Introduction-to-causal-inference/index.html",
       "/posts/2023-05-15-monthly-memory-202304/index.html",

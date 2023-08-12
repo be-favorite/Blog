@@ -10,7 +10,89 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Fri, 14 Jul 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 11 Aug 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>월간 회고록: 6-7월</title>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/preview.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<p>어느덧 3분기가 저물어간다. 벌써 8월 중순이다. 지난 6월, 7월의 회고를 몰아서 작성해본다. 정신 똑바로 차리고 살자.</p>
+<section id="업무" class="level2">
+<h2 class="anchored" data-anchor-id="업무">업무</h2>
+<section id="워크샵" class="level3">
+<h3 class="anchored" data-anchor-id="워크샵">워크샵</h3>
+<p>어쩌다보니 6, 7월에 3주에 걸쳐 매주 하나씩 워크샵을 진행했다. 서로 의견을 자유롭게 교환하며 진득하게 이야기를 나눌 것이 있을 때는 역시 오프라인 워크샵만한게 없다. 워크샵을 자연스럽게 여는 말은 언제나 팀장님의 역할이었는데, 이게 참 어려워 보인다. 이런 거 볼때마다 난 항상 상상해본다. 내가 저 자리에 가면 저렇게 할 수 있을까? “워크샵”은 어찌보면 정답이 없는 여러 주제들을 두고 자유롭게 의견을 교환하는 토론의 장과 같다고도 생각하는데, 편안하고 수평적인 팀 분위기에도 워크샵이라는 이벤트를 시작할 때 감도는 은근한 긴장감을 말로써 풀어주는 역할을 한다는게.. 참 어려워보이고 대단해보인다.</p>
+<p>그래서인지, 늘 오전은 워밍업(?) 느낌으로 가볍게 시작하여 조금 이른 점심을 먹곤 한다. 이것마저 팀장님이 의도한거라면.. 존경을 보낸다.😂 업무와는 거리가 있는 이런저런 각자 얘기도 나누면서 말이다. 오후엔 끝장 토론을 진행하며 오전에 열어둔 여러 주제들을 하나씩 격파해 나간다. 끊임없이 머리를 쓰고 상대방의 말을 듣고, 내가 할 말도 정리를 해야하기에 몰입해서 하다보면 3-4시간이 훌쩍 지나간다. 끝나고나면 체력적으로 인지, 정신적으로 인지 모르겠지만 어느정도 지쳐있다. 워크샵에 열심히 참가했다는 증거인 듯 해서 이런 느낌이 나쁘진 않다. 찬반양론이 갈릴 수 있는 주제들에 대해 서로의 이견을 좁혀나가며 하나의 결론을 얻어냈다는 사실도 내가 몰두한 지난 몇시간을 뿌듯한 기억으로 떠올리게 해준다.</p>
+<p>뭐든 첫 경험이 참 중요한 것 같다. 워크샵 일정이 잡혔을 때는 다른 감정들 보단 “기대”라는 감정이 더 앞선다. 물론, 내가 워크샵을 주도해서 진행해야 되는 상황이라면 “부담”, “긴장”이라는 감정이 앞설 수도 있겠지만.😂 아무튼, 이런 분위기의 워크샵을 사회초년생으로서 경험할 수 있다는게 참 감사하고, 앞으로의 내 커리어에도 많은 도움이 될 것 같다.</p>
+</section>
+<section id="airflow" class="level3">
+<h3 class="anchored" data-anchor-id="airflow">Airflow</h3>
+<p>팀 내 동료(시니어 DA)분께 전반적인 Airflow 사용법에 대해 배웠다. 부끄러운 이야기일 수 있는데, 업무 간에 Airflow를 활용한 경험이 있긴하나, Airflow를 정식으로(?) 배운적도 없거니와 사내 Git의 legacy code 격으로 짜여진 형태를 보고 끼워 맞추기를 한 것에 불과한 수준이라 한번 쯤 Official한 Airflow 사용법을 배워둘 필요성을 느끼고 있었다. 이런 생각을 하는 와중에 선뜻 python operator를 활용한 Airflow 사용법을 알려주신다고 하니.. 너무 감사했다. 한시간 반정도 본인의 맥북하나로 뚝딱뚝딱 설명해주시는데 쉽게쉽게 설명해주시는 덕에, 짧은 시간에 많은 것들을 습득할 수 있었다.</p>
+<p>사내 Git에서 쓰이고 있는 bash operator를 활용한 Airflow 코드가 아주 복잡한 형태로 짜여져있었던 이유는, jinja template을 커스텀해서 사용한 탓?..이라고 대략적인 이유를 들었는데 official한 python operator 사용법을 듣고 나니 Airflow가 꽤 쉽게 느껴졌다. bash operator까지 활용하면 자동화할 수 있는 워크플로도 꽤 많이 떠오르고 말이다. 배운걸 까먹지 전에 마침 마트화 필요성이 있는 테이블이 있었는데, 다음날 바로 배운 것들을 업무에 적용해보았고 큰 어려움없이 일 배치 작업을 구현할 수 있었다.</p>
+<p>이 날 이후 필요시 Airflow를 편하게 활용하고 있는데, 업무 생산성에 많은 도움이 된다. 지난 몇년간 Airflow라는 키워드를 봐오며, 이게 뭔데? 라는 생각만하고 Try를 안해본 지난 날의 나를 반성한다.. 제대로 안해볼꺼면 시작도 안한다는 태도의 게으른 완벽주의자 성향을 올해 들어서야 뜯어고치고 있다. 다음의 두 문장을 가슴에 품고 살도록 하자.</p>
+<ul>
+<li><p>Just do it</p></li>
+<li><p>Done is better than perfect.</p></li>
+</ul>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="kiss-summer-school" class="level3">
+<h3 class="anchored" data-anchor-id="kiss-summer-school">2023’ KISS Summer School</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/fig1.png" class="img-fluid figure-img" width="600"></p>
+<p></p><figcaption class="figure-caption">출처: https://kiss.statground.net/intro/</figcaption><p></p>
+</figure>
+</div>
+<p>통계마당에서 주관한 2023 KISS Summer School에 참가했다. 사내의 외부교육 지원제도를 이용하여 두 세션 모두 개인적인 지출없이 들을 수 있었다(사랑해요 G마켓💘). 토, 일 이틀 간에 걸쳐 각 세션을 진행해주시는 교수님 두 분 모두 개인적으로 한번 쯤 뵙고 싶었던 분들이었다. 페이스북에서 두 교수님이 툭툭 나눠주시는 말씀을 감명깊게 읽었던 적이 많았기 때문에.😂 왜인지는 모르겠지만, 오랜만에 수식을 끄적이며 강의를 들으니 기분이 좋았다. 오랜만에 듣는 통계학과 교수님들 수업이라, 잠깐 대학원생때로 돌아간 듯한 느낌이라 그런 걸지도 모르겠다. 세션 자체도 좋았지만 쉬는시간에 온라인에서만 뵙던 교수님들과 이야기를 나눌 수 있음에도 참 감사했다.</p>
+<p>직장을 다니고 있는 와중에도 주말에 시간을 내어 설레는 맘을 품고 이런 세션을 참가하고 있는 내가 참 신기하다. 학부생, 대학원생 때는 이런 감정이 전혀 없었는데, 역시 지나고보니 참 소중한 시간들이었다. 조금이라도 더 주도적으로 수업에 참가할껄~ 이라는 무의미한 후회를 해본다. 이러한 세션을 마련해주신 통계마당 유재성 님께도 감사의 마음을 전한다.😀 마지막으로 간략한 수강 후기를 적어보려고 한다.</p>
+<ul>
+<li><p>Theory and Methods for missing data analysis - 김재광 교수님<img src="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/fig2.png" class="img-fluid" width="600" alt="출처: https://kiss.statground.net/intro/"></p>
+<ul>
+<li><p>Missing data theory는 통계학과를 전공하며 수강해볼 기회가 없었던 터라 많은 기대가 됐다. 다변량 수업을 들으며 EM algorithm에 대해 배웠는데, EM algorithm이 Frequentist 관점의 missing data theory에서 핵심 이론이라는 사실이 참 흥미로웠다. 그리고, Missing의 여러 케이스 중 MCAR(Missing Completely at Random)인 경우 Missing을 해결하지 않아도 모수 추정에 아무런 문제가 없음을 수식으로 확인할 수 있는 부분도 재밌었다.</p></li>
+<li><p>강의 마지막 시간에 Potential Outcome Framework 관점의 인과추론을 Missing data problem 관점에서 풀어내주셨다. Missing data framework와 Potential Outcome Framework는 구조적으로 일치하기 때문에, missing data 관련 method를 causal inference에 적용해볼 수 있다고 한다.</p></li>
+<li><p>그 외 많은 테크닉들을 알려주셨는데 내 수준에는 교수님의 강의를 따라가기 버거웠다.😭 교수님 세션 때 수강을 하러오신 타 대학 교수님들도 꽤 있어보였는데, 끄덕이며 들으시는 모습을 보는데 참 부러웠다.😂</p></li>
+<li><p>사실 Imputation 관점에서 sample size가 충분히 크면 missing이 있는 data point는 날려버리면 된다. 모수 추정 효율에 큰 영향이 없다는 전제하에 말이다. 나는 sample 확보 비용이 그리 크지 않은 이커머스 업계에 있기 때문에 다행스러운 부분이지만, 농업, 의학 등과 같이 sample 확보가 어렵고 확보된 sample 하나하나가 매우 비싼 도메인에서는 missing data를 다루는 방법론에 관한 이해가 필히 되있어야 할 것으로 보인다. 농업, 의학 실험 간에 자료에 missing이 발생하는 경우는 흔히 접할 수 있기 때문이다.</p></li>
+<li><p>Imputation 관점을 떠나서 한 가지 기억해둘만한 부분을 정리해보면. 특정 자료의 분포를 추정하고자 할 때, 도메인 지식 상으로는 특정 변수가 해당 자료의 분포에 큰 영향을 미침을 알고 있으나 해당 변수는 우리가 관측이 불가능한 상황이라고 해보자. 즉, 데이터에 해당 변수는 측정이 되어있지 않은 상태인 것이다. 이럴 때에는 지시변수로 latent variable을 도입하여 EM algorithm을 통해 분포 추정을 하면 효율적인 추정이 가능하다고 한다. 특정 집단의 키를 추정하고자 하는데 남, 녀의 키가 다르다는 것은 알고 있으나 Data에 성별 변수가 없는 상황을 예로 들수 있다. 이때 성별을 나타내는 지시변수를 latent variable로 놓고 EM algorithm을 통해 해당 집단의 키의 분포를 추정하면, 데이터를 묘사하는 보다 올바른 확률 추정이 가능할 것이다.</p></li>
+</ul></li>
+<li><p>딥러닝의 통계학적 이해 - 장원 교수님<img src="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/fig3.png" class="img-fluid" width="600" alt="출처: https://kiss.statground.net/intro/"></p>
+<ul>
+<li><p>통계학자가 설명해주는 신경망 모형 그자체로도 너무 특별한 강의였다. Image classification 문제를 풀기 위해 과거 기술 존재했던 기술적 한계를 기반으로 Neural Net의 Motivation을 정확하게 설명해주시며 강의를 시작하셨다. 개인적으로 어떤 기술, 알고리즘에 대해 배울 때 가장 먼저 선행되어야 하는 것은 해당 기술이 등장하게 된 Background, Context를 이해하는 것이라고 보는데, 딱 이런 스타일로 Neural Net의 motivation 부터 CNN, RNN, Transformer의 등장, Neural Net의 모수 추정 한계가 발생했던 이유, 그로 인해 나온 해결 방법들, Regularization 문제까지 이해하기 쉽게 설명을 해주셨다. 모든 딥러닝 강의들이 이런 플롯(?)이었다면, 종종 보이는 아무 문제, 데이터, Context에서 딥러닝을 무지성으로 갖다 쓰려는 행태는 사전에 방지할 수 있었을거라고 본다.</p></li>
+<li><p>또한, Perceptron의 모형 구조, likelihood에 기반한 loss function을 수식으로 정의한 뒤에 동일한 Framework를 유지하며 Deep Feed-Forword Networks, 일종의 Feature-extraction layer가 얹어진 형태인 CNN, RNN, Transformer layer의 모형 구조를 쭉 정의해주시는 것도 너무 좋았다.</p></li>
+<li><p>수식 없이 Neural-net layer 형태에 관한 그림에 의존해 해당 모형을 설명하는 것들 듣곤 할 때마다, “그래서, 이 모델이 이 문제에 왜 잘 working하는 건데?”에 대한 의문이 되려 생기곤 했는데 이 부분이 많이 해소되었다. 그리고, 추천 모델, 자연어 모델을 개발하는 팀에서 데이터 분석을 하고 있다보니 Transformer 얘기를 늘상 듣곤했는데, 해당 기술이 등장한 맥락과 왜 이 기술이 해당 문제들을 푸는데에 잘 working할 수 밖에 없는지 정도에 대해서는 이해할 수 있었다. 아무튼 해당 세션 또한 참 뜻깊고 재밌었다.</p></li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {월간 회고록: 6-7월},
+  date = {2023-08-12},
+  url = {https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“월간 회고록: 6-7월.”</span> August 12, 2023. <a href="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/">https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</guid>
+  <pubDate>Fri, 11 Aug 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/preview.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>글또 8기 회고</title>
   <dc:creator>방태모</dc:creator>
@@ -2643,600 +2725,6 @@ Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distr
   <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</guid>
   <pubDate>Mon, 12 Sep 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>ggplot2 컬러링 가이드</title>
-  <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/46juD4zY1XA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by David Pisnoy on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<p>오늘은 <code>ggplot2</code>에서 더 적은 수의 컬러로 더 직관적인 시각화를 가능하게끔 해주는 4가지 방식에 대해 소개해보려고 합니다. <code>ggplot2</code>를 바탕으로 진행되는 예제이긴 하나, 본 글에서 소개할 방식들에 담겨있는 아이디어는 언어, 시각화 라이브러리를 막론하고 적용이 가능할거라고 봅니다.물론, <code>ggplot2</code>만큼 짧고 가독성 좋은 코드로 구현이 가능할지는 미지수이지만요.😁 본 글에서 <code>ggplot2</code>의 그래프 문법 <sup>1</sup>이 갖는 강력한 힘을 확인하실 수 있을 겁니다.</p>
-<aside>
-본 글은 <span class="citation" data-cites="rapp2022">(Rapp 2022)</span>를 기반으로 작성되었습니다.
-</aside>
-<p>대중들은 말이 아닌 그림을 기억합니다. 그래서, 잘 만들어진 데이터 시각화는 강력한 힘을 갖습니다. 종종 데이터 시각화를 하시다가 지나치게 많은 색을 사용하게 되어 오히려 전달력이 떨어진다는 느낌을 받은 적이 있지 않으신가요? 그렇다면 이 글이 도움이 되실 수도 있겠습니다.😀</p>
-<section id="준비하기" class="level2">
-<h2 class="anchored" data-anchor-id="준비하기">준비하기</h2>
-<p>본격적인 시작 전 몇 가지 준비를 하고자 합니다. <code>ggplot2</code>에서 제공하는 다양한 테마 중 <code>theme_minimal()</code>을 사용할 예정이고, 폰트, 그림 제목과 색 등에 몇 가지 조정을 줄 예정입니다:</p>
-<ul>
-<li><p><code>showtext</code> 패키지를 통해 <a href="https://fonts.google.com/specimen/Fira+Sans">Fira Sans font</a> 설정</p></li>
-<li><p>그림 제목은 기본 좌측 정렬, 색맹(color-blind)까지 고려한 <a href="https://jfly.uni-koeln.de/color/">Okabe Ito</a> 컬러 팔레트 사용</p>
-<ul>
-<li>본 글의 작성에 참고한 원 글의 저자는 <a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization by Claus Wilke</a>를 읽은 뒤, Okabe Ito 컬러 팔레트를 선호하게 되었다고 합니다.</li>
-</ul></li>
-</ul>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(showtext)</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;">font_add_google</span>(<span class="st" style="color: #20794D;">"Fira Sans"</span>, <span class="st" style="color: #20794D;">"firasans"</span>)</span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;">showtext_auto</span>()</span>
-<span id="cb1-5"></span>
-<span id="cb1-6">theme_customs <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">theme</span>(</span>
-<span id="cb1-7">  <span class="at" style="color: #657422;">text =</span> <span class="fu" style="color: #4758AB;">element_text</span>(<span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>, <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">16</span>),</span>
-<span id="cb1-8">  <span class="at" style="color: #657422;">plot.title.position =</span> <span class="st" style="color: #20794D;">'plot'</span>,</span>
-<span id="cb1-9">  <span class="at" style="color: #657422;">plot.title =</span> <span class="fu" style="color: #4758AB;">element_text</span>(</span>
-<span id="cb1-10">    <span class="at" style="color: #657422;">face =</span> <span class="st" style="color: #20794D;">'bold'</span>, </span>
-<span id="cb1-11">    <span class="at" style="color: #657422;">colour =</span> thematic<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">okabe_ito</span>(<span class="dv" style="color: #AD0000;">8</span>)[<span class="dv" style="color: #AD0000;">6</span>],</span>
-<span id="cb1-12">    <span class="at" style="color: #657422;">margin =</span> <span class="fu" style="color: #4758AB;">margin</span>(<span class="at" style="color: #657422;">t =</span> <span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">r =</span> <span class="dv" style="color: #AD0000;">0</span>, <span class="at" style="color: #657422;">b =</span> <span class="dv" style="color: #AD0000;">7</span>, <span class="at" style="color: #657422;">l =</span> <span class="dv" style="color: #AD0000;">0</span>, <span class="at" style="color: #657422;">unit =</span> <span class="st" style="color: #20794D;">"mm"</span>)</span>
-<span id="cb1-13">  )</span>
-<span id="cb1-14">)</span>
-<span id="cb1-15"></span>
-<span id="cb1-16"><span class="fu" style="color: #4758AB;">theme_set</span>(<span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span> theme_customs)</span></code></pre></div>
-</div>
-</section>
-<section id="음영을-활용하자" class="level2">
-<h2 class="anchored" data-anchor-id="음영을-활용하자">음영을 활용하자</h2>
-<p><code>ggplot2</code> 패키지에서 제공하는 <code>mpg</code> 데이터셋을 이용해 연도별 자동차 종류의 빈도를 시각화해봅시다. 전에 충분히 보셨을만한 데이터라 생각해서, 데이터셋에 관한 설명은 스킵하겠습니다. 이런 방식으로 시각화를 해보신 경험이 있으실겁니다:</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">mpg <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb2-2">  <span class="fu" style="color: #4758AB;">ggplot</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x =</span> <span class="fu" style="color: #4758AB;">factor</span>(year), <span class="at" style="color: #657422;">fill =</span> class)) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb2-3">  <span class="fu" style="color: #4758AB;">geom_bar</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb2-4">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x =</span> <span class="st" style="color: #20794D;">"year"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>자동차 종류가 많다보니 무려 7개의 컬러를 시각화에 사용하였습니다. 이 그림이 틀렸다고 할 수는 없습니다. 다만, 좋은 시각화라고 할 수 있는지에 대해 한 번 생각해보자는 겁니다. 제가 보기에 이렇게나 많은 수의 컬러를 사용하는 시각화는 꽤나 정신없어 보인다고 느껴집니다.여러 수준을 갖는 범주형 변수에 관한 컬러링에 있어서 더 적은, 최대 3개 정도의 컬러만 사용하여 시각화를 수행하는 방법은 없을까요? 이제 그 아이디어를 소개하고자 합니다. 자동차 종류를 구분하기 위해 색조(hues) 뿐만이 아닌, 음영(shades)을 활용하는 것이죠. 3가지 컬러만을 사용해 투명도를 줌으로써 7개의 자동차 종류를 구분해보겠습니다. 미리 말씀드리자면, <code>minivan</code>을 단독 하나의 그룹으로 설정해주어 이를 중심으로 투명도가 줄어들고 늘어나게끔 만드는 것이 키 아이디어입니다.</p>
-<p>이를 위해서는 우선 데이터에 자동차의 종류를 3가지로 구분짓는 새로운 그룹 변수를 생성해주어야 합니다:</p>
-<div class="cell" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;"># Group classes into three groups (to reduce colors to 3)</span></span>
-<span id="cb3-2">dat <span class="ot" style="color: #003B4F;">&lt;-</span> mpg <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;">mutate</span>(</span>
-<span id="cb3-4">    <span class="at" style="color: #657422;">year =</span> <span class="fu" style="color: #4758AB;">factor</span>(year),</span>
-<span id="cb3-5">    <span class="at" style="color: #657422;">class_group =</span> <span class="fu" style="color: #4758AB;">case_when</span>(</span>
-<span id="cb3-6">      class <span class="sc" style="color: #5E5E5E;">%in%</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">'2seater'</span>, <span class="st" style="color: #20794D;">'compact'</span>, <span class="st" style="color: #20794D;">'midsize'</span>) <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp1"</span>,</span>
-<span id="cb3-7">      class <span class="sc" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'minivan'</span> <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp2"</span>,</span>
-<span id="cb3-8">      T <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp3"</span></span>
-<span id="cb3-9">    )</span>
-<span id="cb3-10">  )</span></code></pre></div>
-</div>
-<p>이를 바탕으로 우선 먼저 시각화를 해보죠:</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">shades_plt <span class="ot" style="color: #003B4F;">&lt;-</span> dat <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb4-2">  <span class="fu" style="color: #4758AB;">ggplot</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x =</span> year, <span class="at" style="color: #657422;">fill =</span> class_group, <span class="at" style="color: #657422;">alpha =</span> class)) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb4-3">  <span class="fu" style="color: #4758AB;">geom_bar</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb4-4">  <span class="fu" style="color: #4758AB;">labs</span>(</span>
-<span id="cb4-5">    <span class="at" style="color: #657422;">x =</span> <span class="st" style="color: #20794D;">'Year'</span>,</span>
-<span id="cb4-6">    <span class="at" style="color: #657422;">y =</span> <span class="st" style="color: #20794D;">'Counts'</span>,</span>
-<span id="cb4-7">    <span class="at" style="color: #657422;">alpha =</span> <span class="st" style="color: #20794D;">'Class'</span>,</span>
-<span id="cb4-8">    <span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Show shades, not hues'</span></span>
-<span id="cb4-9">  )</span>
-<span id="cb4-10">shades_plt</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>색조와 음영까지 활용해 3가지 컬러정도로 줄이긴 했지만, 아직 전달력은 매우 떨어집니다. 우리 눈으로 색조와 음영을 조합해 그림의 자동차 종류를 구분해내는 것은 꽤 어렵죠. 투명도와 색상을 직접 조정해보겠습니다. 투명도는 <code>suv</code> -&gt; <code>minivan</code>까지 점차 줄어들고, <code>minvan</code> 이후부터는 다시 줄어든 양만큼 투명도가 늘어나도록 설정을 해주려고 합니다:</p>
-<div class="cell" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="co" style="color: #5E5E5E;"># Color-blind safe colors</span></span>
-<span id="cb5-2">colors <span class="ot" style="color: #003B4F;">&lt;-</span>  thematic<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">okabe_ito</span>(<span class="dv" style="color: #AD0000;">3</span>)</span>
-<span id="cb5-3"><span class="co" style="color: #5E5E5E;"># Possible levels of transparency (one for each class)</span></span>
-<span id="cb5-4">alpha_max <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="dv" style="color: #AD0000;">1</span></span>
-<span id="cb5-5">alpha_min <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fl" style="color: #AD0000;">0.7</span></span>
-<span id="cb5-6">alpha_vals <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">c</span>(</span>
-<span id="cb5-7">  <span class="fu" style="color: #4758AB;">seq</span>(alpha_max, alpha_min, <span class="at" style="color: #657422;">length.out =</span> <span class="dv" style="color: #AD0000;">4</span>), </span>
-<span id="cb5-8">  <span class="fu" style="color: #4758AB;">seq</span>(alpha_min, alpha_max, <span class="at" style="color: #657422;">length.out =</span> <span class="dv" style="color: #AD0000;">4</span>)[<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>]</span>
-<span id="cb5-9">)</span>
-<span id="cb5-10">alpha_vals</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.0 0.9 0.8 0.7 0.8 0.9 1.0</code></pre>
-</div>
-</div>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="co" style="color: #5E5E5E;"># Tweak previous plot</span></span>
-<span id="cb7-2">shades_plt <span class="ot" style="color: #003B4F;">&lt;-</span> shades_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb7-3">  <span class="fu" style="color: #4758AB;">scale_fill_manual</span>(<span class="at" style="color: #657422;">values =</span> colors) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb7-4">  <span class="fu" style="color: #4758AB;">scale_alpha_manual</span>(<span class="at" style="color: #657422;">values =</span> alpha_vals)</span>
-<span id="cb7-5">shades_plt</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>아까보다는 좀 낫습니다. 여기서 좀 더 개선을 해보자구요. 우측 범례를 하나로 좀 통합해서 설정하면 좋을 것 같은데요. 7개로 구분되어 있는 투명도에 컬러를 입혀줘서 말이죠. 꽤나 어려운 작업일 것 같지만, <code>ggplot2</code>에서는 아주 손쉬운 작업입니다. <code>guides()</code> 함수를 통해 가능합니다. <code>fill</code>에 관한 범례(<code>class_group</code>)는 삭제를 한 뒤에, <code>guide_legend()</code>를 통해 <code>alpha</code>에 관한 범례에 <code>fill</code>의 색상을 가져와 우리가 사전에 설정한 각각 3개 그룹(<code>class_group</code>)의 컬러를 덮어씌워(override) 줄겁니다. 말이 조금 복잡해보이지만, 코드를 보면 더 쉽게 이해하실 수 있습니다:</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">shades_plt <span class="ot" style="color: #003B4F;">&lt;-</span> shades_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb8-2">  <span class="fu" style="color: #4758AB;">guides</span>(</span>
-<span id="cb8-3">    <span class="at" style="color: #657422;">fill =</span> <span class="fu" style="color: #4758AB;">guide_none</span>(),</span>
-<span id="cb8-4">    <span class="at" style="color: #657422;">alpha =</span> <span class="fu" style="color: #4758AB;">guide_legend</span>(</span>
-<span id="cb8-5">      <span class="at" style="color: #657422;">override.aes =</span> <span class="fu" style="color: #4758AB;">list</span>(<span class="at" style="color: #657422;">fill =</span> colors[<span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">2</span>, <span class="dv" style="color: #AD0000;">3</span>, <span class="dv" style="color: #AD0000;">3</span>, <span class="dv" style="color: #AD0000;">3</span>)]</span>
-<span id="cb8-6">      )</span>
-<span id="cb8-7">    )</span>
-<span id="cb8-8">  ) </span>
-<span id="cb8-9">shades_plt</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="음영만으로는-부족해" class="level2">
-<h2 class="anchored" data-anchor-id="음영만으로는-부족해">음영만으로는 부족해</h2>
-<p>충분히 괜찮은 시각화를 했지만, 아쉬운 부분이 하나 있습니다. 인접한 컬러 블록들에서는 자동차 종류 구분이 쪼~금 불편해 보입니다. 이 문제 또한 손쉽게 해결해줄 수 있어요. 블록마다 선 하나씩만 그어주면 말이죠. 앞선 시각화 코드에 <code>geom_bar()</code> 한 줄이면 해결할 수 있습니다. 이 또한 그래프 문법의 힘이죠.😄</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">dat <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb9-2">  <span class="fu" style="color: #4758AB;">ggplot</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x =</span> year, <span class="at" style="color: #657422;">fill =</span> class_group, <span class="at" style="color: #657422;">alpha =</span> class)) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb9-3">  <span class="fu" style="color: #4758AB;">geom_bar</span>(<span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'white'</span>) <span class="sc" style="color: #5E5E5E;">+</span> <span class="co" style="color: #5E5E5E;"># Add lines for distinction</span></span>
-<span id="cb9-4">  <span class="fu" style="color: #4758AB;">scale_fill_manual</span>(<span class="at" style="color: #657422;">values =</span> colors) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb9-5">  <span class="fu" style="color: #4758AB;">scale_alpha_manual</span>(<span class="at" style="color: #657422;">values =</span> alpha_vals) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb9-6">  <span class="fu" style="color: #4758AB;">guides</span>(</span>
-<span id="cb9-7">    <span class="at" style="color: #657422;">fill =</span> <span class="fu" style="color: #4758AB;">guide_none</span>(),</span>
-<span id="cb9-8">    <span class="at" style="color: #657422;">alpha =</span> <span class="fu" style="color: #4758AB;">guide_legend</span>(<span class="at" style="color: #657422;">override.aes =</span> <span class="fu" style="color: #4758AB;">list</span>(<span class="at" style="color: #657422;">fill =</span> colors[<span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">1</span>, <span class="dv" style="color: #AD0000;">2</span>, <span class="dv" style="color: #AD0000;">3</span>, <span class="dv" style="color: #AD0000;">3</span>, <span class="dv" style="color: #AD0000;">3</span>)]))</span>
-<span id="cb9-9">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb9-10">  <span class="fu" style="color: #4758AB;">labs</span>(</span>
-<span id="cb9-11">    <span class="at" style="color: #657422;">x =</span> <span class="st" style="color: #20794D;">'Year'</span>,</span>
-<span id="cb9-12">    <span class="at" style="color: #657422;">y =</span> <span class="st" style="color: #20794D;">'Counts'</span>,</span>
-<span id="cb9-13">    <span class="at" style="color: #657422;">alpha =</span> <span class="st" style="color: #20794D;">'Class'</span>,</span>
-<span id="cb9-14">    <span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Group categories together by color, </span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">but keep showing them'</span></span>
-<span id="cb9-15">  )</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/mpg5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="전달하고-싶은-내용만-강조하자" class="level2">
-<h2 class="anchored" data-anchor-id="전달하고-싶은-내용만-강조하자">전달하고 싶은 내용만 강조하자</h2>
-<p>이제 조금 다른 이야기를 해보려고 합니다. 꼭 위와 같이 모든 범주에 대해 컬러를 줄 필요는 없는 상황도 있지 않을까요? 예를 들자면, 우리가 시각화를 통해 꼭 강조해서 전달하고 싶은 내용이 있을 때처럼요. 이번에 사용할 예시 데이터는 흥미로운 다양한 데이터셋을 제공해주는 <a href="https://ourworldindata.org/time-with-others-lifetime">Our World in Data</a>에서 가져왔습니다. 미국인들을 대상으로 설문조사를 수행한 자료인데요. 본 자료를 통해 우리가 알아보고자 하는 바는 “우리는 과연 일생동안 누구와 시간을 많이 보내는가?”입니다. 여러 나이대의 미국인들을 대상으로 하루에 평균적으로 누구와 얼마나 시간을 보내는지에 대해 조사한 자료라고 할 수 있겠습니다. 위 링크의 차트에 아래 우측 탭을 보시면 Download를 눌러서 데이터를 받으실 수 있습니다:</p>
-<p>이 자료를 바탕으로 다음과 같은 그림을 그려볼 수 있습니다. 과연 나이에 따라 우리가 시간을 함께 보내는 대상은 어떤 식의 패턴을 보이며 변화할까요? 일반적으로는 다음과 같이 시각화를</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="co" style="color: #5E5E5E;"># Some data wrangling</span></span>
-<span id="cb10-2">time_data <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"./time-spent-with-relationships-by-age-us.csv"</span>) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb10-3">  <span class="fu" style="color: #4758AB;">rename_with</span>(</span>
-<span id="cb10-4">    <span class="sc" style="color: #5E5E5E;">~</span><span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">'Entitity'</span>, <span class="st" style="color: #20794D;">'Code'</span>, <span class="st" style="color: #20794D;">'Age'</span>, <span class="st" style="color: #20794D;">'alone'</span>, <span class="st" style="color: #20794D;">'friends'</span>, <span class="st" style="color: #20794D;">'children'</span>, <span class="st" style="color: #20794D;">'parents'</span>, </span>
-<span id="cb10-5">       <span class="st" style="color: #20794D;">'partner'</span>, <span class="st" style="color: #20794D;">'coworkers'</span>)</span>
-<span id="cb10-6">  ) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb10-7">  <span class="fu" style="color: #4758AB;">pivot_longer</span>(</span>
-<span id="cb10-8">    <span class="at" style="color: #657422;">cols =</span> alone<span class="sc" style="color: #5E5E5E;">:</span>coworkers, </span>
-<span id="cb10-9">    <span class="at" style="color: #657422;">names_to =</span> <span class="st" style="color: #20794D;">'person'</span>,</span>
-<span id="cb10-10">    <span class="at" style="color: #657422;">values_to =</span> <span class="st" style="color: #20794D;">'minutes'</span></span>
-<span id="cb10-11">  ) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb10-12">  janitor<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">clean_names</span>() <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb10-13">  <span class="fu" style="color: #4758AB;">filter</span>(age <span class="sc" style="color: #5E5E5E;">&lt;=</span> <span class="dv" style="color: #AD0000;">80</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 67 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (2): Entity, Code
-dbl (7): Year, Time spent alone, by age of respondent (United States), Time ...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;"># Color-blind safe colors</span></span>
-<span id="cb12-2">colors <span class="ot" style="color: #003B4F;">&lt;-</span> thematic<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">okabe_ito</span>(<span class="dv" style="color: #AD0000;">7</span>)[<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">6</span>]</span>
-<span id="cb12-3"></span>
-<span id="cb12-4"><span class="co" style="color: #5E5E5E;"># Line plot</span></span>
-<span id="cb12-5">p <span class="ot" style="color: #003B4F;">&lt;-</span> time_data <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb12-6">  <span class="fu" style="color: #4758AB;">ggplot</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x =</span> age, <span class="at" style="color: #657422;">y =</span> minutes, <span class="at" style="color: #657422;">col =</span> person)) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb12-7">  <span class="fu" style="color: #4758AB;">geom_line</span>(<span class="at" style="color: #657422;">size =</span> <span class="fl" style="color: #AD0000;">1.5</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb12-8">  <span class="fu" style="color: #4758AB;">scale_color_manual</span>(<span class="at" style="color: #657422;">values =</span> colors) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb12-9">  <span class="fu" style="color: #4758AB;">coord_cartesian</span>(<span class="at" style="color: #657422;">xlim =</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">15</span>, <span class="dv" style="color: #AD0000;">81</span>), <span class="at" style="color: #657422;">expand =</span> F) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb12-10">  <span class="fu" style="color: #4758AB;">scale_y_continuous</span>(<span class="at" style="color: #657422;">minor_breaks =</span> <span class="cn" style="color: #8f5902;">NULL</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb12-11">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x =</span> <span class="st" style="color: #20794D;">'Age (in years)'</span>, <span class="at" style="color: #657422;">y =</span> <span class="st" style="color: #20794D;">'Minutes'</span>, <span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'Time spent'</span>)</span>
-<span id="cb12-12">p</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>보통 이렇게들 시각화하곤 하죠. 이런 종류의 그림은 스파게티 플롯(spaghetti plot)이라고 표현하기도 합니다. 우리는 또 수많은 컬러에 직면했습니다. 아울러, 이 그림 한 장만 놓고 봤을때는 무슨 말을 전달하고자 하는지 파악하기가 참 힘듭니다. 제 눈엔 우선 2가지 인사이트가 보입니다:</p>
-<ol type="1">
-<li>우리는 일생동안 혼자서 가장 많은 시간을 보내게 된다.</li>
-<li>40대 즈음해서 아이와 보내는 시간은 줄어들면서, 혼자 보내는 시간이 많아진다.</li>
-</ol>
-<p>이와 같이 만약 우리가 전달하고자 하는 인사이트가 확실한 상태라면, 중요한 부분만 강조함으로써 이 지저분한 스파게티 플롯을 전달력 있는 깔끔한 스파게티 플롯으로 만들어 줄 수 있습니다. <code>ggplothighlight</code> 패키지가 그 해결책이 되어줍니다. 패키지 안의 <code>ggplothighlight()</code> 함수를 이용해 레이어를 하나더 얹어서, 필터링을 해줄 수 있어요. 아주 편리한 패키지죠. 특정 조건을 만족하지 않는 데이터 포인트는 모조리 회색으로 표현이 됩니다. 먼저 첫 번째 인사이트를 그림으로 표현해봅시다. 코드 1줄 정도만 추가해주면 가능합니다.</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;">library</span>(gghighlight)</span>
-<span id="cb13-2">alone_plt <span class="ot" style="color: #003B4F;">&lt;-</span> p <span class="sc" style="color: #5E5E5E;">+</span> </span>
-<span id="cb13-3">  <span class="fu" style="color: #4758AB;">gghighlight</span>(person <span class="sc" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'alone'</span>, <span class="at" style="color: #657422;">use_direct_label =</span> F) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb13-4">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Emphasize just one or a few categories'</span>)</span>
-<span id="cb13-5">alone_plt</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>이 그림에 텍스트를 추가하여 우리가 하고싶은 이야기를 좀 더 강조할 수도 있습니다:</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">alone_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb14-2">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb14-3">    <span class="st" style="color: #20794D;">'text'</span>,</span>
-<span id="cb14-4">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">15</span>,</span>
-<span id="cb14-5">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">455</span>,</span>
-<span id="cb14-6">    <span class="at" style="color: #657422;">label =</span> <span class="st" style="color: #20794D;">'We spend a lot of time alone...'</span>,</span>
-<span id="cb14-7">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb14-8">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb14-9">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb14-10">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">7</span></span>
-<span id="cb14-11">  )</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>하고 싶은 이야기가 하나가 아니라 여러개라면 어떤 방법이 있을까요? 전혀 문제가 되지 않습니다.😀 <code>gghighlight()</code>를 사용해 그저 여러 조건 넣어주기만 하면 됩니다.</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">age_40_plt <span class="ot" style="color: #003B4F;">&lt;-</span> p <span class="sc" style="color: #5E5E5E;">+</span> </span>
-<span id="cb15-2">  <span class="fu" style="color: #4758AB;">gghighlight</span>(</span>
-<span id="cb15-3">    person <span class="sc" style="color: #5E5E5E;">%in%</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">'alone'</span>, <span class="st" style="color: #20794D;">'children'</span>), </span>
-<span id="cb15-4">    age <span class="sc" style="color: #5E5E5E;">&gt;=</span> <span class="dv" style="color: #AD0000;">38</span>, </span>
-<span id="cb15-5">    <span class="at" style="color: #657422;">use_direct_label =</span> F</span>
-<span id="cb15-6">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb15-7">  <span class="fu" style="color: #4758AB;">geom_segment</span>(<span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">38</span>, <span class="at" style="color: #657422;">xend =</span> <span class="dv" style="color: #AD0000;">38</span>, <span class="at" style="color: #657422;">y =</span> <span class="sc" style="color: #5E5E5E;">-</span><span class="cn" style="color: #8f5902;">Inf</span>, <span class="at" style="color: #657422;">yend =</span> <span class="dv" style="color: #AD0000;">300</span>, <span class="at" style="color: #657422;">linetype =</span> <span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'grey20'</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb15-8">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Emphasize just one or a few categories'</span>) </span>
-<span id="cb15-9"></span>
-<span id="cb15-10">age_40_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb15-11">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb15-12">    <span class="st" style="color: #20794D;">'text'</span>,</span>
-<span id="cb15-13">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">15</span>,</span>
-<span id="cb15-14">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">403</span>,</span>
-<span id="cb15-15">    <span class="at" style="color: #657422;">label =</span> <span class="st" style="color: #20794D;">'Around the age of 40, we spend </span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">less time with children and </span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">more time alone.'</span>,</span>
-<span id="cb15-16">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb15-17">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb15-18">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb15-19">    <span class="at" style="color: #657422;">lineheight =</span> <span class="fl" style="color: #AD0000;">0.85</span>,</span>
-<span id="cb15-20">    <span class="at" style="color: #657422;">size =</span> <span class="fl" style="color: #AD0000;">5.5</span></span>
-<span id="cb15-21">  )</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="라벨링-활용하기" class="level2">
-<h2 class="anchored" data-anchor-id="라벨링-활용하기">라벨링 활용하기</h2>
-<p>앞서 본 모든 그림들에서는 그림의 이해를 돕기위한 범례(legend)가 우측에 자리하고 있었습니다. 범례는 그림에서 꽤나 큰 공간을 차지합니다. 아울러, 범례는 그림에 집중도를 떨어뜨릴 수 있죠. 그림의 이해를 위해서는 필연적으로 범례와 그림을 번갈아가며 봐야하니까요. 이 문제를 해결할 방법은 없을까요? 범례를 없애고 그림에 라벨링을 통해 우리가 하고자 하는 이야기를 전달하면 어떨까요? 싱글 레이블에 대해서는 <code>annotate()</code>, 다중 레이블에 대해서는 <code>geom_text()</code>를 이용해 라벨링을 하면 되는데요. 우선 <code>annotate()</code>를 활용해 스파게티 플롯 예제를 개선시켜 보겠습니다:</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1">alone_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb16-2">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb16-3">    <span class="st" style="color: #20794D;">'text'</span>,</span>
-<span id="cb16-4">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">15</span>,</span>
-<span id="cb16-5">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">455</span>,</span>
-<span id="cb16-6">    <span class="at" style="color: #657422;">label =</span> <span class="st" style="color: #20794D;">'We spend a lot of time alone...'</span>,</span>
-<span id="cb16-7">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb16-8">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb16-9">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb16-10">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">7</span></span>
-<span id="cb16-11">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb16-12">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb16-13">    <span class="st" style="color: #20794D;">'text'</span>, </span>
-<span id="cb16-14">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">70</span>, </span>
-<span id="cb16-15">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">420</span>, </span>
-<span id="cb16-16">    <span class="at" style="color: #657422;">label =</span> <span class="st" style="color: #20794D;">'alone'</span>,</span>
-<span id="cb16-17">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb16-18">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb16-19">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">7</span>,</span>
-<span id="cb16-20">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb16-21">    <span class="at" style="color: #657422;">color =</span> colors[<span class="dv" style="color: #AD0000;">1</span>]</span>
-<span id="cb16-22">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb16-23">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Label directly'</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb16-24">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">legend.position =</span> <span class="st" style="color: #20794D;">'none'</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>이러한 방식으로 공간도 세이브하고, 그림에 집중도도 훨씬 높혀줄 수 있죠. 범례와 플롯을 눈으로 왔다갔다 할 필요도 없고요. 여기서 조금 더 개선을 해볼까요? 현재 위 그림에는 alone이라는 단어가 중복으로 들어가있죠. 강조한 선 아래 alone을 없애고 선과 동일한 색상을 좌측 문장의 alone에 넣어주는 것은 어떨까요? 더 매력적인 시각화가 될 것만 같다는 생각이 들지 않나요?</p>
-<p>이를 위해서는 <code>ggtext</code> 패키지를 활용해 HTML 문법을 이용해야합니다. <code>annotation()</code>의 <code>text</code> geom을 <code>richtext</code> geom으로 바꾸고, 우리가 컬러를 반영하고자 하는 텍스트에 대해서는 HTML 코드를 포함하는 문자열을 만들어 주는 과정이 필요합니다. 말이 좀 복잡해보이지만, 코드는 꽤 간단합니다:</p>
-<div class="cell" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><span class="fu" style="color: #4758AB;">library</span>(ggtext)</span>
-<span id="cb17-2">color_alone <span class="ot" style="color: #003B4F;">&lt;-</span> glue<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">glue</span>(</span>
-<span id="cb17-3">  <span class="st" style="color: #20794D;">"We spend a lot of time &lt;span style = 'color:{colors[1]};'&gt;alone&lt;/span&gt;..."</span></span>
-<span id="cb17-4">)</span>
-<span id="cb17-5">color_alone</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>We spend a lot of time &lt;span style = 'color:#E69F00;'&gt;alone&lt;/span&gt;...</code></pre>
-</div>
-</div>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1">alone_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb19-2">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Label directly'</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb19-3">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb19-4">    <span class="st" style="color: #20794D;">'richtext'</span>,</span>
-<span id="cb19-5">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">15</span>,</span>
-<span id="cb19-6">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">400</span>,</span>
-<span id="cb19-7">    <span class="at" style="color: #657422;">label =</span> color_alone,</span>
-<span id="cb19-8">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb19-9">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb19-10">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb19-11">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">6</span>,</span>
-<span id="cb19-12">    <span class="at" style="color: #657422;">label.color =</span> <span class="cn" style="color: #8f5902;">NA</span></span>
-<span id="cb19-13">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb19-14">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">legend.position =</span> <span class="st" style="color: #20794D;">'none'</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>멋지지 않습니까? HTML 문법에 익숙하지 않은 분들은 컬러링을 넣어주는 형태를 기억하시기 바랍니다. 이런 식으로 직접적으로 라벨링 하는 방식은 스파게티 플롯 예제의 두 번째 인사이트를 나타내는 그림에 대해서도 손쉽게 적용이 가능합니다.</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1">age_40_text <span class="ot" style="color: #003B4F;">&lt;-</span> glue<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">glue</span>(</span>
-<span id="cb20-2">  <span class="st" style="color: #20794D;">"Around the age of 40, we spent &lt;br&gt; less time with </span></span>
-<span id="cb20-3"><span class="st" style="color: #20794D;">  &lt;span style = 'color:{colors[2]};'&gt;children&lt;/span&gt; </span></span>
-<span id="cb20-4"><span class="st" style="color: #20794D;">  and &lt;br&gt; more time &lt;span style = 'color:{colors[1]};'&gt;alone&lt;/span&gt;."</span></span>
-<span id="cb20-5">)</span>
-<span id="cb20-6"></span>
-<span id="cb20-7">age_40_plt <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb20-8">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Label directly'</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb20-9">  <span class="fu" style="color: #4758AB;">annotate</span>(</span>
-<span id="cb20-10">    <span class="st" style="color: #20794D;">'richtext'</span>,</span>
-<span id="cb20-11">    <span class="at" style="color: #657422;">x =</span> <span class="dv" style="color: #AD0000;">15</span>,</span>
-<span id="cb20-12">    <span class="at" style="color: #657422;">y =</span> <span class="dv" style="color: #AD0000;">350</span>,</span>
-<span id="cb20-13">    <span class="at" style="color: #657422;">label =</span> age_40_text,</span>
-<span id="cb20-14">    <span class="at" style="color: #657422;">hjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb20-15">    <span class="at" style="color: #657422;">vjust =</span> <span class="dv" style="color: #AD0000;">0</span>,</span>
-<span id="cb20-16">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb20-17">    <span class="at" style="color: #657422;">lineheight =</span> <span class="fl" style="color: #AD0000;">1.25</span>,</span>
-<span id="cb20-18">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">5</span>,</span>
-<span id="cb20-19">    <span class="at" style="color: #657422;">label.color =</span> <span class="cn" style="color: #8f5902;">NA</span></span>
-<span id="cb20-20">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb20-21">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">legend.position =</span> <span class="st" style="color: #20794D;">'none'</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>이런 완성도 있는 시각화는 청중 또는 대중들에게 우리가 전달하고자 하는 이야기를 직관적으로 전달해줍니다. 범례와 플롯을 눈으로 왔다갔다 하는 피로를 덜어주는 것은 덤이고요.</p>
-<p>마지막으로, 우리가 초기에 했던 예제인 막대그래프(bar chart) 예제에도 이를 적용해봅시다. 해당 예제의 경우 다중 레이블에 해당하므로 <code>annotate()</code>이 아닌 <code>geom_text()</code>가 필요로 됩니다. 그런데, 어떤 이유에서인지.. 자동차 종류의 각 레이블 위치가 정렬이 안되는 문제가 있었습니다. 불가피하게 연도별, 자동차 종류별 막대그래프의 높이를 누적빈도(<code>csum</code>)로 계산하고, 레이블이 들어갈 위치(<code>n</code>)를 적당하게 잡아주는 작업을 수행했습니다.🤯 코드가 조금 복잡해 보이긴 하나, 출력된 결과를 확인하시면 어떤 작업을 진행했는지 쉽게 이해하실 수 있을겁니다.</p>
-<div class="cell" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1">manual_counts <span class="ot" style="color: #003B4F;">&lt;-</span> mpg <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb21-2">  <span class="fu" style="color: #4758AB;">count</span>(year, class) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb21-3">  <span class="fu" style="color: #4758AB;">mutate</span>(</span>
-<span id="cb21-4">    <span class="at" style="color: #657422;">year =</span> <span class="fu" style="color: #4758AB;">factor</span>(year),</span>
-<span id="cb21-5">    <span class="at" style="color: #657422;">class_group =</span> <span class="fu" style="color: #4758AB;">case_when</span>(</span>
-<span id="cb21-6">      class <span class="sc" style="color: #5E5E5E;">%in%</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">'2seater'</span>, <span class="st" style="color: #20794D;">'compact'</span>, <span class="st" style="color: #20794D;">'midsize'</span>) <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp1"</span>,</span>
-<span id="cb21-7">      class <span class="sc" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'minivan'</span> <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp2"</span>,</span>
-<span id="cb21-8">      T <span class="sc" style="color: #5E5E5E;">~</span> <span class="st" style="color: #20794D;">"grp3"</span></span>
-<span id="cb21-9">    )</span>
-<span id="cb21-10">  ) </span>
-<span id="cb21-11">manual_counts</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 14 × 4
-   year  class          n class_group
-   &lt;fct&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;      
- 1 1999  2seater        2 grp1       
- 2 1999  compact       25 grp1       
- 3 1999  midsize       20 grp1       
- 4 1999  minivan        6 grp2       
- 5 1999  pickup        16 grp3       
- 6 1999  subcompact    19 grp3       
- 7 1999  suv           29 grp3       
- 8 2008  2seater        3 grp1       
- 9 2008  compact       22 grp1       
-10 2008  midsize       21 grp1       
-11 2008  minivan        5 grp2       
-12 2008  pickup        17 grp3       
-13 2008  subcompact    16 grp3       
-14 2008  suv           33 grp3       </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1">labels <span class="ot" style="color: #003B4F;">&lt;-</span> manual_counts <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb23-2">  <span class="fu" style="color: #4758AB;">mutate</span>(<span class="at" style="color: #657422;">class =</span> <span class="fu" style="color: #4758AB;">factor</span>(class)) <span class="sc" style="color: #5E5E5E;">|&gt;</span>  </span>
-<span id="cb23-3">  <span class="fu" style="color: #4758AB;">group_by</span>(year) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb23-4">  <span class="fu" style="color: #4758AB;">arrange</span>(year, <span class="fu" style="color: #4758AB;">desc</span>(class)) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb23-5">  <span class="fu" style="color: #4758AB;">mutate</span>(</span>
-<span id="cb23-6">    <span class="at" style="color: #657422;">csum =</span> <span class="fu" style="color: #4758AB;">cumsum</span>(n), </span>
-<span id="cb23-7">    <span class="at" style="color: #657422;">n =</span> (<span class="fu" style="color: #4758AB;">lag</span>(csum, <span class="at" style="color: #657422;">default =</span> <span class="dv" style="color: #AD0000;">0</span>) <span class="sc" style="color: #5E5E5E;">+</span> csum) <span class="sc" style="color: #5E5E5E;">/</span> <span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb23-8">  )</span>
-<span id="cb23-9">labels</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 14 × 5
-# Groups:   year [2]
-   year  class          n class_group  csum
-   &lt;fct&gt; &lt;fct&gt;      &lt;dbl&gt; &lt;chr&gt;       &lt;int&gt;
- 1 1999  suv         14.5 grp3           29
- 2 1999  subcompact  38.5 grp3           48
- 3 1999  pickup      56   grp3           64
- 4 1999  minivan     67   grp2           70
- 5 1999  midsize     80   grp1           90
- 6 1999  compact    102.  grp1          115
- 7 1999  2seater    116   grp1          117
- 8 2008  suv         16.5 grp3           33
- 9 2008  subcompact  41   grp3           49
-10 2008  pickup      57.5 grp3           66
-11 2008  minivan     68.5 grp2           71
-12 2008  midsize     81.5 grp1           92
-13 2008  compact    103   grp1          114
-14 2008  2seater    116.  grp1          117</code></pre>
-</div>
-</div>
-<p>레이블이 들어갈 자리를 계산하는 키 아이디어는 <code>lag()</code>를 통해서 계산한 누적빈도를 0값을 시작으로해서 한칸씩 당겨주고, 계산해둔 누적 빈도(<code>csum</code>)를 더하여 2로 나눠주는 것입니다. 이 작업을 수행하면 막대그래프를 구성하는 각 칸의 중간 높이를 계산할 수 있는 것이죠.</p>
-<p>아울러, 우리가 본 시각화에서 한 가지 더 극복해야할 난관은 바로 자동차의 종류 중 <code>2seater</code>의 빈도가 매우 작아서 레이블이 들어갈 자리가 없는 점이 었습니다. 그래서, <code>2seater</code>의 경우 레이블을 막대의 맨 위에 표시되도록 하였습니다. 이러한 모든 난관들을 극복하고 완성한 그림을 공개합니다.</p>
-<div class="cell" data-layout-align="center" data-fig.showtext="true">
-<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1">manual_counts <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb25-2">  <span class="fu" style="color: #4758AB;">ggplot</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x =</span> year, <span class="at" style="color: #657422;">y =</span> n, <span class="at" style="color: #657422;">fill =</span> class_group)) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-3">  <span class="fu" style="color: #4758AB;">geom_col</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">alpha =</span> class), <span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'white'</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-4">  <span class="fu" style="color: #4758AB;">scale_fill_manual</span>(<span class="at" style="color: #657422;">values =</span> colors) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-5">  <span class="fu" style="color: #4758AB;">scale_alpha_manual</span>(<span class="at" style="color: #657422;">values =</span> alpha_vals) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-6">  <span class="fu" style="color: #4758AB;">labs</span>(</span>
-<span id="cb25-7">    <span class="at" style="color: #657422;">x =</span> <span class="st" style="color: #20794D;">'Year'</span>,</span>
-<span id="cb25-8">    <span class="at" style="color: #657422;">y =</span> <span class="st" style="color: #20794D;">'Counts'</span>,</span>
-<span id="cb25-9">    <span class="at" style="color: #657422;">alpha =</span> <span class="st" style="color: #20794D;">'Class'</span>,</span>
-<span id="cb25-10">    <span class="at" style="color: #657422;">title =</span> <span class="st" style="color: #20794D;">'Label directly'</span></span>
-<span id="cb25-11">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-12">  <span class="co" style="color: #5E5E5E;"># Add all but one label</span></span>
-<span id="cb25-13">  <span class="fu" style="color: #4758AB;">geom_text</span>(</span>
-<span id="cb25-14">    <span class="at" style="color: #657422;">data =</span> labels <span class="sc" style="color: #5E5E5E;">|&gt;</span> <span class="fu" style="color: #4758AB;">filter</span>(class <span class="sc" style="color: #5E5E5E;">!=</span> <span class="st" style="color: #20794D;">'2seater'</span>),</span>
-<span id="cb25-15">    <span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">label =</span> class), </span>
-<span id="cb25-16">    <span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'white'</span>,</span>
-<span id="cb25-17">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb25-18">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">5</span>,</span>
-<span id="cb25-19">    <span class="at" style="color: #657422;">fontface =</span> <span class="st" style="color: #20794D;">'bold'</span></span>
-<span id="cb25-20">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-21">  <span class="co" style="color: #5E5E5E;"># Add 2seater label</span></span>
-<span id="cb25-22">  <span class="fu" style="color: #4758AB;">geom_text</span>(</span>
-<span id="cb25-23">    <span class="at" style="color: #657422;">data =</span> labels <span class="sc" style="color: #5E5E5E;">|&gt;</span> <span class="fu" style="color: #4758AB;">filter</span>(class <span class="sc" style="color: #5E5E5E;">==</span> <span class="st" style="color: #20794D;">'2seater'</span>),</span>
-<span id="cb25-24">    <span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">y =</span> n <span class="sc" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">3</span>, <span class="at" style="color: #657422;">label =</span> class), </span>
-<span id="cb25-25">    <span class="at" style="color: #657422;">col =</span> <span class="st" style="color: #20794D;">'black'</span>,</span>
-<span id="cb25-26">    <span class="at" style="color: #657422;">family =</span> <span class="st" style="color: #20794D;">'firasans'</span>,</span>
-<span id="cb25-27">    <span class="at" style="color: #657422;">size =</span> <span class="dv" style="color: #AD0000;">5</span>,</span>
-<span id="cb25-28">    <span class="at" style="color: #657422;">fontface =</span> <span class="st" style="color: #20794D;">'bold'</span></span>
-<span id="cb25-29">  ) <span class="sc" style="color: #5E5E5E;">+</span></span>
-<span id="cb25-30">  <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">legend.position =</span> <span class="st" style="color: #20794D;">'none'</span>) </span></code></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index_files/figure-html/spend_label4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>분석을 시작하며 혼자 가볍게 EDA를 하는 단계에서 본 예제와 같이 시각화를 개선해나가는 작업은 필요로 되지 않을겁니다. 오히려 시간 낭비일수도 있구요. 그러나, 내가 얻은 인사이트를 전달하는 자리 또는 데이터를 기반으로 누군가를 설득해야하는 자리에서는 이 글에서 제공하는 몇 가지 방법이 꽤나 도움이 될 것이라고 생각합니다. 물론, 전달하고자 하는 내용이 한 눈에 들어도록 시각화를 수행하는 작업은 의외로 쉬울 때도 있지만, 꽤나 까다로운 과정을 거쳐야하는 상황도 존재합니다. 실무에서는 이와는 또다른 예상치 못한 까다로운 문제들을 겪는 상황들이 있을 수도 있구요. 다만, 본 글에서 그림의 퀄리티를 단계단계 개선해나간 바와 같이 전달하고자 하는 내용을 명확히하고 충분한 시간을 숙고해 그림을 개선해 나간다면, 뭐든 해결할 수 있을 것이라고 봅니다. 하고자 하는 시각화를 구현하지 못해낸다고 하더라도 그 과정 속에서 배우는 것은 분명히 존재할 것입니다. 처음부터 완벽하게 아름다운 시각화를 해낼 수 있는 사람은 없다는 것을 기억하셨으면 합니다.😁</p>
-<p>이번 포스팅을 준비하며 참고했던 글은 올해 봤던 데이터 시각화 관련 아티클 중 제게 가장 큰 임팩트를 주는 글이었습니다. 누구나 하는 평범한 시각화를 비범하게 만들어주는 글이라고 표현하면 적절할까요? 많은 사람들이 알았으면 하는 내용이라, 8월 서울 R 미트업에서 본 내용을 주제로 <a href="https://be-favorite.github.io/Presentation_archive/coloring_guide/coloring_guide.html?fbclid=IwAR25qqDhVFzBVsp8u9PaV93pbzxA03wE8paPF0-u7oBVKFMT5gZtPCupono#1">발표</a>를 하기도 했습니다. 지금 이 글을 읽고 계신 여러분들에게도 좋은 인사이트를 줄 수 있는 글이 되었으면 합니다.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-세션정보를 보려면 누르세요
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell" data-fig.showtext="true">
-<div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.2.1 (2022-06-23)
- os       macOS Monterey 12.6
- system   aarch64, darwin20
- ui       X11
- language (EN)
- collate  en_US.UTF-8
- ctype    en_US.UTF-8
- tz       Asia/Seoul
- date     2022-09-20
- pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
- quarto   1.0.38 @ /usr/local/bin/quarto
-
-─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.2.0)
- forcats     * 0.5.1   2021-01-27 [1] CRAN (R 4.2.0)
- gghighlight * 0.3.3   2022-06-06 [1] CRAN (R 4.2.0)
- ggplot2     * 3.3.6   2022-05-03 [1] CRAN (R 4.2.0)
- ggtext      * 0.1.1   2020-12-17 [1] CRAN (R 4.2.0)
- purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.2.0)
- readr       * 2.1.2   2022-01-30 [1] CRAN (R 4.2.0)
- rmarkdown   * 2.14    2022-04-25 [1] CRAN (R 4.2.0)
- sessioninfo * 1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
- showtext    * 0.9-5   2022-02-09 [1] CRAN (R 4.2.0)
- showtextdb  * 3.0     2020-06-04 [1] CRAN (R 4.2.0)
- stringr     * 1.4.0   2019-02-10 [1] CRAN (R 4.2.0)
- sysfonts    * 0.8.8   2022-03-13 [1] CRAN (R 4.2.0)
- tibble      * 3.1.8   2022-07-22 [1] CRAN (R 4.2.0)
- tidyr       * 1.2.0   2022-02-01 [1] CRAN (R 4.2.0)
- tidyverse   * 1.3.2   2022-07-18 [1] CRAN (R 4.2.0)
-
- [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-rapp2022" class="csl-entry">
-Rapp, Albert. 2022. <span>“4 Ways to Use Colors in Ggplot More Efficiently.”</span> <a href="https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html">https://albert-rapp.de/posts/ggplot2-tips/07_four_ways_colors_more_efficiently/07_four_ways_colors_more_efficiently.html</a>.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>🔗<a href="http://aispiration.com/viz/viz-ggplot2-practice.html">그래프 문법이란?</a>↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {ggplot2 컬러링 가이드},
-  date = {2022-08-14},
-  url = {https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“ggplot2 컬러링 가이드.”</span> August 14, 2022. <a href="https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/">https://www.taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/</a>.
-</div></div></section></div> ]]></description>
-  <category>Visualization</category>
-  <category>R</category>
-  <guid>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/index.html</guid>
-  <pubDate>Sat, 13 Aug 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

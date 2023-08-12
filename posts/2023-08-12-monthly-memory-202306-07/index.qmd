@@ -12,8 +12,6 @@ categories: [Memory]
 
 [![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)
 
-어느덧 3분기가 저물어간다. 벌써 8월 중순이다. 지난 6월, 7월의 회고를 몰아서 작성해본다. 정신 똑바로 차리고 살자.
-
 ## 업무
 
 ### 워크샵

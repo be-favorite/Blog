@@ -38,13 +38,15 @@ categories: [Memory]
 
 ### 2023' KISS Summer School
 
-![출처: https://kiss.statground.net/intro/](fig1.png){width="600"}
+[![출처: https://kiss.statground.net/intro/](fig1.png){width="600"}](https://kiss.statground.net/intro/)
 
 통계마당에서 주관한 2023 KISS Summer School에 참가했다. 사내의 외부교육 지원제도를 이용하여 두 세션 모두 개인적인 지출없이 들을 수 있었다(사랑해요 G마켓💘). 토, 일 이틀 간에 걸쳐 각 세션을 진행해주시는 교수님 두 분 모두 개인적으로 한번 쯤 뵙고 싶었던 분들이었다. 페이스북에서 두 교수님이 툭툭 나눠주시는 말씀을 감명깊게 읽었던 적이 많았기 때문에.😂 왜인지는 모르겠지만, 오랜만에 수식을 끄적이며 강의를 들으니 기분이 좋았다. 오랜만에 듣는 통계학과 교수님들 수업이라, 잠깐 대학원생때로 돌아간 듯한 느낌이라 그런 걸지도 모르겠다. 세션 자체도 좋았지만 쉬는시간에 온라인에서만 뵙던 교수님들과 이야기를 나눌 수 있음에도 참 감사했다.
 
 직장을 다니고 있는 와중에도 주말에 시간을 내어 설레는 맘을 품고 이런 세션을 참가하고 있는 내가 참 신기하다. 학부생, 대학원생 때는 이런 감정이 전혀 없었는데, 역시 지나고보니 참 소중한 시간들이었다. 조금이라도 더 주도적으로 수업에 참가할껄\~ 이라는 무의미한 후회를 해본다. 이러한 세션을 마련해주신 통계마당 유재성 님께도 감사의 마음을 전한다.😀 마지막으로 간략한 수강 후기를 적어보려고 한다.
 
--   Theory and Methods for missing data analysis - 김재광 교수님![출처: https://kiss.statground.net/intro/](fig2.png){width="600"}
+[![출처: https://kiss.statground.net/intro/](fig2.png){width="600"}](https://sites.google.com/view/jaekwangkim)
+
+-   Theory and Methods for missing data analysis - 김재광 교수님
 
     -   Missing data theory는 통계학과를 전공하며 수강해볼 기회가 없었던 터라 많은 기대가 됐다. 다변량 수업을 들으며 EM algorithm에 대해 배웠는데, EM algorithm이 Frequentist 관점의 missing data theory에서 핵심 이론이라는 사실이 참 흥미로웠다. 그리고, Missing의 여러 케이스 중 MCAR(Missing Completely at Random)인 경우 Missing을 해결하지 않아도 모수 추정에 아무런 문제가 없음을 수식으로 확인할 수 있는 부분도 재밌었다.
 
@@ -56,7 +58,9 @@ categories: [Memory]
 
     -   Imputation 관점을 떠나서 한 가지 기억해둘만한 부분을 정리해보면. 특정 자료의 분포를 추정하고자 할 때, 도메인 지식 상으로는 특정 변수가 해당 자료의 분포에 큰 영향을 미침을 알고 있으나 해당 변수는 우리가 관측이 불가능한 상황이라고 해보자. 즉, 데이터에 해당 변수는 측정이 되어있지 않은 상태인 것이다. 이럴 때에는 지시변수로 latent variable을 도입하여 EM algorithm을 통해 분포 추정을 하면 효율적인 추정이 가능하다고 한다. 특정 집단의 키를 추정하고자 하는데 남, 녀의 키가 다르다는 것은 알고 있으나 Data에 성별 변수가 없는 상황을 예로 들수 있다. 이때 성별을 나타내는 지시변수를 latent variable로 놓고 EM algorithm을 통해 해당 집단의 키의 분포를 추정하면, 데이터를 묘사하는 보다 올바른 확률 추정이 가능할 것이다.
 
--   딥러닝의 통계학적 이해 - 장원 교수님![출처: https://kiss.statground.net/intro/](fig3.png){width="600"}
+[![출처: https://kiss.statground.net/intro/](fig3.png){width="600"}](http://www.wonchang.net/)
+
+-   딥러닝의 통계학적 이해 - 장원 교수님
 
     -   통계학자가 설명해주는 신경망 모형 그자체로도 너무 특별한 강의였다. Image classification 문제를 풀기 위해 과거 기술 존재했던 기술적 한계를 기반으로 Neural Net의 Motivation을 정확하게 설명해주시며 강의를 시작하셨다. 개인적으로 어떤 기술, 알고리즘에 대해 배울 때 가장 먼저 선행되어야 하는 것은 해당 기술이 등장하게 된 Background, Context를 이해하는 것이라고 보는데, 딱 이런 스타일로 Neural Net의 motivation 부터 CNN, RNN, Transformer의 등장, Neural Net의 모수 추정 한계가 발생했던 이유, 그로 인해 나온 해결 방법들, Regularization 문제까지 이해하기 쉽게 설명을 해주셨다. 모든 딥러닝 강의들이 이런 플롯(?)이었다면, 종종 보이는 아무 문제, 데이터, Context에서 딥러닝을 무지성으로 갖다 쓰려는 행태는 사전에 방지할 수 있었을거라고 본다.
 

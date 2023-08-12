@@ -1,0 +1,13 @@
+---
+title: "월간 회고록: 6-7월"
+description: |
+    요약
+date: "2023-08-12"
+draft: TRUE
+preview: preview.jpg
+citation:
+    url: https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/
+categories: [Memory]
+---
+
+[![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)

@@ -4,15 +4,15 @@ description: |
     워크샵, Airflow, 2023'KISS Summer School
 date: "2023-08-12"
 draft: FALSE
-preview: preview.jpg
+preview: ../preview_monthly.png
 citation:
     url: https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/
 categories: [Memory]
 ---
 
-[![The illustration by Mary Amato](preview.png){fig-align="center"}](https://notioly.com)
+[![The illustration by Mary Amato](../preview_monthly.png){fig-align="center"}](https://notioly.com)
 
-## 업무
+## 일
 
 ### 워크샵
 

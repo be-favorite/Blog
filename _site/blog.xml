@@ -10,7 +10,140 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.2.280</generator>
-<lastBuildDate>Fri, 11 Aug 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 18 Sep 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>월간 회고록: 8월</title>
+  <dc:creator>방태모</dc:creator>
+  <link>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/preview_monthly.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+</figure>
+</div>
+<section id="업무" class="level2">
+<h2 class="anchored" data-anchor-id="업무">업무</h2>
+<section id="사용자-중심의-지표-설계-feat.-spotify" class="level3">
+<h3 class="anchored" data-anchor-id="사용자-중심의-지표-설계-feat.-spotify">사용자 중심의 지표 설계 (Feat. Spotify)</h3>
+<p>8월 중순에 Spotify에서 제안한 사용자 중심의 지표 설계에 관한 내용을 팀 내부에 공유했다. KDD 2021에서 Spotify 연구진이 <a href="kdd2021-mixedmethods.github.io">Mixed Method Development of Evaluation Metrics</a>를 제목으로 발표한 내용인데, 정성 연구(qualitative study)와 정량 연구(quantative study)을 함께 활용하여<sup>1</sup> 사용자 중심의 평가 지표를 설계하는 방식에 대해 상세하게 다루고있다.</p>
+<p>8월말에 우리가 현재 집중하고 있는 프로덕트에 대한 사용자 조사가 예정되어있었기도 했고,마침 타이밍이 딱 맞게 Spotify의 발표 슬라이드가 내 눈에 들어왔다. 사용자 중심의 지표를 설계하기 위해서는 정량 연구(데이터 분석)만으로는 한계가 있으며 정성 연구(사용자 조사)의 활용까지 필요로 된다는 내용인데, 마침 우리팀에게도 꼭 필요한 내용이라 발표 자료를 정리하고 팀 내부에 공유하는 시간을 가졌다.</p>
+<p>슬라이드가 수백장에 달하는데 그들이 제시하는 과정을 요약하면 다음과 같다.</p>
+<ul>
+<li><p>1 Product Background</p>
+<ul>
+<li><p>우리 제품을 3가지 측면에서 다시 한 번 이해해본다.</p>
+<ul>
+<li>개발 배경</li>
+<li>시스템 관점: 시스템 관점에서의 해당 프로덕트의 역할</li>
+<li>사용자 관점: 사용자 관점에서의 해당 프로덕트의 역할</li>
+</ul></li>
+</ul></li>
+<li><p>2 Metric Use</p>
+<ul>
+<li>그간 우리가 제품 성과 평가에 사용해온 지표와 해당 지표 설계의 기반이 된 암묵적 가정을 검토한다.</li>
+</ul></li>
+<li><p>3 User Study (Qualitative Study)</p>
+<ul>
+<li>사용자 조사를 통해 사용자가 제품을 사용하고 경험하는 방식을 깊게 이해한다.</li>
+<li>이를 바탕으로 앞서 지표 설계시 우리가 생각했던 암묵적 가정이 들어맞는지 체크한다.</li>
+<li>사용자 조사 내용을 바탕으로 사용자 중심의 새로운 가설을 생성한다.</li>
+</ul></li>
+<li><p>4 Quantitative Follow-up</p>
+<ul>
+<li>앞서 세운 새로운 사용자 중심의 가설들을 검증하기 위한 양적 연구(e.g.&nbsp;EDA를 통한 기초통계량 검토, 군집 분석, 예측 모델링 등)를 수행한다.</li>
+</ul></li>
+<li><p>5 Applications</p>
+<ul>
+<li>앞선 단계들에서 배운 것들을 제품에 어떻게 적용할지 결정한다.</li>
+</ul></li>
+</ul>
+<p>위에 첨부한 링크에서 발표 슬라이드를 쭉 한 번 검토해보면 알 수 있겠지만, 상당히 인상적인 내용들이 많다. 정량 연구로서 누가(who), 언제(when), 어디서(where), 무엇을(what), 어떻게(How)까진 파악할 수 있으나, 왜(Why)에 대해서 알기는 상당히 어렵다. 즉, 고객이 특정한 행동 경향을 보이는 진짜 의중이 무엇인지는 파악하는 것이 불가능에 가깝다. 그저 “짐작”할 뿐이다.</p>
+<p>여기서 정성 연구가 필요로된다. 정성 연구는 우리에게 왜(Why)를 알 수 있게해준다. 고객의 진짜 의중을 사용자 조사를 통해 깨닫고, 이를 바탕으로 새로운 가설을 세워 정량 연구로 검증함으로써 진정한 사용자 중심의 지표를 설계하자는 이야기다. 수백장에 이르는 Spotify 발표 슬라이드를 공부하며, 정성 연구의 영역 또한 프로덕트의 개선에 있어서 정말 중요함을 깨달을 수 있었다. 아울러, 사내 정성 연구자들과의 협업을 위해 팀 내부적으로 분석가들끼리 워크샵을 하면서 깨달았지만, 이야기를 나눌수록 사용자 조사에서 고려해야할 것이 정말 많다는 생각을 했다. 괜히 UX Researcher 라는 직무가 따로 존재하는게 아님을 깨달을 수 있었다.</p>
+<p>사용자 중심 지표 설계에 관심이 많은 사람들이라면 꼭 한 번쯤 해당 슬라이드를 읽어보길 바란다. 마지막으로 Spotify가 정성 연구와 정량 연구를 활용하여 사용자 중심 지표를 개발하며 배운 것들에 대해서 공유해본다.</p>
+<ul>
+<li><p>사용자들은 당신이 제품 개발 당시 떠올린 비전에는 관심이 없다. 즉, 우리가 해당 프로덕트를 만들며 생각했던 유저들의 사용 행태와 실제 유저들의 사용 행태에는 큰 괴리가 존재한다.</p></li>
+<li><p>유저들의 행동 지표(e.g.&nbsp;CTR, consumption time)와 시스템 지표(e.g.&nbsp;long-term retention)은 항상 같이 움직이진 않는다. 아울러, EDA와 같은 정량연구만으로는 행동 지표에 내재된 why를 파악하기란 매우 어려우며 편향이 내재되어있을 가능성이 매우높다. 이 부분에 관한 간극은 정성 연구가 매워줄 수 있다.</p></li>
+<li><p>정성 연구에서 설정한 가설의 검증을 위해 종종 데이터 마트의 구조(또는 로깅되는 데이터의 구조) 자체를 바꿀 일이 있을텐데, 꽤 짜증나는 작업인걸 알지만 충분한 가치가 있는 작업이다.</p></li>
+<li><p>구체적으로 시작한 뒤에 일반화해라. 지표 설계에 있어서 종종 사람들은 모든 프로덕트에 적용이 될만한 지표를 찾아내려고 하는 경향이 있다. 이는 결코 가능하지 않다. 하나의 프로덕트에 깊게 집중하여, 해당 프로덕트만의 특성(유저의 반응을 포함한)을 고려한 구체적인 지표를 설계하려고 노력해라. 이러한 행위를 다양한 프로덕트에 대해 하다보면 지표를 이해하는 방법에 관한 종합적인 이해를 얻을 수 있을 것이다.</p></li>
+<li><p>정성 연구자, 정량 연구자 간의 소통을 활발하게 해라. 서로에게 질문을 던질 것을 독려하는 환경을 만들고, 서로 긍정적이고 창의적인 토의를 할 수 있도록 끊임없이 노력하라.</p></li>
+</ul>
+</section>
+<section id="trustworthy-ab-tests" class="level3">
+<h3 class="anchored" data-anchor-id="trustworthy-ab-tests">Trustworthy A/B Tests</h3>
+<p>요즘 가장 관심을 갖고있는 영역을 꼽으라고하면 단연코 A/B Test일 것이다. 사실 해당 영역의 정식 명칭은 온라인 통제 실험(Online Controlled Experiment, 이하 OCE)이긴 하지만, 해당 영역 자체가 A/B Test<sup>2</sup>로 더 잘 알려져있으니 A/B Test로 퉁쳐서 이야기해보겠다. 지난 8개월 간 프로덕트 개선을 위한 A/B Test를 끊임없이 진행해오며, 우리가 설계한 실험, 분석 결과가 신뢰해도 될만한 것들인지에 대해 의문이 생기는 부분들을 여럿 관찰해왔다.</p>
+<p>이에 따라 하마책을 다시 꺼내어 펴보고, 마소에서 수년전부터 잘 정리해둔 그들이 수많은 온라인 통제 실험을 진행하며 배운 것들에 관한 페이퍼도 들춰보았다. 우리가 관찰할 수 있었던 실험의 신뢰도를 의심스럽게 만드는 결과들, 수없는 회의를 진행하며 종종 이야기했던 우려스러운 점들 모두 들춰본 책과 페이퍼에 고스란히 담겨있었다.</p>
+<p>A/B Test와 관련하여 딱 한 마디만 할 수 있다면, 다음과 같은 말을 하고싶다:</p>
+<blockquote class="blockquote">
+<p>숫자를 얻는 것은 쉽지만, 신뢰할 수 있는 숫자를 얻는 것은 어렵다.</p>
+</blockquote>
+<p>모든 영역이 그렇듯 “아는만큼 보인다.” 그간 접했던 A/B Test와 관련한 국내 아티클들에서는 대개 “실험 플랫폼 구축 및 분석 자동화를 통해 1년에 우리는 ~건에 달하는 실험을 진행하고 있어요.” 내지는 “실험을 대하는 그들의 문화” 정도에 관한 내용만 담겨있었다는 점이 참 아쉽다. 신뢰할 수 있는 A/B Test에 관심이 없다면 모르고 지나칠 수 밖에없는 함정들은 너무나도 많기 때문이다. 나 또한 이러한 함정들을 지난 8개월간 수많은 실험을 진행해오며, 우연히 진행한 2차례의 A/A test를 통해 알아차릴 수 있었기 때문이다.</p>
+<p>그래서, 나는 앞으로 “신뢰할 수 있는 A/B Test 설계”, “정확한 측정”을 위해서는 어떤 노력들이 필요한지, 어떤 것들을 인지하고 있어야하는지에 대해서 꾸준히 이야기해보려고 한다. 페이스북과 링크드인에도 지난 8월 동안에 이와 관련한 여러 글을 끄적였다. A/B Test에 관심이 있는 사람이라면 읽어보길 바란다.😀</p>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0gXKn7ijVcFwiCPJdShgxxUXSsjGRi18CKmfFFHw8tadSRnBBVtQDXJNnun8coDtKl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02HEPqMVmCF7JmuiR1R1zuNiuei3gnRK3rcfsYKMpnRRdzoGFp9v65456vrU3anB4Pl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="354" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid031BbXgAtzA6uVmLnC6oSPcDcYoUbwN8Vpm827QmWguWXFymUztT8odkvCCaLfrDw4l%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="382" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="장기적인-목표와-꿈" class="level3">
+<h3 class="anchored" data-anchor-id="장기적인-목표와-꿈">장기적인 목표와 꿈</h3>
+<p>“5년 뒤, 10년 뒤에 어떤 사람이 될 것인가?”에 관한 늘상 고민이 있었다. 커리어적 목표의 방면이든, 꿈의 방면이든 말이다. 전자와 후자 모두 이제 어느정도 막연하게나마 설정이 된 것 같다. 여기서는 커리어적 목표에 대해서만 조금 이야기해보려고 한다. 커리어적 목표는 항상 고민이었다. 내게 항상 많은 영감을 주시는 팀 내 시니어 분석가님과 이야기를 나누며 이 부분을 어느정도 정립할 수 있었다. 그 분이 과거에 쓰신 블로그 글인데:</p>
+<ul>
+<li><a href="https://blog.naver.com/hancury/222698501505">▶️ 시니어 데이터분석가의 커리어</a></li>
+</ul>
+<p>시니어 데이터분석가의 커리어에 대해서 이런저런 이야기를 듣고 “이거 블로그에 올리면 꽤 반응 좋을 것 같은데요?” 라는 말씀을 드렸더니 이미 작년에 쓰신 글이더라.😂 아무튼 나는 내 커리어의 장기적 목표를 떠올리면 누군가를 Lead하는 정도밖에 떠오르지 않았다. 위 글에서 제시하는 시니어 데이터분석가의 커리어 방향성은 5가지다.</p>
+<ul>
+<li><p>분석팀 팀장 (Team lead, Manager)</p></li>
+<li><p>뛰어난 IC = Principal Data Analyst/Scientist (매니저가 아닌 전문가 코스)</p></li>
+<li><p>분석 툴 메이커 = Data Product Owner</p></li>
+<li><p>PM</p></li>
+<li><p>임원</p></li>
+</ul>
+<p>각 방향의 자세한 설명은 위 블로그 링크를 참고하기 바란다. 나는 늘 두번째 방향으로 관성적으로 이끌려왔던 것 같다. 어떤 것을 깊게 공부하고, 이해한채로 누군가에게 귀감이 될 수 있는 분석/모델링을 할 때 가장 큰 만족감을 느껴왔던 것 같다. 꼭 누군가에게 귀감이 되는 것이 아니라도, 어떤 것을 깊게 공부하고 이해하는 과정 그 자체에서도 오는 만족감 또한 매우 컸다.</p>
+<p>요즘은 세번째 방향성에도 끌린다. 앞서 말했듯 신뢰할 수 있는 실험을 설계하고 정확한 측정하는 일, 실험 전략을 짜는 일 등이 얼마나 어려운 일인지를 깨우치고나니, 신뢰할 수 있는 실험 플랫폼을 만들어내고 싶다는 생각을 했다. 아무튼, 흐릿했던 목표가 조금 더 구체화된 것만으로도 기분이 좋다.</p>
+</section>
+<section id="일의-태도" class="level3">
+<h3 class="anchored" data-anchor-id="일의-태도">일의 태도</h3>
+<p>이 부분도 팀 내 시니어 분석가 분과 이야기를 나누며 많은 생각이 들었던 부분이다. 이직 후 나는 “주니어”라는 한계에 스스로 가둬두었던 것 같다. 사실 생각해보면 주니어, 시니어를 연차로 나누긴 어렵다. 누군가는 저연차에도 주도적으로 일을 하며 팀 내외부적으로 영향력을 미치는 수준으로 업무를 수행할 수도 있고, 반대로 높은 연차에도 수동적으로 일을 하며 팀 외부적으로까진 영향을 미치지 못하는 수준의 업무를 수행할 수도 있다.</p>
+<p>여기서 가장 하고싶은 말은 “일의 태도”다. 본인이 이미 시니어인 것처럼 이를 지향하고 일을 대해야한다는 것이다. 대부분의 승진은 이미 그 사람이 해당 수준의 일을 하고있을때 일어난다. 즉, 주니어라 생각하고 계속 주니어 수준의 일을 하면 그 사람은 영원히 주니어인 것이다. 이건 당연한 것이다. 회사에서 이제 “너 시니어야.”라고 특정 Grade로 진급을 시켜준다고해서, 갑자기 그사람의 능력이 시니어 수준으로 변하는 것은 아니다. 이미 그 자리에 준하는 수준의 업무 역량을 펼쳐보이고 있는 사람이 그 자리로 가는 것이다.</p>
+<p>이를 이미 알고있었음에도, 지난 수개월간 무의식에 “나는 아직 주니어야.”와 같은 생각을 가지고 있었다는게 참 아찔하고 부끄럽다. 다시 한 번 말하지만 업무 역량 및 팀 내외부적 영향력은 연차와 무관하게 얼마든지 자유롭게 펼칠 수 있다. 자신이 현재 가진 역량이 충분하고, 한계를 설정해두지 않는 태도로 업무를 한다면 말이다. 스스로의 한계를 규정하고 업무를 대하지 말자.</p>
+</section>
+<section id="sns에-짤막하게-남긴-생각들" class="level3">
+<h3 class="anchored" data-anchor-id="sns에-짤막하게-남긴-생각들">SNS에 짤막하게 남긴 생각들</h3>
+<p>8월에는 A/B Test에 관한 짧은 단상들 외에도 다른 이야기들도 적어올렸다. 하나는 같은 직군에 있는 지인의 면접을 도와주며 이런 저런 생각이 들어서 정리해봤던 면접에 관한 글이고, 두 번째는 코돌비에 오펜하이머를 보러가는 길에 문득 생각이 들어서 써봤던 통계학 관점에서 바라본 Bias에 관한 글이다. Bias에 관한 글은 결국 MLE가 짱이라고 끝난다.😂 읽어보면 MLE를 사랑할 수 밖에 없는 이유를 알 수 있을 것이다.</p>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02FCtJKtwtzsgZs5tqY1w3cCF7qR1caun178cPQNQsq7JgumoZLnEmGh2pjrBoYz7sl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="252" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
+<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Ne3fe2e8CWGF4u5PtPzFNjp3pu1Uhe6YnzrzJQ8HnzcHiAEXh7Y5Sf8KMTSEcNwUl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="239" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
+
+<ol>
+<li id="fn1"><p>이러한 이유에서 Mixed Method라는 이름이 붙여졌다.↩︎</p></li>
+<li id="fn2"><p>OCE의 Special Case 중 하나이다.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
+  author = {방태모},
+  title = {월간 회고록: 8월},
+  date = {2023-09-19},
+  url = {https://taemobang.com/posts/2023-09-19-monthly-memory-202308/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“월간 회고록: 8월.”</span> September 19, 2023. <a href="https://taemobang.com/posts/2023-09-19-monthly-memory-202308/">https://taemobang.com/posts/2023-09-19-monthly-memory-202308/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</guid>
+  <pubDate>Mon, 18 Sep 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/preview_monthly.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>월간 회고록: 6-7월</title>
   <dc:creator>방태모</dc:creator>
@@ -21,12 +154,12 @@
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/preview.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/preview_monthly.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
 </figure>
 </div>
-<section id="업무" class="level2">
-<h2 class="anchored" data-anchor-id="업무">업무</h2>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
 <section id="워크샵" class="level3">
 <h3 class="anchored" data-anchor-id="워크샵">워크샵</h3>
 <p>어쩌다보니 6, 7월에 3주에 걸쳐 매주 하나씩 워크샵을 진행했다. 서로 의견을 자유롭게 교환하며 진득하게 이야기를 나눌 것이 있을 때는 역시 오프라인 워크샵만한게 없다. 워크샵을 자연스럽게 여는 말은 언제나 팀장님의 역할이었는데, 이게 참 어려워 보인다. 이런 거 볼때마다 난 항상 상상해본다. 내가 저 자리에 가면 저렇게 할 수 있을까? “워크샵”은 어찌보면 정답이 없는 여러 주제들을 두고 자유롭게 의견을 교환하는 토론의 장과 같다고도 생각하는데, 편안하고 수평적인 팀 분위기에도 워크샵이라는 이벤트를 시작할 때 감도는 은근한 긴장감을 말로써 풀어주는 역할을 한다는게.. 참 어려워보이고 대단해보인다.</p>
@@ -104,7 +237,7 @@
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</guid>
   <pubDate>Fri, 11 Aug 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/preview.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://taemobang.com/posts/preview_monthly.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>글또 8기 회고</title>
@@ -2622,119 +2755,6 @@ Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distr
   <guid>https://taemobang.com/posts/2022-10-08-monthly-memory-202205/index.html</guid>
   <pubDate>Fri, 07 Oct 2022 15:00:00 GMT</pubDate>
   <media:content url="https://taemobang.com/posts/2022-10-08-monthly-memory-202205/preview.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민</title>
-  <dc:creator>방태모</dc:creator>
-  <link>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/sxQz2VfoFBE?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Christian Erfurt on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<p><a href="https://www.youtube.com/c/statisticsplaybook">유튜브 채널 슬기로운 통계생활</a>에서 운영하는 블로그에 기고했던 <a href="https://statisticsplaybook.tistory.com/search/be-favorite">칼럼들</a>을 최신화하여 다시 적어보려고 합니다. 첫 번째 칼럼 주제는 <strong>대학원에 대한 고민</strong>입니다. 저는 늘 고민과 생각이 많은 사람인데요.😂 때는 제가 통계학과 학부 4학년이던 2018년으로 거슬러 올라갑니다. 4학년 1학기 때는 학내 교환학생 프로그램에 신청하여 한 학기를 영국의 쉐필드대학(The University of Sheffield)에서 보내게 됩니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.sheffield.ac.uk/about"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-1.jpg" class="img-fluid figure-img" width="700"></a></p>
-<p></p><figcaption class="figure-caption">The University of Sheffield</figcaption><p></p>
-</figure>
-</div>
-<p>아쉽게도 이 곳에서 통계학 전공 과목을 들을 기회는 없었습니다. 영어와 여러 가지 교양 과목을 수강했고, 시간이 많았던 때라 실컷 놀면서 자연스레 진로에 대한 고민을 다시 한 번 깊게 해보게 되었습니다.</p>
-<section id="진로에-대한-고민" class="level2">
-<h2 class="anchored" data-anchor-id="진로에-대한-고민">진로에 대한 고민</h2>
-<p>당시 저는 통계학 전공을 살려 Data Scientist라 표현되는 직업을 갖고 싶었습니다. 그래서, 다음과 같은 두 가지 선택지에서 고민하기 시작했습니다.</p>
-<ol type="1">
-<li>취업 준비</li>
-<li>통계학 대학원 진학</li>
-</ol>
-<p>어중이떠중이 기질이 있었던 저는 깊은 고민 끝에 2년이라는 시간을 통계학 대학원에 투자할 용기가 없어, 4학년 1학기를 쉐필드에서 마치고 한국으로 돌아가 취업 준비를 해보기로 결심했습니다. 학부 졸업 요건과 취업에 필요한 기본 요건<sup>1</sup>은 준비가 되어있었고, 무엇보다 마음 속에 지금 상태로 취업 준비를 해봐도 되겠다는 알 수 없는 자신감이 있었습니다. 그 이유는 지금 생각해보면 정말 별것 아닌 것들 때문이었죠. 기본적인 소양에 불과한 평균 평점(3.93/4.5)과 전공 평균 평점(4.1/4.5), 그리고 지금 다시 돌아보면 정말 형편없었던 R 숙련도에 대한 자부심은 제게 “이정도면 취업 준비를 해봐도 되지 않을까?” 하는 근거없는 자신감을 갖게 했죠. 이렇게 취업 준비를 결심하고 채용 공고를 들여다보면서 시간을 보내는 와중에, 계속해서 눈에 밟히던 두 가지 키워드가 있었습니다.</p>
-</section>
-<section id="호기심을-불러일으킨-두-가지-키워드" class="level2">
-<h2 class="anchored" data-anchor-id="호기심을-불러일으킨-두-가지-키워드">호기심을 불러일으킨 두 가지 키워드</h2>
-<p>2016년 구글 딥마인드 팀이 개발한 바둑 AI 알파고가 이세돌과의 바둑 대국에서 압도적으로 승리를 거두며, 수십 년에 걸쳐 발전해온 <a href="https://be-favorite.tistory.com/8?category=897337">딥러닝이라는 기술</a>은 마치 최근 개발된 혁신적인 신기술인냥 세상의 주목을 받게 되었습니다. 매스컴의 주목에 따라 뉴스에서 종종 등장하던 두 단어 “머신러닝”과 “딥러닝”은 제게 또다른 호기심을 심어주었습니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.cyberoro.com/news/news_view.oro?num=521488"><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-2.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">알파고와 대결한 이세돌 9단</figcaption><p></p>
-</figure>
-</div>
-<p>당시 학부 전공 과목으로 데이터마이닝을 수강한 상태였던터라 이러한 호기심 매우 자연스러운 현상이었던 것 같습니다. 그러나, 당시 통계학 학부 4학년에 불과하던 제게 머신러닝, 딥러닝과 같은 키워드는 머릿속에 큰 그림은 커녕 기존에 배웠던 전공 과목<sup>2</sup>들과 자연스러운 비교를 하면서 혼란을 가중시킬 뿐이였죠. 내가 배웠던 것들과 두 키워드는 어떤 관련이 있는지 알고 싶었고, 심지어는 “전자와 후자 중 어떤 것이 더 나은 방법론인가?” 와 같이 지금 생각해보면 참 바보 같은 생각을 했었습니다. 이러한 생각들은 Data Scientist의 꿈이 있었던 사람에게 왠지 모를 두려움과 불안감을 심어주었습니다. 그래서, 이것 저것 찾아보며 두 기술에 대해 이해해보려고 노력했습니다. 이 과정에서 문득 “과연 내가 이 상태로 실무에 나가서 호기심이 있는 기술, 또는 직무에 꼭 필요로 되는 기술이 있을 때 이러한 기술들을 독학하여 실무에 적용할 수 있을까?” 하는 생각을 했습니다. 4학년 2학기 졸업예정자 신분으로서 Data Scientist 직무로의 취업을 성공한다고 한들, 직무를 잘 수행해내며 스스로 발전할 수 있을지에 대한 의구심이 생겼죠. 그래서, 마음속에서는 대학원 진학에 대한 열망이 다시 한 번 피어오르고 있었습니다.</p>
-<p>대학원 진학이라는 길이 머릿속을 떠나지 않았습니다. 그래서, 4학년 2학기 딱 한 학기만 학부 졸업 예정자로서 취업 준비를 하며 제가 다니던 본교의 통계학 대학원 진학 준비를 병행해서 해보기로 했습니다. 당연히 취업 준비 결과는 참담했습니다:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/img-3.PNG" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption class="figure-caption">(학부 4학년 2학기) 2018년 하반기 채용 지원 결과</figcaption><p></p>
-</figure>
-</div>
-<p>그때 제 수준을 지금 생각해보면 이러한 결과는 당연했다는 생각이 드네요.😂</p>
-</section>
-<section id="참담한-취업-실패에서-배운-것들" class="level2">
-<h2 class="anchored" data-anchor-id="참담한-취업-실패에서-배운-것들">참담한 취업 실패에서 배운 것들</h2>
-<p>취업 준비 결과 실질적으로 손에 쥔 것은 없었지만, <strong>수많은 채용공고를 보고 자기소개서를 쓰며 얻은 것과 배운 것</strong>들은 많았습니다:</p>
-<section id="년까지-내가-해온-활동에-대한-정리" class="level3">
-<h3 class="anchored" data-anchor-id="년까지-내가-해온-활동에-대한-정리">1 2018년까지 내가 해온 활동에 대한 정리</h3>
-<p>대학원 졸업을 앞두고 내가 해온 활동에 대한 정리를 시작했다면, 졸업 논문 작업과 겹쳐 취업 준비에 매우 어려움을 겪었을거라 생각합니다.</p>
-</section>
-<section id="자기소개서를-쓰는-방식" class="level3">
-<h3 class="anchored" data-anchor-id="자기소개서를-쓰는-방식">2 자기소개서를 쓰는 방식</h3>
-<p>당시 썼던 자기소개서들을 올해 이직 준비를하며 썼던 자기소개서들과 비교해보면, 과거의 제가 썼던 자기소개서는 정말 형편없었습니다. 그러나, 첫 자기소개서를 대학원을 졸업하던 시기에 쓰기 시작했다면 그야말로 아찔하네요.</p>
-</section>
-<section id="우리나라-기업에서-data-scientistanalyst-채용시-원하는-구체적인-역량" class="level3">
-<h3 class="anchored" data-anchor-id="우리나라-기업에서-data-scientistanalyst-채용시-원하는-구체적인-역량">3 우리나라 기업에서 Data Scientist/Analyst 채용시 원하는 구체적인 역량</h3>
-<p>당시 완벽하게 깨우치지는 못했지만 수많은 채용공고를 들여다보니 준비해야할 방향이 조금이나마 보였던 것 같습니다. 취업이나 이직을 준비하시는 분들이 아니더라도 업계의 인재 영입 동향 파악을 위해 틈틈히 채용공고를 들여다보시는 것을 추천드립니다. 이번에 이직 준비를 하서면서도 우리나라 기업에서 낸 수많은 Data Scientist/Analyst 채용 공고를 들여다보았는데, 우리나라의 분석 직군들의 직무들도 점차 세분화 되어 잘 정립되어 가고 있다는 느낌을 받을 수 있었습니다. 물론, 여전히 채용 공고를 아무리 읽어 봐도 무슨 일을 하게 될 지 알 수 없는 그런 공고들도 종종 보였으나, 이건 어느 직무에서든 종종 보이는 성의없게 쓰여진 채용공고이므로 별 의미를 두지 않았습니다. 세분화되어 잘 정립되어 가고 있는 우리나라 분석 직군의 세부 직무들을 자세하게 알아보고 싶은 분들께는 변성윤님이 올려주신 🔗<a href="https://www.youtube.com/watch?v=mzOWMax9Sxc">유튜브 영상</a>을 추천드립니다.</p>
-</section>
-<section id="석사학위에-대한-필요성" class="level3">
-<h3 class="anchored" data-anchor-id="석사학위에-대한-필요성">4 석사학위에 대한 필요성</h3>
-<p>제 머릿 속에 대학원 진학이라는 키워드가 계속해서 맴돌았기 때문일지도 모르겠습니다. 2018년 당시 석박사 채용을 통해서만 Data Scientist 직무를 뽑는 경우도 종종있어 지원조차 못하는 기업들이 있었고<sup>3</sup>, 4년제 대졸 신입사원 채용으로 뽑더라도 우대사항에는 늘 석사학위 보유자 키워드가 함께 자리하고 있었습니다. Data Scientist/Analyst 채용 시 통계학 학사와 석사가 경쟁하면 기업 입장에서는 기본적으로 어떤 지원자가 더 매력적이겠습니까? 학위를 뛰어넘을만한 좋은 경력이나 포트폴리오를 갖고 있지 않는 이상 석사 학위 보유자를 선호할 것입니다. 단, 학위 자체가 어떤 특정한 어드벤티지를 준다고는 생각하지 않았습니다. 그만큼 석사 학위 보유자라는 책임감을 가져야하만하고 기업의 기대에 맞는 수준을 갖는 사람이 되어야만 한다고 생각했죠. 말 그대로 학위는 우리를 둘러싼 껍질에 불과한 기본 아이템이라고 표현하면 적절할까요? 그러나, 당시 학사 학위와 빈약한 포트폴리오를 갖고있던 제게 석사 학위를 뛰어넘을만한 Data Scientist 직무로의 취업 준비 방법은 떠오르지 않았죠. 그래서, 대학원 진학을 결정한 것이고요.</p>
-<p>이렇게 졸업 예정자로서 취업 준비를 한 번 해봤던 경험은 제게 통계학 대학원 진학에 대한 필요성을 직접 피부로 느끼게 해주었습니다. 대학원에 진학하여 열심히 공부할 수 있었던 동기부여 또한 마음 속 깊히 채워넣을 수 있었습니다. 그 결정을 한 당시를 돌아보면 통계학 대학원 진학에 대한 후회는 전혀 느껴지지 않습니다. 제 인생에 정말 탁월한 결정이였죠. 오히려 취업 준비를 하지 않고 통계학 대학원 준비에 올인했다면 더 좋은 결과를 가져올 수 있었을까? 하는 무의미한 생각을 하곤 합니다.😂 당시의 저처럼 현재 통계학 대학원 진학에 대한 고민을 품고 있는 학부생들의 선택은 당연히 본인의 몫입니다. 다만, 열심히 공부함과 동시에 자신을 부지런히 브랜딩한다는 가정 하에, 통계학 대학원 진학은 Data Scientist/Analyst로의 취업에 무조건 플러스가 될 것이라고 말씀드리고 싶네요.😀 이 말에도 대학원 진학에 확신이 서질 않는다면, 자신의 수준을 한 번 냉정하게 바라보시고 실무에 나갈 준비가 되었는지 본인에게 질문을 던져보시기 바랍니다. 질문의 답이 “Yes”라면 취업 준비를 해보시는 것 또한 정말 좋은 경험이 되실겁니다.</p>
-</section>
-</section>
-<section id="대학원에-들어가며-다짐했던-것" class="level2">
-<h2 class="anchored" data-anchor-id="대학원에-들어가며-다짐했던-것">대학원에 들어가며 다짐했던 것</h2>
-<p>저는 당시 Data Scientist/Analyst 직무로의 취업을 꿈꿨지만, 어느 기업 또는 어느 업계로 가고 싶다는 구체화는 전혀 되어있지 않던 상태였습니다. 그래서, 수많은 분야에서 의사결정의 도구로 사용되고 있는 Data Science/Analytics의 특성상 어떤 식으로 커리어 방향을 잡아 나갈지, 무엇을 공부해야 할지 참 막막했습니다. 이러한 혼란 속에서 다짐했던 것은 2가지 였습니다. 대학원을 졸업할 무렵에는 누구에게나 자신있다고 말할 수 있는 분석 언어 1가지, 분석 분야 1가지를 만들겠다고 말이죠.<sup>4</sup> 대학원을 졸업하던 당시 가장 자신있었던 분석 언어와 분석 분야는 R과 시계열 자료분석 이었습니다. 이 두 가지 무기로 첫 번째 직장에 취업을 하고 머릿 속에 그리던 직무를 수행할 수 있었죠. 2가지 다짐의 개인적 근거는 이쪽 업계는 이것저것 두루두루 잘하는 Generalist 보단 하나 혹은 두 가지를 특출나게 잘하는 Specialist를 선호한다고 생각했기 때문입니다. 다양한 백그라운드를 가진 사람들이 일하는 Data Science/Analytics 업계인 만큼, 두리뭉술한 사람 보다는 확실한 아이덴티티가 있는 사람이 채용시장에서 높은 선호도를 보일 것이라고 생각했죠. 이쪽 업계에 있을수록 Generalist가 되기란 참 어렵지 않나 하는 생각을 합니다. Generalist가 되려다 이것저것 얕게 알고있는 특색없는 Generalist가 될 수 있다는 것을 유념하시기 바랍니다.</p>
-<p>반대로, Data Scientist/Analyst 직무로의 취업을 꿈꾸며 어느 기업 또는 어느 업계로 갈지에 대한 구체화가 끝나신 분들도 있을 수 있겠죠. 이 분들은 참 똑똑한 분들이라 생각합니다. 이러면 취업 준비가 꽤 편해지니까요. 가고 싶은 기업의 링크드인, 기술 블로그 등을 팔로우 하고 채용 공고를 미리미리 들여다보며, 자신이 해당 포지션으로 가기 위해 배워야할 것들을 구체화할 수 있습니다. 그럼, 자연스레 해당 기업에서 원하는 Specialist가 되는 길을 걷게 되겠죠. 공부 외에도 적극적인 액션을 취해보시기를 권합니다. Specialist가 되기 위해 공부해야하는 분야에 커뮤니티가 있다면 가입해서 활동도 해보고, 링크드인에 자신이 가고자 하는 업계 또는 기업에서 Data Science/Analytics를 수행하고 있는 분들이 보인다면 콜드메일(메시지)을 보내보기도 하면서요.😀</p>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>2021년 2월에 통계학 석사학위를 마치고, Data Scientist 직무로 현업에 있는 사람으로서, 2018년의 저와 비슷한 고민을 하고 있는 분들께 하고 싶은 몇 마디를 하고 글을 마치려고합니다.</p>
-<p>대학원 졸업을 앞두고 제가 성장한 부분 중 가장 뜻 깊게 생각되는 부분은 특정 알고리즘에 관한 이해가 아닌, 앞으로도 쏟아져 나올 분석 방법론, 그리고 소프트웨어 역량이라 할 수 있는 R의 수많은 패키지 등을 혼자 공부하고 정리할 튼튼한 발판을 마련했다는 점이었습니다. 그리고, 무엇보다 나를 브랜딩하고 PR 할만한 장치들도(e.g.&nbsp;Github, 개인 블로그) 갖출 수 있었죠. 제가 학부를 졸업하고 바로 해당 직무로 취업을 했다고 한들 이렇게 튼튼한 발판과 자신을 브랜딩하는 나만의 방법이 없이는 언젠가 성장의 한계에 마주했을 거라고 생각합니다.</p>
-<p>그래서, 만약 본인이 Data Scientist/Analyst 직무에 대해 열정과 호기심이 있는 통계학 전공자라면 주저하지 마시고 대학원에 진학하시는 것을 추천합니다. 호기심이 이끄는대로 열심히 이것저것 찾아보며 공부하고, 자신을 가꿔나갈 각오가 되어있는 분들께 대학원은 이쪽 업계에서 무조건 플러스라고 생각하니까요. 물론, 꼭 통계학 대학원이 아니여도 상관없습니다. 본인이 원하는 직무와 좀 더 관련성있는 연구실을 운영 중인 다른 학과가 있다면 해당 학과로의 진학을 추천드립니다. 예를 들어, 만약 본인이 특히 머신러닝이나 딥러닝 쪽 연구를 통해 예측 모델링을 전문적으로 수행하는 사람이 되고 싶다면 통계학 대학원이 아닌 컴퓨터 과학(Computer Science, 또는 소프트웨어 학과라 일컫는) 쪽에서 해당 분야를 전문적으로 연구하시는 교수님의 연구실에 들어가는 것을 추천드리고싶습니다.<sup>5</sup></p>
-<p>이런저런 이야기들을 하다보니 글이 꽤 길어졌습니다. 제가 느낀 것들을 바탕으로 쓴 글이니 정답이라고 생각하진 않으셨으면 합니다. 취업, 그리고 진로에 대한 길을 만들어 나가는 것에는 수많은 정답이 존재하니까요.</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>TOEIC, OPIC 등 채용 지원을 위해 필요한 기본적인 것들↩︎</p></li>
-<li id="fn2"><p>회귀분석, 통계적 가설검정, 실험설계, 시계열 자료분석 등↩︎</p></li>
-<li id="fn3"><p>이건 이직을 준비하는 2022년에도 마찬가지였습니다. 그러나, 2022년의 저는 석사학위를 보유하고 있었죠. 예를 들어, 신한은행의 경우 (정규직) 데이터분석 직군은 석박사채용으로만 하고있는 것으로 알고있습니다. 그외 은행은 데이터분석 직군은 전문계약직 형태로 뽑는 것으로 알고 있습니다..😭↩︎</p></li>
-<li id="fn4"><p>여기서 “자신있다”의 의미는 해당 분석 언어와 분석 분야를 다 알고 있다는 것이 아닌, 모르는 것을 마주치더라도 독학하여 다 내 것으로 만들 수 있는 자신이 있다는 것을 의미합니다.↩︎</p></li>
-<li id="fn5"><p>혹시, 통계학 대학원에서 머신러닝 또는 딥러닝에 기반한 예측 모델링 기법을 깊게 연구하는 연구실이 있다면, 댓글로 공유해주시면 많은 분들에게 도움이 될 것 같습니다.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {슬기로운 통계생활: \#1 통계학 전공자의 대학원 진로 고민},
-  date = {2022-09-13},
-  url = {https://taemobang.com/posts/2022-09-12-statistics-playbook-1/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“슬기로운 통계생활: #1 통계학 전공자의 대학원 진로
-고민.”</span> September 13, 2022. <a href="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/">https://taemobang.com/posts/2022-09-12-statistics-playbook-1/</a>.
-</div></div></section></div> ]]></description>
-  <category>Statistics Playbook</category>
-  <category>Column</category>
-  <guid>https://taemobang.com/posts/2022-09-12-statistics-playbook-1/index.html</guid>
-  <pubDate>Mon, 12 Sep 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-09-12-statistics-playbook-1/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

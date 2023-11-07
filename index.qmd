@@ -5,20 +5,23 @@ about:
   template: jolla
   links:
     - icon: linkedin
-      text: Linkedin
+      text: 링크드인
       href: https://www.linkedin.com/in/taemo/
     - icon: facebook
-      text: Facebook
+      text: 페이스북
       href: https://www.facebook.com/profile.php?id=100070120780059
     - icon: github
-      text: Github
+      text: 깃허브
       href: https://github.com/be-favorite
-    - icon: file-earmark-person
-      text: Resume
-      href: https://taemobang.notion.site
+    - icon: envelope
+      text: 이메일
+      href: mailto:taemobang@gmail.com
+    - icon: journal-text
+      text: 과거 블로그
+      href: https://be-favorite.tistory.com/
 comments: false
 ---
 
 안녕하세요 **방태모**입니다.
 
-G마켓 AI Product 팀에서 데이터 분석을 하고있습니다.
+G마켓 AI Product 팀에서 Data Scientist로 일하고 있습니다.

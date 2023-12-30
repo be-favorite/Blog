@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -62,7 +62,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -121,6 +122,7 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/karat.css">
@@ -137,47 +139,47 @@ cookieconsent.run({
     <span class="navbar-title">방태모의 블로그</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">홈</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page">
+    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
  <span class="menu-text">블로그</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./archive.html">
+    <a class="nav-link" href="./archive.html" rel="" target="">
  <span class="menu-text">아카이브</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">리소스</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="./research.html">
+    <a class="dropdown-item" href="./research.html" rel="" target="">
  <span class="dropdown-text">연구 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./presentation.html">
+    <a class="dropdown-item" href="./presentation.html" rel="" target="">
  <span class="dropdown-text">발표 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/" rel="" target="">
  <span class="dropdown-text">과거 기술블로그</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -209,9 +211,6 @@ cookieconsent.run({
 
 </header>
 
-<div class="cell">
-
-</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>새 글이 발행되면 알려드려요.</p>
@@ -228,18 +227,16 @@ cookieconsent.run({
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Memory" data-listing-date-sort="1695049200000" data-listing-file-modified-sort="1695222675727" data-listing-reading-time-sort="7.125">
+<div class="g-col-1" data-index="0" data-categories="Memory" data-listing-date-sort="1695049200000" data-listing-file-modified-sort="1695222675727" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <a href="./posts/2023-09-19-monthly-memory-202308/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/preview_monthly.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/preview_monthly.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 8월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+8 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -258,18 +255,16 @@ Sep 19, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Memory" data-listing-date-sort="1691766000000" data-listing-file-modified-sort="1695129314208" data-listing-reading-time-sort="5.625">
+<div class="g-col-1" data-index="1" data-categories="Memory" data-listing-date-sort="1691766000000" data-listing-file-modified-sort="1695129314208" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2023-08-12-monthly-memory-202306-07/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/preview_monthly.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/preview_monthly.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 6-7월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -288,18 +283,16 @@ Aug 12, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Memory" data-listing-date-sort="1689346800000" data-listing-file-modified-sort="1689424323254" data-listing-reading-time-sort="7.85">
+<div class="g-col-1" data-index="2" data-categories="Memory" data-listing-date-sort="1689346800000" data-listing-file-modified-sort="1689424323254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <a href="./posts/2023-07-15-geultto-memory/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-07-15-geultto-memory/preview-2.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-07-15-geultto-memory/preview-2.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 글또 8기 회고
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+8 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -318,18 +311,16 @@ Jul 15, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Memory" data-listing-date-sort="1688050800000" data-listing-file-modified-sort="1691824268802" data-listing-reading-time-sort="4.685">
+<div class="g-col-1" data-index="3" data-categories="Memory" data-listing-date-sort="1688050800000" data-listing-file-modified-sort="1691824268802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="./posts/2023-06-30-monthly-memory-202305/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-06-30-monthly-memory-202305/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-06-30-monthly-memory-202305/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 5월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-4 min
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -348,18 +339,16 @@ Jun 30, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Causal Inference" data-listing-date-sort="1685286000000" data-listing-file-modified-sort="1685443187260" data-listing-reading-time-sort="8.225">
+<div class="g-col-1" data-index="4" data-categories="Causal Inference" data-listing-date-sort="1685286000000" data-listing-file-modified-sort="1685443187260" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <a href="./posts/2023-05-29-Introduction-to-causal-inference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-05-29-Introduction-to-causal-inference/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-05-29-Introduction-to-causal-inference/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 인과추론 입문하기
 </h5>
 <div class="listing-reading-time card-text text-muted">
-8 min
+9 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Causal Inference'); return false;">
@@ -378,18 +367,16 @@ May 29, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="Memory" data-listing-date-sort="1684076400000" data-listing-file-modified-sort="1684160520996" data-listing-reading-time-sort="5.655">
+<div class="g-col-1" data-index="5" data-categories="Memory" data-listing-date-sort="1684076400000" data-listing-file-modified-sort="1684160520996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2023-05-15-monthly-memory-202304/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-05-15-monthly-memory-202304/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-05-15-monthly-memory-202304/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 4월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -408,18 +395,16 @@ May 15, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="Column" data-listing-date-sort="1682866800000" data-listing-file-modified-sort="1683035778302" data-listing-reading-time-sort="27.78">
+<div class="g-col-1" data-index="6" data-categories="Column" data-listing-date-sort="1682866800000" data-listing-file-modified-sort="1683035778302" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28">
 <a href="./posts/2023-05-01-what-statistics-has-taught-me/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-05-01-what-statistics-has-taught-me/preview.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-05-01-what-statistics-has-taught-me/preview.jpeg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 통계학, 그게 왜 중요한데?
 </h5>
 <div class="listing-reading-time card-text text-muted">
-27 min
+28 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Column'); return false;">
@@ -438,18 +423,16 @@ May 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="Memory" data-listing-date-sort="1681657200000" data-listing-file-modified-sort="1684149870710" data-listing-reading-time-sort="5.35">
+<div class="g-col-1" data-index="7" data-categories="Memory" data-listing-date-sort="1681657200000" data-listing-file-modified-sort="1684149870710" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2023-04-17-monthly-memory-202303/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-04-17-monthly-memory-202303/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-04-17-monthly-memory-202303/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 3월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -468,18 +451,16 @@ Apr 17, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-categories="Time Series" data-listing-date-sort="1680361200000" data-listing-file-modified-sort="1682864781367" data-listing-reading-time-sort="9.62">
+<div class="g-col-1" data-index="8" data-categories="Time Series" data-listing-date-sort="1680361200000" data-listing-file-modified-sort="1682864781367" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
 <a href="./posts/2023-04-02-time-series-analysis-for-customer-interests/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-04-02-time-series-analysis-for-customer-interests/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-04-02-time-series-analysis-for-customer-interests/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 시계열 자료분석을 활용한 고객 관심사의 선제적 반영
 </h5>
 <div class="listing-reading-time card-text text-muted">
-9 min
+10 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
@@ -498,18 +479,16 @@ Apr 2, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-categories="Causal Inference" data-listing-date-sort="1679756400000" data-listing-file-modified-sort="1679829887965" data-listing-reading-time-sort="5.945">
+<div class="g-col-1" data-index="9" data-categories="Causal Inference" data-listing-date-sort="1679756400000" data-listing-file-modified-sort="1679829887965" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2023-03-26-Quasi-Experimental-Designs/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-03-26-Quasi-Experimental-Designs/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-03-26-Quasi-Experimental-Designs/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Quasi Experimental Design
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Causal Inference'); return false;">
@@ -528,18 +507,16 @@ Mar 26, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="Memory" data-listing-date-sort="1678546800000" data-listing-file-modified-sort="1681538816992" data-listing-reading-time-sort="9.78">
+<div class="g-col-1" data-index="10" data-categories="Memory" data-listing-date-sort="1678546800000" data-listing-file-modified-sort="1681538816992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
 <a href="./posts/2023-03-12-monthly-memory-202302/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-03-12-monthly-memory-202302/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-03-12-monthly-memory-202302/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2023년 2월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-9 min
+10 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -558,18 +535,16 @@ Mar 12, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-categories="Memory" data-listing-date-sort="1676905200000" data-listing-file-modified-sort="1679834995259" data-listing-reading-time-sort="4.44">
+<div class="g-col-1" data-index="11" data-categories="Memory" data-listing-date-sort="1676905200000" data-listing-file-modified-sort="1679834995259" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="./posts/2023-02-21-monthly-memory-202301/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-02-21-monthly-memory-202301/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="posts/2023-02-21-monthly-memory-202301/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2023년 1월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-4 min
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -588,18 +563,16 @@ Feb 21, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-categories="Column" data-listing-date-sort="1675695600000" data-listing-file-modified-sort="1677078281449" data-listing-reading-time-sort="3.105">
+<div class="g-col-1" data-index="12" data-categories="Column" data-listing-date-sort="1675695600000" data-listing-file-modified-sort="1677078281449" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="./posts/2023-02-07-da-my-view/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2023-02-07-da-my-view/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2023-02-07-da-my-view/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 면접을 앞두고 분석 경험을 회고하는 나만의 방식
 </h5>
 <div class="listing-reading-time card-text text-muted">
-3 min
+4 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Column'); return false;">
@@ -618,18 +591,16 @@ Feb 7, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-categories="Memory" data-listing-date-sort="1675177200000" data-listing-file-modified-sort="1681735981693" data-listing-reading-time-sort="10.215">
+<div class="g-col-1" data-index="13" data-categories="Memory" data-listing-date-sort="1675177200000" data-listing-file-modified-sort="1681735981693" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
 <a href="./posts/2023-02-01-yearly-memory-2022/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2023-02-01-yearly-memory-2022/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2023-02-01-yearly-memory-2022/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 연간 회고록: 2022년
 </h5>
 <div class="listing-reading-time card-text text-muted">
-10 min
+11 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -648,18 +619,16 @@ Feb 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-categories="Memory" data-listing-date-sort="1672498800000" data-listing-file-modified-sort="1675777443243" data-listing-reading-time-sort="9.92">
+<div class="g-col-1" data-index="14" data-categories="Memory" data-listing-date-sort="1672498800000" data-listing-file-modified-sort="1675777443243" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
 <a href="./posts/2023-01-01-move-to-another-company/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2023-01-01-move-to-another-company/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2023-01-01-move-to-another-company/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 2022년 이직 로그
 </h5>
 <div class="listing-reading-time card-text text-muted">
-9 min
+10 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -678,18 +647,16 @@ Jan 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-categories="A/B test" data-listing-date-sort="1667142000000" data-listing-file-modified-sort="1667222303519" data-listing-reading-time-sort="3.875">
+<div class="g-col-1" data-index="15" data-categories="A/B test" data-listing-date-sort="1667142000000" data-listing-file-modified-sort="1667222303519" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="./posts/2022-10-31-abtest-terms/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-10-31-abtest-terms/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-10-31-abtest-terms/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 A/B 테스트 용어 사전
 </h5>
 <div class="listing-reading-time card-text text-muted">
-3 min
+4 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('A/B test'); return false;">
@@ -708,18 +675,16 @@ Oct 31, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-categories="Memory" data-listing-date-sort="1666191600000" data-listing-file-modified-sort="1679835040524" data-listing-reading-time-sort="4.715">
+<div class="g-col-1" data-index="16" data-categories="Memory" data-listing-date-sort="1666191600000" data-listing-file-modified-sort="1679835040524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="./posts/2022-10-20-monthly-memory-202207/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-10-20-monthly-memory-202207/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-10-20-monthly-memory-202207/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2022년 7월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-4 min
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -738,18 +703,16 @@ Oct 20, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-categories="Review" data-listing-date-sort="1665500400000" data-listing-file-modified-sort="1665585516490" data-listing-reading-time-sort="5.9">
+<div class="g-col-1" data-index="17" data-categories="Review" data-listing-date-sort="1665500400000" data-listing-file-modified-sort="1665585516490" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2022-10-12-about-data-science/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-10-12-about-data-science/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-10-12-about-data-science/preview.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 데이터 과학에 관해
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
@@ -768,18 +731,16 @@ Oct 12, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="18" data-categories="Memory" data-listing-date-sort="1665500400000" data-listing-file-modified-sort="1665578378759" data-listing-reading-time-sort="8.32">
+<div class="g-col-1" data-index="18" data-categories="Memory" data-listing-date-sort="1665500400000" data-listing-file-modified-sort="1665578378759" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <a href="./posts/2022-10-12-monthly-memory-202206/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-10-12-monthly-memory-202206/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-10-12-monthly-memory-202206/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2022년 6월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-8 min
+9 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -798,18 +759,16 @@ Oct 12, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="19" data-categories="Memory" data-listing-date-sort="1665154800000" data-listing-file-modified-sort="1665215365600" data-listing-reading-time-sort="5.005">
+<div class="g-col-1" data-index="19" data-categories="Memory" data-listing-date-sort="1665154800000" data-listing-file-modified-sort="1665215365600" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2022-10-08-monthly-memory-202205/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-10-08-monthly-memory-202205/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-10-08-monthly-memory-202205/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2022년 5월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -828,18 +787,16 @@ Oct 8, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="20" data-categories="Statistics Playbook,Column" data-listing-date-sort="1662994800000" data-listing-file-modified-sort="1682333924107" data-listing-reading-time-sort="7.44">
+<div class="g-col-1" data-index="20" data-categories="Statistics Playbook,Column" data-listing-date-sort="1662994800000" data-listing-file-modified-sort="1682333924107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <a href="./posts/2022-09-12-statistics-playbook-1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-09-12-statistics-playbook-1/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-09-12-statistics-playbook-1/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 슬기로운 통계생활: #1 통계학 전공자의 대학원 진로 고민
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+8 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Statistics Playbook'); return false;">
@@ -861,18 +818,16 @@ Sep 13, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="21" data-categories="Visualization,R" data-listing-date-sort="1660402800000" data-listing-file-modified-sort="1665207553659" data-listing-reading-time-sort="13.915">
+<div class="g-col-1" data-index="21" data-categories="Visualization,R" data-listing-date-sort="1660402800000" data-listing-file-modified-sort="1665207553659" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14">
 <a href="./posts/2022-08-07-coloring-guide-for-ggplot2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-08-07-coloring-guide-for-ggplot2/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 ggplot2 컬러링 가이드
 </h5>
 <div class="listing-reading-time card-text text-muted">
-13 min
+14 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Visualization'); return false;">
@@ -894,18 +849,16 @@ Aug 14, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="22" data-categories="Memory" data-listing-date-sort="1654614000000" data-listing-file-modified-sort="1663592825440" data-listing-reading-time-sort="5.67">
+<div class="g-col-1" data-index="22" data-categories="Memory" data-listing-date-sort="1654614000000" data-listing-file-modified-sort="1663592825440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2022-06-08-monthly-memory-202204/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-06-08-monthly-memory-202204/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-06-08-monthly-memory-202204/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 월간 회고록: 2022년 4월
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Memory'); return false;">
@@ -924,18 +877,16 @@ Jun 8, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="23" data-categories="Time Series,Paper" data-listing-date-sort="1653318000000" data-listing-file-modified-sort="1663592813669" data-listing-reading-time-sort="1.96">
+<div class="g-col-1" data-index="23" data-categories="Time Series,Paper" data-listing-date-sort="1653318000000" data-listing-file-modified-sort="1663592813669" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <a href="./posts/2022-05-24-paper-review-simes-et-al-2022/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-05-24-paper-review-simes-et-al-2022/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 논문 요약 - Simões et al (2022)
 </h5>
 <div class="listing-reading-time card-text text-muted">
-1 min
+2 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
@@ -957,18 +908,16 @@ May 24, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="24" data-categories="Paper" data-listing-date-sort="1652367600000" data-listing-file-modified-sort="1663592803500" data-listing-reading-time-sort="4.065">
+<div class="g-col-1" data-index="24" data-categories="Paper" data-listing-date-sort="1652367600000" data-listing-file-modified-sort="1663592803500" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <a href="./posts/2022-05-13-how-to-review-a-paper/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-05-13-how-to-review-a-paper/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-05-13-how-to-review-a-paper/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 관심 논문 읽고 요약하기
 </h5>
 <div class="listing-reading-time card-text text-muted">
-4 min
+5 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Paper'); return false;">
@@ -987,18 +936,16 @@ May 13, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="25" data-categories="SQL,R" data-listing-date-sort="1649257200000" data-listing-file-modified-sort="1663592776759" data-listing-reading-time-sort="5.99">
+<div class="g-col-1" data-index="25" data-categories="SQL,R" data-listing-date-sort="1649257200000" data-listing-file-modified-sort="1663592776759" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <a href="./posts/2022-04-07-talk-with-database-using-tidyverse-part-i/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-04-07-talk-with-database-using-tidyverse-part-i/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 tidyverse로 데이터베이스랑 대화하기 - 1편
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
+6 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('SQL'); return false;">
@@ -1020,18 +967,16 @@ Apr 7, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="26" data-categories="Statistical/Machine Learning,R" data-listing-date-sort="1648998000000" data-listing-file-modified-sort="1663592778710" data-listing-reading-time-sort="18.165">
+<div class="g-col-1" data-index="26" data-categories="Statistical/Machine Learning,R" data-listing-date-sort="1648998000000" data-listing-file-modified-sort="1663592778710" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19">
 <a href="./posts/2022-04-04-do-machine-learning-with-tidyverse-principle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-04-04-do-machine-learning-with-tidyverse-principle/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 tidyvese principle로 머신러닝 하기
 </h5>
 <div class="listing-reading-time card-text text-muted">
-18 min
+19 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Statistical/Machine Learning'); return false;">
@@ -1053,18 +998,16 @@ Apr 4, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="27" data-categories="Time Series,R" data-listing-date-sort="1646924400000" data-listing-file-modified-sort="1663592331289" data-listing-reading-time-sort="22.14">
+<div class="g-col-1" data-index="27" data-categories="Time Series,R" data-listing-date-sort="1646924400000" data-listing-file-modified-sort="1663592331289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23">
 <a href="./posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img data-src="./posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img data-src="posts/2022-03-11-do-time-series-analysis-with-tidyverse-principle/preview.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 tidyverse principle로 시계열 자료 분석하기
 </h5>
 <div class="listing-reading-time card-text text-muted">
-22 min
+23 min
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
@@ -1236,9 +1179,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1303,6 +1260,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1345,7 +1388,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

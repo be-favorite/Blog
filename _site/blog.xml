@@ -9,11 +9,11 @@
 <link>https://taemobang.com/blog.html</link>
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
-<generator>quarto-1.2.280</generator>
+<generator>quarto-1.3.450</generator>
 <lastBuildDate>Mon, 18 Sep 2023 15:00:00 GMT</lastBuildDate>
 <item>
   <title>월간 회고록: 8월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</link>
   <description><![CDATA[ 
 
@@ -142,11 +142,10 @@
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</guid>
   <pubDate>Mon, 18 Sep 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/preview_monthly.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 6-7월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</link>
   <description><![CDATA[ 
 
@@ -237,11 +236,10 @@
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</guid>
   <pubDate>Fri, 11 Aug 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/preview_monthly.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>글또 8기 회고</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-07-15-geultto-memory/index.html</link>
   <description><![CDATA[ 
 
@@ -382,11 +380,10 @@
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-07-15-geultto-memory/index.html</guid>
   <pubDate>Fri, 14 Jul 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-07-15-geultto-memory/preview-2.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 5월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-06-30-monthly-memory-202305/index.html</link>
   <description><![CDATA[ 
 
@@ -524,11 +521,10 @@
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-06-30-monthly-memory-202305/index.html</guid>
   <pubDate>Thu, 29 Jun 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-06-30-monthly-memory-202305/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>인과추론 입문하기</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-05-29-Introduction-to-causal-inference/index.html</link>
   <description><![CDATA[ 
 
@@ -689,11 +685,10 @@ Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub.
   <category>Causal Inference</category>
   <guid>https://taemobang.com/posts/2023-05-29-Introduction-to-causal-inference/index.html</guid>
   <pubDate>Sun, 28 May 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-05-29-Introduction-to-causal-inference/preview.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 4월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-05-15-monthly-memory-202304/index.html</link>
   <description><![CDATA[ 
 
@@ -788,11 +783,10 @@ Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub.
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-05-15-monthly-memory-202304/index.html</guid>
   <pubDate>Sun, 14 May 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-05-15-monthly-memory-202304/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>통계학, 그게 왜 중요한데?</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/index.html</link>
   <description><![CDATA[ 
 
@@ -1227,11 +1221,10 @@ Hyndman, Rob J, and George Athanasopoulos. 2021. <em>Forecasting: Principles and
   <category>Column</category>
   <guid>https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/index.html</guid>
   <pubDate>Sun, 30 Apr 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/preview.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>월간 회고록: 3월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-04-17-monthly-memory-202303/index.html</link>
   <description><![CDATA[ 
 
@@ -1329,11 +1322,10 @@ Hyndman, Rob J, and George Athanasopoulos. 2021. <em>Forecasting: Principles and
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-04-17-monthly-memory-202303/index.html</guid>
   <pubDate>Sun, 16 Apr 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>시계열 자료분석을 활용한 고객 관심사의 선제적 반영</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html</link>
   <description><![CDATA[ 
 
@@ -1516,11 +1508,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Time Series</category>
   <guid>https://taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html</guid>
   <pubDate>Sat, 01 Apr 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Quasi Experimental Design</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/index.html</link>
   <description><![CDATA[ 
 
@@ -1621,11 +1612,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Causal Inference</category>
   <guid>https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/index.html</guid>
   <pubDate>Sat, 25 Mar 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 2023년 2월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-03-12-monthly-memory-202302/index.html</link>
   <description><![CDATA[ 
 
@@ -1776,11 +1766,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-03-12-monthly-memory-202302/index.html</guid>
   <pubDate>Sat, 11 Mar 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 2023년 1월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-02-21-monthly-memory-202301/index.html</link>
   <description><![CDATA[ 
 
@@ -1872,11 +1861,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-02-21-monthly-memory-202301/index.html</guid>
   <pubDate>Mon, 20 Feb 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>면접을 앞두고 분석 경험을 회고하는 나만의 방식</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-02-07-da-my-view/index.html</link>
   <description><![CDATA[ 
 
@@ -1958,11 +1946,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Column</category>
   <guid>https://taemobang.com/posts/2023-02-07-da-my-view/index.html</guid>
   <pubDate>Mon, 06 Feb 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-02-07-da-my-view/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>연간 회고록: 2022년</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-02-01-yearly-memory-2022/index.html</link>
   <description><![CDATA[ 
 
@@ -2154,11 +2141,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-02-01-yearly-memory-2022/index.html</guid>
   <pubDate>Tue, 31 Jan 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-02-01-yearly-memory-2022/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>2022년 이직 로그</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2023-01-01-move-to-another-company/index.html</link>
   <description><![CDATA[ 
 
@@ -2296,11 +2282,10 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2023-01-01-move-to-another-company/index.html</guid>
   <pubDate>Sat, 31 Dec 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2023-01-01-move-to-another-company/preview.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>A/B 테스트 용어 사전</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2022-10-31-abtest-terms/index.html</link>
   <description><![CDATA[ 
 
@@ -2401,11 +2386,10 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>A/B test</category>
   <guid>https://taemobang.com/posts/2022-10-31-abtest-terms/index.html</guid>
   <pubDate>Sun, 30 Oct 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-10-31-abtest-terms/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>월간 회고록: 2022년 7월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</link>
   <description><![CDATA[ 
 
@@ -2494,11 +2478,10 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</guid>
   <pubDate>Wed, 19 Oct 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-10-20-monthly-memory-202207/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>데이터 과학에 관해</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2022-10-12-about-data-science/index.html</link>
   <description><![CDATA[ 
 
@@ -2569,11 +2552,10 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>Review</category>
   <guid>https://taemobang.com/posts/2022-10-12-about-data-science/index.html</guid>
   <pubDate>Tue, 11 Oct 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-10-12-about-data-science/preview.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>월간 회고록: 2022년 6월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2022-10-12-monthly-memory-202206/index.html</link>
   <description><![CDATA[ 
 
@@ -2667,11 +2649,10 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-12-monthly-memory-202206/index.html</guid>
   <pubDate>Tue, 11 Oct 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-10-12-monthly-memory-202206/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>월간 회고록: 2022년 5월</title>
-  <dc:creator>방태모</dc:creator>
+  <dc:creator>방태모 </dc:creator>
   <link>https://taemobang.com/posts/2022-10-08-monthly-memory-202205/index.html</link>
   <description><![CDATA[ 
 
@@ -2754,7 +2735,6 @@ Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distr
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-08-monthly-memory-202205/index.html</guid>
   <pubDate>Fri, 07 Oct 2022 15:00:00 GMT</pubDate>
-  <media:content url="https://taemobang.com/posts/2022-10-08-monthly-memory-202205/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

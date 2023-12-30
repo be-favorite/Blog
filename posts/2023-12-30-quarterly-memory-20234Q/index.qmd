@@ -1,7 +1,7 @@
 ---
 title: "2023년 4분기 회고록"
 description: |
-    요약
+    뒤늦은 회고
 date: "2023-12-30"
 draft: TRUE
 preview: ../preview.png

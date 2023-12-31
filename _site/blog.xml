@@ -92,7 +92,7 @@
 </section>
 <section id="trustworthy-ab-test" class="level3">
 <h3 class="anchored" data-anchor-id="trustworthy-ab-test">Trustworthy A/B Test</h3>
-<p>올해 하반기부터 본격적으로 A/B Test에 관한 연구를 시작했다. 우리 조직에 가장 필요한 부분이기도 했거니와, 개인적인 자기개발을 회사에 가져다줄 수 있는 Contribution과 일치시킴으로써 나의 업무적 성과를 최대화하기 위한 목적도 있었다. 실무에서 우연히 수행한 A/A Test를 바탕으로 우리가 놓치고 있었던 많은 것들을 깨우칠 수 있었고, 우리가 놓치고 있었던 부분들을 실험 데이터로 검증하여 엮어낸 Microsoft의 연구 논문을 팀 내에 공유하며 A/B Test에 관한 열정(?)을 스스로 부스팅 시킬 수 있었다. 이를 시작으로 팀 스터디도 모집하여 진행할 수 있었고, 매주 한 챕터씩 공부하고 토론하며 혼자 공부하면 결코 알지 못했을 많은 것들을 배울 수 있었다. 배울수록 어렵고 재밌는 영역이다. 또한, 실험 분석을 정확하게 해내기 위해선 통계적 백그라운드들도 꽤나 깊게 필요하다는 점이, 통계학을 전공한 사람 입장에서 더욱 매력적인 영역으로 다가오는 듯 하다. 매번 하는 말이지만 실무에서 A/B Test를 수행하고 있는 사람이라면 꼭 이 책(<span class="citation" data-cites="kohavi2020">@kohavi2020</span>)을 읽어보길 바란다.</p>
+<p>올해 하반기부터 본격적으로 A/B Test에 관한 연구를 시작했다. 우리 조직에 가장 필요한 부분이기도 했거니와, 개인적인 자기개발을 회사에 가져다줄 수 있는 Contribution과 일치시킴으로써 나의 업무적 성과를 최대화하기 위한 목적도 있었다. 실무에서 우연히 수행한 A/A Test를 바탕으로 우리가 놓치고 있었던 많은 것들을 깨우칠 수 있었고, 우리가 놓치고 있었던 부분들을 실험 데이터로 검증하여 엮어낸 Microsoft의 연구 논문을 팀 내에 공유하며 A/B Test에 관한 열정(?)을 스스로 부스팅 시킬 수 있었다. 이를 시작으로 팀 스터디도 모집하여 진행할 수 있었고, 매주 한 챕터씩 공부하고 토론하며 혼자 공부하면 결코 알지 못했을 많은 것들을 배울 수 있었다. 배울수록 어렵고 재밌는 영역이다. 또한, 실험 분석을 정확하게 해내기 위해선 통계적 백그라운드들도 꽤나 깊게 필요하다는 점이, 통계학을 전공한 사람 입장에서 더욱 매력적인 영역으로 다가오는 듯 하다. 매번 하는 말이지만 실무에서 A/B Test를 수행하고 있는 사람이라면 꼭 이 책(<span class="citation" data-cites="kohavi2020">(Kohavi, Tang, and Xu 2020)</span>)을 읽어보길 바란다.</p>
 </section>
 <section id="첫-커뮤니티-활동-feat.-애옹킴-글또-8기-pap-3기" class="level3">
 <h3 class="anchored" data-anchor-id="첫-커뮤니티-활동-feat.-애옹킴-글또-8기-pap-3기">첫 커뮤니티 활동 (feat. 애옹킴, 글또 8기, PAP 3기)</h3>
@@ -147,9 +147,14 @@
 </blockquote>
 
 
+
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-kohavi2020" class="csl-entry">
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2023,
   author = {, 방태모},
   title = {연간 회고록: 2023년},
   date = {2023-12-31},

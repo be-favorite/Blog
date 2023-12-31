@@ -4,13 +4,13 @@ description: |
   글또 8기 회고
 date: "2023-07-15"
 draft: FALSE
-preview: preview-1.jpeg
+preview: preview.jpeg
 citation:
   url: https://taemobang.com/posts/2023-07-15-geultto-memory/
 categories: [Memory]
 ---
 
-[![The illustration by Mary Amato](preview-2.png){fig-align="center"}](https://notioly.com)
+[![글또 8기 데이터분석 빌리지 반상회](photo.jpeg){fig-align="center"}](https://notioly.com)
 
 약 6개월에 걸친 글또 8기 활동도 끝을 앞두고 있다. 글또 8기를 회고하는 글을 마지막 12회차 글로 제출하며 활동을 마무리하려고 한다.
 

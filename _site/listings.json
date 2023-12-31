@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-12-31-yearly-memory-2023/index.html",
       "/posts/2023-12-30-quarterly-memory-20234Q/index.html",
       "/posts/2023-09-19-monthly-memory-202308/index.html",
       "/posts/2023-08-12-monthly-memory-202306-07/index.html",
@@ -43,6 +44,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2023-12-31-yearly-memory-2023/index.html",
       "/posts/2023-12-30-quarterly-memory-20234Q/index.html",
       "/posts/2023-09-19-monthly-memory-202308/index.html",
       "/posts/2023-08-12-monthly-memory-202306-07/index.html",

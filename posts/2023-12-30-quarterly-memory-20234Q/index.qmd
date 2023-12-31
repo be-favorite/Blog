@@ -3,7 +3,7 @@ title: "2023년 4분기 회고록"
 description: |
     뒤늦은 회고
 date: "2023-12-30"
-draft: TRUE
+draft: FALSE
 preview: ../preview.png
 citation:
     url: https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/

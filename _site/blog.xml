@@ -10,7 +10,109 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 18 Sep 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 29 Dec 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>2023년 4분기 회고록</title>
+  <dc:creator>방태모 </dc:creator>
+  <link>https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/preview_monthly.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">The illustration by Mary Amato</figcaption>
+</figure>
+</div>
+<p>벌써 2023년이 저물어 간다. 바쁘다는 핑계로 미뤄놓은 월간 회고가 한 분기만큼 쌓였다. 개인적으로 쌓아두고 있는 주간 회고를 바탕으로 2023년 4분기를 회고한다. 빠른 시일 내에 2023년 연말 회고도 써야지.</p>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
+<section id="로렌츠-곡선과-지니계수" class="level3">
+<h3 class="anchored" data-anchor-id="로렌츠-곡선과-지니계수">로렌츠 곡선과 지니계수</h3>
+<p>아마 두 용어를 처음 들어보시는 분들이 많을거라 생각한다. 나 또한 그러했고. 한 줄로 요약하면 지니계수는:</p>
+<blockquote class="blockquote">
+<p>0이면 완전 평등한 경제, 1이면 완전 불평등한 경제</p>
+</blockquote>
+<p>를 나타내며, 이 지니계수는 로렌츠 곡선으로부터 계산된다. <a href="https://blog.naver.com/nilsine11202/221376436467">이 블로그</a>를 보면 이해하기 쉬울 것이다. 11월 초에 다음의 가설에 관한 빠른 검증이 필요한 상황이 있었고:</p>
+<blockquote class="blockquote">
+<p><strong>각 랭킹 모델에서 발생하는 매출이 스타 상품에 의해 좌우되는가?</strong></p>
+</blockquote>
+<p>로렌츠 곡선과 지니계수를 활용해 해당 가설을 검증해냈다. 물론, 내가 한 일은 아니고 동료 분석가 분께서 한 일이다. 당시 로렌츠 곡선과 지니계수도 처음 듣는 용어였는데, 개념을 이해하고 나니 경제 용어(?)를 활용한 꽤 재밌고 간단한 분석 사례라 생각되어 공유를 해본다.</p>
+</section>
+<section id="ab-test-스터디" class="level3">
+<h3 class="anchored" data-anchor-id="ab-test-스터디">A/B Test 스터디</h3>
+<p>이제 책(<span class="citation" data-cites="kohavi2020">Kohavi, Tang, and Xu (2020)</span>)의 절반을 조금 넘게 마무리했다. 아마 내년 3월 즈음이면 책을 마무리 지을 수 있을 듯 하다. 책을 읽다보면 “아니 어런거 까지 고려해서 실험을 하고 있다고?” 라는 말이 나올정도로.. 눈에 보이지 않는 온라인 환경에서 실험 효과에 관한 <strong>정확한 측정</strong>을 위해 정말 변태같을 정도로 많은 노력을 기울인다. 책이 그리 친절하진 않다. 초심자라면 이해하기 어려운 대목들이 많을 것이다. 책의 뒷편에 수많은 References를 상세하게 기재해 놓은데에는 다 이유가 있다는 생각이 든다. 실무에서 A/B Test를 수행하고 있는 실무자라면 이 책을 읽으며 많은 반성을 할 수 있을 것이다.</p>
+</section>
+<section id="databricks에서도-고통받는-r유저" class="level3">
+<h3 class="anchored" data-anchor-id="databricks에서도-고통받는-r유저">Databricks에서도 고통받는 R유저</h3>
+<p>기존 하둡으로 운영되고 있던 전사 Data Lake를 Databricks로 이관하고 있는데, Databricks가 OT에서 이야기했던 내용과 달리 공유 클러스터에서는 R 사용이 불가능함을 확인했다. 관련해서 Databricks를 담당하고 있는 팀에 문의도 드려봤는데, R은 개인 클러스터에서만 사용이 가능하다고..😇 그런데, 또 개인 클러스터는 비용 이슈가 있어 아무나 만들어 주지도 않고.. 허가가 난다고 한들 굉장히 작은 자원만 제공을 해준다. 대한민국 산업계에서 R 쓰기 참 쉽지 않다. 그나마 다행스러운 점은 하둡 환경의 Data Lake의 경우 jdbc/odbc를 활용한 로컬에서의 접근이 완전히 막혀있었는데(운영망 정책상), Databricks의 경우 Azure 환경이라(?) jdbc/odbc를 활용한 로컬에서 운영망으로의 접근이 가능했다. 8-9시간의 삽질 끝에 성공했는데.. 아직 Transaction 관련 데이터가 넘어오지 않아 사용은 하지 않고 있다. 완전한 이관이 된다면, 로컬 Rstudio에서 쿼리를 날리고 메모리에 올릴 수 있는 만큼 테이블을 떼와서 심리스하게(?) 분석을 수행할 수 있을듯 한데.. 이 날만 기다리고 있다.</p>
+</section>
+<section id="전사-해커톤" class="level3">
+<h3 class="anchored" data-anchor-id="전사-해커톤">2023 전사 해커톤</h3>
+<p>매년 12월에 열리는 <a href="https://blog.naver.com/news9kr/223286480345">전사 해커톤</a>에 처음으로 참가했고, 감사하게도 결선에 진출하여 Innovation 상을 수상했다. 결선에서 참 아이러니(?)한 상황을 겪었다. 우리 팀은 총 3명으로 그 중 2명이 나 포함 AI Product 팀이었는데, 우리팀의 해커톤 아이디어 및 프로토타입에는 그 어디에도 AI 얘기는 존재하지 않는다.😂 이 부분은 딱히 인지를 하지도 않았고, 신경도 쓰지 않고 있었는데 결선 리허설때 다른 팀들의 출품작들을 보니 오히려 AI 얘기를 안하는 곳을 찾기 힘들었다. 특히 GPT로 대두되는 언어 모델들..😇 아무튼! 행사는 성공적으로 끝이났고 첫 참가한 해커톤에서 입상까지 한 것도 참 감사한 결과다. 바쁜 업무 와중에도 열심히 행사를 준비해주신 해커톤 준비위 분들께 감사의 마음을 올린다.</p>
+</section>
+<section id="실험-분석-대시보드" class="level3">
+<h3 class="anchored" data-anchor-id="실험-분석-대시보드">실험 분석 대시보드</h3>
+<p>신뢰할 수 있는 A/B Test를 제공하고 고품질의 실험 기반 의사결정을 지원하고자… Streamlit으로 실험 분석 대시보드를 개발하고 있다. 올해 가장 많은 리소스를 투입해온 업무인데, 돌아보니 많은 성숙을 이루었다. 실험 적절성 검사(A/A Test, 각종 가드레일 지표), 정확한 분산 추정에 기반한 통계적 가설검정, 진단/디버그 지표 등.. 아직 갈길은 멀지만 올해 내내 실험 문화를 비롯해 분석 측면에서도 괄목할만한 성장을 이루어냈다. 대시보드를 개발하며 느낀 소회랄까.. 자세한 이야기는 연말 회고에 풀어보겠다.</p>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="데이터야놀자-2023" class="level3">
+<h3 class="anchored" data-anchor-id="데이터야놀자-2023">데이터야놀자 2023</h3>
+<p>10월에 열린 데이터야놀자 2023에 “당신의 A/B Test를 신뢰할 수 없는 이유”를 주제로 발표를 하고왔다. 발표자로 선정될 수 있을지.. 긴가민가하며 배짱있게 PPT 프로토타입 없이 초안과 개략적인 내용만 전달드렸는데 흔치 않은 주제라 그런지 운이 좋게도 발표자에 선정될 수 있다.😂 이런 유료 행사에서 발표를 해본 경험은 없었는데, 좋은 경험을 하나 쌓은 것 같다. 생각보다 많은 분들이 내 세션을 들으러 와주셔서 놀라기도 했고, A/B Test에 관심이 있는 사람들이 생각보다 많음을 실감할 수 있었다. 내 발표를 한 마디로 요약하면 다음과 같다:</p>
+<blockquote class="blockquote">
+<p>신뢰할 수 있는 실험 결과를 얻고 싶다면 A/A Test 빡세게 하고, 지표의 정확한 분산 추정에 많은 주의를 기울여라.</p>
+</blockquote>
+<p>사실 이것말고도 할 얘기가 정~말 많지만.. 놓치기 쉬운 가장 기본적인 2가지라 생각되어 위 내용을 중심으로 발표를 구성했다. 자세한 발표 후기는 <a href="https://www.linkedin.com/posts/taemo_%EB%8B%B9%EC%8B%A0%EC%9D%98-ab-test%EB%A5%BC-%EC%8B%A0%EB%A2%B0%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%95%BC%EB%86%80%EC%9E%90-2023-activity-7119647862929428480-0Vz9?utm_source=share&amp;utm_medium=member_desktop">링크드인</a>에 작성해두었고, 자세한 발표 내용은 데이터야놀자 2023 <a href="https://www.youtube.com/watch?v=J4zjwJNYyPM&amp;feature=youtu.be&amp;ab_channel=%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%95%BC%EB%86%80%EC%9E%90">유튜브</a>에서 만나볼 수 있다. 아, 그리고 발표 후 3주 쯤 지난 무렵.. 사용자 단위 지표가 아닌 경우의 분산 추정 관련하여 잘못된 내용을 전달드렸던 부분을 깨달아서 황급히 링크드인에 공<a href="https://www.linkedin.com/posts/taemo_%EB%8B%B9%EC%8B%A0%EC%9D%98-ab-test%EB%A5%BC-%EC%8B%A0%EB%A2%B0%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%95%BC%EB%86%80%EC%9E%90-2023-activity-7127650790692835328-kKVg?utm_source=share&amp;utm_medium=member_desktop">지</a>를 드렸었는데 참 아찔했다.😨 유튜브 영상에도 댓글로 남겨두었고.. SNS를 안하시는 분들이 내용을 잘못 알고 계실듯 하여 참 걱정스럽다.</p>
+</section>
+<section id="노션에서-옵시디언으로" class="level3">
+<h3 class="anchored" data-anchor-id="노션에서-옵시디언으로">노션에서 옵시디언으로</h3>
+<p>할 일 관리, 디지털 노트 등 생산성 도구로서 노션을 쭉 이용해오고 있었는데, <a href="https://obsidian.md/">Obsidian</a>으로 갈아탔다. 협업이 필요한 상황엔 노션이 어쩔 수 없는 선택지이나.. 무료 서비스인 개인 생산성 도구로는 옵시디언이 최고이지 않나 싶다. 옵시디언으로 옮겨간 몇 가지 개인적 이유를 적어보면 다음과 같다</p>
+<ul>
+<li><p>로컬 기반이라 속도가 노션과는 비할바가 안될정도로 빠름</p>
+<ul>
+<li>이게 관리하는 노트가 많아지고.. 또는 노션 서버가 불안정하고 이런 거를 겪다보면 사용성에 정말 지대한 영향을 미침</li>
+</ul></li>
+<li><p>노션 사용시 자꾸 쓸데없이 꾸미게 됨.. 난 이 부분을 시간낭비라 생각함</p></li>
+<li><p>옵시디언에서 제공하는 그래프뷰가 매우 매력적</p></li>
+<li><p>서지관리툴 Zotero와 옵시디언의 연동성</p></li>
+</ul>
+<p>사실 생산성 도구에 한창 목마름이 생기기 시작했던 2021년 즈음 노션을 제껴두고 옵시디언에 입문을 했었는데, 당시엔 괜찮은 옵시디언 튜토리얼 자료가 많지 않아서 활용성이 떨어진다고 생각이 되어 다시 노션으로 갈아탔던 기억이 있다. 그렇게 약 2년간 노션을 이용해오다가 올해 중순쯤 부터 살살 옵시디언으로 옮겨가고 싶다는 입질이 왔다. 아래 재생목록을 불현듯 유튜브 알고리즘에 의해 마주하고 당장 옵시디언으로 넘어가야겠다는 생각을 했다.</p>
+<ul>
+<li><a href="https://youtube.com/playlist?list=PLXwZM4oxLDeM9L8_hmo7n_nnYkXAol3Jk&amp;si=U7OVz7C7KvZsHlFZ" class="uri">https://youtube.com/playlist?list=PLXwZM4oxLDeM9L8_hmo7n_nnYkXAol3Jk&amp;si=U7OVz7C7KvZsHlFZ</a></li>
+</ul>
+<p>옵시디언 입문자에게 최고의 영상들이라 생각한다. 다음의 니즈가 있는 사람이라면 옵시디언을 꼭 사용해보길 권한다. 사실, 위 재생목록의 영상을 한두개 정도 보다보면.. 아래와 같은 사람이라면 옵시디언을 사용해볼 수 밖에 없을 것이다.😂</p>
+<ul>
+<li><p>논문을 자주 들춰봐야해서 문헌 관리를 체계적으로 하고싶음</p></li>
+<li><p>생산성 도구를 통해 내 지식, 계획 등을 체계적으로 관리하여 쌓아나가고 싶음</p></li>
+</ul>
+<p>아, 그리고 본인이 대학원생이다? 묻지도 따지지도 말고 우선 위 재생목록의 영상들 부터 보길 바란다. 옵시디언을 안쓸수가 없을 것이다. 연구자도 그럴 것이지만.. 이미 사용하시는 툴이 있을 가능성이 높으니.😀</p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-kohavi2020" class="csl-entry">
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2023,
+  author = {, 방태모},
+  title = {2023년 4분기 회고록},
+  date = {2023-12-30},
+  url = {https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2023" class="csl-entry quarto-appendix-citeas">
+방태모. 2023. <span>“2023년 4분기 회고록.”</span> December 30, 2023. <a href="https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/">https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/index.html</guid>
+  <pubDate>Fri, 29 Dec 2023 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>월간 회고록: 8월</title>
   <dc:creator>방태모 </dc:creator>
@@ -2649,92 +2751,6 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-12-monthly-memory-202206/index.html</guid>
   <pubDate>Tue, 11 Oct 2022 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>월간 회고록: 2022년 5월</title>
-  <dc:creator>방태모 </dc:creator>
-  <link>https://taemobang.com/posts/2022-10-08-monthly-memory-202205/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unsplash.com/photos/t0SlmanfFcg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink"><img src="https://taemobang.com/posts/2022-10-08-monthly-memory-202205/preview.jpg" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">Photo by Fredy Jacob on Unsplash</figcaption><p></p>
-</figure>
-</div>
-<p>이직 준비하랴, 논문 작업하랴 미루고 미뤘던 월간 회고록들을 이제야 다시 적습니다. 5월 회고록을 작성하고 있는 이 시점은 어느덧 10월이군요. 부끄럽네요. 다행히 글감은 다 정해놨습니다. 하하. 지난 5월은 당시 재직 중인 연구센터에서 맡고 있는 학술연구과제 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;에서 다변량 메타분석을 수행하는데에 가장 많은 시간을 할애했습니다. 1년반을 재직했던 직장에서 가장 많은 시간을 할애한 연구과제이기도 합니다. 분석해야할 질환들의 양이 정말 방대했거든요.🤯 대학원을 졸업하고 실무에 나와 처음으로 맡은 프로젝트인데, 데이터 수집, 데이터 마트 구축 부터 분석, 보고서 작성까지.. 정말 많은 양의 일을 혼자 처리했어야 했죠. 중간중간에 여러 난관에 봉착했고, 이 난관들을 하나하나 해결하면서 쾌감을 느끼기도 했습니다. 이번 월간 회고에서는 제가 겪은 크고 작은 난관들에 대해 이야기해보려고 합니다.</p>
-<section id="sas를-다시-손에-잡다" class="level2">
-<h2 class="anchored" data-anchor-id="sas를-다시-손에-잡다">SAS를 다시 손에 잡다</h2>
-<p>본 연구과제는 건강보험공단 빅데이터 맞춤형 연구DB를 기반으로 진행되는데요. 자료의 특성 상 데이터 프라이버시때문에 건강보험공단에서 운영 중인 분석센터에 직접 가야지만 데이터를 열람하고 처리할 수 있습니다. 연구DB 신청 당시 분석 툴에 SAS + R을 선택할 수 있길래 당연히 데이터를 확인하고 처리하는 것도 R로 가능할 것이라 생각 했는데, 구축된 데이터는 SAS 서버 상에 놓여져있더군요. 보통 수십기가가 넘는 데이터를 처리해야하기 때문에, 분석센터의 데스크탑 로컬에 구축된 R로 원 자료를 핸들링하는 것은 어려웠습니다. 그래서, SAS로 원 자료를 랭글링<sup>1</sup>해야만 하는 상황이였습니다.</p>
-<p>좀 당황스러웠습니다. 하하.. SAS는 학부생 때 2년정도 배우고 손을 뗀 상태였기 때문이죠. 제가 원하는 데이터 마트를 원활하게 구축하기 위해서는 SAS에서 SQL과 Macro<sup>2</sup>의 적절한 활용이 필요했습니다. 다행히, 학부생때 공부했던 기억이 남아있었죠. 그러나, 약 3년의 시간이 흘렀기에 복습이 필요했고 위키독스의 <a href="https://wikidocs.net/book/2678"><strong>SAS로 하는 기초 데이터 전처리, 핸들링(Data handling)</strong></a> 를 활용해 기본기를 다시 다진 후에 본격적인 랭글링 작업에 들어갔습니다. 분석센터로 출장을 가기 전 데이터 구조를 떠올리며 미리 코드를 작성하고, 현장에서 발생하는 오류가 있다면 디버깅만을 해주는 식으로 효율적으로 작업을 진행해 나갔습니다.</p>
-<p>이러한 작업을 반복하다보니 SAS SQL, Macro가 손에 익었고 제가 필요로 하는 데이터 마트를 수월하게 구축하고 추출해낼 수 있었습니다.</p>
-</section>
-<section id="풀고자-했던-문제" class="level2">
-<h2 class="anchored" data-anchor-id="풀고자-했던-문제">풀고자 했던 문제</h2>
-<p>본 과제 이름은 &lt;빅데이터를 이용한 미세먼지 건강영향평가&gt;이긴 하나, 6종의 대기오염원(<img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BPM%7D%7D_%7B10%7D">, <img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BPM%7D%7D_%7B2.5%7D">, <img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BNO%7D%7D_%7B2%7D">, <img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BSO%7D%7D_%7B2%7D">, <img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BO%7D%7D_%7B3%7D">, <img src="https://latex.codecogs.com/png.latex?%7B%5Crm%7BCO%7D%7D">)에 관해 모두 평가를 실시했어야 했습니다. 말이 거창해서 건강영향평가이지만, 기본적인 로직은 간단합니다. 질병의 일 발생/입원 건수를 <img src="https://latex.codecogs.com/png.latex?Y">로 잡고, 일 대기오염원 농도를 <img src="https://latex.codecogs.com/png.latex?X">로 잡아서 시계열 회귀 모델링을 하는 것이죠. 이를 통해 대기오염원들이 특정 질병의 발생/입원에 미치는 건강영향을 평가하는 것입니다. 여기서, 대기오염원이 미치는 효과는 비선형(non-linear)의 형태를 띤다는 점과 지연 효과(lag effect)<sup>3</sup>를 갖는다는 점까지 모형에서 고려해주어야 했죠. Distributed lag non-linear model<span class="citation" data-cites="gasparrini2010">(Antonio Gasparrini, Armstrong, and Kenward 2010)</span> (이하, DLNM)은 이 둘을 동시에(simultaneously) 모델링 하게끔 해줍니다. 크게 봤을 때는 시계열 회귀모형의 일종이죠. 환경적 요인들로 Outcome을 모델링하는 생태학적 연구분야에서는 DLNM이 최신 시계열 회귀모형이라고 보시면 될 것 같습니다. 본 분야의 모델링 쪽 연구는 <a href="http://www.ag-myresearch.com">Gasparrini</a> 교수가 주도하고 있구요.</p>
-<p>대학원에서 가장 많이 시간을 할애했던 연구 분야는 시계열 자료분석이었고, 이때 시계열을 회귀적으로 모델링하는 접근과 Distributed lag model에 대해 공부했던 경험이 있어 DLNM으로의 확장은 크게 어렵지 않았습니다.</p>
-</section>
-<section id="모형-최적화" class="level2">
-<h2 class="anchored" data-anchor-id="모형-최적화">모형 최적화</h2>
-<p>DLNM은 <img src="https://latex.codecogs.com/png.latex?X"> 의 비선형 효과와 지연 효과까지 모델링하기 때문에, 튜닝해야하는 초모수(Hyperparameter)가 참 많은데요. 문제는 앞서 말씀드렸다시피 봐야할 질환들이 굉장히 많았다는 것이죠. 신경과 질환 6개, 정신과 질환 3개, 호흡기 질환 8개, 안과 질환 21개 총 38개 질환을 봐야했습니다. 여기서 문제는 2가지가 더 있었어요.</p>
-<ul>
-<li><p>6종의 대기오염원 각각에 대해 모델링</p>
-<ul>
-<li>여러개 대기오염원을 고려하는 경우, 다중공선성 이슈로 인해 회귀계수 추정량의 표준오차가 굉장히 커지는 문제가 있었습니다. 이 문제를 겪고 다시 조사했던 선행연구들을 들여다보니 모두 대기오염원 1개씩만 모형에 포함시켜 모델링했더군요.</li>
-</ul></li>
-<li><p>우리나라 6개 대도시 지역 각각에 대해 모델링</p>
-<ul>
-<li>지역마다 질환 발생 패턴은 비슷하나, 대기오염원의 농도가 지리적 환경에 따라 다르기 때문에 좀 더 정교한 모델링을 위해서는 각 지역마다 모델링이 필요했습니다.</li>
-</ul></li>
-</ul>
-<p>그럼 제가 최적화해야 했던 모델은 총 몇개였을까요? <img src="https://latex.codecogs.com/png.latex?38%5Ctimes6%5Ctimes6=1,368">개의 모형을 최적화해야 했습니다. 정녕 이것이 혼자 할 수 있는 양이였을까요?.. 참고로, 튜닝해야할 초모수가 하나가 아니라 3가지정도 됐었습니다. 이 사실을 깨닫고 한동안 꽤나 막막했습니다. 선행 연구 사례들을 살펴봐도, 논문 하나에 실리는 대부분의 연구는 일반적으로 특정 하나의 지역 및 질환에 국한하여 수행된 대기오염원 건강영향평가였죠.</p>
-<p>아시다시피, <img src="https://latex.codecogs.com/png.latex?Y">와 <img src="https://latex.codecogs.com/png.latex?X">간의 relationship에 관한 모델링이 주 목적인 회귀 모델링에서는 그 과정에서 분석자의 세심한 검토(e.g.&nbsp;잔차분석)가 필요합니다. 그러나, 1,368개의 모형을 최적화해야하는 제게, 모형 하나하나를 세심하게 살펴서 모델링하기란 불가능했습니다. 그래서, 모형에 들어갈 공변량<sup>4</sup>에 대한 variable selection과 모형 최적화를 위해 몇 가지 초모수들을 튜닝하는, 추후에 논문을 평가할 리뷰어들이 납득이 가능한 하나의 획일화된 알고리즘을 만들 필요성을 느꼈습니다. 그 속에는 계산양이 적지않기 때문에 병렬처리 또한 구현을 해야 했고요. 선행연구들을 살펴봤으나 대개 이쪽 연구는 환경역학 쪽 학술지에 게재되서인지, 모델링 과정에 있어서 어떤 식으로 초모수 튜닝을 수행했고, 변수 선택은 어떻게 했고에 대한 것들이 매우 러프하게 기술되어 있었습니다. 그래서, 제가 알고리즘을 직접 짜봐야했죠.</p>
-<p>선형회귀분석에서 변수 선택을 할 때 쓰는 일반적인 알고리즘 중 하나인 best subset selection과 초모수 탐색 기법 중 가장 기본이라 할 수 있는 grid search를 결합하여 알고리즘을 만들어냈습니다. 이 알고리즘을 R로 구현하고 병렬처리까지 도입하여 1,368개의 모형에 대한 최적화를 해낼 수 있었습니다.</p>
-</section>
-<section id="지역별-분석-결과를-하나의-분석-결과로" class="level2">
-<h2 class="anchored" data-anchor-id="지역별-분석-결과를-하나의-분석-결과로">지역별 분석 결과를 하나의 분석 결과로</h2>
-<p>분석을 완료하고 분석 결과를 요약해서 각 과 교수님들께 송부했으나, 문제가 하나 있었습니다. 6개 대도시 별 결과가 조금 상이한 질환들이 있었는데, 이것들을 어떤 합리적인 근거로 설명을 하느냐 였죠. 그래서, 나왔던 한 가지 해결책이 6개 지역별 분석 결과를 하나의 분석 결과로 요약하는 것이었습니다. 이를 위해서는, Gasparrini 교수가 제안한 다변량 메타분석(mutivariate meta-analysis, <span class="citation" data-cites="gasparrini2012">(A. Gasparrini, Armstrong, and Kenward 2012)</span>) 방법론을 이용해야했습니다. 몇 가지 상황에 사용할 수 있는 여러 다변량 메타분석 방법론을 제시하고 있으니, 관심있으신 분들은 한번 쯤 들여다보셔도 좋을 것 같습니다. 최적화 해둔 모형들에 대해 다변량 메타분석을 수행하며, Reference로 참고할만한 R 코드들이 없어서 Github를 뒤지는데에 꽤 시간을 썼습니다. 그렇게 찾아낸 괜찮은 Reference를 바탕으로 다변량 메타분석을 R 상에서 수행하는 로직을 이해하고, 확장하여 적용할 수 있었습니다. 다변량 메타분석으로 지역별 분석 결과를 요약하는 것을 끝으로, 더이상의 추가적인 모델링은 없었습니다. 분석 결과를 요약하는 시각화를 꾸준하게 개선해나갔고, 동시에 본격적인 논문화 작업을 시작했습니다.</p>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>이번 5월 회고록에서는 제 첫 직장이였던 곳에서 연구과제를 수행하며 겪었던 난관들에 대해서 이야기해봤는데요. 회고를 하며 그때 겪었던 감정들이 다시 새록새록 떠올랐습니다. 막막해보이는 것들도 충분한 시간을 할애하고 노력하면 결국 해결할 수 있는 것이라는 큰 교훈도 다시 한 번 얻을 수 있었고요. 회고라고 했지만, 어찌보면 나 이만큼 힘들었다고 푸념을 적어 놓은 것 같기도하네요.😂 실무에 계신 분들이든, 학업에 계신 분들이든 다 각자가 겪고 있는 난관이 있을텐데요. 쉽게 포기하는 마음보다는, “이 문제를 어떻게 해결할 수 있을까?”에 충분한 시간을 할애해보시기를 권해봅니다. 오늘도 이러한 난관을 헤쳐나가기 위해 고민하고, 노력하고 계신 분들께 응원의 말씀을 올리며 글을 마칩니다.</p>
-
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-gasparrini2012" class="csl-entry">
-Gasparrini, A., B. Armstrong, and M. G. Kenward. 2012. <span>“Multivariate Meta-Analysis for Non-Linear and Other Multi-Parameter Associations.”</span> <em>Statistics in Medicine</em> 31 (29): 3821–39. <a href="https://doi.org/10.1002/sim.5471">https://doi.org/10.1002/sim.5471</a>.
-</div>
-<div id="ref-gasparrini2010" class="csl-entry">
-Gasparrini, Antonio, Benedict Armstrong, and M. G. Kenward. 2010. <span>“Distributed Lag Non-Linear Models.”</span> <em>Statistics in Medicine</em> 29 (September): 2224–34. <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a>.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p><strong>데이터 랭글링</strong>(Data Wrangling) 혹은 데이터 먼징(Data Munging)이라고 불리는 이것은 원자료(raw data)를 보다 쉽게 접근하고 분석할 수 있도록 데이터를 정리하고 통합하는 과정. <a href="https://ko.wikipedia.org/wiki/데이터_랭글링">🔗Source</a>↩︎</p></li>
-<li id="fn2"><p>일반적인 프로그래밍 언어의 함수(function)와 같은 기능을 한다고 보시면 됩니다↩︎</p></li>
-<li id="fn3"><p>예를 들자면, 5일 전에 마신 고농도의 초미세먼지가 질병 발생에 영향을 미치는 것↩︎</p></li>
-<li id="fn4"><p>covariates. 몇 가지 기상요인들을 공변량으로 고려.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {월간 회고록: 2022년 5월},
-  date = {2022-10-08},
-  url = {https://taemobang.com/posts/2022-10-08-monthly-memory-202205/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“월간 회고록: 2022년 5월.”</span> October 8, 2022.
-<a href="https://taemobang.com/posts/2022-10-08-monthly-memory-202205/">https://taemobang.com/posts/2022-10-08-monthly-memory-202205/</a>.
-</div></div></section></div> ]]></description>
-  <category>Memory</category>
-  <guid>https://taemobang.com/posts/2022-10-08-monthly-memory-202205/index.html</guid>
-  <pubDate>Fri, 07 Oct 2022 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

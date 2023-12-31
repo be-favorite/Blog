@@ -62,15 +62,15 @@
   </url>
   <url>
     <loc>https://taemobang.com/index.html</loc>
-    <lastmod>2023-12-30T12:59:27.749Z</lastmod>
+    <lastmod>2023-12-31T07:07:56.309Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/blog.html</loc>
-    <lastmod>2023-12-30T12:59:30.227Z</lastmod>
+    <lastmod>2023-12-31T07:07:58.869Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/archive.html</loc>
-    <lastmod>2023-12-30T12:59:31.375Z</lastmod>
+    <lastmod>2023-12-31T07:07:59.968Z</lastmod>
   </url>
   <url>
     <loc>https://taemobang.com/posts/2022-08-07-coloring-guide-for-ggplot2/coloring-guide-for-ggplot2.html</loc>
@@ -211,5 +211,9 @@
   <url>
     <loc>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</loc>
     <lastmod>2023-09-20T15:11:20.679Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/index.html</loc>
+    <lastmod>2023-12-31T07:07:56.020Z</lastmod>
   </url>
 </urlset>

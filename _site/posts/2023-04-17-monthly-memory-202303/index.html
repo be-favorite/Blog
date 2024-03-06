@@ -2,11 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="방태모">
 <meta name="dcterms.date" content="2023-04-17">
 <meta name="description" content="사내 뉴스룸 인터뷰, PAP 퍼블리셔 3기">
 
@@ -20,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -55,15 +54,16 @@ ul.task-list li input[type="checkbox"] {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "일치 없음",
-    "search-matching-documents-text": "일치된 문서",
-    "search-copy-link-title": "검색 링크 복사",
-    "search-hide-matches-text": "추가 검색 결과 숨기기",
-    "search-more-match-text": "추가 검색결과",
-    "search-more-matches-text": "추가 검색결과",
-    "search-clear-button-title": "제거",
-    "search-detached-cancel-button-title": "취소",
-    "search-submit-button-title": "검색"
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
@@ -107,47 +107,47 @@ cookieconsent.run({
     <span class="navbar-title">방태모의 블로그</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">홈</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">블로그</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../archive.html">
+    <a class="nav-link" href="../../archive.html" rel="" target="">
  <span class="menu-text">아카이브</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">리소스</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="../../research.html">
+    <a class="dropdown-item" href="../../research.html" rel="" target="">
  <span class="dropdown-text">연구 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../presentation.html">
+    <a class="dropdown-item" href="../../presentation.html" rel="" target="">
  <span class="dropdown-text">발표 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/" rel="" target="">
  <span class="dropdown-text">과거 기술블로그</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -155,7 +155,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
@@ -171,8 +171,9 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">이슈 보고</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -197,14 +198,14 @@ cookieconsent.run({
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>방태모 </p>
+             <p>Taemo Bang </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">공개</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
       <p class="date">April 17, 2023</p>
     </div>
@@ -219,7 +220,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://notioly.com"><img src="preview.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
+<figcaption class="figure-caption">The illustration by Mary Amato</figcaption>
 </figure>
 </div>
 <p>지난 월간 회고록들은 경어체로 작성했는데, 이제부터는 평어체로 무심한듯?.. 편하게 작성해보려고 한다. 사실 다른 기술적인 주제의 글들도 이제는 그냥 평어체로 작성해볼까 한다. 회사 기술 블로그나 플랫폼에 기고하는 글도 아니고, 그냥 개인적으로 운영하는 블로그에 글을 쓰는데 굳이 경어체까지 쓸 필요가 있을까 싶다. 부담없이 빠르게 글을 쓰기에는 평어체 + (구어체, 문어체 혼용) 조합이 최고이기 때문에. 말하는 걸 보니 이미 어느정도 결론을 지어놓은 듯 하다.😂 그럼 이제 본론으로 들어가서 지난 3월을 돌아보자.</p>
@@ -290,20 +291,20 @@ cookieconsent.run({
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">각주</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>난 글쓰기를 따로 배운적이 없고 재주도 없는 사람이긴 하지만, 처음 글을 써보는 사람들은 이보다 훨씬 더 많은 시간이 걸릴 수 있다. 참고로 난 대학원때부터 블로그에 글을 쓰기 시작했다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
-  author = {방태모},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2023,
+  author = {Bang, Taemo},
   title = {월간 회고록: 3월},
   date = {2023-04-17},
   url = {https://taemobang.com/posts/2023-04-17-monthly-memory-202303/},
   langid = {kr}
 }
-</code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-방태모. 2023. <span>“월간 회고록: 3월.”</span> April 17, 2023. <a href="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/">https://taemobang.com/posts/2023-04-17-monthly-memory-202303/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Bang, Taemo. 2023. <span>“월간 회고록: 3월.”</span> April 17, 2023. <a href="https://taemobang.com/posts/2023-04-17-monthly-memory-202303/">https://taemobang.com/posts/2023-04-17-monthly-memory-202303/</a>.
 </div></div></section></div></main> <!-- /main -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
@@ -461,9 +462,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -474,12 +489,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "복사완료!");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "복사완료!");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -528,6 +543,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -572,7 +673,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

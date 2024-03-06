@@ -4,8 +4,11 @@
 freeze: true
 
 # Author name of all blog posts
-author: '방태모'
-
+author:
+    - name:
+        given: Taemo
+        family: Bang
+        
 # Enable CC licence appendix
 license: 'CC BY'
 

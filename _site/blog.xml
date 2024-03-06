@@ -10,10 +10,146 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 30 Dec 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 03 Mar 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>월간 회고록: 1-2월</title>
+  <dc:creator>Taemo Bang</dc:creator>
+  <link>https://taemobang.com/posts/2024-03-04-monthly-memory-202401-02/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/preview_monthly.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">The illustration by Mary Amato</figcaption>
+</figure>
+</div>
+<section id="일" class="level2">
+<h2 class="anchored" data-anchor-id="일">일</h2>
+<section id="실험-플랫폼-설계-소회" class="level3">
+<h3 class="anchored" data-anchor-id="실험-플랫폼-설계-소회">실험 플랫폼 설계 소회</h3>
+<p>지난해 연말 사내에서 실험 플랫폼 개발 작업이 본격적으로 착수되었고, 1월부터 본격적인 논의가 시작되었다. 지난 한해 동안 우리 팀에서 서비스하고 있는 개인화 랭킹 시스템에 관한 온라인 통제 실험을 꾸준히 수행해오며, 유의미한 성과 개선을 보인 것에 대한 큰 결실이었다. 실험 플랫폼 설계에 관한 PRD<sup>1</sup> 작성이 시작되며 1월, 2월을 굉장히 바쁘게 보냈다. 신뢰할 수 있는<sup>2</sup> 온라인 통제 실험을 수행할 수 있도록, 그리고 올바른 실험 문화가 형성될 수 있도록 실험 플랫폼을 설계하는 것이 굉장히 중요했기 때문이다.</p>
+<p>3월초에 PRD 작성을 끝내고, 이를 바탕으로 몇 달간의 긴 개발의 길로 들어서야 하기에 지난 두 달은 신뢰성(Trustworthiness) 관점에서 조금이라도 더 완벽한 실험 플랫폼을 설계하기 위해 스스로 쫓기는 마음이 생기기도 했다. 해외 테크 기업의 수많은 논문 및 아티클과 여러 해외 실험 플랫폼들의 Docs를 연구하고 종합하여 의견을 전달드렸는데, 대학원생때만큼 논문과 아티클을 들여다본 지난 두달이었던 것 같다.</p>
+<p>실험 플랫폼 설계에 직접 참여해보니 느끼는게 참 많았다. 생각보다 내가 놓치고 있었던 부분도 많다는 것을 느꼈고, 우리 회사의 인프라, 문화 등을 고려해봤을때 현 시점에서는 어느정도까지 이런저런 기능들을 구현하면 될지와 같은 현실적 고민도 하게되었다. 또한, 신뢰할 수 있는 온라인 통제 실험을 수행하기 위해서는 “이런 기능도 필요합니다.” 라는 것을 타 팀에서 납득할 수 있게 어떻게 쉽게 전달할 수 있을까를 고민하는 과정에서 정말 많은 공부가 됐다. 힘든 두달이었지만 참 뜻깊은 경험이라고 생각한다. 추후에 설계 단계에 참여하며 실험의 신뢰성 관점에서 고민했던 부분들을 글로 풀어보도록 하겠다.😁</p>
+</section>
+<section id="온라인-통제-실험-기초-및-분석-가이드-2시간-연강-후기" class="level3">
+<h3 class="anchored" data-anchor-id="온라인-통제-실험-기초-및-분석-가이드-2시간-연강-후기">&lt;온라인 통제 실험 기초 및 분석 가이드&gt; 2시간 연강 후기</h3>
+<p>지난 수요일에 사내에서 매달 마지막 날 진행하는 테크캠퍼스에서 &lt;신뢰할 수 있는 온라인 통제 실험의 기초 및 분석 가이드&gt;를 주제로 2시간 짜리 강의를 진행했다. 강의를 1시간씩 나누어 진행해본 경험은 몇 번 있지만 2시간 연강은 처음이었는데, 강의가 끝나고 학부생, 대학원생 시절 하루에 수 시간씩 강의를 해주시던 교수님들이 참 존경스럽게 느껴졌다.😇<br>
+<br>
+강의 목적은 “언젠가 실험 오너가 되어 실험 분석을 수행할 수도 있는 여러분을 위한 온라인 통제 실험 가이드” 였다. 사실 강의 목적에서는 드러나지 않는 내가 생각하는 본 강의의 진짜 의미는, 실험 오너가 실험 플랫폼에서 제공하는 각 단계의 요구사항에 맞춰 실험을 생성하고 분석하는 과정에 있어서 “아니 실험 하나 하는데 이런 부분까지 신경써야해?” 하는 생각이 들지 않도록 만드는 것이었다.<br>
+<br>
+이 부분에 대한 이해를 구하기 위해서는 “신뢰할 수 있는 온라인 통제 실험”을 위해 최소 사양(?)으로 필요로 되는 통계 분석을 소개하고, 이러한 통계 분석들이 실험에 사용되는 모티베이션과 그들이 갖는 의미에 대해서 알기 쉽게 설명해 줄 필요가 있다고 생각했다. 물론, 이 부분에 관한 설명 이전에는 온라인 통제 실험의 등장 배경에 대해서도 이야기해 줄 필요도 있었다. 통계적 백그라운드가 전무한 상대라는 것을 가정한채로 이러한 부분들을 알아듣기 쉽게 설명하고자 했기에 강의 자료 준비에 정말 많은 힘을 기울였다.<br>
+<br>
+발표 전 주의 평일에 목차를 정리하고 주말부터 틈틈히 준비를 했는데, 강의 2시간 전이 되어서야 114 페이지에 달하는 강의 슬라이드 준비를 끝낼 수 있었다.🫠 그렇게 연습 한 번 없이 강의를 하게 됐는데, 강의 준비를 처음해보는게 아니라 그런지 다행히 주어진 2시간 내에 하고 싶은 말을 다 전달하고 Q&amp;A까지 다 완료할 수 있었다.😀 대학원생 시절 교수님께서 한 슬라이드 당 1분을 넘기지 말라는 말씀을 했던 기억이 나는데, 114 페이지.. 딱 114분 정도가 걸린 것 같다. 나머지 6분은 Q&amp;A! 습관과 짬밥이라는게 참 신기하다!<br>
+<br>
+사실, 강의 자료를 준비할 때에 많은 고통을 겪으며 작년 12월 즈음 선호님께 강의 제안을 받고, 재밌겠다~ 하는 생각으로 주저없이 오케이를 했던 내가 잠깐 원망스러울때도 있었다.😂 하지만, 늘 그렇듯 힘든 준비를 끝내고 강의를 마치고 나니 정말 뿌듯한 마음이 들었다. 자료를 준비하며 나 또한 정말 많은 공부가 되었고, 결국 이러한 강의 끝에 가장 많이 배운건 또 내 자신이었다. 강의 내용을 여기서 다 공개할 순 없지만, 요즘IT 나 제 개인 블로그를 통해서 하나씩 풀어보도록 하겠다.</p>
+<ul>
+<li><p>요즘IT: <a href="https://yozm.wishket.com/magazine/@taemobang">https://yozm.wishket.com/magazine/@taemobang</a></p></li>
+<li><p>개인 블로그: <a href="https://www.taemobang.com/" class="uri">https://www.taemobang.com/</a></p></li>
+</ul>
+<p>우선 강의 목차와 맺음말정도만 공유드리고 글을 마친다. 통계학과 온라인 통제 실험에 어느정도 이해가 있는 분들이라면 강의 목차만 쭉 보셔도 제가 무슨 말을 하고 싶었는지 감이 충분히 오실거다.😊</p>
+<p><br>
+[온라인 통제 실험 (a.k.a A/B Tests) 소개]</p>
+<ul>
+<li>온라인 통제 실험이란?</li>
+<li>온라인 통제 실험의 등장 배경</li>
+</ul>
+<p>[A/B 실험 분석의 Lifecycle]</p>
+<ul>
+<li>Pre-Experiment stage</li>
+<li>During-Experiment stage</li>
+<li>Post-Experiment stage</li>
+</ul>
+<p>[A/B 실험 분석에서 알아두어야할 것들]<br>
+I. 가설 설정 및 성공 지표 설정</p>
+<p>II. 지표 이야기</p>
+<ul>
+<li>비즈니스 지표와 실험 지표</li>
+<li>실험 지표로 사용자 단위 지표를 권장하는 이유</li>
+<li>실험 지표를 누적 지표로 집계하는 이유</li>
+<li>실험 분석에서 Daily 지표의 역할</li>
+<li>마이크로소프트가 제안한 핵심 지표 Set</li>
+</ul>
+<p>III. 실험에서 통계 분석이 꼭 필요한 이유</p>
+<p>IV. 검정력과 검정력 분석</p>
+<p>V. 2 표본 t 검정</p>
+<p>VI. Pre-experiment bias 교정</p>
+<ul>
+<li>Pre-experiment bias란?</li>
+<li>2가지 극복 방법 (Seedfinder, CUPED)</li>
+</ul>
+<p>[통계 엔진, 실험 분석 대시보드 Tukey 소개]<br>
+<br>
+[꼭 공유하고 싶은 실험으로부터의 레슨런]<br>
+<br>
+[맺음말]</p>
+<ul>
+<li>신뢰할 수 있는 온라인 통제 실험을 설계하고 분석하는 일은 어렵다.</li>
+<li>실험 결과의 정확한 측정을 위해서는 정교한 통계 분석이 뒤따라야 한다.</li>
+<li>실험의 목적은 배움(Learn)이지, 확인(Confirm)이 아니다.</li>
+<li>실험을 반복하며 프로덕을 개선해나가는 과정은 고객이 원하는 것을 찾아주는/찾아나가는 과정이다.</li>
+</ul>
+</section>
+<section id="타팀과의-커뮤니케이션" class="level3">
+<h3 class="anchored" data-anchor-id="타팀과의-커뮤니케이션">타팀과의 커뮤니케이션</h3>
+<p>타 팀과의 커뮤니케이션은 팀 내 커뮤니케이션보다 더욱 간결하게 할 줄 알아야 한다.<br>
+<br>
+의도적으로 2가지를 생각하자.</p>
+<ul>
+<li><p>개념 자체를 상대방 백그라운드에 따라 알기 쉽게 단순화해서 설명할 것</p></li>
+<li><p>각 미팅의 아젠다를 고려하여 전달 내용 간소화할 것</p>
+<ul>
+<li>다음 시점에 설명해도 되는 내용이라면 과감히 생략</li>
+</ul></li>
+</ul>
+<p>위 2가지를 바탕으로 가장 중요한 것은 “상대방이 듣고싶은 것을 이야기하는 것”이다. 본인이 지향하고자 하는 사내 문화가 있다고 할 때, 이러한 문화를 확산시키기 위해서는 결국 커뮤니케이션이 가장 중요하다.</p>
+</section>
+</section>
+<section id="개인" class="level2">
+<h2 class="anchored" data-anchor-id="개인">개인</h2>
+<section id="온라인-통제실험-연구자로-거듭나기-프로젝트" class="level3">
+<h3 class="anchored" data-anchor-id="온라인-통제실험-연구자로-거듭나기-프로젝트">&lt;온라인 통제실험 연구자로 거듭나기&gt; 프로젝트</h3>
+<p><a href="https://www.linkedin.com/posts/taemo_qootfosmyqvosqs-suaqtgtyerxk-activity-7163530192735391744-5RLP?utm_source=share&amp;utm_medium=member_desktop">링크드인에서 공지</a>한 대로 가짜연구소 8기 아카데미 빌더로 &lt;온라인 통제실험 연구자로 거듭나기&gt; 프로젝트를 이끌게 되었다. 사내에서 온라인 통제 실험 스터디를 리드하고 있으나, 이렇게 공식적인(?) 외부 스터디를 이끌게 된 것은 처음이다. 빌더 신청을 드리고 난후, 크래프톤의 신진수 님께서 인과추론 팀에서 함께하면 어떻겠냐는 제안을 주셔서 흔쾌히 수락했다.😀</p>
+<p>꽤 오랫동안 가짜연구소에서 자리를 지켜온 팀이기도 하고, 처음으로 진행해보는 공식 외부 스터디인만큼 진수님으로부터 도움을 받을 수 있는 부분이 많을 것이라 생각이 된다. 그리고, 무엇보다 온라인 통제 실험은 RCT의 한 종류로서 인과추론 피라미드에서 단일 분석 기준 맨 위쪽<sup>3</sup>에 위치한 연구 디자인이기도 해서.. 인과추론 팀에서 본 연구 프로젝트를 진행하는 것이 전혀 어색하지 않았다.</p>
+<p><a href="https://causalinferencelab.github.io/">인과추론 팀 블로그</a>에서 본 프로젝트를 기획한 이유와 더불어 1년전으로 거슬러올라가 어떤 계기로 <strong>신뢰할 수 있는</strong> 온라인 통제 실험 연구에 이렇게 관심이 깊어지게 되었지에 대해서 썰(?)을 풀어보려고 한다. 글을 배포하게 되면 링크드인으로 별도 공지를 드리겠다.😀</p>
+</section>
+<section id="요즘it에서-써내려갈-글" class="level3">
+<h3 class="anchored" data-anchor-id="요즘it에서-써내려갈-글">요즘IT에서 써내려갈 글</h3>
+<p>지난 1월 초중순 즈음 <a href="https://yozm.wishket.com/magazine/@taemobang/">요즘IT 작가</a> 신청을 했고, 그 결과 요즘IT에서 글을 기고할 수 있게되었다. 요즘 IT는 IT 업계의 현업에 있는 사람들이 그들의 경험, 지식, 인사이트 등을 나누는 콘텐츠 플랫폼이다. 나는 여기서도 마찬가지로 “온라인 통제 실험”에 대해 주로 이야기할 예정이다. 앞서 말했듯 가짜연구소에서도 해당 주제로 연구 프로젝트를 진행하게 되었는데, 요즘IT에는 온라인 통제 실험과 관련한 주제를 최대한 쉽게 풀어써보려고 한다.</p>
+<p>A/B Test는 온라인 비즈니스를 하는 기업에게 매우 중요한 방법론이다. 온라인 비즈니스를 하는 기업에게만 주어질 수 있는 특권으로 볼 수도 있다. 그러나, 신뢰할 수 있는 온라인 통제 실험을 수행해내는 것은 생각보다 굉장히 어렵다. 실험 Lifecycle을 놓고봤을때 전 과정에서 신경을 써야할 부분은 굉장히 많다.</p>
+<p>여전히 해외 IT 업계에 비하면 “신뢰할 수 있는 온라인 통제 실험”에 관한 논의<sup>4</sup>는 부족하다고 생각한다. 요즘IT, 가짜연구소, 링크드인을 통해 “온라인 통제 실험”에 관해 꾸준히 이런저런 이야기를 하다보면, 온라인 서비스를 운영하는 우리나라 IT 업계에서도 온라인 통제 실험에 관한 여러가지 건설적인 논의가 오가는 날이 오지 않을까 생각한다.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Product Requirements Document. 제품을 만들거나 업데이트 하기 위해 기능을 기획하는 단계에서 요구사항을 개괄적으로 설명하는 문서↩︎</p></li>
+<li id="fn2"><p>Trustworthiness(신뢰성). 온라인 통제 실험 연구 및 A/B Test를 수행하는 것에 있어서 가장 최우선 적으로 고려해야 할 요소라 할 수 있다.↩︎</p></li>
+<li id="fn3"><p>인과추론 수준이 가장 높은↩︎</p></li>
+<li id="fn4"><p>통계적 방법론의 측면이든, 문화적 측면이든, 지표 관점의 측면이든, 엔지니어링, 인프라적 측면이든.. 모든 측면을 통틀어서↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2024,
+  author = {Bang, Taemo},
+  title = {월간 회고록: 1-2월},
+  date = {2024-03-04},
+  url = {https://taemobang.com/posts/2024-03-04-monthly-memory-202401-02/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2024" class="csl-entry quarto-appendix-citeas">
+Bang, Taemo. 2024. <span>“월간 회고록: 1-2월.”</span> March 4, 2024. <a href="https://taemobang.com/posts/2024-03-04-monthly-memory-202401-02/">https://taemobang.com/posts/2024-03-04-monthly-memory-202401-02/</a>.
+</div></div></section></div> ]]></description>
+  <category>Memory</category>
+  <guid>https://taemobang.com/posts/2024-03-04-monthly-memory-202401-02/index.html</guid>
+  <pubDate>Sun, 03 Mar 2024 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>연간 회고록: 2023년</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-12-31-yearly-memory-2023/index.html</link>
   <description><![CDATA[ 
 
@@ -161,7 +297,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>2023년 4분기 회고록</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-12-30-quarterly-memory-20234Q/index.html</link>
   <description><![CDATA[ 
 
@@ -263,7 +399,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>월간 회고록: 8월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-09-19-monthly-memory-202308/index.html</link>
   <description><![CDATA[ 
 
@@ -395,7 +531,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>월간 회고록: 6-7월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-08-12-monthly-memory-202306-07/index.html</link>
   <description><![CDATA[ 
 
@@ -489,7 +625,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>글또 8기 회고</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-07-15-geultto-memory/index.html</link>
   <description><![CDATA[ 
 
@@ -633,7 +769,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>월간 회고록: 5월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-06-30-monthly-memory-202305/index.html</link>
   <description><![CDATA[ 
 
@@ -774,7 +910,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>인과추론 입문하기</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-05-29-Introduction-to-causal-inference/index.html</link>
   <description><![CDATA[ 
 
@@ -783,16 +919,16 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://taemobang.com/posts/2023-05-29-Introduction-to-causal-inference/preview.png" class="img-fluid figure-img" width="700"></p>
-<p></p><figcaption class="figure-caption">출처: Korea Summer Workshop on Causal Inference 2022</figcaption><p></p>
+<figcaption class="figure-caption">출처: Korea Summer Workshop on Causal Inference 2022</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-노트
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -902,7 +1038,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-facure2021causal" class="csl-entry">
 Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub. <a href="https://github.com/matheusfacure/python-causality-handbook">https://github.com/matheusfacure/python-causality-handbook</a>.
 </div>
@@ -915,21 +1051,21 @@ Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub.
 <div id="ref-CausalInferenceSummerWorkshop2022Bootcamp2-1" class="csl-entry">
 ———. 2022c. <span>“Korea Summer Workshop on Causal Inference 2022 [Bootcamp 2-1] 잠재적결과 프레임워크,”</span> July. <a href="https://www.youtube.com/watch?v=M7e9_i0VNAI">https://www.youtube.com/watch?v=M7e9_i0VNAI</a>.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>어떤 확률적 사건이 갖는 평균의 의미로 확률변수(random variable)가 갖는 분포의 무게중심을 의미합니다. 여기서는 이해의 편의를 위해 우선 간단하게 “평균” 개념으로 생각합시다.↩︎</p></li>
 <li id="fn2"><p>여기서 Bias는 Selection Bias라고 이야기하기도 합니다.↩︎</p></li>
 <li id="fn3"><p>앞서 말했듯 Context에 따라 Bias가 Selection Bias로 표현되는 이유는 여기에 있습니다.↩︎</p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
-  author = {방태모},
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2023,
+  author = {, 방태모},
   title = {인과추론 입문하기},
   date = {2023-05-29},
   url = {https://taemobang.com/posts/2023-05-29-introduction-to-causal-inference/},
   langid = {kr}
 }
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2023" class="csl-entry quarto-appendix-citeas">
 방태모. 2023. <span>“인과추론 입문하기.”</span> May 29, 2023. <a href="https://taemobang.com/posts/2023-05-29-introduction-to-causal-inference/">https://taemobang.com/posts/2023-05-29-introduction-to-causal-inference/</a>.
 </div></div></section></div> ]]></description>
   <category>Causal Inference</category>
@@ -938,7 +1074,7 @@ Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub.
 </item>
 <item>
   <title>월간 회고록: 4월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-05-15-monthly-memory-202304/index.html</link>
   <description><![CDATA[ 
 
@@ -1036,7 +1172,7 @@ Facure, Matheus. 2021. <em>Causal Inference for the Brave and True</em>. GitHub.
 </item>
 <item>
   <title>통계학, 그게 왜 중요한데?</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-05-01-what-statistics-has-taught-me/index.html</link>
   <description><![CDATA[ 
 
@@ -1474,7 +1610,7 @@ Hyndman, Rob J, and George Athanasopoulos. 2021. <em>Forecasting: Principles and
 </item>
 <item>
   <title>월간 회고록: 3월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-04-17-monthly-memory-202303/index.html</link>
   <description><![CDATA[ 
 
@@ -1575,7 +1711,7 @@ Hyndman, Rob J, and George Athanasopoulos. 2021. <em>Forecasting: Principles and
 </item>
 <item>
   <title>시계열 자료분석을 활용한 고객 관심사의 선제적 반영</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-04-02-time-series-analysis-for-customer-interests/index.html</link>
   <description><![CDATA[ 
 
@@ -1761,7 +1897,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>Quasi Experimental Design</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/index.html</link>
   <description><![CDATA[ 
 
@@ -1865,7 +2001,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>월간 회고록: 2023년 2월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-03-12-monthly-memory-202302/index.html</link>
   <description><![CDATA[ 
 
@@ -2019,7 +2155,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>월간 회고록: 2023년 1월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-02-21-monthly-memory-202301/index.html</link>
   <description><![CDATA[ 
 
@@ -2114,7 +2250,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>면접을 앞두고 분석 경험을 회고하는 나만의 방식</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-02-07-da-my-view/index.html</link>
   <description><![CDATA[ 
 
@@ -2199,7 +2335,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>연간 회고록: 2022년</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-02-01-yearly-memory-2022/index.html</link>
   <description><![CDATA[ 
 
@@ -2394,7 +2530,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>2022년 이직 로그</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2023-01-01-move-to-another-company/index.html</link>
   <description><![CDATA[ 
 
@@ -2535,7 +2671,7 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
 </item>
 <item>
   <title>A/B 테스트 용어 사전</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2022-10-31-abtest-terms/index.html</link>
   <description><![CDATA[ 
 
@@ -2639,7 +2775,7 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </item>
 <item>
   <title>월간 회고록: 2022년 7월</title>
-  <dc:creator>방태모 </dc:creator>
+  <dc:creator>Taemo Bang</dc:creator>
   <link>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</link>
   <description><![CDATA[ 
 
@@ -2728,80 +2864,6 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
   <category>Memory</category>
   <guid>https://taemobang.com/posts/2022-10-20-monthly-memory-202207/index.html</guid>
   <pubDate>Wed, 19 Oct 2022 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>데이터 과학에 관해</title>
-  <dc:creator>방태모 </dc:creator>
-  <link>https://taemobang.com/posts/2022-10-12-about-data-science/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.youtube.com/watch?v=8N9ife7fHKk"><img src="https://taemobang.com/posts/2022-10-12-about-data-science/preview.png" class="img-fluid figure-img" width="800"></a></p>
-<p></p><figcaption class="figure-caption">그림1. 데이터 과학 (Source: 유튜브 채널 &lt;인과추론의 데이터과학&gt;)</figcaption><p></p>
-</figure>
-</div>
-<p>유튜브 채널 &lt;인과추론의 데이터과학&gt;의 2020년 6월 강의 영상을 지난 7월에 인과추론에 관심을 가지며 우연히 보게되었죠:</p>
-<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/8N9ife7fHKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p>강의 연사는 UNGC의 박지용 교수님입니다. 해당 영상의 38분부터 약 10분 간 위 그림 1을 가지고 데이터 사이언스에 대한 생각과 우리나라 데이터 사이언스 업계에 관한 생각을 풀어내십니다. 너무나도 흥미로웠고 재밌었어요. 제가 오랜 시간 생각하고 고민했던 지점들과 일치하는 부분이 상당히 많아서 였을까요? 그래서, 영상 내용이 참 반갑기도 했습니다. 그래서, 영상에서 인상 깊었던 대목과 그 대목이 인상 깊었던 개인적 이유에 대해 써보려고 해요. 사실, 영상을 보자마자 기록해두고 싶은 맘이 있어 지난 7월 <a href="https://careerly.co.kr/profiles/481629?from=newsfeed&amp;location=gnb">커리어리</a>에 글을 썼었습니다. 좀 더 정제해서 그때 감정을 떠올려 글을 정리해보려고 합니다.</p>
-<section id="데이터-과학-붐" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-과학-붐">데이터 과학 붐</h2>
-<blockquote class="blockquote">
-<p>데이터 과학은 최근 몇년간 큰 붐이 일었다. 근데 내가 개인적으로 느끼는 아쉬운 점은 우리나라에서의 데이터 과학에 관한 유행은 한쪽으로(예측 방법론) 치우쳐져있지 않나 하는 개인적 우려를 가지고 있다.</p>
-</blockquote>
-<p>저 또한 개인적으로 우리나라 데이터 사이언스 업계는 예측 모델링에 상당히 치우쳐 있다고 생각을 했었습니다. 2년 전의 영상인데도 같은 지점을 지적하고 계셨어요. 박지용 교수님이 2020년에 했던 개인적 우려는 2022년에도 여전한 듯 합니다. 올해 초 이직을 결심하며 우리나라 데이터 사이언스 업계의 수십개의 채용 공고를 들여다 보았는데요. “추론”이라는 키워드는 딱 한 번만 볼 수 있었습니다. 물론, 해당 포지션에서 풀고자 하는 문제에 추론은 정말로 필요없었을 수도 있습니다. 그러나, “Data Science를 구성하고 있는 대부분의 세부 분야들이 그렇듯이, 추론”과 “예측” 또한 두부 자르듯이 둘을 완전히 나눠서 볼 수 있는 것은 아닙니다. 그래서인지, 수십개의 채용공고 중에 “추론”이라는 키워드가 들어간 채용 공고는 제게 꽤나 특별하게 느껴졌습니다. 공교롭게도, 현재 저는 그 곳에서 일을 하고 있네요. 당시, 실제로 어떤 철학과 방식으로 인과추론 방법론을 활용해 예측 모델링에 들어갈 feature를 추출해내는지 매우 궁금한 상태로, 설레는 맘을 품고 서류를 지원하던 기억이 납니다.</p>
-</section>
-<section id="데이터-과학이란" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-과학이란">데이터 과학이란?</h2>
-<blockquote class="blockquote">
-<p>“데이터 과학은 하나의 특정 학문이라기 보다는 굉장히 포괄적이라고 생각을 한다. 특정 현상이나 대상에 대해 데이터를 수집하고 또는 만들어내고, 그 데이터를 가지고 분석을 수행하여 의사결정에 도움이 되는 인사이트를 추출하는 과학적 접근법들을 통칭하는 것이 데이터 과학이라고 생각한다. 그래서, 어떤 특정 학문 분야가 데이터 과학을 한다기 보다는, 데이터 과학의 어떤 철학을 가지고 많은 분야에서 연구를 하고있다고 생각함.”</p>
-</blockquote>
-<p>저는 “데이터 과학”이라는 것을 하고는 있지만, “데이터 과학”을 모르는 사람들에게 이 영역을 어떻게 정의할 수 있을까에 대한 고민을 가지고 있었습니다. 데이터 과학은 수학, 통계학 등 순수학문의 위에 실용학문이 얹어진 융합학문이라고 생각했었기에 더더욱 정의가 어려웠어요. 사실, 학문이라는 표현 또한 적절할 지는 모르겠습니다. 과연 “데이터 과학”을 학문이라 표현하는 것이 적절할까요? 개인적으로는 “도구”라는 단어가 더욱 적절하다고 생각합니다. 그래서, 박지용 교수님이 위와 같이 정의한 데이터 과학이 제가 생각했던 데이터 과학과 가장 가까웠던 것 같습니다.</p>
-<p>데이터 과학과 마찬가지로 “빅데이터”에 대한 정의도 여전히 상당히 모호하다고 생각합니다. 단순히 크기가 큰 데이터? 오죽하면 아래와 같은 유명한 말이 있죠.</p>
-<blockquote class="blockquote">
-<p>빅데이터는 십대의 섹스와 같다. 다들 그것에 대해 말하지만, 진짜로 어떻게 하는지는 아무도 모르고, 나만 빼고 모두가 하고 있을 거라 생각한다. 그래서 다들 자기도 하고 있다고 주장한다. - 댄 애리얼리 (Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, and everyone thinks everyone else is doing it, so everyone claims they are doing it. - Dan Ariely)</p>
-</blockquote>
-<p>그래서, 저는 개인적으로 빅데이터라는 단어를 특별하게 의미를 담아 정의하는 것을 그렇게 좋아하지 않습니다. 빅데이터를 정의하는 데에는 단순히 크기가 큰 데이터 정도로 정의하는 것으로 충분하다고 생각하지만, 그 크기에 대한 기준에는 또 주관이 개입하기 마련이니까요. 또 다른 이들은 “빅데이터”라는 단어에 그 이상의 의미를 부여하기도 합니다. 그래서, “빅데이터 공부하기”, “빅데이터 이해하기”라는 말이 존재하는 것이 아닐까요?</p>
-</section>
-<section id="통계-머신러닝-인과추론" class="level2">
-<h2 class="anchored" data-anchor-id="통계-머신러닝-인과추론">통계, 머신러닝, 인과추론</h2>
-<blockquote class="blockquote">
-<p>“직접적인 데이터 과학 툴로써는 예측을 위한 머신러닝이나 인과추론을 위한 계량 경제학은 사실 각자의 목적을 가지고 독립적인 분야로 발전하고 있다. 그렇다고해서 통계가 중요하지 않은가? 절대 그렇지 않다. 사실 머신러닝이나 계량 경제는 기본적으로 통계에 이론적 바탕을 두고 있다. 그래서, 나는 통계라는 것을 데이터 과학이 떠있는 바다 그 자체라 표현하고 싶다. 그 바다가 없다면 사진 속 쌍끌이 배 자체가 항해를 할 수 없기 때문. 통계가 인과추론을 위해 반드시 필요하다고 생각하진 않으나, 데이터 분석에 관한 깊이 있는 이해를 위해서는 통계학은 필수적이다.”</p>
-</blockquote>
-<p>학부, 대학원을 통계학으로 전공하며 회귀분석에 관심이 꽤 있었던 제게, 추론(inference)이라는 영역은 항상 예측(prediction)보다 더 매력적으로 다가왔습니다. 그래서, 추론(inference)이라는 영역은 데이터 과학을 이끌어가는 수많은 학문들 중 통계학만의 것이라고 생각했었는데, 계량 경제학이 인과추론을 이끌어가는 학문이였다는 것은 이 영상을 통해 알게되었습니다. 참 흥미로웠어요.😀추론적 관점의 모델링에 대한 관심은 회귀분석이 갖는 가치에 대해 생각해보며 시작되었어요. 제 입으로 말하기도 부끄럽지만, 통계학과 대학원에서 회귀분석 수업을 진행하시는 교수님이 “회귀분석은 구식이다.”라는 충격적인 말을 들은 때가 바로 이 생각의 계기였죠. 저는 결코 그렇지 않을 것이라 생각했기 때문이죠. 회귀분석이 가지는 가치에 대해 고찰하며, 책에서 찾아보기는 어려운 개인적인 궁금증이 생길 때면 지도교수님을 찾아가 질문을 던지기도 했습니다.</p>
-<p>통계학에서는 회귀분석을 기본적으로 추론적 관점으로 접근합니다. 그래서, 잔차분석은 회귀분석의 꽃이라 불리기도 해요. 다중공선성에 관한 고민을 하는 이유도 바로 이 추론에 관심이 있기 때문이죠. 머신런이에서 지도학습 기법을 소개할 때에도 회귀분석 기법은 맨처음에 등장합니다. 이때에 회귀분석은 철저하게 예측 모델링 관점에서 소개되죠. 그래서, 다중공선성, 잔차분석에 관한 이야기는 나오지 않어요. 이러한 두 관점의 차이는 Ridge, Lasso와 같은 벌점 회귀(penalized regression) 방법론에 대한 모티베이션에서도 드러납니다. 통계학에서 벌점 회귀 방법론의 근본적 모티베이션은 다중공선성으로 인해 발생하는 회귀계수 추론의 어려움이지만, 머신러닝에서 벌점 회귀 방법론이 갖는 근본적 모티베이션은 Regularization<sup>1</sup>입니다. 다른 말로 하면, 선형 회귀에는 unobserved data set에 관한 성능을 조절할만한 모수가 없다는 것인데요. 과적합(overfitting)이 되는 것을 방지할 수 있는 장치가 없다는 이야기라고도 표현할 수 있겠네요.</p>
-<p>물론, 통계학과에서 회귀분석을 가르칠 때 “추론적 모델링 관점”이라는 등의 설명은 따로 하지 않아요. 그러나, 저는 “회귀분석은 구식이다.”라는 충격적인 통계학과 교수님의 워딩을 듣고 회귀분석이 갖는 가치에 대한 고찰을 시작했고, 추론적 모델링의 관점과 예측 모델링의 관점에 따라 같은 방법론도 다른 방식으로 설명되고 이론 전개가 가능하다는 것을 이해할 수 있었습니다. 그래서, 그 충격적인 말을 해준 교수님께 지금은 참 감사한 마음이 듭니다. 물론, 이러한 고찰을 하지 않아도 다음 학기에 지도교수님과 고차원 데이터 분석을 공부하며 고도화된 형태의 벌점 항을 갖는 penalized regression model이 고차원 데이터(n&lt;p)의 예측 모델링에서 갖는 가치를 알게 되긴 했지만요.<sup>2</sup> 이렇게 두 관점에 대한 이해가 어느정도 정립되고 난 뒤에 접한 인과추론 방법론은 내게 무척이나 흥미로울 수 밖에 없었습니다.</p>
-<p>예측 방법론, 인과추론 방법론 둘 중 어느 것이 더 중요하다고 이야기 하고싶은 것이 절대 아닙니다. 데이터 과학을 이끌어가고 있는 다양한 세부 분야들이 그렇지만, 이 둘 또한 결코 두부 자르듯이 나눌 수 있는 방법론, 관점도 아니라고 생각합니다. 인과추론이 가지는 가치는 추론 모델링에서만 발휘되지 않습니다. 예측 모델링에서도 인과추론이 갖는 가치는 충분히 존재합니다. 실제로 인공지능, 머신러닝 분야의 최대 학회 중 하나인 NeurIPS에서도 Causal Inference Workshop이 열리고 있죠. 두 방법론과 관점 모두 데이터 과학에서 너무나도 중요합니다. 다만, 우리나라 데이터 과학 업계는 여전히 예측 방법론에 지나치게 치중되어 있다는 점을 이야기하고 싶습니다. 둘은 필히 균형을 맞추어 양립하여 가야한다고 생각합니다. 그래야, 데이터를 기반으로 바보같은 의사결정을 내리는 일을 피할 수 있게 해줄거라고 생각해요 글 문두에서 제시한 그림 속에서 통계라는 바다 위에 떠있는 데이터 과학을 이끌어가는 쌍끌이 배가 곧 인과추론 방법론과 예측 방법론이듯이 말이죠.</p>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>너무나도 인상깊었던 영상이라 소감이 정말 길었네요.😂이 글에 풀어놓은 제 생각들이 여러분들이 데이터 과학을 바라보는 새로운 관점을 제시하는 계기가 되었으면 합니다. 좋은 영상을 이렇게 무료로 풀어주는 인과추론의 데이터 과학 유튜브 채널 운영진 님들께 정말 감사한 마음을 전합니다. 그리고, 인과추론 분야에 관한 수준 높은 강의를 무료로, 그것도 한국어로 제공해주시는 UNGC 박지용 교수님께도 큰 감사함을 전합니다.</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>학습알고리즘(학십시킨 머신러닝 모형)의 training error가 아닌 generalization error를 줄일 목적으로, 해당 학습알고리즘에 어떤 수정(modification)을 가하는 모든 행위를 통한다. 여기서 generalization error란, 이전에 관측하지 않은 데이터(e.g.&nbsp;test data)에도 좋은 성능을 보여주는 능력을 말한다. 즉, generalization error = test error라고 볼 수도 있다.↩︎</p></li>
-<li id="fn2"><p>앞서 통계학에서 회귀분석은 기본적으로 추론 관점에서 이론 전개를 해나간다고 했는데, 고차원 데이터에서 penalized regression의 벌점 항(penalized term)을 고도화 해나가며 이론 전개를 하는 것을 보면, 또 여기서는 예측 모델링 관점에서 모형 개선을 해나갑니다. 모형의 예측 성능은 조금씩 개선을 하면서, 최대한 변수를 줄인 가벼운 모형을 빌딩하도록 하면서요.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2022,
-  author = {방태모},
-  title = {데이터 과학에 관해},
-  date = {2022-10-12},
-  url = {https://taemobang.com/posts/2022-10-12-data-science/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2022" class="csl-entry quarto-appendix-citeas">
-방태모. 2022. <span>“데이터 과학에 관해.”</span> October 12, 2022. <a href="https://taemobang.com/posts/2022-10-12-data-science/">https://taemobang.com/posts/2022-10-12-data-science/</a>.
-</div></div></section></div> ]]></description>
-  <category>Review</category>
-  <guid>https://taemobang.com/posts/2022-10-12-about-data-science/index.html</guid>
-  <pubDate>Tue, 11 Oct 2022 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

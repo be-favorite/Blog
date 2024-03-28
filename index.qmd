@@ -13,9 +13,9 @@ about:
     - icon: github
       text: 깃허브
       href: https://github.com/be-favorite
-    - icon: envelope
-      text: 이메일
-      href: mailto:taemobang@gmail.com
+    - icon: journal-text
+      text: 요즘IT
+      href: https://yozm.wishket.com/magazine/@taemobang/
     - icon: journal-text
       text: 과거 블로그
       href: https://be-favorite.tistory.com/

@@ -7,9 +7,6 @@ about:
     - icon: linkedin
       text: 링크드인
       href: https://www.linkedin.com/in/taemo/
-    - icon: facebook
-      text: 페이스북
-      href: https://www.facebook.com/profile.php?id=100070120780059
     - icon: github
       text: 깃허브
       href: https://github.com/be-favorite
@@ -25,3 +22,5 @@ comments: false
 안녕하세요 **방태모**입니다.
 
 G마켓 AI Product 팀에서 Data Scientist로 일하고 있습니다.
+
+자세한 제 소개와 이력은 아래 링크드인을 참고하면 좋습니다.😀

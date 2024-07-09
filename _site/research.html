@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -60,7 +60,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
@@ -104,47 +105,47 @@ cookieconsent.run({
     <span class="navbar-title">방태모의 블로그</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">홈</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html">
+    <a class="nav-link" href="./blog.html" rel="" target="">
  <span class="menu-text">블로그</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./archive.html">
+    <a class="nav-link" href="./archive.html" rel="" target="">
  <span class="menu-text">아카이브</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">리소스</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="./research.html">
+    <a class="dropdown-item" href="./research.html" rel="" target="">
  <span class="dropdown-text">연구 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./presentation.html">
+    <a class="dropdown-item" href="./presentation.html" rel="" target="">
  <span class="dropdown-text">발표 아카이브</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://be-favorite.tistory.com/">
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/" rel="" target="">
  <span class="dropdown-text">과거 기술블로그</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -158,7 +159,8 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#time-series" id="toc-time-series" class="nav-link active" data-scroll-target="#time-series">Time Series</a>
+  <li><a href="#experimentation" id="toc-experimentation" class="nav-link active" data-scroll-target="#experimentation">Experimentation</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a>
   <ul class="collapse">
   <li><a href="#추론-모델링-regression" id="toc-추론-모델링-regression" class="nav-link" data-scroll-target="#추론-모델링-regression">1 추론 모델링 · Regression</a></li>
   <li><a href="#예측모델링-forecasting" id="toc-예측모델링-forecasting" class="nav-link" data-scroll-target="#예측모델링-forecasting">2 예측모델링 · Forecasting</a></li>
@@ -219,6 +221,28 @@ cookieconsent.run({
 
 <p>논문과 책, 웹사이트 등을 통해 공부하고 연구한 것들을 아카이브합니다.</p>
 <p>참고 문헌과 스터디 노트, 그리고 재현가능한 소스코드를 함께 제공하고자 합니다.</p>
+<section id="experimentation" class="level2">
+<h2 class="anchored" data-anchor-id="experimentation">Experimentation</h2>
+<ul>
+<li>Bao, W. (2023, March 28). How to Size For Online Experiments With Ratio Metrics. Expedia Group Technology. https://medium.com/expedia-group-tech/how-to-size-for-online-experiments-with-ratio-metrics-3d57362f1967</li>
+<li>Blocker, C., Conway, J., Demortier, L., Heinrich, J., Junk, T., Lyons, L., &amp; Punzi, G. (2006). Simple Facts about P -Values.</li>
+<li>Deng, A., Lu, J., &amp; Litz, J. (2017). Trustworthy Analysis of Online A/B Tests: Pitfalls, challenges and solutions. Proceedings of the Tenth ACM International Conference on Web Search and Data Mining, 641–649. https://doi.org/10.1145/3018661.3018677</li>
+<li>Fabijan, A., Dmitriev, P., Arai, B., Drake, A., Kohlmeier, S., &amp; Kwong, A. (2023). A/B Integrations: 7 Lessons Learned from Enabling A/B testing as a Product Feature. 2023 IEEE/ACM 45th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP), 304–314. https://doi.org/10.1109/ICSE-SEIP58684.2023.00033</li>
+<li>Gupta, S., Kohavi, R., Tang, D., Xu, Y., Andersen, R., Bakshy, E., Cardin, N., Chandran, S., Chen, N., Coey, D., Curtis, M., Deng, A., Duan, W., Forbes, P., Frasca, B., Guy, T., Imbens, G. W., Saint Jacques, G., Kantawala, P., … Yashkov, I. (2019). Top Challenges from the first Practical Online Controlled Experiments Summit. ACM SIGKDD Explorations Newsletter, 21(1), 20–35. https://doi.org/10.1145/3331651.3331655</li>
+<li>Gupta, S., Ulanova, L., Bhardwaj, S., Dmitriev, P., Raff, P., &amp; Fabijan, A. (2018). The Anatomy of a Large-Scale Experimentation Platform. 2018 IEEE International Conference on Software Architecture (ICSA), 1–109. https://doi.org/10.1109/ICSA.2018.00009 Huang, C., Tang, Y., &amp; Tang, C. H. and Y. (2022, May 24). Meet Dash-AB — The Statistics Engine of Experimentation at DoorDash. DoorDash Engineering Blog. https://doordash.engineering/2022/05/24/meet-dash-ab-the-statistics-engine-of-experimentation-at-doordash/</li>
+<li>Kohavi, R. (2023, October). Trustworthy A/B Tests: Causality and Pitfalls. Google Docs. https://drive.google.com/file/d/1mbwrCkR52kIfcjkQibI4lRMwOSJJjdv6/view?usp=sharing&amp;usp=embed_facebook</li>
+<li>Kohavi, R., Deng, A., Frasca, B., Longbotham, R., Walker, T., &amp; Xu, Y. (2012). Trustworthy online controlled experiments: Five puzzling outcomes explained. Proceedings of the 18th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 786–794. https://doi.org/10.1145/2339530.2339653</li>
+<li>Kohavi, R., Deng, A., &amp; Vermeer, L. (2022). A/B Testing Intuition Busters: Common Misunderstandings in Online Controlled Experiments. Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, 3168–3177. https://doi.org/10.1145/3534678.3539160</li>
+<li>Kohavi, R., &amp; Longbotham, R. (2011). Unexpected results in online controlled experiments. ACM SIGKDD Explorations Newsletter, 12(2), 31–35. https://doi.org/10.1145/1964897.1964905</li>
+<li>Kohavi, R., Tang, D., &amp; Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing. Cambridge University Press. https://experimentguide.com/</li>
+<li>Kohavi, R., Tang, D., Xu, Y., Hemkens, L. G., &amp; Ioannidis, J. P. A. (2020). Online randomized controlled experiments at scale: Lessons and extensions to medicine. Trials, 21(1), 150. https://doi.org/10.1186/s13063-020-4084-y Machmouchi, W., Gupta, S., Zhang, R., &amp; Fabijan, A. (2020, July 31). Patterns of Trustworthy Experimentation: Pre-Experiment Stage. Microsoft Research. https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-pre-experiment-stage/</li>
+<li>Microsoft. (2021, January 25). Patterns of Trustworthy Experimentation: During-Experiment Stage. Microsoft Research. https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/</li>
+<li>Schultzberg, M., Kjellin, O., &amp; Rydberg, J. (2020). Statistical Properties of Exclusive and Non-exclusive Online Randomized Experiments using Bucket Reuse (arXiv:2012.10202). arXiv. https://doi.org/10.48550/arXiv.2012.10202</li>
+<li>Schultzberg, M., Kjellin, O., &amp; Rydberg, J. (2021, March 10). Spotify’s New Experimentation Coordination Strategy. Spotify Engineering. https://engineering.atspotify.com/2021/03/spotifys-new-experimentation-coordination-strategy/</li>
+<li>Thumbtack, E. (2020, June 1). Seedfinder—Infrastructure to Improve Sample Balance in Online A/B Tests. Thumbtack Engineering. https://medium.com/thumbtack-engineering/seedfinder-infrastructure-to-improve-sample-balance-in-online-a-b-tests-1b8c3ae7dbe8</li>
+<li>Xie, H., &amp; Aurisset, J. (2016). Improving the Sensitivity of Online Controlled Experiments: Case Studies at Netflix. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 645–654. https://doi.org/10.1145/2939672.2939733</li>
+</ul>
+</section>
 <section id="time-series" class="level2">
 <h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
 <section id="추론-모델링-regression" class="level3">
@@ -685,9 +709,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -752,6 +790,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -794,7 +918,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

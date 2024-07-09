@@ -8,6 +8,28 @@ comments: false
 
 참고 문헌과 스터디 노트, 그리고 재현가능한 소스코드를 함께 제공하고자 합니다.
 
+## Experimentation
+
+- Bao, W. (2023, March 28). How to Size For Online Experiments With Ratio Metrics. Expedia Group Technology. https://medium.com/expedia-group-tech/how-to-size-for-online-experiments-with-ratio-metrics-3d57362f1967
+- Blocker, C., Conway, J., Demortier, L., Heinrich, J., Junk, T., Lyons, L., & Punzi, G. (2006). Simple Facts about P -Values.
+- Deng, A., Lu, J., & Litz, J. (2017). Trustworthy Analysis of Online A/B Tests: Pitfalls, challenges and solutions. Proceedings of the Tenth ACM International Conference on Web Search and Data Mining, 641–649. https://doi.org/10.1145/3018661.3018677
+- Fabijan, A., Dmitriev, P., Arai, B., Drake, A., Kohlmeier, S., & Kwong, A. (2023). A/B Integrations: 7 Lessons Learned from Enabling A/B testing as a Product Feature. 2023 IEEE/ACM 45th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP), 304–314. https://doi.org/10.1109/ICSE-SEIP58684.2023.00033
+- Gupta, S., Kohavi, R., Tang, D., Xu, Y., Andersen, R., Bakshy, E., Cardin, N., Chandran, S., Chen, N., Coey, D., Curtis, M., Deng, A., Duan, W., Forbes, P., Frasca, B., Guy, T., Imbens, G. W., Saint Jacques, G., Kantawala, P., … Yashkov, I. (2019). Top Challenges from the first Practical Online Controlled Experiments Summit. ACM SIGKDD Explorations Newsletter, 21(1), 20–35. https://doi.org/10.1145/3331651.3331655
+- Gupta, S., Ulanova, L., Bhardwaj, S., Dmitriev, P., Raff, P., & Fabijan, A. (2018). The Anatomy of a Large-Scale Experimentation Platform. 2018 IEEE International Conference on Software Architecture (ICSA), 1–109. https://doi.org/10.1109/ICSA.2018.00009
+Huang, C., Tang, Y., & Tang, C. H. and Y. (2022, May 24). Meet Dash-AB — The Statistics Engine of Experimentation at DoorDash. DoorDash Engineering Blog. https://doordash.engineering/2022/05/24/meet-dash-ab-the-statistics-engine-of-experimentation-at-doordash/
+- Kohavi, R. (2023, October). Trustworthy A/B Tests: Causality and Pitfalls. Google Docs. https://drive.google.com/file/d/1mbwrCkR52kIfcjkQibI4lRMwOSJJjdv6/view?usp=sharing&usp=embed_facebook
+- Kohavi, R., Deng, A., Frasca, B., Longbotham, R., Walker, T., & Xu, Y. (2012). Trustworthy online controlled experiments: Five puzzling outcomes explained. Proceedings of the 18th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 786–794. https://doi.org/10.1145/2339530.2339653
+- Kohavi, R., Deng, A., & Vermeer, L. (2022). A/B Testing Intuition Busters: Common Misunderstandings in Online Controlled Experiments. Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, 3168–3177. https://doi.org/10.1145/3534678.3539160
+- Kohavi, R., & Longbotham, R. (2011). Unexpected results in online controlled experiments. ACM SIGKDD Explorations Newsletter, 12(2), 31–35. https://doi.org/10.1145/1964897.1964905
+- Kohavi, R., Tang, D., & Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing. Cambridge University Press. https://experimentguide.com/
+- Kohavi, R., Tang, D., Xu, Y., Hemkens, L. G., & Ioannidis, J. P. A. (2020). Online randomized controlled experiments at scale: Lessons and extensions to medicine. Trials, 21(1), 150. https://doi.org/10.1186/s13063-020-4084-y
+Machmouchi, W., Gupta, S., Zhang, R., & Fabijan, A. (2020, July 31). Patterns of Trustworthy Experimentation: Pre-Experiment Stage. Microsoft Research. https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-pre-experiment-stage/
+- Microsoft. (2021, January 25). Patterns of Trustworthy Experimentation: During-Experiment Stage. Microsoft Research. https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/
+- Schultzberg, M., Kjellin, O., & Rydberg, J. (2020). Statistical Properties of Exclusive and Non-exclusive Online Randomized Experiments using Bucket Reuse (arXiv:2012.10202). arXiv. https://doi.org/10.48550/arXiv.2012.10202
+- Schultzberg, M., Kjellin, O., & Rydberg, J. (2021, March 10). Spotify’s New Experimentation Coordination Strategy. Spotify Engineering. https://engineering.atspotify.com/2021/03/spotifys-new-experimentation-coordination-strategy/
+- Thumbtack, E. (2020, June 1). Seedfinder—Infrastructure to Improve Sample Balance in Online A/B Tests. Thumbtack Engineering. https://medium.com/thumbtack-engineering/seedfinder-infrastructure-to-improve-sample-balance-in-online-a-b-tests-1b8c3ae7dbe8
+- Xie, H., & Aurisset, J. (2016). Improving the Sensitivity of Online Controlled Experiments: Case Studies at Netflix. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 645–654. https://doi.org/10.1145/2939672.2939733
+
 ## Time Series
 
 ### 1 추론 모델링 · Regression

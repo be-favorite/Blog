@@ -1,7 +1,7 @@
 ---
 title: "책 서평: 가설이 무기가 된다"
 description: |
-    일잘러가 되고 싶은 이 세상을 살아가는 직장인들에게 꼭 필요한 책
+    일잘러가 되고 싶은 직장인들이 읽어봤으면 하는 책
 date: "2024-08-01"
 draft: FALSE
 image: ../preview_book.png

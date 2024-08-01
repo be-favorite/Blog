@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2024-08-01-book-hypothesis/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",
       "/posts/2024-03-04-monthly-memory-202401-02/index.html",
       "/posts/2023-12-31-yearly-memory-2023/index.html",
@@ -46,6 +47,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2024-08-01-book-hypothesis/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",
       "/posts/2024-03-04-monthly-memory-202401-02/index.html",
       "/posts/2023-12-31-yearly-memory-2023/index.html",

@@ -1,9 +1,9 @@
 ---
 title: "포스트"
 listing:
-  type: grid
+  type: default
   fields: [image, title, description, reading-time, categories, date]
-  page-size: 12
+  page-size: 6
   feed: true
   contents: posts
   sort-ui: false
@@ -41,15 +41,17 @@ writeLines(redirects, here::here("_site", "_redirects"))
 
 새 글이 발행되면 알려드려요.
 
-<iframe src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+<iframe src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
 :::
 
 ::: {.column width="50%"}
 
 포스팅을 독려해주실 수 있어요.
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="taemobang" data-color="#06436e" data-emoji="☕"  data-font="Lato" data-text="Support me" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" data-height="40px" ></script>
+<a href="https://www.buymeacoffee.com/taemobang"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=taemobang&button_colour=40DCA5&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 :::
 
 :::: 
+
+<br>

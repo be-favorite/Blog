@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2024-08-01-book-question/index.html",
       "/posts/2024-08-01-book-hypothesis/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",
       "/posts/2024-03-04-monthly-memory-202401-02/index.html",
@@ -29,7 +30,7 @@
       "/posts/2023-02-07-da-my-view/index.html",
       "/posts/2023-02-01-yearly-memory-2022/index.html",
       "/posts/2023-01-01-move-to-another-company/index.html",
-      "/posts/2022-10-31-abtest-terms/index.html",
+      "/posts/2022-10-31-experimentation-terms/index.html",
       "/posts/2022-10-20-monthly-memory-202207/index.html",
       "/posts/2022-10-12-about-data-science/index.html",
       "/posts/2022-10-12-monthly-memory-202206/index.html",
@@ -48,6 +49,7 @@
     "listing": "/archive.html",
     "items": [
       "/posts/2024-08-01-book-hypothesis/index.html",
+      "/posts/2024-08-01-book-question/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",
       "/posts/2024-03-04-monthly-memory-202401-02/index.html",
       "/posts/2023-12-31-yearly-memory-2023/index.html",
@@ -67,7 +69,7 @@
       "/posts/2023-02-07-da-my-view/index.html",
       "/posts/2023-02-01-yearly-memory-2022/index.html",
       "/posts/2023-01-01-move-to-another-company/index.html",
-      "/posts/2022-10-31-abtest-terms/index.html",
+      "/posts/2022-10-31-experimentation-terms/index.html",
       "/posts/2022-10-20-monthly-memory-202207/index.html",
       "/posts/2022-10-12-about-data-science/index.html",
       "/posts/2022-10-12-monthly-memory-202206/index.html",

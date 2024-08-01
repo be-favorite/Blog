@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2022-10-31">
-<meta name="description" content="A/B 테스트를 공부할 때 알아두면 좋은 용어들">
+<meta name="description" content="온라인 통제 실험을 공부할 때 알아두면 좋은 용어들">
 
-<title>방태모의 블로그 - A/B 테스트 용어 사전</title>
+<title>방태모의 블로그 - 온라인 통제 실험에서 쓰이는 용어 정리</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -196,7 +196,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A/B 테스트 용어 사전</h1>
+<h1 class="title">온라인 통제 실험에서 쓰이는 용어 정리</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Experimentation</div>
   </div>
@@ -204,7 +204,7 @@ cookieconsent.run({
 
 <div>
   <div class="description">
-    <p>A/B 테스트를 공부할 때 알아두면 좋은 용어들</p>
+    <p>온라인 통제 실험을 공부할 때 알아두면 좋은 용어들</p>
   </div>
 </div>
 
@@ -237,32 +237,23 @@ cookieconsent.run({
 <figcaption class="figure-caption">Photo by Romain Vignes on Unsplash</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-이 글은 시리즈 물의 일부입니다!
+요즘IT에서 실험에 관한 글을 쉽게 풀어쓰고 있어요.
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>를 바탕으로 A/B 테스트에 관한 글들을 시리즈로 작성하고자 합니다. 본 시리즈에서는 A/B 테스트 외에 A/A 테스트, A/B/n 테스트와 같은 다양한 형태의 온라인 종합 대조 실험(online controlled experiment)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>를 소개합니다. 사실, <span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>에서는 A/B test라는 용어보다는 온라인 종합 대조 실험이라는 일반화된 용어를 대체로 사용하긴 하나, 저는 우리에게 좀 더 익숙한 A/B 테스트라는 용어로 글을 적어보려고 합니다. 물론, 그외 다른 A/A 테스트와 같은 형태의 실험에 대해 설명할 때는 해당 용어를 사용할 예정입니다.</p>
-<p><span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>에서는 온라인 종합 대조 실험이 온라인 서비스에서 갖는 가치, 중요성에 대해서 끊임없이 강조합니다. HiPPO<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>에 의존하는 것이 아닌, 데이터 기반 문화를 구축하기 위해 온라인 종합 대조 실험을 수행하는 것이 얼마나 중요한지 구체적으로 알려주죠.오늘날의 성공한 온라인 서비스 중 A/B 테스트를 하지 않는 곳은 없습니다. 에어비앤비, 아마존, 부킹닷컴, 이베이, 페이스북, 구글, 링크드인, 마이크로소프트, 넷플릭스, 트위터, 우버 등 말하기 입이 아픈 정도입니다. 이 책의 저자들은 아마존, 마이크로소프트, 구글, 링크드인에서 수십 년간 근무하며 여러 규모로 온라인 종합 대조 실험을 수행해왔으며, 이러한 경험을 바탕으로 얻은 교훈들을 책을 통해 전해주고 있습니다.</p>
-<p>저와 같은 A/B 테스트 초심자들에게는 단비같은 책이라고 할 수 있을 것 같습니다. 본 책을 공부하며 깨달은 내용들을 본 시리즈 물에서 저만의 언어로 최대한 요약해보고자 합니다. 통계학 전공자라 학부와 석사 때 실험설계를 공부하긴 했지만, 온라인 서비스 영역에서의 실험설계라 할 수 있는 온라인 종합 대조 실험에는 무지한 상태입니다. 잘못 생각하고 있는 부분이 있다면 가감없이 댓글로 지적해주시면 감사하겠습니다.😀 책의 서문에서 강조하는 바를 되새기며 이만 소개를 마칩니다.</p>
-<blockquote class="blockquote">
-<p>흥미로워 보이거나 다르게 보이는 어떤 수치는 대체로 틀린다 - Twyman</p>
-<p>숫자를 얻는 것은 쉽지만, 믿을 수 있는 숫자를 얻는 것은 어렵다.</p>
-</blockquote>
+<p>관심 있으신 분들은 <a href="https://yozm.wishket.com/magazine/@taemobang/">여기</a>를 확인해보세요.</p>
 </div>
 </div>
-</div>
-<p>A/B test, 더 넓게는 온라인 종합 대조 실험(online controlled experiment)의 이해에 필요한 용어들을 간략하게 정리해보고자 합니다. 용어들은 앞으로 꾸준하게 추가될 예정입니다. 새로운 분야에 대한 공부를 시작할 때, 새롭게 알게 된 용어에 대한 확실한 정의는 매우 중요하니까요.</p>
+<p>A/B test, 더 넓게는 온라인 종합 대조 실험(online controlled experiment)의 이해에 필요한 용어들을 간략하게 정리해보고자 합니다. 용어들은 앞으로 꾸준하게 추가될 예정입니다. 새로운 분야에 대한 공부를 시작할 때, 새롭게 알게 된 용어에 대한 확실한 정의는 매우 중요하니까요. 본 글에서 정의하는 용어는 <span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>를 기반으로 합니다.</p>
 <section id="ab-테스트" class="level2">
 <h2 class="anchored" data-anchor-id="ab-테스트">A/B 테스트</h2>
-<p>다 아시겠지만 한 번 정의하고 넘어가려고 합니다. A/B 테스트는 두 개의 변형(variant) A와 B를 사용하는 온라인 종합 대조 실험의 가장 간단한 형태라고 할 수 있습니다. 여기서 대조군에는 기존의 기능, 프로덕트 또는 알고리즘<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>을 부여받은 사용자들이 랜덤하게(randomized) 배치되고, 실험군은 핵심 지표(metrics) 개선을 기대하며 도입하는 새로운 어떤 것을 부여받은 사용자들이 랜덤하게 배치될 겁니다. 온라인 종합 실험에서 랜덤성(Randomization)은 매우 중요합니다. 어떠한 요인도 사용자들을 각 변형에 배정하는 데에 영향을 주도록 허용해서는 안됩니다. 랜덤성은 “확률에 기초한 의도적 선택”을 의미한다는 점을 기억하시기 바랍니다.</p>
+<p>다 아시겠지만 한 번 정의하고 넘어가려고 합니다. A/B 테스트는 두 개의 변형(variant) A와 B를 사용하는 온라인 종합 대조 실험의 가장 간단한 형태라고 할 수 있습니다. 여기서 대조군에는 기존의 기능, 프로덕트 또는 알고리즘<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>을 부여받은 사용자들이 랜덤하게(randomized) 배치되고, 실험군은 핵심 지표(metrics) 개선을 기대하며 도입하는 새로운 어떤 것을 부여받은 사용자들이 랜덤하게 배치될 겁니다. 온라인 종합 실험에서 랜덤성(Randomization)은 매우 중요합니다. 어떠한 요인도 사용자들을 각 변형에 배정하는 데에 영향을 주도록 허용해서는 안됩니다. 랜덤성은 “확률에 기초한 의도적 선택”을 의미한다는 점을 기억하시기 바랍니다.</p>
 </section>
 <section id="oec" class="level2">
 <h2 class="anchored" data-anchor-id="oec">OEC</h2>
@@ -270,7 +261,7 @@ cookieconsent.run({
 </section>
 <section id="파라미터" class="level2">
 <h2 class="anchored" data-anchor-id="파라미터">파라미터</h2>
-<p>파라미터(parameter)는 OEC 또는 기타 관심 지표에 영향을 미칠 것으로 간주되는 통제 가능한 실험변수를 뜻합니다. 요인(factors), 변수(variables)라 칭하기도 합니다. 파라미터에는 값이 할당되는데, 이를 수준(level)이라 말하더군요. 통계학에 익숙하신 분들은 범주형 변수를 떠올리시면 될 것 같습니다. 예를 들어, A/B 테스트에서 파라미터는 2개의 수준을 갖는 단일 파라미터에 해당할 것입니다. 온라인 환경에서는 이처럼 여러 개의 수준을 갖는 단일 파라미터 설계를 사용하는 것이 일반적입니다. 여러 파라미터를 사용하는 테스트는 다변수 테스트(MVTs, Mutivariate tests)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>라 부릅니다. 온라인 환경에서는 글꼴 색상과 크기에 관한 실험을 하며 글꼴 색상과 크기에 관한 최적 조합을 찾고자할 때 사용되곤 합니다.</p>
+<p>파라미터(parameter)는 OEC 또는 기타 관심 지표에 영향을 미칠 것으로 간주되는 통제 가능한 실험변수를 뜻합니다. 요인(factors), 변수(variables)라 칭하기도 합니다. 파라미터에는 값이 할당되는데, 이를 수준(level)이라 말하더군요. 통계학에 익숙하신 분들은 범주형 변수를 떠올리시면 될 것 같습니다. 예를 들어, A/B 테스트에서 파라미터는 2개의 수준을 갖는 단일 파라미터에 해당할 것입니다. 온라인 환경에서는 이처럼 여러 개의 수준을 갖는 단일 파라미터 설계를 사용하는 것이 일반적입니다. 여러 파라미터를 사용하는 테스트는 다변수 테스트(MVTs, Mutivariate tests)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>라 부릅니다. 온라인 환경에서는 글꼴 색상과 크기에 관한 실험을 하며 글꼴 색상과 크기에 관한 최적 조합을 찾고자할 때 사용되곤 합니다.</p>
 </section>
 <section id="변형군" class="level2">
 <h2 class="anchored" data-anchor-id="변형군">변형군</h2>
@@ -308,21 +299,19 @@ Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Expe
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>온라인 종합 대조 실험의 형태로는 A/B test, A/A test, A/B/n test가 있다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Highest Paid Person’s Opinion. 최고 보수를 받는 자의 의견. 즉, 최고 경영자의 의견.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Multivariate은 다변량인데, 다변수 테스트라고 번역하는게 맞는지 모르겠습니다. 우선 책에 이렇게 번역이 되어있어 다변수 테스트라 남겨둡니다.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>e.g.&nbsp;이커머스 업계의 추천 시스템을 구성하는 알고리즘<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Multivariate은 다변량인데, 다변수 테스트라고 번역하는게 맞는지 모르겠습니다. 우선 책에 이렇게 번역이 되어있어 다변수 테스트라 남겨둡니다.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2022,
   author = {Bang, Taemo},
-  title = {A/B 테스트 용어 사전},
+  title = {온라인 통제 실험에서 쓰이는 용어 정리},
   date = {2022-10-31},
-  url = {https://taemobang.com/posts/2022-10-31-abtest-terms/},
+  url = {https://taemobang.com/posts/2022-10-31-experimentation-terms/},
   langid = {kr}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2022" class="csl-entry quarto-appendix-citeas" role="listitem">
-Bang, Taemo. 2022. <span>“A/B 테스트 용어 사전.”</span> October 31,
-2022. <a href="https://taemobang.com/posts/2022-10-31-abtest-terms/">https://taemobang.com/posts/2022-10-31-abtest-terms/</a>.
+Bang, Taemo. 2022. <span>“온라인 통제 실험에서 쓰이는 용어 정리.”</span>
+October 31, 2022. <a href="https://taemobang.com/posts/2022-10-31-experimentation-terms/">https://taemobang.com/posts/2022-10-31-experimentation-terms/</a>.
 </div></div></section></div></main> <!-- /main -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
     

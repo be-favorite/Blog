@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2024-08-21-book-bigdata-early-review/index.html",
       "/posts/2024-08-01-book-question/index.html",
       "/posts/2024-08-01-book-hypothesis/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",
@@ -48,6 +49,7 @@
   {
     "listing": "/archive.html",
     "items": [
+      "/posts/2024-08-21-book-bigdata-early-review/index.html",
       "/posts/2024-08-01-book-hypothesis/index.html",
       "/posts/2024-08-01-book-question/index.html",
       "/posts/2024-07-28-fisrt-half-memory/index.html",

@@ -10,7 +10,438 @@
 <atom:link href="https://taemobang.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>방태모의 개인 블로그입니다.</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 24 Sep 2024 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 30 Sep 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>실험 기반 제품 개선 문화 형성을 위한 해외 빅테크 기업들의 노력</title>
+  <dc:creator>Taemo Bang</dc:creator>
+  <link>https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>앞선 <a href="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/">글</a>에서 이야기했던 온라인 실험에 꽃을 피우기 위한 필수 요소 중 하나인 “문화 형성”에 관해, 과연 해외 빅테크 기업들은 이 부분에 대해 어떤 노력을 기울였는지에 대해서 이야기해보려고 한다. <span class="citation" data-cites="gupta2019">(Gupta et al. 2019)</span>에 그들의 노력들이 생생히 기록되어 있다. 미국 내 실험에 진심인 수많은 테크 기업들의 실무자들이 모여 쓴 페이퍼인데, 2019년에 벌써 이러한 논문을 낼 정도로 수준 높은 실험 기술력과 문화를 가지고 있었다는게 참 부럽다.</p>
+<p>이전 글에서 결국 “온라인 실험”의 꽃을 피워내기 위해선 “문화 형성”과 “자동화”라는 두 가지 요소가 필수적으로 충족되어야 함을 깨달았다고 이야기했는데, 이들 또한 이미 먼 과거에 나와 똑같은 깨달음을 얻지 않았을까? 그들이 과거에 했던 부단한 노력을 <strong>평가 전략</strong>, <strong>실험 확장을 위한 교육</strong> 두 가지 방면으로 정리해보려고 한다.</p>
+<section id="평가-전략" class="level2">
+<h2 class="anchored" data-anchor-id="평가-전략">평가 전략</h2>
+<p>제품의 모든 변화를 OCE<sup>1</sup>를 기반으로 검증하도록 독려하기 위해 그들은 다양한 전략을 취했다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 52%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>전략</th>
+<th>설명</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>고강도 접근법<sup>2</sup></td>
+<td>모든 팀과 깊이 있게 관여하는 데 많은 오버헤드가 필요하여, 실험 확장에 병목을 야기할 수 있음</td>
+<td><strong>LinkedIn</strong><br>
+- 실험 팀이 매 분기 비즈니스에 중요한 팀을 우선순위로 두고 긴밀히 협력<br>
+- 분기 말에 해당 팀은 향후 제품 개선에 실험 플랫폼을 사용하는 것에 동의하고, 실험 팀은 이를 계속 모니터링함<br>
+- 이러한 과정을 반복함으로써 몇 년에 걸쳐 실험 기반 제품 개선 문화가 구축됨<br>
+<br>
+<strong>Microsoft</strong><br>
+- 실험 팀이 제품에 미치는 실험의 영향을 고려하여 제품 팀을 선택함<br>
+- 여러 해 동안 제품 팀과 매우 밀접하게 협력하여 실험의 도입과 성숙도를 점진적으로 향상시킴</td>
+</tr>
+<tr class="even">
+<td>하향식 접근법<sup>3</sup></td>
+<td>- 리더십 차원에서 실험에 관한 지지 필요<br>
+- 팀 목표를 OCE에서 지표를 향상시키는 것으로 설정함으로써, 모든 출시 결정이 주요 지표에 미치는 영향을 바탕으로 논의되는 문화를 만듦<br>
+- 제품 팀은 주요 지표를 개선하는 변경 사항의 출시를 축하하고, 중요한 지표에 부정적인 영향을 미치는 변경 사항의 출시를 하지 않기로 결정한 것도 축하함<br>
+- 팀의 주요 지표는 사전에 결정되어 팀 전체가 동의해야함</td>
+<td><strong>Netflix</strong><br>
+- 실험 결과의 동료 평가<sup>4</sup> 문화를 장려하기 위해 정기적으로 제품 전략 포럼<sup>5</sup> 개최<br>
+- 이 포럼에서 실험 결과를 요약하고 실험 오너, PM, 리더십 팀 간에 토론이 이루어짐<sup>6</sup></td>
+</tr>
+<tr class="odd">
+<td>부정, 긍정 사례 연구<sup>7</sup></td>
+<td>- 다음의 2가지 사례에 관한 연구 및 문서화는 문화의 변화*를 이끄는 데에 큰 도움이 됨<br>
+- 실험 전 긍정적으로 평가되었던 아이디어가 실제 실험에서는 주요 지표의 큰 손실을 이끄는 부정적 결과를 낳은 경우<br>
+- 아무도 중요치 않다고 생각했던 아이디어가 실제 실험에서는 주표 지표의 큰 개선을 이끄는 긍정적 결과를 낳은 경우<br>
+- 여기서 문화의 변화란,&nbsp;직관이 아닌 데이터와 실험 결과를 기반으로 의사 결정을 내리는 데이터 중심의 사고 방식으로 전환하는 것을 의미함<br>
+- 이러한 사례는 우리의 직관이 아이디어의 가치를 판단하는 데 항상 신뢰할 수 없다는 점을 받아들일 수 있게함</td>
+<td><strong>Bing</strong><br>
+- 한 엔지니어가 제목이 매우 짧은 광고의 제목을 더 길게 만드는 아이디어를 냄<br>
+- 간단하고 비용이 작은 변화 였으나, 중요치 않다도고 생각되던 아이디어라 몇달 간 개발을 미룸<br>
+- 그러나, 해당 기능(feature) 개발 후 실제 실험을 수행해 본 결과, Bing 역사상 가장 큰 수익 증가를 낸 아이디어가 됨</td>
+</tr>
+<tr class="even">
+<td>안전한 롤아웃<sup>8</sup></td>
+<td>- 기존 프로세스에 맞추어 실험을 도입하고 개선하는 것은 각 제품 팀의 실험 도입을 더욱 쉽게 만듦<br>
+- 이 방법은 기능 팀의 개발 프로세스에 실험을 자연스럽게 통합할 수 있게 해주며, 시간이 지나면서 기능 팀이 실험의 가치를 인식하게 되어 그들이 더 많은 가설을 실험으로 테스트하게 만듦</td>
+<td><strong>Microsoft</strong>, <strong>Google</strong><br>
+- 일부 기능 팀들이 모든 사용자에게 새로운 기능을 안전하게 롤아웃하기 위해 실험을 사용하기 시작함<br>
+- A/B 테스트가 배포 중 자동으로 실행되어 기능이 점진적으로 일부 사용자에게만 활성화되며, 나머지 사용자에게는 비활성화된 상태로 유지<br>
+- 이러한 롤아웃 간 주요 신뢰성과 사용자 행동 지표에 대한 기능의 영향을 평가하여 버그를 발견할 수 있음</td>
+</tr>
+<tr class="odd">
+<td>성적표 운영 및 게임화<sup>9</sup></td>
+<td>-</td>
+<td><strong>Microsoft</strong><br>
+- 각 팀의 실험 성숙도를 평가하는 성적표를 통해 실험 도입 장려<br>
+- 이 성적표는 팀이 실험을 통해 제품을 개선할 수 있는 잠재력을 생각하게 하며, 팀의 현재 상태와 다른 팀들과의 상대적 위치를 보여줌<br>
+- 이를 통해 팀은 추가 투자가 필요한 주요 영역을 강조할 수 있음<br>
+<br>
+<strong>Booking.com</strong><br>
+- 실험 도입 및 올바른 실험 방법을 독려하기 위해, 실험 플랫폼에서 사용자가 배지를 받을 수 있도록 게임화 요소 도입</td>
+</tr>
+<tr class="even">
+<td>교육 및 지원<sup>10</sup></td>
+<td>- 조직에서 수천 개의 실험을 실행한다고 할 때, 모든 실험을 모니터링하여 신뢰할 수 있는 분석 결과를 보장하는 것은 불가능<br>
+- 각 팀에 전문가를 배치하여 신뢰할 수 있는 실험 결과를 얻을 수 있도록 돕는 것이 중요<br>
+- OCE를 효과적으로 사용하고 일반적인 함정을 피하는 방법 교육하는 것은 실험 확장에 필수</td>
+<td><strong>Microsoft</strong><br>
+- 신뢰할 수 있는 실험 분석을 보장하기 위해 광범위한 교육과 지원 제공</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 적절한 동기부여와 교육 지원을 통해 전사 구성원들의 실험 숙련도를 끌어올리는 것에 있다. 그들을 육성하는 데에 있어 동기부여를 잃지 않도록 실험 중심 제품 개선 문화에 맞는 적절한 평가 기준의 설립 또한 리더십 레벨에서 충분히 고민하여 반영해주어야 할 것이다.</p>
+</section>
+<section id="실험-확장을-위한-교육" class="level2">
+<h2 class="anchored" data-anchor-id="실험-확장을-위한-교육">실험 확장을 위한 교육</h2>
+<p>그들은 다음의 2가지 문제 의식이 있었기에 교육을 통한 실험 전문가 육성이 필요함을 깨달을 수 있었다.</p>
+<ul>
+<li><p>A/B 테스트의 복잡성</p>
+<ul>
+<li><p>A/B 테스트의 개념은 간단하지만 특정 기능을 테스트하고 실험 결과를 분석하는 데는 복잡한 문제가 있음</p></li>
+<li><p>Q&amp;A 수준으로는 해결할 수 없는 매우 구체적인 질문이 자주 발생</p></li>
+<li><p>이에따라 제품 팀은 실험을 실행할 때 맞춤형 지원이 필요</p></li>
+</ul></li>
+<li><p>중앙 집중식 지원의 한계</p>
+<ul>
+<li><p>중앙 팀은 지원에 너무 많은 시간을 할애하게 되어 다른 작업에 집중하지 못할 수 있음</p></li>
+<li><p>특히 특정 제품의 도메인 지식이 필요할 때가 많음</p></li>
+<li><p>중앙 팀에서 모든 제품에 대해 깊은 지식을 갖추는 것은 불가능하나, 각 제품 팀의 구성원들에게 기본적인 실험 지식을 확장하는 것은 가능함</p></li>
+<li><p>이에 따라 OCE 전문 지식을 확산시켜 실험을 확장할 수 있도록 함</p></li>
+</ul></li>
+</ul>
+<p>이렇게 조직 내에서 OCE의 전문 지식을 확산시키고 실험을 확장하기 위해 해결해야 할 몇 가지 주요 실질적인 도전 과제가 있었다.</p>
+<ul>
+<li><p>프로그램 설정:&nbsp;실험 오너들을 지원하는 프로그램을 어떻게 설정할 것인가?</p></li>
+<li><p>동기 부여:&nbsp;그들을 어떻게 동기부여 할 것인가?</p></li>
+<li><p>교육:&nbsp;그들을 어떻게 훈련시킬 것인가?</p></li>
+<li><p>품질 유지:&nbsp;실험의 품질 기준을 어떻게 유지할 것인가?</p></li>
+</ul>
+<p>이러한 도전 과제를 해결하기위해 해외 빅테크 회사에서 운영한 프로그램들을 정리해보면 다음과 같다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 3%">
+<col style="width: 19%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>기업</th>
+<th>프로그램 명</th>
+<th>구성</th>
+<th>동기 부여</th>
+<th>교육</th>
+<th>품질 유지</th>
+<th>운영 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yandex</td>
+<td>실험 전문가<sup>11</sup></td>
+<td>- 제품 팀들이 자발적으로 실험 전문가 신청<br>
+- 중앙 실험 그룹에서 전문가 직접 선정</td>
+<td>- 디지털 배지 (내부 직원 시스템)<br>
+- 실험 승인 권한</td>
+<td>-</td>
+<td>- 최소한의 실험 경험 체크 리스트 충족 여부 검토<br>
+- 비공식 인터뷰를 통한 실험 전문가 적합성 평가</td>
+<td>- 실험 승인 전 실험 전문가 검토<br>
+- 실험 진행 중 실험 전문가들의 지속적 지원 제공</td>
+</tr>
+<tr class="even">
+<td>Amazon</td>
+<td>웹랩 바 레이저<sup>12</sup></td>
+<td>- 2013년 개인화 팀에서 고품질의 실험설계와 분석, 의사결정 촉진을 위한 파일럿 프로그램으로 시작<br>
+- 프로그램의 성공으로 전사 확장</td>
+<td>- 역할의 중요성<br>
+- 초기 바 레이저들은 높은 판단력과 실험 경험을 가진 사람들로, 직원들을 가르치고 영향력을 발휘할 수 있는 능력을 갖춘 사람들로 선택<br>
+- 개인 성장</td>
+<td>- 멘토링 프로그램<br>
+- 기존 바 레이저가 신규 바 레이저에게 실험에 관한 지식과 경험 전수<br>
+- 신규 바 레이저의 역할에 대한 기대치를 명확하게 정의하고 문서화</td>
+<td>- 바 레이저가 주당 약 2~4시간을 실험 지원에 할애함</td>
+<td>- 바 레이저의 검토를 통한 실험 품질 향상<br>
+- 바 레이저 검토는 선택적인 것이며, 이는 충분한 수의 바 레이저가 없는 경우 유연성 제공</td>
+</tr>
+<tr class="odd">
+<td>Twitter</td>
+<td>실험 셰퍼드<sup>13</sup></td>
+<td>- 2016년 제품 팀에서 도입<br>
+- 2019년 당시 50명의 셰퍼드가 활동 중이었음</td>
+<td>- 책임감 부여<br>
+- 실험 사전 또는 출시 전 실험 리뷰<br>
+- 개인 성장<br>
+- 제품의 질을 높이고, 전문 지식 사내 공유</td>
+<td>- 구조화된 훈련 프로그램<br>
+- 셰퍼드는 2개월 간 매주 1시간 수업으로 구성된 구조화된 훈련 프로그램에 참여<sup>14</sup><br>
+- 사례 연구 기반 학습<br>
+- 수업 외 사례 연구 기반 토론을 통해 실험설계와 분석에 관한 깊은 이해 도모</td>
+<td>- 엄격한 셰퍼드 선정 요건<br>
+- 주간 실험 리뷰 시스템</td>
+<td>- 일주일에 한 번 실험 오너의 요청 처리<br>
+- 각자 일정 기간 대기 근무하며, 실험 리뷰 및 지원 제공</td>
+</tr>
+<tr class="even">
+<td>Booking.com</td>
+<td>실험 대사<sup>15</sup></td>
+<td>- 중앙 실험 조직에서 실험 지원에 관심이 있는, 실험 경험이 풍부한 사람들을 대사로 임명<br>
+- 대사는 약 15명으로 구성되며, 제품 조직에서 실험 지원이 가장 필요한 부분을 담당</td>
+<td>- 제품에 관한 책임감<br>
+- 우선 지원<br>
+- 중앙 실험 조직의 우선 지원을 받을 수 있음<br>
+- 제품 성과 리뷰에서 성과 인정</td>
+<td>- 티켓 시스템<br>
+- 대사들끼리 협력하여 실험 지원 요청 티켓 처리<br>
+- 중앙 실험 조직 내부 커뮤니케이션 참가<br>
+- 대사들은 중앙 실험 조직의 내부 커뮤니케이션에 참가하여, 특정 문제 또는 현재 진행 중인 개발에 대해 최신 정보를 얻음<br>
+- 월간 회의<br>
+- 대사들끼리 제품 요구와 우려사항 논의</td>
+<td>- 대사들은 실험 지원의 첫 번째 라인으로서 역할을 하며, 실험 관련 문제를 신속히 처리함</td>
+<td>- 대사들이 실험 관련 질문 및 문제 처리<br>
+- 필요시 중앙 실험 조직으로 에스컬레이션 또는 우선적 지원을 받을 수 있음</td>
+</tr>
+<tr class="odd">
+<td>Booking.com</td>
+<td>동료 평가</td>
+<td>- 누구나 자발적으로 참여 가능<br>
+- 매주 참여자들을 무작위로 짝지어 실험 리뷰 및 댓글 작성을 통한 토론 지원</td>
+<td>- 새로운 친구와 학습 기회 제공<br>
+- 디지털 배지<sup>16</sup></td>
+<td>- 경험자와 매칭<br>
+- 새로운 참여자는 처음 몇 번의 리뷰에서 경험이 많은 사람과 짝지어져, 실험 리뷰에 대한 이해를 높일 수 있음<br>
+- 리뷰 가이드<br>
+- 좋은 리뷰를 작성하는 방법에 대한 한 페이지 짜리 가이드 제공</td>
+<td>- 리뷰와 댓글에 관한 KPI 정의</td>
+<td>- 참여자들이 실험 플랫폼에서 “무작위 실험 보기”를 클릭하여, 리뷰할 실험을 쉽게 선택<br>
+- 플랫폼에 내장된 코멘트와 스레딩 기능을 통해 리뷰와 관련된 토론 지원</td>
+</tr>
+<tr class="even">
+<td>Microsoft</td>
+<td>Center of Exellence 모델</td>
+<td>- 실험 팀의 데이터 과학자들을 제품 팀에 배치하여 실험설계와 분석 직접 지원<br>
+- 실험 팀의 데이터 과학자들의 자신의 전문 지식을 제품 팀에 공유</td>
+<td>- 역할의 중요성<br>
+- 제품 성과 리뷰에서 성과 인정</td>
+<td>- 집중 교육 프로그램<br>
+- 제품 팀 대상 집중 교육 프로그램 운영<br>
+- 실험설계, 분석, 결과 해석 등 실험 수행에 필요한 모든 기술 커버<br>
+- 지속적 지원<br>
+- 제품 팀이 자립할 수 있을때까지 지속적 지원 제공</td>
+<td>- 월간 스코어카드 관리<br>
+- 실험의 대규모 확대를 위해 매년 초 각 제품 팀은 온보딩 목표 설정<br>
+- 실험 팀에서 각 제품 팀에서 설정한 온보딩 목표를 측정하기 위해 매월 스코어카드 관리<br>
+- 정기 리뷰<br>
+- 데이터 과학자와 챔피언(?)은 6주마다 제품의 실험 운영을 검토하여 과거의 성과 실패를 강조하고, 부족한 점을 해결하기 위한 계획을 세움</td>
+<td>- 초기에는 데이터 과학자들이 모든 지원 요구를 처리하지만, 시간이 지나면서 제품 팀은 점점 더 자립적으로 실험을 수행할 수 있게 됨<br>
+- 데이터 과학자들이 제품 팀에 전문 지식 전수</td>
+</tr>
+<tr class="odd">
+<td>Google</td>
+<td>Just-in-time 교육 모델</td>
+<td>- 실험 설계와 분석에 대한 실시간 지원을 제공하여, 팀이 필요시 즉각적 도움을 받을 수 있도록 함<br>
+- 실험 설계와 분석에 대한 질문 체크리스트를 제공하여, 팀이 실험을 계획하고 실행하는 과정에서 고려해야할 중요한 요소들을 놓치지 않도록 도움</td>
+<td>- 성과 평가 반영<br>
+- 실험 결과와 그에 따른 데이터 기반 의사결정으로 팀의 성과 평가<br>
+- 개인 성장<br>
+- 실시간 교육을 통한 지속적 학습과 성장</td>
+<td>- 지속적 지원<br>
+- 첫 번째 실험에서는 많은 지원이 필요하지만, 이후 실험에서는 점점 더 적은 지원이 필요하게 되며 추후 자립이 가능할 정도로 역량을 키울 수 있음<br>
+- 실험 리뷰<br>
+- 실험 리뷰를 통해 팀은 자신의 실험 결과를 분석하고, 이를 바탕으로 개선할 수 있는 방법을 배우게 됨</td>
+<td>- 메타 분석<br>
+- 실험 리뷰는 메타 분석을 가능하게 하며, 더 큰 패턴을 찾고 실험 결과의 신뢰성을 유지하는데 중요한 역할을 함<br>
+- 지속적 개선<br>
+- 실험 리뷰를 통해 얻은 피드백을 바탕으로 지속적 실험 설계와 분석 방법 개선 가능</td>
+<td>- 팀이 실험 계획 또는 실행 과정에서 질문이 생기면, Just-in-time 교육 모델을 통해 즉각적 지원<br>
+- 첫 번째 실험에서는 많은 지원이 필요하지만, 이후 실험에서는 더욱 자립적으로 실험을 수행할 수 있음</td>
+</tr>
+</tbody>
+</table>
+<p>여기서 실험에 숙련된 Data Scientist 인력이 부족한 조직에게는 Just-in-time 교육 모델이 가장 괜찮은 선택지로 보인다. 반대로 인력이 충분히 많아 특정 인원이 교육에 집중할 여력이 되는 경우 트위터의 실험 셰퍼드 프로그램이 보다 수준 높은 실험 전문가를 육성할 수 있는 프로그램이지 않을까 생각이 든다.</p>
+</section>
+<section id="맺음말" class="level2">
+<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
+<p>실험 기반 제품 개선 문화를 형성하기 위해 그들이 취한 전략과 교육 프로그램에는 다음의 5가지 핵심 요소가 녹아있다고 본다.</p>
+<ul>
+<li><p><strong>실험 피쳐 Ship 권한 분산화</strong></p>
+<ul>
+<li><p>실험 피쳐의 배포 권한을 중앙에서 팀으로 분산시켜<sup>17</sup> 각 팀이 실험을 통해 자신의 피쳐를 직접 배포할 수 있도록 한다. 이는 팀의 자율성을 높이고, 실험 문화를 조직 전체에 확산시키는 데 중요한 역할을 한다.</p></li>
+<li><p><strong>e.g.</strong>&nbsp;Yandex의 실험 전문가 프로그램과 Amazon의 Weblab Bar Raisers 프로그램은 실험 승인 권한을 전문가나 Bar Raiser에게 부여하여 각 팀이 실험 결과에 따라 피쳐를 배포할 수 있도록 하고 있다.</p></li>
+</ul></li>
+<li><p><strong>도메인 전문가를 실험 전문가로 육성</strong></p>
+<ul>
+<li><p>도메인 지식이 풍부한 전문가들을 실험 전문가로 육성하여, 이들이 실험 설계와 분석을 주도하게 한다. 이를 통해 실험의 품질을 높이고, 실험 결과를 더 잘 해석하여 실질적인 제품 개선으로 이어지도록 한다.</p></li>
+<li><p><strong>e.g.</strong>&nbsp;Twitter의 Experiment Shepherds와 Microsoft의 Center of Excellence 모델은 도메인 전문가들이 실험 전문가로서 활동하도록 지원하고 있다.</p></li>
+</ul></li>
+<li><p><strong>지속적인 교육 및 멘토링</strong></p>
+<ul>
+<li><p>실험 문화를 조직 전체에 확산시키기 위해 지속적인 교육과 멘토링 프로그램을 운영한다. 이는 팀이 실험 설계, 분석 및 결과 해석에 대한 역량을 꾸준히 향상시킬 수 있도록 돕는다.</p></li>
+<li><p><strong>e.g.</strong>&nbsp;Amazon의 Weblab Bar Raisers 프로그램과 Google의 Just-in-time 교육 모델은 체계적인 교육과 멘토링을 통해 팀의 실험 역량을 강화하고 있다.</p></li>
+</ul></li>
+<li><p><strong>동기 부여 및 인정</strong></p>
+<ul>
+<li><p>실험 참여자들에게 적절한 동기 부여와 인정을 제공하여, 실험 문화를 강화한다. 배지, 성과 인정, 성장 기회 제공 등을 통해 팀의 참여를 유도하고 실험의 중요성을 강조한다.</p></li>
+<li><p><strong>e.g.</strong>&nbsp;Booking.com의 Experimentation Ambassadors와 Peer-Review Program은 참여자들에게 배지와 성과 인정을 통해 동기를 부여하고 있다.</p></li>
+</ul></li>
+<li><p><strong>협업 및 지식 공유</strong></p>
+<ul>
+<li><p>팀 간 협업과 지식 공유를 장려하여, 실험의 질을 높이고 다양한 관점에서의 피드백을 수용한다. 이를 통해 실험 결과의 신뢰성을 높이고, 제품 개선의 효과를 극대화할 수 있다.</p></li>
+<li><p><strong>e.g.</strong>&nbsp;Booking.com의 Peer-Review Program과 Twitter의 Experiment Shepherds 프로그램은 팀 간 협업과 지식 공유를 통해 실험의 질을 향상시키고 있다.</p></li>
+</ul></li>
+</ul>
+<p>그들이 수행한 노력들이 이정도 수준으로 문서화가 되는 것만 봐도 실험 기반 제품 개선 문화를 형성한다는 것이 얼마나 어려운지 알 수 있다. 이러한 페이퍼를 보았기에 <a href="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/">앞전의 글</a>에서 의도적이고 부단한 노력이 필요하다는 것을 여러번 강조할 수 밖에 없었다. 핵심은 동기 부여를 통해 사내 도메인 전문가들을 수많은 실험 전문가를 육성해내고, 배포 권한을 분산<sup>18</sup>시키는 것에 있다.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-gupta2019" class="csl-entry">
+Gupta, Somit, Ronny Kohavi, Diane Tang, Ya Xu, Reid Andersen, Eytan Bakshy, Niall Cardin, et al. 2019. <span>“Top Challenges from the First Practical Online Controlled Experiments Summit.”</span> <em>ACM SIGKDD Explorations Newsletter</em> 21 (1): 20–35. <a href="https://doi.org/10.1145/3331651.3331655">https://doi.org/10.1145/3331651.3331655</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Online Controlled Experiments (온라인 통제 실험)↩︎</p></li>
+<li id="fn2"><p>High touch↩︎</p></li>
+<li id="fn3"><p>Top down↩︎</p></li>
+<li id="fn4"><p>peer review↩︎</p></li>
+<li id="fn5"><p>Product Stratege Forums↩︎</p></li>
+<li id="fn6"><p>실험을 롤아웃하기 전에 이러한 리뷰를 거침 (Rollout: 변경사항을 실제로 배포하는 것)↩︎</p></li>
+<li id="fn7"><p>Negative and Positive Case Studies↩︎</p></li>
+<li id="fn8"><p>Safe Rollout↩︎</p></li>
+<li id="fn9"><p>Report Cards and Gamification↩︎</p></li>
+<li id="fn10"><p>Education and support↩︎</p></li>
+<li id="fn11"><p>Experts on Experiment↩︎</p></li>
+<li id="fn12"><p>Weblab Bar Raisers↩︎</p></li>
+<li id="fn13"><p>Experiment Shepherds↩︎</p></li>
+<li id="fn14"><p>실험설계, 실험윤리, 지표, 기본 통계 등 7개 주제로 구성↩︎</p></li>
+<li id="fn15"><p>Experimentation Ambassadors↩︎</p></li>
+<li id="fn16"><p>실험 플랫폼 인터페이스에서 제공↩︎</p></li>
+<li id="fn17"><p>권력이 집중되면 부패하기 마련이다.↩︎</p></li>
+<li id="fn18"><p>실험 배포 권한이 하나의 조직에 집중되어 있을 경우 그 조직은 정치화되는 것 또는 그밖의 모든 조직에 미움을 사는 것은 시간 문제일 것이다.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2024,
+  author = {Bang, Taemo},
+  title = {실험 기반 제품 개선 문화 형성을 위한 해외 빅테크 기업들의
+    노력},
+  date = {2024-10-01},
+  url = {https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2024" class="csl-entry quarto-appendix-citeas">
+Bang, Taemo. 2024. <span>“실험 기반 제품 개선 문화 형성을 위한 해외
+빅테크 기업들의 노력.”</span> October 1, 2024. <a href="https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/">https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/</a>.
+</div></div></section></div> ]]></description>
+  <category>Column</category>
+  <category>Experimentation</category>
+  <guid>https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/index.html</guid>
+  <pubDate>Mon, 30 Sep 2024 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2024-10-01-how-to-develop-experimentation-culture/thumbnail.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>온라인 실험의 꽃: 문화 형성과 자동화</title>
+  <dc:creator>Taemo Bang</dc:creator>
+  <link>https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>온라인 실험의 꽃은 “문화 형성”과 “자동화”에 있다.</p>
+<section id="문화-형성" class="level3">
+<h3 class="anchored" data-anchor-id="문화-형성">문화 형성</h3>
+<p>문화 형성에 관한 의도적이고 각별한 노력 없이는 온라인 실험에 꽃을 피울 수 없다. 기업에 있어 문화란, 조직의 암묵적 사회 질서를 말한다<span class="citation" data-cites="gupta2019">(Gupta et al. 2019)</span>. 문화적 규범은 곧 조직 내에서 무엇을 권장하고 막을지, 무엇을 받아들이고 거부할지 결정하는 기준이 된다. 온라인 실험은 고객 중심의 제품을 만들어나가기 위해 실행되며, 실무자의 아이디어를 택할지 말지 결정하는 데에 중요한 역할을 한다. 온라인 실험이 곧 문화적 규범의 역할을 하는 것이다.</p>
+<p>다른 말로는 이를 “실험 중심 제품 개선 문화”라고도 표현한다. 온라인 실험이 그 기업의 지속 가능한 도구가 되려면, 이 문화를 형성에 내는 것에 리더십을 중심으로 의도적이고 각별한 노력을 기울여야한다. 문화적 규범이 “온라인 실험”에 바뀌는 것에 맞추어 조직원들이 정당하게 평가를 받을 수 있도록 조정이 필요할 수도 있고, 조직 구성에 대한 변화가 필요할 수도 있다. 어느날 갑자기 내 아이디어를 “온라인 실험”이라고 하는 도구로 평가받는다는 것은 실무자 입장에서 굉장히 민감한 부분이기 때문이다.</p>
+<p>이러한 이유에서 해외 테크 기업들은 실험 기반 제품 개선 문화를 형성하기 위해 기술 개발(e.g.&nbsp;실험 플랫폼 개발, 통계적 방법론 연구) 외에 실험 확장을 위한 주기적인 직원 교육 및 치밀한 전략 수립하여 실행해왔다. <span class="citation" data-cites="gupta2019">(Gupta et al. 2019)</span>에서 그 내용을 상세하게 확인할 수 있으며, 추후 별도의 글로 해당 논문에 정리된 그들의 노력을 정리해보려고 한다. 그들이 기술 개발에만 치중했다면, 결코 전사 구성원이 실험을 중심으로 자신의 아이디어를 평가받는 “실험 중심 제품 개선 문화”를 형성하지 못했을 것이다.</p>
+</section>
+<section id="자동화" class="level3">
+<h3 class="anchored" data-anchor-id="자동화">자동화</h3>
+<p>자동화에 관한 의도적이고 각별한 노력없니는 온라인 실험에 꽃을 피울 수 없다. 앞서 이야기했듯 온라인 실험은 곧 기업의 문화적 규범 역할을 하며, 이는 자신의 아이디어를 평가받기 위해 온라인 실험을 실행해야한다는 것을 말한다. 온라인 실험을 기반으로 한 “정확한 평가”를 위해서는 많은 기술적 노력이 뒤따른다. 필수적인 요소들을 요약하면 다음과 같다<sup>1</sup>.</p>
+<ul>
+<li>실험 전 단계: 고객 가치에 기반한 실험 설계 및 피쳐 디자인, 정교한 실험설계, 실험 전 편향 교정</li>
+<li>실험 중 단계: 예상치 못한 효과의 조기 감지를 위한 모니터링</li>
+<li>실험 후 단계: 적절성 검사, 통계 분석 결과 해석, 통계적 유의도와 실무적 유의도를 고려한 최종 의사 결정</li>
+</ul>
+<p>조직 구성 유형에 따라 다르겠지만 PM, PO, 디자이너 등 평가를 받기 위해 온라인 실험을 실행해야 하는 각각의 구성원들이 이러한 모든 기술적 과정들을 혼자 진행하는 것은 불가능하다. 도메인 지식 뿐만이 아닌 엔지니어링, 통계학적 역량이 필요로 되기 때문이다.</p>
+<p>따라서 이러한 과정들을 거쳐 정확한 평가를 내리기 위해서는 Data Scientist가 옆에 붙어있어야 한다. 그러나, 사내에 이러한 역량을 가진 Data Scientist들은 보통 손에 꼽는 숫자로 존재한다. 따라서 이러한 과정들을 자동화하여 온라인 실험을 스케일업 하는 것이 굉장히 중요한 포인트라고 할 수 있다.</p>
+<p>이는 실로 굉장히 큰 대작업이다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/images/paste-1.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Gupta, S., Ulanova, L., Bhardwaj, S., Dmitriev, P., Raff, P., &amp; Fabijan, A. (2018). The Anatomy of a Large-Scale Experimentation Platform. 2018 IEEE International Conference on Software Architecture (ICSA), 1–109. https://doi.org/10.1109/ICSA.2018.00009</figcaption>
+</figure>
+</div>
+<p>위 그림과 같이 기본적으로 실험 실행, 로그 프로세싱, 분석 서비스들을 관리할 수 있는 실험 플랫폼, 그리고 각 실험에 다양하게 존재하는 여러 지표들을 정의할 수 있는 정교한 메트릭 스토어가 필요로 된다<span class="citation" data-cites="gupta2018">(Gupta et al. 2018)</span>. 이렇듯 우리 기업 위에 온라인 실험을 이라는 꽃을 피우기 위해서는 문화 형성 뿐만이 아닌, 동료의 아이디어를 “빠르고, 정확하게” 평가하기 위한 자동화에도 의도적이고 각별한 노력을 기울여야 한다.</p>
+</section>
+<section id="맺음말" class="level3">
+<h3 class="anchored" data-anchor-id="맺음말">맺음말</h3>
+<p>처음엔 그저 통계학, 인과추론 등에 관한 관심과 현재 몸담고 있는 조직의 니즈로 인해 온라인 실험이라는 분야에 몰두하게 되었는데, 해외 테크 기업들이 써낸 아티클과 여러 논문들을 보고 실무에서도 구르다보니 결국 “온라인 실험”의 꽃을 피워내기 위해선 “문화 형성”과 “자동화”라는 두 가지 요소가 필수적으로 충족되어야 함을 깨달았다.</p>
+<p>이를 깨달았기에 올해 1, 2분기에 가짜연구소에서 진행했던 <a href="https://github.com/CausalInferenceLab/OCE-Materials">실험 스터디</a>를 추가로 진행하지 않기로 결정했다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/images/paste-2.png" class="img-fluid figure-img" width="300"></p>
+<figcaption class="figure-caption">Kohavi, R., Tang, D., &amp; Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing. Cambridge University Press. https://experimentguide.com/</figcaption>
+</figure>
+</div>
+<p>원래 계획은 Ron Kohavi의 저서<span class="citation" data-cites="kohavi2020">(Kohavi, Tang, and Xu 2020)</span>를 바탕으로 실험에 관한 서로의 기본적 이해를 맞춘 후, 통계적 방법론을 중심으로 논문 스터디를 해볼 요량이었으나.. 우리 업계에서 온라인 실험이라는 도구가 필요한 또는 이미 사용하고 있으나 스케일업에 어려움을 겪고 있는 사람들에게는 더 깊은 레벨의 통계적 방법론은 필요하지 않은 단계라는 확신이 들었기 때문이다.</p>
+<p>나 또한 팀 스터디를 리딩하며, 그리고 홀로 통계적 방법론에 관한 아티클과 논문들을 여럿 보며 내가 알고있는 이론적 기술과 실제 내가 업무에 적용하고 있는 기술과 격차가 벌어지기 점점 더 크게 벌어지는 것을 느꼈다. 온라인 실험이라는 꽃을 피우기 위해 내가 속한 업무 환경 또한 앞서 이야기한 필수 요소인 “문화 형성”, “자동화”에 부단한 노력이 필요했기 때문이다. 문화 형성, 자동화가 어느정도 레벨에 도달하기 이전에, 높은 레벨의 통계적 방법론을 연구하고 적용하는 것은 아무런 의미가 없다.</p>
+<p>온라인 실험에 적용되는 통계적 방법론에 관한 단순한 흥미로 시작한 스노우볼이 여기까지 굴러와서, 이러한 본질적인 부분들을 느끼고 있다는 것이 참 신기하다. 지난해 6-7월 즈음을 기점으로 다른 공부들을 제쳐두고 깊게 몰두하기 시작했던 기억이 나는데, 짧은 시간에 많은 것들을 깨닫고 성장한 것 같다는 느낌을 받는다. 내년 이맘때 쯤 G마켓의 실험 문화와 자동화 수준은 어느 레벨에 올라있을까? 이제껏 나아온 길보다 앞으로 나아갈 길이 훨씬 더 많이 남았지만, 함께 노력해주는 동료들이 있기에 부단한 노력을 기울여보려고 한다.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-gupta2019" class="csl-entry">
+Gupta, Somit, Ronny Kohavi, Diane Tang, Ya Xu, Reid Andersen, Eytan Bakshy, Niall Cardin, et al. 2019. <span>“Top Challenges from the First Practical Online Controlled Experiments Summit.”</span> <em>ACM SIGKDD Explorations Newsletter</em> 21 (1): 20–35. <a href="https://doi.org/10.1145/3331651.3331655">https://doi.org/10.1145/3331651.3331655</a>.
+</div>
+<div id="ref-gupta2018" class="csl-entry">
+Gupta, Somit, Lucy Ulanova, Sumit Bhardwaj, Pavel Dmitriev, Paul Raff, and Aleksander Fabijan. 2018. <span>“2018 IEEE International Conference on Software Architecture (ICSA).”</span> In, 1–109. <a href="https://doi.org/10.1109/ICSA.2018.00009">https://doi.org/10.1109/ICSA.2018.00009</a>.
+</div>
+<div id="ref-kohavi2020" class="csl-entry">
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>마침 이 부분에 관한 상세한 설명을 참고하면 좋은 2024 Korea Summer Workshop on Causal Inference 2024 발표 영상이 업로드되어 공유해본다: <a href="https://youtu.be/zcZ2vICGm1o?si=jy6mno97RVNBP1-U" class="uri">https://youtu.be/zcZ2vICGm1o?si=jy6mno97RVNBP1-U</a>↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2024,
+  author = {Bang, Taemo},
+  title = {온라인 실험의 꽃: 문화 형성과 자동화},
+  date = {2024-10-01},
+  url = {https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/},
+  langid = {kr}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2024" class="csl-entry quarto-appendix-citeas">
+Bang, Taemo. 2024. <span>“온라인 실험의 꽃: 문화 형성과 자동화.”</span>
+October 1, 2024. <a href="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/">https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/</a>.
+</div></div></section></div> ]]></description>
+  <category>Column</category>
+  <category>Experimentation</category>
+  <guid>https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/index.html</guid>
+  <pubDate>Mon, 30 Sep 2024 15:00:00 GMT</pubDate>
+  <media:content url="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/thumbnail.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>보다 매력적인 인재로 거듭나고 싶었기에 했던 노력들</title>
   <dc:creator>Taemo Bang</dc:creator>
@@ -2734,255 +3165,6 @@ Killick, Rebecca, and Idris A. Eckley. 2014. <span>“Changepoint: An R Package 
   <category>Causal Inference</category>
   <guid>https://taemobang.com/posts/2023-03-26-Quasi-Experimental-Designs/index.html</guid>
   <pubDate>Sat, 25 Mar 2023 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>월간 회고록: 2023년 2월</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://taemobang.com/posts/2023-03-12-monthly-memory-202302/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/preview.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
-</figure>
-</div>
-<p>지난 2월을 회고해보려고 합니다. 어느덧, 3월 중순이 훌쩍 다가왔네요. 이제까지 써왔던 월간 회고록들에 비해 비교적 빠른 시기에 회고록을 적어보는 듯 합니다. 블로그가 회고록, 칼럼 투성이가 되어가고 있네요. 다음 글은 꼭 기술 주제로 쓴다고 약속하겠습니다. 개인적으로 쓰고 있는 주간 회고들을 둘러보니, 2월에도 참 많은 일들이 있었네요. 늘 그랬듯이, 그 중 함께 공유 드리고 싶은 내용들로 회고록을 채워봅니다. 어쩌다보니 이번 글은 이야기를 들려드리는 어투라기 보다는.. 혼잣말 하는 어투로 채우게 됐네요! 너그러이 이해부탁드립니다.😀</p>
-<section id="일" class="level2">
-<h2 class="anchored" data-anchor-id="일">일</h2>
-<section id="모바일-홈-개인화" class="level3">
-<h3 class="anchored" data-anchor-id="모바일-홈-개인화">모바일 홈 개인화</h3>
-<p>우리팀<sup>1</sup>에서 요즘 집중하고 있는 부분은 모바일 홈 개인화이다. 얼마전 <a href="https://www.news1.kr/articles/4965255">미디어</a>를 통해 이 소식을 전하기도 하였다:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/images/image-54034097.png" class="img-fluid figure-img" width="800"></p>
-<p></p><figcaption class="figure-caption">출처: news1.kr</figcaption><p></p>
-</figure>
-</div>
-<p>지난해에 몇달동안 여러 팀이 붙어 꽤나 많은 리소스를 투입했던 프로젝트이기에, 데이터 분석이라는 도구를 통해 해당 도메인의 추천 서비스를 성장시키는데에 도움을 줘야하는 나로서도 막중한 책임감을 가지고 있다. 얼마전 미디어를 통해 이러한 G마켓의 모바일 홈 개인화 소식이 대중들에게 전해졌다는 소식을 듣고, 조금 걱정스러운 마음이 들었다. 10% 고객에게만 배포한 현 단계에서 미디어를 통해 이 소식을 전하는게 맞는가에 관한 생각이 있었기 때문이다.</p>
-<p>나 또한 이러한 홍보를 통해 모바일 홈에 관심을 끌게 되어 애초에 홈에 관심이 없던 유저들의 이목까지 끌어낼 수 있지 않을까? 하는 생각을 했던 적이 있다. 그러나, 얼마 지나지 않아 이 부분은 실험설계 관점에서 봤을 때 상당히 위험한 행위일 수 있겠다는 생각을 했다. 가령, 우리가 신약의 효과를 검정하고자 하는 실험을 설계한다고 해보자. 보통 이러한 종류의 실험을 설계할 때에는 기본적으로 Single-Blind Test를 수행하거나, 여기서 한 발 더 나아가 Double-Blind Test까지 수행하는 경우가 있다. 두 셋팅의 근본적 목적은 순수한 처리효과<sup>2</sup>를 보기위함이다. 전자는 피실험자<sup>3</sup> 본인이 어떤 그룹<sup>4</sup>에 속했는지 알려주지 않는 실험을 말하며, 후자는 약을 처방하는 의사조차도 본인이 처방할 약이 신약인지 위약인지 모르는 실험을 말한다. 신약의 순수한 효과를 알아보기 위해 이정도 셋팅까지 한다는 말이다.<sup>5</sup></p>
-<p>이 관점에 바라보았을 때, 내가 처음에 무심코 했던 “마케팅과 홍보를 좀 잘하면 홈에 관심없던 고객들까지 유입을 시킬 수 있을거 같은데?”라는 생각은 굉장히 위험하다는 것이다. 이러한 홍보는 결국 모바일 홈 개인화가 우리에게 가져다주는 순수한 효과를 보지 못하게끔 만든다. 그래서, 미디어를 통해 G마켓의 모바일 홈 개인화 소식이 전해졌다는 소식을 들었을 때, 모바일 홈 개인화가 가져다 주는 효과가 과대추정(overestimate)되지 않을까 하는 걱정스런 마음이 들었다. 그러나, 이 부분 또한 얼마지나지 않아 괜한 노파심이라는 생각이 들었다. 냉정하게 생각해봤을 때 G마켓에 관심을 두고 우리 소식을 찾아보는 고객이 몇이나 될까? 지상파 뉴스, CF를 통해 대대적인 홍보를 한 것도 아니고. 애초에 G마켓의 AI 기술에 관심을 가지고 있는 고객들 자체가 극소수일 것이기 때문에 모바일 홈 개인화의 효과가 과대추정될 일은 없을거라고 생각하고있다.😀</p>
-<p>다만, 모바일 홈에 내보내고 있는 추천 서비스를 고도화해 나가면서 이에 노출되는 고객 비중들을 차차 늘려가며, 기존의 모바일 홈에 비해 고객들에게 더나은 쇼핑 경험을 제공하고 있다는 판단이 들었을 때는 과감한 홍보 등을 통해 신규 고객들을 유입시키고자 하는 움직임이 필요로 된다고 본다.</p>
-</section>
-<section id="유저-행태-분석" class="level3">
-<h3 class="anchored" data-anchor-id="유저-행태-분석">유저 행태 분석</h3>
-<p>개인화 시킨 모바일 홈을 일부 고객에게 배포한 뒤에는, 당연한 얘기겠지만 유저 행태 분석이 필요로 됐다. 서비스 출시 후, 유저 행태 분석이 필수적으로 따라 나와야하는 이유에 대해 생각을 해봤다:</p>
-<ul>
-<li><p>보수적인 관점</p>
-<ul>
-<li>개인화는 유저들에게 더 나은 경험해주는 서비스임이 자명하다. 하지만, 새로운 것을 도입할 때에는 보수적인 관점에서 사고를 해볼 필요가 있다.<sup>6</sup> 이 관점에서 우리가 개인화한 홈이 유저들에게 기존의 홈보다 더 나은 쇼핑 경험을 제공하고 있는가에 대한 검증은 꼭 필요로 된다.</li>
-</ul></li>
-<li><p>서비스 고도화 관점</p>
-<ul>
-<li>고객들이 남긴 로그에는 그들의 잔심이 남아있다. 그들이 남긴 잔심을 데이터를 뜯어봄으로써 확인할 수 있다면, 이보다 좋은 서비스 고도화 방법은 없다. 단순한 모델 튜닝만으로 극적인 성과 향상을 기대하긴 어렵다. 다들 알겠지만, 도메인 지식과 비즈니스 인사이트가 투영된 Feature engineering은 Parameters tuning에 비해 비약적인 성과 향상을 가져다 준다. 전자의 방법에서 한 발 더 나아가, 유저 행태 분석을 통해 실제 유저들의 흥미를 이끌어 내는 요소, 유저들이 우리 서비스에서 원하는 바를 파악하여 이 부분까지 Feature engineering에 반영한다면 더욱 큰 시너지 효과를 낼 수 있을 것이다. 아울러, 우리는 Output 그 자체가 아닌 특정 Output을 이끌어내는 Input에 관심이 있기 때문에 이 과정에서 자연스레 인과추론이 필요로 될 수도 있다.</li>
-</ul></li>
-<li><p>유저 행태 분석과는 조금 동떨어진, 선행되면 좋을 것 같은 부분</p>
-<ul>
-<li><p>유저 행태 분석 전에 좀 더 근본적인 부분에 대해 생각해볼 필요도 있다.</p>
-<ul>
-<li><p>지금 우리 서비스를 성장시키기 위해 필요한 단 하나의 지표(OMTM, One Metric that Matters)는 무엇인가?</p></li>
-<li><p>그 전에, 우리가 성장시키고자 하는 서비스는 현재 어떤 단계에 놓여있는가? 매출을 높이고 싶은 단계에 놓여있는가? 출시한 서비스에 관심을 갖는 유저들을 최대한 모아야하는 단계에 놓어있는가?</p></li>
-<li><p>즉, OMTM은 서비스를 성장시키고자 하는 방향에 따라 언제든지 달라질 수 있다.</p></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>아무튼, 이번 기회에 (부끄러운 이야기일수도 있지만) 처음으로 유저 행태 분석을 수행해보았다. 1-2주 안에 의미있는 인사이트를 뽑아내어 공유 세션을 가지고 싶었는데, 처음 수행해보는 형태의 분석이여서 그런지 중간중간 분석 방향을 두번 세번정도 엎었다..😭 액셔너블한 분석 결과, 실질적인 비즈니스 인사이트를 가져다줄 수 있는 분석 결과를 가져가려고 노력하다보니, 나 자신이 만족할만한 분석 결과가 좀처럼 나오지 않았다. 그래서, 3주라는 기간이 소요됐다. 그럼에도 불구하고, 소요된 시간에 비해 뽑아낸 인사이트는 굉장히 마음에 안들었다. 이렇게 질질 끌다간 끝이 없을 것 같아 팀 내에 공유 세션을 가졌고, 마침내 팀원들과 인사이트를 나눌 수 있었다. 오랜만에 느껴보는, 긴 기간의 분석 후의 후련함이었다.</p>
-<p>3주간 분석을 수행하며 느낀 바는 다음과 같다:</p>
-<ul>
-<li><p>유저 행태 분석은 정성적인 평가가 필요로 되는 부분이 많은 듯 하다. 그래서, 도메인 지식이 중요하다고들 하는게 아닌가 하는 생각이 들었다. 반대로, 정성적인 평가밖에 할 수 없어 보이는 부분들을 어떻게 정량적으로 평가해볼 수 있을지에 대한 고민도 필요로 되어 보인다. 어찌됐든, 정성적 평가는 주관이 개입하기 마련이기 때문이다. 이러한 이유에서 팀이 필요하고, 집단 지성이 필요로 되는 것이 아닐까?</p></li>
-<li><p>앞서 액셔너블한 분석 결과, 실질적 비즈니스 인사이트를 가져다줄 수 있는 결과를 가져가고 싶다고 했었다. 팀내 공유 세션이 끝난 뒤, 요 부분을 핑계삼아 분석 결과 공유가 조금 늦어진 것 같다고 슬랙에 말씀을 드렸다.😂 그랬더니, 선호님(팀장님)이 또 명언을 남겨주셨다.</p>
-<blockquote class="blockquote">
-<p>인사이트가 꼭 있어야만 한다는 부담은 덜어내셔도 됩니다. 정리해주신 팩트를 보면서 인사이트는 같이 논의해도 돼요. 그게 팀이죠. ’어떤 관점으로 데이터를 정리해봤는데 딱히 뭔가 안보인다’는 것 자체만으로도 충분한 정보이자 인사이트가 됩니다.</p>
-</blockquote>
-<p>나는 앞으로도 액셔너블한, 비즈니스 인사이트가 있는 분석 결과를 가져가기 위해 노력할테지만, 선호님의 의견은 많은 위로가 됐고 내게 또다른 새로운 관점을 심어주었다. 이런 분이 리딩하시는 팀에서 데이터 분석을 할 수 있다는게 참 행운이 아닐까 하는 생각을 가지고 있다.</p></li>
-<li><p>분석의 뎁스가 깊어지다보면, 종종 분석 목적을 잊게 될때가 있다. 다른 말로 하면, 배가 산으로 갈때가 있다. 데이터 분석을 하며 가장 중요한 부분이 이 부분이 아닐까 생각한다. 분석의 스텝바이스텝 Why를 생각해보는 습관, 끊임없이 내게 질문을 던지고 본 분석을 시작했던 배경, 목적과 잘 align되는 방향으로 분석이 진행되고 있는지에 대해 생각해보는 습관. 이 두 가지가 데이터 분석의 다가 아닌가 생각해본다. 방법론은 이러한 고민 속에서 자연스레 뒤따라 나오는 것이고.</p></li>
-</ul>
-</section>
-</section>
-<section id="개인" class="level2">
-<h2 class="anchored" data-anchor-id="개인">개인</h2>
-<section id="데이터-분석가과학자-제-1회-밋업" class="level3">
-<h3 class="anchored" data-anchor-id="데이터-분석가과학자-제-1회-밋업">데이터 분석가/과학자 제 1회 밋업</h3>
-<p>지난 2월 23일에는 데이터 분석가 &amp; 데이터 과학자 제 1회 밋업에 참가했다. 장소 마련의 한계로, 추첨을 통해 참가 인원을 선발할 수 밖에 없었는데 운이 좋게도 참가할 수 있는 기회를 얻을 수 있었다. 빅쏠에서 데이터 과학자로 근무하고 계신 이진형님이 데이터 분석가 &amp; 데이터 과학자 모임 <a href="https://open.kakao.com/o/gFYaaZ0e">오픈 카톡방</a>을 만드신데에 이어, 이렇게 오프라인 밋업까지 주최를 해주셨다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/fig1.JPG" class="img-fluid figure-img" width="600"></p>
-</figure>
-</div>
-<p>바쁜 와중에 개인적으로 시간을 내서 이러한 모임을 주최하는 것은 정말 어려운 일이다. 이 글을 읽으실 일은 없겠지만, 감사의 마음을 한번 더 표해본다. 우리나라에 개발자 생태계는 온라인에 잘 형성이 되어있는 반면 데이터 분석가/과학자 생태계는 잘 형성이 되어있지 않다는 생각이 들었는데, 이제는 데이터 분석가/과학자 직군의 온라인 생태계도 점차 갖추어져 나가고 있다는 생각이 든다. 이러한 형태의 밋업도 그렇고, <a href="https://playinpap.github.io/">PAP</a>와 같은 커뮤니티에서 뉴스레터까지 발행하며 업계에 미치는 영향력을 점차 키워가고 있는 것들을 보면 말이다. 한편으로는 그러한 생태계 형성이 잘 안되어 있는 부분에 갈증이 있었음에도, 나 스스로는 왜 어떤 모임이나 커뮤니티를 만드는 것에 액션을 취하지 않았을까 하는 생각도 한다. 그래서, 이런 부분에 액션을 옮긴 분들께는 더욱 깊은 존경심과 감사함을 가지고 있다.</p>
-<p>이번 밋업에서는 세 분이 발표를 해주셨다. 발표 주제는 다음과 같았다:</p>
-<ul>
-<li><p>&lt;데이터의 불모지, 옥외광고 데이터 전략팀은 무슨일을 할까?&gt;</p>
-<ul>
-<li><p>부제: 없는 데이터 만들어 일하는 방법</p></li>
-<li><p>발표자: 포커스 미디어 데이터 전략팀 강슬기</p></li>
-</ul></li>
-<li><p>&lt;채용 데이터 분석하기&gt;</p>
-<ul>
-<li>발표자: 두들린 한일석</li>
-</ul></li>
-<li><p>&lt;가입자는 늘어나는데 왜 MAU는 그대로일까?&gt;</p>
-<ul>
-<li>발표자: 이진형</li>
-</ul></li>
-</ul>
-<p>추천 서비스라는 프로덕트를 성장시키기 위한 데이터 분석을 하고 있는 내가 가장 관심이 가는 주제는 마지막 주제였고, 세 분 모두 발표를 너무 잘해주셔서 정말 재밌게 들었다. 발표가 끝나고, 궁금한 부분들은 질문도 드리면서 적극적으로 참여했다.😂 발표 후 질문은 곧 상대방의 발표를 집중해서 관심있게 들었다는 것의 증거라고 생각하기에, Q&amp;A 시간에 가능하다면 꼭 질문을 드리고자 한다.<sup>7</sup> 발표 자료는 <a href="https://www.notion.so/1-2023-2-23-1afe5af1a0c84ee394b8de9fead496ce">여기</a>서 만나볼 수 있다.</p>
-<p>발표가 끝난 뒤에는 각자 자유롭게 네트워킹할 수 있는 시간을 가질 수 있었다. 이러한 유형의 모임은 처음이라.. 굉장히 어색했다. 다행히 많은 분들이 적극적으로 움직여주신 덕분에 여러 사람들과 이야기를 나눠볼 수 있었다. 나는 꽤나 내향적인 사람이지만, 이러한 유형의 모임에는 최대한 적극적으로 참가해보려고 한다. 발표를 들으며 인사이트를 얻는 부분도 있지만, 무엇보다 많은 에너지를 얻어갈 수 있기 때문이다. 나와 비슷한 고민을 하는 사람들이 있구나, 이렇게 열심히 하는 사람들이 있구나 하는 것을 눈으로 보고, 그런 사람들과 이야기를 나누는 것은 내게 정말 많은 에너지를 준다. 당시 밋업을 마치고 돌아오면서도 더 열심히 살아봐야겠다는 생각을 했다.</p>
-<p>그리고, 밋업에서 당시 내가 업무에서 몰입하고 있던 유저 행태 분석의 인사이트 추출에도 일정 부분 힌트를 얻을 수 있었다. 밋업을 마치고 집에 도착했을때가 자정을 넘긴 시각이었는데, 여러 인사이트들이 내 머리를 스쳐갔고, 결국 잠을 청하지 못하고 떠오른 인사이트들을 정리하고 새벽 5시쯤 잠에 들었던 기억이 난다.</p>
-<p>이건 여담인데, 밋업이 열리는 당일에 선호님<sup>8</sup>도 출근을 하셨다. 혹시나 하는 마음에 밋업에 참가하시냐고 여쭤볼까 하다가 참았는데, 역시나 밋업 장소에서 만나뵐 수 있었다. 내가 먼저 사무실을 떠났는데, 슬랙 DM으로 밋업에 참가하러 간다고 말씀드렸더니 선호님도 참가를 하신다고.. 네트워킹 시간에 너어무 어색해서, 선호님 곁을 잠깐 찾아가기도 했다.😂 아무튼, 이번 밋업은 여러모로 내게 즐거운 경험이었다.</p>
-</section>
-<section id="통계학" class="level3">
-<h3 class="anchored" data-anchor-id="통계학">통계학</h3>
-<p>산업계로 이직을 하고, 통계학이 생각보다 Data Science/Analytics 분야에 차지하는 파이는 크지 않음을 느꼈던 때가 있다. 당시 일종의 허탈함이 느껴지기도 했는데, 요즘엔 오히려 내 기본에 깔려있는 통계학이 데이터를 볼때에 알게모르게 정말 많은 도움을 주고 있다는 생각을 한다. 이 생각을 문득 했을때, 바로 이 생각을 정리하고 싶은 마음이 있어 페이스북에 포스팅을 했었다. 본 주제는 페이스북에 남겼던 글로 갈음해본다.</p>
-<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0883Dz4bTDaZs2jurDyv7TEoJ7sG11vGY9PeeCoNvMQYAgkoccxFezkZwNyNEj4FQl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="362" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
-</section>
-<section id="그로스-해킹" class="level3">
-<h3 class="anchored" data-anchor-id="그로스-해킹">그로스 해킹</h3>
-<p>양승화님이 쓰신 그로스 해킹 책을 거진 다 읽어간다. 학계에서 산업계로 넘어와 추천 서비스의 고도화를 위해 데이터 분석을 수행하고 있는 내게 정말 많은 도움을 준 책이다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/fig2.jpeg" class="img-fluid figure-img" width="600"></p>
-<p></p><figcaption class="figure-caption">출처: yes24</figcaption><p></p>
-</figure>
-</div>
-<p>프로덕트를 성장시키기 위해서는 데이터 분석을 할 때 어떤 방향성을 가지고 해야하는지, 어떤 부분을 조심해야하는지에 대해 많은 부분 힌트를 얻을 수 있었다. 만오천원이 채 안되는 값싼 금액에 저자가 수년간 쌓아올린 노하우들을 들여다볼 수 있다는 것은 정말 말이 안된다고 생각한다.</p>
-<p>가장 깊은 인사이트를 받은 부분은 지표 설계와 관련한 부분이다. 우리팀에서 제공하는 추천 서비스를 성장시키기 위해서는 대체 어떤 지표를 OMTM(One Metric That Matters)으로 삼아야 하는가에 관한 고민이 있었기 때문이다. 이 부분에 대해서도 페이스북에다가 생각을 정리했던 적이 있다:</p>
-<center><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid032zf7fkepQSobg39r2eHKtShnkFJcEpNurAchrEgu16a8iUJsVomUUZVznMByJ8eCl%26id%3D100070120780059&amp;show_text=true&amp;width=500" width="500" height="354" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></center>
-<p>특정 서비스의 고도화를 위해 데이터 분석을 수행하고 있는 사람<sup>9</sup>이라면, &lt;그로스 해킹&gt;이라는 책은 한 번쯤 읽어볼 만한 책이라고 생각한다. 책의 뒷장에서는 데이터 분석, 그로스 해킹을 수행할 수 있는 인프라가 갖춰지지 않은 상황에는 어떤 것 부터 시작을 하면 되는지에 대해서도 이야기를 해주는데, 이 부분은 데이터가 흐르는 조직을 만들고자 하는 분들, 데이터 분석가로 채용되어 조직에 들어갔는데 데이터를 활용할 수 있는 환경이 전혀 갖추어져있지 않아 뭐부터 해야할지 고민이 있는 분들께도 많은 도움이 되지 않을까 생각한다.</p>
-</section>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>여러분들의 2월은 어떠셨습니까? 주간 회고를 종합해서 돌아보니, 2월에도 정말 많은 배움의 순간들이 있었네요. 글을 쓰면서 몇 번의 퇴고를 거치듯, 분석을 진행해나가며 앞단의 분석들을 다시 되돌아보듯, 주 단위, 월 단위, 연 단위로 삶을 회고해 보는 것은 정말 많은 것들을 가져다주는 것 같습니다. 저는 원래 회고록을 쓰던 사람이 아닙니다. 제가 보기에 너무 멋있고 열정적으로 살아가는 분들이 회고록을 쓰는 것을 보며, 그들의 습관을 따라해보고자 회고록을 쓰기 시작했죠.</p>
-<p>제 인생의 첫 월간 회고록은 지난해 4월이었어요. 시작할때는 참 귀찮은 일이었으나, 이제는 회고를 하지 않으면 마치 조립되지 않은 퍼즐 조각들이 머리 속에 가득한 느낌까지 듭니다. 매주 일요일 밤에 한주 동안 얻은 인사이트를 정리하는 것으로 회고를 시작해보세요. 문득문득 드는 생각들을 정리하는데에 정말 많은 도움이 되실 겁니다.</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>G마켓에서 제공할 추천 서비스를 만드는 팀이며, 나는 이를 고도화하기 위해 데이터 분석을 수행하고 있다.↩︎</p></li>
-<li id="fn2"><p>여기서는 신약의 효과라 할 수 있겠다.↩︎</p></li>
-<li id="fn3"><p>실험 참가자(subjects)↩︎</p></li>
-<li id="fn4"><p>신약을 투여받는 처리 그룹(treatment group)인지, 위약 또는 기존약을 투여받는 통제 그룹(control group)인지.↩︎</p></li>
-<li id="fn5"><p>실험 결과에 영향을 줄 수 있는 일말의 모든 것을 제거하기 위한 목적으로, Triple-blind test라는 것도 존재한다.↩︎</p></li>
-<li id="fn6"><p>이러한 이유에서 통계학에서는 2종오류보다 1종오류를 더욱 위험한 오류라고 보며, 1종 오류를 통제하며 가설 검정을 수행한다.↩︎</p></li>
-<li id="fn7"><p>이게 맞나?.. 문득, 내 질문이 발표자들에게 어떤 부담이 되진 않았을까 하는 생각이 든다.↩︎</p></li>
-<li id="fn8"><p>우리팀(AI Product팀) 팀장님이시다.😀↩︎</p></li>
-<li id="fn9"><p>요즘은 이를 프로덕트 데이터 분석가라고 세련되게 표현하는 듯 하다..↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
-  author = {방태모},
-  title = {월간 회고록: 2023년 2월},
-  date = {2023-03-12},
-  url = {https://taemobang.com/posts/2023-03-12-monthly-memory-202302/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
-방태모. 2023. <span>“월간 회고록: 2023년 2월.”</span> March 12, 2023. <a href="https://taemobang.com/posts/2023-03-12-monthly-memory-202302/">https://taemobang.com/posts/2023-03-12-monthly-memory-202302/</a>.
-</div></div></section></div> ]]></description>
-  <category>Memory</category>
-  <guid>https://taemobang.com/posts/2023-03-12-monthly-memory-202302/index.html</guid>
-  <pubDate>Sat, 11 Mar 2023 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>월간 회고록: 2023년 1월</title>
-  <dc:creator>Taemo Bang</dc:creator>
-  <link>https://taemobang.com/posts/2023-02-21-monthly-memory-202301/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://notioly.com"><img src="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/preview.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">The illustration by Mary Amato</figcaption><p></p>
-</figure>
-</div>
-<p>새해가 밝은지 얼마 지나지 않은듯 한데, 어느덧 2월도 저물어가고 있네요. 얼른 지난 1월을 회고해보려고 해요. 매주 일요일 적었던 1월의 주간 회고를 돌이켜보니, 1월도 느낀 바가 참 많았던 한 달이었더군요. 산업계로 이직을 하고부터는 매달 새로운 것을 느끼고, 새로운 생각을 하게 되는 것 같아요. 여전히 이 곳은 제게 아주 챌린징한 곳인가 봅니다. 지난 1월의 이야기를 일과 개인적인 부분으로 나눠서 이야기해보겠습니다.</p>
-<section id="일" class="level2">
-<h2 class="anchored" data-anchor-id="일">일</h2>
-<section id="streamlit-캐싱" class="level3">
-<h3 class="anchored" data-anchor-id="streamlit-캐싱">Streamlit 캐싱</h3>
-<p>이직 후 맨 처음 맡았던 업무는 대시보드 개발이었는데요. <a href="https://www.taemobang.com/posts/2023-02-01-yearly-memory-2022/#shiny-streamlit">연간 회고록</a>에서 말씀드렸듯이, 대시보드 개발은 Streamlit으로 진행하고 있습니다. 1월 첫째 주에 우선적으로 올릴 지표들, 제가 필요로 된다고 생각했던 반응형 그래프 기능들을 다 반영해서 팀 내에 첫 공유를 드렸었습니다. 그 중 앱의 로딩 속도가 조금 느린데, 개선이 가능하냐는 피드백이 있었는데요. 저도 이 부분은 공유 세션을 가지기 전에 생각했던 부분이긴 했습니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/fig1.jpeg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>앱 스크립트를 짤 때 초기에만 1번 Hive를 찔러서 테이블을 가져오는데, 왜 이렇게 앱 로딩 속도가 느릴까? 지나치게 많은 반응형 그래프를 한꺼번에 한 페이지에 로딩을 해서 가져와야하기 때문일까? 이러한 개인적인 추측을 했었죠. 그러나, 원인은 Streamlit이 가진 본질적인 특징에 있었습니다.😀</p>
-<p>그렇다면, Streamlit의 어떤 특징 때문에 앱 로딩 속도가 이렇게 느렸던 걸까요? Streamlit은 앱 사용자가 이것저것 눌러보며 앱의 특정 기능을 실행하면, 스크립트를 처음부터 끝까지 다시 실행시키는 로직을 가지고 있어요. Streamlit으로 대시보드 개발을 손쉽게 만들어주는 데에 이 로직이 큰 역할을 한다고 해요. 문제는 스크립트를 재실행시킬 때마다 함수가 반복적으로 다시 실행되고 객체 또한 반복적으로 다시 불러와지기 때문에, 앱 로딩 속도에 큰 영향을 미친다는 점이죠. 아주 가벼운 형태의 앱이면 문제가 되지 않겠지만요.</p>
-<p>이러한 본질적인 특징때문에 제가 앱 스크립트에 첫 줄에서 딱 한 번만 Hive를 찔러서 가져와도, 제가 만들어둔 반응형 그래프를 유저가 한 번이라도 클릭을 한다면 다시 이 스크립트를 처음부터 다시 실행시키기 때문에 로딩 속도가 느릴 수 밖에 없었던 것입니다. 이 문제는 새로고침을 해도 물론이었으며, 여러 페이지로 구성한 앱 내에서 다른 페이지로 넘어갈 때에도 문제가 됐습니다.</p>
-<p>이는 Streamlit에서 제공하는 캐싱 기능을 통해 아주 손쉽게 해결할 수 있었습니다. 스크립트 초반부에 캐싱 코드 한 줄만 딱 넣어주면, 첫 실행 시 함수 호출 결과와 객체를 저장함으로써 앱 로딩 속도를 대폭 개선해줬죠. 얼마전 <a href="https://discuss.streamlit.io/t/version-1-18-0/37501">Streamlit 1.18.0</a>이 정식 릴리즈되면서, 테스트 중이었던 캐싱 코드도 정식으로 릴리즈되었어요. 관심 있으신 분들은 <a href="https://blog.streamlit.io/introducing-two-new-caching-commands-to-replace-st-cache/">Streamlit의 블로그 포스트</a>와 <a href="https://docs.streamlit.io/library/advanced-features/caching">Documentation</a>을 참고해보시기 바랍니다.</p>
-</section>
-<section id="시계열-자료분석-부제-세상에-쓸모없는-배움은-없다." class="level3">
-<h3 class="anchored" data-anchor-id="시계열-자료분석-부제-세상에-쓸모없는-배움은-없다.">시계열 자료분석 (부제: 세상에 쓸모없는 배움은 없다.)</h3>
-<p>여기서는 시계열 자료분석을 수행할 일이 없을 줄 알았는데요. 그럴 일이 생겼습니다!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/fig2.jpeg" class="img-fluid figure-img" width="600"></p>
-</figure>
-</div>
-<p>시계열적으로 접근하는 데이터 분석은 언제나 웰컴이에요. 제게 가장 익숙한 문제의 유형 중 하나이기 때문입니다. 여기서 자세하게 어떤 배경에서 어떤 시계열적 접근이 필요로 됐는지 말씀을 드리진 않겠지만<sup>1</sup>, 여기서 또 한번 느낀 바는 역시나 세상에 쓸모없는 배움은 없다는 것입니다.</p>
-<p>여러분들이 지금 배우고 있는 것들이 추후에 업무에서 어떻게 쓰일 지는 아무도 모릅니다. 항상 최선을 다하세요. 그리고, 걱정하지 마세요. 배워두면 좋을 것 같은데? 근데, 좀 우선순위는 아닌거 같은데? 이런 생각이 드는 것들이 많으신가요? 시간이 허락 된다면 주저하지 말고 배워보세요. 주말에 시간을 내서 이틀 정도만 바짝 해보세요. 새로운 도구의 기본적인 것들을 익히는 데에는 생각보다 긴 시간이 걸리지 않습니다.</p>
-<p>언젠가는 내가 가지고 있는 것과 시너지 효과를 내줄 수 있는 날이 올겁니다. 제 경우에는 블로그에 글쓰기가 그랬고, Git이 그랬고, Python이 그랬고, SAS가 그랬어요. 이 외에도 더 많은 경우가 있지만 이만 줄이겠습니다. 시간이 없다는 핑계, 우선순위가 아닌 것 같다는 핑계가 머리 속을 지배하고 있을 때는 잡스 형님이 Connecting the dots이라는 주옥같은 명언을 남긴 스탠포드 대학교 명연설을 한 번 보세요. 떨어져 가는 학습 동기를 채워넣어주는 최고의 동영상 중 하나입니다.</p>
-<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/J2m-fv_wAsY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<p>저는 과거에 주저하기만 하고 결국 우선순위가 아니라는 핑계로 새로운 것에 대한 배움을 미뤄왔던 사람이거든요. 여러분들은 그러지 않으셨으면 합니다. 그래서, 요즘 이렇게 배워야할게 산더미인 듯 해요.😭</p>
-</section>
-</section>
-<section id="개인" class="level2">
-<h2 class="anchored" data-anchor-id="개인">개인</h2>
-<section id="글또-8기" class="level3">
-<h3 class="anchored" data-anchor-id="글또-8기">글또 8기</h3>
-<p>지난 1월 말부터 글또<sup>2</sup> 8기에 참가하고 있어요. 글또는 개발자들의 글쓰기 역량을 강화하고 글을 꾸준히 쓸 수 있도록 돕는 커뮤니티인데요. 지난 한해를 회고하면서 글또 다음 기수에는 꼭 참가를 해보고 싶다는 생각을 했었어요. 그 이유에 대해 조금 이야기 해볼게요. 대학원에 진학하며 개인 블로그를 지금까지 꾸준히 운영해오고 있는데요.<sup>3</sup> 그런데, 대학원을 졸업하고 글쓰기에는 조금씩 나태해져 가고 있는 제 자신을 발견할 수 있었어요. 업무, 이직, 새로운 산업에 적응 등을 핑계로 말이죠.</p>
-<p>그래서, 새로운 자극이 필요하다고 생각이 들었어요. 넘치는 의욕으로 지난 1차 제출 기간에는 2개의 글을 제출했었어요. 2차 제출 기간의 첫 글은 지금 쓰고있는 이 월간 회고록이 될 듯합니다. 1차 기간에 제출했던 2개의 글도 기술적인 주제의 글은 아니여서, 다음 글은 꼭 기술적인 주제로 써보겠습니다. 블로그를 회고록, 칼럼이 지배해가고 있는데, 이제 기술적인 글을 쓸 때가 되지 않았나 생각하고 있습니다. 아무튼, 글또 8기에 계획된 12번의 글 제출 기간 동안 꾸준하게 글을 써내려가는 모습을 이 블로그를 통해 보여드리겠습니다.😀</p>
-</section>
-<section id="커피챗" class="level3">
-<h3 class="anchored" data-anchor-id="커피챗">커피챗</h3>
-<p>1월 둘째주 토요일에 제가 선망하고 있었던 R 고수.. 진환님과 만남의 시간을 가질 수 있었어요. 만남의 계기는 진환님의 블로그를 보다가 보내게 된 메일 한통이었어요. 전부터 한번 쯤 꼭 만나뵙고 이야기를 나눠보고 싶었어요. 그래서, 메일을 몇 통 주고받다가 제가 마지막에 불쑥 만나볼 수 있냐고 이야기를 드렸어요. 이런 제안을 드리는 것은 처음이라, 썼다 지웠다를 한 10번 정도 반복한 것 같습니다.😂</p>
-<p>다행이 제 제안을 좋게 봐주셨고, 오프라인에서 만나 이야기를 나누면서 정말 시간 가는 줄 모르고 대화를 나눴어요. 그리고, 여기에 자세한 이야기는 적지 않겠지만, 세상이 참 좁다는 것을 한 번 더 느꼈습니다. 기억에 남는 이야기 중 하나를 해보자면, 수면 시간과 관련된 이야기였는데요. 하루에 보통 수면 시간을 얼마나 가져가시는 지 만나서 꼭 여쭤보고 싶었어요.</p>
-<p>제가 받은 대답은 충격이었습니다..</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/fig3.jpeg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>7-8시간씩 주무신다고 합니다. 저랑 수면 시간이 비슷한데.. <a href="https://jhk0530.medium.com/">진환님</a> 블로그를 들여다보면, 왜 진환님의 하루는 30시간 같죠? 깨어있을 때의 시간이 중요함을 다시 한 번 느꼈습니다. 진환님과의 만남도 제겐 정말 좋은 자극제였습니다. 이런 분들은 평소에 어떤 생각을 하시고, 어떻게 지내시는지 참 궁금했거든요. 다음에 다시 뵐 수 있는 기회가 있었으면 하네요.😀</p>
-</section>
-</section>
-<section id="맺음말" class="level2">
-<h2 class="anchored" data-anchor-id="맺음말">맺음말</h2>
-<p>여러분들의 1월은 어떠셨나요? 저는 여전히 배워야할 게 산더미인 요즘입니다. 그래서, 2023년에는 저를 최대한 바쁘게 만들어보고 있습니다. 퇴근하고 운동을 갔다가, 저녁 식사 후 필요한 공부를 하는 생활이 무의식의 습관으로 자리 잡게되는 한 해가 되길 바라며 글을 마칩니다.</p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">각주</h2>
-
-<ol>
-<li id="fn1"><p>대외비에 문제가 안되는 선에서, 추후 별도의 글로 정리해보겠습니다.↩︎</p></li>
-<li id="fn2"><p>글쓰는 또라이가 세상을 바꾼다!↩︎</p></li>
-<li id="fn3"><p>네이버 블로그, <a href="https://be-favorite.tistory.com">티스토리</a>, Rmarkdown 기반 Distill 블로그를 거쳐 지금은 이렇게 Quarto 기반 블로그에 정착을 했습니다.↩︎</p></li>
-</ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">라이센스</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">인용</h2><div><div class="quarto-appendix-secondary-label">BibTeX 인용:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{방태모2023,
-  author = {방태모},
-  title = {월간 회고록: 2023년 1월},
-  date = {2023-02-21},
-  url = {https://taemobang.com/posts/2023-02-21-monthly-memory-202301/},
-  langid = {kr}
-}
-</code></pre><div class="quarto-appendix-secondary-label">인용방법</div><div id="ref-방태모2023" class="csl-entry quarto-appendix-citeas">
-방태모. 2023. <span>“월간 회고록: 2023년 1월.”</span> February 21, 2023.
-<a href="https://taemobang.com/posts/2023-02-21-monthly-memory-202301/">https://taemobang.com/posts/2023-02-21-monthly-memory-202301/</a>.
-</div></div></section></div> ]]></description>
-  <category>Memory</category>
-  <guid>https://taemobang.com/posts/2023-02-21-monthly-memory-202301/index.html</guid>
-  <pubDate>Mon, 20 Feb 2023 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

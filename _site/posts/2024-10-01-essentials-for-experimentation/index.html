@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kr" xml:lang="kr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-10-01">
+<meta name="description" content="문화 형성, 자동화가 어느정도 레벨에 도달하기 이전에, 높은 레벨의 통계적 방법론을 연구하고 적용하는 것은 아무런 의미가 없다.">
+
+<title>방태모의 블로그 - 온라인 실험의 꽃: 문화 형성과 자동화</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1QHE9697JG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1QHE9697JG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../css/karat.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">방태모의 블로그</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">홈</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">블로그</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../archive.html" rel="" target="">
+ <span class="menu-text">아카이브</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">리소스</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../research.html" rel="" target="">
+ <span class="dropdown-text">연구 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentation.html" rel="" target="">
+ <span class="dropdown-text">발표 아카이브</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://be-favorite.tistory.com/" rel="" target="">
+ <span class="dropdown-text">과거 기술블로그</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#문화-형성" id="toc-문화-형성" class="nav-link active" data-scroll-target="#문화-형성">문화 형성</a></li>
+  <li><a href="#자동화" id="toc-자동화" class="nav-link" data-scroll-target="#자동화">자동화</a></li>
+  <li><a href="#맺음말" id="toc-맺음말" class="nav-link" data-scroll-target="#맺음말">맺음말</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/be-favorite/Blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">온라인 실험의 꽃: 문화 형성과 자동화</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Column</div>
+    <div class="quarto-category">Experimentation</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>문화 형성, 자동화가 어느정도 레벨에 도달하기 이전에, 높은 레벨의 통계적 방법론을 연구하고 적용하는 것은 아무런 의미가 없다.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Taemo Bang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>온라인 실험의 꽃은 “문화 형성”과 “자동화”에 있다.</p>
+<section id="문화-형성" class="level3">
+<h3 class="anchored" data-anchor-id="문화-형성">문화 형성</h3>
+<p>문화 형성에 관한 의도적이고 각별한 노력 없이는 온라인 실험에 꽃을 피울 수 없다. 기업에 있어 문화란, 조직의 암묵적 사회 질서를 말한다<span class="citation" data-cites="gupta2019">(<a href="#ref-gupta2019" role="doc-biblioref">Gupta et al. 2019</a>)</span>. 문화적 규범은 곧 조직 내에서 무엇을 권장하고 막을지, 무엇을 받아들이고 거부할지 결정하는 기준이 된다. 온라인 실험은 고객 중심의 제품을 만들어나가기 위해 실행되며, 실무자의 아이디어를 택할지 말지 결정하는 데에 중요한 역할을 한다. 온라인 실험이 곧 문화적 규범의 역할을 하는 것이다.</p>
+<p>다른 말로는 이를 “실험 중심 제품 개선 문화”라고도 표현한다. 온라인 실험이 그 기업의 지속 가능한 도구가 되려면, 이 문화를 형성에 내는 것에 리더십을 중심으로 의도적이고 각별한 노력을 기울여야한다. 문화적 규범이 “온라인 실험”에 바뀌는 것에 맞추어 조직원들이 정당하게 평가를 받을 수 있도록 조정이 필요할 수도 있고, 조직 구성에 대한 변화가 필요할 수도 있다. 어느날 갑자기 내 아이디어를 “온라인 실험”이라고 하는 도구로 평가받는다는 것은 실무자 입장에서 굉장히 민감한 부분이기 때문이다.</p>
+<p>이러한 이유에서 해외 테크 기업들은 실험 기반 제품 개선 문화를 형성하기 위해 기술 개발(e.g.&nbsp;실험 플랫폼 개발, 통계적 방법론 연구) 외에 실험 확장을 위한 주기적인 직원 교육 및 치밀한 전략 수립하여 실행해왔다. <span class="citation" data-cites="gupta2019">(<a href="#ref-gupta2019" role="doc-biblioref">Gupta et al. 2019</a>)</span>에서 그 내용을 상세하게 확인할 수 있으며, 추후 별도의 글로 해당 논문에 정리된 그들의 노력을 정리해보려고 한다. 그들이 기술 개발에만 치중했다면, 결코 전사 구성원이 실험을 중심으로 자신의 아이디어를 평가받는 “실험 중심 제품 개선 문화”를 형성하지 못했을 것이다.</p>
+</section>
+<section id="자동화" class="level3">
+<h3 class="anchored" data-anchor-id="자동화">자동화</h3>
+<p>자동화에 관한 의도적이고 각별한 노력없니는 온라인 실험에 꽃을 피울 수 없다. 앞서 이야기했듯 온라인 실험은 곧 기업의 문화적 규범 역할을 하며, 이는 자신의 아이디어를 평가받기 위해 온라인 실험을 실행해야한다는 것을 말한다. 온라인 실험을 기반으로 한 “정확한 평가”를 위해서는 많은 기술적 노력이 뒤따른다. 필수적인 요소들을 요약하면 다음과 같다<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<ul>
+<li>실험 전 단계: 고객 가치에 기반한 실험 설계 및 피쳐 디자인, 정교한 실험설계, 실험 전 편향 교정</li>
+<li>실험 중 단계: 예상치 못한 효과의 조기 감지를 위한 모니터링</li>
+<li>실험 후 단계: 적절성 검사, 통계 분석 결과 해석, 통계적 유의도와 실무적 유의도를 고려한 최종 의사 결정</li>
+</ul>
+<p>조직 구성 유형에 따라 다르겠지만 PM, PO, 디자이너 등 평가를 받기 위해 온라인 실험을 실행해야 하는 각각의 구성원들이 이러한 모든 기술적 과정들을 혼자 진행하는 것은 불가능하다. 도메인 지식 뿐만이 아닌 엔지니어링, 통계학적 역량이 필요로 되기 때문이다.</p>
+<p>따라서 이러한 과정들을 거쳐 정확한 평가를 내리기 위해서는 Data Scientist가 옆에 붙어있어야 한다. 그러나, 사내에 이러한 역량을 가진 Data Scientist들은 보통 손에 꼽는 숫자로 존재한다. 따라서 이러한 과정들을 자동화하여 온라인 실험을 스케일업 하는 것이 굉장히 중요한 포인트라고 할 수 있다.</p>
+<p>이는 실로 굉장히 큰 대작업이다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-1.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Gupta, S., Ulanova, L., Bhardwaj, S., Dmitriev, P., Raff, P., &amp; Fabijan, A. (2018). The Anatomy of a Large-Scale Experimentation Platform. 2018 IEEE International Conference on Software Architecture (ICSA), 1–109. https://doi.org/10.1109/ICSA.2018.00009</figcaption>
+</figure>
+</div>
+<p>위 그림과 같이 기본적으로 실험 실행, 로그 프로세싱, 분석 서비스들을 관리할 수 있는 실험 플랫폼, 그리고 각 실험에 다양하게 존재하는 여러 지표들을 정의할 수 있는 정교한 메트릭 스토어가 필요로 된다<span class="citation" data-cites="gupta2018">(<a href="#ref-gupta2018" role="doc-biblioref">Gupta et al. 2018</a>)</span>. 이렇듯 우리 기업 위에 온라인 실험을 이라는 꽃을 피우기 위해서는 문화 형성 뿐만이 아닌, 동료의 아이디어를 “빠르고, 정확하게” 평가하기 위한 자동화에도 의도적이고 각별한 노력을 기울여야 한다.</p>
+</section>
+<section id="맺음말" class="level3">
+<h3 class="anchored" data-anchor-id="맺음말">맺음말</h3>
+<p>처음엔 그저 통계학, 인과추론 등에 관한 관심과 현재 몸담고 있는 조직의 니즈로 인해 온라인 실험이라는 분야에 몰두하게 되었는데, 해외 테크 기업들이 써낸 아티클과 여러 논문들을 보고 실무에서도 구르다보니 결국 “온라인 실험”의 꽃을 피워내기 위해선 “문화 형성”과 “자동화”라는 두 가지 요소가 필수적으로 충족되어야 함을 깨달았다.</p>
+<p>이를 깨달았기에 올해 1, 2분기에 가짜연구소에서 진행했던 <a href="https://github.com/CausalInferenceLab/OCE-Materials">실험 스터디</a>를 추가로 진행하지 않기로 결정했다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-2.png" class="img-fluid figure-img" width="300"></p>
+<figcaption class="figure-caption">Kohavi, R., Tang, D., &amp; Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing. Cambridge University Press. https://experimentguide.com/</figcaption>
+</figure>
+</div>
+<p>원래 계획은 Ron Kohavi의 저서<span class="citation" data-cites="kohavi2020">(<a href="#ref-kohavi2020" role="doc-biblioref">Kohavi, Tang, and Xu 2020</a>)</span>를 바탕으로 실험에 관한 서로의 기본적 이해를 맞춘 후, 통계적 방법론을 중심으로 논문 스터디를 해볼 요량이었으나.. 우리 업계에서 온라인 실험이라는 도구가 필요한 또는 이미 사용하고 있으나 스케일업에 어려움을 겪고 있는 사람들에게는 더 깊은 레벨의 통계적 방법론은 필요하지 않은 단계라는 확신이 들었기 때문이다.</p>
+<p>나 또한 팀 스터디를 리딩하며, 그리고 홀로 통계적 방법론에 관한 아티클과 논문들을 여럿 보며 내가 알고있는 이론적 기술과 실제 내가 업무에 적용하고 있는 기술과 격차가 벌어지기 점점 더 크게 벌어지는 것을 느꼈다. 온라인 실험이라는 꽃을 피우기 위해 내가 속한 업무 환경 또한 앞서 이야기한 필수 요소인 “문화 형성”, “자동화”에 부단한 노력이 필요했기 때문이다. 문화 형성, 자동화가 어느정도 레벨에 도달하기 이전에, 높은 레벨의 통계적 방법론을 연구하고 적용하는 것은 아무런 의미가 없다.</p>
+<p>온라인 실험에 적용되는 통계적 방법론에 관한 단순한 흥미로 시작한 스노우볼이 여기까지 굴러와서, 이러한 본질적인 부분들을 느끼고 있다는 것이 참 신기하다. 지난해 6-7월 즈음을 기점으로 다른 공부들을 제쳐두고 깊게 몰두하기 시작했던 기억이 나는데, 짧은 시간에 많은 것들을 깨닫고 성장한 것 같다는 느낌을 받는다. 내년 이맘때 쯤 G마켓의 실험 문화와 자동화 수준은 어느 레벨에 올라있을까? 이제껏 나아온 길보다 앞으로 나아갈 길이 훨씬 더 많이 남았지만, 함께 노력해주는 동료들이 있기에 부단한 노력을 기울여보려고 한다.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-gupta2019" class="csl-entry" role="listitem">
+Gupta, Somit, Ronny Kohavi, Diane Tang, Ya Xu, Reid Andersen, Eytan Bakshy, Niall Cardin, et al. 2019. <span>“Top Challenges from the First Practical Online Controlled Experiments Summit.”</span> <em>ACM SIGKDD Explorations Newsletter</em> 21 (1): 20–35. <a href="https://doi.org/10.1145/3331651.3331655">https://doi.org/10.1145/3331651.3331655</a>.
+</div>
+<div id="ref-gupta2018" class="csl-entry" role="listitem">
+Gupta, Somit, Lucy Ulanova, Sumit Bhardwaj, Pavel Dmitriev, Paul Raff, and Aleksander Fabijan. 2018. <span>“2018 IEEE International Conference on Software Architecture (ICSA).”</span> In, 1–109. <a href="https://doi.org/10.1109/ICSA.2018.00009">https://doi.org/10.1109/ICSA.2018.00009</a>.
+</div>
+<div id="ref-kohavi2020" class="csl-entry" role="listitem">
+Kohavi, Ron, Diane Tang, and Ya Xu. 2020. <em>Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</em>. Cambridge University Press. <a href="https://experimentguide.com/">https://experimentguide.com/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>마침 이 부분에 관한 상세한 설명을 참고하면 좋은 2024 Korea Summer Workshop on Causal Inference 2024 발표 영상이 업로드되어 공유해본다: <a href="https://youtu.be/zcZ2vICGm1o?si=jy6mno97RVNBP1-U" class="uri">https://youtu.be/zcZ2vICGm1o?si=jy6mno97RVNBP1-U</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.kr">https://creativecommons.org/licenses/by/4.0/deed.kr</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang2024,
+  author = {Bang, Taemo},
+  title = {온라인 실험의 꽃: 문화 형성과 자동화},
+  date = {2024-10-01},
+  url = {https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/},
+  langid = {kr}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-bang2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Bang, Taemo. 2024. <span>“온라인 실험의 꽃: 문화 형성과 자동화.”</span>
+October 1, 2024. <a href="https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/">https://taemobang.com/posts/2024-10-01-essentials-for-experimentation/</a>.
+</div></div></section></div></main> <!-- /main -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+<div>
+<hr>
+
+<p> 새 글이 발행되면 알려드려요.  </p>
+
+<iframe src="https://embeds.beehiiv.com/312bf770-2ddc-411b-b3b9-92b811774acc?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+
+<p> 포스팅을 독려해주실 수 있어요.  </p>
+
+<a href="https://www.buymeacoffee.com/taemobang"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&amp;emoji=&amp;slug=taemobang&amp;button_colour=40DCA5&amp;font_colour=ffffff&amp;font_family=Comic&amp;outline_colour=000000&amp;coffee_colour=FFDD00"></a>
+
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="be-favorite/Blog" data-repo-id="R_kgDOH0qA6g" data-category="Comments" data-category-id="DIC_kwDOH0qA6s4CReuX" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="ko" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

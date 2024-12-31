@@ -3,22 +3,6 @@ title: "방태모"
 image: images/notion-avatar.png
 about:
   template: jolla
-  links:
-    - icon: linkedin
-      text: 링크드인
-      href: https://www.linkedin.com/in/taemo/
-    - icon: github
-      text: 깃허브
-      href: https://github.com/be-favorite
-    - icon: journal-text
-      text: 요즘IT
-      href: https://yozm.wishket.com/magazine/@taemobang/
-    - icon: journal-text
-      text: 과거 블로그
-      href: https://be-favorite.tistory.com/
-comments: false
 ---
 
 일하는 것과 글쓰는 것을 좋아합니다.
-
-자세한 소개는 링크드인을 참고해주세요.🙂

@@ -9,9 +9,6 @@ website:
   title: "방태모의 블로그"
   description: "방태모의 개인 블로그입니다."
   favicon: images/favicon.png
-  site-url: https://taemobang.com
-  repo-url: https://github.com/be-favorite/Blog
-  repo-actions: [issue]
   google-analytics: "G-1QHE9697JG"
   cookie-consent: true
   navbar:
@@ -22,14 +19,6 @@ website:
         text: 블로그
       - href: archive.qmd
         text: 아카이브
-      - text: 리소스
-        menu: 
-          - text: 연구 아카이브
-            href: research.qmd
-          - text: 발표 아카이브
-            href: presentation.qmd
-          - text: 과거 기술블로그
-            href: 'https://be-favorite.tistory.com/'
 
 format:
   html:
@@ -40,14 +29,3 @@ format:
     code-copy: true
     code-overflow: wrap
     css: css/karat.css
-    comments:
-      giscus:
-        repo: be-favorite/Blog
-        repo-id: R_kgDOH0qA6g
-        category: Comments
-        category-id: DIC_kwDOH0qA6s4CReuX
-        mapping: pathname
-        reactions-enabled: true
-        input-position: top
-        theme: light
-        language: ko

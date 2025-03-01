@@ -1,5 +1,5 @@
 # Personal blog
-Source code for [personal website](https://taemobang.com).
+Source code for [personal website](https://taemobang.netlify.app/).
 
 Site built by [Quarto](https://github.com/quarto-dev/quarto-cli/) and deployed by [Netlify](https://www.netlify.com/).
 
